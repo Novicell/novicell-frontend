@@ -1,1 +1,0 @@
-function setActive(){return!0}function test(){return"hep"}var useless="hello";

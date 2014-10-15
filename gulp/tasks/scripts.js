@@ -6,7 +6,7 @@ var resolveDependencies = require('gulp-resolve-dependencies');
 var concat = require('gulp-concat');
 
 gulp.task('compile-js', function () {
-    gulp.src(config.scripts.baseDir + '/master.js')
+    return gulp.src(config.scripts.baseDir + '/master.js')
         .pipe(resolveDependencies({
             pattern: /\* @require [\s-]*(.*?\.js)/g,
             log: true
@@ -14,7 +14,16 @@ gulp.task('compile-js', function () {
         .pipe(concat('main.js'))
         .pipe(uglify())
 		.pipe(gulp.dest(config.scripts.dist))
-        .pipe(notify("Successfully compiled .js"));
+        .pipe(notify("Compile JS: OK"));
 });
 
-gulp.task('scripts', ['compile-js']);
+gulp.task('compile-js-components', function () {
+    return config.components.map(function (c) {
+        return gulp.src(config.scripts.baseDir + '/components/' + c + '.js')
+            .pipe(uglify())
+            .pipe(gulp.dest(config.scripts.dist))
+            .pipe(notify("Compile JS Component (" + c + "): OK"));
+    });
+});
+
+gulp.task('scripts', ['compile-js', 'compile-js-components']);
