@@ -1,0 +1,13 @@
+{
+    "tasksToRun": ["scripts"],
+
+    "styles": {
+        "baseDir": "less",
+        "dist": "css/compiled"
+    },
+
+    "scripts": {
+        "baseDir": "scripts",
+        "dist": "scripts/compiled"
+    }
+}
