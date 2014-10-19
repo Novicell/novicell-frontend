@@ -1,0 +1,11 @@
+{
+    "fileNotFound": "File not found: %s",
+
+    "compiledScript": "Compiled Master",
+    "compiledScriptComponent": "Compiled Component: %s",
+
+    "compiledStyle": "Compiled Master",
+    "compiledStyleComponent": "Compiled Component: %s",
+
+    "minifiedImage": "Minified Image"
+}

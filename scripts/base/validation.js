@@ -1,1 +1,3 @@
-function test() { return "hep"; }
+function test() {
+    return 1;
+}
