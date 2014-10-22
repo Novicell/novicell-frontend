@@ -1,11 +1,12 @@
 {
     "fileNotFound": "File not found: %s",
+    
+    "minifyIconsSuccess": "Minifed Icons.",
+    "minifyImagesSuccess": "Minifed Images.",
+    
+    "compileJSSuccess": "Compiled JS Master.",
+    "compileJSComponentSuccess": "Compiled JS Component => %s.",
 
-    "compiledScript": "Compiled Master",
-    "compiledScriptComponent": "Compiled Component: %s",
-
-    "compiledStyle": "Compiled Master",
-    "compiledStyleComponent": "Compiled Component: %s",
-
-    "minifiedImage": "Minified Image"
+    "compileLESSSuccess": "Compiled LESS Master.",
+    "compileLESSComponentSuccess": "Compiled LESS Component => %s."
 }

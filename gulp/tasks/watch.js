@@ -6,6 +6,7 @@ gulp.task('watch', function () {
     gulp.watch(config.styles.baseDir + "/**/*.less", ['styles']);
     gulp.watch(config.scripts.baseDir + "/**/*.js", ['scripts']);
     gulp.watch(config.images.baseDir + "/*", ["images"]);
+    gulp.watch(config.icons.baseDir + "/*", ["icons"]);
 
     var pathsToReload = [
         config.styles.dist + "/*.css",

@@ -1,8 +1,8 @@
 {
     "debug": false,
     
-    "tasks": ["build", "styles", "scripts", "images", "watch"],
-    "buildTasks": ["styles", "scripts", "images"],
+    "tasks": ["build", "styles", "scripts", "images", "icons", "watch"],
+    "buildTasks": ["styles", "scripts", "images", "icons"],
     "components": ["map"],
 
     "styles": {
@@ -18,6 +18,15 @@
 
     "images": {
         "baseDir": "images",
-        "dist": "images"
+        "dist": "images/compiled",
+        "fileFormats": ["jpg", "png"],
+        "optimizationLevel": 5,
+        "progressive": true,
+        "interlaced": true
+    },
+
+    "icons": {
+        "baseDir": "images/icons",
+        "dist": "images/icons/compiled"
     }
 }

@@ -1,0 +1,1 @@
+function myComponent() { return "Works! yaaay"; }
