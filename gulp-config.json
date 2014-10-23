@@ -1,6 +1,7 @@
 {
     "debug": false,
     
+    "path": "/wp-content/themes/sometheme/",
     "tasks": ["build", "styles", "scripts", "images", "icons", "watch"],
     "buildTasks": ["styles", "scripts", "images", "icons"],
     "components": ["map"],
@@ -16,10 +17,15 @@
         "dist": "scripts/compiled"
     },
 
+    "partials": {
+        "baseDir": ["marcroScript", "MasterPages"],
+        "fileExtention": ["cshtml", "master", "xslt", "php", "phtml", "html"]
+    },
+
     "images": {
         "baseDir": "images",
         "dist": "images/compiled",
-        "fileFormats": ["jpg", "png"],
+        "fileFormats": ["jpg", "png", "gif"],
         "optimizationLevel": 5,
         "progressive": true,
         "interlaced": true
