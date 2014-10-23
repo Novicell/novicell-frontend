@@ -13,6 +13,6 @@ gulp.task('watch', function () {
         config.scripts.dist + "/*.js"
     ];
 
-    livereload.listen();
+    livereload.listen(1337);
     gulp.watch(pathsToReload).on('change', livereload.changed);
 });
