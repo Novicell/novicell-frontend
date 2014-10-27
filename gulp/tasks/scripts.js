@@ -12,6 +12,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var newer = require('gulp-newer');
 var util = require('util');
+var gulpif = require('gulp-if');
+var path = require('path');
 
 var taskName = "Scripts task";
 
@@ -19,37 +21,31 @@ var notifySuccess = lib.notifySuccess(taskName);
 var notifyError = lib.notifyError(taskName);
 var errorHandler = lib.createErrorHandler(notifyError);
 
-var compile = function (path, name, successMessage) {
-    var task = function () {
-        return gulp.src(path)
-            .pipe(plumber(errorHandler))
-            .pipe(resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
-            .pipe(jshint())
-            .pipe(jscs())
-            .pipe(sourcemaps.init())
-            .pipe(concat(name))
-            .pipe(uglify())
-            .pipe(sourcemaps.write())
-            .pipe(rename({ suffix: '.min' }))
-            .pipe(gulp.dest(config.scripts.dist));
-    };
+var compile = function (p, name, successMessage) {
+    var paths = p.map(function (z) {
+        return path.join(config.path, z);
+    });
 
-    return lib.fileExists(path,
-        function (p) { return task().pipe(notifySuccess(successMessage)); },
-        function (p) {
-            return notifyError(util.format(resources.fileNotFound, p));
-        });
+    return gulp.src(paths)
+        .pipe(plumber(errorHandler))
+        .pipe(resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
+        .pipe(jshint())
+        .pipe(jscs())
+        .pipe(sourcemaps.init())
+        .pipe(concat(name))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(rename({ suffix: '.min.js' }))
+        .pipe(gulp.dest(config.scripts.dist))
+        .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 
 gulp.task('compile-js', function () {
-    return compile(config.scripts.baseDir + "/master.js", "master.js", resources.compileJSSuccess);
-});
-
-gulp.task('compile-js-components', function () {
-    return config.components.map(function (c) {
-        return compile(config.scripts.baseDir + "/components/" + c + ".js", c + ".js",
-            util.format(resources.compileJSComponentSuccess, c));
+    return config.bundles.filter(function (b) {
+        return b.scripts != null;
+    }).map(function (b) {
+        return compile(b.scripts, b.name, "");
     });
 });
 
-gulp.task('scripts', ['compile-js', 'compile-js-components']);
+gulp.task('scripts', ['compile-js']);

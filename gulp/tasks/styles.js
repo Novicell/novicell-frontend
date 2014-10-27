@@ -10,6 +10,8 @@ var util = require('util');
 var resources = require('../resources.json');
 var plumber = require('gulp-plumber');
 var newer = require('gulp-newer');
+var path = require('path');
+var concat = require('gulp-concat');
 
 var taskName = "Styles task";
 
@@ -17,33 +19,28 @@ var notifySuccess = lib.notifySuccess(taskName);
 var notifyError = lib.notifyError(taskName);
 var errorHandler = lib.createErrorHandler(notifyError);
 
-var compile = function (path, successMessage) {
-    var task = function () {
-        return gulp.src(path)
-            .pipe(plumber(errorHandler))
-            .pipe(less())
-            .pipe(gulpif(!config.debug, autoprefixer(config.styles.vendorPrefixes)))
-            .pipe(minifyCSS())
-            .pipe(rename({ suffix: '.min' }))
-	        .pipe(gulp.dest(config.styles.dist));
-    };
+var compile = function (p, name, successMessage) {
+    var paths = p.map(function (z) {
+        return path.join(config.path, z);
+    });
 
-    return lib.fileExists(path,
-        function (p) { return task().pipe(notifySuccess(successMessage)); },
-        function (p) {
-            return notifyError(util.format(resources.fileNotFound, p));
-        });
+    return gulp.src(paths)
+        .pipe(plumber(errorHandler))
+        .pipe(less())
+        .pipe(gulpif(!config.debug, autoprefixer(config.styles.vendorPrefixes)))
+        .pipe(concat(name))
+        .pipe(minifyCSS())
+        .pipe(rename({ suffix: '.min.css' }))
+	    .pipe(gulp.dest(config.styles.dist))
+        .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 
 gulp.task('compile-less', function () {
-    return compile(config.styles.baseDir + '/master.less', resources.compileLESSSuccess);
-});
-
-gulp.task('compile-less-components', function () {
-    return config.components.map(function (c) {
-        return compile(config.styles.baseDir + '/components/' + c + '.less', 
-            util.format(resources.compileLESSComponentSuccess, c));
+    return config.bundles.filter(function (b) {
+        return b.styles != null;
+    }).map(function (b) {
+        return compile(b.styles, b.name, "");
     });
 });
 
-gulp.task('styles', ['compile-less', 'compile-less-components']);
+gulp.task('styles', ['compile-less']);

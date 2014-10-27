@@ -1,5 +1,5 @@
 {
-    "fileNotFound": "File not found: %s",
+    "fileNotFound": "Files not found: %s",
     
     "minifyIconsSuccess": "Minifed Icons.",
     "minifyImagesSuccess": "Minifed Images.",

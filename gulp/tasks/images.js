@@ -5,6 +5,8 @@ var lib = require('../lib.js');
 var resources = require('../resources.json');
 var plumber = require('gulp-plumber');
 var newer = require('gulp-newer');
+var gulpif = require('gulp-if');
+var path = require('path');
 
 var taskName = "Images task";
 
@@ -12,15 +14,12 @@ var notifySuccess = lib.notifySuccess(taskName);
 var notifyError = lib.notifyError(taskName);
 var errorHandler = lib.createErrorHandler(notifyError);
 
-gulp.task('minify-images', function () {
+var minifyImages = function (p) {
+    var paths = p.map(function (z) {
+        return path.join(config.path, z);
+    });
 
-    var fileFormats = config.images.fileFormats.length == 1
-        ? config.images.fileFormats[0]
-        : "{" + config.images.fileFormats.join() + "}";
-
-    var path = config.images.baseDir + "/*." + fileFormats;
-
-    return gulp.src(path)
+    return gulp.src(paths)
         .pipe(plumber(errorHandler))
         .pipe(newer(config.images.dist))
         .pipe(imagemin({
@@ -29,7 +28,14 @@ gulp.task('minify-images', function () {
             interlaced: config.images.interlaced
         }))
         .pipe(gulp.dest(config.images.dist))
-        .pipe(notifySuccess(resources.minifyImagesSuccess))
-});
+        .pipe(gulpif(config.notifyOnSuccess, notifySuccess(resources.minifyImagesSuccess)));
+};
 
+gulp.task('minify-images', function () {
+    return config.bundles.filter(function (b) {
+        return b.images != null;
+    }).map(function (b) {
+        return minifyImages(b.images);
+    });
+});
 gulp.task('images', ['minify-images']);

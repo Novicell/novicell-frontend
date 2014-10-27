@@ -1,38 +1,87 @@
 {
     "debug": false,
+    "notifyOnSuccess": false,
+
+    "path": "./",
     
-    "path": "/wp-content/themes/sometheme/",
-    "tasks": ["build", "styles", "scripts", "images", "icons", "watch"],
-    "buildTasks": ["styles", "scripts", "images", "icons"],
-    "components": ["map"],
+    "tasks": [
+        "build", 
+        "styles", 
+        "scripts", 
+        "images", 
+        "icons", 
+        "watch", 
+        "livereload"
+    ],
+
+    "buildTasks": [
+        "styles", 
+        "scripts", 
+        "images", 
+        "icons"
+    ],
 
     "styles": {
-        "baseDir": "less",
-        "dist": "css/compiled",
-        "vendorPrefixes": ["last 2 version", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"]
+        "dist": "dist/css",
+
+        "vendorPrefixes": [
+            "last 2 version", 
+            "safari 5", 
+            "ie 8", 
+            "ie 9", 
+            "opera 12.1", 
+            "ios 6", 
+            "android 4"
+        ]
     },
 
     "scripts": {
-        "baseDir": "scripts",
-        "dist": "scripts/compiled"
-    },
-
-    "partials": {
-        "baseDir": ["marcroScript", "MasterPages"],
-        "fileExtention": ["cshtml", "master", "xslt", "php", "phtml", "html"]
+        "dist": "dist/scripts"
     },
 
     "images": {
-        "baseDir": "images",
-        "dist": "images/compiled",
-        "fileFormats": ["jpg", "png", "gif"],
+        "dist": "dist/images",
         "optimizationLevel": 5,
         "progressive": true,
         "interlaced": true
     },
 
     "icons": {
-        "baseDir": "images/icons",
-        "dist": "images/icons/compiled"
+        "dist": "dist/images/icons"
+    },
+
+    "bundles": [{
+        "name"      : "app",
+        "scripts"   : [ "scripts/master.js" ],
+        "styles"    : [ "less/master.less" ],
+        "images"    : [ "images/*.{jpg,png}" ],
+        "icons"     : [ "images/icons/*.svg" ]
+    },
+    {
+        "name"      : "mapComponent",
+        "scripts"   : [ "scripts/components/map.js" ],
+        "styles"    : [ "less/components/map.less" ]
+    },
+    {
+        "name"      : "vendor",
+        "scripts"   : [ "vendor/bootstrap/scripts/*" ],
+        "styles"    : [ "vendor/bootstrap/less/*" ]
+    }],
+
+    "watch": {
+        "scripts"   : [ "scripts/**/*.js" ],
+        "styles"    : [ "less/**/*.less" ],
+        "images"    : [ "images/*" ],
+        "icons"     : [ "images/icons/*" ]
+    },
+
+    "livereload": {
+        "port": 1337,
+        "paths": [
+            "dist/scripts/*.js",
+            "dist/styles/*.css",
+            "macroScripts/*.{cshtml,master,xslt,php,phtml,html}",
+            "MasterPages/*.{cshtml,master,xslt,php,phtml,html}"
+        ]
     }
 }

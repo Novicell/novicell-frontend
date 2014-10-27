@@ -32,11 +32,11 @@ module.exports.notifySuccessFile = function (title) {
     };
 };
 
-module.exports.fileExists = function (filename, successCallback, errorCallback)
+module.exports.getFilesNotFound = function (paths)
 {
-    return fs.exists(filename, function (exists) {
-        return exists ? successCallback(filename) : errorCallback(filename);
-    });
+    return paths.map(function (z) {
+        return fs.existsSync(z) ? null : z;
+    }).filter(function (z) { return z != null; });
 };
 
 module.exports.createErrorHandler = function (n) {

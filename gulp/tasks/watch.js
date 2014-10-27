@@ -1,18 +1,26 @@
 var gulp = require('gulp');
 var config = require('../../gulp-config.json');
-var livereload = require('gulp-livereload');
+var path = require('path');
 
 gulp.task('watch', function () {
-    gulp.watch(config.styles.baseDir + "/**/*.less", ['styles']);
-    gulp.watch(config.scripts.baseDir + "/**/*.js", ['scripts']);
-    gulp.watch(config.images.baseDir + "/*", ["images"]);
-    gulp.watch(config.icons.baseDir + "/*", ["icons"]);
+    var scriptsPath = config.watch.scripts.map(function (p) {
+        return path.join(config.path, p);
+    });
 
-    var pathsToReload = [
-        config.styles.dist + "/*.css",
-        config.scripts.dist + "/*.js"
-    ];
+    var stylesPaths = config.watch.styles.map(function (p) {
+        return path.join(config.path, p);
+    });
 
-    livereload.listen(1337);
-    gulp.watch(pathsToReload).on('change', livereload.changed);
+    var imagesPaths = config.watch.images.map(function (p) {
+        return path.join(config.path, p);
+    });
+
+    var iconsPaths = config.watch.icons.map(function (p) {
+        return path.join(config.path, p);
+    });
+
+    gulp.watch(scriptsPath, ["scripts"]);
+    gulp.watch(stylesPaths, ["styles"]);
+    gulp.watch(imagesPaths, ["images"]);
+    gulp.watch(iconsPaths, ["icons"]);
 });
