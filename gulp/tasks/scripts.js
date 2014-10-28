@@ -3,7 +3,6 @@ var uglify = require('gulp-uglify');
 var lib = require('../lib.js');
 var config = require('../../gulp-config.json');
 var resolveDependencies = require('gulp-resolve-dependencies');
-var rename = require('gulp-rename');
 var jscs = require('gulp-jscs');
 var jshint = require('gulp-jshint');
 var resources = require('../resources.json');
@@ -31,11 +30,10 @@ var compile = function (p, name, successMessage) {
         .pipe(resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
         .pipe(jshint())
         .pipe(jscs())
-        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(concat(name))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(rename({ suffix: '.min.js' }))
         .pipe(gulp.dest(config.scripts.dist))
         .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
@@ -44,7 +42,7 @@ gulp.task('compile-js', function () {
     return config.bundles.filter(function (b) {
         return b.scripts != null;
     }).map(function (b) {
-        return compile(b.scripts, b.name, "");
+        return compile(b.scripts, b.name + ".min.js", "");
     });
 });
 

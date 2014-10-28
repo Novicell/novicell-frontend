@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
-var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var config = require('../../gulp-config.json');
 var gulpif = require('gulp-if');
@@ -30,7 +29,6 @@ var compile = function (p, name, successMessage) {
         .pipe(gulpif(!config.debug, autoprefixer(config.styles.vendorPrefixes)))
         .pipe(concat(name))
         .pipe(minifyCSS())
-        .pipe(rename({ suffix: '.min.css' }))
 	    .pipe(gulp.dest(config.styles.dist))
         .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
@@ -39,7 +37,7 @@ gulp.task('compile-less', function () {
     return config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
-        return compile(b.styles, b.name, "");
+        return compile(b.styles, b.name + ".min.css", "");
     });
 });
 
