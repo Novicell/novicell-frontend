@@ -14,12 +14,14 @@
         "livereload"
     ],
 
-    "buildTasks": [
+    "tasksToBuild": [
         "styles", 
         "scripts", 
         "images", 
         "icons"
     ],
+
+    "pathsToClean": [ "dist" ],
 
     "styles": {
         "dist": "dist/css",
