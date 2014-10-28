@@ -1,12 +1,8 @@
 {
-    "fileNotFound": "Files not found: %s",
+    "fileNotFound" : "Files not found: %s",
     
-    "minifyIconsSuccess": "Minifed Icons.",
-    "minifyImagesSuccess": "Minifed Images.",
-    
-    "compileJSSuccess": "Compiled JS Master.",
-    "compileJSComponentSuccess": "Compiled JS Component => %s.",
-
-    "compileLESSSuccess": "Compiled LESS Master.",
-    "compileLESSComponentSuccess": "Compiled LESS Component => %s."
+    "minifyIconsSuccess"    : "%s | Minifed Icons.",
+    "minifyImagesSuccess"   : "%s | Minifed Images.",
+    "compileJSSuccess"      : "%s | Compiled JS.",
+    "compileLESSSuccess"    : "%s | Compiled LESS."
 }

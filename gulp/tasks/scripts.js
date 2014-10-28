@@ -42,7 +42,7 @@ gulp.task('compile-js', function () {
     return config.bundles.filter(function (b) {
         return b.scripts != null;
     }).map(function (b) {
-        return compile(b.scripts, b.name + ".min.js", "");
+        return compile(b.scripts, b.name + ".min.js", util.format(resources.compileJSSuccess, b.name));
     });
 });
 

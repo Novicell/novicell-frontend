@@ -7,6 +7,7 @@ var newer = require('gulp-newer');
 var resources = require('../resources.json');
 var gulpif = require('gulp-if');
 var path = require('path');
+var util = require('util');
 
 var taskName = "Icons task";
 
@@ -14,7 +15,7 @@ var notifySuccess = lib.notifySuccess(taskName);
 var notifyError = lib.notifyError(taskName);
 var errorHandler = lib.createErrorHandler(notifyError);
 
-var minifyIcons = function (p) {
+var minifyIcons = function (p, successMessage) {
     var paths = p.map(function (z) {
         return path.join(config.path, z);
     });
@@ -24,14 +25,14 @@ var minifyIcons = function (p) {
         .pipe(newer(config.icons.dist))
         .pipe(svgo())
         .pipe(gulp.dest(config.icons.dist))
-        .pipe(gulpif(config.notifyOnSuccess, notifySuccess(resources.minifyIconsSuccess)));
+        .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 
 gulp.task('minify-icons', function () {
     return config.bundles.filter(function (b) {
         return b.icons != null;
     }).map(function (b) {
-        return minifyIcons(b.icons);
+        return minifyIcons(b.icons, util.format(resources.minifyIconsSuccess, b.name));
     });
 });
 

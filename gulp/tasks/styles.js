@@ -37,7 +37,7 @@ gulp.task('compile-less', function () {
     return config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
-        return compile(b.styles, b.name + ".min.css", "");
+        return compile(b.styles, b.name + ".min.css", util.format(resources.compileLESSSuccess, b.name));
     });
 });
 
