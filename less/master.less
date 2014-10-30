@@ -1,20 +1,45 @@
-@import "base/reset.less";
-@import "base/type.less";
-@import "base/grid.less";
-@import "base/forms.less";
-@import "base/site.less";
-@import "base/lists.less";
-@import "base/icons.less";
+// Core variables and mixins
+@import "../vendor/bower/bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../vendor/bower/bootstrap/less/mixins.less";
 
-@import "components/newsletter.less";
-@import "components/navigation.less";
-//@import "components/map.less";
-@import "components/slider.less";
+// Grid system and page structure
+@import "../vendor/bower/bootstrap/less/scaffolding.less";
+@import "../vendor/bower/bootstrap/less/grid.less";
 
-@import "views/blog.less";
-@import "views/textpage.less";
-@import "views/frontpage.less";
-@import "views/employees.less";
+// Base CSS
+//@import "../vendor/bower/bootstrap/less/type.less";
+//@import "../vendor/bower/bootstrap/less/code.less";
+//@import "../vendor/bower/bootstrap/less/forms.less";
+//@import "../vendor/bower/bootstrap/less/tables.less";
 
-@import "settings/bootstrap-overrides.less";
-//@import "settings/settings.less";
+// Components: common
+//@import "../vendor/bower/bootstrap/less/dropdowns.less";
+//@import "../vendor/bower/bootstrap/less/component-animations.less";
+//@import "../vendor/bower/bootstrap/less/close.less";
+
+// Components: Buttons & Alerts
+//@import "../vendor/bower/bootstrap/less/buttons.less";
+//@import "../vendor/bower/bootstrap/less/button-groups.less";
+//@import "../vendor/bower/bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+//@import "../vendor/bower/bootstrap/less/navs.less";
+//@import "../vendor/bower/bootstrap/less/navbar.less";
+//@import "../vendor/bower/bootstrap/less/breadcrumbs.less";
+//@import "../vendor/bower/bootstrap/less/pagination.less";
+//@import "../vendor/bower/bootstrap/less/pager.less";
+
+// Components: Popovers
+//@import "../vendor/bower/bootstrap/less/modals.less";
+//@import "../vendor/bower/bootstrap/less/tooltip.less";
+//@import "../vendor/bower/bootstrap/less/popovers.less";
+
+// Components: Misc
+//@import "../vendor/bower/bootstrap/less/thumbnails.less";
+//@import "../vendor/bower/bootstrap/less/media.less";
+//@import "../vendor/bower/bootstrap/less/progress-bars.less";
+//@import "../vendor/bower/bootstrap/less/carousel.less";
+
+// Utility classes
+//@import "../vendor/bower/bootstrap/less/utilities.less"; // Has to be last to override when necessary
+//@import "../vendor/bower/bootstrap/less/responsive-utilities.less"; // Has to be last to override when necessary

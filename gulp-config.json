@@ -1,28 +1,10 @@
-/*
-Gulp installation:
--------------------
-cd c:\"Visual studio projects"\project-name\Project.Website
-npm install
-
-Start Gulp
--------------------
-cd c:\"Visual studio projects"\project-name\Project.Website
-gulp watch // for starting listening for file changes
-gulp build // for building all resources
-
-Stop / restart Gulp
--------------------
-ctrl + c
-run gulp command to start gulp again
-
-
-*/
 {
     "debug": false,
-    "notifyOnSuccess": false,
+    "notifyOnSuccess": true,
 
     "path": "./",
-    
+    "bowerDir": "./vendor/bower",
+
     "tasks": [
         "build", 
         "styles", 
@@ -30,14 +12,16 @@ run gulp command to start gulp again
         "images", 
         "icons", 
         "watch", 
-        "livereload"
+        "livereload",
+        "bower"
     ],
 
     "tasksToBuild": [
         "styles", 
         "scripts", 
         "images", 
-        "icons"
+        "icons",
+        "bower"
     ],
 
     "pathsToClean": [ "dist" ],
@@ -72,7 +56,7 @@ run gulp command to start gulp again
     },
 
     "bundles": [{
-        "name"      : "app",
+        "name"      : "master",
         "scripts"   : [ "scripts/master.js" ],
         "styles"    : [ "less/master.less" ],
         "images"    : [ "images/*.{jpg,png}" ],
@@ -80,13 +64,11 @@ run gulp command to start gulp again
     },
     {
         "name"      : "mapComponent",
-        "scripts"   : [ "scripts/components/map.js" ],
-        "styles"    : [ "less/components/map.less" ]
+        "scripts"   : [ "scripts/components/map.js" ]
     },
     {
         "name"      : "vendor",
-        "scripts"   : [ "vendor/bootstrap/scripts/*" ],
-        "styles"    : [ "vendor/bootstrap/less/*" ]
+        "scripts"   : [ "vendor/bootstrap/scripts/*" ]
     }],
 
     "watch": {

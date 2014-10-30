@@ -30,10 +30,10 @@ var compile = function (p, name, successMessage) {
         .pipe(resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
         .pipe(jshint())
         .pipe(jscs())
-        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(gulpif(config.debug, sourcemaps.init({ loadMaps: true })))
         .pipe(concat(name))
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        .pipe(gulpif(config.debug, sourcemaps.write()))
         .pipe(gulp.dest(config.scripts.dist))
         .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
