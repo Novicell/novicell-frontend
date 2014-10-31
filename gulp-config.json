@@ -1,6 +1,6 @@
 {
     "debug": false,
-    "notifyOnSuccess": true,
+    "notifyOnSuccess": false,
 
     "path": "./",
     "bowerDir": "./vendor/bower",
@@ -11,8 +11,7 @@
         "scripts", 
         "images", 
         "icons", 
-        "watch", 
-        "livereload",
+        "watch",
         "bower"
     ],
 
@@ -24,10 +23,10 @@
         "bower"
     ],
 
-    "pathsToClean": [ "dist" ],
+    "pathsToClean": [ "./dist" ],
 
     "styles": {
-        "dist": "dist/css",
+        "dist": "./dist/css",
 
         "vendorPrefixes": [
             "last 2 version", 
@@ -41,50 +40,52 @@
     },
 
     "scripts": {
-        "dist": "dist/scripts"
+        "dist": "./dist/scripts"
     },
 
     "images": {
-        "dist": "dist/images",
+        "dist": "./dist/images",
         "optimizationLevel": 5,
         "progressive": true,
         "interlaced": true
     },
 
     "icons": {
-        "dist": "dist/images/icons"
+        "dist": "./dist/images/icons"
     },
 
     "bundles": [{
         "name"      : "master",
-        "scripts"   : [ "scripts/master.js" ],
-        "styles"    : [ "less/master.less" ],
-        "images"    : [ "images/*.{jpg,png}" ],
-        "icons"     : [ "images/icons/*.svg" ]
-    },
-    {
-        "name"      : "mapComponent",
-        "scripts"   : [ "scripts/components/map.js" ]
+        "scripts"   : [ "./scripts/master.js" ],
+        "styles"    : [ "./less/master.less" ],
+        "images"    : [ "./images/*.{jpg,png}" ],
+        "icons"     : [ "./images/icons/*.svg" ]
     },
     {
         "name"      : "vendor",
-        "scripts"   : [ "vendor/bootstrap/scripts/*" ]
+        "scripts"   : [ "./vendor/bootstrap/scripts/**/*.js" ]
     }],
 
     "watch": {
-        "scripts"   : [ "scripts/**/*.js" ],
-        "styles"    : [ "less/**/*.less" ],
-        "images"    : [ "images/*" ],
-        "icons"     : [ "images/icons/*" ]
+        "scripts"   : [ 
+            "./scripts/**/*.js",
+            "./vendor/**/*.js" 
+        ],
+        "styles"    : [ 
+            "./less/**/*.less", 
+            "./vendor/**/*.less" 
+        ],
+        "images"    : [ "./images/*" ],
+        "icons"     : [ "./images/icons/*" ]
     },
 
     "livereload": {
-        "port": 1337,
+        "port": 1337, 
         "paths": [
-            "dist/scripts/*.js",
-            "dist/styles/*.css",
-            "macroScripts/*.{cshtml,master,xslt,php,phtml,html}",
-            "MasterPages/*.{cshtml,master,xslt,php,phtml,html}"
+            "./dist/scripts/*.js",
+            "./dist/css/*.css",
+            "./macroScripts/*.{cshtml,master,xslt,php,phtml,html}",
+            "./MasterPages/*.{cshtml,master,xslt,php,phtml,html}"
         ]
     }
 }
