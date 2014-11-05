@@ -11,6 +11,7 @@ var plumber = require('gulp-plumber');
 var newer = require('gulp-newer');
 var path = require('path');
 var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
 
 var taskName = "Styles task";
 
@@ -20,16 +21,20 @@ var errorHandler = lib.createErrorHandler(notifyError);
 
 var compile = function (p, name, successMessage) {
     var paths = p.map(function (z) {
-        return path.join(config.path, z);
+        return path.join(config.basePath, z);
     });
+
+    var destination = path.join(path.join(config.basePath, config.distPath), config.styles.dist);
 
     return gulp.src(paths)
         .pipe(plumber(errorHandler))
         .pipe(less())
         .pipe(gulpif(!config.debug, autoprefixer(config.styles.vendorPrefixes)))
+        .pipe(gulpif(config.debug, sourcemaps.init({ loadMaps: true })))
         .pipe(concat(name))
         .pipe(minifyCSS())
-	    .pipe(gulp.dest(config.styles.dist))
+        .pipe(gulpif(config.debug, sourcemaps.write()))
+	    .pipe(gulp.dest(destination))
         .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 

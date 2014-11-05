@@ -1,9 +1,11 @@
 {
-    "debug": false,
+    "debug": true,
     "notifyOnSuccess": false,
 
-    "path": "./",
-    "bowerDir": "./vendor/bower",
+    "basePath": "./",
+    "distPath": "./dist",
+    "bowerPath": "./vendor/bower",
+    "pathsToClean": [ "./dist" ],
 
     "tasks": [
         "build", 
@@ -12,21 +14,21 @@
         "images", 
         "icons", 
         "watch",
-        "bower"
+        "bower",
+        "fonts"
     ],
 
     "tasksToBuild": [
+        "bower",
         "styles", 
         "scripts", 
         "images", 
         "icons",
-        "bower"
+        "fonts"
     ],
 
-    "pathsToClean": [ "./dist" ],
-
     "styles": {
-        "dist": "./dist/css",
+        "dist": "./css",
 
         "vendorPrefixes": [
             "last 2 version", 
@@ -40,18 +42,22 @@
     },
 
     "scripts": {
-        "dist": "./dist/scripts"
+        "dist": "./scripts"
     },
 
     "images": {
-        "dist": "./dist/images",
+        "dist": "./images",
         "optimizationLevel": 5,
         "progressive": true,
         "interlaced": true
     },
 
     "icons": {
-        "dist": "./dist/images/icons"
+        "dist": "./images/icons"
+    },
+
+    "fonts": {
+        "dist": "./fonts"
     },
 
     "bundles": [{
@@ -59,7 +65,8 @@
         "scripts"   : [ "./scripts/master.js" ],
         "styles"    : [ "./less/master.less" ],
         "images"    : [ "./images/*.{jpg,png}" ],
-        "icons"     : [ "./images/icons/*.svg" ]
+        "icons"     : [ "./images/icons/*.svg" ],
+        "fonts"     : [ "./fonts/*" ]
     },
     {
         "name"      : "vendor",
@@ -76,7 +83,8 @@
             "./vendor/**/*.less" 
         ],
         "images"    : [ "./images/*" ],
-        "icons"     : [ "./images/icons/*" ]
+        "icons"     : [ "./images/icons/*" ],
+        "fonts"     : [ "./fonts/*" ]
     },
 
     "livereload": {

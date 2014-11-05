@@ -22,8 +22,10 @@ var errorHandler = lib.createErrorHandler(notifyError);
 
 var compile = function (p, name, successMessage) {
     var paths = p.map(function (z) {
-        return path.join(config.path, z);
+        return path.join(config.basePath, z);
     });
+
+    var destination = path.join(path.join(config.basePath, config.distPath), config.scripts.dist);
 
     return gulp.src(paths)
         .pipe(plumber(errorHandler))
@@ -34,7 +36,7 @@ var compile = function (p, name, successMessage) {
         .pipe(concat(name))
         .pipe(uglify())
         .pipe(gulpif(config.debug, sourcemaps.write()))
-        .pipe(gulp.dest(config.scripts.dist))
+        .pipe(gulp.dest(destination))
         .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 

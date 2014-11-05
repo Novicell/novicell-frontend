@@ -17,18 +17,20 @@ var errorHandler = lib.createErrorHandler(notifyError);
 
 var minifyImages = function (p, successMessage) {
     var paths = p.map(function (z) {
-        return path.join(config.path, z);
+        return path.join(config.basePath, z);
     });
+
+    var destination = path.join(path.join(config.basePath, config.distPath), config.images.dist);
 
     return gulp.src(paths)
         .pipe(plumber(errorHandler))
-        .pipe(newer(config.images.dist))
+        .pipe(newer(destination))
         .pipe(imagemin({
             optimizationLevel: config.images.optimizationLevel,
             progressive: config.images.progressive,
             interlaced: config.images.interlaced
         }))
-        .pipe(gulp.dest(config.images.dist))
+        .pipe(gulp.dest(destination))
         .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 

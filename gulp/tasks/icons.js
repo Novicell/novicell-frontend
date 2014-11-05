@@ -17,14 +17,16 @@ var errorHandler = lib.createErrorHandler(notifyError);
 
 var minifyIcons = function (p, successMessage) {
     var paths = p.map(function (z) {
-        return path.join(config.path, z);
+        return path.join(config.basePath, z);
     });
+
+    var destination = path.join(path.join(config.basePath, config.distPath), config.icons.dist);
 
     return gulp.src(paths)
         .pipe(plumber(errorHandler))
-        .pipe(newer(config.icons.dist))
+        .pipe(newer(destination))
         .pipe(svgo())
-        .pipe(gulp.dest(config.icons.dist))
+        .pipe(gulp.dest(destination))
         .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 

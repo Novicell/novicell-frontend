@@ -5,7 +5,7 @@ var path = require('path');
 
 gulp.task('clean', function () {
     var dirs = config.pathsToClean.map(function (d) { 
-        return path.join(config.path, d); 
+        return path.join(config.basePath, d); 
     });
 
     return del(dirs);
