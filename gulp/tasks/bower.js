@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var config = require('../../gulp-config.json');
-var bower = require('gulp-bower');
+var plugins = require('gulp-load-plugins')();
 
 gulp.task("bower", function () {
-    return bower({ directory: config.bowerPath });
+    return plugins.bower({ directory: config.bowerPath });
 });

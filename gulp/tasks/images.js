@@ -1,13 +1,10 @@
 var gulp = require('gulp');
-var imagemin = require('gulp-imagemin');
 var config = require('../../gulp-config.json');
 var lib = require('../lib.js');
 var resources = require('../resources.json');
-var plumber = require('gulp-plumber');
-var newer = require('gulp-newer');
-var gulpif = require('gulp-if');
-var path = require('path');
 var util = require('util');
+var path = require('path');
+var plugins = require('gulp-load-plugins')();
 
 var taskName = "Images task";
 
@@ -23,15 +20,15 @@ var minifyImages = function (p, successMessage) {
     var destination = path.join(path.join(config.basePath, config.distPath), config.images.dist);
 
     return gulp.src(paths)
-        .pipe(plumber(errorHandler))
-        .pipe(newer(destination))
-        .pipe(imagemin({
+        .pipe(plugins.plumber(errorHandler))
+        .pipe(plugins.newer(destination))
+        .pipe(plugins.imagemin({
             optimizationLevel: config.images.optimizationLevel,
             progressive: config.images.progressive,
             interlaced: config.images.interlaced
         }))
         .pipe(gulp.dest(destination))
-        .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
+        .pipe(plugins.if(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 
 gulp.task('minify-images', function () {

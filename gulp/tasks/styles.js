@@ -1,17 +1,10 @@
 var gulp = require('gulp');
-var less = require('gulp-less');
-var minifyCSS = require('gulp-minify-css');
-var autoprefixer = require('gulp-autoprefixer');
 var config = require('../../gulp-config.json');
-var gulpif = require('gulp-if');
 var lib = require('../lib.js');
 var util = require('util');
 var resources = require('../resources.json');
-var plumber = require('gulp-plumber');
-var newer = require('gulp-newer');
 var path = require('path');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
+var plugins = require('gulp-load-plugins')();
 
 var taskName = "Styles task";
 
@@ -24,18 +17,19 @@ var compile = function (p, name, successMessage) {
         return path.join(config.basePath, z);
     });
 
+    console.log(plugins.camelize);
     var destination = path.join(path.join(config.basePath, config.distPath), config.styles.dist);
 
     return gulp.src(paths)
-        .pipe(plumber(errorHandler))
-        .pipe(less())
-        .pipe(gulpif(!config.debug, autoprefixer(config.styles.vendorPrefixes)))
-        .pipe(gulpif(config.debug, sourcemaps.init({ loadMaps: true })))
-        .pipe(concat(name))
-        .pipe(minifyCSS())
-        .pipe(gulpif(config.debug, sourcemaps.write()))
+        .pipe(plugins.plumber(errorHandler))
+        .pipe(plugins.less())
+        .pipe(plugins.if(!config.debug, plugins.autoprefixer(config.styles.vendorPrefixes)))
+        .pipe(plugins.if(config.debug, plugins.sourcemaps.init({ loadMaps: true })))
+        .pipe(plugins.concat(name))
+        .pipe(plugins.minifyCss())
+        .pipe(plugins.if(config.debug, plugins.sourcemaps.write()))
 	    .pipe(gulp.dest(destination))
-        .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
+        .pipe(plugins.if(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 
 gulp.task('compile-less', function () {

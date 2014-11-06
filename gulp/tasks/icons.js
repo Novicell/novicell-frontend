@@ -1,13 +1,10 @@
 var gulp = require('gulp');
-var svgo = require('imagemin-svgo');
 var lib = require('../lib.js');
-var plumber = require('gulp-plumber');
 var config = require('../../gulp-config.json');
-var newer = require('gulp-newer');
 var resources = require('../resources.json');
-var gulpif = require('gulp-if');
 var path = require('path');
 var util = require('util');
+var plugins = require('gulp-load-plugins')();
 
 var taskName = "Icons task";
 
@@ -23,11 +20,11 @@ var minifyIcons = function (p, successMessage) {
     var destination = path.join(path.join(config.basePath, config.distPath), config.icons.dist);
 
     return gulp.src(paths)
-        .pipe(plumber(errorHandler))
-        .pipe(newer(destination))
-        .pipe(svgo())
+        .pipe(plugins.plumber(errorHandler))
+        .pipe(plugins.newer(destination))
+        .pipe(plugins.imagemin())
         .pipe(gulp.dest(destination))
-        .pipe(gulpif(config.notifyOnSuccess, notifySuccess(successMessage)));
+        .pipe(plugins.if(config.notifyOnSuccess, notifySuccess(successMessage)));
 };
 
 gulp.task('minify-icons', function () {

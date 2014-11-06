@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 var config = require('../../gulp-config.json');
-var del = require('del');
 var path = require('path');
+var del = require('del');
+var plugins = require('gulp-load-plugins')();
 
 gulp.task('clean', function () {
     var dirs = config.pathsToClean.map(function (d) { 
