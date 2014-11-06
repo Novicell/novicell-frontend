@@ -70,6 +70,7 @@
     },
     {
         "name"      : "vendor",
+        "ignores"    : [ "jscs", "jshint" ],
         "scripts"   : [ "./vendor/bootstrap/scripts/**/*.js" ]
     }],
 

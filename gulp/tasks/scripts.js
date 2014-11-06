@@ -20,7 +20,7 @@ var notifySuccess = lib.notifySuccess(taskName);
 var notifyError = lib.notifyError(taskName);
 var errorHandler = lib.createErrorHandler(notifyError);
 
-var compile = function (p, name, successMessage) {
+var compile = function (p, name, useJshint, useJscs, successMessage) {
     var paths = p.map(function (z) {
         return path.join(config.basePath, z);
     });
@@ -30,8 +30,8 @@ var compile = function (p, name, successMessage) {
     return gulp.src(paths)
         .pipe(plumber(errorHandler))
         .pipe(resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
-        .pipe(jshint())
-        .pipe(jscs())
+        .pipe(gulpif(useJshint, jshint()))
+        .pipe(gulpif(useJscs, jscs()))
         .pipe(gulpif(config.debug, sourcemaps.init({ loadMaps: true })))
         .pipe(concat(name))
         .pipe(uglify())
@@ -44,7 +44,12 @@ gulp.task('compile-js', function () {
     return config.bundles.filter(function (b) {
         return b.scripts != null;
     }).map(function (b) {
-        return compile(b.scripts, b.name + ".min.js", util.format(resources.compileJSSuccess, b.name));
+        var ignores = b.ignores != null ? b.ignores : [];
+
+        return compile(b.scripts, b.name + ".min.js",
+            ignores.indexOf("jshint") == -1,
+            ignores.indexOf("jscs") == -1,
+            util.format(resources.compileJSSuccess, b.name));
     });
 });
 
