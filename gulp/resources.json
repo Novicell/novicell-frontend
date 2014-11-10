@@ -1,8 +1,0 @@
-{
-    "fileNotFound" : "Files not found: %s",
-    
-    "minifyIconsSuccess"    : "%s | Minifed Icons.",
-    "minifyImagesSuccess"   : "%s | Minifed Images.",
-    "compileJSSuccess"      : "%s | Compiled JS.",
-    "compileLESSSuccess"    : "%s | Compiled LESS."
-}

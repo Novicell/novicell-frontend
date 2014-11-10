@@ -1,5 +1,5 @@
-var config = require('../gulp-config.json');
+var config = require('./config.js');
 
-config.tasks.forEach(function (x) {
+config.loadTasks.forEach(function (x) { 
     require('./tasks/' + x);
 });
