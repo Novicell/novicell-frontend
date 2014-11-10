@@ -1,9 +1,10 @@
 ﻿var gulp = require('gulp');
 var config = require('../config.js');
+var mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('html2js', function () {
-    return config.bundles.filter(function (b) {
+    var streams = config.bundles.filter(function (b) {
         return b.tpl != null;
     }).map(function (b) {
         var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
@@ -28,4 +29,6 @@ gulp.task('html2js', function () {
             .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.write()))
             .pipe(gulp.dest(config.scriptsDist));
     });
+
+    return mergeStream(streams);
 });

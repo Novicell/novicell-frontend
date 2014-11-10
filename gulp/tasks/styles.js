@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var config = require('../config.js');
+var mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
-gulp.task('styles', function (z) {
-    return config.bundles.filter(function (b) {
+gulp.task('styles', function () {
+    var streams = config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
-        console.log(z);
         var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
 
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
@@ -20,4 +20,6 @@ gulp.task('styles', function (z) {
             .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.write()))
             .pipe(gulp.dest(config.stylesDist));
     });
+
+    return mergeStream(streams);
 });

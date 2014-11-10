@@ -1,9 +1,10 @@
 var gulp = require('gulp');
 var config = require('../config.js');
+var mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('icons', function () {
-    return config.bundles.filter(function (b) {
+    var streams = config.bundles.filter(function (b) {
         return b.icons != null;
     }).map(function (b) {
         var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
@@ -17,4 +18,6 @@ gulp.task('icons', function () {
             .pipe(plugins.if(useImagemin, plugins.imagemin()))
             .pipe(gulp.dest(config.iconsDist));
     });
+
+    return mergeStream(streams);
 });
