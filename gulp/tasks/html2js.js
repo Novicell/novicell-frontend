@@ -1,5 +1,6 @@
 ﻿var gulp = require('gulp');
 var config = require('../config.js');
+var argv = require('yargs').argv;
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('html2js', function () {
@@ -10,7 +11,7 @@ gulp.task('html2js', function () {
 
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
         var useUglify = ignores.indexOf("uglify") == -1;
-        
+
         return gulp.src(b.tpl)
             .pipe(plugins.plumber(config.errorHandler("html2js")))
             .pipe(plugins.minifyHtml({
@@ -22,10 +23,10 @@ gulp.task('html2js', function () {
                 moduleName: config.projectName + '.Module.Templates',
                 prefix: ''
             }))
-            .pipe(plugins.if(config.debug && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.if((!config.debug || !argv.debug) && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
             .pipe(plugins.concat(b.name + "-tpl" + (!config.debug ? ".min" : "") + ".js"))
-            .pipe(plugins.if(!config.debug && useUglify, plugins.uglify()))
-            .pipe(plugins.if(config.debug && useSourcemaps, plugins.sourcemaps.write()))
+            .pipe(plugins.if((!config.debug || !argv.debug) && useUglify, plugins.uglify()))
+            .pipe(plugins.if((!config.debug || !argv.debug) && useSourcemaps, plugins.sourcemaps.write()))
             .pipe(gulp.dest(config.scriptsDist));
     });
 });

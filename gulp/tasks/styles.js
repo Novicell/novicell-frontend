@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var config = require('../config.js');
+var argv = require('yargs').argv;
 var plugins = require('gulp-load-plugins')();
 
-gulp.task('styles', function () {
+gulp.task('styles', function (z) {
     return config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
@@ -13,10 +14,10 @@ gulp.task('styles', function () {
 
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler("styles")))
-            .pipe(plugins.if(config.debug && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.if((!config.debug || !argv.debug) && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
             .pipe(plugins.less())
-            .pipe(plugins.if(!config.debug && useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
-            .pipe(plugins.if(config.debug && useSourcemaps, plugins.sourcemaps.write()))
+            .pipe(plugins.if((!config.debug || !argv.debug) && useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
+            .pipe(plugins.if((!config.debug || !argv.debug) && useSourcemaps, plugins.sourcemaps.write()))
             .pipe(gulp.dest(config.stylesDist));
     });
 });
