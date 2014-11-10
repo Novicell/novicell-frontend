@@ -12,12 +12,14 @@ gulp.task('styles', function (z) {
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
         var useAutoprefixer = ignores.indexOf("autoprefixer") == -1;
 
+        var debug = config.debug || (argv.debug !== undefined && argv.debug);
+
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler("styles")))
-            .pipe(plugins.if((!config.debug || !argv.debug) && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.if(debug && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
             .pipe(plugins.less())
-            .pipe(plugins.if((!config.debug || !argv.debug) && useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
-            .pipe(plugins.if((!config.debug || !argv.debug) && useSourcemaps, plugins.sourcemaps.write()))
+            .pipe(plugins.if(debug && useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
+            .pipe(plugins.if(debug && useSourcemaps, plugins.sourcemaps.write()))
             .pipe(gulp.dest(config.stylesDist));
     });
 });
