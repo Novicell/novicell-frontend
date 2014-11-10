@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var config = require('../config.js');
-var argv = require('yargs').argv;
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('scripts', function () {
@@ -14,17 +13,15 @@ gulp.task('scripts', function () {
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
         var useUglify = ignores.indexOf("uglify") == -1;
 
-        var debug = config.debug || (argv.debug !== undefined && argv.debug);
-
         return gulp.src(b.scripts)
             .pipe(plugins.plumber(config.errorHandler("scripts")))
             .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
             .pipe(plugins.if(useJshint, plugins.jshint()))
             .pipe(plugins.if(useJscs, plugins.jscs()))
-            .pipe(plugins.if(debug && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
             .pipe(plugins.concat(b.name + ".min.js"))
             .pipe(plugins.if(useUglify, plugins.uglify()))
-            .pipe(plugins.if(debug && useSourcemaps, plugins.sourcemaps.write()))
+            .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.write()))
             .pipe(gulp.dest(config.scriptsDist));
     });
 });

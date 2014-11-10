@@ -1,4 +1,5 @@
 ﻿var notifier = require('node-notifier');
+var argv = require('yargs').argv;
 
 module.exports = (function () {
     var projectName = "novicell-gulp";
@@ -9,8 +10,10 @@ module.exports = (function () {
 
     var cleanPaths = [distPath];
 
-    return {
-        debug: true,
+    var debug = true;
+
+    return { 
+        debug: (argv.debug !== undefined ? argv.debug == "true" : debug),
 
         errorHandler: function(taskName) 
         {
