@@ -13,7 +13,7 @@ module.exports = (function () {
     var debug = true;
 
     return { 
-        debug: (argv.debug !== undefined ? argv.debug == "true" : debug),
+        debug: (argv.debug !== undefined ? argv.debug.toLowerCase() == "true" : debug),
 
         errorHandler: function(taskName) 
         {
