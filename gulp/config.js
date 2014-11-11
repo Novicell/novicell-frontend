@@ -33,12 +33,11 @@ module.exports = (function () {
         loadTasks: [
             "bower", "styles", "scripts",
             "images", "icons", "copy",
-            "watch", "build", "html2js"
+            "watch", "build"
         ],
         buildTasks: [
             "bower", "styles", "scripts",
-            "images", "icons", "copy",
-            "html2js"
+            "images", "icons", "copy"
         ],
 
         // ------------- Scripts -------------
