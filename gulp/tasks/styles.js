@@ -16,6 +16,7 @@ gulp.task('styles', function () {
             .pipe(plugins.plumber(config.errorHandler("styles")))
             .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
             .pipe(plugins.less())
+            .pipe(plugins.concat(b.name + ".min.css"))
             .pipe(plugins.if(!config.debug && useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
             .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.write()))
             .pipe(gulp.dest(config.stylesDist));
