@@ -12,10 +12,10 @@ module.exports = (function () {
 
     var debug = true;
 
-    return { 
+    return {
         debug: (argv.debug !== undefined ? argv.debug.toLowerCase() == "true" : debug),
 
-        errorHandler: function(taskName) 
+        errorHandler: function(taskName)
         {
             return function (e) {
                 notifier.notify({
@@ -45,6 +45,23 @@ module.exports = (function () {
 
         // ------------- Icons -------------
         iconsDist: distPath + "/images/icons",
+
+        // ------------- SVG Sprite ----------
+        spriteDist: distPath + "/images/icons",
+        spriteConfig: {
+            mode : {
+                view : { // Activate the «view» mode
+                    bust : false,
+                    render : {
+                        less : true
+                    },
+                    dest : "/dist/images/svg/view"
+                },
+                symbol : {
+                    dest : "/dist/images"
+                }
+            }
+        },
 
         // ------------- Fonts -------------
         fontsDist: distPath + "/fonts",

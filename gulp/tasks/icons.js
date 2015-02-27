@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var config = require('../config.js');
 var mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
+var svgSprite = require('gulp-svg-sprite');
 
 gulp.task('icons', function () {
     var streams = config.bundles.filter(function (b) {
@@ -14,9 +15,9 @@ gulp.task('icons', function () {
 
         return gulp.src(b.icons)
             .pipe(plugins.plumber(config.errorHandler("icons")))
-            .pipe(plugins.if(useNewer, plugins.newer(config.iconsDist)))
+            .pipe(svgSprite(config.spriteConfig))
             .pipe(plugins.if(useImagemin, plugins.imagemin()))
-            .pipe(gulp.dest(config.iconsDist));
+            .pipe(gulp.dest(config.spriteDist));
     });
 
     return mergeStream(streams);
