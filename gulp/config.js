@@ -43,11 +43,8 @@ module.exports = (function () {
         // ------------- Scripts -------------
         scriptsDist: distPath + "/scripts",
 
-        // ------------- Icons -------------
-        iconsDist: distPath + "/images/icons",
-
-        // ------------- SVG Sprite ----------
-        spriteDist: distPath + "/images/icons",
+        // ------------- Icons ---------------
+        iconsDist: distPath + "/images",
         spriteConfig: {
             mode : {
                 view : { // Activate the «view» mode
