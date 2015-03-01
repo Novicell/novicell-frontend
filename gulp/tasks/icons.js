@@ -1,3 +1,10 @@
+/*
+    Use icons like:
+    <svg class="icon-search">
+        <use xlink:href="/dist/icons/icons.svg#icon-search"></use>
+    </svg>
+*/
+
 var gulp = require('gulp');
 var config = require('../config.js');
 var mergeStream = require('merge-stream');

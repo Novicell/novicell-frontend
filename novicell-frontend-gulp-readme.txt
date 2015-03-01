@@ -10,7 +10,7 @@ What is GULP?
 
 GULP is a streaming build system - or short for:
 
-"I'll take care of minifiyng the images, scripts, styles and icons 
+"I'll take care of minifiyng the images, scripts, styles and icons
 - now you just focus on doing what you do best: CODE!"
 
 In this package, the following tasks are available:
@@ -24,8 +24,8 @@ In this package, the following tasks are available:
 - icons     Minifies icons defined in: gulp-config.json > bundles > {bundleName} > icons
 - fonts     Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
 
-- watch     
-    Runs the scripts, styles, images, icons and fonts task whenever a file has changed. 
+- watch
+    Runs the scripts, styles, images, icons and fonts task whenever a file has changed.
     The paths it listens on, is defined in: gulp-config.json > watch.
 
     Also it automatically refreshes your browser window, using livereload (port can be changed in gulp-config.json > livereload > port).
@@ -48,3 +48,21 @@ To never touch the cmd window again:    gulp watch  => (runs the watch task)
 To Stop/Restart GULP:                   CTRl + c
 
 All tasks can be run like: "gulp <task name>".
+
+
+
+How to use SVG sprite sheet:
+-----------------------------------------------------------------------------
+
+HTML:
+------------------------------------
+Remember to set correct path and id of chosen symbol, in svg href value.
+
+<svg class="icon-search">
+    <use xlink:href="/dist/icons/icons.svg#icon-search"></use>
+</svg>
+
+
+CSS/LESS:
+------------------------------------
+Use classes in "/dist/icons/icons.less".
