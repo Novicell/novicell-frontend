@@ -44,18 +44,27 @@ module.exports = (function () {
         scriptsDist: distPath + "/scripts",
 
         // ------------- Icons ---------------
-        iconsDist: distPath + "/images",
+        iconsDist: distPath,
         spriteConfig: {
+            shape : {
+                // Set maximum dimensions
+                dimension       : {
+                    maxWidth    : 32,
+                    maxHeight   : 32
+                }
+            },
             mode : {
-                view : { // Activate the «view» mode
+                view : {
                     bust : false,
                     render : {
                         less : true
                     },
-                    dest : "/dist/images/svg/view"
+                    dest : 'icons',
+                    sprite : 'icons-css.svg'
                 },
                 symbol : {
-                    dest : "/dist/images"
+                    dest : 'icons',
+                    sprite : 'icons.svg'
                 }
             }
         },

@@ -21,7 +21,7 @@ In this package, the following tasks are available:
 - styles*   Minifies and bundles CSS files defined in: gulp-config.json > bundles > {bundleName} > styles
 - scripts*  Minifies and bundles JS files defined in: gulp-config.json > bundles > {bundleName} > scripts
 - images    Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
-- icons     Minifies icons defined in: gulp-config.json > bundles > {bundleName} > icons
+- icons     Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
 - fonts     Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
 
 - watch
@@ -58,9 +58,9 @@ HTML:
 ------------------------------------
 Remember to set correct path and id of chosen symbol, in svg href value.
 
-<svg class="icon-search">
-    <use xlink:href="/dist/icons/icons.svg#icon-search"></use>
-</svg>
+<svg class="icon-instagram">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#instagram">
+</use></svg>
 
 
 CSS/LESS:
