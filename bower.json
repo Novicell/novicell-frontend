@@ -1,6 +1,6 @@
 {
-  "name": "novicell-gulp-frontend",
-  "version": "0.1.0",
+  "name": "novicell-frontend",
+  "version": "1.0.0",
   "author": "novicell",
   "dependencies": {
     "bootstrap": "~3.3.0"

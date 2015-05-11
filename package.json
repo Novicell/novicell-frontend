@@ -1,12 +1,30 @@
 {
-  "name": "novicell-gulp-frontend",
-  "version": "0.1.0",
+  "name": "novicell-frontend",
+  "version": "1.0.0",
   "author": "novicell",
-  "private": true,
   "repository": {
     "type": "git",
-    "url": "https://novicell.kilnhg.com/Code/Novicell-Umbraco-packages/Frontend/Novicell-Gulp-Frontend-Package.git"
+    "url": "https://github.com/Novicell/novicell-frontend.git"
   },
+  "author": {
+    "name" : "Adam Peter Nielsen", 
+    "email" : "apn@novicell.dk"
+    },
+  "contributors" : [
+      {
+        "name" : "Emil Busch", 
+        "email" : "ebu@novicell.dk"
+      },
+      {
+        "name" : "Danni Larsen", 
+        "email" : "dla@novicell.dk"
+      },
+      {
+        "name" : "Emil Rasmussen", 
+        "email" : "era@novicell.dk"
+      }
+    ],
+  "license": "MIT",
   "devDependencies": {
     "del": "^0.1.3",
     "gulp": "^3.8.8",
