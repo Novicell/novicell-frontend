@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/Novicell/novicell-frontend.git"
   },
+  "main":"index.js",
   "author": {
     "name" : "Adam Peter Nielsen", 
     "email" : "apn@novicell.dk"
