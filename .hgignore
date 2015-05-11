@@ -1,5 +1,0 @@
-syntax: glob
-node_modules/
-*/compiled/
-dist/*
-vendor

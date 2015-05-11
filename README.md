@@ -1,3 +1,5 @@
+# Novicell Default Frontend
+
 GULP installation:
 -----------------------------------------------------------------------------
 
@@ -66,3 +68,7 @@ Remember to set correct path and id of chosen symbol, in svg href value.
 CSS/LESS:
 ------------------------------------
 Use classes in "/dist/icons/icons.less".
+
+
+# License
+The Novicell Default Frontend is licensed under the MIT Open Source license.
