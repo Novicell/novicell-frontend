@@ -22,8 +22,8 @@ gulp.task('icons', function () {
 
         return gulp.src(b.icons)
             .pipe(plugins.plumber(config.errorHandler("icons")))
-            .pipe(svgSprite(config.spriteConfig))
             .pipe(plugins.if(useImagemin, plugins.imagemin()))
+            .pipe(svgSprite(config.spriteConfig))
             .pipe(gulp.dest(config.iconsDist));
     });
 
