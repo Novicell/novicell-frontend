@@ -1,6 +1,17 @@
 # Novicell Default Frontend
 
+##  Preparation
+
+- Download and install Node.js (https://nodejs.org/download/)
+- Download and install Git (http://git-scm.com/downloads)
+  Remember to check "Git bash here" in context menu options
+
+  To check if node is working, go to CMD / Powershell / Gitbash / Terminal and type `node -v`
+  If you get a version number, you'r good to go.
+
 ##  Installation
+
+First navigate to your website and install novicell fronend package:
 
     cd "c:\Visual studio projects\project-name\Project.Website"
     npm install github:Novicell/novicell-frontend
@@ -30,7 +41,7 @@ The following tasks are available:
 - icons -	Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
 - fonts -	Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
 - watch
-  
+
   - Runs the scripts, styles, images, icons and fonts task whenever a file has changed. The paths it listens on, is defined in the file gulp-config.json > watch.
   - Also it automatically refreshes your browser window, using livereload (port can be changed in gulp-config.json > livereload > port).
   The paths it listens on, is defined in: gulp-config.json > livereload > paths.
@@ -50,8 +61,7 @@ Use the following HTML. Remember to set correct path and id of chosen symbol, in
     </use></svg>
 
 
-CSS/LESS:
-------------------------------------
+#### CSS/LESS:
 Use classes in "/dist/icons/icons.less".
 
 ## What is GULP by the way?
