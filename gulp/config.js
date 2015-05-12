@@ -95,26 +95,27 @@ module.exports = (function () {
         livereloadPaths: [
             "./dist/scripts/*.js",
             "./dist/css/*.css",
-            "./macroScripts/*.{cshtml,master,xslt,php,phtml,html}",
-            "./MasterPages/*.{cshtml,master,xslt,php,phtml,html}"
+            "./Views/*.cshtml",
+            "./macroScripts/*.cshtml",
+            "./MasterPages/*.master"
         ],
 
         // ------------- Watch -------------
-        watchImages: ["./images/*"],
-        watchIcons: ["./images/icons/*"],
-        watchFonts: ["./fonts/*"],
+        watchImages: [ projectPath + "images/**/*", projectPath + '!images/icons/*' ],
+        watchIcons: [ projectPath + "images/icons/*" ],
+        watchFonts: [ projectPath + "fonts/*" ],
         watchScripts: [
-            "./scripts/**/*.js",
-            "./vendor/**/*.js"
+            projectPath + "scripts/**/*.js",
+            projectPath + "vendor/**/*.js"
         ],
         watchStyles: [
-            "./less/**/*.less",
-            "./vendor/**/*.less"
+            projectPath + "less/**/*.less",
+            projectPath + "vendor/**/*.less"
         ],
 
         // ------------- Copy on build -------------
         buildCopy: [{
-            from: "./fonts/**/*",
+            from: projectPath + "fonts/**/*",
             to: distPath  + "/fonts"
         }],
 
@@ -122,7 +123,7 @@ module.exports = (function () {
         bundles: [{
             name: "vendor",
             ignorePlugins: ["jscs", "jshint"],
-            scripts: ["./vendor/bower/jquery/dist/jquery.js" ]
+            scripts: [ bowerPath + "/jquery/dist/jquery.js" ]
         },
         {
             name: "master",
