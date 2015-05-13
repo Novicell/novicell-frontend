@@ -19,10 +19,10 @@ gulp.task('scripts', function () {
             .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
             .pipe(plugins.if(useJshint, plugins.jshint()))
             .pipe(plugins.if(useJscs, plugins.jscs()))
-            .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
             .pipe(plugins.concat(b.name + ".min.js"))
             .pipe(plugins.if(useUglify, plugins.uglify()))
-            .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.write()))
+            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.write('.')))
             .pipe(gulp.dest(config.scriptsDist));
     });
 
