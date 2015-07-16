@@ -1,22 +1,13 @@
-var novicell = novicell || {};
+var projectName = projectName || {};
 
-// Document ready
-$(function () {
-        novicell.slider.heroSlider($('.owl-carousel'));
-        novicell.slider.megaTronSlider();
-});
-// Document ready
+projectName.slider = new function(){
 
+    this.heroSlider = function(selector) {
+        console.log("remove this in /scripts/components/slider.js");
+    };
 
-novicell.slider = new function(){
-
-        this.heroSlider = function(selector) {
-                console.log("this is heroslider speaking, here is your selector: ");
-                console.log(selector);
-        };
-
-        this.megaTronSlider = function() {
-                console.log("this is MEGATRON speaking, I'm working!");
-        };
+    this.megaTronSlider = function() {
+        console.log("remove this in /scripts/components/slider.js");
+    };
 
 };

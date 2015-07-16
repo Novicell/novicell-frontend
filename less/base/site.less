@@ -1,5 +1,7 @@
-:fullscreen a {
-    transition: transform 1s;
+// Set body classes for responsive script
+body:after {content: "media-lg"; visibility: hidden; position: absolute; left: -999999px; bottom: 0; speak:none;
+    @media screen and (max-width: @screen-sm) {& { content: "media-xs"; }}
+    @media screen and (min-width: @screen-sm)and (max-width: @screen-md) {& { content: "media-sm"; }}
+    @media screen and (min-width: @screen-md)and (max-width: @screen-lg) {& { content: "media-md"; }}
+    @media screen and (min-width: @screen-lg) {& { content: "media-lg"; }}
 }
-
-h2 { color:yellow; }

@@ -123,11 +123,22 @@ module.exports = (function () {
         bundles: [{
             name: "vendor",
             ignorePlugins: ["jscs", "jshint"],
-            scripts: [ bowerPath + "/jquery/dist/jquery.js" ]
+            scripts: [
+                bowerPath + "/jquery/dist/jquery.js",
+                bowerPath + "/novicell-default-scripts/scripts/novicell.js",
+                // bowerPath + "/novicell-default-scripts/scripts/novicell.cookieinfo.js",
+                // bowerPath + "/novicell-default-scripts/scripts/novicell.imageadjust.js",
+                // bowerPath + "/novicell-default-scripts/scripts/novicell.overlay.js",
+                // bowerPath + "/novicell-default-scripts/scripts/novicell.lazyload.js",
+                bowerPath + "/novicell-default-scripts/scripts/novicell.responsive.js"
+            ]
         },
         {
             name: "master",
-            scripts: ["./scripts/master.js"],
+            scripts: [
+                "./scripts/components/slider.js",
+                "./scripts/master.js"
+            ],
             styles: ["./less/master.less"],
             images: ["./images/*.{jpg,png}"],
             icons: ["./images/icons/*.svg"],

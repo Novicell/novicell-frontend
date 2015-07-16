@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "novicell",
   "dependencies": {
-    "bootstrap": "~3.3.0"
+    "bootstrap": "3.3.5",
+    "novicell-default-scripts": "https://github.com/Novicell/novicell-default-scripts.git"
   }
 }
