@@ -1,6 +1,6 @@
 {
-  "cwd": "./vendor",
-  "directory": "/bower",
+  "cwd": "./",
+  "directory": "vendor/bower",
   "analytics": false,
   "timeout": 120000,
   "registry": {
