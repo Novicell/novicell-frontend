@@ -37,7 +37,7 @@ module.exports = (function () {
         ],
         buildTasks: [
             "bower", "styles", "scripts",
-            "images", "icons", "copy"
+            "images", "icons", "copy", "watch"
         ],
 
         // ------------- Scripts -------------
@@ -136,8 +136,7 @@ module.exports = (function () {
         {
             name: "master",
             scripts: [
-                "./scripts/components/slider.js",
-                "./scripts/master.js"
+                "./scripts/**/*.js"
             ],
             styles: ["./less/master.less"],
             images: ["./images/*.{jpg,png}"],
