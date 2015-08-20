@@ -31,13 +31,12 @@ module.exports = (function () {
         cleanPaths: cleanPaths,
 
         loadTasks: [
-            "bower", "styles", "allscripts",
-            "watchScripts"
+            "bower", "styles", "scripts",
             "images", "icons", "copy",
             "watch", "build"
         ],
         buildTasks: [
-            "bower", "styles", "scripts",
+            "bower", "styles", "allScripts",
             "images", "icons", "copy", "watch"
         ],
 
