@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var config = require('../config.js');
 var mergeStream = require('merge-stream');
+var del = require('del');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('styles', function () {
@@ -11,6 +12,8 @@ gulp.task('styles', function () {
 
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
         var useAutoprefixer = ignores.indexOf("autoprefixer") == -1;
+
+        del([config.stylesDist + '/*']);
 
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler("styles")))
