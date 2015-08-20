@@ -31,7 +31,8 @@ module.exports = (function () {
         cleanPaths: cleanPaths,
 
         loadTasks: [
-            "bower", "styles", "scripts",
+            "bower", "styles", "allscripts",
+            "watchScripts"
             "images", "icons", "copy",
             "watch", "build"
         ],
