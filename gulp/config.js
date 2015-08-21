@@ -7,7 +7,6 @@ module.exports = (function () {
     var projectPath = "./";
     var bowerPath = projectPath + "vendor/bower";
     var distPath = projectPath + "dist";
-
     var cleanPaths = [distPath];
 
     var debug = true;
@@ -26,6 +25,18 @@ module.exports = (function () {
                 this.emit("end");
             };
         },
+
+        // If Wordpress, Drupal (php) set to false
+        // Requires a .csproj-file, if set to true.
+        isVSSolution: true,
+
+        // Add masterTemplates for gulp to inject assets into
+        masterTemplates: [
+            //projectPath + "Views/Master.cshtml", // in umbraco, do like this
+            projectPath + "index.html"
+        ],
+
+        projectPath: projectPath,
 
         bowerPath: bowerPath,
         cleanPaths: cleanPaths,
@@ -120,7 +131,8 @@ module.exports = (function () {
         }],
 
         // ------------- Bundles -------------
-        bundles: [{
+        bundles: [
+        {
             name: "vendor",
             ignorePlugins: ["jscs", "jshint"],
             scripts: [
