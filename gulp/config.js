@@ -36,7 +36,7 @@ module.exports = (function () {
             "watch", "build"
         ],
         buildTasks: [
-            "bower", "styles", "scripts",
+            "styles", "scripts",
             "images", "icons", "copy", "watch"
         ],
 
@@ -124,19 +124,22 @@ module.exports = (function () {
             name: "vendor",
             ignorePlugins: ["jscs", "jshint"],
             scripts: [
-                bowerPath + "/jquery/dist/jquery.js",
-                bowerPath + "/novicell-default-scripts/scripts/novicell.js",
-                // bowerPath + "/novicell-default-scripts/scripts/novicell.cookieinfo.js",
-                // bowerPath + "/novicell-default-scripts/scripts/novicell.imageadjust.js",
-                // bowerPath + "/novicell-default-scripts/scripts/novicell.overlay.js",
-                // bowerPath + "/novicell-default-scripts/scripts/novicell.lazyload.js",
-                bowerPath + "/novicell-default-scripts/scripts/novicell.responsive.js"
+                bowerPath + "/jquery/dist/jquery.js"
             ]
         },
         {
             name: "master",
+            ignorePlugins: ["jscs"],
             scripts: [
-                "./scripts/**/*.js"
+                "./scripts/components/novicell.js",
+                // "./scripts/components/novicell.cookieinfo.js",
+                // "./scripts/components/novicell.imageadjust.js",
+                // "./scripts/components/novicell.overlay.js",
+                // "./scripts/components/novicell.lazyload.js",
+                "./scripts/components/novicell.responsive.js",
+                "./scripts/components/map.js",
+                "./scripts/components/slider.js",
+                "./scripts/master.js"
             ],
             styles: ["./less/master.less"],
             images: ["./images/*.{jpg,png}"],

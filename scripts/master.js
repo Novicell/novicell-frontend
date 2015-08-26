@@ -9,6 +9,9 @@
  *         }); // Document ready end
  */
 
+var novicell = novicell || {};
+var projectName = projectName || {};
+
 // Document ready
 $(function () {
     // Only include Novicell files that you use!
@@ -18,7 +21,9 @@ $(function () {
     // novicell.lazyload.image();
 
     // Call new funtions here like this:
-    projectName.slider.heroSlider($('.owl-carousel'));
+    //projectName.slider.heroSlider($('.owl-carousel'));
+
+        projectName.map.init();
 
 }); // Document ready end
 

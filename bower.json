@@ -4,6 +4,8 @@
   "author": "novicell",
   "dependencies": {
     "bootstrap": "3.3.5",
-    "novicell-default-scripts": "https://github.com/Novicell/novicell-default-scripts.git"
+    "jquery-appear": "https://github.com/morr/jquery.appear",
+    "jquery-cookie": "https://github.com/carhartl/jquery-cookie.git"
+
   }
 }
