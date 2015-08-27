@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Novicell frontend</title>
+        <title>Novicell frontend package</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,15 +11,21 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="dist/css/master.min.css" />
+
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body>
+
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <div class="container">
             <div class="row">
-                <aside class="col-xs-4">
+                <aside class="col-md-4">
                     <h3>Navigation</h3>
                     <ul class="list-group">
                         <li class="list-group-item">Cras justo odio</li>
@@ -29,11 +35,13 @@
                         <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
                 </aside>
-                <main class="col-xs-8">
+                <main class="col-md-8">
                     <h1>Hello world</h1>
-                    <h2>Novicell frontend</h2>
+                    <h2>Novicell frontend package</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quibusdam cumque fugit laborum accusantium quos rem cupiditate illo aliquam molestiae rerum quae unde, tempora maiores. Aut neque vel alias, distinctio?</p>
-                </div>
+
+                    <div id="map-canvas" data-lat="56.109574" data-lng="10.155361" data-zoom="15" style="height:400px; margin: 50px 0;"></div>
+                </main>
             </div>
         </div>
 
