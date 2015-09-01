@@ -32,7 +32,12 @@ var compileScripts = function(ignoreVendor){
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
         var useUglify = ignores.indexOf("uglify") == -1;
 
-        del([config.scriptsDist + '/*']);
+        if(ignoreVendor) {
+           del([config.scriptsDist + '/*.*', '!' + config.scriptsDist + '/vendor.min.*']);
+        }
+        else {
+           del([config.scriptsDist + '/*.*']);
+        }
 
         return gulp.src(b.scripts)
         .pipe(plugins.plumber(config.errorHandler("scripts")))
