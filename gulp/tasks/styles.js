@@ -1,9 +1,10 @@
 var gulp = require('gulp');
 var config = require('../config.js');
 var mergeStream = require('merge-stream');
+var del = require('del');
 var plugins = require('gulp-load-plugins')();
 
-gulp.task('styles', function () {
+gulp.task('compileCss', function () {
     var streams = config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
@@ -11,6 +12,8 @@ gulp.task('styles', function () {
 
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
         var useAutoprefixer = ignores.indexOf("autoprefixer") == -1;
+
+        del([config.stylesDist + '/*']);
 
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler("styles")))
@@ -24,3 +27,5 @@ gulp.task('styles', function () {
 
     return mergeStream(streams);
 });
+
+gulp.task('styles', ['updateFilesCss'], function(){});
