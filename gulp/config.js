@@ -47,13 +47,8 @@ module.exports = (function () {
             "watch", "build", "revision"
         ],
         buildTasks: [
-<<<<<<< HEAD
-            "bower", "styles", "scripts",
-            "images", "icons", "copy"
-=======
             "styles", "scripts",
             "images", "icons", "copy", "watch"
->>>>>>> master
         ],
 
         // ------------- Scripts -------------
