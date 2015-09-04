@@ -9,16 +9,20 @@
  *         }); // Document ready end
  */
 
+var novicell = novicell || {};
+var projectName = projectName || {};
+
 // Document ready
 $(function () {
-    // Only include Novicell files that you use!
+    // Only include Novicell functions that you use!
      novicell.responsive.init();
     // novicell.adjustFigureImage.init();
     // novicell.lazyload.content();
     // novicell.lazyload.image();
 
-    // Call new funtions here like this:
+    // Call new functions here like this:
     projectName.slider.heroSlider($('.owl-carousel'));
+    projectName.map.init();
 
 }); // Document ready end
 

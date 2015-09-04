@@ -11,4 +11,6 @@ gulp.task('rebuild', ['clean'], function () {
     return gulp.start('default');
 });
 
-gulp.task('default', config.buildTasks);
+gulp.task('default', ['bower'], function(){
+    return gulp.start(config.buildTasks);
+});
