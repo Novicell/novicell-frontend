@@ -6,6 +6,5 @@
     "bootstrap": "3.3.5",
     "jquery-appear": "https://github.com/morr/jquery.appear",
     "jquery-cookie": "https://github.com/carhartl/jquery-cookie.git"
-
   }
 }
