@@ -15,6 +15,7 @@ First navigate to your website and install novicell fronend package:
 
     cd "c:\Visual studio projects\project-name\Project.Website"
     npm install github:Novicell/novicell-frontend
+    npm install
 
 ## How to use GULP
 
