@@ -16,7 +16,6 @@ gulp.task('scripts', function () {
 
         return gulp.src(b.scripts)
             .pipe(plugins.plumber(config.errorHandler("scripts")))
-            .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
             .pipe(plugins.if(useJshint, plugins.jshint()))
             .pipe(plugins.if(useJscs, plugins.jscs()))
             .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))

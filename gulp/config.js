@@ -142,9 +142,8 @@ module.exports = (function () {
                 "./scripts/master.js"
             ],
             styles: ["./less/master.less"],
-            images: ["./images/*.{jpg,png}"],
-            icons: ["./images/icons/*.svg"],
-            tpl: [ "./tpl/*.tpl.html" ]
+            images: ["./images/**/*.{jpg,png,gif}"],
+            icons: ["./images/icons/*.svg"]
         }]
     }
 })();
