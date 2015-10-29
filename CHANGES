@@ -1,0 +1,10 @@
+[1.1.0]
+- Added CHANGES file
+- Added minify CSS and JS again
+- Cleanup Gulp config
+- Reorganized Gulp config
+- Added GIF and SVG to image file types
+- Renamed map.js to novicell.map.js
+- Added option for disable gulp-watch on bundles
+- Removed some bloat files
+- Removed TPL stuff

@@ -5,31 +5,44 @@ module.exports = (function () {
     var projectName = "novicell-gulp";
 
     var projectPath = "./";
-    var bowerPath = projectPath + "vendor/bower";
+    var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
     var distPath = projectPath + "dist";
-
     var cleanPaths = [distPath];
 
-    var debug = true;
-
     return {
-        debug: (argv.debug !== undefined ? argv.debug.toLowerCase() == "true" : debug),
-
-        errorHandler: function(taskName)
+        // ------------- Bundles -------------
+        bundles: [
         {
-            return function (e) {
-                notifier.notify({
-                    "title": taskName,
-                    "message": "An error occured in the " + e.plugin + " plugin."
-                });
-                console.log(e.message);
-                this.emit("end");
-            };
+            name: "vendor",
+            ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
+            scripts: [
+                bowerPath + "/jquery/dist/jquery.js"
+            ]
         },
+        {
+            name: "master",
+            ignorePlugins: ["jscs"],
+            scripts: [
+                "./scripts/components/novicell.js",
+                // "./scripts/components/novicell.cookieinfo.js",
+                // "./scripts/components/novicell.imageadjust.js",
+                // "./scripts/components/novicell.overlay.js",
+                // "./scripts/components/novicell.lazyload.js",
+                "./scripts/components/novicell.responsive.js",
+                "./scripts/components/novicell.map.js",
+                "./scripts/master.js"
+            ],
+            styles: ["./less/master.less"],
+            images: ["./images/*.{jpg,png,svg,gif}"],
+            icons: ["./images/icons/*.svg"]
+        }],
 
+        // ------------- Return Paths -------------
+        projectPath: projectPath,
         bowerPath: bowerPath,
         cleanPaths: cleanPaths,
 
+        // ------------- Tasks -------------
         loadTasks: [
             "bower", "styles", "scripts",
             "images", "icons", "copy",
@@ -77,10 +90,9 @@ module.exports = (function () {
         stylesVendorPrefixes: [
             "last 2 version",
             "safari 5",
-            "ie 8",
             "ie 9",
             "opera 12.1",
-            "ios 6",
+            "ios 8",
             "android 4"
         ],
 
@@ -90,14 +102,12 @@ module.exports = (function () {
         imagesProgressive: true,
         imagesInterlaced: true,
 
-        // ------------- Livereload -------------
+        // ------------- Livereload ---------
         livereloadPort: 35729,
         livereloadPaths: [
             "./dist/scripts/*.js",
             "./dist/css/*.css",
-            "./Views/*.cshtml",
-            "./macroScripts/*.cshtml",
-            "./MasterPages/*.master"
+            "./Views/**/*.cshtml"
         ],
 
         // ------------- Watch -------------
@@ -113,38 +123,23 @@ module.exports = (function () {
             projectPath + "vendor/**/*.less"
         ],
 
-        // ------------- Copy on build -------------
+        // ------------- Copy on build --------
         buildCopy: [{
             from: projectPath + "fonts/**/*",
             to: distPath  + "/fonts"
         }],
 
-        // ------------- Bundles -------------
-        bundles: [{
-            name: "vendor",
-            ignorePlugins: ["jscs", "jshint"],
-            scripts: [
-                bowerPath + "/jquery/dist/jquery.js"
-            ]
-        },
+        // ---------- Errorhandler ------
+        errorHandler: function(taskName)
         {
-            name: "master",
-            ignorePlugins: ["jscs"],
-            scripts: [
-                "./scripts/components/novicell.js",
-                // "./scripts/components/novicell.cookieinfo.js",
-                // "./scripts/components/novicell.imageadjust.js",
-                // "./scripts/components/novicell.overlay.js",
-                // "./scripts/components/novicell.lazyload.js",
-                "./scripts/components/novicell.responsive.js",
-                "./scripts/components/map.js",
-                "./scripts/components/slider.js",
-                "./scripts/master.js"
-            ],
-            styles: ["./less/master.less"],
-            images: ["./images/*.{jpg,png}"],
-            icons: ["./images/icons/*.svg"],
-            tpl: [ "./tpl/*.tpl.html" ]
-        }]
+            return function (e) {
+                notifier.notify({
+                    "title": taskName,
+                    "message": "An error occured in the " + e.plugin + " plugin."
+                });
+                console.log(e.message);
+                this.emit("end");
+            };
+        }
     }
 })();

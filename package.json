@@ -1,6 +1,6 @@
 {
   "name": "novicell-frontend",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "novicell",
   "repository": {
     "type": "git",
@@ -8,20 +8,24 @@
   },
   "main":"index.js",
   "author": {
-    "name" : "Adam Peter Nielsen", 
+    "name" : "Adam Peter Nielsen",
     "email" : "apn@novicell.dk"
     },
   "contributors" : [
       {
-        "name" : "Emil Busch", 
-        "email" : "ebu@novicell.dk"
-      },
-      {
-        "name" : "Danni Larsen", 
+        "name" : "Danni Larsen",
         "email" : "dla@novicell.dk"
       },
       {
-        "name" : "Emil Rasmussen", 
+        "name": "Michael Sølvsteen",
+        "email": "msl@novicell.dk"
+      },
+      {
+        "name" : "Emil Busch",
+        "email" : "ebu@novicell.dk"
+      },
+      {
+        "name" : "Emil Rasmussen",
         "email" : "era@novicell.dk"
       }
     ],
@@ -40,9 +44,7 @@
     "gulp-livereload": "^2.1.1",
     "gulp-load-plugins": "^0.7.1",
     "gulp-minify-css": "^0.3.11",
-    "gulp-minify-html": "^0.1.6",
     "gulp-newer": "^0.3.0",
-    "gulp-ng-html2js": "^0.1.8",
     "gulp-notify": "^2.0.0",
     "gulp-plumber": "^0.6.6",
     "gulp-resolve-dependencies": "^1.0.1",

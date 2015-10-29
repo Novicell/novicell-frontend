@@ -15,14 +15,14 @@ var projectName = projectName || {};
 // Document ready
 $(function () {
     // Only include Novicell functions that you use!
-     novicell.responsive.init();
+    novicell.responsive.init();
+    novicell.map.init();
     // novicell.adjustFigureImage.init();
     // novicell.lazyload.content();
     // novicell.lazyload.image();
 
     // Call new functions here like this:
     projectName.slider.heroSlider($('.owl-carousel'));
-    projectName.map.init();
 
 }); // Document ready end
 

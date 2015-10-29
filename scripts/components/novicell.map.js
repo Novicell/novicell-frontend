@@ -8,9 +8,9 @@
 
 
 // Async load the GMaps API
-var projectName = projectName || {};
+var novicell = novicell || {};
 
-projectName.map = new function(){
+novicell.map = new function(){
     this.init = function() {
       var script = document.createElement('script');
       script.type = 'text/javascript';

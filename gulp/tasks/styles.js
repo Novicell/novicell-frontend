@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var config = require('../config.js');
 var mergeStream = require('merge-stream');
+var minifyCSS = require('gulp-minify-css');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('styles', function () {
@@ -14,11 +15,12 @@ gulp.task('styles', function () {
 
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler("styles")))
-            .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
             .pipe(plugins.less())
             .pipe(plugins.concat(b.name + ".min.css"))
-            .pipe(plugins.if(!config.debug && useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
-            .pipe(plugins.if(!config.debug && useSourcemaps, plugins.sourcemaps.write()))
+            .pipe(plugins.if(useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
+            .pipe(minifyCSS({keepBreaks:false}))
+            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.write('.')))
             .pipe(gulp.dest(config.stylesDist));
     });
 
