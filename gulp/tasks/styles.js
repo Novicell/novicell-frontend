@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var config = require('../config.js');
 var mergeStream = require('merge-stream');
-var minifyCSS = require('gulp-minify-css');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('styles', function () {
@@ -19,7 +18,7 @@ gulp.task('styles', function () {
             .pipe(plugins.less())
             .pipe(plugins.concat(b.name + ".min.css"))
             .pipe(plugins.if(useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
-            .pipe(minifyCSS({keepBreaks:false}))
+            .pipe(plugins.minifyCss({keepBreaks:false}))
             .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.write('.')))
             .pipe(gulp.dest(config.stylesDist));
     });
