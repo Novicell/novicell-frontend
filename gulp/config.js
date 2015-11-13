@@ -8,6 +8,7 @@ module.exports = (function () {
     var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
     var distPath = projectPath + "dist";
     var cleanPaths = [distPath];
+    var preprocessor = "less"; //choose between "less" or "scss"
 
     return {
         // ------------- Bundles -------------
@@ -32,25 +33,21 @@ module.exports = (function () {
                 "./scripts/components/novicell.map.js",
                 "./scripts/master.js"
             ],
-            styles: ["./less/master.less"],
+            styles: ["./" + preprocessor + "/master." + preprocessor],
             images: ["./images/*.{jpg,png,svg,gif}"],
             icons: ["./images/icons/*.svg"]
         }],
 
-        // ------------- Return Paths -------------
-        projectPath: projectPath,
-        bowerPath: bowerPath,
-        cleanPaths: cleanPaths,
 
-        // ------------- Tasks -------------
-        loadTasks: [
-            "bower", "styles", "scripts",
-            "images", "icons", "copy",
-            "watch", "build"
-        ],
-        buildTasks: [
-            "styles", "scripts",
-            "images", "icons", "copy", "watch"
+        // ------------- Styles -------------
+        stylesDist: distPath + "/css",
+        stylesVendorPrefixes: [
+            "last 2 version",
+            "safari 5",
+            "ie 9",
+            "opera 12.1",
+            "ios 8",
+            "android 4"
         ],
 
         // ------------- Scripts -------------
@@ -85,17 +82,6 @@ module.exports = (function () {
         // ------------- Fonts -------------
         fontsDist: distPath + "/fonts",
 
-        // ------------- Styles -------------
-        stylesDist: distPath + "/css",
-        stylesVendorPrefixes: [
-            "last 2 version",
-            "safari 5",
-            "ie 9",
-            "opera 12.1",
-            "ios 8",
-            "android 4"
-        ],
-
         // ------------- Images -------------
         imagesDist: distPath + "/images",
         imagesOptimizationLevel: 5,
@@ -119,8 +105,8 @@ module.exports = (function () {
             projectPath + "vendor/**/*.js"
         ],
         watchStyles: [
-            projectPath + "less/**/*.less",
-            projectPath + "vendor/**/*.less"
+            projectPath + preprocessor + "/**/*." + preprocessor,
+            projectPath + "vendor/**/*.{less, scss}"
         ],
 
         // ------------- Copy on build --------
@@ -128,6 +114,24 @@ module.exports = (function () {
             from: projectPath + "fonts/**/*",
             to: distPath  + "/fonts"
         }],
+
+
+        // ------------- Tasks -------------
+        loadTasks: [
+            "bower", "styles", "scripts",
+            "images", "icons", "copy",
+            "watch", "build"
+        ],
+        buildTasks: [
+            "styles", "scripts",
+            "images", "icons", "copy"
+        ],
+
+        // ------------- Return Paths -------------
+        projectPath: projectPath,
+        bowerPath: bowerPath,
+        cleanPaths: cleanPaths,
+        preprocessor: preprocessor,
 
         // ---------- Errorhandler ------
         errorHandler: function(taskName)

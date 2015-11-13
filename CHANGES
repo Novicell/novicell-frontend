@@ -1,3 +1,9 @@
+[1.2.0]
+- Added support for SCSS
+- Clean up dependencies
+- Re-reorganized Gulp config
+- Removed "watch"-task from "build tasks"-list
+
 [1.1.3]
 - Update packages
 - Rename “lala.txt” to “keepme.txt”
