@@ -14,7 +14,7 @@ gulp.task('watch', function () {
     gulp.watch(config.watchStyles, ["styles"]);
     gulp.watch(config.watchImages, ["images"]);
     gulp.watch(config.watchIcons, ["icons"]);
-    gulp.watch(config.watchFonts, ["fonts"]);
+    gulp.watch(config.watchFonts, ["copy"]);
 
     return gulp.start('livereload');
 });
