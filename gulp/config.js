@@ -13,30 +13,39 @@ module.exports = (function () {
     return {
         // ------------- Bundles -------------
         bundles: [
-        {
-            name: "vendor",
-            ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
-            scripts: [
-                bowerPath + "/jquery/dist/jquery.js"
-            ]
-        },
-        {
-            name: "master",
-            ignorePlugins: ["jscs"],
-            scripts: [
-                "./scripts/components/novicell.js",
-                // "./scripts/components/novicell.cookieinfo.js",
-                // "./scripts/components/novicell.imageadjust.js",
-                // "./scripts/components/novicell.overlay.js",
-                // "./scripts/components/novicell.lazyload.js",
-                "./scripts/components/novicell.responsive.js",
-                "./scripts/components/novicell.map.js",
-                "./scripts/master.js"
-            ],
-            styles: ["./" + preprocessor + "/master." + preprocessor],
-            images: ["./images/*.{jpg,png,svg,gif}"],
-            icons: ["./images/icons/*.svg"]
-        }],
+            {
+                name: "vendor",
+                ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
+                scripts: [
+                    bowerPath + "/jquery/dist/jquery.js"
+                ]
+            },
+            {
+                // For styling Umbraco Grid editors in backoffice
+                name: "backofficemaster",
+                scripts: [
+                    "./scripts/backofficemaster.js"
+                ],
+                styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
+            },
+            {
+                name: "master",
+                ignorePlugins: ["jscs"],
+                scripts: [
+                    "./scripts/components/novicell.js",
+                    // "./scripts/components/novicell.cookieinfo.js",
+                    // "./scripts/components/novicell.imageadjust.js",
+                    // "./scripts/components/novicell.overlay.js",
+                    // "./scripts/components/novicell.lazyload.js",
+                    "./scripts/components/novicell.responsive.js",
+                    "./scripts/components/novicell.map.js",
+                    "./scripts/master.js"
+                ],
+                styles: ["./" + preprocessor + "/master." + preprocessor],
+                images: ["./images/*.{jpg,png,svg,gif}"],
+                icons: ["./images/icons/*.svg"]
+            }
+        ],
 
 
         // ------------- Styles -------------

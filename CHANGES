@@ -1,3 +1,6 @@
+[1.2.1]
+- Added "backofficemaster"-bundle for styling / javascript for Umbraco grid
+
 [1.2.0]
 - Added support for SCSS
 - Clean up dependencies
