@@ -40,6 +40,7 @@ var compileScripts = function(isWatchTask){
         var useMinify = ignores.indexOf("minify") == -1;
 
         return gulp.src(b.scripts)
+        .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
         .pipe(plugins.plumber(config.errorHandler("scripts")))
         .pipe(plugins.if(useJshint, plugins.jshint()))
         .pipe(plugins.if(useJscs, plugins.jscs()))
