@@ -24,7 +24,7 @@ module.exports = (function () {
                 // For styling Umbraco Grid editors in backoffice
                 name: "backofficemaster",
                 scripts: [
-                    "./scripts/backofficemaster.js"
+                    projectPath + "scripts/backofficemaster.js"
                 ],
                 styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
             },
@@ -32,18 +32,18 @@ module.exports = (function () {
                 name: "master",
                 ignorePlugins: ["jscs"],
                 scripts: [
-                    "./scripts/components/novicell.js",
-                    // "./scripts/components/novicell.cookieinfo.js",
-                    // "./scripts/components/novicell.imageadjust.js",
-                    // "./scripts/components/novicell.overlay.js",
-                    // "./scripts/components/novicell.lazyload.js",
-                    "./scripts/components/novicell.responsive.js",
-                    "./scripts/components/novicell.map.js",
-                    "./scripts/master.js"
+                    projectPath + "scripts/components/novicell.js",
+                    projectPath + "scripts/components/novicell.cookieinfo.js",
+                    // projectPath + "scripts/components/novicell.imageadjust.js",
+                    // projectPath + "scripts/components/novicell.overlay.js",
+                    // projectPath + "scripts/components/novicell.lazyload.js",
+                    projectPath + "scripts/components/novicell.responsive.js",
+                    projectPath + "scripts/components/novicell.map.js",
+                    projectPath + "scripts/master.js"
                 ],
-                styles: ["./" + preprocessor + "/master." + preprocessor],
-                images: ["./images/*.{jpg,png,svg,gif}"],
-                icons: ["./images/icons/*.svg"]
+                styles: [projectPath + preprocessor + "/master." + preprocessor],
+                images: [projectPath + "images/*.{jpg,png,svg,gif}"],
+                icons: [projectPath + "images/icons/*.svg"]
             }
         ],
 

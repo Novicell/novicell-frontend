@@ -1,3 +1,10 @@
+[1.2.2]
+- Added new cookie-info script
+- Added styling for cookie-info
+- Added html example for cookie-info
+- Fixed "projectPath" on default script paths
+- Removed empty less files
+
 [1.2.1]
 - Added "backofficemaster"-bundle for styling / javascript for Umbraco grid
 

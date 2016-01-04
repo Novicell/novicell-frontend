@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "author": "novicell",
   "dependencies": {
-    "bootstrap": "3.3.6",
-    "jquery_appear": "0.3.4",
-    "jquery.cookie": "1.4.1"
+    "bootstrap": "3.3.6"
   }
 }

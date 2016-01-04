@@ -22,7 +22,7 @@ $(function () {
     // novicell.lazyload.image();
 
     // Call new functions here like this:
-    projectName.slider.heroSlider($('.owl-carousel'));
+    //projectName.slider.heroSlider($('.owl-carousel'));
 
 }); // Document ready end
 
