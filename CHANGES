@@ -1,3 +1,7 @@
+[1.2.3]
+- Updated dependencies
+- Switched gulp-minify-css with gulp-cssnano due to deprecation
+
 [1.2.2]
 - Added new cookie-info script
 - Added styling for cookie-info

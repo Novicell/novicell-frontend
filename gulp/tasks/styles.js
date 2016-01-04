@@ -23,7 +23,7 @@ gulp.task('styles', function () {
             .pipe(plugins.if(useScss, plugins.sass()))
             .pipe(plugins.concat(b.name + ".min.css"))
             .pipe(plugins.if(useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
-            .pipe(plugins.minifyCss({keepBreaks:false}))
+            .pipe(plugins.cssnano({discardComments: {removeAll: true}}))
             .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.write('.')))
             .pipe(gulp.dest(config.stylesDist));
     });
