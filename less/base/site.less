@@ -5,3 +5,14 @@ body:after {content: "media-lg"; visibility: hidden; position: absolute; left: -
     @media screen and (min-width: @screen-md)and (max-width: @screen-lg) {& { content: "media-md"; }}
     @media screen and (min-width: @screen-lg) {& { content: "media-lg"; }}
 }
+
+// Selection
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: @brand-primary;
+}
+
+::selection {
+    color: white;
+    background: @brand-primary;
+}
