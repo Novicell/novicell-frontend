@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "novicell",
   "dependencies": {
-    "bootstrap": "3.3.6"
+    "bootstrap": "3.3.6",
+    "svg4everybodyLatest": "2.0.1"
   }
 }

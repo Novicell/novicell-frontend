@@ -23,6 +23,7 @@ $(function () {
 
     // Call new functions here like this:
     //projectName.slider.heroSlider($('.owl-carousel'));
+    svg4everybody(); // Fix SVG spritemap in IE/Edge
 
 }); // Document ready end
 
