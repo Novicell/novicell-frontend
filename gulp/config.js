@@ -43,8 +43,8 @@ module.exports = (function () {
                     projectPath + "scripts/master.js"
                 ],
                 styles: [projectPath + preprocessor + "/master." + preprocessor],
-                images: [projectPath + "images/*.{jpg,png,svg,gif}"],
-                icons: [projectPath + "images/icons/*.svg"]
+                images: [projectPath + "images/**/*.{jpg,png,svg,gif}"],
+                icons: [projectPath + "icons/**/*.svg"]
             }
         ],
 
