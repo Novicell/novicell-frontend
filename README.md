@@ -73,4 +73,4 @@ GULP is a streaming build system - or short for:
 - now you just focus on doing what you do best: CODE!"
 
 # License
-The Novicell Default Frontend is licensed under the MIT Open Source license.
+The Novicell Default Frontend is licensed under the MIT license. (http://opensource.org/licenses/MIT)
