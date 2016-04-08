@@ -1,0 +1,45 @@
+/**
+ * Base: Table
+ */
+
+table {background-color: @site-background-color;}
+
+// Baseline styles
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+
+    // Cells
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 15px;
+                line-height: 1.5;
+                vertical-align: top;
+                border-top: 1px solid @color-gray;
+                text-align: center;
+            }
+        }
+    }
+
+    // Bottom align for column headings
+    > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid @color-gray;
+    }
+
+    // Remove top border from thead by default
+    > thead:first-child {
+        > tr:first-child {
+            > th,
+            > td {border-top: 0;}
+        }
+    }
+
+    // Account for multiple tbody instances
+    > tbody + tbody {border-top: 2px solid @color-gray;}
+}

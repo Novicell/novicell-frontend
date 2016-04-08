@@ -1,63 +1,78 @@
-/* Bootstrap
-********************************************************************/
-// Core variables and mixins
-@import "../vendor/bower/bootstrap/less/variables.less";
-@import "../vendor/bower/bootstrap/less/mixins.less";
+/*
+ * Main stylesheet
+ *
+ * This is where we make sure all stylesheets are combined properly and imported
+ * Please refrain from writing any actual code in this file, other than imports
+ */
 
-// Reset and dependencies
-@import "../vendor/bower/bootstrap/less/normalize.less";
-//@import "../vendor/bower/bootstrap/less/print.less";
-//@import "../vendor/bower/bootstrap/less/glyphicons.less";
+/*!
 
-// Core CSS
-@import "../vendor/bower/bootstrap/less/scaffolding.less";
-//@import "../vendor/bower/bootstrap/less/type.less";
-//@import "../vendor/bower/bootstrap/less/code.less";
-@import "../vendor/bower/bootstrap/less/grid.less";
-//@import "../vendor/bower/bootstrap/less/tables.less";
-//@import "../vendor/bower/bootstrap/less/forms.less";
-//@import "../vendor/bower/bootstrap/less/buttons.less";
+PROJECT NAME
 
-// Components
-//@import "../vendor/bower/bootstrap/less/component-animations.less";
-//@import "../vendor/bower/bootstrap/less/dropdowns.less";
-//@import "../vendor/bower/bootstrap/less/button-groups.less";
-//@import "../vendor/bower/bootstrap/less/input-groups.less";
-//@import "../vendor/bower/bootstrap/less/navs.less";
-//@import "../vendor/bower/bootstrap/less/navbar.less";
-//@import "../vendor/bower/bootstrap/less/breadcrumbs.less";
-//@import "../vendor/bower/bootstrap/less/pagination.less";
-//@import "../vendor/bower/bootstrap/less/pager.less";
-//@import "../vendor/bower/bootstrap/less/labels.less";
-//@import "../vendor/bower/bootstrap/less/badges.less";
-//@import "../vendor/bower/bootstrap/less/jumbotron.less";
-//@import "../vendor/bower/bootstrap/less/thumbnails.less";
-//@import "../vendor/bower/bootstrap/less/alerts.less";
-//@import "../vendor/bower/bootstrap/less/progress-bars.less";
-//@import "../vendor/bower/bootstrap/less/media.less";
-//@import "../vendor/bower/bootstrap/less/list-group.less";
-//@import "../vendor/bower/bootstrap/less/panels.less";
-//@import "../vendor/bower/bootstrap/less/responsive-embed.less";
-//@import "../vendor/bower/bootstrap/less/wells.less";
-//@import "../vendor/bower/bootstrap/less/close.less";
+Proud authors:      www.novicell.dk
+People behind:      Lars Hesselberg, @hesselberg
 
-// Components w/ JavaScript
-//@import "../vendor/bower/bootstrap/less/modals.less";
-//@import "../vendor/bower/bootstrap/less/tooltip.less";
-//@import "../vendor/bower/bootstrap/less/popovers.less";
-//@import "../vendor/bower/bootstrap/less/carousel.less";
-
-// Utility classes
-@import "../vendor/bower/bootstrap/less/utilities.less";
-@import "../vendor/bower/bootstrap/less/responsive-utilities.less";
+!*/
 
 
-/* Novicell
-********************************************************************/
-// Base
-@import "base/site.less";
-@import "base/forms.less";
+/**
+ * Class notation:  BEM - https://css-tricks.com/bem-101/
+ *
+ * Quick example of BEM class notation:
+ *
+ * BLOCK:           breadcrumb
+ * ELEMENT:         breadcrumb__link
+ * MODIFIER:        breadcrumb__link—-active
+ *
+ *
+ * So, for the markup it would look something like:
+ *
+ * <div class="breadcrumb">                                                      <---- BLOCK
+ *     <a class="breadcrumb__link" href="#">Home</a>                             <---- ELEMENT below the BLOCK
+ *     <span class="breadcrumb__link breadcrumb__link--active">Page</span>       <---- Also an ELEMENT, but to make it look active, we add the MODIFIER 'active'
+ * </div>
+ */
 
-// Components
-@import "components/responsive.less";
-@import "components/cookie-info.less";
+/* Fonts -- either self hosted or via Google.
+/* ONLY for testing purposes, please async load your fonts!
+********************/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+
+
+/* Settings
+********************/
+@import "settings/settings.variables.less";
+
+
+/* Mixins
+********************/
+@import "mixins/mixins.vendor-prefixes.less";
+@import "mixins/mixins.grid.less";
+@import "mixins/mixins.grid-framework.less";
+@import "mixins/mixins.gradients.less";
+@import "mixins/mixins.clearfix.less";
+@import "mixins/mixins.buttons.less";
+
+
+/* Base
+********************/
+@import "base/base.normalize.less";
+@import "base/base.browserfixes.less";
+@import "base/base.less";
+@import "base/base.icons.less";
+@import "base/base.typography.less";
+@import "base/base.utilities.less";
+@import "base/base.grid.less";
+@import "base/base.buttons.less";
+@import "base/base.forms.less";
+@import "base/base.tables.less";
+
+
+/* Components
+********************/
+@import "components/components.breadcrumb.less";
+@import "components/components.cookie-info.less";
+
+
+/* Views
+********************/
