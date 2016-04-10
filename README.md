@@ -139,7 +139,17 @@ Default styling for form inputs. In regards to checkboxes and radiobuttons, refe
 ## JS components
 
 ### Lazyload images
-You need to call images like this, and then the javascript will add querystrings for the [imageprocessor.web](http://imageprocessor.org/imageprocessor-web/) component. More ´filters`can be found on the [imageprocessor documentation](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/filter/).
+Include the `novicell.lazyloadResponsive.js` for lazyloading images.
+You need to call images like this, and then the javascript will add querystrings for the [imageprocessor.web](http://imageprocessor.org/imageprocessor-web/) component. More `filters` and other settings can be found on the [imageprocessor documentation](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/filter/).
+
+#### To be done
+- [ ] novicell.js
+- [ ] novicell.visible.js
+- [ ] novicell.debounce.js
+- [ ] novicell.overlay.js
+- [ ] novicell.embed.js
+- [ ] novicell.cookieinfo.js
+
 
 ```html
 <figure vocab="http://schema.org/" typeof="ImageObject"
