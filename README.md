@@ -1,19 +1,22 @@
-# Novicell Default Frontend
+# Novicell Frontend
 
-### Table of content
-- [Installation](#Installation)
-- [Setup](#Setup)
-- [What is GULP?](#What is GULP?)
-- [How to use GULP](#How to use GULP)
-- [Tasks in this package](#Tasks in this package)
-- [How to use SVG sprite sheet](#how-to-use-svg-sprite-sheet)
-
-## What is Novicell Default Frontend?
 Novicell Default Frontend package is a framework for your frontend setup and a Gulp based boilerplate for optimizing your frontend flow. It includes a BEM'ified version of Bootstrap's bare necessities (LESS), for starting your new website's development.
 When setup, it also helps you optimize images, combine SVGs to a sprite, compiling LESS to CSS and minifying Javascript.
 
-## Getting started
-TBD
+### Table of content
+* [Quick start](#quick-start)
+* [Installation](#installation)
+* [Setup](#setup)
+* [What is GULP](#what-is-gulp)
+* [How to use GULP](#how-to-use-gulp)
+* [Tasks in this package](#tasks-in-this-package)
+* [How to use SVG sprite sheet](#how-to-use-svg-sprite-sheet)
+* [License](#license)
+
+## Quick start
+
+Browse to your project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git`. Then run `npm install` and then run `gulp` for the build proccess to start.
+
 
 ##  Installation
 
@@ -33,7 +36,7 @@ First navigate to your website and install novicell fronend package:
     npm install
     
 
-## What is GULP?
+## What is GULP
 
 GULP is a streaming build system - or short for:
 
@@ -80,8 +83,8 @@ NOTE: The distribution path for each task, can be defined in gulp/config.json - 
 Use the following HTML. Remember to set correct path and id of chosen symbol, in svg href value.
 
     <svg class="icon-instagram">
-    	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#instagram">
-    </use></svg>
+    	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#instagram"></use>
+    </svg>
 
 ## License
 The Novicell Default Frontend is licensed under the MIT license. (http://opensource.org/licenses/MIT)
