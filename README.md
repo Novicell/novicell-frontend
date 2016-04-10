@@ -1,21 +1,44 @@
 # Novicell Default Frontend
 
-##  Preparation
+### Table of content
+- [Installation](#Installation)
+- [Setup](#Setup)
+- [What is GULP?](#What is GULP?)
+- [How to use GULP](#How to use GULP)
+- [Tasks in this package](#Tasks in this package)
+- [How to use SVG sprite sheet](#how-to-use-svg-sprite-sheet)
 
-- Download and install Node.js (https://nodejs.org/download/)
+## What is Novicell Default Frontend?
+Novicell Default Frontend package is a framework for your frontend setup and a Gulp based boilerplate for optimizing your frontend flow. It includes a BEM'ified version of Bootstrap's bare necessities (LESS), for starting your new website's development.
+When setup, it also helps you optimize images, combine SVGs to a sprite, compiling LESS to CSS and minifying Javascript.
+
+## Getting started
+TBD
+
+##  Installation
+
+- Download and install Node.js v. 4.x.x (https://nodejs.org/download/)
 - Download and install Git (http://git-scm.com/downloads)
   Remember to check "Git bash here" in context menu options
 
-  To check if node is working, go to CMD / Powershell / Gitbash / Terminal and type `node -v`
+  To check if node is working, go to Gitbash / Terminal and type `node -v`
   If you get a version number, you'r good to go.
 
-##  Installation
+##  Setup
 
 First navigate to your website and install novicell fronend package:
 
     cd "c:\Visual studio projects\project-name\Project.Website"
     npm install github:Novicell/novicell-frontend
     npm install
+    
+
+## What is GULP?
+
+GULP is a streaming build system - or short for:
+
+"I'll take care of minifiyng the images, scripts, styles and icons
+- now you just focus on doing what you do best: CODE!"
 
 ## How to use GULP
 
@@ -40,18 +63,17 @@ The following tasks are available:
 - scripts -	Minifies and bundles JS files defined in: gulp-config.json > bundles > {bundleName} > scripts
 - images -	Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
 - icons -	Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
-- fonts -	Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
+- copy -	Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
 - watch
 
-  - Runs the scripts, styles, images, icons and fonts task whenever a file has changed. The paths it listens on, is defined in the file gulp-config.json > watch.
-  - Also it automatically refreshes your browser window, using livereload (port can be changed in gulp-config.json > livereload > port).
-  The paths it listens on, is defined in: gulp-config.json > livereload > paths.
+  - Runs the scripts, styles, images, icons and fonts task whenever a file has changed. The paths it listens on, is defined in the file gulp/config.json > watch.
+  - Also it automatically refreshes your browser window, using livereload (port can be changed in gulp/config.json > livereload > port).
 
   Google Chrome Plugin: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
 
-  - Generates sourcemaps, if debug is set to true in gulp-config.json.
+  - Generates sourcemaps for CSS and JS.
 
-NOTE: The distribution path for each task, can be defined in gulp-config.json - so can the basePath.
+NOTE: The distribution path for each task, can be defined in gulp/config.json - so can the basePath.
 
 ## How to use SVG sprite sheet
 
@@ -61,16 +83,5 @@ Use the following HTML. Remember to set correct path and id of chosen symbol, in
     	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#instagram">
     </use></svg>
 
-
-#### CSS/LESS:
-Use classes in "/dist/icons/icons.less".
-
-## What is GULP by the way?
-
-GULP is a streaming build system - or short for:
-
-"I'll take care of minifiyng the images, scripts, styles and icons
-- now you just focus on doing what you do best: CODE!"
-
-# License
+## License
 The Novicell Default Frontend is licensed under the MIT license. (http://opensource.org/licenses/MIT)
