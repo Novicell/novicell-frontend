@@ -17,6 +17,7 @@ When setup, it also helps you optimize images, combine SVGs to a sprite, compili
   * [Forms](#forms)
   * [Tables](#tables)
 * [JS components](#js-components)
+  * [To be done](#to-be-done)
   * [Lazyload images](#lazyload-images)
 * [Notes](#notes)
 * [Requirements](#requirements)
@@ -138,17 +139,17 @@ Default styling for form inputs. In regards to checkboxes and radiobuttons, refe
 
 ## JS components
 
-### Lazyload images
-Include the `novicell.lazyloadResponsive.js` for lazyloading images.
-You need to call images like this, and then the javascript will add querystrings for the [imageprocessor.web](http://imageprocessor.org/imageprocessor-web/) component. More `filters` and other settings can be found on the [imageprocessor documentation](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/filter/).
-
-#### To be done
+### To be done
 - [ ] novicell.js
 - [ ] novicell.visible.js
 - [ ] novicell.debounce.js
 - [ ] novicell.overlay.js
 - [ ] novicell.embed.js
 - [ ] novicell.cookieinfo.js
+
+### Lazyload images
+Include the `novicell.lazyloadResponsive.js` for lazyloading images.
+You need to call images like this, and then the javascript will add querystrings for the [imageprocessor.web](http://imageprocessor.org/imageprocessor-web/) component. More `filters` and other settings can be found on the [imageprocessor documentation](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/filter/).
 
 
 ```html
