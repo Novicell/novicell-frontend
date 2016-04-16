@@ -1,0 +1,93 @@
+/**
+ * Settings: Variables
+ */
+
+
+/* Colors
+********************/
+@color-gray-dark:               #4b4b4b;
+@color-gray:                    #acacac;
+@color-gray-light:              #d7d7d7;
+@color-white:                   #ffffff;
+
+@color-primary:                 #336699;
+@color-secondary:               #669933;
+
+@color-link:                    @color-primary;
+@color-text:                    #363636;
+@color-mute:                    @color-gray;
+
+@color-input-text:              @color-text;
+@color-input-bg:                @color-white;
+@color-input-border:            @color-gray-light;
+@color-input-bg-disabled:       @color-gray-dark;
+
+@color-placeholder:             @color-gray-light;
+
+
+/* Layout
+********************/
+@site-background-color:         @color-white;
+
+
+/* Typography
+********************/
+@base-font-family:              "Lato", "Helvetica", "Arial", "sans-serif";
+@base-font-size:                16px;
+@base-font-weight:              400;
+
+@header-font-family:            @base-font-family;
+
+
+/* Grid
+********************/
+@gutter: 30px;
+@grid-columns: 12;
+
+// Small screen / tablet
+@container-tablet:             (720px + @gutter);
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:            (940px + @gutter);
+@container-md:                 @container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop:      (1140px + @gutter);
+@container-lg:                 @container-large-desktop;
+
+
+/* Media query breakpoints
+********************/
+// Extra small screen / phone
+@screen-xs:                     480px;
+@screen-xs-min:                 @screen-xs;
+@screen-phone:                  @screen-xs-min;
+
+// Small medium screen / phablet, large phones
+@screen-ms:                     480px;
+@screen-ms-min:                 @screen-ms;
+//** Deprecated `@screen-ms-desktop` as of v3.0.1
+@screen-ms-desktop:             @screen-ms-min;
+
+// Small screen / tablet
+@screen-sm:                     768px;
+@screen-sm-min:                 @screen-sm;
+@screen-tablet:                 @screen-sm-min;
+
+// Medium screen / desktop
+@screen-md:                     992px;
+@screen-md-min:                 @screen-md;
+@screen-desktop:                @screen-md-min;
+
+// Large screen / wide desktop
+@screen-lg:                     1200px;
+@screen-lg-min:                 @screen-lg;
+@screen-lg-desktop:             @screen-lg-min;
+
+
+// So media queries don't overlap when required, provide a maximum for each breakpoint
+@screen-xs-max:                 (@screen-ms-min - 1);
+@screen-ms-max:                 (@screen-sm-min - 1);
+@screen-sm-max:                 (@screen-md-min - 1);
+@screen-md-max:                 (@screen-lg-min - 1);

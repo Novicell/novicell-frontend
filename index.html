@@ -22,9 +22,11 @@
         <!--[if lt IE 9]>
             <p class="browserupgrade" style="display:block;text-align:center;font-weight:bold;background:#CF423F;padding:20px;margin:0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
 
+        <style>code {display: block; font-family: monospace; white-space: pre; margin: 1em 0; background: lightgray; color: black; border-radius: 3px; padding: 20px; overflow: auto; } code em {background:deeppink;} em {background: #eee; padding: 2px 8px; border-radius: 4px; display: inline-block;}</style>
+
         <div class="container">
             <div class="row">
-                <aside class="col-md-4">
+                <aside class="col--md-4">
                     <h3>Navigation</h3>
                     <ul class="list-group">
                         <li class="list-group-item">Cras justo odio</li>
@@ -34,11 +36,49 @@
                         <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
                 </aside>
-                <main class="col-md-8">
+
+
+                <main class="col--md-8">
                     <h1>Novicell frontend package</h1>
 
+                    <section class="lazyload-image-demo">
+                        <h2>Lazyload image demo</h2>
+                        <figure vocab="http://schema.org/" typeof="ImageObject"
+                            data-src="https://www.novicell.dk/media/3746/novicell_kopny.png"
+                            data-height-ratio="0.3"
+                            data-focalpoint="0,5,0,5"
+                            data-mode="crop"
+                            data-quality="75"
+                            data-filter="greyscale">
+                            <noscript class="responsiveLazyload">
+                                <img src="https://www.novicell.dk/media/3746/novicell_kopny.png"
+                                alt="Novicell"
+                                title="Novicell"
+                                property="contentUrl" />
+                            </noscript>
+                            <figcaption property="description">Novicell default</figcaption>
+                        </figure>
+                        <p>You need to call images like this, and then the javascript will add querystrings for the imageprocessor.web nuget component.</p>
+
+                        <code>&lt;figure vocab="http://schema.org/" typeof="ImageObject"
+data-src="https://www.novicell.dk/media/3746/novicell_kopny.png"
+data-height-ratio="0.3"
+data-focalpoint="0,5,0,5"
+data-mode="crop"
+data-quality="75"
+data-filter="greyscale"&gt;
+
+&lt;noscript class="responsiveLazyload"&gt;
+    &lt;img src="https://www.novicell.dk/media/3746/novicell_kopny.png"
+    alt="Novicell"
+    title="Novicell"
+    property="contentUrl" /&gt;
+&lt;/noscript&gt;
+
+&lt;figcaption property="description"&gt;Novicell default&lt;/figcaption&gt;</code>
+                    </section>
+
                     <section class="svg-demo">
-                        <style>code {display: block; font-family: monospace; white-space: pre; margin: 1em 0; background: lightgray; color: black; border-radius: 3px; padding: 20px; overflow: auto; } code em {background:deeppink;} em {background: #eee; padding: 2px 8px; border-radius: 4px; display: inline-block;}</style>
                         <article>
                             <h2>SVG Demo</h2>
                             <h3>Use SVG's like this</h3>
@@ -48,8 +88,8 @@
     &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<em>/dist/icons/icons.svg#lock"</em>&gt;&lt;/use&gt;
 &lt;/svg&gt;</code>
                             <strong>This will output:</strong>
-                            <svg>
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#lock"></use>
+                            <svg class="icon icon-lock">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-lock"></use>
                             </svg>
                         </article>
 
@@ -59,8 +99,8 @@
     &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#search"&gt;&lt;/use&gt;
 &lt;/svg&gt;</code>
                             <strong>This will output:</strong>
-                            <svg style="width:130px; height:130px; fill:red;">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#search"></use>
+                            <svg class="icon icon-lock" style="width:45px; height:45px; fill:aqua;">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-search"></use>
                             </svg>
                         </article>
                     </section>

@@ -1,0 +1,87 @@
+/**
+ * Base: Buttons
+ */
+
+// Default styling
+.button {
+    display: inline-block;
+    margin-bottom: 0; // For input.btn
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    white-space: nowrap;
+    .user-select(none);
+    position: relative;
+    text-decoration: none;
+
+    // Misc, fixes etc.
+    &,
+    &:active,
+    &.active {
+        &:focus,
+        &.focus {outline: none;}
+    }
+
+    &:active,
+    &.active {outline: 0;}
+
+    &.disabled,
+    &[disabled] {cursor: disabled;}
+
+    a& {
+        text-decoration: none;
+
+        &.disabled,
+        fieldset[disabled] & {pointer-events: none;} // Future-proof disabling of clicks on `<a>` elements
+    }
+
+
+    // Default button
+    & {
+        font-weight: 400;
+        font-family: @base-font-family;
+        .transition(background .2s);
+        padding: 12px 22px;
+        border-radius: 100px;
+        color: @color-text;
+        background: @color-primary;
+        border: 1px solid transparent;
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: @color-text;
+            background: darken(@color-primary, 10%);
+            text-decoration: none;
+        }
+    }
+
+    // Secondary button
+    &--secondary {
+        color: @color-white;
+        background: @color-secondary;
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: @color-white;
+            background: darken(@color-secondary, 10%);
+        }
+    }
+
+    // Ghost button
+    &--ghost {
+        color: @color-secondary;
+        background: transparent;
+        border-color: @color-secondary;
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: @color-white;
+            background: @color-secondary;
+        }
+    }
+}

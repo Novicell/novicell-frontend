@@ -1,6 +1,6 @@
 {
   "name": "novicell-frontend",
-  "version": "1.2.5",
+  "version": "2.0.0",
   "author": {
     "name": "Adam Peter Nielsen",
     "email": "apn@novicell.dk"
@@ -35,9 +35,10 @@
   "license": "MIT",
   "devDependencies": {
     "del": "^2.2.0",
+    "es6-promise": "^3.1.2",
     "gulp": "^3.8.8",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-bower": "0.0.11",
+    "gulp-bower": "0.0.13",
     "gulp-concat": "^2.4.1",
     "gulp-cssnano": "^2.0.0",
     "gulp-if": "^2.0.0",
@@ -46,9 +47,9 @@
     "gulp-jshint": "~2.0.0",
     "gulp-less": "~3.0.5",
     "gulp-livereload": "^3.8.1",
-    "gulp-load-plugins": "~1.1.0",
+    "gulp-load-plugins": "~1.2.0",
     "gulp-notify": "^2.0.0",
-    "gulp-plumber": "~1.0.1",
+    "gulp-plumber": "~1.1.0",
     "gulp-resolve-dependencies": "^2.2.0",
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.2.8",
@@ -57,6 +58,6 @@
     "jshint": "^2.8.0",
     "merge-stream": "~1.0.0",
     "node-notifier": "^4.4.0",
-    "yargs": "~3.31.0"
+    "yargs": "~4.4.0"
   }
 }
