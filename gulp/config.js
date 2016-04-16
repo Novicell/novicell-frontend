@@ -34,11 +34,12 @@ module.exports = (function () {
                 ignorePlugins: ["jscs"],
                 scripts: [
                     projectPath + "scripts/components/novicell.js",
-                    projectPath + "scripts/components/novicell.cookieinfo.js",
-                    // projectPath + "scripts/components/novicell.imageadjust.js",
+                    projectPath + "scripts/components/novicell.debounce.js",
+                    projectPath + "scripts/components/novicell.visible.js",
+                    projectPath + "scripts/components/novicell.lazyloadResponsive.js",
+                    projectPath + "scripts/components/novicell.embed.js",
                     // projectPath + "scripts/components/novicell.overlay.js",
-                    // projectPath + "scripts/components/novicell.lazyload.js",
-                    projectPath + "scripts/components/novicell.responsive.js",
+                    projectPath + "scripts/components/novicell.cookieinfo.js",
                     projectPath + "scripts/components/novicell.map.js",
                     projectPath + "scripts/master.js"
                 ],

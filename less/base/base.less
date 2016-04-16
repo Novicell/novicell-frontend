@@ -1,0 +1,50 @@
+/**
+ * Base
+ */
+
+// Box sizing
+* {
+    .box-sizing(border-box);
+
+    &:before,
+    &:after {.box-sizing(border-box);}
+}
+
+
+// Body
+body {
+    background-color: @site-background-color;
+    font-family: @base-font-family;
+    font-weight: @base-font-weight;
+    font-size: @base-font-size;
+    color: @color-text;
+    line-height: 1.5;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+
+    @media (min-width:@screen-lg) {font-size: 18px;}
+}
+
+
+// Links
+a {
+    color: @color-link;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {color: darken(@color-link, 10%);}
+}
+
+
+// Image handling
+figure {
+    margin: 0;
+
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}

@@ -1,9 +1,11 @@
-var novicell = novicell || {};
+/**
+  * @desc Cookie info dialog plugin
+  * examples novicell.cookieInfo.init();
+  * @author Danni Larsen - DLA
+  * @requires jquery
+*/
 
-// Init on document ready
-$(function () {
-    novicell.cookieInfo.init();
-});
+var novicell = novicell || {};
 
 novicell.cookieInfo = new function(){
     var self = this;

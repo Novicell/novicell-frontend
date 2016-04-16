@@ -1,3 +1,17 @@
+[2.0.0]
+- Removed dependency for bootstrap
+- Added Novicell Frontend BEM setup from repo: https://github.com/Novicell/novicell-frontend-bem
+- Added novicell.debouncer.js
+- Added novicell.visible.js
+- Added novicell.embed.js
+- Added novicell.lazyloadResponsive.js
+- Added lazyload image example
+- Set up settings for CSSnano (minify css task)
+- Removed old scripts (imageadjust & old responsive script)
+- Prefixed icons with "icon-"
+- Basic clean up
+- Updated svg4Everybody to official repo
+
 [1.2.5]
 - Added SVG4Everybody
 - Added SVG demos

@@ -15,11 +15,10 @@ var projectName = projectName || {};
 // Document ready
 $(function () {
     // Only include Novicell functions that you use!
-    novicell.responsive.init();
     novicell.map.init();
-    // novicell.adjustFigureImage.init();
-    // novicell.lazyload.content();
-    // novicell.lazyload.image();
+    novicell.cookieInfo.init();
+    novicell.embed.loadEmbeds();
+    novicell.responsiveLazyloadImage.image();
 
     // Call new functions here like this:
     //projectName.slider.heroSlider($('.owl-carousel'));
@@ -37,12 +36,24 @@ $(function () {
 //     // call functions here
 // }); // Window load
 
-// // Window resize
-// $(window).resize(function(e){
-//     // call functions here
-// }); // Window resize
+// Window resize (debounced)
+$(window).smartresize(function(e){
+    novicell.responsiveLazyloadImage.onResize();
+    novicell.embed.onResize();
+}); // Window resize
 
-// // Window scroll
-// $(window).scroll(function(e){
-//     // call functions here
-// }); // Window scroll
+// Window scroll (debounced)
+$(window).smartscroll(function (e) {
+    // call functions here
+    if ($('.responsiveLazyload').length) {
+        novicell.responsiveLazyloadImage.image();
+    }
+    if ($('.embed-media-item').length) {
+        novicell.embed.loadEmbeds();
+    }
+}); // Window scroll
+
+// // Window mousemove (debounced)
+// $(window).smartmousemove(function(e){
+//     // do stuff as soon as the user stops moving his mouse for longer than 100ms
+// }); // Window mousemove
