@@ -23,7 +23,7 @@ When setup, it also helps you optimize images, combine SVGs to a sprite, compili
 * [Requirements](#requirements)
 * [License](#license)
 
-## Quick start
+## Quicker start
 
 Browse to your project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git`. Then run `npm install` and then run `gulp` for the build proccess to start.
 
