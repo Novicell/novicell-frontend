@@ -17,7 +17,7 @@ module.exports = (function () {
                 name: "vendor",
                 ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
                 scripts: [
-                    bowerPath + "/svg4everybodyLatest/dist/svg4everybody.js",
+                    bowerPath + "/svg4everybody/dist/svg4everybody.js",
                     bowerPath + "/jquery/dist/jquery.js"
                 ]
             },
