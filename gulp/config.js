@@ -10,7 +10,7 @@ module.exports = (function () {
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
     var preprocessor = "less"; //choose between "less" or "scss"
-    var enableTypescript = true; // Set to false to disable
+    var enableTypescript = false; // Set to false to disable
 
     return {
         // ------------- Bundles -------------
