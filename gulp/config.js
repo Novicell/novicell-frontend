@@ -7,8 +7,10 @@ module.exports = (function () {
     var projectPath = "./";
     var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
     var distPath = projectPath + "dist";
+    var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
     var preprocessor = "less"; //choose between "less" or "scss"
+    var enableTypescript = true; // Set to false to disable
 
     return {
         // ------------- Bundles -------------
@@ -129,19 +131,21 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "bower", "styles", "scripts",
-            "images", "icons", "copy",
-            "watch", "build"
+            "bower", "typescript", "styles",
+            "scripts", "images", "icons",
+            "copy", "watch", "build", 
         ],
         buildTasks: [
-            "styles", "scripts",
-            "images", "icons", "copy"
+            "styles", "typescript", "scripts",
+            "images", "icons", "copy", 
         ],
 
         // ------------- Return Paths -------------
         projectPath: projectPath,
         bowerPath: bowerPath,
         cleanPaths: cleanPaths,
+        typescriptPath: typescriptPath,
+        enableTypescript: enableTypescript,
         preprocessor: preprocessor,
 
         // ---------- Errorhandler ------
