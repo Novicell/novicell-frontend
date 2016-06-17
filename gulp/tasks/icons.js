@@ -12,14 +12,6 @@ var plugins = require('gulp-load-plugins')();
 var svgSprite = require('gulp-svg-sprite');
 var fs = require('fs');
 
-
-/**
- * Prepare and output a file
- * 
- * @param {String} file             File
- * @param {String} content          Content
- * @return {String}                 File
- */
 function writeFile(file, content) {
     try {
         fs.writeFileSync(file, content);
@@ -39,20 +31,21 @@ function genereateIconJsonLibrary(err, files) {
     var dataObject = {
         "icons": collection
     }
-    
+
     writeFile(jsonPath, JSON.stringify(dataObject));
     console.log("NC - 'icons.json' generated.");
 }
 
 gulp.task('icons', function () {
-    var streams = config.bundles().filter(function (b) {
+    var streams = config.bundles.filter(function (b) {
         return b.icons != null;
     }).map(function (b) {
         var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
 
         var useNewer = ignores.indexOf("newer") == -1;
         var useImagemin = ignores.indexOf("imagemin") == -1;
-        
+
+        fs.readdir("icons/", genereateIconJsonLibrary);
 
         return gulp.src(b.icons)
             .pipe(plugins.plumber(config.errorHandler("icons")))
