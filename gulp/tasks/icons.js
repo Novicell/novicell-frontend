@@ -11,7 +11,6 @@ var mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 var svgSprite = require('gulp-svg-sprite');
 var fs = require('fs');
-//var mkdirp = require('mkdirp');
 
 
 /**
