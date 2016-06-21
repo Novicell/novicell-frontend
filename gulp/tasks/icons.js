@@ -22,7 +22,6 @@ function writeFile(file, content) {
 }
 
 function genereateIconJsonLibrary(err, files) {
-    var jsonPath = "dist/icons/icons.json";
     var collection = [];
     for (var i = 0; i < files.length; i++) {
         collection.push(files[i].toString().replace(".svg", ""));
@@ -32,7 +31,7 @@ function genereateIconJsonLibrary(err, files) {
         "icons": collection
     }
 
-    writeFile(jsonPath, JSON.stringify(dataObject));
+    writeFile(config.jsonIconPath, JSON.stringify(dataObject));
     console.log("NC - 'icons.json' generated.");
 }
 
