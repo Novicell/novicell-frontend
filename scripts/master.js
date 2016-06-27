@@ -18,7 +18,7 @@ $(function () {
     novicell.map.init();
     novicell.cookieInfo.init();
     novicell.embed.loadEmbeds();
-    novicell.responsiveLazyloadImage.image();
+    novicell.responsiveLazyloadImage.onLoad();
 
     // Call new functions here like this:
     //projectName.slider.heroSlider($('.owl-carousel'));
@@ -46,7 +46,7 @@ $(window).smartresize(function(e){
 $(window).smartscroll(function (e) {
     // call functions here
     if ($('.responsiveLazyload').length) {
-        novicell.responsiveLazyloadImage.image();
+        novicell.responsiveLazyloadImage.onScroll();
     }
     if ($('.embed-media-item').length) {
         novicell.embed.loadEmbeds();
