@@ -10,6 +10,30 @@ var config = require('../config.js');
 var mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 var svgSprite = require('gulp-svg-sprite');
+var fs = require('fs');
+
+function writeFile(file, content) {
+    try {
+        fs.writeFileSync(file, content);
+        return file;
+    } catch (e) {
+        return null;
+    }
+}
+
+function genereateIconJsonLibrary(err, files) {
+    var collection = [];
+    for (var i = 0; i < files.length; i++) {
+        collection.push(files[i].toString().replace(".svg", ""));
+    }
+
+    var dataObject = {
+        "icons": collection
+    }
+
+    writeFile(config.jsonIconPath, JSON.stringify(dataObject));
+    console.log("NC - 'icons.json' generated.");
+}
 
 gulp.task('icons', function () {
     var streams = config.bundles.filter(function (b) {
@@ -19,6 +43,8 @@ gulp.task('icons', function () {
 
         var useNewer = ignores.indexOf("newer") == -1;
         var useImagemin = ignores.indexOf("imagemin") == -1;
+
+        fs.readdir("icons/", genereateIconJsonLibrary);
 
         return gulp.src(b.icons)
             .pipe(plugins.plumber(config.errorHandler("icons")))

@@ -30,6 +30,10 @@
     {
       "name": "Emil Rasmussen",
       "email": "era@novicell.dk"
+    },
+    {
+    	"name": "Mark Arndt Lønquist",
+    	"email": "mlo@novicell.dk"
     }
   ],
   "license": "MIT",
@@ -58,6 +62,10 @@
     "jshint": "^2.8.0",
     "merge-stream": "~1.0.0",
     "node-notifier": "^4.4.0",
-    "yargs": "~4.4.0"
+    "yargs": "~4.4.0",
+    "gulp-tslint": "^3.6.0",
+    "gulp-typescript": "^2.8.0",
+    "tslint": "^3.2.1",
+    "typescript": "^1.7.3"
   }
 }
