@@ -1,13 +1,17 @@
 {
   "name": "novicell-frontend",
+  "description": "Novicells Default Frontend Package - used in all Novicell related projects as a base framework.",
   "version": "2.0.0",
+  "homepage": "http://www.novicell.dk",
   "author": {
-    "name": "Adam Peter Nielsen",
-    "email": "apn@novicell.dk"
+    "name": "Novicell"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Novicell/novicell-frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Novicell/novicell-frontend/issues"
   },
   "main": "index.js",
   "contributors": [
@@ -34,6 +38,10 @@
     {
     	"name": "Mark Arndt Lønquist",
     	"email": "mlo@novicell.dk"
+    },
+    {
+      "name": "Adam Peter Nielsen",
+      "email": "apn@novicell.dk"
     }
   ],
   "license": "MIT",
@@ -67,5 +75,16 @@
     "gulp-typescript": "^2.8.0",
     "tslint": "^3.2.1",
     "typescript": "^1.7.3"
-  }
+  },
+  "files": [
+    "gulp",
+    "scripts/**/*.js",
+    "less/**/*.less",
+    "bower.json",
+    "gulpfile.js",
+    "index.js",
+    "tsconfig.json",
+    "tsd.json",
+    "tslint.json"
+  ],
 }
