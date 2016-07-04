@@ -23,16 +23,18 @@ gulp.task('watcher', function () {
 gulp.task('watch', function () {
     var watchNode;
     var livereloadNode;
+    var isWin = /^win/.test(process.platform);
+    var gulpSpawnProcessName = isWin ? 'gulp.cmd' : 'gulp';
 
     gulp.watch(config.projectPath + 'gulp/config.js', spawnChildren);
     spawnChildren();
 
     function spawnChildren() {
         if (watchNode) { watchNode.kill(); }
-        watchNode = spawn('gulp.cmd', ['watcher'], { stdio: 'inherit' });
+        watchNode = spawn(gulpSpawnProcessName, ['watcher'], { stdio: 'inherit' });
 
         if (!livereloadNode) {
-            livereloadNode = spawn('gulp.cmd', ['livereload'], { stdio: 'inherit' });
+            livereloadNode = spawn(gulpSpawnProcessName, ['livereload'], { stdio: 'inherit' });
         } else {
             gulp.watch(config.livereloadPaths)
                 .on('change', plugins.livereload.changed);
