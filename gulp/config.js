@@ -48,7 +48,8 @@ module.exports = (function () {
                 ],
                 styles: [projectPath + preprocessor + "/master." + preprocessor],
                 images: [projectPath + "images/**/*.{jpg,png,svg,gif}"],
-                icons: [projectPath + "icons/**/*.svg"]
+                icons: [projectPath + "icons/**/*.svg"],
+                html: [projectPath + "html/*.html"]
             }
         ],
 
@@ -102,6 +103,12 @@ module.exports = (function () {
         imagesProgressive: true,
         imagesInterlaced: true,
 
+        // -------------- HTML --------------
+        htmlFileIncludeConfig: {
+            prefix: '@@',
+            basepath: '@file'
+        },
+
         // ------------- Livereload ---------
         livereloadPort: 35729,
         livereloadPaths: [
@@ -114,6 +121,7 @@ module.exports = (function () {
         watchImages: [ projectPath + "images/**/*", projectPath + '!images/icons/*' ],
         watchIcons: [ projectPath + "images/icons/*" ],
         watchFonts: [ projectPath + "fonts/*" ],
+        watchHtml: [ projectPath + "html/**/*" ],
         watchScripts: [
             projectPath + "scripts/**/*.js",
             projectPath + "vendor/**/*.js"
@@ -134,11 +142,11 @@ module.exports = (function () {
         loadTasks: [
             "bower", "typescript", "styles",
             "scripts", "images", "icons",
-            "copy", "watch", "build", 
+            "copy", "watch", "build", "html"
         ],
         buildTasks: [
             "styles", "typescript", "scripts",
-            "images", "icons", "copy", 
+            "images", "icons", "copy", "html"
         ],
 
         // ------------- Return Paths -------------
@@ -148,6 +156,7 @@ module.exports = (function () {
         typescriptPath: typescriptPath,
         enableTypescript: enableTypescript,
         preprocessor: preprocessor,
+        distPath: distPath,
 
         // ---------- Errorhandler ------
         errorHandler: function(taskName)

@@ -16,6 +16,7 @@ gulp.task('watcher', function () {
     gulp.watch(config.watchImages, ["images"]);
     gulp.watch(config.watchIcons, ["icons"]);
     gulp.watch(config.watchFonts, ["copy"]);
+    gulp.watch(config.watchHtml, ["html"]);
 
     return;
 });
