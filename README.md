@@ -77,6 +77,7 @@ The following tasks are available:
 * images -	Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
 * icons -	Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
 * copy -	Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
+* hhtml - Looks through the html folder for `@@include`, to then partially replace them when compiling the html file
 * watch
 
   * Runs the scripts, styles, images, icons and fonts task whenever a file has changed. The paths it listens on, is defined in the file gulp/config.json > watch.
