@@ -55,6 +55,7 @@
     "gulp-cssnano": "^2.0.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
+    "gulp-file-include": "^0.13.7",
     "gulp-jscs": "^3.0.2",
     "gulp-jshint": "~2.0.0",
     "gulp-less": "~3.0.5",
@@ -79,6 +80,7 @@
   "files": [
     "examples/**/*",
     "gulp",
+    "html/**/*.html",
     "scripts/**/*.js",
     "less/**/*.less",
     "bower.json",
