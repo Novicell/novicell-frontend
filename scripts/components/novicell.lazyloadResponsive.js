@@ -10,7 +10,7 @@
   * @return generates img and removes noscript image
   * @requires jquery@1.11.3
   * @note: Just beautiful!
-  * 
+  *
   For pretty loading of the image you can use this snippet of less
     .nc-grid-focalpointimagelink figure {
         background-position: center center;
@@ -43,7 +43,7 @@
                 </noscript>
             </figure>
      </div>
-    
+
 */
 
 var novicell = novicell || {};
