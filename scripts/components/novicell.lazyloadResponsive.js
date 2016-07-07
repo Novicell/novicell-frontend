@@ -104,54 +104,61 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
 
     this.constructImage = function (figure) {
         var $image = new Image();
+        var $figure =  $(figure);
 
         //data variables and images settings
         var width, maxWidth, heightRatio, focalPoint, mode, filter, quality, height, isBackgroundImage = false;
 
-        $parent = figure.data('parent') ? $(figure).closest(figure.data('parent')) : null;
-        isBackgroundImage = figure.data('is-background') ? true : false;
-        width = figure.width() != 0 ? figure.width() : $(figure).parent().width();
-        heightRatio = figure.data('height-ratio') != 0 ? figure.data('height-ratio') : null;
+        $parent = $figure.data('parent') ? $figure.closest($figure.data('parent')) : null;
+        isBackgroundImage = $figure.data('is-background') ? true : false;
+        width = $figure.width() != 0 ? figure.width() : $figure.parent().width();
+        heightRatio = $figure.data('height-ratio') != 0 ? $figure.data('height-ratio') : null;
         height = $parent ? $parent.height() : null;
-        focalPoint = figure.data('focalpoint');
-        mode = figure.data('mode');
-        filter = figure.data('filter');
-        quality = figure.data('quality') || 80;
+        focalPoint = $figure.data('focalpoint');
+        mode = $figure.data('mode');
+        filter = $figure.data('filter');
+        quality = $figure.data('quality') || 80;
 
-        var newImageSrc = figure.data('src');
-        newImageSrc += mode ? self.nextQuerySign(newImageSrc) + "width=" + width : "";
+        var newImageSrc = $figure.data('src');
         newImageSrc += focalPoint ? self.nextQuerySign(newImageSrc) + "center=" + focalPoint : "";
         newImageSrc += mode ? self.nextQuerySign(newImageSrc) + "mode=" + mode : "";
         newImageSrc += filter ? self.nextQuerySign(newImageSrc) + "filter=" + filter : "";
         newImageSrc += self.nextQuerySign(newImageSrc) + "quality=" + quality;
 
-        figure.find('img').remove();
+        $figure.find('img').remove();
 
         // Append the image as a background or as a <img>
         if(isBackgroundImage && $parent) {
             bgSrc = newImageSrc;
             bgSrc += height ? self.nextQuerySign(bgSrc) + "height=" + height : "";
+            bgSrc += mode ? self.nextQuerySign(bgSrc) + "width=" + width : "";
+            
             $parent.css('background-image', 'url("'+bgSrc+'")');
 
         } else {
             // Add attributes only needed when pretending an image
-            maxWidth = figure.data('original-width');
-            width = width > maxWidth ? maxWidth : width;
+            maxWidth = $figure.data('original-width');
+            if(width > maxWidth) {
+           		width = maxWidth;
+           		$figure.addClass('contain-width');
+            }
+
+            newImageSrc += mode ? self.nextQuerySign(newImageSrc) + "width=" + width : "";
             newImageSrc += height && !heightRatio ? self.nextQuerySign(newImageSrc) + "height=" + height : "";
             newImageSrc += heightRatio != null ? self.nextQuerySign(newImageSrc) + "height=" + heightRatio * width : "";
 
             $image.src = newImageSrc;
-            figure.prepend($image);
-            $image = figure.find('img');
+            $figure.prepend($image);
+            $image = $figure.find('img');
             $image.css('opacity', '0');
             // Fade the image
             $image.on('load', function(event) {
                 $image.css('opacity', '1');
             });
 
-            $image.attr('class', figure.data('class'));
-            $image.attr('alt', figure.data('alt'));
-            $image.attr('title', figure.data('title'));
+            $image.attr('class', $figure.data('class'));
+            $image.attr('alt', $figure.data('alt'));
+            $image.attr('title', $figure.data('title'));
             $image.attr('property', 'contentUrl');
         }
     }
