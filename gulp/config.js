@@ -114,7 +114,8 @@ module.exports = (function () {
         livereloadPaths: [
             "./dist/scripts/*.js",
             "./dist/css/*.css",
-            "./Views/**/*.cshtml"
+            "./Views/**/*.cshtml",
+            "./html/**/*.html"
         ],
 
         // ------------- Watch -------------
