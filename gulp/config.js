@@ -158,6 +158,7 @@ module.exports = (function () {
         enableTypescript: enableTypescript,
         preprocessor: preprocessor,
         distPath: distPath,
+        jsonIconPath: jsonIconPath,
 
         // ---------- Errorhandler ------
         errorHandler: function(taskName)
