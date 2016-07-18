@@ -20,7 +20,7 @@ novicell.embed = novicell.embed || function () {
     var refreshWidth = 50;
 
     this.loadEmbeds = function (callback) {
-        $(".grid-embedmedia").each(function () {
+        $(".nc-grid-embedmedia").each(function () {
             if ($(this).visible(true) || $(this).data("load") === "always") {
                 if ($(this).has(".embed-preview-image")) {
                     $(this).find(".embed-preview-image").click(function () {
@@ -42,7 +42,7 @@ novicell.embed = novicell.embed || function () {
 
     this.onResize = function (callback) {
         if (window.innerWidth > lastRefreshWidth + refreshWidth || window.innerWidth < lastRefreshWidth - refreshWidth) {
-            $('.grid-embedmedia').each(function () {
+            $('.nc-grid-embedmedia').each(function () {
                 self.lazyEmbed($(this).find(".embed-media-item"));
                 if (typeof callback == 'function') {
                     callback();
@@ -66,8 +66,7 @@ novicell.embed = novicell.embed || function () {
     }
 
     this.backofficeEmbeds = function (callback) {
-        console.log($(".grid-embedmedia").length);
-        $(".grid-embedmedia").each(function () {
+        $(".nc-grid-embedmedia").each(function () {
             $(this).find(".embed-preview-image").remove();
             self.lazyEmbed($(this).find(".embed-media-item"));
             $(this).find(".embed").attr("src", self.updateQueryStringParameter($(this).find(".embed").data("src"), "autoplay", "false"))
