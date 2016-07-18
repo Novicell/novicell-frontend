@@ -66,7 +66,6 @@ novicell.embed = novicell.embed || function () {
     }
 
     this.backofficeEmbeds = function (callback) {
-        //console.log($(".nc-grid-embedmedia").length);
         $(".nc-grid-embedmedia").each(function () {
             $(this).find(".embed-preview-image").remove();
             self.lazyEmbed($(this).find(".embed-media-item"));
