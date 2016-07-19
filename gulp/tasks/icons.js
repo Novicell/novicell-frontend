@@ -17,6 +17,7 @@ function writeFile(file, content) {
         fs.writeFileSync(file, content);
         return file;
     } catch (e) {
+        console.log(e);
         return null;
     }
 }
@@ -24,7 +25,12 @@ function writeFile(file, content) {
 function genereateIconJsonLibrary(err, files) {
     var collection = [];
     for (var i = 0; i < files.length; i++) {
-        collection.push(files[i].toString().replace(".svg", ""));
+        var fileStr = files[i].toString();
+        var fileType = fileStr.substr(fileStr.lastIndexOf(".") + 1);
+
+        if (fileType === "svg") {
+            collection.push(files[i].toString().replace(".svg", ""));
+        }
     }
 
     var dataObject = {
