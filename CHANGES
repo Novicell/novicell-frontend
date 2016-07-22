@@ -1,3 +1,6 @@
+[2.0.1]
+- Updated node modules
+
 [2.0.0]
 - Removed dependency for bootstrap
 - Added Novicell Frontend BEM setup from repo: https://github.com/Novicell/novicell-frontend-bem
