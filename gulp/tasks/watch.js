@@ -1,7 +1,9 @@
-var gulp = require('gulp');
-var config = require('../config.js');
+'use strict';
+
+const gulp = require('gulp');
+const config = require('../config.js');
+const spawn = require('child_process').spawn;
 var plugins = require('gulp-load-plugins')();
-var spawn = require('child_process').spawn;
 
 gulp.task("livereload", function () {
     plugins.livereload.listen(config.livereloadPort);

@@ -1,3 +1,5 @@
+'use strict';
+
 /*
     the html task looks through the html files in the html folder, after the prefix @@.
     This makes it possible to include "partial" html pieces like
@@ -7,9 +9,9 @@
     </body>
 */
 
-var gulp = require('gulp');
-var config = require('../config.js');
-var mergeStream = require('merge-stream');
+const gulp = require('gulp');
+const config = require('../config.js');
+const mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('html', function() {

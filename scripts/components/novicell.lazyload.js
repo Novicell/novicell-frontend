@@ -1,10 +1,12 @@
+'use strict';
+
 var novicell = novicell || {};
 
 /* Novicell LazyloadContent
 * Original author: Adam Peter Nielsen
 * Load content only when visible via AJAX. Great for widgets that are only visible on some devices
 * ------
-* Dependencies: 
+* Dependencies:
 * Usage: novicell.lazyload.content(OPTIONAL-CALLBACK-FUNCTION);
 * HTML example: <div class="lazyload" data-src="PATH">
 * Optional: force lazyload via this attribute: data-load="always"
@@ -30,7 +32,7 @@ novicell.lazyload = novicell.lazyload || function () {
 			}
 		});
 	}
-	
+
 	/* Novicell LazyloadImage
 	* Original author: Lars Hesselberg
 	* Load images when <img> element appears. Great for speeding up long pages with many images.
@@ -50,7 +52,7 @@ novicell.lazyload = novicell.lazyload || function () {
 				}
 			});
 		});
-		
+
     }
     // public functions:
     return {

@@ -1,3 +1,4 @@
+'use strict';
 /**
   * @desc Cookie info dialog plugin
   * examples novicell.cookieInfo.init();
@@ -7,7 +8,7 @@
 
 var novicell = novicell || {};
 
-novicell.cookieInfo = new function(){
+novicell.cookieInfo = function(){
     var self = this;
     var $body = $('body');
 
@@ -18,12 +19,12 @@ novicell.cookieInfo = new function(){
 
         if ($cookieInfo.length) {
             // If we have displayed it once, set cookie for one year
-            if (getCookie("cookieAccept") == "displayed") {
+            if (getCookie("cookieAccept") === "displayed") {
                 setCookie("cookieAccept", "accepted", 365);
             }
 
             // Check if the cookie info has been displayed, if not set session cookie
-            if (getCookie("cookieAccept") == "") {
+            if (getCookie("cookieAccept") === "") {
                 setCookie("cookieAccept", "displayed");
 
                 setTimeout(function() {
@@ -52,7 +53,7 @@ novicell.cookieInfo = new function(){
         $body.removeClass('cookie-info-show');
     };
 
-};
+}();
 
 /* Cookie helper functions
 *******************************/
@@ -63,8 +64,8 @@ function getCookie(cname) {
     var ca = document.cookie.split(';');
     for(var i=0; i<ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0)==' '){ c = c.substring(1) };
-        if (c.indexOf(name) == 0){ return c.substring(name.length,c.length)};
+        while (c.charAt(0)==' '){ c = c.substring(1); }
+        if (c.indexOf(name) === 0){ return c.substring(name.length,c.length); }
     }
     return "";
 }

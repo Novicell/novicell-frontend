@@ -1,3 +1,4 @@
+'use strict';
 /*
  * Novicell master
  *  Author: APN modified by DLA

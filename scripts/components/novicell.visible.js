@@ -1,3 +1,5 @@
+'use strict';
+
 (function ($) {
     /**
      * Copyright 2012, Digital Fusion

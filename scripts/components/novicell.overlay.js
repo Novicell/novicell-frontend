@@ -1,3 +1,5 @@
+'use strict';
+
 var novicell = novicell || {};
 
 /* Novicell overlay
@@ -15,12 +17,6 @@ var novicell = novicell || {};
 	.ncOverlay-inner{background:@white;height:100%;overflow:hidden;padding:15px 0;.border-radius(3px);.box-shadow(0 0 8px @grayLighter);}
 	.ncOverlay-inner-scroll{overflow-y:auto;height:100%;padding:0 20px;}
 	.ncOverlay-close{margin:-15px 5px -20px -20px;.box-shadow(0 0 8px @grayLight);cursor:pointer;}
-* - CSS:
-	#ncOverlay{position:absolute;top:0;left:0;width:100%;height:100%;z-index:3300;background:rgba(0,0,0,0.5);display:none;cursor:pointer;}
-	#ncOverlay-content{position:absolute;top:0;right:0;bottom:0;left:0;width:50%;height:50%;margin:auto;z-index:3301;display:none;}
-	.ncOverlay-inner{background:#fff;height:100%;overflow:hidden;padding:15px 0;border-radius:3px;-moz-border-radius: px;-webkit-border-radius:3px;box-shadow: 0 0 8px #eee;-moz-box-shadow: 0 0 8px #eee;-webkit-box-shadow: 0 0 8px #eee;}
-	.ncOverlay-inner-scroll{overflow-y:auto;height:100%;padding:0 20px;}
-	.ncOverlay-close{margin:-15px 5px -20px -20px;box-shadow: 0 0 8px #999;-moz-box-shadow: 0 0 8px #999;-webkit-box-shadow: 0 0 8px #999;cursor:pointer;}
 */
 
 novicell.overlay = novicell.overlay || function () {

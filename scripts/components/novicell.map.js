@@ -1,3 +1,5 @@
+'use strict';
+
 /**
   * @desc Load google maps
   * html example: <div id="map-canvas" data-lat="56.109574" data-lng="10.155361" data-zoom="15"></div>
@@ -10,7 +12,7 @@
 
 var novicell = novicell || {};
 
-novicell.map = new function(){
+novicell.map = function(){
     this.init = function() {
         if(document.getElementById('map-canvas')){
             // Async load the GMaps API and run "initialize"
@@ -19,8 +21,8 @@ novicell.map = new function(){
             script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize';
             document.body.appendChild(script);
         }
-    }
-}
+    };
+}();
 
 
 var initialize = function() {
@@ -100,4 +102,4 @@ var initialize = function() {
     google.maps.event.trigger(map, "resize");
     map.setCenter(center);
 });
-}
+};

@@ -1,6 +1,8 @@
-var gulp = require('gulp');
-var config = require('../config.js');
-var mergeStream = require('merge-stream');
+'use strict';
+
+const gulp = require('gulp');
+const config = require('../config.js');
+const mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
 // Tasks
@@ -43,6 +45,7 @@ var compileScripts = function(isWatchTask){
         .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
         .pipe(plugins.plumber(config.errorHandler("scripts")))
         .pipe(plugins.if(useJshint, plugins.jshint()))
+        .pipe(plugins.if(useJshint, plugins.jshint.reporter('jshint-stylish', { verbose: true })))
         .pipe(plugins.if(useJscs, plugins.jscs()))
         .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
         .pipe(plugins.concat(b.name + ".min.js"))

@@ -1,4 +1,6 @@
-﻿var notifier = require('node-notifier');
+﻿'use strict';
+
+var notifier = require('node-notifier');
 var argv = require('yargs').argv;
 
 module.exports = (function () {

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
   * @desc new responsive lazyload image script, servering the image depending on parent-wrapper width and aspect-ratio parameter
   * html example <img src="/media/1001/on-top-of-earth.jpg" data-height-ratio="1" data-focalpoint="0.96885813148788924,0.49090909090909091" data-mode="crop" data-quality="75" data-filter="greyscale" class="img-circle" alt="Random alternative text" title="Random title 2" property="contentUrl" />
@@ -6,10 +8,9 @@
   * js scroll example:
   * if($('.responsiveLazyload').length)
   *     novicell.responsiveLazyloadImage.image();
-  * @author Tommy Pedersen - TPE & Danni Larsen - DLA
+  * @author Tommy Pedersen - TPE, DLA & JHA
   * @return generates img and removes noscript image
-  * @requires jquery@1.11.3
-  * @note: Just beautiful!
+  * @requires jquery > 1.11.0
   *
   For pretty loading of the image you can use this snippet of less
     .nc-grid-focalpointimagelink figure {
@@ -22,8 +23,7 @@
         }
     }
 
-    Usecase:
-
+Usecase:
     <div id="parent" style="height: 400px;">
             <figure vocab="http://schema.org/" typeof="ImageObject"
                     data-src="@Image.Url"
@@ -48,7 +48,7 @@
 
 var novicell = novicell || {};
 
-novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function () {
+novicell.responsiveLazyloadImage = function (){
     var self = this;
     var lastRefreshWidth = 0;
     var refreshWidth = 50;
@@ -57,7 +57,7 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
         $('.responsiveLazyload').each(function () {
             self.loadImage($(this));
         });
-    }
+    };
 
     this.onLoad = function () {
         $('.responsiveLazyload').each(function () {
@@ -69,7 +69,7 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
                 self.constructPlaceholder($figure);
             }
         });
-    }
+    };
 
     this.onResize = function (callback) {
         if (window.innerWidth > lastRefreshWidth + refreshWidth || window.innerWidth < lastRefreshWidth - refreshWidth) {
@@ -82,7 +82,7 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
             });
             lastRefreshWidth = window.innerWidth;
         }
-    }
+    };
 
     // Loads the image.
     this.loadImage = function ($element, isVisible) {
@@ -95,12 +95,9 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
                 self.constructImage($figure);
                 lastRefreshWidth = window.innerWidth;
                 $figure.addClass('lazyResizeReload');
-                if (typeof callback == 'function') {
-                    callback();
-                }
             }
         }
-    }
+    };
 
     this.constructImage = function (figure) {
         var $image = new Image();
@@ -109,10 +106,10 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
         //data variables and images settings
         var width, maxWidth, heightRatio, focalPoint, mode, filter, quality, height, isBackgroundImage = false;
 
-        $parent = $figure.data('parent') ? $figure.closest($figure.data('parent')) : null;
+        var $parent = $figure.data('parent') ? $figure.closest($figure.data('parent')) : null;
         isBackgroundImage = $figure.data('is-background') ? true : false;
-        width = $figure.width() != 0 ? figure.width() : $figure.parent().width();
-        heightRatio = $figure.data('height-ratio') != 0 ? $figure.data('height-ratio') : null;
+        width = $figure.width() !== 0 ? figure.width() : $figure.parent().width();
+        heightRatio = $figure.data('height-ratio') !== 0 ? $figure.data('height-ratio') : null;
         height = $parent ? $parent.height() : null;
         focalPoint = $figure.data('focalpoint');
         mode = $figure.data('mode');
@@ -129,28 +126,28 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
 
         // Append the image as a background or as a <img>
         if(isBackgroundImage && $parent) {
-            bgSrc = newImageSrc;
+            var bgSrc = newImageSrc;
             bgSrc += height ? self.nextQuerySign(bgSrc) + "height=" + height : "";
             bgSrc += mode ? self.nextQuerySign(bgSrc) + "width=" + width : "";
-            
+
             $parent.css('background-image', 'url("'+bgSrc+'")');
 
         } else {
             // Add attributes only needed when pretending an image
             maxWidth = $figure.data('original-width');
             if(width > maxWidth) {
-           		width = maxWidth;
-           		$figure.addClass('contain-width');
-            }
+               width = maxWidth;
+               $figure.addClass('contain-width');
+           }
 
-            newImageSrc += mode ? self.nextQuerySign(newImageSrc) + "width=" + width : "";
-            newImageSrc += height && !heightRatio ? self.nextQuerySign(newImageSrc) + "height=" + height : "";
-            newImageSrc += heightRatio != null ? self.nextQuerySign(newImageSrc) + "height=" + heightRatio * width : "";
+           newImageSrc += mode ? self.nextQuerySign(newImageSrc) + "width=" + width : "";
+           newImageSrc += height && !heightRatio ? self.nextQuerySign(newImageSrc) + "height=" + height : "";
+           newImageSrc += heightRatio !== null ? self.nextQuerySign(newImageSrc) + "height=" + heightRatio * width : "";
 
-            $image.src = newImageSrc;
-            $figure.prepend($image);
-            $image = $figure.find('img');
-            $image.css('opacity', '0');
+           $image.src = newImageSrc;
+           $figure.prepend($image);
+           $image = $figure.find('img');
+           $image.css('opacity', '0');
             // Fade the image
             $image.on('load', function(event) {
                 $image.css('opacity', '1');
@@ -161,7 +158,7 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
             $image.attr('title', $figure.data('title'));
             $image.attr('property', 'contentUrl');
         }
-    }
+    };
 
     this.nextQuerySign = function (url) {
         return url.indexOf("?") > -1 ? "&" : "?";
@@ -174,7 +171,7 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
 
         // Calc the height
         maxWidth = figure.data('original-width');
-        width = figure.width() != 0 ? figure.width() : $(figure).parent().width();
+        width = figure.width() !== 0 ? figure.width() : $(figure).parent().width();
         width = width > maxWidth ? maxWidth : width;
         heightRatio = $el.data('height-ratio');
 
@@ -186,13 +183,12 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
         if(height > 0) {
             $el.css('minHeight', height);
         }
-
-    }
+    };
 
     // public functions:
     return {
-        onScroll: onScroll,
-        onResize: onResize,
-        onLoad: onLoad
+        onScroll: self.onScroll,
+        onResize: self.onResize,
+        onLoad: self.onLoad
     };
 }();
