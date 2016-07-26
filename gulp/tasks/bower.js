@@ -1,5 +1,7 @@
-var gulp = require('gulp');
-var config = require('../config.js');
+'use strict';
+
+const gulp = require('gulp');
+const config = require('../config.js');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task("bower", function () {
