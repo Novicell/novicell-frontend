@@ -1,66 +1,84 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Novicell frontend package</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Novicell frontend package</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="../dist/css/master.min.css" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-        <!--[if lt IE 9]>
+    <link rel="stylesheet" href="../dist/css/master.min.css" />
+
+    <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-    </head>
-    <body>
+</head>
 
-        <!--[if lt IE 9]>
+<body>
+
+    <!--[if lt IE 9]>
             <p class="browserupgrade" style="display:block;text-align:center;font-weight:bold;background:#CF423F;padding:20px;margin:0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
 
-        <style>code {display: block; font-family: monospace; white-space: pre; margin: 1em 0; background: lightgray; color: black; border-radius: 3px; padding: 20px; overflow: auto; } code em {background:deeppink;} em {background: #eee; padding: 2px 8px; border-radius: 4px; display: inline-block;}</style>
+    <style>
+        code {
+            display: block;
+            font-family: monospace;
+            white-space: pre;
+            margin: 1em 0;
+            background: lightgray;
+            color: black;
+            border-radius: 3px;
+            padding: 20px;
+            overflow: auto;
+        }
+        
+        code em {
+            background: deeppink;
+        }
+        
+        em {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+    </style>
 
-        <div class="container">
-            <div class="row">
-                <aside class="col--sm-4 col--md-3">
-                    <h3>Navigation</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                </aside>
+    <div class="container">
+        <div class="row">
+            <aside class="col--sm-4 col--md-3">
+                <h3>Navigation</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </aside>
 
 
-                <main class="col--sm-8 col--md-9">
-                    <h1>Novicell frontend package</h1>
+            <main class="col--sm-8 col--md-9">
+                <h1>Novicell frontend package</h1>
 
-                    <section class="lazyload-image-demo">
-                        <h2>Lazyload image demo</h2>
-                        <figure vocab="http://schema.org/" typeof="ImageObject"
-                            data-src="https://www.novicell.dk/media/3746/novicell_kopny.png"
-                            data-height-ratio="0.3"
-                            data-focalpoint="0,5,0,5"
-                            data-mode="crop"
-                            data-quality="75"
-                            data-filter="greyscale">
-                            <noscript class="responsiveLazyload">
-                                <img src="https://www.novicell.dk/media/3746/novicell_kopny.png"
-                                alt="Novicell"
-                                title="Novicell"
-                                property="contentUrl" />
-                            </noscript>
-                            <figcaption property="description">Novicell default</figcaption>
-                        </figure>
-                        <p>You need to call images like this, and then the javascript will add querystrings for the imageprocessor.web nuget component.</p>
+                <section class="lazyload-image-demo">
+                    <h2>Lazyload image demo</h2>
+                    <figure vocab="http://schema.org/" typeof="ImageObject" data-src="https://www.novicell.dk/media/3746/novicell_kopny.png"
+                        data-height-ratio="0.3" data-focalpoint="0,5,0,5" data-mode="crop" data-quality="75" data-filter="greyscale">
+                        <noscript class="responsiveLazyload">
+                            <img src="https://www.novicell.dk/media/3746/novicell_kopny.png" alt="Novicell" title="Novicell" property="contentUrl" />
+                        </noscript>
+                        <figcaption property="description">Novicell default</figcaption>
+                    </figure>
+                    <p>You need to call images like this, and then the javascript will add querystrings for the imageprocessor.web
+                        nuget component.</p>
 
-                        <code>&lt;figure vocab="http://schema.org/" typeof="ImageObject"
+                    <code>&lt;figure vocab="http://schema.org/" typeof="ImageObject"
 data-src="https://www.novicell.dk/media/3746/novicell_kopny.png"
 data-height-ratio="0.3"
 data-focalpoint="0,5,0,5"
@@ -76,55 +94,64 @@ data-filter="greyscale"&gt;
 &lt;/noscript&gt;
 
 &lt;figcaption property="description"&gt;Novicell default&lt;/figcaption&gt;</code>
-                    </section>
+                </section>
 
-                    <section class="svg-demo">
-                        <article>
-                            <h2>SVG Demo</h2>
-                            <h3>Use SVG's like this</h3>
-                            <p>Use SVG's from the SVG sprite generated by GULP like the following. The <em>#lock</em> is the ID of the current SVG in the sprite. This is based on the name of the original SVG in the <em>/icons/</em>-directory.</p>
-                            <p>So <em>/icons/lock.svg</em> are referenced like this:</p>
-                            <code>&lt;svg&gt;
+                <section class="svg-demo">
+                    <article>
+                        <h2>SVG Demo</h2>
+                        <h3>Use SVG's like this</h3>
+                        <p>Use SVG's from the SVG sprite generated by GULP like the following. The <em>#lock</em> is the ID
+                            of the current SVG in the sprite. This is based on the name of the original SVG in the <em>/icons/</em>-directory.</p>
+                        <p>So <em>/icons/lock.svg</em> are referenced like this:</p>
+                        <code>&lt;svg&gt;
     &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<em>../dist/icons/icons.svg#lock"</em>&gt;&lt;/use&gt;
 &lt;/svg&gt;</code>
-                            <strong>This will output:</strong>
-                            <svg class="icon icon-lock">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../dist/icons/icons.svg#icon-lock"></use>
-                            </svg>
-                        </article>
+                        <strong>This will output:</strong>
+                        <svg class="icon icon-lock">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../dist/icons/icons.svg#icon-lock"></use>
+                        </svg>
+                    </article>
 
-                        <article>
-                            <h3>Change color and size like this</h3>
-                            <code>&lt;svg <em>style="width:130px; height:130px; fill:red;"</em>&gt;
+                    <article>
+                        <h3>Change color and size like this</h3>
+                        <code>&lt;svg <em>style="width:130px; height:130px; fill:red;"</em>&gt;
     &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../dist/icons/icons.svg#search"&gt;&lt;/use&gt;
 &lt;/svg&gt;</code>
-                            <strong>This will output:</strong>
-                            <svg class="icon icon-lock" style="width:45px; height:45px; fill:red;">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../dist/icons/icons.svg#icon-search"></use>
-                            </svg>
-                        </article>
-                    </section>
+                        <strong>This will output:</strong>
+                        <svg class="icon icon-lock" style="width:45px; height:45px; fill:red;">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../dist/icons/icons.svg#icon-search"></use>
+                        </svg>
+                    </article>
+                </section>
 
-                    <h2>Simple map Demo</h2>
-                    <div id="map-canvas" data-lat="56.109574" data-lng="10.155361" data-zoom="15" style="height:400px; margin: 50px 0;"></div>
-                </main>
-            </div>
+                <h2>Simple static map demo</h2>
+                <strong>Free account limited to 640x640 (max) static map sizes</strong>
+                <p style="margin:0;">
+                    <a href="https://developers.google.com/maps/documentation/static-maps/intro#Imagesizes">See this link for more information</a>
+                </p>
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=Denmark&size=640x640" alt="static map" style="height:640px; margin: 50px 0;">
+
+                <h2>Simple map Demo</h2>
+                <div id="map-canvas" data-lat="56.109574" data-lng="10.155361" data-zoom="15" style="height:400px; margin: 50px 0;"></div>
+            </main>
         </div>
+    </div>
 
-        <button class="cookie-info__open" id="cookie-info-open">
+    <button class="cookie-info__open" id="cookie-info-open">
             Cookies?
         </button>
-        <section class="cookie-info" id="cookie-info">
-            <div class="cookie-info__text">
-                <p><span>Vi bruger </span><a href="#" title="Cookie information">cookies </a><span>på dette website til trafikmåling og optimering af sitet – er det fint med dig?</span></p>
-                <button class="cookie-info__close" id="cookie-info-close">
+    <section class="cookie-info" id="cookie-info">
+        <div class="cookie-info__text">
+            <p><span>Vi bruger </span><a href="#" title="Cookie information">cookies </a><span>på dette website til trafikmåling og optimering af sitet – er det fint med dig?</span></p>
+            <button class="cookie-info__close" id="cookie-info-close">
                     Det er OK!
                 </button>
-            </div>
-        </section>
+        </div>
+    </section>
 
 
-        <script src="../dist/scripts/vendor.min.js"></script>
-        <script src="../dist/scripts/master.min.js"></script>
-    </body>
+    <script src="../dist/scripts/vendor.min.js"></script>
+    <script src="../dist/scripts/master.min.js"></script>
+</body>
+
 </html>
