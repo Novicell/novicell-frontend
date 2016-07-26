@@ -1,7 +1,13 @@
-[2.0.2]
+[2.1.0]
 - Set all Gulp tasks to run in strict mode
 - Set all js files to run in strict mode
 - Updated all Gulp tasks to use 'const' instead of 'var'
+- Added a reporter to jsHint
+- Linted all js files
+- Added a reporter to jscs
+- Re-indented all js files to follow jscs
+- Added jscs rules
+- Standardisation of js files
 
 [2.0.1]
 - Updated node modules

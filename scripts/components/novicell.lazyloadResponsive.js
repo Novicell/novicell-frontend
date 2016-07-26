@@ -44,151 +44,151 @@ Usecase:
             </figure>
      </div>
 
-*/
+     */
 
 var novicell = novicell || {};
 
-novicell.responsiveLazyloadImage = function (){
-    var self = this;
-    var lastRefreshWidth = 0;
-    var refreshWidth = 50;
+novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function (){
+	var lastRefreshWidth = 0;
+	var refreshWidth = 50;
 
-    this.onScroll = function(){
-        $('.responsiveLazyload').each(function () {
-            self.loadImage($(this));
-        });
-    };
+	function onScroll(){
+		$('.responsiveLazyload').each(function () {
+			loadImage($(this));
+		});
+	}
 
-    this.onLoad = function () {
-        $('.responsiveLazyload').each(function () {
-            var $figure = $(this).parent();
+	function onLoad() {
+		$('.responsiveLazyload').each(function () {
+			var $figure = $(this).parent();
 
-            if ($figure.visible(true) || $(this).data("load") === "always") {
-                self.loadImage($(this), true);
-            } else {
-                self.constructPlaceholder($figure);
-            }
-        });
-    };
+			if ($figure.visible(true) || $(this).data("load") === "always") {
+				loadImage($(this), true);
+			} else {
+				constructPlaceholder($figure);
+			}
+		});
+	}
 
-    this.onResize = function (callback) {
-        if (window.innerWidth > lastRefreshWidth + refreshWidth || window.innerWidth < lastRefreshWidth - refreshWidth) {
-            $('.lazyResizeReload').each(function () {
-                self.constructImage($(this));
-                self.constructPlaceholder($(this));
-                if (typeof callback == 'function') {
-                    callback();
-                }
-            });
-            lastRefreshWidth = window.innerWidth;
-        }
-    };
+	function onResize(callback) {
+		if (window.innerWidth > lastRefreshWidth + refreshWidth || window.innerWidth < lastRefreshWidth - refreshWidth) {
+			$('.lazyResizeReload').each(function () {
+				constructImage($(this));
+				constructPlaceholder($(this));
+				if (typeof callback == 'function') {
+					callback();
+				}
+			});
+			lastRefreshWidth = window.innerWidth;
+		}
+	}
 
-    // Loads the image.
-    this.loadImage = function ($element, isVisible) {
-        var $this = $element;
-        var $figure = $this.parent();
+	// Loads the image.
+	function loadImage($element, isVisible) {
+		var $this = $element;
+		var $figure = $this.parent();
 
-        if (isVisible || $figure.visible(true) || $this.data("load") === "always") {
-            if ($this.first()) {
-                $this.remove();
-                self.constructImage($figure);
-                lastRefreshWidth = window.innerWidth;
-                $figure.addClass('lazyResizeReload');
-            }
-        }
-    };
+		if (isVisible || $figure.visible(true) || $this.data("load") === "always") {
+			if ($this.first()) {
+				$this.remove();
+				constructImage($figure);
+				lastRefreshWidth = window.innerWidth;
+				$figure.addClass('lazyResizeReload');
+			}
+		}
+	}
 
-    this.constructImage = function (figure) {
-        var $image = new Image();
-        var $figure =  $(figure);
+	function constructImage(figure) {
+		var $image = new Image();
+		var $figure = $(figure);
 
-        //data variables and images settings
-        var width, maxWidth, heightRatio, focalPoint, mode, filter, quality, height, isBackgroundImage = false;
+		//data variables and images settings
+		var width, maxWidth, heightRatio, focalPoint, mode, filter, quality, height, isBackgroundImage = false;
 
-        var $parent = $figure.data('parent') ? $figure.closest($figure.data('parent')) : null;
-        isBackgroundImage = $figure.data('is-background') ? true : false;
-        width = $figure.width() !== 0 ? figure.width() : $figure.parent().width();
-        heightRatio = $figure.data('height-ratio') !== 0 ? $figure.data('height-ratio') : null;
-        height = $parent ? $parent.height() : null;
-        focalPoint = $figure.data('focalpoint');
-        mode = $figure.data('mode');
-        filter = $figure.data('filter');
-        quality = $figure.data('quality') || 80;
+		var $parent = $figure.data('parent') ? $figure.closest($figure.data('parent')) : null;
+		isBackgroundImage = $figure.data('is-background') ? true : false;
+		width = $figure.width() !== 0 ? figure.width() : $figure.parent().width();
+		heightRatio = $figure.data('height-ratio') !== 0 ? $figure.data('height-ratio') : null;
+		height = $parent ? $parent.height() : null;
+		focalPoint = $figure.data('focalpoint');
+		mode = $figure.data('mode');
+		filter = $figure.data('filter');
+		quality = $figure.data('quality') || 80;
 
-        var newImageSrc = $figure.data('src');
-        newImageSrc += focalPoint ? self.nextQuerySign(newImageSrc) + "center=" + focalPoint : "";
-        newImageSrc += mode ? self.nextQuerySign(newImageSrc) + "mode=" + mode : "";
-        newImageSrc += filter ? self.nextQuerySign(newImageSrc) + "filter=" + filter : "";
-        newImageSrc += self.nextQuerySign(newImageSrc) + "quality=" + quality;
+		var newImageSrc = $figure.data('src');
+		newImageSrc += focalPoint ? nextQuerySign(newImageSrc) + "center=" + focalPoint : "";
+		newImageSrc += mode ? nextQuerySign(newImageSrc) + "mode=" + mode : "";
+		newImageSrc += filter ? nextQuerySign(newImageSrc) + "filter=" + filter : "";
+		newImageSrc += nextQuerySign(newImageSrc) + "quality=" + quality;
 
-        $figure.find('img').remove();
+		$figure.find('img').remove();
 
-        // Append the image as a background or as a <img>
-        if(isBackgroundImage && $parent) {
-            var bgSrc = newImageSrc;
-            bgSrc += height ? self.nextQuerySign(bgSrc) + "height=" + height : "";
-            bgSrc += mode ? self.nextQuerySign(bgSrc) + "width=" + width : "";
+		// Append the image as a background or as a <img>
+		if(isBackgroundImage && $parent) {
+			var bgSrc = newImageSrc;
+			bgSrc += height ? nextQuerySign(bgSrc) + "height=" + height : "";
+			bgSrc += mode ? nextQuerySign(bgSrc) + "width=" + width : "";
 
-            $parent.css('background-image', 'url("'+bgSrc+'")');
+			$parent.css('background-image', 'url("'+ bgSrc +'")');
 
-        } else {
-            // Add attributes only needed when pretending an image
-            maxWidth = $figure.data('original-width');
-            if(width > maxWidth) {
-               width = maxWidth;
-               $figure.addClass('contain-width');
-           }
+		}
+		else {
+			// Add attributes only needed when pretending an image
+			maxWidth = $figure.data('original-width');
+			if(width > maxWidth) {
+				width = maxWidth;
+				$figure.addClass('contain-width');
+			}
 
-           newImageSrc += mode ? self.nextQuerySign(newImageSrc) + "width=" + width : "";
-           newImageSrc += height && !heightRatio ? self.nextQuerySign(newImageSrc) + "height=" + height : "";
-           newImageSrc += heightRatio !== null ? self.nextQuerySign(newImageSrc) + "height=" + heightRatio * width : "";
+			newImageSrc += mode ? nextQuerySign(newImageSrc) + "width=" + width : "";
+			newImageSrc += height && !heightRatio ? nextQuerySign(newImageSrc) + "height=" + height : "";
+			newImageSrc += heightRatio !== null ? nextQuerySign(newImageSrc) + "height=" + heightRatio * width : "";
 
-           $image.src = newImageSrc;
-           $figure.prepend($image);
-           $image = $figure.find('img');
-           $image.css('opacity', '0');
-            // Fade the image
-            $image.on('load', function(event) {
-                $image.css('opacity', '1');
-            });
+			$image.src = newImageSrc;
+			$figure.prepend($image);
+			$image = $figure.find('img');
+			$image.css('opacity', '0');
+			// Fade the image
+			$image.on('load', function(event) {
+				$image.css('opacity', '1');
+			});
 
-            $image.attr('class', $figure.data('class'));
-            $image.attr('alt', $figure.data('alt'));
-            $image.attr('title', $figure.data('title'));
-            $image.attr('property', 'contentUrl');
-        }
-    };
+			$image.attr('class', $figure.data('class'));
+			$image.attr('alt', $figure.data('alt'));
+			$image.attr('title', $figure.data('title'));
+			$image.attr('property', 'contentUrl');
+		}
+	}
 
-    this.nextQuerySign = function (url) {
-        return url.indexOf("?") > -1 ? "&" : "?";
-    };
+	function nextQuerySign(url) {
+		return url.indexOf("?") > -1 ? "&" : "?";
+	}
 
-    this.constructPlaceholder = function(figure) {
-        var $el = figure;
-        var width, heightRatio, maxWidth;
-        var height = 0;
+	function constructPlaceholder(figure) {
+		var $el = figure;
+		var width, heightRatio, maxWidth;
+		var height = 0;
 
-        // Calc the height
-        maxWidth = figure.data('original-width');
-        width = figure.width() !== 0 ? figure.width() : $(figure).parent().width();
-        width = width > maxWidth ? maxWidth : width;
-        heightRatio = $el.data('height-ratio');
+		// Calc the height
+		maxWidth = figure.data('original-width');
+		width = figure.width() !== 0 ? figure.width() : $(figure).parent().width();
+		width = width > maxWidth ? maxWidth : width;
+		heightRatio = $el.data('height-ratio');
 
-        if(width && heightRatio) {
-            height = heightRatio * width;
-        }
+		if(width && heightRatio) {
+			height = heightRatio * width;
+		}
 
-        // Set the height
-        if(height > 0) {
-            $el.css('minHeight', height);
-        }
-    };
+		// Set the height
+		if(height > 0) {
+			$el.css('minHeight', height);
+		}
+	}
 
-    // public functions:
-    return {
-        onScroll: self.onScroll,
-        onResize: self.onResize,
-        onLoad: self.onLoad
-    };
+	// public functions:
+	return {
+		onScroll: onScroll,
+		onResize: onResize,
+		onLoad: onLoad
+	};
 }();
