@@ -191,6 +191,9 @@ When you are using the Novicell Umbraco Default Package, you can grab a lot of t
 * @Model.Image.GetOriginalHeightRatio() - returns the original height-ratio of the uploaded image. If you set a forced width and height in the backend, the ratio of these will overrule.
 * @Model.Image.GetWidth() - returns the original width of the uploaded image. If a forced width is set, this will be the returned value. 
 
+![alt text](http://i.imgur.com/nDhWBFc.png "Umbraco Focalpoint")
+
+
 Additional you can grab values as url, title and alt-text.
 
 
