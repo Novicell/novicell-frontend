@@ -174,13 +174,13 @@ You need to call images like this, and then the javascript will add querystrings
 </figure>
 ```
 #### Description and rules
-The original purpose of using the lazyloadResponsive.js is to always serve an optimal resized image depending on the user's viewport. Through time it has become a powerful script to manipulate images. There a several options you can set on your <figure>:
+The original purpose of using the lazyloadResponsive.js is to always serve an optimal resized image depending on the user's viewport. Through time it has become a powerful script to manipulate images. There a several options you can set on your `<figure>`:
 * data-src - the clean source of the image, without any parameters
 * data-focalpoint - the value of the focalpoint. 
 * data-mode - how to crop your image.
 * data-quality - the quality of the image. (default: 80)
-* data-is-background - if this is se no <img>-tag will be added, but the image will be added as a background on the data-parent NOTE: data-parent is required.
-* data-parent - per default the size of the image will be determinated by the width of the <figure>. If a parent is specified it will use the size of this instead. NOTE: If a focalpoint is set, it only used the width of the parent.
+* data-is-background - if this is se no `<img>` will be added, but the image will be added as a background on the data-parent NOTE: data-parent is required.
+* data-parent - per default the size of the image will be determinated by the width of the `<figure>`. If a parent is specified it will use the size of this instead. NOTE: If a focalpoint is set, it only used the width of the parent.
 * data-original-width - is used to set a max-width on the image return from the server to prevent a ugly upscaling of small images.
 * data-filter - filters used by imageprocessor
 
