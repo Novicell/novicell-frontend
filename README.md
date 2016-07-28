@@ -157,9 +157,12 @@ You need to call images like this, and then the javascript will add querystrings
 <figure vocab="http://schema.org/" typeof="ImageObject"
   data-src="https://www.novicell.dk/media/3746/novicell_kopny.png"
   data-height-ratio="0.3"
-  data-focalpoint="0,5,0,5"
+  data-focalpoint="0.5,0.5"
   data-mode="crop"
   data-quality="75"
+  data-is-background="true"
+  data-parent="#parent"
+  data-original-width="1337"
   data-filter="greyscale">
   <noscript class="responsiveLazyload">
       <img src="https://www.novicell.dk/media/3746/novicell_kopny.png"
@@ -170,6 +173,28 @@ You need to call images like this, and then the javascript will add querystrings
   <figcaption property="description">Lazyload image demo</figcaption>
 </figure>
 ```
+#### Description and rules
+The original purpose of using the lazyloadResponsive.js is to always serve an optimal resized image depending on the user's viewport. Through time it has become a powerful script to manipulate images. There are several options you can set on your `<figure>`:
+* data-src - the clean source of the image, without any parameters
+* data-focalpoint - the value of the focalpoint. 
+* data-mode - how to crop your image.
+* data-quality - the quality of the image. (default: 80)
+* data-is-background - if this is set no `<img>` will be added, but the image will be added as a background on the data-parent **NOTE: data-parent is required**.
+* data-parent - per default the size of the image will be determinated by the width of the `<figure>`. If a parent is specified it will use the size of this instead. **NOTE: If a focalpoint is set, it only used the width of the parent**
+* data-original-width - is used to set a max-width on the image return from the server to prevent a ugly upscaling of small images.
+* data-filter - filters used by imageprocessor
+
+
+#### When using Umbraco Default Package
+When you are using the Novicell Umbraco Default Package, you can grab a lot of these values from the FocalPointItemModel itself. Listed below are the generated values:
+* @Model.Image.GetFocalPoints() - returns the focalpoint set in the backend
+* @Model.Image.GetOriginalHeightRatio() - returns the original height-ratio of the uploaded image. If you set a forced width and height in the backend, the ratio of these will overrule.
+* @Model.Image.GetWidth() - returns the original width of the uploaded image. If a forced width is set, this will be the returned value. 
+
+![alt text](http://i.imgur.com/nDhWBFc.png "Umbraco Focalpoint")
+
+
+Additional you can grab values as url, title and alt-text.
 
 
 ## Notes
