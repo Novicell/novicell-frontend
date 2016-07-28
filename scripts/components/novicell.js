@@ -1,4 +1,5 @@
 'use strict';
+/*global console:true */
 
 /*!
  *
@@ -28,3 +29,4 @@ $(function () {
 		$('body').prepend('<div class="debug" style="text-align:center;font-weight:bold;background:#66CE5F;padding:20px;margin-bottom:50px;">Hi there. Remember to rename the "projectName" object in master.js file :)</div>');
 	}
 });
+

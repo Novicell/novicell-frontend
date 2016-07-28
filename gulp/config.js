@@ -8,7 +8,7 @@ module.exports = (function () {
 
     var projectPath = "./";
     var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
-    var distPath = projectPath + "dist";
+    var distPath = projectPath + "/../NCDP.Website/dist";
     var jsonIconPath = distPath + "/icons/icons.json";
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
@@ -35,6 +35,10 @@ module.exports = (function () {
                 styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
             },
             {
+                name: "webfont",
+                styles: ["./" + preprocessor + "/base/base.fonts." + preprocessor],
+            },
+            {
                 name: "master",
                 scripts: [
                     projectPath + "scripts/components/novicell.js",
@@ -45,6 +49,7 @@ module.exports = (function () {
                     projectPath + "scripts/components/novicell.overlay.js",
                     projectPath + "scripts/components/novicell.cookieinfo.js",
                     projectPath + "scripts/components/novicell.map.js",
+                    projectPath + "scripts/components/novicell.font.js",
                     projectPath + "scripts/master.js"
                 ],
                 styles: [projectPath + preprocessor + "/master." + preprocessor],
