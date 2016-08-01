@@ -69,14 +69,14 @@ All tasks can be run like: `gulp <task name>`.
 
 The following tasks are available:
 
-* build -	Runs all the tasks defined in: gulp-config.json > tasksToBuild
-* clean -	Deletes the files/directories defined in: gulp-config.json > pathsToClean
-* rebuild -	Runs the clean task, and then the build task.
-* styles -	Minifies and bundles CSS files defined in: gulp-config.json > bundles > {bundleName} > styles
-* scripts -	Minifies and bundles JS files defined in: gulp-config.json > bundles > {bundleName} > scripts
-* images -	Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
-* icons -	Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
-* copy -	Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
+* build - Runs all the tasks defined in: gulp-config.json > tasksToBuild
+* clean - Deletes the files/directories defined in: gulp-config.json > pathsToClean
+* rebuild - Runs the clean task, and then the build task.
+* styles -  Minifies and bundles CSS files defined in: gulp-config.json > bundles > {bundleName} > styles
+* scripts - Minifies and bundles JS files defined in: gulp-config.json > bundles > {bundleName} > scripts
+* images -  Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
+* icons - Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
+* copy -  Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
 * hhtml - Looks through the html folder for `@@include`, to then partially replace them when compiling the html file
 * watch
 
@@ -196,6 +196,16 @@ When you are using the Novicell Umbraco Default Package, you can grab a lot of t
 
 Additional you can grab values as url, title and alt-text.
 
+### Lazyload fonts
+Include the `novicell.font.js` for lazyloading fonts. You can use Google Fonts, Typekit and local. When you are using local font you declare your font-face inside /less/base/base.fonts.less (or scss). This file will be generated into the webfont.min.css-file by Gulp. 
+
+```javascript
+novicell.font.webfont({
+  google: { families: ['Roboto:400,700italic:latin'] },
+  typekit: { id: ['rzx0prp'] },
+  custom: { families: ['SkipLegDay'], urls: ['/dist/css/webfont.min.css'] }
+});
+```
 
 ## Notes
 * Added an additional breakpoint, medium-small, based on https://github.com/hesselberg/Bootstrap3-ms-breakpoint/

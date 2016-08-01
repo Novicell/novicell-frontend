@@ -25,6 +25,15 @@ $(function () {
 	//projectName.slider.heroSlider($('.owl-carousel'));
 	svg4everybody(); // Fix SVG spritemap in IE/Edge
 
+
+
+	novicell.font.webfont({
+		google: { families: ['Roboto:400,700italic:latin', 'Droid+Sans:400,700:latin'] },
+		typekit: { id: ['rzx0prp'] },
+		custom: { families: ['SkipLegDay'], urls: ['/dist/css/webfont.min.css'] }
+	});
+	//novicell.font.local("Danni Er Nice");
+
 }); // Document ready end
 
 

@@ -26,7 +26,7 @@ novicell.map = novicell.map || function () {
 				script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize';
 				document.body.appendChild(script);
 			}
-		}
+		};
 	}
 
 	return {
@@ -115,8 +115,8 @@ function initialize() {
 }
 
 function isScrolledIntoView(el) {
-    var elemTop = el.getBoundingClientRect().top;
-    var elemBottom = el.getBoundingClientRect().bottom;
+	var elemTop = el.getBoundingClientRect().top;
+	var elemBottom = el.getBoundingClientRect().bottom;
 
-    return (elemBottom >= 0) && (elemTop <= window.innerHeight);
+	return (elemBottom >= 0) && (elemTop <= window.innerHeight);
 }
