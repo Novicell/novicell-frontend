@@ -9,7 +9,10 @@ module.exports = (function () {
     var projectPath = "./";
     var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
     var distPath = projectPath + "dist";
-    var jsonIconPath = distPath + "/icons/icons.json";
+    var jsonIconOptions = {
+        path: distPath + "/icons/",
+        fileName: "icons.json"
+    };
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
     var preprocessor = "less"; //choose between "less" or "scss"
@@ -164,7 +167,7 @@ module.exports = (function () {
         enableTypescript: enableTypescript,
         preprocessor: preprocessor,
         distPath: distPath,
-        jsonIconPath: jsonIconPath,
+        jsonIconOptions: jsonIconOptions,
 
         // ---------- Errorhandler ------
         errorHandler: function(taskName)
