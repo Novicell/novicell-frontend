@@ -128,8 +128,8 @@ module.exports = (function () {
         ],
 
         // ------------- Watch -------------
-        watchImages: [ projectPath + "images/**/*", projectPath + '!images/icons/*' ],
-        watchIcons: [ projectPath + "images/icons/*" ],
+        watchImages: [ projectPath + "images/**/*" ],
+        watchIcons: [ projectPath + "icons/*" ],
         watchFonts: [ projectPath + "fonts/*" ],
         watchHtml: [ projectPath + "html/**/*" ],
         watchScripts: [
