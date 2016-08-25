@@ -133,12 +133,10 @@ module.exports = (function () {
         watchFonts: [ projectPath + "fonts/*" ],
         watchHtml: [ projectPath + "html/**/*" ],
         watchScripts: [
-            projectPath + "scripts/**/*.js",
-            projectPath + "vendor/**/*.js"
+            projectPath + "scripts/**/*.js"
         ],
         watchStyles: [
-            projectPath + preprocessor + "/**/*." + preprocessor,
-            projectPath + "vendor/**/*.{less, scss}"
+            projectPath + preprocessor + "/**/*." + preprocessor
         ],
 
         // ------------- Copy on build --------
