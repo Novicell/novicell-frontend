@@ -64,7 +64,6 @@ novicell.overlay = novicell.overlay || function () {
 				$('.ncOverlay-close').click();
 			}
 		});
-
 	}
 
 	return {

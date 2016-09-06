@@ -14,7 +14,7 @@ gulp.task('typescript', function() {
 		return;
 	}
 
-    return gulp.src(config.typescriptPath + '/**/*.ts')
+	return gulp.src(config.typescriptPath + '/**/*.ts')
 		.pipe(tslint())
 		.pipe(tslint.report('verbose'))
 		.on('end', function() {
@@ -36,12 +36,12 @@ var compile = function() {
 
 var minify = function() {
 	return gulp.src(config.typescriptPath + '/compiled/*.js')
-        .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
-        .pipe(plugins.plumber(config.errorHandler('scripts')))
-        .pipe(plugins.jshint())
-        .pipe(plugins.sourcemaps.init({ loadMaps: true }))
-        .pipe(plugins.concat('typescript.min.js'))
-        .pipe(plugins.uglify())
-        .pipe(plugins.sourcemaps.write('.'))
-        .pipe(gulp.dest(config.scriptsDist));
+		.pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
+		.pipe(plugins.plumber(config.errorHandler('scripts')))
+		.pipe(plugins.jshint())
+		.pipe(plugins.sourcemaps.init({ loadMaps: true }))
+		.pipe(plugins.concat('typescript.min.js'))
+		.pipe(plugins.uglify())
+		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(gulp.dest(config.scriptsDist));
 }
