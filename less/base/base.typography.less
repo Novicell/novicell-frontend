@@ -7,39 +7,39 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: @header-font-family;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-top: 20px;
-    margin-bottom: 10px;
+	font-family: @header-font-family;
+	font-weight: 900;
+	line-height: 1.1;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 h1 {
-    font-size: 30px;
-    @media (min-width:@screen-sm) {font-size: 36px;}
-    @media (min-width:@screen-lg) {font-size: 48px;}
+	font-size: 30px;
+	@media (min-width:@screen-sm) {font-size: 36px;}
+	@media (min-width:@screen-lg) {font-size: 48px;}
 }
 
 h2 {
-    font-size: 21px;
-    @media (min-width:@screen-sm) {font-size: 24px;}
-    @media (min-width:@screen-lg) {font-size: 30px;}
+	font-size: 21px;
+	@media (min-width:@screen-sm) {font-size: 24px;}
+	@media (min-width:@screen-lg) {font-size: 30px;}
 }
 
 h3 {
-    font-size: 18px;
-    @media (min-width:@screen-sm) {font-size: 21px;}
-    @media (min-width:@screen-lg) {font-size: 24px;}
+	font-size: 18px;
+	@media (min-width:@screen-sm) {font-size: 21px;}
+	@media (min-width:@screen-lg) {font-size: 24px;}
 }
 
 p.lead {
-    font-style: italic;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.4;
+	font-style: italic;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 1.4;
 
-    @media (min-width:@screen-sm) {font-size: 21px;}
-    @media (min-width:@screen-lg) {font-size: 24px;}
+	@media (min-width:@screen-sm) {font-size: 21px;}
+	@media (min-width:@screen-lg) {font-size: 24px;}
 }
 
 p,
@@ -51,9 +51,9 @@ p~h3 {margin-top: 36px;}
 
 // This is used to avoid the FOUT. Currently only set on headlines, but you can extend it to all your selectors. 
 html {
-    h1, h2, h3, h4, h5 { opacity: 0; transition: opacity 0.3s; }
-    &.wf-active,
-    &.wf-inactive {
-        h1, h2, h3, h4, h5 { opacity: 1; }
-    }
+	h1, h2, h3, h4, h5 { opacity: 0; transition: opacity 0.3s; }
+	&.wf-active,
+	&.wf-inactive {
+		h1, h2, h3, h4, h5 { opacity: 1; }
+	}
 }
