@@ -78,6 +78,7 @@ The following tasks are available:
 * `clean` - Deletes the files/directories defined in: gulp-config.json > pathsToClean
 * `rebuild` - Runs the clean task, and then the build task.
 * `styles` -  Minifies and bundles CSS files defined in: gulp-config.json > bundles > {bundleName} > styles
+* `themes` -  Minifies and bundles CSS files defined in: less/themes
 * `scripts` - Minifies and bundles JS files defined in: gulp-config.json > bundles > {bundleName} > scripts
 * `images` -  Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
 * `icons` - Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
