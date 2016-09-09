@@ -13,16 +13,26 @@ const mergeStream = require('merge-stream');
 const fs = require('fs');
 const rsp = require('remove-svg-properties').stream;
 var plugins = require('gulp-load-plugins')();
+var mkdirp = require('mkdirp');
 
 function writeFile(path, fileName, content) {
     try {
         if (!fs.existsSync(path)) {
-            fs.mkdirSync(path)
+            mkdirp(path, function (err) {
+                if (err) { console.error(err) }
+                else {
+                    doWrite(path, fileName, content);
+                }
+            });
+        } else {
+            doWrite(path, fileName, content);
         }
 
-        fs.writeFileSync(path + fileName, content);
-        console.log("icons.json is being generated.");
-        return path + fileName;
+        function doWrite(path, fileName, content) {
+            fs.writeFileSync(path + fileName, content);
+            console.log("icons.json is being generated.");
+            return path + fileName;
+        }
     } catch (e) {
         console.log(e);
         return null;
