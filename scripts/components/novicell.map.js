@@ -16,17 +16,25 @@ novicell.map = novicell.map || function () {
 	var isLoaded = false;
 
 	function init() {
-		document.onscroll = function () {
-			var element = document.getElementById('map-canvas');
-			if (!isLoaded && element && isScrolledIntoView(element)) {
-				isLoaded = true;
-				// Async load the GMaps API and run "initialize"
-				var script = document.createElement('script');
-				script.type = 'text/javascript';
-				script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize';
-				document.body.appendChild(script);
-			}
-		};
+		var element = document.getElementById('map-canvas');
+		if (!isLoaded && element && isScrolledIntoView(element)) {
+			load();
+		} else {
+			document.onscroll = function () {
+				if (!isLoaded && element && isScrolledIntoView(element)) {
+					load();
+				}
+			};
+		}
+	}
+
+	function load() {
+		isLoaded = true;
+		// Async load the GMaps API and run "initialize"
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initialize';
+		document.body.appendChild(script);
 	}
 
 	return {
