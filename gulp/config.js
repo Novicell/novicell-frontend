@@ -10,8 +10,7 @@ module.exports = (function () {
     var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
     var distPath = projectPath + "dist";
     var jsonIconOptions = {
-        path: distPath + "/icons/",
-        fileName: "icons.json"
+        path: distPath + "/icons/"
     };
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
@@ -30,18 +29,6 @@ module.exports = (function () {
                 ]
             },
             {
-                // For styling Umbraco Grid editors in backoffice
-                name: "backofficemaster",
-                scripts: [
-                    projectPath + "scripts/backofficemaster.js"
-                ],
-                styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
-            },
-            {
-                name: "webfont",
-                styles: ["./" + preprocessor + "/base/base.fonts." + preprocessor],
-            },
-            {
                 name: "master",
                 scripts: [
                     projectPath + "scripts/components/novicell.js",
@@ -57,8 +44,27 @@ module.exports = (function () {
                 ],
                 styles: [projectPath + preprocessor + "/master." + preprocessor],
                 images: [projectPath + "images/**/*.{jpg,png,svg,gif}"],
-                icons: [projectPath + "icons/**/*.svg"],
                 html: [projectPath + "html/*.html"]
+            },
+            {
+                // For styling editors in backoffice
+                name: "backofficemaster",
+                scripts: [
+                    projectPath + "scripts/backofficemaster.js"
+                ],
+                styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
+            },
+            {
+                name: "webfont",
+                styles: ["./" + preprocessor + "/base/base.fonts." + preprocessor],
+            },
+            {
+                name: "icons",
+                icons: [projectPath + "icons/**/*.svg"]
+            },
+            {
+                name: "test",
+                icons: [projectPath + "icons/test/*.svg"]
             }
         ],
 
@@ -78,7 +84,7 @@ module.exports = (function () {
         scriptsDist: distPath + "/scripts",
 
         // ------------- Icons ---------------
-        iconsDist: distPath,
+        iconsDist: distPath + "/icons",
         spriteConfig: {
             shape : {
                 // Set maximum dimensions
@@ -88,18 +94,7 @@ module.exports = (function () {
                 }
             },
             mode : {
-                view : {
-                    bust : false,
-                    render : {
-                        less : true
-                    },
-                    dest : 'icons',
-                    sprite : 'icons-css.svg'
-                },
-                symbol : {
-                    dest : 'icons',
-                    sprite : 'icons.svg'
-                }
+                symbol : true
             }
         },
 
