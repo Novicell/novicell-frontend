@@ -2,5 +2,5 @@
     "requireCurlyBraces": ["if", "else", "for", "while", "do", "try", "catch", "case", "default"],
     "disallowMultipleSpaces": {"allowEOLComments": true},
     "requireAlignedMultilineParams": true,
-    "validateIndentation": { "value": "\t", "allExcept": ["comments", "emptyLines"] }
+    "validateIndentation": { "value": 2, "allExcept": ["comments", "emptyLines"] }
 }
