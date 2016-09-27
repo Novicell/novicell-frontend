@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "author": "Novicell",
   "dependencies": {
-    "svg4everybody": "2.0.3",
+    "svg4everybody": "2.1.1",
     "jquery": "3.0.1"
   }
 }
