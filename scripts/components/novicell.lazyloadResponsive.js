@@ -108,8 +108,9 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
 		var $parent = $figure.data('parent') ? $figure.closest($figure.data('parent')) : null;
 		isBackgroundImage = $figure.data('is-background') ? true : false;
 		width = $figure.width() !== 0 ? figure.width() : $figure.parent().width();
+		width = $parent ? $parent.width() : width;
 		heightRatio = $figure.data('height-ratio') !== 0 ? $figure.data('height-ratio') : null;
-		height = $parent ? $parent.height() : null;
+		height = $parent ? $parent.outerHeight() : null;
 		focalPoint = $figure.data('focalpoint');
 		mode = $figure.data('mode');
 		filter = $figure.data('filter');
