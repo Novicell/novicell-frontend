@@ -16,20 +16,6 @@ var plugins = require('gulp-load-plugins')();
 var mkdirp = require('mkdirp');
 
 function writeFile(path, fileName, content) {
-<<<<<<< HEAD
-    try {
-        if (!fs.existsSync(path)) {
-            fs.mkdirSync(path)
-        }
-
-        fs.writeFileSync(path + fileName, content);
-        console.log("icons.json is being generated.");
-        return path + fileName;
-    } catch (e) {
-        console.log(e);
-        return null;
-    }
-=======
     try {
         if (!fs.existsSync(path)) {
             mkdirp(path, function(err) {
@@ -51,7 +37,6 @@ function writeFile(path, fileName, content) {
         console.log(e);
         return null;
     }
->>>>>>> 29d7a74e6ba4c839c57323cfbaa7bdfbe93ac3bb
 }
 
 function genereateIconJsonLibrary(err, files) {
