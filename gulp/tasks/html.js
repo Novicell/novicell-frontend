@@ -1,12 +1,12 @@
 'use strict';
 
 /*
-	the html task looks through the html files in the html folder, after the prefix @@.
-	This makes it possible to include "partial" html pieces like
+    the html task looks through the html files in the html folder, after the prefix @@.
+    This makes it possible to include "partial" html pieces like
 
-	<body>
-		@@include('components/site-header.html')
-	</body>
+    <body>
+        @@include('components/site-header.html')
+    </body>
 */
 
 const gulp = require('gulp');
@@ -15,18 +15,18 @@ const mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('html', function() {
-	var streams = config.bundles.filter(function (b) {
-		return b.html != null;
-	}).map(function (b) {
-		var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
+    var streams = config.bundles.filter(function(b) {
+        return b.html != null;
+    }).map(function(b) {
+        var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
 
-		console.log(b.name + ' html is being compiled');
+        console.log(b.name + ' html is being compiled');
 
-		return gulp.src(b.html)
-			.pipe(plugins.plumber(config.errorHandler("html")))
-			.pipe(plugins.fileInclude(config.htmlFileIncludeConfig))
-			.pipe(gulp.dest(config.distPath));
-	});
+        return gulp.src(b.html)
+            .pipe(plugins.plumber(config.errorHandler("html")))
+            .pipe(plugins.fileInclude(config.htmlFileIncludeConfig))
+            .pipe(gulp.dest(config.distPath));
+    });
 
-	return mergeStream(streams);
+    return mergeStream(streams);
 });

@@ -6,73 +6,73 @@
 
 // Styling for the popup itself
 .cookie-info {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background: #d6d6d6;
-	padding: 50px 0;
-	transition: .3s ease-in-out;
-	transform: translate3d(0,100%,0); // Hide by default
-	opacity: 0;
-	z-index: 999;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #d6d6d6;
+    padding: 50px 0;
+    transition: .3s ease-in-out;
+    transform: translate3d(0,100%,0); // Hide by default
+    opacity: 0;
+    z-index: 999;
 
-	&__open {
-		left: 20px;
-		bottom: 0;
-		border: none;
-		background-color: #d6d6d6;
-		font-size: 12px;
-		line-height: 20px;
-		border-radius: 2px 2px 0 0;
-		transition: all .3s;
-		position: fixed;
-		opacity: .6;
-		cursor: pointer;
-		will-change: transform;
+    &__open {
+        left: 20px;
+        bottom: 0;
+        border: none;
+        background-color: #d6d6d6;
+        font-size: 12px;
+        line-height: 20px;
+        border-radius: 2px 2px 0 0;
+        transition: all .3s;
+        position: fixed;
+        opacity: .6;
+        cursor: pointer;
+        will-change: transform;
 
-		&:hover {
-			opacity: 1;
-		}
-	}
+        &:hover {
+            opacity: 1;
+        }
+    }
 
-	&__text {
-		.container();
-		.clearfix();
+    &__text {
+        .container();
+        .clearfix();
 
-		p {
-			float: left;
-			margin: 6px 0 0;
-		}
-	}
+        p {
+            float: left;
+            margin: 6px 0 0;
+        }
+    }
 
-	&__close {
-		float: right;
-		border: none;
-		background-color: darken(#d6d6d6, 50%);
-		color: #fff;
-		padding: 10px 20px;
-		box-shadow: inset 0 -2px 0 rgba(0,0,0, 0.10);
-		transition: all .3s;
+    &__close {
+        float: right;
+        border: none;
+        background-color: darken(#d6d6d6, 50%);
+        color: #fff;
+        padding: 10px 20px;
+        box-shadow: inset 0 -2px 0 rgba(0,0,0, 0.10);
+        transition: all .3s;
 
-		&:hover {
-			box-shadow: inset 0 -2px 0 rgba(0,0,0, 0.20);
-		}
-	}
+        &:hover {
+            box-shadow: inset 0 -2px 0 rgba(0,0,0, 0.20);
+        }
+    }
 }
 
 /*
  *  Open cookie popup styling
  */
 body.cookie-info-show {
-	// Show the cookie info
-	.cookie-info {
-		.translate3d(0,0,0);
-		opacity: 1;
-	}
+    // Show the cookie info
+    .cookie-info {
+        .translate3d(0,0,0);
+        opacity: 1;
+    }
 
-	// Hide the button
-	.cookie-info-open {
-		opacity: 0;
-	}
+    // Hide the button
+    .cookie-info-open {
+        opacity: 0;
+    }
 }
