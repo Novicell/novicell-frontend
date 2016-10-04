@@ -1,9 +1,7 @@
-'use strict';
-
-const gulp = require('gulp');
-const config = require('../config.js');
-const spawn = require('child_process').spawn;
+var gulp = require('gulp');
+var config = require('../config.js');
 var plugins = require('gulp-load-plugins')();
+var spawn = require('child_process').spawn;
 
 gulp.task("livereload", function () {
 	plugins.livereload.listen(config.livereloadPort);
@@ -13,6 +11,7 @@ gulp.task("livereload", function () {
 });
 
 gulp.task('watcher', function () {
+<<<<<<< HEAD
 	gulp.watch(config.watchScripts, ["scripts:watch"]);
 	gulp.watch(config.watchStyles, ["styles"]);
 	gulp.watch(config.watchImages, ["images"]);
@@ -21,6 +20,16 @@ gulp.task('watcher', function () {
 	gulp.watch(config.watchHtml, ["html"]);
 
 	return;
+=======
+    gulp.watch(config.watchScripts, ["scripts:watch"]);
+    gulp.watch(config.watchStyles, ["styles", "themes"]);
+    gulp.watch(config.watchImages, ["images"]);
+    gulp.watch(config.watchIcons, ["icons"]);
+    gulp.watch(config.watchFonts, ["copy"]);
+    gulp.watch(config.watchHtml, ["html"]);
+
+    return;
+>>>>>>> 29d7a74e6ba4c839c57323cfbaa7bdfbe93ac3bb
 });
 
 gulp.task('watch', function () {

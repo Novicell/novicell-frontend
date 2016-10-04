@@ -20,6 +20,8 @@ When setup, it also helps you optimize images, combine SVGs to a sprite, compili
 * [JS components](#js-components)
   * [To be done](#to-be-done)
   * [Lazyload images](#lazyload-images)
+  * [Lazyload fonts](#lazyload-fonts)
+  * [Third party plugins](#third-party-plugins)
 * [Notes](#notes)
 * [Requirements](#requirements)
 * [License](#license)
@@ -78,6 +80,7 @@ The following tasks are available:
 * `clean` - Deletes the files/directories defined in: gulp-config.json > pathsToClean
 * `rebuild` - Runs the clean task, and then the build task.
 * `styles` -  Minifies and bundles CSS files defined in: gulp-config.json > bundles > {bundleName} > styles
+* `themes` -  Minifies and bundles CSS files defined in: less/themes
 * `scripts` - Minifies and bundles JS files defined in: gulp-config.json > bundles > {bundleName} > scripts
 * `images` -  Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
 * `icons` - Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
@@ -211,6 +214,42 @@ novicell.font.webfont({
   custom: { families: ['SkipLegDay'], urls: ['/dist/css/webfont.min.css'] }
 });
 ```
+
+## Third party plugins
+Third party javascript plugins like `jquery` or `owl-carousel` is handled by Bower, by running `bower install <plugin>` or adding the plugin and version to the `bower.json`. **Always remember to specify a specific version number without `^` or `~`.**
+
+**Here's an example of a `bower.js`**
+```javascript
+{
+  "name": "novicell-frontend",
+  "version": "2.x.x",
+  "author": "novicell",
+  "dependencies": {
+    "svg4everybody": "2.0.3",
+    "jquery": "2.2.3"
+    ...
+  }
+}
+```
+
+Remember to add your plugins in the `gulp/config.js`, in the vendor bundle min minfication an concatination Remember to [restart your Gulp](#how-to-use-gulp), every time you edit your `gulp/config.js`.
+
+**Here's an example of a vendor bundle in the `gulp/config.js`**
+```javascript
+bundles: [
+{
+  name: "vendor",
+  ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
+  scripts: [
+    bowerPath + "/svg4everybody/dist/svg4everybody.js",
+    bowerPath + "/jquery/dist/jquery.js",
+    bowerPath + "/owl.carousel/dist/owl.carousel.min.js"
+    ...
+  ]
+}
+```
+
+
 
 ## Notes
 * Added an additional breakpoint, medium-small, based on https://github.com/hesselberg/Bootstrap3-ms-breakpoint/
