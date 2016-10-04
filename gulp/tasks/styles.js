@@ -5,10 +5,10 @@ const config = require('../config.js');
 const mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
-gulp.task('styles', function () {
-    var streams = config.bundles.filter(function (b) {
+gulp.task('styles', function() {
+    var streams = config.bundles.filter(function(b) {
         return b.styles != null;
-    }).map(function (b) {
+    }).map(function(b) {
         var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
 
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;

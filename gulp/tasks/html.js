@@ -15,9 +15,9 @@ const mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('html', function() {
-    var streams = config.bundles.filter(function (b) {
+    var streams = config.bundles.filter(function(b) {
         return b.html != null;
-    }).map(function (b) {
+    }).map(function(b) {
         var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
 
         console.log(b.name + ' html is being compiled');

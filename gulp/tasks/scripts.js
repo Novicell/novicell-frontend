@@ -6,17 +6,17 @@ const mergeStream = require('merge-stream');
 var plugins = require('gulp-load-plugins')();
 
 // Tasks
-gulp.task('scripts', function () {
+gulp.task('scripts', function() {
     return compileScripts(false);
 });
 
-gulp.task('scripts:watch', function () {
+gulp.task('scripts:watch', function() {
     return compileScripts(true);
 });
 
 // Functions
 var compileScripts = function(isWatchTask){
-    var streams = config.bundles.filter(function (b) {
+    var streams = config.bundles.filter(function(b) {
         //Check if script ignores watch-task
         if (b.scripts != null) {
             if (!isWatchTask || b.ignorePlugins == undefined) {
@@ -32,7 +32,7 @@ var compileScripts = function(isWatchTask){
             return false;
         }
 
-    }).map(function (b) {
+    }).map(function(b) {
         console.log(b.name + '-bundle is being compiled');
         var ignores = b.ignorePlugins != undefined ? b.ignorePlugins : [];
 

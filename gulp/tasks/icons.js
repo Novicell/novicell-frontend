@@ -18,7 +18,7 @@ var mkdirp = require('mkdirp');
 function writeFile(path, fileName, content) {
     try {
         if (!fs.existsSync(path)) {
-            mkdirp(path, function (err) {
+            mkdirp(path, function(err) {
                 if (err) { console.error(err) }
                 else {
                     doWrite(path, fileName, content);
@@ -57,7 +57,7 @@ function genereateIconJsonLibrary(err, files) {
     writeFile(config.jsonIconOptions.path, config.jsonIconOptions.fileName, JSON.stringify(dataObject));
 }
 
-gulp.task('icons-json', function () {
+gulp.task('icons-json', function() {
     function genereateIconJsonLibrary(err, files) {
         var collection = [];
         for (var i = 0; i < files.length; i++) {
@@ -79,10 +79,10 @@ gulp.task('icons-json', function () {
     fs.readdir("icons/", genereateIconJsonLibrary);
 });
 
-gulp.task('icons', function () {
-    var streams = config.bundles.filter(function (b) {
+gulp.task('icons', function() {
+    var streams = config.bundles.filter(function(b) {
         return b.icons != null;
-    }).map(function (b) {
+    }).map(function(b) {
         var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
 
         var useNewer = ignores.indexOf("newer") == -1;

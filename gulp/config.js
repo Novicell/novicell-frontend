@@ -4,6 +4,7 @@ var notifier = require('node-notifier');
 var argv = require('yargs').argv;
 
 module.exports = (function () {
+
     var projectName = "novicell-gulp";
 
     var projectPath = "./";
@@ -171,7 +172,7 @@ module.exports = (function () {
         // ---------- Errorhandler ------
         errorHandler: function(taskName)
         {
-            return function (e) {
+            return function(e) {
                 notifier.notify({
                     "title": taskName,
                     "message": "An error occured in the " + e.plugin + " plugin."
