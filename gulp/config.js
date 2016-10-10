@@ -1,4 +1,6 @@
-﻿var notifier = require('node-notifier');
+﻿'use strict';
+
+var notifier = require('node-notifier');
 var argv = require('yargs').argv;
 
 module.exports = (function () {
@@ -7,7 +9,10 @@ module.exports = (function () {
     var projectPath = "./";
     var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
     var distPath = projectPath + "dist";
-    var jsonIconPath = distPath + "/icons/icons.json";
+    var jsonIconOptions = {
+        path: distPath + "/icons/",
+        fileName: "icons.json"
+    };
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
     var preprocessor = "less"; //choose between "less" or "scss"
@@ -33,19 +38,24 @@ module.exports = (function () {
                 styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
             },
             {
+                name: "webfont",
+                styles: ["./" + preprocessor + "/base/base.fonts." + preprocessor],
+            },
+            {
                 name: "master",
-                ignorePlugins: ["jscs"],
                 scripts: [
                     projectPath + "scripts/components/novicell.js",
                     projectPath + "scripts/components/novicell.debounce.js",
                     projectPath + "scripts/components/novicell.visible.js",
                     projectPath + "scripts/components/novicell.lazyloadResponsive.js",
                     projectPath + "scripts/components/novicell.embed.js",
-                    // projectPath + "scripts/components/novicell.overlay.js",
+                    projectPath + "scripts/components/novicell.overlay.js",
                     projectPath + "scripts/components/novicell.cookieinfo.js",
                     projectPath + "scripts/components/novicell.map.js",
+                    projectPath + "scripts/components/novicell.font.js",
                     projectPath + "scripts/master.js"
                 ],
+                themes: [projectPath + preprocessor + "/themes/*"],
                 styles: [projectPath + preprocessor + "/master." + preprocessor],
                 images: [projectPath + "images/**/*.{jpg,png,svg,gif}"],
                 icons: [projectPath + "icons/**/*.svg"],
@@ -114,21 +124,20 @@ module.exports = (function () {
         livereloadPaths: [
             "./dist/scripts/*.js",
             "./dist/css/*.css",
-            "./Views/**/*.cshtml"
+            "./Views/**/*.cshtml",
+            "./html/**/*.html"
         ],
 
         // ------------- Watch -------------
-        watchImages: [ projectPath + "images/**/*", projectPath + '!images/icons/*' ],
-        watchIcons: [ projectPath + "images/icons/*" ],
+        watchImages: [ projectPath + "images/**/*" ],
+        watchIcons: [ projectPath + "icons/*" ],
         watchFonts: [ projectPath + "fonts/*" ],
         watchHtml: [ projectPath + "html/**/*" ],
         watchScripts: [
-            projectPath + "scripts/**/*.js",
-            projectPath + "vendor/**/*.js"
+            projectPath + "scripts/**/*.js"
         ],
         watchStyles: [
-            projectPath + preprocessor + "/**/*." + preprocessor,
-            projectPath + "vendor/**/*.{less, scss}"
+            projectPath + preprocessor + "/**/*." + preprocessor
         ],
 
         // ------------- Copy on build --------
@@ -140,12 +149,12 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "bower", "typescript", "styles",
+            "bower", "typescript", "styles", "themes",
             "scripts", "images", "icons",
             "copy", "watch", "build", "html"
         ],
         buildTasks: [
-            "styles", "typescript", "scripts",
+            "styles", "themes", "typescript", "scripts",
             "images", "icons", "copy", "html"
         ],
 
@@ -157,6 +166,7 @@ module.exports = (function () {
         enableTypescript: enableTypescript,
         preprocessor: preprocessor,
         distPath: distPath,
+        jsonIconOptions: jsonIconOptions,
 
         // ---------- Errorhandler ------
         errorHandler: function(taskName)

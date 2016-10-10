@@ -1,0 +1,11 @@
+{
+    "globals": {
+        "$": false,
+        "jQuery": false,
+        "svg4everybody": false,
+        "google": false
+    },
+    "globalstrict": true,
+    "browser": true,
+    "devel": true
+}

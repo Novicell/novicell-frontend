@@ -1,22 +1,40 @@
+'use strict';
+
 /*
     Use icons like:
-    <svg class="icon-search">
+    <svg class="icon icon--search">
         <use xlink:href="/dist/icons/icons.svg#icon-search"></use>
     </svg>
 */
 
-var gulp = require('gulp');
-var config = require('../config.js');
-var mergeStream = require('merge-stream');
+const gulp = require('gulp');
+const config = require('../config.js');
+const mergeStream = require('merge-stream');
+const fs = require('fs');
+const rsp = require('remove-svg-properties').stream;
 var plugins = require('gulp-load-plugins')();
-var svgSprite = require('gulp-svg-sprite');
-var fs = require('fs');
+var mkdirp = require('mkdirp');
 
-function writeFile(file, content) {
+function writeFile(path, fileName, content) {
     try {
-        fs.writeFileSync(file, content);
-        return file;
+        if (!fs.existsSync(path)) {
+            mkdirp(path, function (err) {
+                if (err) { console.error(err) }
+                else {
+                    doWrite(path, fileName, content);
+                }
+            });
+        } else {
+            doWrite(path, fileName, content);
+        }
+
+        function doWrite(path, fileName, content) {
+            fs.writeFileSync(path + fileName, content);
+            console.log("icons.json is being generated.");
+            return path + fileName;
+        }
     } catch (e) {
+        console.log(e);
         return null;
     }
 }
@@ -24,16 +42,42 @@ function writeFile(file, content) {
 function genereateIconJsonLibrary(err, files) {
     var collection = [];
     for (var i = 0; i < files.length; i++) {
-        collection.push(files[i].toString().replace(".svg", ""));
+        var fileStr = files[i].toString();
+        var fileType = fileStr.substr(fileStr.lastIndexOf(".") + 1);
+
+        if (fileType === "svg") {
+            collection.push(files[i].toString().replace(".svg", ""));
+        }
     }
 
     var dataObject = {
         "icons": collection
+    };
+
+    writeFile(config.jsonIconOptions.path, config.jsonIconOptions.fileName, JSON.stringify(dataObject));
+}
+
+gulp.task('icons-json', function () {
+    function genereateIconJsonLibrary(err, files) {
+        var collection = [];
+        for (var i = 0; i < files.length; i++) {
+            var fileStr = files[i].toString();
+            var fileType = fileStr.substr(fileStr.lastIndexOf(".") + 1);
+
+            if (fileType === "svg") {
+                collection.push(files[i].toString().replace(".svg", ""));
+            }
+        }
+
+        var dataObject = {
+            "icons": collection
+        };
+
+        writeFile(config.jsonIconOptions.path, config.jsonIconOptions.fileName, JSON.stringify(dataObject));
     }
 
-    writeFile(config.jsonIconPath, JSON.stringify(dataObject));
-    console.log("NC - 'icons.json' generated.");
-}
+    fs.readdir("icons/", genereateIconJsonLibrary);
+});
 
 gulp.task('icons', function () {
     var streams = config.bundles.filter(function (b) {
@@ -44,12 +88,15 @@ gulp.task('icons', function () {
         var useNewer = ignores.indexOf("newer") == -1;
         var useImagemin = ignores.indexOf("imagemin") == -1;
 
-        fs.readdir("icons/", genereateIconJsonLibrary);
+        gulp.start('icons-json')
 
         return gulp.src(b.icons)
             .pipe(plugins.plumber(config.errorHandler("icons")))
             .pipe(plugins.if(useImagemin, plugins.imagemin()))
-            .pipe(svgSprite(config.spriteConfig))
+            .pipe(rsp.remove({
+                properties: [rsp.PROPS_FILL, rsp.PROPS_STROKE,]
+            }))
+            .pipe(plugins.svgSprite(config.spriteConfig))
             .pipe(gulp.dest(config.iconsDist));
     });
 

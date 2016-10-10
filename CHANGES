@@ -1,3 +1,23 @@
+[2.2.0]
+- Added novicell.font.js
+- Added font example files
+- Added styling to avoid FOUT
+
+
+[2.1.0]
+- Set all Gulp tasks to run in strict mode
+- Set all js files to run in strict mode
+- Updated all Gulp tasks to use 'const' instead of 'var'
+- Added a reporter to jsHint
+- Linted all js files
+- Added a reporter to jscs
+- Re-indented all js files to follow jscs
+- Added jscs rules
+- Standardisation of js files
+
+[2.0.1]
+- Updated node modules
+
 [2.0.0]
 - Removed dependency for bootstrap
 - Added Novicell Frontend BEM setup from repo: https://github.com/Novicell/novicell-frontend-bem
