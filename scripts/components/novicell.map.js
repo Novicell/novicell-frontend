@@ -96,7 +96,7 @@ function initialize() {
         '<div class="marker-content-body">' +
         '<p><b>Office hours:</b><br />8.00am – 4.00pm</p>' +
         '<p><b>Phone</b><br />+45 8619 0550</p>' +
-        '<p><b>Email</b><br /><a href="mailto:info@novicell.dk" title="Send us an email">ProjectName@novicell.dk</a></p>' +
+        '<p><b>Email</b><br /><a href="mailto:info@novicell.dk" title="Send us an email">ncdp@novicell.dk</a></p>' +
         '<p><strong>Novicell Aarhus</strong><br />Søren Nymarks Vej 6<br />8270 Højbjerg</p>' +
         '</div>' +
         '</div>';
