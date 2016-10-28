@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
+var notifier = require('node-notifier');
 var fs = require('fs');
 var plugins = require('gulp-load-plugins')();
 
@@ -45,9 +46,12 @@ var compileScripts = function(isWatchTask){
         b.scripts.forEach(function(file) {
         	fs.stat(file, function(err, stat) {
 			    if(err != null) {
-			    	console.log("------");
-			        console.log("ERROR: no such file or directory '" + file + "'");
-			        console.log("------");
+                    notifier.notify({
+                        "title": "scripts",
+                        "message": "File not found."
+                    });
+                    console.log(err.message);
+                    notifier.emit("end");
 			    }
 			});
         });
