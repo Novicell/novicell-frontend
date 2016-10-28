@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
+var fs = require('fs');
 var plugins = require('gulp-load-plugins')();
 
 // Tasks
@@ -40,6 +41,16 @@ var compileScripts = function(isWatchTask){
         var useJscs = ignores.indexOf("jscs") == -1;
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
         var useMinify = ignores.indexOf("minify") == -1;
+
+        b.scripts.forEach(function(file) {
+        	fs.stat(file, function(err, stat) {
+			    if(err != null) {
+			    	console.log("------");
+			        console.log("ERROR: no such file or directory '" + file + "'");
+			        console.log("------");
+			    }
+			});
+        });
 
         return gulp.src(b.scripts)
         .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
