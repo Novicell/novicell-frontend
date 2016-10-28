@@ -2,6 +2,7 @@
 
 var notifier = require('node-notifier');
 var argv = require('yargs').argv;
+var path = require('path');
 
 module.exports = (function () {
     var projectName = "novicell-gulp";
@@ -64,6 +65,7 @@ module.exports = (function () {
             },
             {
                 name: "test",
+                ignorePlugins: ["removeStyle"], // can only be added on an icon bundle
                 icons: [projectPath + "icons/test/*.svg"]
             }
         ],
@@ -91,6 +93,14 @@ module.exports = (function () {
                 dimension       : {
                     maxWidth    : 32,
                     maxHeight   : 32
+                },
+                // Exclude path from id
+                id: {
+                    generator: function (name) {
+                        console.log('yas');
+                        console.log(path.basename(name, '.svg'));
+                        return path.basename(name, '.svg')
+                    }
                 }
             },
             mode : {
