@@ -3,6 +3,8 @@
 const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
+var notifier = require('node-notifier');
+var fs = require('fs');
 var plugins = require('gulp-load-plugins')();
 
 // Tasks
@@ -40,6 +42,19 @@ var compileScripts = function(isWatchTask){
         var useJscs = ignores.indexOf("jscs") == -1;
         var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
         var useMinify = ignores.indexOf("minify") == -1;
+
+        b.scripts.forEach(function(file) {
+        	fs.stat(file, function(err, stat) {
+			    if(err != null) {
+                    notifier.notify({
+                        "title": "scripts",
+                        "message": "File not found."
+                    });
+                    console.log(err.message);
+                    notifier.emit("end");
+			    }
+			});
+        });
 
         return gulp.src(b.scripts)
         .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
