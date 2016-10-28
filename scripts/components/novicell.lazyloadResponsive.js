@@ -103,7 +103,7 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
         var $figure = $(figure);
 
         //data variables and images settings
-        var width, maxWidth, heightRatio, focalPoint, mode, filter, quality, height, isBackgroundImage, forceHeight = false;
+        var width, maxWidth, heightRatio, focalPoint, mode, filter, quality, height, isBackgroundImage = false, forceHeight = false;
 
         var $parent = $figure.data('parent') ? $figure.closest($figure.data('parent')) : null;
         isBackgroundImage = $figure.data('is-background') ? true : false;
