@@ -43,6 +43,7 @@ module.exports = (function () {
                     projectPath + "scripts/components/novicell.font.js",
                     projectPath + "scripts/master.js"
                 ],
+                themes: [projectPath + preprocessor + "/themes/*"],
                 styles: [projectPath + preprocessor + "/master." + preprocessor],
                 images: [projectPath + "images/**/*.{jpg,png,svg,gif}"],
                 html: [projectPath + "html/*.html"]
@@ -97,8 +98,6 @@ module.exports = (function () {
                 // Exclude path from id
                 id: {
                     generator: function (name) {
-                        console.log('yas');
-                        console.log(path.basename(name, '.svg'));
                         return path.basename(name, '.svg')
                     }
                 }
@@ -153,12 +152,12 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "bower", "typescript", "styles",
+            "bower", "typescript", "styles", "themes",
             "scripts", "images", "icons",
             "copy", "watch", "build", "html"
         ],
         buildTasks: [
-            "styles", "typescript", "scripts",
+            "styles", "themes", "typescript", "scripts",
             "images", "icons", "copy", "html"
         ],
 

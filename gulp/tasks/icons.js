@@ -1,12 +1,5 @@
 'use strict';
 
-/*
-    Use icons like:
-    <svg class="icon icon--search">
-        <use xlink:href="/dist/icons/icons.svg#icon-search"></use>
-    </svg>
-*/
-
 const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
@@ -14,19 +7,28 @@ const fs = require('fs');
 const rsp = require('remove-svg-properties').stream;
 const glob = require("glob");
 var path = require('path');
+var mkdirp = require('mkdirp');
 var plugins = require('gulp-load-plugins')();
 
 function writeFile(path, fileName, content) {
     try {
         if (!fs.existsSync(path)) {
-            fs.mkdirSync(path)
+            mkdirp(path, function (err) {
+                if (err) { console.error(err) }
+                else {
+                    doWrite(path, fileName, content);
+                }
+            });
+        } else {
+            doWrite(path, fileName, content);
         }
 
-        fs.writeFileSync(path + fileName, content);
-        console.log(fileName + " is being generated.");
-        return path + fileName;
-    }
-    catch (e) {
+        function doWrite(path, fileName, content) {
+            fs.writeFileSync(path + fileName, content);
+            console.log(fileName + " is being generated.");
+            return path + fileName;
+        }
+    } catch (e) {
         console.log(e);
         return null;
     }
