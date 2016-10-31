@@ -62,7 +62,7 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
         $('.responsiveLazyload').each(function () {
             var $figure = $(this).parent();
 
-            if ($figure.visible(true) || $(this).data("load") === "always") {
+            if ($figure.visible(true) || $figure.data("load") === "always") {
                 loadImage($(this), true);
             } else {
                 constructPlaceholder($figure);
