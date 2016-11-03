@@ -10,9 +10,6 @@ module.exports = (function () {
     var projectPath = "./";
     var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
     var distPath = projectPath + "dist";
-    var jsonIconOptions = {
-        path: distPath + "/icons/"
-    };
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
     var preprocessor = "less"; //choose between "less" or "scss"
@@ -87,7 +84,7 @@ module.exports = (function () {
         scriptsDist: distPath + "/scripts",
 
         // ------------- Icons ---------------
-        iconsDist: distPath + "/icons",
+        iconsDist: distPath + "/icons/",
         spriteConfig: {
             shape : {
                 // Set maximum dimensions
@@ -169,7 +166,6 @@ module.exports = (function () {
         enableTypescript: enableTypescript,
         preprocessor: preprocessor,
         distPath: distPath,
-        jsonIconOptions: jsonIconOptions,
 
         // ---------- Errorhandler ------
         errorHandler: function(taskName)

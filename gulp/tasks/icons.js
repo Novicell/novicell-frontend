@@ -53,7 +53,7 @@ function genereateIconJsonLibrary(dirs, jsonFileName) {
             "icons": collection
         };
         // Write the JSON file to disk
-        writeFile(config.jsonIconOptions.path, jsonFileName + '.json', JSON.stringify(dataObject));
+        writeFile(config.iconsDist, jsonFileName + '.json', JSON.stringify(dataObject));
     }
 }
 
