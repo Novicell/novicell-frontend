@@ -2,6 +2,7 @@
 
 var notifier = require('node-notifier');
 var argv = require('yargs').argv;
+var path = require('path');
 
 module.exports = (function () {
     var projectName = "novicell-gulp";
@@ -9,10 +10,6 @@ module.exports = (function () {
     var projectPath = "./";
     var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
     var distPath = projectPath + "dist";
-    var jsonIconOptions = {
-        path: distPath + "/icons/",
-        fileName: "icons.json"
-    };
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
     var preprocessor = "less"; //choose between "less" or "scss"
@@ -28,18 +25,6 @@ module.exports = (function () {
                     bowerPath + "/svg4everybody/dist/svg4everybody.js",
                     bowerPath + "/jquery/dist/jquery.js"
                 ]
-            },
-            {
-                // For styling Umbraco Grid editors in backoffice
-                name: "backofficemaster",
-                scripts: [
-                    projectPath + "scripts/backofficemaster.js"
-                ],
-                styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
-            },
-            {
-                name: "webfont",
-                styles: ["./" + preprocessor + "/base/base.fonts." + preprocessor],
             },
             {
                 name: "master",
@@ -58,8 +43,27 @@ module.exports = (function () {
                 themes: [projectPath + preprocessor + "/themes/*"],
                 styles: [projectPath + preprocessor + "/master." + preprocessor],
                 images: [projectPath + "images/**/*.{jpg,png,svg,gif}"],
-                icons: [projectPath + "icons/**/*.svg"],
                 html: [projectPath + "html/*.html"]
+            },
+            {
+                // For styling editors in backoffice
+                name: "backofficemaster",
+                scripts: [
+                    projectPath + "scripts/backofficemaster.js"
+                ],
+                styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
+            },
+            {
+                name: "webfont",
+                styles: ["./" + preprocessor + "/base/base.fonts." + preprocessor],
+            },
+            {
+                name: "icons",
+                icons: [projectPath + "icons/**/*.svg"]
+            },
+            {
+                name: "test",
+                icons: [projectPath + "icons/test/*.svg"]
             }
         ],
 
@@ -79,28 +83,31 @@ module.exports = (function () {
         scriptsDist: distPath + "/scripts",
 
         // ------------- Icons ---------------
-        iconsDist: distPath,
+        iconsDist: distPath + "/icons/",
         spriteConfig: {
             shape : {
                 // Set maximum dimensions
                 dimension       : {
                     maxWidth    : 32,
                     maxHeight   : 32
-                }
+                },
+                // Exclude path from id
+                id: {
+                    generator: function (name) {
+                        return path.basename(name, '.svg');
+                    }
+                },
+                // Convert style to attributes
+                transform : [
+                    {svgo       : {
+                        plugins : [
+                            { removeStyleElement  : true}
+                        ]
+                    }}
+                ],
             },
             mode : {
-                view : {
-                    bust : false,
-                    render : {
-                        less : true
-                    },
-                    dest : 'icons',
-                    sprite : 'icons-css.svg'
-                },
-                symbol : {
-                    dest : 'icons',
-                    sprite : 'icons.svg'
-                }
+                symbol : true
             }
         },
 
@@ -166,7 +173,6 @@ module.exports = (function () {
         enableTypescript: enableTypescript,
         preprocessor: preprocessor,
         distPath: distPath,
-        jsonIconOptions: jsonIconOptions,
 
         // ---------- Errorhandler ------
         errorHandler: function(taskName)

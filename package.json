@@ -48,6 +48,7 @@
   "devDependencies": {
     "del": "^2.2.1",
     "es6-promise": "^3.2.1",
+    "glob": "^7.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-bower": "0.0.13",
@@ -64,6 +65,7 @@
     "gulp-load-plugins": "~1.2.4",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "~1.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-resolve-dependencies": "^2.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
@@ -77,7 +79,7 @@
     "merge-stream": "~1.0.0",
     "mkdirp": "^0.5.1",
     "node-notifier": "^4.6.0",
-    "remove-svg-properties": "^0.3.2",
+    "path": "^0.12.7",
     "tslint": "^3.13.0",
     "typescript": "^1.8.10",
     "yargs": "~4.8.1"
