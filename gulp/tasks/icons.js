@@ -4,7 +4,6 @@ const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
 const fs = require('fs');
-const rsp = require('remove-svg-properties').stream;
 const glob = require("glob");
 var path = require('path');
 var mkdirp = require('mkdirp');
@@ -65,16 +64,12 @@ gulp.task('icons', function () {
 
         var useNewer = ignores.indexOf('newer') == -1;
         var useImagemin = ignores.indexOf('imagemin') == -1;
-        var removeStyles = ignores.indexOf('removeStyles') == -1;
 
         genereateIconJsonLibrary(b.icons, b.name);
 
         return gulp.src(b.icons)
             .pipe(plugins.plumber(config.errorHandler('icons')))
             .pipe(plugins.if(useImagemin, plugins.imagemin()))
-            .pipe(plugins.if(removeStyles, rsp.remove({
-                properties: [rsp.PROPS_FILL, rsp.PROPS_STROKE,]
-            })))
             .pipe(plugins.svgSprite(config.spriteConfig))
             .pipe(plugins.rename(b.name + '.svg'))
             .pipe(gulp.dest(config.iconsDist));

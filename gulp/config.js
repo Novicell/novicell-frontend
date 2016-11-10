@@ -63,7 +63,6 @@ module.exports = (function () {
             },
             {
                 name: "test",
-                ignorePlugins: ["removeStyle"], // can only be added on an icon bundle
                 icons: [projectPath + "icons/test/*.svg"]
             }
         ],
@@ -97,7 +96,15 @@ module.exports = (function () {
                     generator: function (name) {
                         return path.basename(name, '.svg')
                     }
-                }
+                },
+                // Convert style to attributes
+                transform : [
+                    {svgo       : {
+                        plugins : [
+                            { removeStyleElement  : true}
+                        ]
+                    }}
+                ],
             },
             mode : {
                 symbol : true

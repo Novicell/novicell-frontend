@@ -80,7 +80,6 @@
     "mkdirp": "^0.5.1",
     "node-notifier": "^4.6.0",
     "path": "^0.12.7",
-    "remove-svg-properties": "^0.3.2",
     "tslint": "^3.13.0",
     "typescript": "^1.8.10",
     "yargs": "~4.8.1"
