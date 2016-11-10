@@ -85,7 +85,7 @@ The following tasks are available:
 * `images` -  Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
 * `icons` - Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
 * `copy` -  Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
-* `hhtml` - Looks through the html folder for `@@include`, to then partially replace them when compiling the html file
+* `html` - Will run through the html folder (not subfolders by default), looking for the `@@include`, to then partially replace them with the path. To learn more, go to the [HTML task in details](#HTML-task-in-details)
 * `watch`
 
   * Runs the scripts, styles, images, icons and fonts task whenever a file has changed. The paths it listens on, is defined in the file gulp/config.json > watch.
@@ -96,6 +96,47 @@ The following tasks are available:
   * Generates sourcemaps for CSS and JS.
 
 NOTE: The distribution path for each task, can be defined in gulp/config.json - so can the basePath.
+
+
+### HTML task in details
+The HTML task enables us to develop html with a component type of mind such as storing a site header in a single file. `@@include('components/breadcrumb.html')`.
+What this means is that we only have to maintain pieces of reusable html in 1 place. This is especially useful when working with navigational elements.
+
+You can also pass data to the included files, by adding a object to the end of the `@@include`, like this:
+
+```html
+@@include('components/breadcrumb.html', {
+  "parentPaths": [
+    {
+      "name": "Frontpage",
+      "link": "/"
+    },
+    {
+      "name": "Page",
+      "link": "page.html",
+    }
+  ],
+  "path": "Subpage"
+})
+```
+
+In your included file, you can check for the data like this:
+```html
+<div class="breadcrumb">
+    <div class="container">
+        @@for (var i = 0; i < parentPaths.length; i++) {
+            <span class="breadcrumb__link"><a href="`+parentPaths[i].link+`">`+parentPaths[i].name+`</a></span>
+        }
+        <span class="breadcrumb__link breadcrumb__link--active">@@path</span>
+    </div>
+</div>
+```
+
+The for loop traverses through our array of parentPaths, while the path is put inside the active link.
+
+There are some limits of what you can do, but the developer of the gulp-file-include is constantly adding more functionality.
+For an updated list of possibilities, check here: https://github.com/coderhaoxin/gulp-file-include
+
 
 ## How to use SVG sprite sheet
 
@@ -184,7 +225,7 @@ You need to call images like this, and then the javascript will add querystrings
 #### Description and rules
 The original purpose of using the lazyloadResponsive.js is to always serve an optimal resized image depending on the user's viewport. Through time it has become a powerful script to manipulate images. There are several options you can set on your `<figure>`:
 * data-src - the clean source of the image, without any parameters
-* data-focalpoint - the value of the focalpoint. 
+* data-focalpoint - the value of the focalpoint.
 * data-mode - how to crop your image.
 * data-quality - the quality of the image. (default: 80)
 * data-is-background - if this is set no `<img>` will be added, but the image will be added as a background on the data-parent **NOTE: data-parent is required**.
@@ -197,7 +238,7 @@ The original purpose of using the lazyloadResponsive.js is to always serve an op
 When you are using the Novicell Umbraco Default Package, you can grab a lot of these values from the FocalPointItemModel itself. Listed below are the generated values:
 * @Model.Image.GetFocalPoints() - returns the focalpoint set in the backend
 * @Model.Image.GetOriginalHeightRatio() - returns the original height-ratio of the uploaded image. If you set a forced width and height in the backend, the ratio of these will overrule.
-* @Model.Image.GetWidth() - returns the original width of the uploaded image. If a forced width is set, this will be the returned value. 
+* @Model.Image.GetWidth() - returns the original width of the uploaded image. If a forced width is set, this will be the returned value.
 
 ![alt text](http://i.imgur.com/nDhWBFc.png "Umbraco Focalpoint")
 
@@ -205,7 +246,7 @@ When you are using the Novicell Umbraco Default Package, you can grab a lot of t
 Additional you can grab values as url, title and alt-text.
 
 ### Lazyload fonts
-Include the `novicell.font.js` for lazyloading fonts. You can use Google Fonts, Typekit and local. When you are using local font you declare your font-face inside /less/base/base.fonts.less (or scss). This file will be generated into the webfont.min.css-file by Gulp. 
+Include the `novicell.font.js` for lazyloading fonts. You can use Google Fonts, Typekit and local. When you are using local font you declare your font-face inside /less/base/base.fonts.less (or scss). This file will be generated into the webfont.min.css-file by Gulp.
 
 ```javascript
 novicell.font.webfont({

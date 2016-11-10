@@ -6,12 +6,12 @@
 *  ------
 * Dependencies: jquery, novicell.js, other files with awesome functions.
 *  Usage: $(function () {
-*              InwidoAA.slider.heroSlider($('.owl-carousel'));
+*              projectName.slider.heroSlider($('.owl-carousel'));
 *         }); // Document ready end
 */
 
 var novicell = novicell || {};
-var InwidoAA = InwidoAA || {};
+var projectName = projectName || {};
 
 // Document ready
 $(function () {
@@ -21,7 +21,7 @@ $(function () {
     novicell.responsiveLazyloadImage.onLoad();
 
     // Call new functions here like this:
-    //InwidoAA.slider.heroSlider($('.owl-carousel'));
+    //projectName.slider.heroSlider($('.owl-carousel'));
     svg4everybody(); // Fix SVG spritemap in IE/Edge
 
 
