@@ -94,7 +94,7 @@ module.exports = (function () {
                 // Exclude path from id
                 id: {
                     generator: function (name) {
-                        return path.basename(name, '.svg')
+                        return path.basename(name, '.svg');
                     }
                 },
                 // Convert style to attributes
