@@ -103,7 +103,8 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
         var $figure = $(figure);
 
         //data variables and images settings
-        var width, maxWidth, heightRatio, focalPoint, mode, filter, quality, height, isBackgroundImage = false;
+        var width, maxWidth, heightRatio, focalPoint, mode, filter, quality, height;
+        var isBackgroundImage = false, forceHeight = false;
 
         var $parent = $figure.data('parent') ? $figure.closest($figure.data('parent')) : null;
         isBackgroundImage = $figure.data('is-background') ? true : false;
@@ -111,6 +112,7 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
         width = $parent ? $parent.width() : width;
         heightRatio = $figure.data('height-ratio') !== 0 ? $figure.data('height-ratio') : null;
         height = $parent ? $parent.outerHeight() : null;
+        forceHeight = $figure.data('force-height') !== 0 ? $figure.data('force-height') : null;
         focalPoint = $figure.data('focalpoint');
         mode = $figure.data('mode');
         filter = $figure.data('filter');
@@ -142,8 +144,9 @@ novicell.responsiveLazyloadImage = novicell.responsiveLazyloadImage || function 
             }
 
             newImageSrc += mode ? nextQuerySign(newImageSrc) + "width=" + width : "";
-            newImageSrc += height && !heightRatio ? nextQuerySign(newImageSrc) + "height=" + height : "";
-            newImageSrc += heightRatio !== null ? nextQuerySign(newImageSrc) + "height=" + heightRatio * width : "";
+            newImageSrc += height && !heightRatio && !forceHeight ? nextQuerySign(newImageSrc) + "height=" + height : "";
+            newImageSrc += heightRatio && !forceHeight ? nextQuerySign(newImageSrc) + "height=" + heightRatio * width : "";
+            newImageSrc += forceHeight && !heightRatio ? nextQuerySign(newImageSrc) + "height=" + forceHeight : "";
 
             $image.src = newImageSrc;
             $figure.prepend($image);
