@@ -232,6 +232,7 @@ The original purpose of using the lazyloadResponsive.js is to always serve an op
 * data-parent - per default the size of the image will be determinated by the width of the `<figure>`. If a parent is specified it will use the size of this instead. **NOTE: If a focalpoint is set, it only used the width of the parent**
 * data-original-width - is used to set a max-width on the image return from the server to prevent a ugly upscaling of small images.
 * data-filter - filters used by imageprocessor
+* data-force-height - sed to set a specific height on the image
 
 
 #### When using Umbraco Default Package

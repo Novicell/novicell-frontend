@@ -46,14 +46,6 @@ module.exports = (function () {
                 html: [projectPath + "html/*.html"]
             },
             {
-                // For styling editors in backoffice
-                name: "backofficemaster",
-                scripts: [
-                    projectPath + "scripts/backofficemaster.js"
-                ],
-                styles: ["./" + preprocessor + "/backofficemaster." + preprocessor],
-            },
-            {
                 name: "webfont",
                 styles: ["./" + preprocessor + "/base/base.fonts." + preprocessor],
             },
