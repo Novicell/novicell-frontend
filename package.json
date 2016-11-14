@@ -46,6 +46,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "check-files-exist": "^1.0.1",
     "del": "^2.2.1",
     "es6-promise": "^3.2.1",
     "glob": "^7.1.1",
