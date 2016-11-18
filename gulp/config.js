@@ -8,7 +8,7 @@ module.exports = (function () {
     var projectName = "novicell-gulp";
 
     var projectPath = "./";
-    var bowerPath = projectPath + "vendor/bower"; // remember to edit .bowerrc aswell (for CLI)
+    var vendorPath = projectPath + "node_modules";
     var distPath = projectPath + "dist";
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
@@ -22,8 +22,8 @@ module.exports = (function () {
                 name: "vendor",
                 ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
                 scripts: [
-                    bowerPath + "/svg4everybody/dist/svg4everybody.js",
-                    bowerPath + "/jquery/dist/jquery.js"
+                    vendorPath + "/svg4everybody/dist/svg4everybody.js",
+                    vendorPath + "/jquery/dist/jquery.js"
                 ]
             },
             {
@@ -148,18 +148,15 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "bower", "typescript", "styles", "themes",
-            "scripts", "images", "icons",
-            "copy", "watch", "build", "html"
+            "typescript", "styles", "themes", "scripts", "images", "icons", "copy", "watch", "build", "html"
         ],
         buildTasks: [
-            "styles", "themes", "typescript", "scripts",
-            "images", "icons", "copy", "html"
+            "typescript", "styles", "themes", "scripts", "images", "icons", "copy", "html"
         ],
 
         // ------------- Return Paths -------------
         projectPath: projectPath,
-        bowerPath: bowerPath,
+        vendorPath: vendorPath,
         cleanPaths: cleanPaths,
         typescriptPath: typescriptPath,
         enableTypescript: enableTypescript,
