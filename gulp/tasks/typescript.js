@@ -39,7 +39,7 @@ var minify = function() {
         .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
         .pipe(plugins.plumber(config.errorHandler('scripts')))
         .pipe(plugins.jshint())
-        .pipe(plugins.sourcemaps.init({ loadMaps: true }))
+        .pipe(plugins.sourcemaps.init())
         .pipe(plugins.concat('typescript.min.js'))
         .pipe(plugins.uglify())
         .pipe(plugins.sourcemaps.write('.'))

@@ -20,7 +20,7 @@ gulp.task('styles', function () {
 
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler("styles")))
-            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init()))
             .pipe(plugins.if(useLess, plugins.less()))
             .pipe(plugins.if(useScss, plugins.sass()))
             .pipe(plugins.concat(b.name + ".min.css"))
