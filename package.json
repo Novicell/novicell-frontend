@@ -1,7 +1,7 @@
 {
   "name": "novicell-frontend",
   "description": "Novicells Default Frontend Package - used in all Novicell related projects as a base framework.",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "homepage": "http://www.novicell.dk",
   "author": {
     "name": "Novicell"
