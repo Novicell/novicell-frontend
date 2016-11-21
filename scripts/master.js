@@ -17,7 +17,7 @@ var projectName = projectName || {};
 $(function () {
     // Only include Novicell functions that you use!
     novicell.cookieInfo.init();
-    novicell.embed.loadEmbeds();
+    novicell.embed.onLoad(); 
     novicell.responsiveLazyloadImage.onLoad();
 
     // Call new functions here like this:
@@ -55,7 +55,5 @@ $(window).smartscroll(function (e) {
     if ($('.responsiveLazyload').length) {
         novicell.responsiveLazyloadImage.onScroll();
     }
-    if ($('.embed-media-item').length) {
-        novicell.embed.loadEmbeds();
-    }
+    novicell.embed.onScroll();
 }); // Window scroll
