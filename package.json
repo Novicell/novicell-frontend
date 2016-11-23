@@ -1,7 +1,7 @@
 {
   "name": "novicell-frontend",
   "description": "Novicells Default Frontend Package - used in all Novicell related projects as a base framework.",
-  "version": "2.0.2",
+  "version": "2.5.0",
   "homepage": "http://www.novicell.dk",
   "author": {
     "name": "Novicell"
@@ -45,6 +45,12 @@
     }
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">6.9.1"
+  },
+  "scripts" :
+    { "postinstall" : "gulp" }
+  ,
   "devDependencies": {
     "check-files-exist": "^1.0.1",
     "del": "^2.2.1",
@@ -52,7 +58,6 @@
     "glob": "^7.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-bower": "0.0.13",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-file-include": "^1.0.0",
@@ -82,6 +87,10 @@
     "tslint": "^3.13.0",
     "typescript": "^2.0.10",
     "yargs": "~6.4.0"
+  },
+  "dependencies" : {
+    "svg4everybody": "2.1.3",
+    "jquery": "3.1.1"
   },
   "files": [
     "examples/**/*",
