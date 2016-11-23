@@ -12,7 +12,6 @@ module.exports = (function () {
     var distPath = projectPath + "dist";
     var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
-    var preprocessor = "less"; //choose between "less" or "scss"
     var enableTypescript = false; // Set to false to disable
 
     return {
@@ -40,18 +39,18 @@ module.exports = (function () {
                     projectPath + "scripts/components/novicell.font.js",
                     projectPath + "scripts/master.js"
                 ],
-                themes: [projectPath + preprocessor + "/themes/*"],
-                styles: [projectPath + preprocessor + "/master." + preprocessor],
-                images: [projectPath + "images/**/*.{jpg,png,svg,gif}"],
-                html: [projectPath + "html/*.html"]
+                themes: [ projectPath + "less/themes/*"] ,
+                styles: [ projectPath + "less/master.less"] ,
+                images: [ projectPath + "images/**/*.{jpg,png,svg,gif}"] ,
+                html: [ projectPath + "html/*.html" ]
             },
             {
                 name: "webfont",
-                styles: ["./" + preprocessor + "/base/base.fonts." + preprocessor],
+                styles: [ projectPath + "less/base/base.fonts.less"] ,
             },
             {
                 name: "icons",
-                icons: [projectPath + "icons/**/*.svg"]
+                icons: [ projectPath + "icons/**/*.svg" ]
             }
         ],
 
@@ -132,7 +131,7 @@ module.exports = (function () {
             projectPath + "scripts/**/*.js"
         ],
         watchStyles: [
-            projectPath + preprocessor + "/**/*." + preprocessor
+            projectPath + "less/**/*.less"
         ],
 
         // ------------- Copy on build --------
@@ -156,7 +155,6 @@ module.exports = (function () {
         cleanPaths: cleanPaths,
         typescriptPath: typescriptPath,
         enableTypescript: enableTypescript,
-        preprocessor: preprocessor,
         distPath: distPath,
 
         // ---------- Errorhandler ------
