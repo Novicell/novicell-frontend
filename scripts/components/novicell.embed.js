@@ -1,11 +1,11 @@
-﻿'use strict';
+"use strict";
 
 /**
 * @desc new load embedded media script, it lazyloads embedded media
 * html example
 * js init example: novicell.embed.loadEmbeds();
 * js scroll example:
-* if ($('.embed-media-item').length > 0) {
+* if ($(".embed-media-item').length > 0) {
 *     novicell.embed.loadEmbeds();
 * }
 * @author Tommy Pedersen - TPE
@@ -20,50 +20,68 @@ novicell.embed = novicell.embed || function () {
     var lastRefreshWidth = 0;
     var refreshWidth = 50;
 
-    function loadEmbeds(callback) {
+    function onLoad() {
         $(".nc-grid-embedmedia").each(function () {
             if ($(this).visible(true) || $(this).data("load") === "always") {
-                if ($(this).has(".embed-preview-image")) {
-                    $(this).find(".embed-preview-image").click(function () {
-                        $(this).attr("style", "display: none!important");
-                        lazyEmbed($(this).parent().find(".embed-media-item"));
-                        if (typeof callback == 'function') {
-                            callback();
-                        }
-                    });
-                } else {
-                    lazyEmbed($(this).find(".embed-media-item"));
-                    if (typeof callback == 'function') {
-                        callback();
-                    }
-                }
+                loadEmbed($(this));
             }
         });
     }
 
-    function onResize(callback) {
+
+    function onResize() {
         if (window.innerWidth > lastRefreshWidth + refreshWidth || window.innerWidth < lastRefreshWidth - refreshWidth) {
-            $('.nc-grid-embedmedia').each(function () {
-                lazyEmbed($(this).find(".embed-media-item"));
-                if (typeof callback == 'function') {
-                    callback();
-                }
+            $(".nc-grid-embedmedia").each(function () {
+                loadEmbed($(this));
             });
             lastRefreshWidth = window.innerWidth;
         }
     }
 
-    function lazyEmbed(figure) {
-        figure.attr("style", "display: block!important");
-        figure.addClass('loaded');
-        var $embed = figure.find(".embed");
+    function onScroll() {
+        $(".nc-grid-embedmedia").each(function () {
+            if ($(this).visible(true) && !$(this).children(".embed-media-item").hasClass("loaded")) {
+                loadEmbed($(this));
+            }
+        });
+    }
+
+    //Check if there's a preview image and loads the embed
+    function loadEmbed($element, callback) {
+        var $embedItem = $element.children(".embed-media-item");
+        if ($element.children(".embed-preview-image").length) {
+            var $image = $element.children(".embed-preview-image , .js-embed-play");
+            $embedItem.hide();
+            $image.click(function () {
+                $image.remove();
+                lazyEmbed($embedItem, true);
+                if (typeof callback == "function") {
+                    callback();
+                }
+            });
+        } else {
+            lazyEmbed($embedItem, false);
+            if (typeof callback == "function") {
+                callback();
+            }
+        }
+
+    }
+
+    function lazyEmbed($embedItem, isImage) {
+        $embedItem.show();
+        $embedItem.addClass("loaded");
+        var $iframe = $embedItem.find(".embed");
         var ratio, src, width;
-        width = figure.width() !== 0 ? figure.width() : $(figure).parent().width();
-        ratio = $embed.data("ratio");
-        src = $embed.data("src");
-        $embed.attr("src", src);
-        $embed.attr("width", width);
-        $embed.attr("height", width * ratio);
+        width = $embedItem.width() !== 0 ? $embedItem.width() : $($embedItem).parent().width();
+        ratio = $iframe.data("ratio");
+        src = $iframe.data("src");
+        $iframe.attr("src", src);
+        $iframe.attr("width", width);
+        $iframe.attr("height", width * ratio);
+        if (isImage) {
+            $iframe.attr("src", updateQueryStringParameter($iframe.data("src"), "autoplay", "true"));
+        }
     }
 
     function backofficeEmbeds(callback) {
@@ -71,7 +89,7 @@ novicell.embed = novicell.embed || function () {
             $(this).find(".embed-preview-image").remove();
             lazyEmbed($(this).find(".embed-media-item"));
             $(this).find(".embed").attr("src", updateQueryStringParameter($(this).find(".embed").data("src"), "autoplay", "false"));
-            if (typeof callback == 'function') {
+            if (typeof callback == "function") {
                 callback();
             }
         });
@@ -79,9 +97,9 @@ novicell.embed = novicell.embed || function () {
 
     function updateQueryStringParameter(uri, key, value) {
         var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-        var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        var separator = uri.indexOf("?") !== -1 ? "&" : "?";
         if (uri.match(re)) {
-            return uri.replace(re, '$1' + key + "=" + value + '$2');
+            return uri.replace(re, "$1" + key + "=" + value + "$2");
         }
         else {
             return uri + separator + key + "=" + value;
@@ -90,8 +108,9 @@ novicell.embed = novicell.embed || function () {
 
     // public functions:
     return {
-        loadEmbeds: loadEmbeds,
+        onLoad: onLoad,
         backofficeEmbeds: backofficeEmbeds,
-        onResize: onResize
+        onResize: onResize,
+        onScroll: onScroll
     };
 }();
