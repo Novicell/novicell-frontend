@@ -62,7 +62,7 @@ var compileScripts = function(isWatchTask){
         .pipe(plugins.if(useJshint, plugins.jshint.reporter('jshint-stylish')))
         .pipe(plugins.if(useJscs, plugins.jscs()))
         .pipe(plugins.if(useJscs, plugins.jscsStylish()))
-        .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+        .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init()))
         .pipe(plugins.concat(b.name + ".min.js"))
         .pipe(plugins.if(useMinify, plugins.uglify()))
         .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.write('.')))

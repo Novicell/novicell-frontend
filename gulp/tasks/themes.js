@@ -18,7 +18,7 @@ gulp.task('themes', function () {
 
         return gulp.src(b.themes)
             .pipe(plugins.plumber(config.errorHandler("themes")))
-            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init()))
             .pipe(plugins.if(useLess, plugins.less()))
             .pipe(plugins.if(useScss, plugins.sass()))
             .pipe(plugins.if(useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))

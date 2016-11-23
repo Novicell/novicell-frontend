@@ -51,10 +51,6 @@ module.exports = (function () {
             {
                 name: "icons",
                 icons: [ projectPath + "icons/**/*.svg" ]
-            },
-            {
-                name: "test",
-                icons: [ projectPath + "icons/test/*.svg" ]
             }
         ],
 
