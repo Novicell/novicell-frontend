@@ -158,6 +158,44 @@ A basic variant of Bootstrap LESS, converted to BEM architecture and syntax for 
 There's a few basic setups that you will always need for all your projects. Buttons, Grid, Form elements, Tables. (Well, maybe you'll use tables).
 There's also an example of a component and a view, just to show how the naming convention should be, as well as how you should both write and organize your LESS files.
 
+## BEM syntax
+Quick example of [BEM class notation](https://css-tricks.com/bem-101/). For further info take a look at the [Novicell frontend guidelines](https://novicell.github.io/frontenddocs/):
+
+**BLOCK**:           breadcrumb
+
+**ELEMENT**:         breadcrumb__link
+
+**MODIFIER**:        breadcrumb__link—-active
+
+ So, for the markup it would look something like:
+ 
+```html
+ <div class='breadcrumb'>                                                      <!-- BLOCK -->
+     <a class='breadcrumb__link' href='#'>Home</a>                             <!-- ELEMENT below the BLOCK -->
+     <span class='breadcrumb__link breadcrumb__link--active'>Page</span>       <!-- Also an ELEMENT, but to make it look active, we add the MODIFIER 'active' -->
+ </div>
+```
+
+And when combined with LESS the stylesheet would look something like this:
+```less
+// Breadcrumb is a block
+.breadcrumb {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+    // Element inside the 'breadcrumb'-block
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        line-height: 1;
+        font-size: 10px;
+
+        // Active modifier of the element
+        &--active {font-weight: bold;}
+    }
+}
+```
+
 ### The grid
 There's a grid based on the ideas behind Bootstrap.
 You can use it as you normally would, but write it a bit differently.
