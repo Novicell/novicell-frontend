@@ -19,15 +19,12 @@ gulp.task('styles', function () {
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler("styles")))
             .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.lesshint(config.lessConfig))
+            .pipe(plugins.lesshint.reporter())
             .pipe(plugins.less())
             .pipe(plugins.concat(b.name + ".min.css"))
             .pipe(plugins.if(useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
-            .pipe(plugins.cssnano({
-                discardComments: {removeAll: true},
-                mergeLonghand: true,
-                colormin: false,
-                zindex: false
-            }))
+            .pipe(plugins.cssnano(config.cssnanoConfig))
             .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.write('.')))
             .pipe(gulp.dest(config.stylesDist));
     });

@@ -65,6 +65,25 @@ module.exports = (function () {
             "ios 8",
             "android 4"
         ],
+        // Lesshint config
+        lessConfig : {
+            "fileExtensions": [ ".less", ".css" ],
+            "excludedFiles": [ vendorPath + "**/*.less"] ,
+            "spaceAfterPropertyColon": {
+                "enabled": true,
+                "style": "one_space"
+            },
+            "newlineAfterBlock": true,
+            "emptyRule": true,
+            "singleLinePerSelector": true
+        },
+        // CSSnano config
+        cssnanoConfig : {
+            discardComments: {removeAll: true},
+            mergeLonghand: true,
+            colormin: false,
+            zindex: false
+        },
 
         // ------------- Scripts -------------
         scriptsDist: distPath + "/scripts",
