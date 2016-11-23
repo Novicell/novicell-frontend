@@ -22,27 +22,30 @@ When setup, it also helps you optimize images, combine SVGs to a sprite, compili
   * [Lazyload images](#lazyload-images)
   * [Lazyload fonts](#lazyload-fonts)
   * [Third party plugins](#third-party-plugins)
-* [Notes](#notes)
-* [Requirements](#requirements)
 * [License](#license)
 
 ## Quick start
 
-Browse to your project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git`. Then run `npm install` and then run `gulp` for the build proccess to start. Run `gulp watch` to start watching filechanges and continuous copilation.
+Browse to your project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git`. Then run `npm install` for getting the latest dependencies and start the build proccess. Run `gulp watch` to start watching file changes and continuous copilation.
 
 
 ##  Installation
 
-- Download and install Node.js v. 4.x.x (https://nodejs.org/download/)
-- Download and install Git (http://git-scm.com/downloads)
+- Download and install Node.js min. v. 6.9.x (https://nodejs.org/en/download/)
+- Download and install Git (newest) (http://git-scm.com/downloads)
   Remember to check "Git bash here" in context menu options
 
   To check if node is working, go to Gitbash / Terminal and type `node -v`
   If you get a version number, you'r good to go :+1:
+  
+  If you NEVER before did run any Gulp based setup, you need to install Gulp globally on your machine.
+```
+npm install -g gulp
+```
 
 ##  Setup
 
-First navigate to your website and install novicell frontend package:
+First navigate to your website and install novicell frontend package. After running `npm install` it automatically rund:
 
     cd "c:\Visual studio projects\project-name\Project.Website"
     git clone https://github.com/Novicell/novicell-frontend.git
@@ -247,7 +250,7 @@ When you are using the Novicell Umbraco Default Package, you can grab a lot of t
 Additional you can grab values as url, title and alt-text.
 
 ### Lazyload fonts
-Include the `novicell.font.js` for lazyloading fonts. You can use Google Fonts, Typekit and local. When you are using local font you declare your font-face inside /less/base/base.fonts.less (or scss). This file will be generated into the webfont.min.css-file by Gulp.
+Include the `novicell.font.js` for lazyloading fonts. You can use Google Fonts, Typekit and local. When you are using local fonts you declare your font-face inside /less/base/base.fonts.less. This file will be generated into the `webfont.min.css`-file by Gulp. Then the javascript will request this file asynchroniously.
 
 ```javascript
 novicell.font.webfont({
@@ -258,48 +261,52 @@ novicell.font.webfont({
 ```
 
 ## Third party plugins
-Third party javascript plugins like `jquery` or `owl-carousel` is handled by Bower, by running `bower install <plugin>` or adding the plugin and version to the `bower.json`. **Always remember to specify a specific version number without `^` or `~`.**
+Third party javascript plugins like `jquery` or `owl-carousel` is handled by *[NPM](https://www.npmjs.com/)*.
+Install a new plugin by running `npm install <plugin> --save` or adding the plugin and version to the `package.json` under "dependencies".
 
-**Here's an example of a `bower.js`**
+**NOTE**: The section called `devDependencies` is reserved for the build tool only.
+
+**Always remember to specify a specific version number without `^` or `~`.**
+
+**Here's an example of a `package.json`**
 ```javascript
-{
-  "name": "novicell-frontend",
-  "version": "2.x.x",
-  "author": "novicell",
-  "dependencies": {
-    "svg4everybody": "2.0.3",
-    "jquery": "2.2.3"
+...
+"devDependencies": {
     ...
-  }
-}
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-file-include": "^1.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.2"
+    ...
+},
+"dependencies" : {
+    "svg4everybody": "2.1.3",
+    "jquery": "3.1.1",
+    "owl-carousel": "2.2.0",
+    "angular": "1.4.14"
+    ...
+  },
 ```
 
-Remember to add your plugins in the `gulp/config.js`, in the vendor bundle min minfication an concatination Remember to [restart your Gulp](#how-to-use-gulp), every time you edit your `gulp/config.js`.
+Next you have to add your plugins in the `gulp/config.js`, in your vendor bundle for minfication an concatination.
 
-**Here's an example of a vendor bundle in the `gulp/config.js`**
+**Here's an example of a bundle in the `gulp/config.js`**
 ```javascript
 bundles: [
 {
   name: "vendor",
   ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
   scripts: [
-    bowerPath + "/svg4everybody/dist/svg4everybody.js",
-    bowerPath + "/jquery/dist/jquery.js",
-    bowerPath + "/owl.carousel/dist/owl.carousel.min.js"
+    vendorPath + "/svg4everybody/dist/svg4everybody.js",
+    vendorPath + "/jquery/dist/jquery.js",
+    vendorPath + "/owl.carousel/dist/owl.carousel.min.js"
     ...
   ]
 }
 ```
-
-
-
-## Notes
-* Added an additional breakpoint, medium-small, based on https://github.com/hesselberg/Bootstrap3-ms-breakpoint/
-
-
-## Requirements
-* None!
-
 
 ## License
 The Novicell Frontend is licensed under the MIT license. (http://opensource.org/licenses/MIT)
