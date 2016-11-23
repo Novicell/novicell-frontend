@@ -22,17 +22,17 @@ novicell.embed = novicell.embed || function () {
 
     function onLoad() {
         $(".nc-grid-embedmedia").each(function () {
-            if ($(this).visible(true)) {
+            if ($(this).visible(true) || $(this).data("load") === "always") {
                 loadEmbed($(this));
             }
         });
     }
-    
+
 
     function onResize() {
         if (window.innerWidth > lastRefreshWidth + refreshWidth || window.innerWidth < lastRefreshWidth - refreshWidth) {
             $(".nc-grid-embedmedia").each(function () {
-                    loadEmbed($(this));
+                loadEmbed($(this));
             });
             lastRefreshWidth = window.innerWidth;
         }
@@ -65,7 +65,7 @@ novicell.embed = novicell.embed || function () {
                 callback();
             }
         }
-        
+
     }
 
     function lazyEmbed($embedItem, isImage) {
