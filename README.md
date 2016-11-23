@@ -69,6 +69,7 @@ First navigate to your website
 
     cd c:\"Visual studio projects"\project-name\Project.Website
 
+* To build everything and get the latest dependencies (also runs the build task): `npm i`
 * To build whats already in there (runs the build task): `gulp`
 * To never touch the cmd window again (runs the watch task): `gulp watch`
 * To Stop/Restart GULP: `CTRL + c`
