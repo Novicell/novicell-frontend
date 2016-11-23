@@ -5,12 +5,12 @@ var argv = require('yargs').argv;
 var path = require('path');
 
 module.exports = (function () {
-    var projectName = "novicell-gulp";
+    var projectName = 'novicell-gulp';
 
-    var projectPath = "./";
-    var vendorPath = projectPath + "node_modules";
-    var distPath = projectPath + "dist";
-    var typescriptPath = projectPath + "scripts/typescript";
+    var projectPath = './';
+    var vendorPath = projectPath + 'node_modules';
+    var distPath = projectPath + 'dist';
+    var typescriptPath = projectPath + 'scripts/typescript';
     var cleanPaths = [distPath];
     var enableTypescript = false; // Set to false to disable
 
@@ -18,78 +18,85 @@ module.exports = (function () {
         // ------------- Bundles -------------
         bundles: [
             {
-                name: "vendor",
-                ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
+                name: 'vendor',
+                ignorePlugins: ['jscs', 'jshint', 'watch'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
-                    vendorPath + "/svg4everybody/dist/svg4everybody.js",
-                    vendorPath + "/jquery/dist/jquery.js"
+                    vendorPath + '/svg4everybody/dist/svg4everybody.js',
+                    vendorPath + '/jquery/dist/jquery.js'
                 ]
             },
             {
-                name: "master",
+                name: 'master',
                 scripts: [
-                    projectPath + "scripts/components/novicell.js",
-                    projectPath + "scripts/components/novicell.debounce.js",
-                    projectPath + "scripts/components/novicell.visible.js",
-                    projectPath + "scripts/components/novicell.lazyloadResponsive.js",
-                    projectPath + "scripts/components/novicell.embed.js",
-                    projectPath + "scripts/components/novicell.overlay.js",
-                    projectPath + "scripts/components/novicell.cookieinfo.js",
-                    projectPath + "scripts/components/novicell.map.js",
-                    projectPath + "scripts/components/novicell.font.js",
-                    projectPath + "scripts/master.js"
+                    projectPath + 'scripts/components/novicell.js',
+                    projectPath + 'scripts/components/novicell.debounce.js',
+                    projectPath + 'scripts/components/novicell.visible.js',
+                    projectPath + 'scripts/components/novicell.lazyloadResponsive.js',
+                    projectPath + 'scripts/components/novicell.embed.js',
+                    projectPath + 'scripts/components/novicell.overlay.js',
+                    projectPath + 'scripts/components/novicell.cookieinfo.js',
+                    projectPath + 'scripts/components/novicell.map.js',
+                    projectPath + 'scripts/components/novicell.font.js',
+                    projectPath + 'scripts/master.js'
                 ],
-                themes: [ projectPath + "less/themes/*"] ,
-                styles: [ projectPath + "less/master.less"] ,
-                images: [ projectPath + "images/**/*.{jpg,png,svg,gif}"] ,
-                html: [ projectPath + "html/*.html" ]
+                themes: [ projectPath + 'less/themes/*'] ,
+                styles: [ projectPath + 'less/master.less'] ,
+                images: [ projectPath + 'images/**/*.{jpg,png,svg,gif}'] ,
+                html: [ projectPath + 'html/*.html' ]
             },
             {
-                name: "webfont",
-                styles: [ projectPath + "less/base/base.fonts.less"] ,
+                name: 'webfont',
+                styles: [ projectPath + 'less/base/base.fonts.less'] ,
             },
             {
-                name: "icons",
-                icons: [ projectPath + "icons/**/*.svg" ]
+                name: 'icons',
+                icons: [ projectPath + 'icons/**/*.svg' ]
             }
         ],
 
 
         // ------------- Styles -------------
-        stylesDist: distPath + "/css",
+        stylesDist: distPath + '/css',
         stylesVendorPrefixes: [
-            "last 2 version",
-            "safari 5",
-            "ie 9",
-            "opera 12.1",
-            "ios 8",
-            "android 4"
+            'last 2 version',
+            'safari 5',
+            'ie 9',
+            'opera 12.1',
+            'ios 8',
+            'android 4'
         ],
         // Lesshint config
         lessConfig : {
-            "fileExtensions": [ ".less", ".css" ],
-            "excludedFiles": [ vendorPath + "**/*.less"] ,
-            "spaceAfterPropertyColon": {
-                "enabled": true,
-                "style": "one_space"
+            'fileExtensions': [ '.less', '.css' ],
+            'excludedFiles': [ vendorPath + '**/*.less'],
+            'spaceAfterPropertyColon': {
+                'enabled': true,
+                'style': 'one_space'
             },
-            "newlineAfterBlock": true,
-            "emptyRule": true,
-            "singleLinePerSelector": true
+            'spaceAroundComma': {
+                'style': 'after',
+                'allowNewline': true
+            },
+            'importPath': {
+                'filenameExtension': true
+            },
+            'newlineAfterBlock': true,
+            'emptyRule': true,
+            'singleLinePerSelector': true
         },
         // CSSnano config
         cssnanoConfig : {
-            discardComments: {removeAll: true},
+            discardComments: { removeAll: true },
             mergeLonghand: true,
             colormin: false,
             zindex: false
         },
 
         // ------------- Scripts -------------
-        scriptsDist: distPath + "/scripts",
+        scriptsDist: distPath + '/scripts',
 
         // ------------- Icons ---------------
-        iconsDist: distPath + "/icons/",
+        iconsDist: distPath + '/icons/',
         spriteConfig: {
             shape : {
                 // Set maximum dimensions
@@ -118,10 +125,10 @@ module.exports = (function () {
         },
 
         // ------------- Fonts -------------
-        fontsDist: distPath + "/fonts",
+        fontsDist: distPath + '/fonts',
 
         // ------------- Images -------------
-        imagesDist: distPath + "/images",
+        imagesDist: distPath + '/images',
         imagesOptimizationLevel: 5,
         imagesProgressive: true,
         imagesInterlaced: true,
@@ -135,37 +142,37 @@ module.exports = (function () {
         // ------------- Livereload ---------
         livereloadPort: 35729,
         livereloadPaths: [
-            "./dist/scripts/*.js",
-            "./dist/css/*.css",
-            "./Views/**/*.cshtml",
-            "./html/**/*.html"
+            './dist/scripts/*.js',
+            './dist/css/*.css',
+            './Views/**/*.cshtml',
+            './html/**/*.html'
         ],
 
         // ------------- Watch -------------
-        watchImages: [ projectPath + "images/**/*" ],
-        watchIcons: [ projectPath + "icons/*" ],
-        watchFonts: [ projectPath + "fonts/*" ],
-        watchHtml: [ projectPath + "html/**/*" ],
+        watchImages: [ projectPath + 'images/**/*' ],
+        watchIcons: [ projectPath + 'icons/*' ],
+        watchFonts: [ projectPath + 'fonts/*' ],
+        watchHtml: [ projectPath + 'html/**/*' ],
         watchScripts: [
-            projectPath + "scripts/**/*.js"
+            projectPath + 'scripts/**/*.js'
         ],
         watchStyles: [
-            projectPath + "less/**/*.less"
+            projectPath + 'less/**/*.less'
         ],
 
         // ------------- Copy on build --------
         buildCopy: [{
-            from: projectPath + "fonts/**/*",
-            to: distPath  + "/fonts"
+            from: projectPath + 'fonts/**/*',
+            to: distPath  + '/fonts'
         }],
 
 
         // ------------- Tasks -------------
         loadTasks: [
-            "typescript", "styles", "themes", "scripts", "images", "icons", "copy", "watch", "build", "html"
+            'typescript', 'styles', 'themes', 'scripts', 'images', 'icons', 'copy', 'watch', 'build', 'html'
         ],
         buildTasks: [
-            "typescript", "styles", "themes", "scripts", "images", "icons", "copy", "html"
+            'typescript', 'styles', 'themes', 'scripts', 'images', 'icons', 'copy', 'html'
         ],
 
         // ------------- Return Paths -------------
@@ -181,11 +188,11 @@ module.exports = (function () {
         {
             return function (e) {
                 notifier.notify({
-                    "title": taskName,
-                    "message": "An error occured in the " + e.plugin + " plugin."
+                    'title': taskName,
+                    'message': 'An error occured in the ' + e.plugin + ' plugin.'
                 });
                 console.log(e.message);
-                this.emit("end");
+                this.emit('end');
             };
         }
     }

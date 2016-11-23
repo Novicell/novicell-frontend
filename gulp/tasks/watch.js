@@ -3,7 +3,7 @@ var config = require('../config.js');
 var plugins = require('gulp-load-plugins')();
 var spawn = require('child_process').spawn;
 
-gulp.task("livereload", function () {
+gulp.task('livereload', function () {
     plugins.livereload.listen(config.livereloadPort);
 
     return gulp.watch(config.livereloadPaths)
@@ -11,12 +11,12 @@ gulp.task("livereload", function () {
 });
 
 gulp.task('watcher', function () {
-    gulp.watch(config.watchScripts, ["scripts:watch"]);
-    gulp.watch(config.watchStyles, ["styles", "themes"]);
-    gulp.watch(config.watchImages, ["images"]);
-    gulp.watch(config.watchIcons, ["icons"]);
-    gulp.watch(config.watchFonts, ["copy"]);
-    gulp.watch(config.watchHtml, ["html"]);
+    gulp.watch(config.watchScripts, ['scripts:watch']);
+    gulp.watch(config.watchStyles, ['styles', 'themes']);
+    gulp.watch(config.watchImages, ['images']);
+    gulp.watch(config.watchIcons, ['icons']);
+    gulp.watch(config.watchFonts, ['copy']);
+    gulp.watch(config.watchHtml, ['html']);
 
     return;
 });

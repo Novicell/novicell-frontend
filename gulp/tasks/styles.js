@@ -9,23 +9,18 @@ gulp.task('styles', function () {
     var streams = config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
-        var ignores = b.ignorePlugins != null ? b.ignorePlugins : [];
-
-        var useSourcemaps = ignores.indexOf("sourcemaps") == -1;
-        var useAutoprefixer = ignores.indexOf("autoprefixer") == -1;
-
-        console.log(b.name + ' styles is being compiled using ' + config.preprocessor);
+        console.log(b.name + ' styles are compiling');
 
         return gulp.src(b.styles)
-            .pipe(plugins.plumber(config.errorHandler("styles")))
-            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init({ loadMaps: true })))
+            .pipe(plugins.plumber(config.errorHandler('styles')))
+            .pipe(plugins.sourcemaps.init())
             .pipe(plugins.lesshint(config.lessConfig))
             .pipe(plugins.lesshint.reporter())
             .pipe(plugins.less())
-            .pipe(plugins.concat(b.name + ".min.css"))
-            .pipe(plugins.if(useAutoprefixer, plugins.autoprefixer(config.stylesVendorPrefixes)))
+            .pipe(plugins.concat(b.name + '.min.css'))
+            .pipe(plugins.autoprefixer(config.stylesVendorPrefixes))
             .pipe(plugins.cssnano(config.cssnanoConfig))
-            .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.write('.')))
+            .pipe(plugins.sourcemaps.write('.'))
             .pipe(gulp.dest(config.stylesDist));
     });
 
