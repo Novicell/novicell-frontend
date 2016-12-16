@@ -24,24 +24,8 @@
       "email": "msl@novicell.dk"
     },
     {
-      "name": "Emil Busch",
-      "email": "ebu@novicell.dk"
-    },
-    {
-      "name": "Lars Hesselberg",
-      "email": "lhe@beneath.dk"
-    },
-    {
-      "name": "Emil Rasmussen",
-      "email": "era@novicell.dk"
-    },
-    {
       "name": "Mark Arndt Lønquist",
       "email": "mlo@novicell.dk"
-    },
-    {
-      "name": "Adam Peter Nielsen",
-      "email": "apn@novicell.dk"
     }
   ],
   "license": "MIT",
@@ -57,7 +41,6 @@
     "es6-promise": "^4.0.5",
     "glob": "^7.1.1",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-file-include": "^1.0.0",
