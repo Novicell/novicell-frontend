@@ -31,7 +31,6 @@ module.exports = (function () {
                     projectPath + "scripts/components/novicell.js",
                     projectPath + "scripts/components/novicell.debounce.js",
                     projectPath + "scripts/components/novicell.visible.js",
-                    projectPath + "scripts/components/novicell.lazyloadResponsive.js",
                     projectPath + "scripts/components/novicell.embed.js",
                     projectPath + "scripts/components/novicell.overlay.js",
                     projectPath + "scripts/components/novicell.cookieinfo.js",
@@ -57,14 +56,20 @@ module.exports = (function () {
 
         // ------------- Styles -------------
         stylesDist: distPath + "/css",
-        stylesVendorPrefixes: [
-            "last 2 version",
-            "safari 5",
-            "ie 9",
-            "opera 12.1",
-            "ios 8",
-            "android 4"
-        ],
+        cssnanoSettings: {
+            autoprefixer: { browsers: [
+                    "last 2 version",
+                    "safari 5",
+                    "ie 9",
+                    "opera 12.1",
+                    "ios 8",
+                    "android 4"
+                ], add: true },
+            discardComments: {removeAll: true},
+            mergeLonghand: true,
+            colormin: false,
+            zindex: false
+        },
 
         // ------------- Scripts -------------
         scriptsDist: distPath + "/scripts",
