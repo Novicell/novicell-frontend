@@ -68,7 +68,8 @@ module.exports = (function () {
             discardComments: {removeAll: true},
             mergeLonghand: true,
             colormin: false,
-            zindex: false
+            zindex: false,
+            discardUnused: {fontFace: false}
         },
 
         // ------------- Scripts -------------
