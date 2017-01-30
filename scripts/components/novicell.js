@@ -16,9 +16,7 @@ if (typeof (console) === 'undefined') {
     console.log = console.error = console.info = console.debug = console.warn = console.trace = console.dir = console.dirxml = console.group = console.groupEnd = console.time = console.timeEnd = console.assert = console.profile = function () { };
 }
 // Shorthand for console.log
-function cl(d) {
-    return console.log(d);
-}
+var cl = console.log.bind(window.console);
 
 // Init the novicell js lib
 
