@@ -10,9 +10,7 @@ module.exports = (function () {
     var projectPath = "./";
     var vendorPath = projectPath + "node_modules";
     var distPath = projectPath + "dist";
-    var typescriptPath = projectPath + "scripts/typescript";
     var cleanPaths = [distPath];
-    var enableTypescript = false; // Set to false to disable
 
     return {
         // ------------- Bundles -------------
@@ -149,18 +147,16 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "typescript", "styles", "themes", "scripts", "images", "icons", "copy", "watch", "build", "html"
+            "styles", "themes", "scripts", "images", "icons", "copy", "watch", "build", "html"
         ],
         buildTasks: [
-            "typescript", "styles", "themes", "scripts", "images", "icons", "copy", "html"
+            "styles", "themes", "scripts", "images", "icons", "copy", "html"
         ],
 
         // ------------- Return Paths -------------
         projectPath: projectPath,
         vendorPath: vendorPath,
         cleanPaths: cleanPaths,
-        typescriptPath: typescriptPath,
-        enableTypescript: enableTypescript,
         distPath: distPath,
 
         // ---------- Errorhandler ------
