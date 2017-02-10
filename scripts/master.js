@@ -18,7 +18,6 @@ $(function () {
     // Only include Novicell functions that you use!
     novicell.cookieInfo.init();
     novicell.embed.onLoad(); 
-    novicell.responsiveLazyloadImage.onLoad();
 
     // Call new functions here like this:
     //projectName.slider.heroSlider($('.owl-carousel'));
@@ -45,15 +44,11 @@ $(function () {
 
 // Window resize (debounced)
 $(window).smartresize(function(e){
-    novicell.responsiveLazyloadImage.onResize();
     novicell.embed.onResize();
 }); // Window resize
 
 // Window scroll (debounced)
 $(window).smartscroll(function (e) {
     // call functions here
-    if ($('.responsiveLazyload').length) {
-        novicell.responsiveLazyloadImage.onScroll();
-    }
     novicell.embed.onScroll();
 }); // Window scroll
