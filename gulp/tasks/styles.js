@@ -9,29 +9,16 @@ gulp.task('styles', function () {
     var streams = config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
-<<<<<<< HEAD
         console.log(b.name + ' styles are compiling');
 
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler('styles')))
             .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.lesshint(config.lessConfig))
+            .pipe(plugins.lesshint())
             .pipe(plugins.lesshint.reporter())
-            .pipe(plugins.less())
-            .pipe(plugins.concat(b.name + '.min.css'))
-            .pipe(plugins.autoprefixer(config.stylesVendorPrefixes))
-            .pipe(plugins.cssnano(config.cssnanoConfig))
-=======
-
-        console.log(b.name + ' styles is compiling');
-
-        return gulp.src(b.styles)
-            .pipe(plugins.plumber(config.errorHandler("styles")))
-            .pipe(plugins.sourcemaps.init())
             .pipe(plugins.less())
             .pipe(plugins.concat(b.name + ".min.css"))
             .pipe(plugins.cssnano(config.cssnanoSettings))
->>>>>>> master
             .pipe(plugins.sourcemaps.write('.'))
             .pipe(gulp.dest(config.stylesDist));
     });

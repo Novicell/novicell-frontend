@@ -9,27 +9,15 @@ gulp.task('themes', function () {
     var streams = config.bundles.filter(function (b) {
         return b.themes != null;
     }).map(function (b) {
-<<<<<<< HEAD
-        console.log(b.name + ' themes are compiling');
-
-        return gulp.src(b.themes)
-            .pipe(plugins.plumber(config.errorHandler('themes')))
-            .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.lesshint(config.lessConfig))
-            .pipe(plugins.lesshint.reporter())
-            .pipe(plugins.less())
-            .pipe(plugins.autoprefixer(config.stylesVendorPrefixes))
-            .pipe(plugins.cssnano(config.cssnanoConfig))
-=======
-
         console.log(b.name + ' themes are compiling');
 
         return gulp.src(b.themes)
             .pipe(plugins.plumber(config.errorHandler("themes")))
             .pipe(plugins.sourcemaps.init())
+            .pipe(plugins.lesshint())
+            .pipe(plugins.lesshint.reporter())
             .pipe(plugins.less())
             .pipe(plugins.cssnano(config.cssnanoSettings))
->>>>>>> master
             .pipe(plugins.sourcemaps.write('.'))
             .pipe(gulp.dest(config.stylesDist));
     });
