@@ -7,12 +7,17 @@ var path = require('path');
 module.exports = (function () {
     var projectName = 'novicell-gulp';
 
+<<<<<<< HEAD
     var projectPath = './';
     var vendorPath = projectPath + 'node_modules';
     var distPath = projectPath + 'dist';
     var typescriptPath = projectPath + 'scripts/typescript';
+=======
+    var projectPath = "./";
+    var vendorPath = projectPath + "node_modules";
+    var distPath = projectPath + "dist";
+>>>>>>> master
     var cleanPaths = [distPath];
-    var enableTypescript = false; // Set to false to disable
 
     return {
         // ------------- Bundles -------------
@@ -28,6 +33,7 @@ module.exports = (function () {
             {
                 name: 'master',
                 scripts: [
+<<<<<<< HEAD
                     projectPath + 'scripts/components/novicell.js',
                     projectPath + 'scripts/components/novicell.debounce.js',
                     projectPath + 'scripts/components/novicell.visible.js',
@@ -38,6 +44,17 @@ module.exports = (function () {
                     projectPath + 'scripts/components/novicell.map.js',
                     projectPath + 'scripts/components/novicell.font.js',
                     projectPath + 'scripts/master.js'
+=======
+                    projectPath + "scripts/components/novicell.js",
+                    projectPath + "scripts/components/novicell.debounce.js",
+                    projectPath + "scripts/components/novicell.visible.js",
+                    projectPath + "scripts/components/novicell.embed.js",
+                    projectPath + "scripts/components/novicell.overlay.js",
+                    projectPath + "scripts/components/novicell.cookieinfo.js",
+                    projectPath + "scripts/components/novicell.map.js",
+                    projectPath + "scripts/components/novicell.font.js",
+                    projectPath + "scripts/master.js"
+>>>>>>> master
                 ],
                 themes: [ projectPath + 'less/themes/*'] ,
                 styles: [ projectPath + 'less/master.less'] ,
@@ -56,6 +73,7 @@ module.exports = (function () {
 
 
         // ------------- Styles -------------
+<<<<<<< HEAD
         stylesDist: distPath + '/css',
         stylesVendorPrefixes: [
             'last 2 version',
@@ -90,6 +108,23 @@ module.exports = (function () {
             mergeLonghand: true,
             colormin: false,
             zindex: false
+=======
+        stylesDist: distPath + "/css",
+        cssnanoSettings: {
+            autoprefixer: { browsers: [
+                    "last 2 version",
+                    "safari 5",
+                    "ie 9",
+                    "opera 12.1",
+                    "ios 8",
+                    "android 4"
+                ], add: true },
+            discardComments: {removeAll: true},
+            mergeLonghand: true,
+            colormin: false,
+            zindex: false,
+            discardUnused: {fontFace: false}
+>>>>>>> master
         },
 
         // ------------- Scripts -------------
@@ -169,18 +204,23 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
+<<<<<<< HEAD
             'typescript', 'styles', 'themes', 'scripts', 'images', 'icons', 'copy', 'watch', 'build', 'html'
         ],
         buildTasks: [
             'typescript', 'styles', 'themes', 'scripts', 'images', 'icons', 'copy', 'html'
+=======
+            "styles", "themes", "scripts", "images", "icons", "copy", "watch", "build", "html"
+        ],
+        buildTasks: [
+            "styles", "themes", "scripts", "images", "icons", "copy", "html"
+>>>>>>> master
         ],
 
         // ------------- Return Paths -------------
         projectPath: projectPath,
         vendorPath: vendorPath,
         cleanPaths: cleanPaths,
-        typescriptPath: typescriptPath,
-        enableTypescript: enableTypescript,
         distPath: distPath,
 
         // ---------- Errorhandler ------

@@ -24,24 +24,8 @@
       "email": "msl@novicell.dk"
     },
     {
-      "name": "Emil Busch",
-      "email": "ebu@novicell.dk"
-    },
-    {
-      "name": "Lars Hesselberg",
-      "email": "lhe@beneath.dk"
-    },
-    {
-      "name": "Emil Rasmussen",
-      "email": "era@novicell.dk"
-    },
-    {
       "name": "Mark Arndt Lønquist",
       "email": "mlo@novicell.dk"
-    },
-    {
-      "name": "Adam Peter Nielsen",
-      "email": "apn@novicell.dk"
     }
   ],
   "license": "MIT",
@@ -57,7 +41,6 @@
     "es6-promise": "^4.0.5",
     "glob": "^7.1.1",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-file-include": "^1.0.0",
@@ -69,28 +52,29 @@
     "gulp-less": "~3.3.0",
     "gulp-lesshint": "^2.0.0",
     "gulp-livereload": "^3.8.1",
-    "gulp-load-plugins": "~1.4.0",
-    "gulp-notify": "^2.2.0",
+    "gulp-load-plugins": "~1.5.0",
+    "gulp-notify": "^3.0.0",
     "gulp-plumber": "~1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-resolve-dependencies": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sourcemaps": "^2.4.1",
     "gulp-svg-sprite": "~1.3.3",
-    "gulp-tslint": "^6.0.1",
-    "gulp-typescript": "^3.1.3",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
     "merge-stream": "~1.0.0",
     "mkdirp": "^0.5.1",
-    "node-notifier": "^4.6.0",
+    "node-notifier": "^5.0.2",
     "path": "^0.12.7",
-    "tslint": "^3.13.0",
-    "typescript": "^2.0.10",
-    "yargs": "~6.4.0"
+    "yargs": "~6.6.0"
   },
+<<<<<<< HEAD
   "dependencies": {
     "svg4everybody": "2.1.3",
+=======
+  "dependencies" : {
+    "svg4everybody": "2.1.4",
+>>>>>>> master
     "jquery": "3.1.1"
   },
   "files": [
@@ -101,9 +85,6 @@
     "less/**/*.less",
     "bower.json",
     "gulpfile.js",
-    "index.js",
-    "tsconfig.json",
-    "tsd.json",
-    "tslint.json"
+    "index.js"
   ]
 }
