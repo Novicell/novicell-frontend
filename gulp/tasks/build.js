@@ -6,7 +6,7 @@ const del = require('del');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('clean', function () {
-    return del(config.cleanPaths);
+    return del(config.cleanPaths, {force: true});
 });
 
 gulp.task('rebuild', ['clean'], function () {
