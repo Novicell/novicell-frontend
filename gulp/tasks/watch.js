@@ -3,7 +3,7 @@ var config = require('../config.js');
 var plugins = require('gulp-load-plugins')();
 var spawn = require('child_process').spawn;
 
-gulp.task("livereload", function () {
+gulp.task('livereload', function () {
     plugins.livereload.listen(config.livereloadPort);
 
     return gulp.watch(config.livereloadPaths)

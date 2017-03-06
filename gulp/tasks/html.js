@@ -2,7 +2,7 @@
 
 /*
     the html task looks through the html files in the html folder, after the prefix @@.
-    This makes it possible to include "partial" html pieces like
+    This makes it possible to include 'partial' html pieces like
 
     <body>
         @@include('components/site-header.html')
@@ -23,7 +23,7 @@ gulp.task('html', function() {
         console.log(b.name + ' html is being compiled');
 
         return gulp.src(b.html)
-            .pipe(plugins.plumber(config.errorHandler("html")))
+            .pipe(plugins.plumber(config.errorHandler('html')))
             .pipe(plugins.fileInclude(config.htmlFileIncludeConfig))
             .pipe(gulp.dest(config.distPath));
     });

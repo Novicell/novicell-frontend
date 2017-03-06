@@ -15,15 +15,15 @@ module.exports = (function () {
         // ------------- Bundles -------------
         bundles: [
             {
-                name: "vendor",
-                ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
+                name: 'vendor',
+                ignorePlugins: ['jscs', 'jshint', 'watch'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
                     vendorPath + "svg4everybody/dist/svg4everybody.js",
                     vendorPath + "jquery/dist/jquery.js"
                 ]
             },
             {
-                name: "master",
+                name: 'master',
                 scripts: [
                     projectPath + "scripts/components/novicell.js",
                     projectPath + "scripts/components/novicell.debounce.js",
@@ -121,15 +121,15 @@ module.exports = (function () {
         ],
 
         // ------------- Watch -------------
-        watchImages: [ projectPath + "images/**/*" ],
-        watchIcons: [ projectPath + "icons/*" ],
-        watchFonts: [ projectPath + "fonts/*" ],
-        watchHtml: [ projectPath + "html/**/*" ],
+        watchImages: [ projectPath + 'images/**/*' ],
+        watchIcons: [ projectPath + 'icons/*' ],
+        watchFonts: [ projectPath + 'fonts/*' ],
+        watchHtml: [ projectPath + 'html/**/*' ],
         watchScripts: [
-            projectPath + "scripts/**/*.js"
+            projectPath + 'scripts/**/*.js'
         ],
         watchStyles: [
-            projectPath + "less/**/*.less"
+            projectPath + 'less/**/*.less'
         ],
 
         // ------------- Copy on build --------
@@ -158,11 +158,11 @@ module.exports = (function () {
         {
             return function (e) {
                 notifier.notify({
-                    "title": taskName,
-                    "message": "An error occured in the " + e.plugin + " plugin."
+                    'title': taskName,
+                    'message': 'An error occured in the ' + e.plugin + ' plugin.'
                 });
                 console.log(e.message);
-                this.emit("end");
+                this.emit('end');
             };
         }
     }
