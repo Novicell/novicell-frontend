@@ -69,32 +69,6 @@ module.exports = (function () {
 
         // ------------- Icons ---------------
         iconsDist: distPath + "icons/",
-        spriteConfig: {
-            shape : {
-                // Set maximum dimensions
-                dimension       : {
-                    maxWidth    : 32,
-                    maxHeight   : 32
-                },
-                // Exclude path from id
-                id: {
-                    generator: function (name) {
-                        return path.basename(name, '.svg');
-                    }
-                },
-                // Convert style to attributes
-                transform : [
-                    {svgo       : {
-                        plugins : [
-                            { removeStyleElement  : true}
-                        ]
-                    }}
-                ],
-            },
-            mode : {
-                symbol : true
-            }
-        },
 
         // ------------- Fonts -------------
         fontsDist: distPath + "fonts",
