@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
 const fs = require('fs');
-const glob = require("glob");
+const glob = require('glob');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var plugins = require('gulp-load-plugins')();
@@ -24,7 +24,7 @@ function writeFile(path, fileName, content) {
 
         function doWrite(path, fileName, content) {
             fs.writeFileSync(path + fileName, content);
-            console.log(fileName + " is being generated.");
+            console.log(fileName + ' is being generated.');
             return path + fileName;
         }
     } catch (e) {
@@ -43,13 +43,13 @@ function genereateIconJsonLibrary(dirs, jsonFileName) {
 
         for (var i = 0; i < files.length; i++) {
             var fileStr = files[i].toString();
-            var fileName = fileStr.substr(fileStr.lastIndexOf("/") + 1).replace('.svg', '');
+            var fileName = fileStr.substr(fileStr.lastIndexOf('/') + 1).replace('.svg', '');
             // Add the filename to the collection
             collection.push(fileName);
         }
 
         var dataObject = {
-            "icons": collection
+            'icons': collection
         };
         // Write the JSON file to disk
         writeFile(config.iconsDist, jsonFileName + '.json', JSON.stringify(dataObject));

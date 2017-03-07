@@ -1,30 +1,29 @@
-﻿'use strict';
+'use strict';
 
 var notifier = require('node-notifier');
 var argv = require('yargs').argv;
 var path = require('path');
 
 module.exports = (function () {
-    var projectName = "novicell-gulp";
-
-    var projectPath = "./";
-    var vendorPath = projectPath + "node_modules";
-    var distPath = projectPath + "dist";
-    var cleanPaths = [distPath];
+    var projectPath = "./"; // path for the source files
+    var webPath = projectPath + ""; // path for the website - usually path to livereload views, and used for distPath
+    var vendorPath = projectPath + "node_modules/"; // path for vendor scripts
+    var distPath = webPath + "dist/"; // path for production files
+    var cleanPaths = [distPath]; // files/folders to be removed with "clean"-task
 
     return {
         // ------------- Bundles -------------
         bundles: [
             {
-                name: "vendor",
-                ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
+                name: 'vendor',
+                ignorePlugins: ['jscs', 'jshint', 'watch'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
-                    vendorPath + "/svg4everybody/dist/svg4everybody.js",
-                    vendorPath + "/jquery/dist/jquery.js"
+                    vendorPath + "svg4everybody/dist/svg4everybody.js",
+                    vendorPath + "jquery/dist/jquery.js"
                 ]
             },
             {
-                name: "master",
+                name: 'master',
                 scripts: [
                     projectPath + "scripts/components/novicell.js",
                     projectPath + "scripts/components/novicell.debounce.js",
@@ -36,14 +35,9 @@ module.exports = (function () {
                     projectPath + "scripts/components/novicell.font.js",
                     projectPath + "scripts/master.js"
                 ],
-                themes: [ projectPath + "less/themes/*"] ,
                 styles: [ projectPath + "less/master.less"] ,
                 images: [ projectPath + "images/**/*.{jpg,png,svg,gif}"] ,
                 html: [ projectPath + "html/*.html" ]
-            },
-            {
-                name: "webfont",
-                styles: [ projectPath + "less/base/base.fonts.less"] ,
             },
             {
                 name: "icons",
@@ -53,7 +47,7 @@ module.exports = (function () {
 
 
         // ------------- Styles -------------
-        stylesDist: distPath + "/css",
+        stylesDist: distPath + "css",
         cssnanoSettings: {
             autoprefixer: { browsers: [
                     "last 2 version",
@@ -71,16 +65,16 @@ module.exports = (function () {
         },
 
         // ------------- Scripts -------------
-        scriptsDist: distPath + "/scripts",
+        scriptsDist: distPath + "scripts",
 
         // ------------- Icons ---------------
-        iconsDist: distPath + "/icons/",
+        iconsDist: distPath + "icons/",
 
         // ------------- Fonts -------------
-        fontsDist: distPath + "/fonts",
+        fontsDist: distPath + "fonts",
 
         // ------------- Images -------------
-        imagesDist: distPath + "/images",
+        imagesDist: distPath + "images",
         imagesOptimizationLevel: 5,
         imagesProgressive: true,
         imagesInterlaced: true,
@@ -94,37 +88,37 @@ module.exports = (function () {
         // ------------- Livereload ---------
         livereloadPort: 35729,
         livereloadPaths: [
-            "./dist/scripts/*.js",
-            "./dist/css/*.css",
-            "./Views/**/*.cshtml",
-            "./html/**/*.html"
+            webPath + "dist/scripts/*.js",
+            webPath + "dist/css/*.css",
+            webPath + "Views/**/*.cshtml",
+            webPath + "html/**/*.html"
         ],
 
         // ------------- Watch -------------
-        watchImages: [ projectPath + "images/**/*" ],
-        watchIcons: [ projectPath + "icons/*" ],
-        watchFonts: [ projectPath + "fonts/*" ],
-        watchHtml: [ projectPath + "html/**/*" ],
+        watchImages: [ projectPath + 'images/**/*' ],
+        watchIcons: [ projectPath + 'icons/*' ],
+        watchFonts: [ projectPath + 'fonts/*' ],
+        watchHtml: [ projectPath + 'html/**/*' ],
         watchScripts: [
-            projectPath + "scripts/**/*.js"
+            projectPath + 'scripts/**/*.js'
         ],
         watchStyles: [
-            projectPath + "less/**/*.less"
+            projectPath + 'less/**/*.less'
         ],
 
         // ------------- Copy on build --------
         buildCopy: [{
             from: projectPath + "fonts/**/*",
-            to: distPath  + "/fonts"
+            to: distPath  + "fonts"
         }],
 
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "themes", "scripts", "images", "icons", "copy", "watch", "build", "html"
+            "styles", "scripts", "images", "icons", "copy", "watch", "build", "themes", "html"
         ],
         buildTasks: [
-            "styles", "themes", "scripts", "images", "icons", "copy", "html"
+            "styles", "scripts", "images", "icons", "copy"
         ],
 
         // ------------- Return Paths -------------
@@ -138,11 +132,11 @@ module.exports = (function () {
         {
             return function (e) {
                 notifier.notify({
-                    "title": taskName,
-                    "message": "An error occured in the " + e.plugin + " plugin."
+                    'title': taskName,
+                    'message': 'An error occured in the ' + e.plugin + ' plugin.'
                 });
                 console.log(e.message);
-                this.emit("end");
+                this.emit('end');
             };
         }
     }

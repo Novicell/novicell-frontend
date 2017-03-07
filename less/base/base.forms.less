@@ -73,20 +73,20 @@
 // `.form-control` class can properly style them. Note that this cannot simply
 // be added to `.form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
-input[type="search"] {-webkit-appearance: none;}
+input[type='search'] {-webkit-appearance: none;}
 
 // Position radios and checkboxes better
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
     margin: 4px 0 0;
     margin-top: 1px \9; // IE8-9
     line-height: normal;
 }
 
-input[type="file"] {display: block;}
+input[type='file'] {display: block;}
 
 // Make range inputs behave like textual form controls
-input[type="range"] {
+input[type='range'] {
     display: block;
     width: 100%;
 }
@@ -96,9 +96,9 @@ select[multiple],
 select[size] {height: auto;}
 
 // Focus for file, radio, and checkbox
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
+input[type='file']:focus,
+input[type='radio']:focus,
+input[type='checkbox']:focus {
     // Default
     outline: thin dotted;
     // WebKit
@@ -125,10 +125,10 @@ input[type="checkbox"]:focus {
     }
 }
 
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
+.radio input[type='radio'],
+.radio-inline input[type='radio'],
+.checkbox input[type='checkbox'],
+.checkbox-inline input[type='checkbox'] {
     position: absolute;
     margin-left: -20px;
     margin-top: 4px \9;
@@ -159,8 +159,8 @@ input[type="checkbox"]:focus {
 // Some special care is needed because <label>s don't inherit their parent's `cursor`.
 //
 // Note: Neither radios nor checkboxes can be readonly.
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
     &[disabled],
     &.disabled,
     fieldset[disabled] & {
