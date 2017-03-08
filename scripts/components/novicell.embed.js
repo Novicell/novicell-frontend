@@ -113,4 +113,4 @@ novicell.embed = novicell.embed || function () {
         onResize: onResize,
         onScroll: onScroll
     };
-}();
+}(jQuery);

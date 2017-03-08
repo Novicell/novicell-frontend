@@ -40,7 +40,7 @@ novicell.map = novicell.map || function () {
     return {
         init: init
     };
-} ();
+}(jQuery);
 
 
 function initialize() {

@@ -48,4 +48,4 @@ novicell.font = novicell.font || function () {
     return {
         webfont: webfont
     };
-} ();
+}(jQuery);

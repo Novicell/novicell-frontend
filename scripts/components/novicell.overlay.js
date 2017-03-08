@@ -70,4 +70,4 @@ novicell.overlay = novicell.overlay || function () {
     return {
         set:set
     };
-}();
+}(jQuery);

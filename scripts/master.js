@@ -14,7 +14,7 @@ var novicell = novicell || {};
 var projectName = projectName || {};
 
 // Document ready
-$(function () {
+(function ($) {
     // Only include Novicell functions that you use!
     novicell.cookieInfo.init();
     novicell.embed.onLoad(); 
@@ -30,25 +30,26 @@ $(function () {
     });
     //novicell.font.local("Danni Er Nice");
 
-}); // Document ready end
+    /*
+    *  Use the following if needed
+    */
+
+    // Window load
+    // $(window).load(function(e){
+    //     // call functions here
+    // }); // Window load
+
+    // Window resize (debounced)
+    $(window).smartresize(function(e){
+        novicell.embed.onResize();
+    }); // Window resize
+
+    // Window scroll (debounced)
+    $(window).smartscroll(function (e) {
+        // call functions here
+        novicell.embed.onScroll();
+    }); // Window scroll
+
+})(jQuery); // Document ready end
 
 
-/*
-*  Use the following if needed
-*/
-
-// Window load
-// $(window).load(function(e){
-//     // call functions here
-// }); // Window load
-
-// Window resize (debounced)
-$(window).smartresize(function(e){
-    novicell.embed.onResize();
-}); // Window resize
-
-// Window scroll (debounced)
-$(window).smartscroll(function (e) {
-    // call functions here
-    novicell.embed.onScroll();
-}); // Window scroll

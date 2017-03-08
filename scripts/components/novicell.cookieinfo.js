@@ -55,7 +55,7 @@ novicell.cookieInfo = novicell.cookieInfo || function(){
     return {
         init: init
     };
-}();
+}(jQuery);
 
 /* Cookie helper functions
 *******************************/
