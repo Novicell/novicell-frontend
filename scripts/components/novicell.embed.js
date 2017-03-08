@@ -16,7 +16,7 @@
 
 var novicell = novicell || {};
 
-novicell.embed = novicell.embed || function () {
+novicell.embed = novicell.embed || function ($) {
     var lastRefreshWidth = 0;
     var refreshWidth = 50;
 
@@ -113,4 +113,4 @@ novicell.embed = novicell.embed || function () {
         onResize: onResize,
         onScroll: onScroll
     };
-}();
+}(jQuery);

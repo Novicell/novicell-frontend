@@ -19,7 +19,7 @@ var novicell = novicell || {};
     .ncOverlay-close{margin:-15px 5px -20px -20px;.box-shadow(0 0 8px @grayLight);cursor:pointer;}
 */
 
-novicell.overlay = novicell.overlay || function () {
+novicell.overlay = novicell.overlay || function ($) {
     function set(data) {
         // reset overlay the hard way
         if (0 < $('#ncOverlay').length) {
@@ -70,4 +70,4 @@ novicell.overlay = novicell.overlay || function () {
     return {
         set:set
     };
-}();
+}(jQuery);
