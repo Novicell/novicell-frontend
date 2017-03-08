@@ -8,7 +8,7 @@
 
 var novicell = novicell || {};
 
-novicell.cookieInfo = novicell.cookieInfo || function(){
+novicell.cookieInfo = novicell.cookieInfo || function($){
     var $body = $('body');
 
     function init() {

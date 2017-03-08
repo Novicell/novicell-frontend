@@ -16,7 +16,7 @@
 var novicell = novicell || {};
 var WebFontConfig = WebFontConfig || {};
 
-novicell.font = novicell.font || function () {
+novicell.font = novicell.font || function ($) {
 
     // https://github.com/typekit/webfontloader
     function webfont(fontObj) {

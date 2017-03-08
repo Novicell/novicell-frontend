@@ -12,7 +12,7 @@
 
 var novicell = novicell || {};
 
-novicell.map = novicell.map || function () {
+novicell.map = novicell.map || function ($) {
     var isLoaded = false;
 
     function init() {
