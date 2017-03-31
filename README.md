@@ -89,6 +89,7 @@ The following tasks are available:
 * `images` -  Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
 * `icons` - Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
 * `copy` -  Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
+* `deploy` -  Uploads file via FTP, configuration can be found in gulp/config.js
 * `html` - Will run through the html folder (not subfolders by default), looking for the `@@include`, to then partially replace them with the path. To learn more, go to the [HTML task in details](#HTML-task-in-details)
 * `watch`
 
