@@ -20,6 +20,10 @@
       "email": "dla@novicell.dk"
     },
     {
+      "name": "Signe Helbo Poulsen",
+      "email": "shp@novicell.dk"
+    },
+    {
       "name": "Michael Sølvsteen",
       "email": "msl@novicell.dk"
     },
@@ -41,7 +45,7 @@
     "es6-promise": "^4.0.5",
     "glob": "^7.1.1",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
+    "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-file-include": "^1.0.0",
     "gulp-if": "^2.0.1",
@@ -69,17 +73,7 @@
     "yargs": "~6.6.0"
   },
   "dependencies": {
-    "svg4everybody": "2.1.4",
-    "jquery": "3.1.1"
-  },
-  "files": [
-    "examples/**/*",
-    "gulp",
-    "html/**/*.html",
-    "scripts/**/*.js",
-    "less/**/*.less",
-    "bower.json",
-    "gulpfile.js",
-    "index.js"
-  ]
+    "jquery": "3.1.1",
+    "svg4everybody": "2.1.4"
+  }
 }
