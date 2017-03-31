@@ -13,3 +13,11 @@
     keepColors: true,
     icons: [ projectPath + "icons/colored icons/*.svg" ]
 }
+
+// Multiple style themes
+// see examples/less/themes/theme.blue.less for less theme example
+// add this to your bundles:
+styles: [
+    projectPath + "less/master.less",
+    projectPath + "less/themes/theme.blue.less"
+]

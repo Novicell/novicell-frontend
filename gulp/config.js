@@ -35,8 +35,8 @@ module.exports = (function () {
                     projectPath + "scripts/components/novicell.font.js",
                     projectPath + "scripts/master.js"
                 ],
-                styles: [ projectPath + "less/master.less"] ,
-                images: [ projectPath + "images/**/*.{jpg,png,svg,gif}"] ,
+                styles: [ projectPath + "less/master.less" ],
+                images: [ projectPath + "images/**/*.{jpg,png,svg,gif}"],
                 html: [ projectPath + "html/*.html" ]
             },
             {
@@ -48,21 +48,6 @@ module.exports = (function () {
 
         // ------------- Styles -------------
         stylesDist: distPath + "css",
-        cssnanoSettings: {
-            autoprefixer: { browsers: [
-                    "last 2 version",
-                    "safari 5",
-                    "ie 9",
-                    "opera 12.1",
-                    "ios 8",
-                    "android 4"
-                ], add: true },
-            discardComments: {removeAll: true},
-            mergeLonghand: true,
-            colormin: false,
-            zindex: false,
-            discardUnused: {fontFace: false}
-        },
 
         // ------------- Scripts -------------
         scriptsDist: distPath + "scripts",
@@ -122,7 +107,7 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "copy", "watch", "build", "themes", "html", "deploy"
+            "styles", "scripts", "images", "icons", "copy", "watch", "build", "html", "deploy"
         ],
         buildTasks: [
             "styles", "scripts", "images", "icons", "copy"
