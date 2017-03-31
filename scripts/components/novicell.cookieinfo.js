@@ -1,22 +1,21 @@
 'use strict';
 /**
 * @desc Cookie info dialog plugin
-* examples novicell.cookieInfo.init();
-* @author Danni Larsen - DLA
-* @requires jquery
+* @author Danni Larsen - DLA & Michael Sølvsteen - MSL
+* @example novicell.cookieInfo.init();
+* @requires none
 */
 
 var novicell = novicell || {};
 
-novicell.cookieInfo = novicell.cookieInfo || function($){
-    var $body = $('body');
+novicell.cookieInfo = novicell.cookieInfo || function(){
+    var body = document.querySelector("body");
 
     function init() {
-        var $cookieInfo = $('#cookie-info');
-        var $cookieClose = $('#cookie-info-close');
-        var $cookieOpen = $('#cookie-info-open');
-
-        if ($cookieInfo.length) {
+        var cookieInfo = document.querySelector('#cookie-info');
+        var cookieClose = document.querySelector('#cookie-info-close');
+        var cookieOpen = document.querySelector('#cookie-info-open');
+        if (cookieInfo) {
             // If we have displayed it once, set cookie for one year
             if (getCookie("cookieAccept") === "displayed") {
                 setCookie("cookieAccept", "accepted", 365);
@@ -27,35 +26,39 @@ novicell.cookieInfo = novicell.cookieInfo || function($){
                 setCookie("cookieAccept", "displayed");
 
                 setTimeout(function() {
-                    $body.addClass('cookie-info-show');
+                    body.classList.add('cookie-info-show');
                 }, 1000);
             }
 
             // Button eventlisteners
-            $cookieOpen.click(function() {
-                showCookie();
-            });
+            if(cookieOpen) {
+                cookieOpen.addEventListener('click', function(e) {
+                    showCookie();
+                });
+            }
 
-            $cookieClose.click(function() {
-                hideCookie();
-                setCookie("cookieAccept", "accepted", 365);
-            });
+            if(cookieClose) {
+                cookieClose.addEventListener('click', function(e) {
+                    hideCookie();
+                    setCookie("cookieAccept", "accepted", 365);
+                });
+            }
         }
     }
 
     // Functions for opening an closing the cookie-info
     function showCookie(){
-        $body.addClass('cookie-info-show');
+        body.classList.add('cookie-info-show');
     }
 
     function hideCookie(){
-        $body.removeClass('cookie-info-show');
+        body.classList.remove('cookie-info-show');
     }
 
     return {
         init: init
     };
-}(jQuery);
+}();
 
 /* Cookie helper functions
 *******************************/
