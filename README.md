@@ -1,5 +1,7 @@
 # Novicell Frontend
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Novicell/novicell-frontend.svg)](https://greenkeeper.io/)
+
 Novicell Default Frontend package is a framework for your frontend setup, and a Gulp based boilerplate for optimizing your frontend flow. It includes a BEM'ified version of Bootstrap's bare necessities (LESS), for starting your new website's development.
 When setup, it also helps you optimize images, combine SVGs to a sprite, compiling LESS to CSS and minifying Javascript.
 
