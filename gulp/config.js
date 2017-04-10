@@ -8,7 +8,7 @@ module.exports = (function () {
     var projectPath = "./"; // path for the source files
     var webPath = projectPath + ""; // path for the website - usually path to livereload views, and used for distPath
     var vendorPath = projectPath + "node_modules/"; // path for vendor scripts
-    var distPath = webPath + "dist/test/"; // path for production files
+    var distPath = webPath + "dist/"; // path for production files
     var cleanPaths = [distPath]; // files/folders to be removed with "clean"-task
 
     return {
