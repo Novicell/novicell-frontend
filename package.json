@@ -74,6 +74,7 @@
   },
   "dependencies": {
     "jquery": "3.1.1",
-    "svg4everybody": "2.1.4"
+    "svg4everybody": "2.1.4",
+    "vinyl-ftp": "^0.6.0"
   }
 }
