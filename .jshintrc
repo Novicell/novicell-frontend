@@ -7,5 +7,6 @@
     },
     "globalstrict": true,
     "browser": true,
-    "devel": true
+    "devel": true,
+    "supernew": true
 }
