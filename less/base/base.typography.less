@@ -47,13 +47,3 @@ ul {margin-bottom: 20px;}
 
 p~h2,
 p~h3 {margin-top: 36px;}
-
-
-// This is used to avoid the FOUT. Currently only set on headlines, but you can extend it to all your selectors. 
-html {
-    h1, h2, h3, h4, h5 { opacity: 0; transition: opacity 0.3s; }
-    &.wf-active,
-    &.wf-inactive {
-        h1, h2, h3, h4, h5 { opacity: 1; }
-    }
-}
