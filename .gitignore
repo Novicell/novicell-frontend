@@ -7,3 +7,4 @@ vendor/
 web.config
 
 npm-debug.log.*
+*.orig
