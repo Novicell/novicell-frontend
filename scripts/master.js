@@ -16,7 +16,6 @@ var projectName = projectName || {};
 // Document ready
 (function ($) {
     // Only include Novicell functions that you use!
-    novicell.cookieInfo.init();
     novicell.embed.onLoad(); 
 
     // Call new functions here like this:
@@ -26,9 +25,8 @@ var projectName = projectName || {};
 
     novicell.font.webfont({
         google: { families: ['Roboto:300:latin'] },
-        custom: { families: ['AFDiwa-Light'], urls: ['/dist/css/webfont.min.css'] }
+        custom: { families: ['SkipLegDay'], urls: ['/dist/css/webfont.min.css'] }
     });
-    //novicell.font.local("Danni Er Nice");
 
     /*
     *  Use the following if needed
