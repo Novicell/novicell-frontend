@@ -70,11 +70,11 @@
     "mkdirp": "^0.5.1",
     "node-notifier": "^5.0.2",
     "path": "^0.12.7",
-    "yargs": "~6.6.0"
+    "yargs": "~6.6.0",
+    "vinyl-ftp": "^0.6.0"
   },
   "dependencies": {
-    "jquery": "3.1.1",
-    "svg4everybody": "2.1.4",
-    "vinyl-ftp": "^0.6.0"
+    "jquery": "3.2.1",
+    "svg4everybody": "2.1.8"
   }
 }
