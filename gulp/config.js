@@ -69,10 +69,10 @@ module.exports = (function () {
         // ------------- Livereload ---------
         livereloadPort: 35729,
         livereloadPaths: [
-            webPath + "dist/scripts/*.js",
-            webPath + "dist/css/*.css",
+            distPath + "**/*.*",
             webPath + "Views/**/*.cshtml",
-            webPath + "html/**/*.html"
+            webPath + "html/**/*.html",
+            webPath + "**/*.php"
         ],
 
         // ------------- Watch -------------
