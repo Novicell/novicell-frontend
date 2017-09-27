@@ -31,7 +31,10 @@ module.exports = (function () {
                     projectPath + "scripts/components/novicell.overlay.js",
                     projectPath + "scripts/master.js"
                 ],
-                styles: [ projectPath + "less/master.less" ],
+                styles: [
+                    projectPath + "postcss/master.css",
+                    // projectPath + "less/master.less"
+                ],
                 images: [ projectPath + "images/**/*.{jpg,png,svg,gif}"],
                 html: [ projectPath + "html/*.html" ]
             },
@@ -103,10 +106,10 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "copy", "watch", "build", "html", "deploy"
+            "post-css", "styles", "scripts", "images", "icons", "copy", "watch", "build", "html", "deploy"
         ],
         buildTasks: [
-            "styles", "scripts", "images", "icons", "copy"
+            "post-css","scripts", "images", "icons", "copy"
         ],
 
         // ------------- Return Paths -------------
