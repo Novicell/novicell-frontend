@@ -1,0 +1,48 @@
+/**
+ * Base: Buttons
+ */
+
+/* Default button */
+.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    background-color: var(--color-primary);
+    white-space: nowrap;
+    user-select: none;
+    position: relative;
+    font-weight: 400;
+    font-family: var(--base-font-family);
+    transition: background .3s, color .3s, border-color .3s;
+    padding: 10px 20px;
+    color: var(--color-white);
+    border: 1px solid transparent;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: var(--color-white);
+        background: color(var(--color-primary) blackness(10%));
+        text-decoration: none;
+        outline: none;
+    }
+
+    &[disabled],
+    [disabled] & { cursor: not-allowed; }
+
+    /* Ghost button */
+    &--ghost {
+        color: var(--color-text);
+        border: solid 1px var(--color-primary);
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+            color: var(--color-white);
+            background-color: var(--color-primary);
+        }
+    }
+}

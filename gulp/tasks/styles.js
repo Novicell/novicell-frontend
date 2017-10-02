@@ -3,41 +3,39 @@
 const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
-var plugins = require('gulp-load-plugins')();
+const plugins = require('gulp-load-plugins')();
+const cssnano = require('cssnano');
+const cssnext  = require('postcss-cssnext');
+const nested  = require('postcss-nested');
+const postcssImport = require('postcss-partial-import');
+const cssvariables = require('postcss-css-variables');
 
-var cssnanoSettings = {
-    autoprefixer: { browsers: [
-            "last 2 version",
-            "safari 5",
-            "ie 9",
-            "opera 12.1",
-            "ios 8",
-            "android 4"
-        ], add: true },
-    discardComments: {removeAll: true},
-    mergeLonghand: true,
-    colormin: false,
-    zindex: false,
-    discardUnused: {fontFace: false}
-};
+var postCssPlugins = [
+    postcssImport({ root: "postcss" }),
+    cssvariables(),
+    nested(),
+    cssnext({ browsers: ["last 2 version", "ie 11"] }),   
+    cssnano({
+        autoprefixer: false,
+        discardComments: {removeAll: true},
+        mergeLonghand: true,
+        colormin: false,
+        zindex: false,
+        discardUnused: {fontFace: false}
+    })
+];
 
 gulp.task('styles', function () {
     var streams = config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
-        console.log(b.name + ' styles are compiling');
+        console.log('Post-css styles are compiling');
 
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler('styles')))
             .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.lesshint())
-            .pipe(plugins.lesshint.reporter())
-            .pipe(plugins.less())
-            .pipe(plugins.rename({
-                suffix: ".min",
-                extname: ".css"
-            }))
-            .pipe(plugins.cssnano(cssnanoSettings))
+            .pipe(plugins.postcss(postCssPlugins))
+            .pipe(plugins.rename({ suffix: ".min", extname: ".css" }))
             .pipe(plugins.sourcemaps.write('.'))
             .pipe(gulp.dest(config.stylesDist));
     });

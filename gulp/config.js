@@ -18,22 +18,17 @@ module.exports = (function () {
                 name: 'vendor',
                 ignorePlugins: ['jscs', 'jshint', 'watch'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
-                    vendorPath + "svg4everybody/dist/svg4everybody.js",
-                    vendorPath + "jquery/dist/jquery.js"
+                    vendorPath + "svg4everybody/dist/svg4everybody.js"
                 ]
             },
             {
                 name: 'master',
                 scripts: [
-                    projectPath + "scripts/components/novicell.debounce.js",
-                    projectPath + "scripts/components/novicell.visible.js",
-                    projectPath + "scripts/components/novicell.embed.js",
-                    projectPath + "scripts/components/novicell.overlay.js",
+                    projectPath + "scripts/components/**/*.js",
                     projectPath + "scripts/master.js"
                 ],
                 styles: [
-                    projectPath + "postcss/master.css",
-                    // projectPath + "less/master.less"
+                    projectPath + "post-css/master.css"
                 ],
                 images: [ projectPath + "images/**/*.{jpg,png,svg,gif}"],
                 html: [ projectPath + "html/*.html" ]
@@ -59,15 +54,6 @@ module.exports = (function () {
 
         // ------------- Images -------------
         imagesDist: distPath + "images",
-        imagesOptimizationLevel: 5,
-        imagesProgressive: true,
-        imagesInterlaced: true,
-
-        // -------------- HTML --------------
-        htmlFileIncludeConfig: {
-            prefix: '@@',
-            basepath: '@file'
-        },
 
         // ------------- Livereload ---------
         livereloadPort: 35729,
@@ -87,6 +73,7 @@ module.exports = (function () {
             projectPath + 'scripts/**/*.js'
         ],
         watchStyles: [
+            projectPath + 'postcss/**/*.css',
             projectPath + 'less/**/*.less'
         ],
 
@@ -106,10 +93,10 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "post-css", "styles", "scripts", "images", "icons", "copy", "watch", "build", "html", "deploy"
+            "styles", "scripts", "images", "icons", "copy", "watch", "build"
         ],
         buildTasks: [
-            "post-css","scripts", "images", "icons", "copy"
+            "styles", "scripts", "images", "icons", "copy"
         ],
 
         // ------------- Return Paths -------------

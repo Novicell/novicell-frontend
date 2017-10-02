@@ -3,9 +3,9 @@
 const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
-var notifier = require('node-notifier');
-var checkFilesExist = require('check-files-exist');
-var plugins = require('gulp-load-plugins')();
+const notifier = require('node-notifier');
+const checkFilesExist = require('check-files-exist');
+const plugins = require('gulp-load-plugins')();
 
 // Tasks
 gulp.task('scripts', function () {
@@ -48,7 +48,7 @@ var compileScripts = function(isWatchTask){
             function (err) {
                 notifier.notify({
                     'title': 'scripts',
-                    'message': 'File not found.'
+                    'message': 'File not found: ' + b.scripts
                 });
                 console.log(err.message);
                 notifier.emit('end');
