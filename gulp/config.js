@@ -93,7 +93,7 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "copy", "watch", "build"
+            "styles", "scripts", "images", "icons", "copy", "watch", "build", "html", "deploy"
         ],
         buildTasks: [
             "styles", "scripts", "images", "icons", "copy"

@@ -16,7 +16,7 @@ var postCssPlugins = [
     nested(),
     cssnext({ browsers: ["last 2 version", "ie 11"] }),   
     cssnano({
-        autoprefixer: false,
+        autoprefixer: { browsers: ["last 2 version", "ie 11"], add: true },
         discardComments: {removeAll: true},
         mergeLonghand: true,
         colormin: false,
@@ -29,7 +29,7 @@ gulp.task('styles', function () {
     var streams = config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
-        console.log('Post-css styles are compiling');
+        console.log(b.name + 'post-CSS styles are compiling');
 
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler('styles')))
