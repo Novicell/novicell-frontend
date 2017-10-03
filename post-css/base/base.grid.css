@@ -1,0 +1,9 @@
+[class^='col-'] {
+    padding-left: var(--half-gutter-width);
+    padding-right: var(--half-gutter-width);
+}
+
+.container {
+    padding-left: var(--half-gutter-width);
+    padding-right: var(--half-gutter-width);    
+}

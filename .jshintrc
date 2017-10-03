@@ -3,7 +3,9 @@
         "$": false,
         "jQuery": false,
         "svg4everybody": false,
-        "google": false
+        "google": false,
+        "vue": false,
+        "angular": false
     },
     "globalstrict": true,
     "browser": true,

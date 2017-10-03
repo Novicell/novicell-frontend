@@ -28,88 +28,91 @@
     width: 100%;
     height: 40px;
     padding: 0 20px;
-    font-size: @base-font-size;
+    font-size: var(--base-font-size);
     line-height: 40px;
-    color: @color-input-text;
-    background-color: @color-input-bg;
-    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    border: 1px solid @color-input-border;
-    border-radius: 100px;
+    color: var(--color-input-text);
+    background-color: var(--color-input-bg);
+    background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
+    border: 1px solid var(--color-input-border);
+    border-radius: 0;
     vertical-align: bottom;
 
-    &:focus {outline: 0;}
+    &:focus { outline: 0; }
 
-    // Placeholder
-    .placeholder();
+    &::placeholder {		
+        color: var(--color-placeholder);		
+        opacity: 1; /* Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526 */
+    }	
 
-    // Unstyle the caret on `<select>`s in IE10+.
+    /* Unstyle the caret on `<select>`s in IE10+.*/
     &::-ms-expand {
         border: 0;
         background-color: transparent;
     }
 
-    // Disabled and read-only inputs
-    //
-    // HTML5 says that controls under a fieldset > legend:first-child won't be
-    // disabled if the fieldset is disabled. Due to implementation difficulty, we
-    // don't honor that edge case; we style them as disabled anyway.
+    /* Disabled and read-only inputs
+    
+     HTML5 says that controls under a fieldset > legend:first-child won't be
+     disabled if the fieldset is disabled. Due to implementation difficulty, we
+     don't honor that edge case; we style them as disabled anyway.*/
     &[disabled],
     &[readonly],
     fieldset[disabled] & {
-        background-color: @color-input-bg-disabled;
-        opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+        background-color: var(--color-input-bg-disabled);
+        opacity: 1; /* iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655 */
     }
 
     &[disabled],
     fieldset[disabled] & {cursor: disabled;}
 
-    // Reset height for `textarea`s
+    /* Reset height for `textarea`s */
     textarea& {height: auto;}
 }
 
-// Search inputs in iOS
-//
-// This overrides the extra rounded corners on search inputs in iOS so that our
-// `.form-control` class can properly style them. Note that this cannot simply
-// be added to `.form-control` as it's not specific enough. For details, see
-// https://github.com/twbs/bootstrap/issues/11586.
+/* Search inputs in iOS
+
+ This overrides the extra rounded corners on search inputs in iOS so that our
+ `.form-control` class can properly style them. Note that this cannot simply
+ be added to `.form-control` as it's not specific enough. For details, see
+ https://github.com/twbs/bootstrap/issues/11586. */
 input[type='search'] {-webkit-appearance: none;}
 
-// Position radios and checkboxes better
+/* Position radios and checkboxes better */
 input[type='radio'],
 input[type='checkbox'] {
     margin: 4px 0 0;
-    margin-top: 1px \9; // IE8-9
+    /* IE8-9 */
+    margin-top: 1px \9; 
     line-height: normal;
 }
 
 input[type='file'] {display: block;}
 
-// Make range inputs behave like textual form controls
+/* Make range inputs behave like textual form controls */
 input[type='range'] {
     display: block;
     width: 100%;
 }
 
-// Make multiple select elements height not fixed
+/* Make multiple select elements height not fixed */
 select[multiple],
 select[size] {height: auto;}
 
-// Focus for file, radio, and checkbox
+/* Focus for file, radio, and checkbox */
 input[type='file']:focus,
 input[type='radio']:focus,
 input[type='checkbox']:focus {
-    // Default
+    /* Default */
     outline: thin dotted;
-    // WebKit
+    /* WebKit */
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
 
 
-// Checkboxes and radios
-//
-// Indent the labels to position radios/checkboxes as hanging controls.
+/* Checkboxes and radios
+
+ Indent the labels to position radios/checkboxes as hanging controls. */
 .radio,
 .checkbox {
     position: relative;
@@ -135,9 +138,9 @@ input[type='checkbox']:focus {
 }
 
 .radio + .radio,
-.checkbox + .checkbox {margin-top: -5px;} // Move up sibling radios or checkboxes for tighter spacing
+.checkbox + .checkbox {margin-top: -5px;} /* Move up sibling radios or checkboxes for tighter spacing */
 
-// Radios and checkboxes on same line
+/* Radios and checkboxes on same line */
 .radio-inline,
 .checkbox-inline {
     position: relative;
@@ -152,13 +155,14 @@ input[type='checkbox']:focus {
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
     margin-top: 0;
-    margin-left: 10px; // space out consecutive inline controls
+    /* space out consecutive inline controls */
+    margin-left: 10px;
 }
 
-// Apply same disabled cursor tweak as for inputs
-// Some special care is needed because <label>s don't inherit their parent's `cursor`.
-//
-// Note: Neither radios nor checkboxes can be readonly.
+/* Apply same disabled cursor tweak as for inputs
+ Some special care is needed because <label>s don't inherit their parent's `cursor`.
+
+ Note: Neither radios nor checkboxes can be readonly. */
 input[type='radio'],
 input[type='checkbox'] {
     &[disabled],
@@ -167,13 +171,13 @@ input[type='checkbox'] {
         cursor: disabled;
     }
 }
-// These classes are used directly on <label>s
+/* These classes are used directly on <label>s */
 .radio-inline,
 .checkbox-inline {
     &.disabled,
     fieldset[disabled] & {cursor: disabled;}
 }
-// These classes are used on elements with <label> descendants
+/* These classes are used on elements with <label> descendants */
 .radio,
 .checkbox {
     &.disabled,
@@ -183,11 +187,11 @@ input[type='checkbox'] {
 }
 
 
-/* #label
+/* label
 ********************/
 .label {
     display: inline-block;
-    max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+    max-width: 100%; /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141) */
     margin-bottom: 5px;
     font-weight: bold;
 
