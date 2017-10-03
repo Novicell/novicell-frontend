@@ -87,6 +87,6 @@
   
 } /*Root end*/
 
-@custom-media --sm-viewport only screen and (min-width: 767px);
-@custom-media --md-viewport only screen and (min-width: 991px);
-@custom-media --lg-viewport only screen and (min-width: 1199px);
+@custom-media --sm-viewport only screen and (min-width: 768px);
+@custom-media --md-viewport only screen and (min-width: 992px);
+@custom-media --lg-viewport only screen and (min-width: 1200px);

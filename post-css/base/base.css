@@ -27,7 +27,7 @@ body {
     margin: 0;
     padding: 0;
 
-    /*@media (min-width:@screen-lg) {font-size: 18px;}*/
+    @media (--lg-viewport) {font-size: 18px;}
 }
 
 
@@ -37,7 +37,7 @@ a {
     text-decoration: underline;
 
     &:hover,
-    /*&:focus {color: darken(@color-link, 10%);}*/
+    &:focus { color: shade(var(--color-link), 10%); }
 }
 
 

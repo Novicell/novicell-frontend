@@ -4,6 +4,6 @@
 }
 
 .container {
-    padding-left: 15px;
-    padding-right: 15px;    
+    padding-left: var(--half-gutter-width);
+    padding-right: var(--half-gutter-width);    
 }

@@ -1,13 +1,29 @@
 /**
  * Base: Fonts
+ *
+ * Only load WOFF2 & WOFF
+ * Remember to preload WOFF2 in HTML head, like this:
+ * <link rel="preload" href="/dist/fonts/MyFontNameHere.woff2" as="font">
+ * font-display explanation: https://css-tricks.com/font-display-masses/
  */
+
+
+/* Regular */
 @font-face {
-	font-family: 'SkipLegDay';
-	src: url('/dist/fonts/SkipLegDay.eot');
-	src: local('☺'),
-		url('/dist/fonts/SkipLegDay.woff') format('woff'),
-		url('/dist/fonts/SkipLegDay.ttf') format('truetype'),
-		url('/dist/fonts/SkipLegDay.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'MyFontNameHere';
+    src: url('/dist/fonts/MyFontNameHere.woff2') format('woff2');
+    src: url('/dist/fonts/MyFontNameHere.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'MyFontNameHere';
+    src: url('/dist/fonts/MyFontNameHere_Bold.woff2') format('woff2');
+    src: url('/dist/fonts/MyFontNameHere_Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display:swap;
 }

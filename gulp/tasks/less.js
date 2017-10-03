@@ -6,7 +6,7 @@ const mergeStream = require('merge-stream');
 const plugins = require('gulp-load-plugins')();
 
 var cssnanoSettings = {
-    autoprefixer: { browsers: [ "last 2 version", "ie 11" ], add: true },
+    autoprefixer: { browsers: [ ">= 5% in DK", "ie 11" ], add: true },
     discardComments: { removeAll: true },
     mergeLonghand: true,
     colormin: false,

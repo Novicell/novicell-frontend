@@ -29,18 +29,20 @@
     height: 40px;
     padding: 0 20px;
     font-size: var(--base-font-size);
-    line-height: 1;
+    line-height: 40px;
     color: var(--color-input-text);
     background-color: var(--color-input-bg);
-    /*Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
-    background-image: none; 
+    background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
     border: 1px solid var(--color-input-border);
-    border-radius: 100px;
+    border-radius: 0;
     vertical-align: bottom;
 
-    &:focus {outline: 0;}
+    &:focus { outline: 0; }
 
-   
+    &::placeholder {		
+        color: var(--color-placeholder);		
+        opacity: 1; /* Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526 */
+    }	
 
     /* Unstyle the caret on `<select>`s in IE10+.*/
     &::-ms-expand {
@@ -57,8 +59,7 @@
     &[readonly],
     fieldset[disabled] & {
         background-color: var(--color-input-bg-disabled);
-        /* iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655 */
-        opacity: 1; 
+        opacity: 1; /* iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655 */
     }
 
     &[disabled],
@@ -137,7 +138,7 @@ input[type='checkbox']:focus {
 }
 
 .radio + .radio,
-.checkbox + .checkbox {margin-top: -5px;} // Move up sibling radios or checkboxes for tighter spacing
+.checkbox + .checkbox {margin-top: -5px;} /* Move up sibling radios or checkboxes for tighter spacing */
 
 /* Radios and checkboxes on same line */
 .radio-inline,
@@ -186,12 +187,11 @@ input[type='checkbox'] {
 }
 
 
-/* #label
+/* label
 ********************/
 .label {
     display: inline-block;
-    /*Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)*/
-    max-width: 100%;
+    max-width: 100%; /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141) */
     margin-bottom: 5px;
     font-weight: bold;
 
