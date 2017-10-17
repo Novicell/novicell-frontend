@@ -93,10 +93,10 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "copy", "watch", "build", "html", "deploy"
+            "styles", "scripts", "images", "icons", "favicons", "copy", "watch", "build", "html", "deploy"
         ],
         buildTasks: [
-            "styles", "scripts", "images", "icons", "copy"
+            "styles", "scripts", "images", "icons", "favicons", "copy"
         ],
 
         // ------------- Return Paths -------------

@@ -1,0 +1,31 @@
+{
+    "short_name": "PWA",
+    "name": "Passive Agressive Web App",
+    "icons": [
+        {  
+            "src": "/images/logo-192x192.png",  
+            "sizes": "192x192",  
+            "type": "image/png"  
+          },  
+          {  
+            "src": "/images/logo-256x256.png",  
+            "sizes": "256x256",  
+            "type": "image/png"  
+          },  
+          {  
+            "src": "/images/logo-384x384.png",  
+            "sizes": "384x384",  
+            "type": "image/png"  
+          },  
+          {  
+            "src": "/images/logo-512x512.png",  
+            "sizes": "512x512",  
+            "type": "image/png"  
+          }
+    ],
+    "start_url": "index.html",
+    "background_color": "#f42d40",
+    "theme_color": "#fff",
+    "display": "standalone"
+  }
+  
