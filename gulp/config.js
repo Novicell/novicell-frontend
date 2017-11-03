@@ -10,6 +10,8 @@ module.exports = (function () {
     var vendorPath = projectPath + "node_modules/"; // path for vendor scripts
     var distPath = webPath + "dist/"; // path for production files
     var cleanPaths = [distPath]; // files/folders to be removed with "clean"-task
+    var appName = "Novicell Frontend"; // name for webapp
+    var appColor = "#ffffff"; // color for webapp icons
 
     return {
         // ------------- Bundles -------------
