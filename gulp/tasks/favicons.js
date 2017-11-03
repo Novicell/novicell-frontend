@@ -1,7 +1,7 @@
 'use strict';
 
-const gulp = require('gulp');
-const config = require('../config.js');
+var gulp = require('gulp');
+var config = require('../config.js');
 
 var favicons = require("gulp-favicons"),
 gutil = require("gulp-util");
@@ -9,6 +9,7 @@ gutil = require("gulp-util");
 gulp.task("favicons", function () {
 return gulp.src("favicons/favicons-master.png").pipe(favicons({
     appName: config.appName,
+    appDescription: config.appDescription,
     background: config.appColor,
     path: config.distPath + "favicons/",
     display: "standalone",
