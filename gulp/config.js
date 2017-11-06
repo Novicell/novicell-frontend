@@ -10,6 +10,8 @@ module.exports = (function () {
     var vendorPath = projectPath + "node_modules/"; // path for vendor scripts
     var distPath = webPath + "dist/"; // path for production files
     var cleanPaths = [distPath]; // files/folders to be removed with "clean"-task
+    var faviconPath = "/dist/"; // productions path for favicons. Change for none Umbraco
+
 
     //App manifest and favicon variables
     var appName = "Novicell Frontend"; // name for webapp
@@ -101,7 +103,7 @@ module.exports = (function () {
             "styles", "scripts", "images", "icons", "favicons", "copy", "watch", "build", "html", "deploy"
         ],
         buildTasks: [
-            "styles", "scripts", "images", "icons", "favicons", "copy"
+            "styles", "scripts", "images", "icons", "copy"
         ],
 
         // ------------- Return Paths -------------
@@ -109,6 +111,8 @@ module.exports = (function () {
         vendorPath: vendorPath,
         cleanPaths: cleanPaths,
         distPath: distPath,
+        faviconPath: faviconPath,
+        
 
         // ------------- Return Variables -------------
         appName: appName,

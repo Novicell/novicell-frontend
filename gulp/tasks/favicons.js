@@ -12,7 +12,7 @@ return gulp.src("favicons/favicons-master.png").pipe(favicons({
     appDescription: config.appDescription,
     background: config.appColor,
     theme_color: config.appColor,
-    path: config.distPath + "favicons/",
+    path: config.faviconPath + "favicons/",
     display: "standalone",
     orientation: "portrait",
     start_url: "/",
