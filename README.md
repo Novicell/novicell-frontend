@@ -151,6 +151,14 @@ So ´/images/icons/lock.svg` are referenced like this:
 </svg>
 ```
 
+## How to use the favicon generator
+By running the 'favicons' gulp task, icons will be generated automatically for all devices.
+
+1. Replace: '/favicons/favicons-master.png' with the site logo in '512x512' 'png' format
+2. Run 'gulp favicons'
+3. Insert html from 'dist/favicons/index.html' in your sites '<head>' section
+
+
 ## Post-CSS components
 As a grid we recommend to use [Flexboxgrid](http://flexboxgrid.com/) as it is almost a plug-n-play replacement for the Bootstrap grid.
 There's a few basic setups that you will always need for all your projects. Buttons, Grid, Form elements, Tables. (Well, maybe you won't use tables).
