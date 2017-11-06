@@ -197,3 +197,14 @@ input[type='checkbox'] {
 
     &--block {display: block;}
 }
+
+.form-group {
+    
+    label {
+        display: block;
+    }
+
+    small {
+        display: block;
+    }
+}
