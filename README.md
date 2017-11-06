@@ -1,7 +1,5 @@
 # Novicell Frontend
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Novicell/novicell-frontend.svg)](https://greenkeeper.io/)
-
 Novicell Default Frontend package is a framework for your frontend setup, and a Gulp based boilerplate for optimizing your frontend flow. It includes PostCSS, CSSNext and Flexboxgrid, for starting your new website's development.
 When setup, it also helps you optimize images, combine SVGs to a sprite, minifying CSS and Javascript.
 
@@ -14,11 +12,8 @@ When setup, it also helps you optimize images, combine SVGs to a sprite, minifyi
 * [How to use GULP](#how-to-use-gulp)
 * [Tasks in this package](#tasks-in-this-package)
 * [How to use SVG sprite sheet](#how-to-use-svg-sprite-sheet)
-* [Post-CSS components](#less-components)
-  * [The grid](#the-grid)
-  * [Buttons](#buttons)
-  * [Forms](#forms)
-  * [Tables](#tables)
+* [How to use the favicon generator](#how-to-use-the-favicon-generator)
+* [Post-CSS components](#post-css-components)
 * [Third party plugins](#third-party-plugins)
 * [License](#license)
 
@@ -154,9 +149,9 @@ So ´/images/icons/lock.svg` are referenced like this:
 ## How to use the favicon generator
 By running the 'favicons' gulp task, icons will be generated automatically for all devices.
 
-1. Replace: '/favicons/favicons-master.png' with the site logo in '512x512' 'png' format
-2. Run 'gulp favicons'
-3. Insert html from 'dist/favicons/index.html' in your sites '<head>' section
+1. Replace: `/favicons/favicons-master.png` with the site logo in `512x512` `png` format
+2. Run `gulp favicons`
+3. Insert html from `dist/favicons/index.html` in your sites `<head>` section
 
 
 ## Post-CSS components
