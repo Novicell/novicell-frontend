@@ -80,7 +80,7 @@ module.exports = (function () {
             projectPath + 'scripts/**/*.js'
         ],
         watchStyles: [
-            projectPath + 'postcss/**/*.css',
+            projectPath + 'post-css/**/*.css',
             projectPath + 'less/**/*.less'
         ],
 
