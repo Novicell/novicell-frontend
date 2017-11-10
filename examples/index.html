@@ -62,20 +62,103 @@
                 </section>
             </main>
 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
             <div class="col-sm-12">
-                <form>         
+                <form data-validate>      
                     <div class="form-group">
                         <label for="Name">Name</label>
-                        <input type="text" class="form-control" id="Name" aria-describedby="Name" placeholder="Name">
+                        <input title="PLEASE"  id="Name" type="text" autocomplete="name" autocorrect="off" required>
                         <small>Enter your name.</small>
                     </div>
+
+                    <div class="form-group">
+                        <label for="Adress">Adress</label>
+                        <input  id="Adress" type="text" autocomplete="adress-line1" autocorrect="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Postal-code">Postal code</label>
+                        <input  id="Postal-code" type="text" inputmode="numberic" pattern="[0-90]*" novalidate autocomplete="postal-code" autocorrect="off" required>
+
+                        <label for="City">City</label>
+                        <input  id="City" type="text" autocomplete="adress-line2" autocorrect="off">
+                    </div>
+
+
+                    <p><strong>Radio buttons</strong></p>
+
+                    <div class="form-group">
+                        <p>
+                            <input type="radio" id="test1" name="radio-group" checked>
+                            <label for="test1">Apple</label>
+                        </p>
+
+                        <p>
+                            <input type="radio" id="test2" name="radio-group">
+                            <label for="test2">Peach</label>
+                        </p>
+                    </div>
+
+                    <p><strong>Checkbox</strong></p>
+                    <div class="form-group">
+                        <p>
+                            <input type="checkbox" id="test3">
+                            <label for="test3">Checkbox</label>
+                        </p>
+                    </div>
+                    
+                   
+                    <button class="button" type="submit">Submit</button>
                 </form>
             </div>
         </div>
     </div>
-
     <script src="../dist/scripts/vendor.min.js"></script>
     <script src="../dist/scripts/master.min.js"></script>
+    <script>
+            validate.init ({
+
+            // Classes and Selectors
+            selector: '[data-validate]',
+            fieldClass: 'error',
+            errorClass: 'error-message',
+
+            // Messages
+            messageValueMissing: 'Please fill out this field!!!.',
+            messageValueMissingSelect: 'Please select a value.',
+            messageValueMissingSelectMulti: 'Please select at least one value.',
+            messageTypeMismatchEmail: 'Please enter an email address.',
+            messageTypeMismatchURL: 'Please enter a URL.',
+            messageTooShort: 'Please lengthen this text to {minLength} characters or more. You are currently using {length} characters.',
+            messageTooLong: 'Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters.',
+            messagePatternMismatch: 'Please match the requested format.',
+            messageBadInput: 'Please enter a number.',
+            messageStepMismatch: 'Please select a valid value.',
+            messageRangeOverflow: 'Please select a value that is no more than {max}.',
+            messageRangeUnderflow: 'Please select a value that is no less than {min}.',
+            messageGeneric: 'The value you entered for this field is invalid.',
+
+            // Form Submission
+            disableSubmit: false,
+            onSubmit: function () {},
+
+            // Callbacks
+            beforeShowError: function () {},
+            afterShowError: function () {},
+            beforeRemoveError: function () {},
+            afterRemoveError: function () {},
+
+        });
+    </script>
+
 </body>
 
 </html>

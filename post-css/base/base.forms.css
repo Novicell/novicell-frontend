@@ -199,12 +199,52 @@ input[type='checkbox'] {
 }
 
 .form-group {
-    
+    margin-bottom: 15px;
+    max-width: 250px;
+
+    input[type=text] {
+        width: 100%;
+        outline: none;
+        height: 44px;
+        padding: 10px;
+    }
+
     label {
         display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
     }
 
     small {
         display: block;
+        color:grey;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+
+
+
+    
+
+
+
+
+
+
+
+    /**
+    * Form Validation Errors
+    */
+    .error {
+        border-color: red;
+        
+    }
+
+    .error-message {
+        color: red;
+        font-style: italic;
+        font-size: 13px;
+        
     }
 }

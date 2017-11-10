@@ -20,6 +20,10 @@
 @import 'base/base.tables.css';
 @import 'base/base.fonts.css';
 
+/* Base forms*/
+@import 'base/forms/base.forms.radio.css';
+@import 'base/forms/base.forms.checkbox.css';
+
 /* Components
 ********************/
 @import 'components/components.breadcrumb.css';
