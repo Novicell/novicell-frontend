@@ -11,7 +11,7 @@
 --color-gray-light:              #d7d7d7;
 --color-white:                   #ffffff;
 
---color-primary:                 #ff9494;
+--color-primary:                 #f42d40;
 --color-secondary:               #669933;
 
 --color-link:                    var(--color-primary);
@@ -64,6 +64,7 @@
 /* Layout
 ********************/
 --site-background-color:         var(--color-white);
+--base-border-radius:            3px;
 
 
 /* Typography

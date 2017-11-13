@@ -16,13 +16,22 @@
 @import 'base/base.icons.css';
 @import 'base/base.typography.css';
 @import 'base/base.buttons.css';
-@import 'base/base.forms.css';
 @import 'base/base.tables.css';
 @import 'base/base.fonts.css';
 
 /* Base forms*/
+@import 'base/forms/base.forms.form-group.css';
+@import 'base/forms/base.forms.input.css';
+@import 'base/forms/base.forms.label.css';
+@import 'base/forms/base.forms.validation.css';
 @import 'base/forms/base.forms.radio.css';
 @import 'base/forms/base.forms.checkbox.css';
+@import 'base/forms/base.forms.file.css';
+
+@import 'base/forms/base.forms.radio.css';
+@import 'base/forms/base.forms.checkbox.css';
+@import 'base/forms/base.forms.textarea.css';
+@import 'base/forms/base.forms.select.css';
 
 /* Components
 ********************/

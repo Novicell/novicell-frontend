@@ -1,0 +1,7 @@
+/* Inherits base styling from base.forms.input.css */
+
+.form-group {
+    /* Make multiple select elements height not fixed */
+    select[multiple],
+    select[size] {height: auto;}
+}

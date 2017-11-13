@@ -1,0 +1,7 @@
+/* Inherits base styling from base.forms.input.css */
+.form-group {
+    textarea {
+        height: auto;
+        min-height:100px;
+    }
+}

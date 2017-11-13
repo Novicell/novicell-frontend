@@ -1,0 +1,23 @@
+:root {
+    --color-danger: #dc3545;
+    --color-success: #28a745;
+}
+
+
+.form-group {
+    position: relative;
+
+   /**
+    * Form Validation Errors
+    */
+    .error {
+        border-color: var(--color-danger);
+        
+    }
+    .error-message {
+        padding: 2px 6px;
+        color:#fff;
+        background: var(--color-danger);
+        font-size: 12px;   
+    }
+}
