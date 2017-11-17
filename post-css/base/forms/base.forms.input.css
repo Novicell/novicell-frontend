@@ -1,4 +1,18 @@
 .form-group {
+
+    input {
+        &::placeholder {		
+            color: var(--color-placeholder);
+            opacity: 1; /* Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526 */
+        }
+    }
+    textarea {
+        &::placeholder {		
+            color: var(--color-placeholder);
+            opacity: 1; /* Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526 */
+        }
+    }
+
     input, textarea, select {
         display: block;
         width: 100%;
@@ -15,11 +29,6 @@
     
         &:focus { outline: 0; }
     
-        &::placeholder {		
-            color: var(--color-placeholder);		
-            opacity: 1; /* Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526 */
-        }	
-    
         /* Unstyle the caret on `<select>`s in IE10+.*/
         &::-ms-expand {
             border: 0;
@@ -34,7 +43,7 @@
         &[disabled],
         &[readonly],
         fieldset[disabled] & {
-            background-color: var(--color-input-bg-disabled);
+            /*background-color: var(--color-input-bg-disabled);*/
             opacity: 1; /* iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655 */
         }
     

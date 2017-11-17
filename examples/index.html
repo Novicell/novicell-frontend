@@ -127,6 +127,7 @@
                 <kbd>min</kbd>
                 <kbd>max</kbd> etc.
             </p>
+            <p>Remember to also include the <a href="https://github.com/cferdinandi/validate">validation script</a> for this functionality </p>
 
             <form data-validate>
 
@@ -134,7 +135,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="Name">Required textfield</label>
-                            <input id="Name" type="text" required>
+                            <input id="Name" placeholder="Hej med dig" type="text" required>
                             <small>Informative description (a <kbd>&lt;small&gt;</kbd> gets this styling by default)</small>
                         </div>
                     </div>
@@ -333,11 +334,15 @@
 
             // Form Submission
             disableSubmit: false,
-            onSubmit: function () { },
+            onSubmit: function () {
+            },
 
             // Callbacks
-            beforeShowError: function () { },
-            afterShowError: function () { },
+            beforeShowError: function () {
+                document.querySelector("[data-validate]").classList.add("validated");
+            },
+            afterShowError: function () {
+            },
             beforeRemoveError: function () { },
             afterRemoveError: function () { },
 
