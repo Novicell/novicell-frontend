@@ -14,13 +14,16 @@
     white-space: nowrap;
     user-select: none;
     position: relative;
-    font-weight: 400;
+    font-weight: var(--base-font-weight);
     font-family: var(--base-font-family);
     transition: background .3s, color .3s, border-color .3s;
-    padding: 10px 20px;
+    padding: 14px 20px;
     color: var(--color-white);
     border: 1px solid transparent;
     text-decoration: none;
+    border-radius: var(--base-border-radius);
+    font-size: var(--base-font-size);
+    line-height: var(--base-font-size);
 
     &:hover,
     &:focus {
@@ -30,12 +33,16 @@
         outline: none;
     }
 
+    &:active {
+        transform: translateY(2px);
+    }
+
     &[disabled],
     [disabled] & { cursor: not-allowed; }
 
     /* Ghost button */
     &--ghost {
-        color: var(--color-text);
+        color: var(--color-primary);
         border: solid 1px var(--color-primary);
         background-color: transparent;
 
@@ -44,5 +51,10 @@
             color: var(--color-white);
             background-color: var(--color-primary);
         }
+    }
+
+    &--small {
+        padding: 6px 10px;
+        font-size: 12px;
     }
 }

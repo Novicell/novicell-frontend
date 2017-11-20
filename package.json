@@ -85,6 +85,7 @@
   "dependencies": {
     "favicons": "4.8.6",
     "flexboxgrid": "6.3.1",
-    "svg4everybody": "2.1.9"
+    "svg4everybody": "2.1.9",
+    "validate": "github:cferdinandi/validate"
   }
 }
