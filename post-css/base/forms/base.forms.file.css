@@ -1,0 +1,12 @@
+.form-group {
+    input[type="file"] {
+        display: block;
+        padding: 10px;
+        height: 65px;
+
+        /* 
+            Maybe some styling like: 
+            https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
+        */
+    }
+}
