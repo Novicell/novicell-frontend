@@ -24,7 +24,6 @@
     border-radius: var(--base-border-radius);
     font-size: var(--base-font-size);
     line-height: var(--base-font-size);
-    position: relative;
 
     &:hover,
     &:focus {
@@ -35,7 +34,7 @@
     }
 
     &:active {
-        top: 2px;
+        transform: translateY(2px);
     }
 
     &[disabled],
