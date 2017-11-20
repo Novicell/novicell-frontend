@@ -1,0 +1,26 @@
+{
+  "title": "Image text section",
+  "status": "prototype",
+  "context": {
+    "image": {
+      "image": {
+          "url": "/images/placeholder-images/hero--mona-eendra-313518.jpg",
+          "alt": "Image"
+      }
+    },
+    "text-box2": {
+      "heading": {
+        "text": "Header"
+      },
+      "text-box": {
+        "content": "Nulla quis lorem ut libero malesuada feugiat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus."
+      }
+    },
+    "button": {
+        "link-button": {
+            "text": "button text"
+        }
+    }
+  }
+}
+

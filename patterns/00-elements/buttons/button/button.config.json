@@ -1,0 +1,27 @@
+{
+  "title": "Button",
+  "status": "prototype",
+  "context": {
+    "button": {
+      "text": "Button"
+    }
+  },
+  "variants": [
+    {
+      "name": "ghost",
+      "context": {
+        "button": {
+          "text": "Ghost Button"
+        }
+      }
+    },
+    {
+      "name": "large",
+      "context": {
+        "button": {
+          "text": "Large Button"
+        }
+      }
+    }
+  ]
+}

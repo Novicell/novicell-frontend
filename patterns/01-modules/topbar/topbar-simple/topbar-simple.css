@@ -1,0 +1,56 @@
+/*
+ * Module: Topbar
+ */
+
+:root {
+    --topbar-background-color: var(--color-secondary);
+    --topbar-border-color: var(--color-white);
+    --topbar-border-opacity: 25%;
+    --topbar-site-width: var(--site-width);
+    --topbar-spacing: 20px;
+}
+
+.topbar-simple {
+    background-color: var(--topbar-background-color);
+
+    &__inner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        flex-basis: 30%;
+        padding-top: var(--topbar-spacing);
+        padding-bottom: var(--topbar-spacing);
+
+        @media (--viewport-sm-min) {
+            flex-direction: row;
+        }
+    }
+
+    &__logo {
+        flex-basis: 30%;
+
+        @media (--viewport-sm-min) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &__navigation-primary {
+        align-content: flex-end;
+        align-items: center;
+        display: flex;
+        flex-basis: 70%;
+    }
+
+    &__navigation-search {
+        margin-top: var(--topbar-spacing);
+        width: 100%;
+
+        @media (--viewport-sm-min) {
+            margin-left: auto;
+            margin-top: 0;
+            width: 300px;
+        }
+    }
+}

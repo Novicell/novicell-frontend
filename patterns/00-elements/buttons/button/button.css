@@ -1,0 +1,60 @@
+/*
+ * Element: Buttons
+ */
+
+/* Setting document variables*/
+:root{
+    --button-color-primary: var(--color-primary);
+    --button-color-text: var(--color-white);
+    --button-base-font-family: var(--base-font-family);
+}
+
+
+/* Default button*/
+.button {
+    cursor: pointer;
+    background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
+    background-color: var(--button-color-primary);
+    position: relative;
+    font-weight: 600;
+    font-family: var(--button-base-font-family);
+    font-size: 14px;
+    transition: background .3s, color .3s, border-color .3s;
+    color: var(--button-color-text);
+    border: 1px solid transparent;
+    text-decoration: none;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0 20px;
+
+
+    &:hover,
+    &:focus {
+        color: var(--button-color-text);
+        background: shade(var(--button-color-primary), 10%);
+        outline: none;
+    }
+
+
+    &[disabled],
+    [disabled] & { cursor: not-allowed; }
+
+    /* Ghost button*/
+    &--ghost {
+        color: var(--button-color-primary);
+        border: solid 1px var(--button-color-primary);
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+            color: var(--button-color-text);
+            background-color: var(--button-color-primary);
+        }
+    }
+
+    &--large {
+        height: 50px;
+        padding: 0 40px;
+        font-size: 24px;
+    }
+}

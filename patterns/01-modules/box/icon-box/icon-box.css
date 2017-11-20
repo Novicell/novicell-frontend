@@ -1,0 +1,28 @@
+/*
+ * Module: Text Box
+ */
+
+:root{
+	--icon-box-background-color: var(--color-white);
+	--icon-box-border-style: 1px solid var(--color-gray-light);
+	--icon-box-border-radius: 4px;
+	--icon-box-padding: 20px;
+	--icon-box-paragraph-spacing-top: 15px;
+}
+
+.icon-box {
+    text-align: center;
+
+    &__inner {
+        padding: var(--icon-box-padding);
+    }
+
+    p + p {
+        margin-top: var(--icon-box-paragraph-spacing-top);
+    }
+}
+
+.icon-box__icon svg {
+    height: 72px;
+    width: 72px;
+}

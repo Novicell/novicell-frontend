@@ -1,0 +1,21 @@
+/*
+ * Element: Link
+ */
+
+/*Setting document variables*/
+:root{
+	--link-color: var(--color-primary);
+	--link-font-family: var(--base-font-family);
+}
+
+/*Link style*/
+.link {
+    color: var(--link-color);
+    font-family: var(--link-font-family);
+
+    &:hover,
+    &:focus {
+        color: shade(var(--link-color), 10%);
+        outline: none;
+    }
+}

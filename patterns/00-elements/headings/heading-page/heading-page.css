@@ -1,0 +1,15 @@
+/*
+* Element: Headers
+*/
+
+/*Setting document variables*/
+:root{
+	--heading-color-primary: var(--color-text);
+	--heading-color-secondary: var(--color-secondary);
+}
+
+.heading-page {
+    font-size: 24px;
+    color: var(--heading-color-primary);
+    font-family: var(--heading-font-family);
+}

@@ -1,0 +1,31 @@
+{
+    "title": "Text Box",
+    "status": "prototype",
+    "context": {
+        "heading": {
+            "text": "Text Box header"
+        },
+        "text-box": {
+            "content": "Text Box content."
+        }
+    },
+    "variants": [
+        {
+            "name": "Centered",
+            "context": {
+                "heading": {
+                    "text": "Text Box Centered header"
+                },
+                "text-box": {
+                    "content": "Text Box Centered content."
+                },
+                "link": {
+                    "url": "url",
+                    "text": "Link text",
+                    "target":"",
+                    "title": "Link title"
+                }
+            }
+        }
+    ]
+}

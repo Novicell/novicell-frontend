@@ -6,14 +6,17 @@ var path = require('path');
 
 module.exports = (function () {
     var projectPath = "./"; // path for the source files
+    var assetPath = projectPath + "assets/"; // path for fractal assets such as images, icons and more
     var webPath = projectPath + ""; // path for the website - usually path to livereload views, and used for distPath
     var vendorPath = projectPath + "node_modules/"; // path for vendor scripts
     var distPath = webPath + "dist/"; // path for production files
     var cleanPaths = [distPath]; // files/folders to be removed with "clean"-task
-    var faviconPath = "/dist/"; // productions path for favicons. Change for none Umbraco
+    var faviconPath = "/dist/"; // productions path for favicons (should be relative to the hostname)
 
 
-    //App manifest and favicon variables
+    /*
+     * App manifest and favicon variables
+     */
     var appName = "Novicell Frontend"; // name for webapp
     var appColor = "#ffffff"; // color for webapp icons
     var appDescription = "Novicell Progressive WebApp";
@@ -35,14 +38,13 @@ module.exports = (function () {
                     projectPath + "scripts/master.js"
                 ],
                 styles: [
-                    projectPath + "post-css/master.css"
+                    projectPath + "patterns/_base/master.css"
                 ],
-                images: [ projectPath + "images/**/*.{jpg,png,svg,gif}"],
-                html: [ projectPath + "html/*.html" ]
+                images: [ assetPath + "images/**/*.{jpg,png,svg,gif}"]
             },
             {
                 name: "icons",
-                icons: [ projectPath + "icons/**/*.svg" ]
+                icons: [ assetPath + "icons/**/*.svg" ]
             }
         ],
 
@@ -66,22 +68,20 @@ module.exports = (function () {
         livereloadPort: 35729,
         livereloadPaths: [
             distPath + "**/*.*",
-            webPath + "Views/**/*.cshtml",
-            webPath + "html/**/*.html",
-            webPath + "**/*.php"
+            webPath + "Views/**/*.cshtml", // Umbraco, Sitecore
+            webPath + "Files/Templates/Designs/**/*.cshtml", // Dynamicweb
+            webPath + "**/*.php" // Wordpress, Drupal
         ],
 
         // ------------- Watch -------------
-        watchImages: [ projectPath + 'images/**/*' ],
-        watchIcons: [ projectPath + 'icons/*' ],
-        watchFonts: [ projectPath + 'fonts/*' ],
-        watchHtml: [ projectPath + 'html/**/*' ],
+        watchImages: [ assetPath + 'images/**/*' ],
+        watchIcons: [ assetPath + 'icons/*' ],
+        watchFonts: [ assetPath + 'fonts/*' ],
         watchScripts: [
             projectPath + 'scripts/**/*.js'
         ],
         watchStyles: [
-            projectPath + 'postcss/**/*.css',
-            projectPath + 'less/**/*.less'
+            projectPath + "/patterns/**/*.css"
         ],
 
         // ------------- Deploy task --------
@@ -93,14 +93,14 @@ module.exports = (function () {
 
         // ------------- Copy on build --------
         buildCopy: [{
-            from: projectPath + "fonts/**/*",
+            from: assetPath + "fonts/**/*",
             to: distPath  + "fonts"
         }],
 
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "favicons", "copy", "watch", "build", "html", "deploy"
+            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy"
         ],
         buildTasks: [
             "styles", "scripts", "images", "icons", "copy"
@@ -113,11 +113,11 @@ module.exports = (function () {
         distPath: distPath,
         faviconPath: faviconPath,
         
-
         // ------------- Return Variables -------------
         appName: appName,
         appColor: appColor,
         appDescription: appDescription,
+        
 
         // ---------- Errorhandler ------
         errorHandler: function(taskName)
@@ -127,7 +127,7 @@ module.exports = (function () {
                     'title': taskName,
                     'message': 'An error occured in the ' + e.plugin + ' plugin.'
                 });
-                console.log(e.message);
+                console.error(e.message);
                 this.emit('end');
             };
         }

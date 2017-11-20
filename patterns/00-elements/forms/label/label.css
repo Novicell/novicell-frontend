@@ -1,0 +1,20 @@
+/*
+* Element: Label
+*/
+
+/*Setting document variables*/
+:root{
+	--input-text-color: var(--color-text);
+	--input-font-family: var(--base-font-family);
+}
+
+.label {
+    font-family: var(--input-font-family);
+    color: var(--input-text-color);
+    display: inline-block;
+    max-width: 100%; /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)*/
+    margin-bottom: 5px;
+    font-weight: bold;
+
+    &--block {display: block;}
+}

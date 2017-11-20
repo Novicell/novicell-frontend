@@ -1,0 +1,57 @@
+/*
+ * Element: Link Buttons
+ */
+
+/*Setting document variables*/
+:root{
+    --link-button-color-primary: var(--color-primary);
+    --link-button-color-white: var(--color-white);
+    --link-button-color-text: var(--color-text);
+    --link-button-base-font-family: var(--base-font-family);
+}
+
+
+/* Default button*/
+.link-button {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
+    background-color: var(--link-button-color-primary);
+    font-weight: 600;
+    font-family: var(--link-button-base-font-family);
+    font-size: 14px;
+    transition: background .3s, color .3s, border-color .3s;
+    color: var(--link-button-color-white);
+    border: 1px solid transparent);
+    text-decoration: none;
+    border-radius: 4px;
+    line-height: 40px;
+    padding: 0 20px;
+
+    &:hover,
+    &:focus {
+        color: var(--link-button-color-white);
+        background: shade(var(--link-button-color-primary), 10%);
+        text-decoration: none;
+        outline: none;
+    }
+
+
+    &[disabled],
+    [disabled] & { cursor: not-allowed; }
+
+    /* Ghost button*/
+    &--ghost {
+        color: var(--link-button-color-text);
+        border: solid 1px var(--link-button-color-primary);
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+            color: var(--link-button-color-white);
+            background-color: var(--link-button-color-primary);
+        }
+    }
+}
+

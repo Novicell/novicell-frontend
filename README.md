@@ -6,61 +6,73 @@ When setup, it also helps you optimize images, combine SVGs to a sprite, minifyi
 ### Table of content
 * [Quick start](#quick-start)
 * [Installation](#installation)
-* [Setup](#setup)
-* [Contribution](#contribution)
+* [Using with the setup](#using-with-the-setup)
 * [What is GULP](#what-is-gulp)
 * [How to use GULP](#how-to-use-gulp)
-* [Tasks in this package](#tasks-in-this-package)
-* [How to use SVG sprite sheet](#how-to-use-svg-sprite-sheet)
-* [How to use the favicon generator](#how-to-use-the-favicon-generator)
+* [What is Fractal](#what-is-fractal)
+* [SVG sprite sheet](#svg-sprite-sheet)
+* [Favicon generator](#favicon-generator)
 * [Post-CSS components](#post-css-components)
 * [Third party plugins](#third-party-plugins)
+* [Contribution](#contribution)
 * [License](#license)
 
 ## Quick start
 
-Browse to your project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git/.`. Then run `npm install` for getting the latest dependencies and start the build proccess. Run `gulp watch` to start watching file changes and continuous copilation.
+Browse to your project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git/.`. Then run `npm install` for getting dependencies and start the build proccess. Run `gulp watch` to start watching file changes and continuous copilation.
 
 
 ##  Installation
 
 - Download and install Node.js min. v. 6.9.x (https://nodejs.org/en/download/)
 - Download and install Git (newest) (http://git-scm.com/downloads)
-  Remember to check "Git bash here" in context menu options
+  Remember to check "Git bash here" in context menu options.
 
   To check if node is working, go to Gitbash / Terminal and type `node -v`
   If you get a version number, you'r good to go :+1:
   
-  If you NEVER before did run any Gulp based setup, you need to install Gulp globally on your machine.
+  If you NEVER before ran novicell-frontend setup, you need to install Gulp and Fractal globally on your machine.
+
+```sh
+npm install -g gulp @frctl/fractal
 ```
-npm install -g gulp
+
+##  Using with the setup
+
+In short, running both **Gulp** and **Fractal** you need to open two terminals.
+The first terminal needs to run:
+```sh
+gulp watch
 ```
 
-##  Setup
+and the second terminal
+```sh
+fractal start -w -s
+```
 
-First navigate to your website and install novicell frontend package. After running `npm install` it automatically rund:
+### The details:
+This setup consists of two seperate tools: **Gulp** and **Fractal**.
 
-    cd "c:\Visual studio projects\project-name\Project.Frontend"
-    git clone https://github.com/Novicell/novicell-frontend.git
-    npm install
+[Gulp](#what-is-gulp) is the build tool that minifies all your assets.
 
-## Contribution
+[Fractal](#what-is-fractal) is the tool that can help you speed up frontend development, by using a pattern library and makes a style guide for you.
 
-Looking to contribute something? **Here's how you can help.**
-Please take a moment to review our [contribution guidelines](https://github.com/Novicell/novicell-frontend/wiki/Contribution-guidelines) in order to make the contribution process easy and effective for everyone involved.
 
 ## What is GULP
 
 GULP is a streaming build system - or short for:
 
-"I'll take care of minifiyng the images, scripts, styles and icons.
-Now you just focus on doing what you do best: CODE!"
+*"I'll take care of minifiyng the images, scripts, styles and icons.
+Now you just focus on doing what you do best: CODE!"*
+
+Learn more here: https://gulpjs.com/
 
 ## How to use GULP
 
 First navigate to your website
-
-    cd c:\"Visual studio projects"\project-name\Project.Website
+```sh
+cd c:\"Visual studio projects"\project-name\Project.Website
+```
 
 * To build everything and get the latest dependencies (also runs the build task): `npm i`
 * To build whats already in there (runs the build task): `gulp`
@@ -69,75 +81,55 @@ First navigate to your website
 
 All tasks can be run like: `gulp <task name>`.
 
-## Tasks in this package
+### Gulp tasks
 
-The following tasks are available:
+The following tasks are available in this package:
 
-* `build` - Runs all the tasks defined in: gulp-config.json > tasksToBuild
-* `clean` - Deletes the files/directories defined in: gulp-config.json > pathsToClean
+* `build` - Runs all the tasks defined in: `gulp/config.js > tasksToBuild`
+* `clean` - Deletes the files/directories defined in: `gulp/config.js > pathsToClean`
 * `rebuild` - Runs the clean task, and then the build task.
-* `styles` -  Minifies and bundles CSS files defined in: gulp-config.json > bundles > {bundleName} > styles
-* `scripts` - Minifies and bundles JS files defined in: gulp-config.json > bundles > {bundleName} > scripts
-* `images` -  Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
-* `icons` - Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
-* `copy` -  Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
-* `deploy` -  Uploads file via FTP, configuration can be found in gulp/config.js
-* `html` - Will run through the html folder (not subfolders by default), looking for the `@@include`, to then partially replace them with the path. To learn more, go to the [HTML task in details](#HTML-task-in-details)
+* `styles` -  Minifies and bundles CSS files defined in: `gulp/config.js > bundles > {bundleName} > styles`
+* `scripts` - Minifies and bundles JS files defined in: `gulp/config.js > bundles > {bundleName} > scripts`
+* `images` -  Minifies images defined in: `gulp/config.js > bundles > {bundleName} > images`
+* `icons` - Minifies and generates a svg sprite, from the icons defined in: `gulp-config.json > bundles > {bundleName} > icons`
+* `copy` -  Copies the fonts defined in: `gulp/config.js > Copy on build`
+* `deploy` -  Uploads file via FTP, configuration can be found in `gulp/config.js`
 * `watch`
 
-  * Runs the scripts, styles, images, icons and fonts task whenever a file has changed. The paths it listens on, is defined in the file gulp/config.json > watch.
-  * Also it automatically refreshes your browser window, using livereload (port can be changed in gulp/config.json > livereload > port).
-
-  Google Chrome Plugin: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
-
+  * Listens for filechanges and runs the scripts, styles, images, icons or fonts task whenever a file is changed.
   * Generates sourcemaps for CSS and JS.
+  * Also it automatically refreshes your browser window, using [Livereload Chrome plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
 **NOTE:** The distribution path for each task, can be defined in gulp/config.json - so can the basePath.
 
 
-### HTML task in details
-The HTML task enables us to develop html with a component type of mind such as storing a site header in a single file. `@@include('components/breadcrumb.html')`.
-What this means is that we only have to maintain pieces of reusable html in 1 place. This is especially useful when working with navigational elements.
+## What is Fractal
 
-You can also pass data to the included files, by adding a object to the end of the `@@include`, like this:
+Fractal is a powerful component library & styleguide that fit the way you work.
+It includes a local server for rapid development and a powerful styleguide.
+Learn more here: https://fractal.build/
 
-```html
-@@include('components/breadcrumb.html', {
-  "parentPaths": [
-    {
-      "name": "Frontpage",
-      "link": "/"
-    },
-    {
-      "name": "Page",
-      "link": "page.html",
-    }
-  ],
-  "path": "Subpage"
-})
+
+## How to use Fractal
+
+Heres a short intro to using Fractal. For more information take a look at [Fractal guide](http://fractal.build/guide)
+
+#### Local server
+For starting a local server with watch and sync run:
+```sh
+fractal start -w -s
 ```
 
-In your included file, you can check for the data like this:
-```html
-<div class="breadcrumb">
-    <div class="container">
-        @@for (var i = 0; i < parentPaths.length; i++) {
-            <span class="breadcrumb__link"><a href="`+parentPaths[i].link+`">`+parentPaths[i].name+`</a></span>
-        }
-        <span class="breadcrumb__link breadcrumb__link--active">@@path</span>
-    </div>
-</div>
+#### Static site
+For building the static site run:
+
+```sh
+fractal build
 ```
 
-The for loop traverses through our array of parentPaths, while the path is put inside the active link.
+## SVG sprite sheet
 
-There are some limits of what you can do, but the developer of the gulp-file-include is constantly adding more functionality.
-For an updated list of possibilities, check here: https://github.com/coderhaoxin/gulp-file-include
-
-
-## How to use SVG sprite sheet
-
-Use SVG's from the SVG sprite generated by GULP like the following. The `#icon-lock` is the ID of the current SVG in the sprite. This is based on the name of the original SVG in the `/images/icons/`-directory.
+Use SVG's from the SVG sprite generated by GULP like the following. The `#icon-lock` is the ID of the current SVG in the sprite. This is based on the name of the original SVG in the `assets/images/icons/`-directory.
 So ´/images/icons/lock.svg` are referenced like this:
 
 ```html
@@ -146,16 +138,17 @@ So ´/images/icons/lock.svg` are referenced like this:
 </svg>
 ```
 
-## How to use the favicon generator
-By running the 'favicons' gulp task, icons will be generated automatically for all devices.
+## Favicon generator
+By running `gulp favicons`, favicons will be generated automatically for all devices. 
 
-1. Replace: `/favicons/favicons-master.png` with the site logo in `512x512` `png` format
+1. Replace: `assets/favicons/favicons-master.png` with the favicon in 512x512 pixels `png`-format
 2. Run `gulp favicons`
 3. Insert html from `dist/favicons/index.html` in your sites `<head>` section
 
 
 ## Post-CSS components
 As a grid we recommend to use [Flexboxgrid](http://flexboxgrid.com/) as it is almost a plug-n-play replacement for the Bootstrap grid.
+
 There's a few basic setups that you will always need for all your projects. Buttons, Grid, Form elements, Tables. (Well, maybe you won't use tables).
 There's also an example of a component and a view, just to show how the naming convention should be, as well as how you should both write and organize your CSS files.
 
@@ -171,7 +164,7 @@ There's some default styling for buttons as well, including two modifiers.
 ```
 
 ### Forms
-Default styling for form inputs. In regards to checkboxes and radiobuttons, refer to the `base.forms.less` file.
+Default styling for form inputs. In regards to checkboxes and radiobuttons, refer to the `base.forms` folder.
 ```html
 <input type="text" class="input" placeholder="Default input">
 ```
@@ -184,7 +177,7 @@ Default styling for form inputs. In regards to checkboxes and radiobuttons, refe
 ```
 
 ## Third party plugins
-Third party javascript plugins like `jquery` or `owl-carousel` is handled by *[NPM](https://www.npmjs.com/)*.
+Third party javascript plugins like `angular` or `owl-carousel` is handled by *[NPM](https://www.npmjs.com/)*.
 Install a new plugin by running `npm install <plugin> --save` or adding the plugin and version to the `package.json` under "dependencies".
 
 **NOTE**: The section called `devDependencies` is **reserved for the build tool only.**
@@ -229,6 +222,11 @@ bundles: [
   ]
 }
 ```
+
+## Contribution
+
+Looking to contribute something? **Here's how you can help.**
+Please take a moment to review our [contribution guidelines](https://github.com/Novicell/novicell-frontend/wiki/Contribution-guidelines) in order to make the contribution process easy and effective for everyone involved.
 
 ## License
 The Novicell Frontend is licensed under the MIT license. (http://opensource.org/licenses/MIT)

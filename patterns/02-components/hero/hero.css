@@ -1,0 +1,55 @@
+/**
+ * Component: Hero
+ */
+:root{
+    --hero-text-color: var(--color-white);
+    --hero-background-color: var(--color-black);
+    --hero-content-opacity: 70%;
+}
+
+.hero {
+    color: var(--hero-text-color);
+    padding-bottom: 60px;
+    padding-top: 60px;
+    position: relative;
+    background-size: cover;
+
+    @media (--viewport-md-min) {
+        height: 500px;
+        padding: 230px 0;
+    }
+
+    @media (--viewport-lg-min) {
+        height: 700px
+    }
+
+
+    &:before {
+        background-color: color(var(--hero-background-color) alpha(var(--hero-content-opacity)));
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    &__content {
+        position: relative;
+
+        @media (--viewport-md-min) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+
+    &__info {
+        margin-bottom: 30px;
+
+        @media (--viewport-sm-min) {
+            font-size: 21px;
+        }
+    }
+}

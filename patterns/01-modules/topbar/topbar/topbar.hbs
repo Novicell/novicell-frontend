@@ -1,0 +1,30 @@
+<div class="topbar">
+  {{#extend "@grid-container--site-width"}}
+    {{#content "grid-container-content"}}
+      {{#extend "@grid-row"}}
+        {{#content "grid-row-content"}}
+          {{#extend "@grid-column"}}
+            {{#content "grid-column-content"}}
+              <div class="topbar__inner">
+                <div class="topbar__logo">
+                  {{> @logo }}
+                </div>
+                <div class="topbar__navigation">
+                  <div class="topbar__navigation-secondary">
+                    More at {{> @link githubLink }}
+                  </div>
+                  <div class="topbar__navigation-primary">
+                    {{> @nav-main-list nav-main-list }}
+                    <div class="topbar__navigation-search">
+                      {{> @input-inverted--search search }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/content}}
+          {{/extend}}
+        {{/content}}
+      {{/extend}}
+    {{/content}}
+  {{/extend}}
+</div>

@@ -1,0 +1,18 @@
+<article class="icon-box{{ class }}">
+	<div class="icon-box__inner">
+		<div class="icon-box__content">
+            <div class="icon-box__icon">
+                {{#block "icon-box-icon"}}
+                    {{> @svg-icon--checkbox }}
+                {{/block}}
+            </div>
+			{{> @heading--column }}
+			{{#block "icon-box-content"}}
+				<p>{{ icon-box.content }}</p>
+			{{/block}}
+		</div>
+    {{#if link }}
+      {{> @link }}
+    {{/if}}
+	</div>
+</article>

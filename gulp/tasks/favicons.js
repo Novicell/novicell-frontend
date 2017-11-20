@@ -7,7 +7,7 @@ var favicons = require("gulp-favicons"),
 gutil = require("gulp-util");
 
 gulp.task("favicons", function () {
-return gulp.src("favicons/favicons-master.png").pipe(favicons({
+return gulp.src(config.assetPath + "favicons/favicons-master.png").pipe(favicons({
     appName: config.appName,
     appDescription: config.appDescription,
     background: config.appColor,

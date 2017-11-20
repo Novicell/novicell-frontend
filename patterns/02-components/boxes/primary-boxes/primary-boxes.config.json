@@ -1,0 +1,48 @@
+{
+  "title": "Primary Boxes",
+  "status": "prototype",
+  "context": {
+    "the-basics": {
+      "heading": {
+        "text": "The basics"
+      },
+      "box-image": {
+        "url": "/images/placeholder-images/sai-kiran-anagani-61187.jpg",
+        "content": "Get started using the pattern library."
+      },
+      "link": {
+        "url": "#",
+        "text": "Get started",
+        "title": "Get started"
+      }
+    },
+    "useful-stuff": {
+      "heading": {
+        "text": "Useful stuff"
+      },
+      "box-image": {
+        "url": "/images/placeholder-images/greg-rakozy-129733.jpg",
+        "content": "Get started using the pattern library."
+      },
+      "link": {
+        "url": "#",
+        "text": "Useful stuff",
+        "title": "Useful stuff"
+      }
+    },
+    "questions": {
+      "heading": {
+        "text": "Questions?"
+      },
+      "box-image": {
+        "url": "/images/placeholder-images/jonathan-simcoe-88013.jpg",
+        "content": "Get started using the pattern library."
+      },
+      "link": {
+        "url": "#",
+        "text": "I have a question",
+        "title": "I have a question"
+      }
+    }
+  }
+}

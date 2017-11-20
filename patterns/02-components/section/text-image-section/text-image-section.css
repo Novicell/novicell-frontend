@@ -1,0 +1,13 @@
+/*
+* Module: image text section
+*/
+
+:root{
+    --image-text-section-padding: 40px;
+    --image-text-background-color: var(--color-gray-light);
+}
+
+.text-image-section {
+    background-color: var(--image-text-background-color);
+    padding: var(--image-text-section-padding);
+}

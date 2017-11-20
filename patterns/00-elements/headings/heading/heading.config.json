@@ -1,0 +1,35 @@
+{
+	"title": "Header",
+	"status": "prototype",
+	"context": {
+		"heading": {
+			"text": "Header"
+		}
+	},
+	"variants": [
+		{
+			"name": "column",
+			"context": {
+				"heading": {
+					"text": "Column header"
+				}
+			}
+		},
+		{
+			"name": "hero",
+			"context": {
+				"heading": {
+					"text": "Hero header"
+				}
+			}
+		},
+		{
+			"name": "footer",
+			"context": {
+				"heading": {
+					"text": "Footer header"
+				}
+			}
+		}
+	]
+}

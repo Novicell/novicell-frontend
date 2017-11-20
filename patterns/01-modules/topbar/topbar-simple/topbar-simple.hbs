@@ -1,0 +1,25 @@
+<div class="topbar-simple">
+    {{#extend "@grid-container--site-width"}}
+        {{#content "grid-container-content"}}
+            {{#extend "@grid-row"}}
+                {{#content "grid-row-content"}}
+                    {{#extend "@grid-column"}}
+                        {{#content "grid-column-content"}}
+                            <div class="topbar-simple__inner">
+                                <div class="topbar-simple__logo">
+                                    {{> @logo }}
+                                </div>
+                                <div class="topbar-simple__navigation-primary">
+                                    {{> @nav-main-list nav-main-list }}
+                                    <div class="topbar-simple__navigation-search">
+                                        {{> @input-inverted--search search }}
+                                    </div>
+                                </div>
+                            </div>
+                        {{/content}}
+                    {{/extend}}
+                {{/content}}
+            {{/extend}}
+        {{/content}}
+    {{/extend}}
+</div>

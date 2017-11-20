@@ -1,0 +1,12 @@
+/*
+ * Helpers: Main
+ */
+
+:root{
+	--main-site-width: var(--site-width);
+}
+
+.main {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}

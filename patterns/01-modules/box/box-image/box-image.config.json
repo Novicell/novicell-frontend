@@ -1,0 +1,13 @@
+{
+	"title": "Box Image",
+	"status": "prototype",
+	"context": {
+		"heading": {
+			"text": "Box Image header"
+		},
+		"box-image": {
+            "url": "/images/placeholder-images/greg-rakozy-129733.jpg",
+            "content": "Box Image content."
+		}
+	}
+}

@@ -42,3 +42,8 @@ gulp.task('watch', function () {
         }
     }
 });
+
+// Setup 'gulp w' shorthand
+gulp.task('w', function () {
+    return gulp.start('watch');
+});

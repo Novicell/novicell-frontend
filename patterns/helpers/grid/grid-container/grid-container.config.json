@@ -1,0 +1,18 @@
+{
+    "title": "Grid Container",
+    "status": "prototype",
+    "context": {
+    },
+    "variants": [
+        {
+            "name": "full-width",
+            "context": {
+            }
+        },
+        {
+            "name": "site-width",
+            "context": {
+            }
+        }
+    ]
+}

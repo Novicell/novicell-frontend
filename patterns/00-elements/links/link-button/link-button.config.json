@@ -1,0 +1,23 @@
+{
+	"title": "Link Button",
+	"status": "prototype",
+	"context": {
+		"link-button": {
+			"url": "#",
+			"title": "Link Button title",
+			"text": "Link Button"
+		} 
+	},
+	"variants": [
+		{
+			"name": "Link ghost",
+			"context": {
+				"link-button": {
+					"url": "#",
+					"title": "Link Ghost Button title",
+					"text": "Link Ghost Button"
+				}
+			}
+		}
+	]
+}

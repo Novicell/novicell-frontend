@@ -1,0 +1,39 @@
+<footer role="contentinfo" class="footer">
+  {{#extend '@grid-container--site-width'}}
+    {{#content 'grid-container-content'}}
+            {{#extend "@grid-row--three-columns"}}
+        {{#content "content"}}
+          {{#extend "@grid-column"}}
+            {{#content "grid-column-content"}}
+              {{> @heading--footer columnHeader1}}
+              {{#extend '@rich-text-editor' }}
+                {{#content "rte-content"}}
+                  <p>Novicell Aarhus</p>
+                  Søren Nymarks Vej 6<br>
+                  8270 Højbjerg,<br>
+                  Denmark<br>
+                {{/content}}
+              {{/extend}}
+              {{ render '@social-media-collection' }}
+            {{/content}}
+          {{/extend}}
+          {{#extend "@grid-column"}}
+            {{#content "grid-column-content"}}
+              {{> @heading--footer columnHeader2}}
+              {{> @link-list links }}
+            {{/content}}
+          {{/extend}}
+          {{#extend "@grid-column"}}
+            {{#content "grid-column-content"}}
+              {{> @heading--footer columnHeader3}}
+              {{> @form-field-inverted input-name }}
+              {{> @form-field-inverted--email input-email }}
+              {{> @form-field-inverted--textarea input-textarea }}
+              {{> @form-field--button submitButton }}
+            {{/content}}
+          {{/extend}}
+        {{/content}}
+      {{/extend}}
+    {{/content}}
+  {{/extend}}
+</footer>

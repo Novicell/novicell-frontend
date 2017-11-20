@@ -9,12 +9,15 @@ const cssnext  = require('postcss-cssnext');
 const nested  = require('postcss-nested');
 const postcssImport = require('postcss-partial-import');
 const cssvariables = require('postcss-css-variables');
+const stylelint = require("stylelint");
+const reporter = require("postcss-reporter");
 
-var postCssPlugins = [
-    postcssImport({ root: "postcss" }),
+const postCssPlugins = [
+    stylelint(),
+    postcssImport(),
     cssvariables(),
     nested(),
-    cssnext({ browsers: [">= 5% in DK", "ie 11"] }),   
+    cssnext({ browsers: [">= 5% in DK", "ie 11"] }),
     cssnano({
         autoprefixer: false,
         discardComments: {removeAll: true},
@@ -22,11 +25,12 @@ var postCssPlugins = [
         colormin: false,
         zindex: false,
         discardUnused: {fontFace: false}
-    })
+    }),
+    reporter()
 ];
 
 gulp.task('styles', function () {
-    var streams = config.bundles.filter(function (b) {
+    const streams = config.bundles.filter(function (b) {
         return b.styles != null;
     }).map(function (b) {
         console.log(b.name + ' post-CSS styles are compiling');

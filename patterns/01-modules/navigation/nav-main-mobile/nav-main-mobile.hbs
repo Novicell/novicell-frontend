@@ -1,0 +1,11 @@
+<nav class="nav-main-mobile" id="nav-main-mobile" role="navigation" vocab="http://schema.org/" typeof="SiteNavigationElement">
+	{{> '@nav-trigger' trigger-for="nav-main-mobile__check" }}
+	<input type="radio" class="nav-main-mobile__check" id="nav-main-mobile__check" name="nav-main-mobile__check" />
+	<input type="radio" class="nav-main-mobile__check nav-main-mobile__check--uncheck" id="nav-main-mobile__uncheck" name="nav-main-mobile__check" />
+	<div class="nav-main-mobile__offcanvas">
+		<label for="nav-main-mobile__uncheck" id="nav-main-mobile__close-offcanvas" class="nav-main-mobile__close-offcanvas">{{nav-close-text}}</label>
+        <div class="nav-main-mobile__link-list">
+            {{> '@link-list' }}
+        </div>
+	</div>
+</nav>

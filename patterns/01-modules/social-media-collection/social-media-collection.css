@@ -1,0 +1,21 @@
+/*
+ * Modul: Social Media Collection
+ */
+
+
+.social-media {
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    &__item {
+        float: left;
+    }
+  
+    &__item + &__item {
+        margin-left: 10px;
+    }
+}  

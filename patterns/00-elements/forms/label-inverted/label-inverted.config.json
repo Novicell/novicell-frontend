@@ -1,0 +1,10 @@
+{
+  "title": "Label",
+  "status": "prototype",
+  "context": {
+    "label": {
+      "text": "Label",
+      "input-id": "default-id"
+    } 
+  }
+} 

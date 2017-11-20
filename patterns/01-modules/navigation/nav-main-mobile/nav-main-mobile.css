@@ -1,0 +1,85 @@
+:root{
+    --nav-main-mobile-project-ease:      var(--project-ease, ease-in);
+    --nav-main-mobile-background-color:  var(--color-white, #fff);
+    --nav-main-mobile-close:             var(--color-gray-dark, #4b4b4b);
+    --nav-main-mobile-margin:            20px;
+    --nav-main-mobile-padding-left:      20px;
+    --nav-main-mobile-padding-right:     20px;
+    --nav-main-mobile-padding-top:       35px;
+    --nav-main-mobile-left:              20px;
+    --nav-main-mobile-top:               35px;
+}
+
+.nav-main-mobile {
+    flex-basis: 1px;
+    flex: 1;
+    left: var(--nav-main-mobile-left);
+    top: var(--nav-main-mobile-top);
+    position: absolute;
+
+    @media(--viewport-md-min) {
+        display: none;
+    }
+
+    &__check {
+        position: fixed;
+        left: -333px;
+        &:checked {
+            & ~ .nav-main-mobile__offcanvas {
+                left: 0;
+            }
+        }
+        &--uncheck {
+            &:checked {
+                & ~ .nav-main-mobile__offcanvas {
+                    left: -100vw;
+                }
+            }
+        }
+    }
+    &__offcanvas {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 90vw;
+        height: 100vh;
+        background: var(--nav-main-mobile-background-color);
+        z-index: 1;
+        overflow: auto;
+        transition: left .2s var(--nav-main-mobile-project-ease);
+        padding-left: var(--nav-main-mobile-padding-left);
+        padding-right: var(--nav-main-mobile-padding-right);
+        padding-top: var(--nav-main-mobile-padding-top);
+    }
+
+    &__link-list {
+        margin-top: var(--nav-main-mobile-margin);
+    }
+
+    &__close-offcanvas {
+        color: color(var(--nav-main-mobile-close));
+        position: relative;
+        padding-left: 27px;
+        line-height: 1;
+        display: table;
+
+        &:before, &:after {
+            content: "";
+            width: 2px;
+            height: 17px;
+            background: color(var(--nav-main-mobile-close));
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 6px;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+}

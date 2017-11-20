@@ -1,9 +1,10 @@
-node_modules/
-dist/
-vendor/
+node_modules
+dist
+docs
 
 *.log
-.vscode/
+.idea
+.vscode
 web.config
 
 npm-debug.log.*

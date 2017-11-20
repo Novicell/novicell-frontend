@@ -1,0 +1,34 @@
+{
+	"title": "Link",
+	"status": "prototype",
+	"context": {
+		"link": {
+			"url": "url",
+			"text": "Link text",
+			"target":"",
+			"title": "Link title"
+		}
+	},
+	"variants": [
+		{
+			"name": "Phone",
+			"context": {
+				"link": {
+					"url": "72520000",
+					"title": "phone number",
+					"text": "7252 0000"
+				}
+			}
+		},
+		{
+			"name": "Email",
+			"context": {
+				"link": {
+					"url": "mail@mail.dk",
+					"title": "e-mail",
+					"text": "mail@mail.dk"
+				} 
+			}
+		}
+	]
+}

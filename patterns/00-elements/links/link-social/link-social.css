@@ -1,0 +1,63 @@
+/*
+ * Element: Link Social
+ */
+
+/*Setting document variables*/
+:root{
+    --social-background-color: var(--color-gray);
+    --icon-color: var(--color-white);
+    --facebook-background-color: var(--color-facebook);
+    --twitter-background-color: var(--color-twitter);
+    --google-plus-background-color: var(--color-google-plus);
+}
+
+
+.social-link {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: var(--social-background-color);
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+        background: shade(var(--social-background-color), 10%);
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        fill: var(--icon-color);
+    }
+
+    &--facebook {
+        background-color: var(--facebook-background-color);
+
+        &:hover,
+        &:focus {
+            background: shade(var(--facebook-background-color), 10%);
+        }
+    }
+
+    &--twitter {
+        background-color: var(--twitter-background-color);
+
+        &:hover,
+        &:focus {
+            background: shade(var(--twitter-background-color), 10%);
+        }
+    }
+
+    &--google-plus {
+        background-color: var(--google-plus-background-color);
+
+        &:hover,
+        &:focus {
+            background: shade(var(--google-plus-background-color), 10%);
+        }
+    }
+}

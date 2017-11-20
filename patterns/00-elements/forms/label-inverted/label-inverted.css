@@ -1,0 +1,20 @@
+/*
+* Element: Label
+*/
+
+/*Setting document variables*/
+:root{
+	--label-text-color: var(--color-gray-light);
+	--label-font-family: var(--base-font-family);
+}
+
+.label-inverted {
+    font-family: var(--label-font-family);
+    color: var(--label-text-color);
+    display: inline-block;
+    max-width: 100%; /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)*/
+    margin-bottom: 5px;
+    font-weight: bold;
+
+    &--block {display: block;}
+}
