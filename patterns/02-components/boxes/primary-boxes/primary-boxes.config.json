@@ -7,7 +7,7 @@
         "text": "The basics"
       },
       "box-image": {
-        "url": "/images/placeholder-images/sai-kiran-anagani-61187.jpg",
+        "url": "/dist/images/placeholder-images/sai-kiran-anagani-61187.jpg",
         "content": "Get started using the pattern library."
       },
       "link": {
@@ -21,7 +21,7 @@
         "text": "Useful stuff"
       },
       "box-image": {
-        "url": "/images/placeholder-images/greg-rakozy-129733.jpg",
+        "url": "/dist/images/placeholder-images/greg-rakozy-129733.jpg",
         "content": "Get started using the pattern library."
       },
       "link": {
@@ -35,7 +35,7 @@
         "text": "Questions?"
       },
       "box-image": {
-        "url": "/images/placeholder-images/jonathan-simcoe-88013.jpg",
+        "url": "/dist/images/placeholder-images/jonathan-simcoe-88013.jpg",
         "content": "Get started using the pattern library."
       },
       "link": {
