@@ -13,14 +13,14 @@ const layouts = require('handlebars-layouts');
 // Novicell theme
 const novicellTheme = require('@frctl/mandelbrot')({
     favicon: '/fractal/favicon.ico',
-    nav: ['docs', 'components'],
     styles: [
         'default',
-        "/dist/css/master.min.css"
+        "/fractal/novicell-fractal-styles.css"
     ]
 });
-novicellTheme.addLoadPath(__dirname + '/fractal');
-novicellTheme.addStatic(__dirname + "/fractal/novicell-fractal-styles.css"); 
+
+novicellTheme.addStatic(__dirname, 'fractal'); 
+novicellTheme.addStatic(path.join(__dirname, '../dist'), 'dist'); 
 
 // Project config
 fractal.set('project.title', config.appName);
@@ -35,7 +35,6 @@ fractal.docs.set('path', config.projectPath + 'documentation');
 
 // Web UI config
 fractal.web.theme(novicellTheme);
-fractal.web.set('static.mount', config.distPath);
 fractal.web.set('builder.dest', config.projectPath + 'docs');
 
 // Export config
