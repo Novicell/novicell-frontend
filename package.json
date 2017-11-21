@@ -47,7 +47,6 @@
     "cssnano": "3.10.0",
     "del": "^3.0.0",
     "es6-promise": "^4.0.5",
-    "favicons": "4.8.6",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
@@ -87,8 +86,8 @@
     "yargs": "~9.0.1"
   },
   "dependencies": {
-    "favicons": "4.8.6",
     "flexboxgrid": "6.3.1",
+    "gulp-favicons": "2.2.7",
     "svg4everybody": "2.1.9",
     "validate": "github:cferdinandi/validate"
   }

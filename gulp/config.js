@@ -11,7 +11,6 @@ module.exports = (function () {
     var vendorPath = projectPath + "node_modules/"; // path for vendor scripts
     var distPath = webPath + "dist/"; // path for production files
     var cleanPaths = [distPath]; // files/folders to be removed with "clean"-task
-    var faviconPath = "/dist/"; // productions path for favicons (should be relative to the hostname)
 
 
     /*
@@ -102,7 +101,7 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy"
+            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy", "fractal"
         ],
         buildTasks: [
             "styles", "scripts", "images", "icons", "copy"
@@ -113,7 +112,8 @@ module.exports = (function () {
         vendorPath: vendorPath,
         cleanPaths: cleanPaths,
         distPath: distPath,
-        faviconPath: faviconPath,
+        assetPath: assetPath,
+        webPath: webPath,
         
         // ------------- Return Variables -------------
         appName: appName,

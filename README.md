@@ -6,10 +6,10 @@ When setup, it also helps you optimize images, combine SVGs to a sprite, minifyi
 ### Table of content
 * [Quick start](#quick-start)
 * [Installation](#installation)
-* [Using with the setup](#using-with-the-setup)
 * [What is GULP](#what-is-gulp)
 * [How to use GULP](#how-to-use-gulp)
-* [What is Fractal](#what-is-fractal)
+* [What is Fractal](#how-to-use-fractal)
+* [How to use Fractal](#what-is-fractal)
 * [SVG sprite sheet](#svg-sprite-sheet)
 * [Favicon generator](#favicon-generator)
 * [Post-CSS components](#post-css-components)
@@ -31,31 +31,11 @@ Browse to your project folder and clone the repo `git clone https://github.com/n
   To check if node is working, go to Gitbash / Terminal and type `node -v`
   If you get a version number, you'r good to go :+1:
   
-  If you NEVER before ran novicell-frontend setup, you need to install Gulp and Fractal globally on your machine.
+  If you NEVER before ran novicell-frontend setup, you need to install Gulp globally on your machine.
 
 ```sh
-npm install -g gulp @frctl/fractal
+npm install -g gulp
 ```
-
-##  Using with the setup
-
-In short, running both **Gulp** and **Fractal** you need to open two terminals.
-The first terminal needs to run:
-```sh
-gulp watch
-```
-
-and the second terminal
-```sh
-fractal start -w -s
-```
-
-### The details:
-This setup consists of two seperate tools: **Gulp** and **Fractal**.
-
-[Gulp](#what-is-gulp) is the build tool that minifies all your assets.
-
-[Fractal](#what-is-fractal) is the tool that can help you speed up frontend development, by using a pattern library and makes a style guide for you.
 
 
 ## What is GULP
