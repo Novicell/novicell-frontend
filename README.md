@@ -97,14 +97,14 @@ Heres a short intro to using Fractal. For more information take a look at [Fract
 #### Local server
 For starting a local server with watch and sync run:
 ```sh
-fractal start -w -s
+gulp fractal
 ```
 
 #### Static site
 For building the static site run:
 
 ```sh
-fractal build
+gulp fractal:build
 ```
 
 ## SVG sprite sheet
