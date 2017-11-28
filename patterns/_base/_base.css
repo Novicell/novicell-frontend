@@ -38,6 +38,7 @@ body {
 a {
     color: var(--color-link);
     text-decoration: underline;
+    text-decoration-skip: ink;
 
     &:hover,
     &:focus { color: shade(var(--color-link), 10%); }
