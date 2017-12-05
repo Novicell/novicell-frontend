@@ -14,13 +14,15 @@ const logger = fractal.cli.console; // keep a reference to the fractal CLI conso
  * This task will also log any errors to the console.
  */
 
-gulp.task('fractal', function(){
+gulp.task('fractal', ['watch'], function(){
+    // Fractal server options
     const server = fractal.web.server({
         sync: true
     });
     server.on('error', err => logger.error(err.message));
     return server.start().then(() => {
-        logger.success(`Fractal server is now running at ${server.url}`);
+        logger.success(`🏡 Local Fractal server is now running at ${server.url}`);
+        logger.success(`🤖 Network URL (for testing): ${server.urls.sync.external}`)
     });
 });
 
