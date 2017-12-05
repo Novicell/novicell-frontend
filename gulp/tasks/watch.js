@@ -10,41 +10,40 @@ gulp.task('livereload', function () {
         .on('change', plugins.livereload.changed);
 });
 
-gulp.task('watcher', function () {
+gulp.task('watch', function () {
     gulp.watch(config.watchScripts, ["scripts:watch"]);
     gulp.watch(config.watchStyles, ["styles"]);
     gulp.watch(config.watchImages, ["images"]);
     gulp.watch(config.watchIcons, ["icons"]);
     gulp.watch(config.watchFonts, ["copy"]);
     gulp.watch(config.watchHtml, ["html"]);
-    gulp.start("fractal");
 
     return;
 });
 
-gulp.task('watch', function () {
-    var watchNode;
-    var livereloadNode;
-    var isWin = /^win/.test(process.platform);
-    var gulpSpawnProcessName = isWin ? 'gulp.cmd' : 'gulp';
+// gulp.task('watcher', function () {
+//     var watchNode;
+//     var livereloadNode;
+//     var isWin = /^win/.test(process.platform);
+//     var gulpSpawnProcessName = isWin ? 'gulp.cmd' : 'gulp';
 
-    gulp.watch(config.projectPath + 'gulp/config.js', spawnChildren);
-    spawnChildren();
+//     gulp.watch(config.projectPath + 'gulp/config.js', spawnChildren);
+//     // spawnChildren();
 
-    function spawnChildren() {
-        if (watchNode) { watchNode.kill(); }
-        watchNode = spawn(gulpSpawnProcessName, ['watcher'], { stdio: 'inherit' });
+//     function spawnChildren() {
+//         if (watchNode) { watchNode.kill(); }
+//         watchNode = spawn(gulpSpawnProcessName, ['watcher'], { stdio: 'inherit' });
 
-        if (!livereloadNode) {
-            livereloadNode = spawn(gulpSpawnProcessName, ['livereload'], { stdio: 'inherit' });
-        } else {
-            gulp.watch(config.livereloadPaths)
-                .on('change', plugins.livereload.changed);
-        }
-    }
-});
+//         if (!livereloadNode) {
+//             livereloadNode = spawn(gulpSpawnProcessName, ['livereload'], { stdio: 'inherit' });
+//         } else {
+//             gulp.watch(config.livereloadPaths)
+//                 .on('change', plugins.livereload.changed);
+//         }
+//     }
+// });
 
 // Setup 'gulp w' shorthand
-gulp.task('w', function () {
+gulp.task('w', ['default'], function () {
     return gulp.start('watch');
 });
