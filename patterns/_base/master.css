@@ -7,46 +7,46 @@
 
 /* Elements
 ********************/
-@import '../00-elements/buttons/button/button.css';
-@import '../00-elements/headings/heading/heading.css';
-@import '../00-elements/headings/heading-page/heading-page.css';
-@import '../00-elements/forms/input/input.css';
-@import '../00-elements/forms/input-inverted/input-inverted.css';
-@import '../00-elements/forms/label/label.css';
-@import '../00-elements/forms/label-inverted/label-inverted.css';
-@import '../00-elements/forms/textarea/textarea.css';
-@import '../00-elements/forms/textarea-inverted/textarea-inverted.css';
-@import '../00-elements/image/image.css';
-@import '../00-elements/links/link/link.css';
-@import '../00-elements/links/link-button/link-button.css';
-@import '../00-elements/links/link-social/link-social.css';
-@import '../00-elements/logo/logo.css';
-@import '../00-elements/paragraph/paragraph.css';
+@import '../01-atoms/buttons/button/button.css';
+@import '../01-atoms/headings/heading/heading.css';
+@import '../01-atoms/headings/heading-page/heading-page.css';
+@import '../01-atoms/forms/input/input.css';
+@import '../01-atoms/forms/input-inverted/input-inverted.css';
+@import '../01-atoms/forms/label/label.css';
+@import '../01-atoms/forms/label-inverted/label-inverted.css';
+@import '../01-atoms/forms/textarea/textarea.css';
+@import '../01-atoms/forms/textarea-inverted/textarea-inverted.css';
+@import '../01-atoms/image/image.css';
+@import '../01-atoms/links/link/link.css';
+@import '../01-atoms/links/link-button/link-button.css';
+@import '../01-atoms/links/link-social/link-social.css';
+@import '../01-atoms/logo/logo.css';
+@import '../01-atoms/paragraph/paragraph.css';
 
 
 /* Modules
 ********************/
-@import '../01-modules/box/box/box.css';
-@import '../01-modules/box/box-image/box-image.css';
-@import '../01-modules/box/icon-box/icon-box.css';
-@import '../01-modules/box/text-box/text-box.css';
-@import '../01-modules/form-field/form-field.css';
-@import '../01-modules/form-field-inverted/form-field-inverted.css';
-@import '../01-modules/link-list/link-list.css';
-@import '../01-modules/navigation/nav-main-list/nav-main-list.css';
-@import '../01-modules/navigation/nav-main-mobile/nav-main-mobile.css';
-@import '../01-modules/navigation/nav-trigger/nav-trigger.css';
-@import '../01-modules/social-media-collection/social-media-collection.css';
-@import '../01-modules/topbar/topbar/topbar.css';
-@import '../01-modules/topbar/topbar-simple/topbar-simple.css';
+@import '../02-molecules/box/box/box.css';
+@import '../02-molecules/box/box-image/box-image.css';
+@import '../02-molecules/box/icon-box/icon-box.css';
+@import '../02-molecules/box/text-box/text-box.css';
+@import '../02-molecules/form-field/form-field.css';
+@import '../02-molecules/form-field-inverted/form-field-inverted.css';
+@import '../02-molecules/link-list/link-list.css';
+@import '../02-molecules/navigation/nav-main-list/nav-main-list.css';
+@import '../02-molecules/navigation/nav-main-mobile/nav-main-mobile.css';
+@import '../02-molecules/navigation/nav-trigger/nav-trigger.css';
+@import '../02-molecules/social-media-collection/social-media-collection.css';
+@import '../02-molecules/topbar/topbar/topbar.css';
+@import '../02-molecules/topbar/topbar-simple/topbar-simple.css';
 
 
 /* Components
 ********************/
-@import '../02-components/footer/footer.css';
-@import '../02-components/hero/hero.css';
-@import '../02-components/section/image-text-section/image-text-section.css';
-@import '../02-components/section/text-image-section/text-image-section.css';
+@import '../03-organisms/footer/footer.css';
+@import '../03-organisms/hero/hero.css';
+@import '../03-organisms/section/image-text-section/image-text-section.css';
+@import '../03-organisms/section/text-image-section/text-image-section.css';
 
 
 /* Helpers
