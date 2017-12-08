@@ -1,19 +1,19 @@
-"use strict";
+// "use strict";
 
-//Register Service Worker
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-            // Registration was successful
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+// //Register Service Worker
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', function() {
+//         navigator.serviceWorker.register('/sw.js').then(function(registration) {
+//             // Registration was successful
+//             console.log('ServiceWorker registration successful with scope: ', registration.scope);
             
-            var swRegistration = registration;
+//             var swRegistration = registration;
 
-            //initializeUI();
+//             //initializeUI();
 
-        }, function(err) {
-            // registration failed :(
-            console.log('ServiceWorker registration failed: ', err);
-        });
-    });
-}
+//         }, function(err) {
+//             // registration failed :(
+//             console.log('ServiceWorker registration failed: ', err);
+//         });
+//     });
+// }

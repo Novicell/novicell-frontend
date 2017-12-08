@@ -43,6 +43,7 @@
   "devDependencies": {
     "@frctl/fractal": "1.1.7",
     "@frctl/handlebars": "1.1.4",
+    "@frctl/mandelbrot": "1.2.0",
     "check-files-exist": "^1.0.1",
     "cssnano": "3.10.0",
     "del": "^3.0.0",
@@ -89,6 +90,7 @@
     "flexboxgrid": "6.3.1",
     "gulp-favicons": "2.2.7",
     "svg4everybody": "2.1.9",
-    "validate": "github:cferdinandi/validate"
+    "validate": "github:cferdinandi/validate",
+    "novicell-lazyload": "1.0.2"
   }
 }

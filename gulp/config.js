@@ -28,8 +28,10 @@ module.exports = (function () {
                 ignorePlugins: ['jscs', 'jshint', 'watch'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
                     vendorPath + "svg4everybody/dist/svg4everybody.js",
-                    vendorPath + "validate/dist/js/validate.js"
-                    
+                    vendorPath + "validate/dist/js/validate.js",
+                    vendorPath + "novicell-lazyload/js/novicell.dynamic-image.js",
+                    vendorPath + "novicell-lazyload/js/lazy-images.js",
+                    vendorPath + "lazysizes/lazysizes.min.js"
                 ]
             },
             {
