@@ -22,6 +22,34 @@
           "text": "Large Button"
         }
       }
+    },
+    {
+      "name": "link",
+      "context": {
+        "button": {
+          "text": "Link Button",
+          "link-url":"http://www.novicell.dk",
+          "link-title":"Novicell"
+        }
+      }
+    },
+    {
+      "name": "mailto-link",
+      "context": {
+        "button": {
+          "text": "Mailto Link Button",
+          "link-url":"test@novicell.dk",
+          "link-title":"Novicell"
+        }
+      }
+    },
+    {
+      "name": "submit",
+      "context": {
+        "button": {
+          "text": "Submit Button"
+        }
+      }
     }
   ]
 }

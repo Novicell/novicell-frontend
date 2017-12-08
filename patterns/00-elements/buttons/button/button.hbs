@@ -1,1 +1,3 @@
-<button class="button {{ class }}">{{ button.text }}</button>
+<{{#if button.link-url}}a href="{{ url-type }}{{ button.link-url }}" title="{{ button.link-title }}" property="url"{{/if}}{{#unless button.link-url}}button type="{{#unless buttonType}}button{{/unless}}{{#if buttonType}}{{buttonType}}{{/if}}"{{/unless}} {{#if button.linkHasTargetBlank}}target="_blank" rel="noopener" {{/if}}class="button{{#if modifier}} {{ modifier }}{{/if}}">
+    {{ button.text }}
+</{{#if button.link-url}}a{{/if}}{{#unless button.link-url}}button{{/unless}}>
