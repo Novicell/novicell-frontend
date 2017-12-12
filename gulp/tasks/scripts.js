@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const config = require('../config.js');
 const mergeStream = require('merge-stream');
 const notifier = require('node-notifier');
+const babel = require('gulp-babel');
 const checkFilesExist = require('check-files-exist');
 const plugins = require('gulp-load-plugins')();
 
@@ -40,6 +41,7 @@ var compileScripts = function(isWatchTask){
 
         var useJshint = ignores.indexOf('jshint') == -1;
         var useJscs = ignores.indexOf('jscs') == -1;
+        var useBabel = ignores.indexOf('babel') == -1;
         var useSourcemaps = ignores.indexOf('sourcemaps') == -1;
         var useMinify = ignores.indexOf('minify') == -1;
 
@@ -58,11 +60,12 @@ var compileScripts = function(isWatchTask){
         return gulp.src(b.scripts)
         .pipe(plugins.resolveDependencies({ pattern: /\* @require [\s-]*(.*?\.js)/g }))
         .pipe(plugins.plumber(config.errorHandler('scripts')))
+        .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init()))
         .pipe(plugins.if(useJshint, plugins.jshint()))
         .pipe(plugins.if(useJshint, plugins.jshint.reporter('jshint-stylish')))
         .pipe(plugins.if(useJscs, plugins.jscs()))
         .pipe(plugins.if(useJscs, plugins.jscsStylish()))
-        .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.init()))
+        .pipe(plugins.if(useBabel, babel({ presets: ['env'] })))
         .pipe(plugins.concat(b.name + '.min.js'))
         .pipe(plugins.if(useMinify, plugins.uglify()))
         .pipe(plugins.if(useSourcemaps, plugins.sourcemaps.write('.')))
