@@ -2,6 +2,9 @@
     "title": "paragraph",
     "status": "prototype",
     "context": {
+        "paragraph": {
+            "text": "Paragraph text"
+        }
     },
     "variants": [
         {
