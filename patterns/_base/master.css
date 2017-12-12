@@ -12,11 +12,8 @@
 @import '../01-atoms/headings/heading/heading.css';
 @import '../01-atoms/headings/heading-page/heading-page.css';
 @import '../01-atoms/forms/input/input.css';
-@import '../01-atoms/forms/input-inverted/input-inverted.css';
 @import '../01-atoms/forms/label/label.css';
-@import '../01-atoms/forms/label-inverted/label-inverted.css';
 @import '../01-atoms/forms/textarea/textarea.css';
-@import '../01-atoms/forms/textarea-inverted/textarea-inverted.css';
 @import '../01-atoms/image/image.css';
 @import '../01-atoms/links/link/link.css';
 @import '../01-atoms/links/link-button/link-button.css';
@@ -32,7 +29,6 @@
 @import '../02-molecules/box/icon-box/icon-box.css';
 @import '../02-molecules/box/text-box/text-box.css';
 @import '../02-molecules/form-field/form-field.css';
-@import '../02-molecules/form-field-inverted/form-field-inverted.css';
 @import '../02-molecules/link-list/link-list.css';
 @import '../02-molecules/navigation/nav-main-list/nav-main-list.css';
 @import '../02-molecules/navigation/nav-main-mobile/nav-main-mobile.css';
