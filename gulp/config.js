@@ -25,7 +25,7 @@ module.exports = (function () {
         bundles: [
             {
                 name: 'vendor',
-                ignorePlugins: ['jscs', 'jshint', 'watch'], // add 'minify', to ignore minifaction on a bundle
+                ignorePlugins: ['jscs', 'jshint', 'watch', 'babel'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
                     vendorPath + "svg4everybody/dist/svg4everybody.js",
                     vendorPath + "validate/dist/js/validate.js",
