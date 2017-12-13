@@ -1,0 +1,19 @@
+{
+	"title": "form field radio",
+	"status": "prototype",
+	"context": {
+		"label": {
+			"text": "Label",
+			"input-id": "default-id"
+		},
+		"paragraph": {
+			"text": "Helptext"
+		},
+		"input": {
+			"type": "radio",
+			"name": "default-input",
+			"id": "default-id"
+		}	
+	}
+}
+  

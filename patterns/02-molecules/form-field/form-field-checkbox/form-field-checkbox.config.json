@@ -1,0 +1,19 @@
+{
+	"title": "form field checkbox",
+	"status": "prototype",
+	"context": {
+		"label": {
+			"text": "Label for checkbox",
+			"input-id": "default-id"
+		},
+		"paragraph": {
+			"text": "Helptext"
+		},
+		"input": {
+			"type": "checkbox",
+			"name": "default-input",
+			"id": "default-id"
+		}	
+	}
+}
+  

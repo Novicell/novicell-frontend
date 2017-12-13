@@ -1,6 +1,7 @@
 <div class="form-field {{ class }}">
     {{> @label class="form-field__label" }}
     {{#block "content"}}
-        {{> @input--text }}
+        {{> @input--text class="form-field__input" }}
     {{/block}}
+    {{> @paragraph--small class="form-field____small" }}
 </div>

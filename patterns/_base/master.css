@@ -28,7 +28,9 @@
 @import '../02-molecules/box/box-image/box-image.css';
 @import '../02-molecules/box/icon-box/icon-box.css';
 @import '../02-molecules/box/text-box/text-box.css';
-@import '../02-molecules/form-field/form-field.css';
+@import '../02-molecules/form-field/form-field/form-field.css';
+@import '../02-molecules/form-field/form-field-checkbox/form-field-checkbox.css';
+@import '../02-molecules/form-field/form-field-radio/form-field-radio.css';
 @import '../02-molecules/link-list/link-list.css';
 @import '../02-molecules/navigation/nav-main-list/nav-main-list.css';
 @import '../02-molecules/navigation/nav-main-mobile/nav-main-mobile.css';

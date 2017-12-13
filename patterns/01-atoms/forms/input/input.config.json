@@ -42,6 +42,26 @@
 					"placeholder": "Inset password"
 				}
 			}
+		},
+		{
+			"name": "checkbox",
+			"context": {
+				"input": {
+					"type": "checkbox",
+					"name": "checkbox-input",
+					"id": "checkbox-id"
+				}
+			}
+		},
+		{
+			"name": "radio",
+			"context": {
+				"input": {
+					"type": "radio",
+					"name": "radio-input",
+					"id": "radio-id"
+				}
+			}
 		}
 	]
 } 

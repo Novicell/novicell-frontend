@@ -6,6 +6,9 @@
 			"text": "Label",
 			"input-id": "default-id"
 		},
+		"paragraph": {
+			"text": "Helptext"
+		},
 		"input": {
 			"type": "text",
 			"name": "defaul-input",
