@@ -1,0 +1,12 @@
+/*
+ * Component: Footer
+ */
+:root{
+	--footer-background-color: var(--color-secondary);
+}
+.footer {
+    background-color: var(--footer-background-color);
+    color: var(--color-white);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

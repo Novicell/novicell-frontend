@@ -1,7 +1,9 @@
 <div class="form-field {{ class }}">
-    {{> @label class="form-field__label" }}
+    {{> @label class="form-field__label" required=required}}
     {{#block "content"}}
         {{> @input--text class="form-field__input" }}
     {{/block}}
-    {{> @paragraph--small class="form-field____small" }}
+    {{#if paragraph }}
+    {{> @paragraph--small class="form-field__small" }}
+    {{/if}}
 </div>

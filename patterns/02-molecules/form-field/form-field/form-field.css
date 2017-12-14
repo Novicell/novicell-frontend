@@ -1,4 +1,5 @@
-.form-field + .form-field {
+.form-field + .form-field,
+.form-field + button {
     margin-top: 20px;
 }
 .form-field {

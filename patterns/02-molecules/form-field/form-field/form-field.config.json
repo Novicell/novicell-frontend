@@ -4,7 +4,7 @@
 	"context": {
 		"label": {
 			"text": "Label",
-			"input-id": "default-id"
+			"inputId": "default-id"
 		},
 		"paragraph": {
 			"text": "Helptext"
@@ -14,7 +14,8 @@
 			"name": "defaul-input",
 			"id": "default-id",
 			"placeholder": "Default"
-		}	
+		},
+		"required": false	
 	},
 	"variants": [
 		{
@@ -22,7 +23,7 @@
 			"context": {
 				"label": {
 					"text": "Email Label",
-					"input-id": "email-id"
+					"inputId": "email-id"
 				},	
 				"input": {
 					"type": "email",
@@ -37,7 +38,7 @@
 			"context": {
 				"label": {
 					"text": "Password Label",
-					"input-id": "password-id"
+					"inputId": "password-id"
 				},
 				"input": {
 					"type": "password",
@@ -52,7 +53,7 @@
 			"context": {
 				"label": {
 					"text": "Search Label",
-					"input-id": "search-id"
+					"inputId": "search-id"
 				},
 				"input": {
 					"type": "search",
@@ -67,7 +68,7 @@
 			"context": {
 				"label": {
 					"text": "Textarea Label",
-					"input-id": "textarea-id"
+					"inputId": "textarea-id"
 				},
 				"textarea": {
 					"name": "textarea",

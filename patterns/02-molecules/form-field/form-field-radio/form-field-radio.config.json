@@ -4,7 +4,7 @@
 	"context": {
 		"label": {
 			"text": "Label",
-			"input-id": "default-id"
+			"inputId": "default-id"
 		},
 		"paragraph": {
 			"text": "Helptext"

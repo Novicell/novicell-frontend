@@ -4,7 +4,8 @@
   "context": {
     "label": {
       "text": "Label",
-      "input-id": "default-id"
-    } 
+      "inputId": "default-id"
+    },
+    "required": false
   }
 } 

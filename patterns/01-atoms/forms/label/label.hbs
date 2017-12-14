@@ -1,1 +1,6 @@
-<label class="label {{ modifier }} {{ class }}" for="{{ label.input-id }}">{{ label.text }}</label>
+<label class="label {{ modifier }} {{ class }}" for="{{ label.inputId }}">
+    {{ label.text }}
+    {{#if required }}
+    *
+    {{/if}}
+</label>

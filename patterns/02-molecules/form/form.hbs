@@ -1,0 +1,16 @@
+<form role="contentinfo" class="form" novalidate data-validate>
+{{#extend "@grid-row"}}
+  {{#content "content"}}
+    {{#extend "@grid-column"}}
+      {{#content "grid-column-content"}}
+        {{> @heading title }}
+        {{#each fields}}
+          {{> @form-field}}
+        {{/each}}
+        {{> @button--submit submit }}
+      {{/content}}
+    {{/extend}}
+  {{/content}}
+{{/extend}}
+
+</form>
