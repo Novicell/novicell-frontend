@@ -1,16 +1,37 @@
 <form role="contentinfo" class="form" novalidate data-validate>
-{{#extend "@grid-row"}}
+{{#embed "@grid-row"}}
   {{#content "content"}}
-    {{#extend "@grid-column"}}
+    {{#embed "@grid-column"}}
       {{#content "grid-column-content"}}
         {{> @heading title }}
-        {{#each fields}}
-          {{> @form-field}}
-        {{/each}}
+      {{/content}}
+    {{/embed}}
+  {{/content}}
+{{/embed}}
+{{#embed "@grid-row--two-columns"}}
+  {{#content "content"}}
+    {{#embed "@grid-column"}}
+      {{#content "grid-column-content"}}
+        {{> @form-field fieldFirstName}}
+      {{/content}}
+    {{/embed}}
+    {{#embed "@grid-column"}}
+      {{#content "grid-column-content"}}
+        {{> @form-field fieldLastName}}
+      {{/content}}
+    {{/embed}}
+  {{/content}}
+{{/embed}}
+{{#embed "@grid-row"}}
+  {{#content "content"}}
+    {{#embed "@grid-column"}}
+      {{#content "grid-column-content"}}
+        {{> @form-field fieldEmail }}
+        {{> @form-field-checkbox fieldNewsletter }}
         {{> @button--submit submit }}
       {{/content}}
-    {{/extend}}
+    {{/embed}}
   {{/content}}
-{{/extend}}
+{{/embed}}
 
 </form>

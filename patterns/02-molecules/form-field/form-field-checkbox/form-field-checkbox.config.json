@@ -10,7 +10,6 @@
 			"text": "Helptext"
 		},
 		"input": {
-			"type": "checkbox",
 			"name": "default-input",
 			"id": "default-id"
 		}	

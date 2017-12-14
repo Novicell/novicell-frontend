@@ -7,50 +7,60 @@
 				"text": "Formular"
 			}
 		},
-		"fields": [
-			{
-				"label": {
-					"text": "Fornavn",
-					"inputId": "firstName"
-				},
-				"input": {
-					"placeholder": "Skriv dit fornavn",
-					"id": "firstName",
-					"name": "firstName"
-				},
-				"paragraph": {
-					"text": "Det er den første del af dit navn"
-				},
-				"required": true
+		"fieldFirstName": {
+			"label": {
+				"text": "Fornavn",
+				"inputId": "firstName"
 			},
-			{
-				"label": {
-					"text": "Lastname",
-					"inputId": "lastName"
-				},
-				"input": {
-					"placeholder": "Skriv dit efternavn",
-					"id": "lastName",
-					"name": "lastName"
-				}
+			"input": {
+				"placeholder": "Skriv dit fornavn",
+				"id": "firstName",
+				"name": "firstName"
 			},
-			{
-				"label": {
-					"text": "Email",
-					"inputId": "email"
-				},
-				"input": {
-					"placeholder": "Skriv din email",
-					"id": "email",
-					"name": "email",
-					"type": "email"
-				},
-				"paragraph": {
-					"text": "Den med snabela"
-				},
-				"required": true
+			"paragraph": {
+				"text": "Det er den første del af dit navn"
+			},
+			"required": true
+		},
+		"fieldLastName": {
+			"label": {
+				"text": "Lastname",
+				"inputId": "lastName"
+			},
+			"input": {
+				"placeholder": "Skriv dit efternavn",
+				"id": "lastName",
+				"name": "lastName"
 			}
-		],
+		},
+		"fieldEmail": {
+			"label": {
+				"text": "Email",
+				"inputId": "email"
+			},
+			"input": {
+				"placeholder": "Skriv din email",
+				"id": "email",
+				"name": "email"
+			},
+			"paragraph": {
+				"text": "Den med snabela"
+			},
+			"required": true
+		},
+		"fieldNewsletter": {
+			"label": {
+				"text": "Nyhedsbrev",
+				"inputId": "newsletter"
+			},
+			"input": {
+				"id": "newsletter",
+				"name": "newsletter"
+			},
+			"paragraph": {
+				"text": "Vi sender kun gode ting"
+			}
+		},
 		"submit": {
 			"button": {
 				"type": "submit",

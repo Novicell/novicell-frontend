@@ -3,7 +3,7 @@
 	"status": "prototype",
 	"context": {
 		"input": {
-			"type": "text",
+			"type": "",
 			"name": "defaul-input",
 			"id": "default-id",
 			"placeholder": "Default"
@@ -14,7 +14,6 @@
 			"name": "text",
 			"context": {
 				"input": {
-					"type": "text",
 					"name": "text-input",
 					"id": "text-id",
 					"placeholder": "Inset text"
@@ -25,7 +24,6 @@
 			"name": "email",
 			"context": {
 				"input": {
-					"type": "email",
 					"name": "email-input",
 					"id": "email-id",
 					"placeholder": "Inset e-mail"
@@ -36,7 +34,6 @@
 			"name": "password",
 			"context": {
 				"input": {
-					"type": "password",
 					"name": "password-input",
 					"id": "password-id",
 					"placeholder": "Inset password"
@@ -47,7 +44,6 @@
 			"name": "checkbox",
 			"context": {
 				"input": {
-					"type": "checkbox",
 					"name": "checkbox-input",
 					"id": "checkbox-id"
 				}
@@ -57,7 +53,6 @@
 			"name": "radio",
 			"context": {
 				"input": {
-					"type": "radio",
 					"name": "radio-input",
 					"id": "radio-id"
 				}
