@@ -2,9 +2,7 @@
     "title": "Image",
     "status": "prototype",
     "context": {
-        "image": {
-            "url": "/dist/images/placeholder-images/hero--mona-eendra-313518.jpg",
-            "alt": "Image"
-        }
+        "url": "/dist/images/placeholder-images/hero--mona-eendra-313518.jpg",
+        "alt": "Image"
     }
 }

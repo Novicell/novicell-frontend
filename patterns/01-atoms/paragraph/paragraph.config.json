@@ -2,17 +2,13 @@
     "title": "paragraph",
     "status": "prototype",
     "context": {
-        "paragraph": {
-            "text": "Paragraph text"
-        }
+        "text": "Paragraph text"
     },
     "variants": [
         {
             "name": "hero",
             "context": {
-                "paragraph": {
-                    "text": "Hero text"
-                }
+                "text": "Hero text"
             }
         }
     ]

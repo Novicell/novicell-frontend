@@ -1,0 +1,21 @@
+/*
+ * Helpers: Grid Column
+ */
+
+:root{
+    --grid-column-site-padding: var(--site-padding);
+}
+
+.grid-column {
+    flex-grow: 1;
+    margin-right: calc( var(--site-padding) / 2);
+    margin-left: calc( var(--site-padding) / 2);
+}
+
+.grid-column + .grid-column {
+    margin-top: var(--grid-column-site-padding);
+
+    @media (--viewport-md-min) {
+        margin-top: 0;
+    }
+}

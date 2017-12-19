@@ -4,7 +4,7 @@
 
 /*Setting document variables*/
 :root{
-	--hero-text-color: var(--color-white);
+	--hero-text-color: var(--color-black);
 }
 
 .paragraph {

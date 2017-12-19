@@ -1,0 +1,31 @@
+/*
+ * Module: Box
+ */
+
+:root{
+    --box-background-color: var(--color-white);
+    --box-border-style: 1px solid var(--color-gray-light);
+    --box-border-radius: 4px;
+    --box-padding: 20px;
+    --box-paragraph-spacing-top: 15px;
+}
+
+.box {
+    &__inner {
+        border: var(--box-border-style);
+        border-radius: var(--box-border-radius);
+        background-color: var(--box-background-color);
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__content {
+        padding: var(--box-padding);
+    }
+
+    p + p {
+        margin-top: var(--box-paragraph-spacing-top);
+    }
+}
