@@ -1,0 +1,42 @@
+{
+	"title": "Topbar",
+	"status": "prototype",
+	"context": {
+        "githubLink": {
+            "url": "https://github.com/Novicell/novicell-pattern-library",
+            "text": "github.com/Novicell/novicell-pattern-library",
+            "target":"",
+            "title": "github.com/Novicell/novicell-pattern-library"
+        },
+        "navMainList": {
+            "list": [
+                {
+                    "url": "#",
+                    "text": "Home",
+                    "title": "Home"
+                },
+                {
+                    "active": true,
+                    "url": "#",
+                    "text": "Get started",
+                    "title": "Get started"
+                },
+                {
+                    "url": "#",
+                    "text": "About",
+                    "title": "About"
+                }
+            ]
+        },
+        "search": {
+            "label": {
+                "text": "Søg",
+                "input-id": "search-id"
+            },
+            "input": {
+                "placeholder": "Search ..."
+            }
+        }
+	}
+}
+  

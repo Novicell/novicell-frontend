@@ -1,16 +1,16 @@
 {{ render '@header' }}
 
-{{#extend '@main' }}
-  {{#content 'main-content' }}
-    {{#extend '@grid-container--site-width'}}
-      {{#content 'grid-container-content'}}
-        {{ render '@about-boxes' }}
-        {{ render '@primary-boxes' }}
-        {{ render '@feedback-box' }}
-        {{ render '@secondary-boxes' }}
-      {{/content}}
-    {{/extend}}
-  {{/content}} 
-{{/extend}}
+{{#embed '@main' }}
+    {{#content 'main-content' }}
+        {{#embed '@grid-container--site-width'}}
+            {{#content 'grid-container-content'}}
+                {{ render '@about-boxes' }}
+                {{ render '@primary-boxes' }}
+                {{ render '@feedback-box' }}
+                {{ render '@secondary-boxes' }}
+            {{/content}}
+        {{/embed}}
+    {{/content}} 
+{{/embed}}
 
 {{ render '@footer' }}

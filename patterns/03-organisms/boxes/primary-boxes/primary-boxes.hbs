@@ -1,19 +1,19 @@
-{{#extend "@grid-row--three-columns"}}
-  {{#content "content"}}
-    {{#extend "@grid-column"}}
-      {{#content "grid-column-content"}}
-        {{> @box-image the-basics }}
-      {{/content}}
-    {{/extend}}
-    {{#extend "@grid-column"}}
-      {{#content "grid-column-content"}}
-        {{> @box-image useful-stuff }}
-      {{/content}}
-    {{/extend}}
-    {{#extend "@grid-column"}}
-      {{#content "grid-column-content"}}
-        {{> @box-image questions }}
-      {{/content}}
-    {{/extend}}
-  {{/content}}
-{{/extend}}
+{{#embed "@grid-row--three-columns"}}
+    {{#content "content"}}
+        {{#embed "@grid-column"}}
+            {{#content "grid-column-content"}}
+                {{ render '@box-image' }}
+            {{/content}}
+        {{/embed}}
+        {{#embed "@grid-column"}}
+            {{#content "grid-column-content"}}
+                {{ render '@box-image'  }}
+            {{/content}}
+        {{/embed}}
+        {{#embed "@grid-column"}}
+            {{#content "grid-column-content"}}
+                {{ render '@box-image' }}
+            {{/content}}
+        {{/embed}}
+    {{/content}}
+{{/embed}}

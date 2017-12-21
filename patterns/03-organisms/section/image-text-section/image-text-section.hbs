@@ -1,0 +1,17 @@
+<section class="image-text-section">
+    {{#embed "@grid-row--two-columns"}}
+        {{#content "content"}}
+            {{#embed "@grid-column"}}
+                {{#content "grid-column-content"}}
+                    {{ render '@image' image}}
+                {{/content}}
+            {{/embed}}
+            {{#embed "@grid-column"}}
+                {{#content "grid-column-content"}}
+                    {{ render '@text-box' textbox }}
+                    {{ render '@link-button' button}}
+                {{/content}}
+            {{/embed}}
+        {{/content}}
+    {{/embed}}
+</section>

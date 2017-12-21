@@ -1,58 +1,6 @@
 {
-  "title": "Secondary Boxes",
-  "status": "prototype",
-  "context": {
-    "box4": {
-      "heading": {
-        "text": "Elements"
-      },
-      "image": {
-        "url": "/dist/images/placeholder-images/hero--mona-eendra-313518.jpg",
-        "alt": "Image"
-      },
-      "box": {
-        "content": "Examples and a quick introduction to elements."
-      },
-      "link": {
-        "url": "#",
-        "text": "More about elements",
-        "title": "More about elements"
-      }
-    },
-    "box5": {
-      "heading": {
-        "text": "Modules"
-      },
-      "image": {
-        "url": "/dist/images/placeholder-images/hero--mona-eendra-313518.jpg",
-        "alt": "Image"
-      },
-      "box": {
-        "content": "Examples and a quick introduction to modules."
-      },
-      "link": {
-        "url": "#",
-        "text": "More about modules",
-        "title": "More about modules"
-      }
-    },
-    "box6": {
-      "heading": {
-        "text": "Components"
-      },
-      "image": {
-        "url": "/dist/images/placeholder-images/hero--mona-eendra-313518.jpg",
-        "alt": "Image"
-      },
-      "box": {
-        "content": "Examples and a quick introduction to components."
-      },
-      "link": {
-        "url": "#",
-        "text": "More about components",
-        "target":"",
-        "title": "More about components"
-      }
+    "title": "Secondary Boxes",
+    "status": "prototype",
+    "context": {
     }
-  }
 }

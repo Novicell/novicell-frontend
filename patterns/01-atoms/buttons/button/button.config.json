@@ -1,43 +1,43 @@
 {
-  "title": "Button",
-  "status": "prototype",
-  "context": {
-    "text": "Default Button"
-  },
-  "variants": [
-    {
-      "name": "ghost",
-      "context": {
-        "text": "Ghost Button"
-      }
+    "title": "Button",
+    "status": "prototype",
+    "context": {
+        "text": "Button"
     },
-    {
-      "name": "large",
-      "context": {
-        "text": "Large Button"
-      }
-    },
-    {
-      "name": "link",
-      "context": {
-        "text": "Link Button",
-        "linkUrl":"http://www.novicell.dk",
-        "linkTitle":"Novicell"
-      }
-    },
-    {
-      "name": "mailto-link",
-      "context": {
-        "text": "Mailto Link Button",
-        "linkUrl":"test@novicell.dk",
-        "linkTitle":"Novicell"
-      }
-    },
-    {
-      "name": "submit",
-      "context": {
-        "text": "Submit Button"
-      }
-    }
-  ]
+    "variants": [
+        {
+            "name": "ghost",
+            "context": {
+                "text": "Ghost Button"
+            }
+        },
+        {
+            "name": "large",
+            "context": {
+                "text": "Large Button"
+            }
+        },
+        {
+            "name": "link",
+            "context": {
+                "text": "Link Button",
+                "linkUrl":"http://www.novicell.dk",
+                "linkTitle":"Novicell"
+            }
+        },
+        {
+            "name": "mailto-link",
+            "context": {
+                "text": "Mailto Link Button",
+                "linkUrl":"test@novicell.dk",
+                "linkTitle":"Novicell"
+            }
+        },
+        {
+            "name": "submit",
+            "context": {
+                "text": "Submit Button"
+            }
+        }
+    ]
 }

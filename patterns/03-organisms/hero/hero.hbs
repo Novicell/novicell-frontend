@@ -1,0 +1,15 @@
+<div class="hero" style="background-image: url({{ path '/dist/images/placeholder-images/hero--mona-eendra-313518.jpg' }} )">
+    {{#embed "@grid-container--site-width"}}
+        {{#content "grid-container-content"}}
+            {{#embed "@grid-column"}}
+                {{#content "grid-column-content"}}
+                    <div class="hero__content">
+                        {{ render '@heading--hero' }}
+                        {{ render '@paragraph--hero'}}
+                        {{ render '@button--large' }}
+                    </div>
+                {{/content}}
+            {{/embed}}
+        {{/content}}
+    {{/embed}}
+</div>

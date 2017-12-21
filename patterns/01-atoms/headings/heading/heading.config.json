@@ -2,28 +2,25 @@
 	"title": "Header",
 	"status": "prototype",
 	"context": {
-		"text": "Heading"
+		"text": "Header"
 	},
 	"variants": [
 		{
 			"name": "column",
 			"context": {
-				"modifier": "heading--column",
-				"text": "Column heading"
+				"text": "Column header"
 			}
 		},
 		{
 			"name": "hero",
 			"context": {
-				"modifier": "heading--hero",
-				"text": "Hero heading"
+				"text": "Hero header"
 			}
 		},
 		{
 			"name": "footer",
 			"context": {
-				"modifier": "heading--footer",
-				"text": "Footer heading"
+				"text": "Footer header"
 			}
 		}
 	]

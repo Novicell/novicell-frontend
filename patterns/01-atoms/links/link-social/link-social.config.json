@@ -1,0 +1,36 @@
+{
+    "title": "Link Social",
+    "status": "prototype",
+    "context": {
+            "url": "#",
+            "title": "Social link",
+            "target": "_blank",
+            "icon": "facebook-icon"
+    },
+    "variants": [
+        {
+            "name": "Facebook",
+            "context": {
+                "url": "#",
+                "title": "Facebook link",
+                "icon": "facebook-icon"
+            }
+        },
+        {
+            "name": "Twitter",
+            "context": {
+                "url": "#",
+                "title": "Twitter link",
+                "icon": "twitter-icon"
+            }
+        },
+        {
+            "name": "Google Plus",
+            "context": {
+                "url": "#",
+                "title": "Google Plus link",
+                "icon": "google-plus-icon"
+            }
+        }
+    ]
+}

@@ -1,19 +1,19 @@
-{{#extend "@grid-row--three-columns"}}
-  {{#content "content"}}
-    {{#extend "@grid-column"}}
-      {{#content "grid-column-content"}}
-        {{> @text-box--centered text-box1 }}
-      {{/content}}
-    {{/extend}}
-    {{#extend "@grid-column"}}
-      {{#content "grid-column-content"}}
-        {{> @text-box--centered text-box2 }}
-      {{/content}}
-    {{/extend}}
-    {{#extend "@grid-column"}}
-      {{#content "grid-column-content"}}
-        {{> @text-box--centered text-box3 }}
-      {{/content}}
-    {{/extend}}
-  {{/content}}
-{{/extend}}
+{{#embed "@grid-row--three-columns"}}
+    {{#content "content"}}
+        {{#embed "@grid-column"}}
+            {{#content "grid-column-content"}}
+                {{ render '@text-box--centered' textbox1 }}
+            {{/content}}
+        {{/embed}}
+        {{#embed "@grid-column"}}
+            {{#content "grid-column-content"}}
+                {{ render '@text-box--centered' textbox2 }}
+            {{/content}}
+        {{/embed}}
+        {{#embed "@grid-column"}}
+            {{#content "grid-column-content"}}
+                {{ render '@text-box--centered' textbox3 }}
+            {{/content}}
+        {{/embed}}
+    {{/content}}
+{{/embed}}

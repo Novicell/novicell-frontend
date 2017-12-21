@@ -1,0 +1,15 @@
+.link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__item + &__item {
+        margin-top: 5px;
+    }
+
+    &--horizontal {
+        .link-list__item {
+            display: inline-block;
+        }
+    }
+}

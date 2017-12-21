@@ -1,0 +1,54 @@
+{{ render '@header' }}
+
+{{#embed '@main' }}
+    {{#content 'main-content' }}
+        {{#embed '@grid-container--site-width'}}
+            {{#content 'grid-container-content'}}
+            {{#embed '@grid-row'}}
+                {{#content 'grid-row-content'}}
+                    {{#embed '@grid-column'}}
+                        {{#content 'grid-column-content'}}
+                            {{ render '@heading-page' }}
+                            {{ render '@text-box'  }}
+                        {{/content}}
+                    {{/embed}}
+                {{/content}}
+            {{/embed}}
+            {{#embed '@grid-row--two-columns'}}
+                {{#content 'grid-row-content'}}
+                    {{#embed '@grid-column'}}
+                        {{#content 'grid-column-content'}}
+                            {{ render '@image-text-section'}}
+                        {{/content}}
+                    {{/embed}}
+                    {{#embed '@grid-column'}}
+                        {{#content 'grid-column-content'}}
+                            {{ render '@image-text-section'}}
+                        {{/content}}
+                    {{/embed}}
+                {{/content}}
+            {{/embed}}
+            {{#embed '@grid-row'}}
+                {{#content 'grid-row-content'}}
+                    {{#embed '@grid-column'}}
+                        {{#content 'grid-column-content'}}
+                            {{#embed '@grid-row'}}
+                                {{#content 'grid-row-content'}}
+                                    {{ render '@image-text-section'}}
+                                {{/content}}
+                            {{/embed}}
+                            {{#embed '@grid-row'}}
+                                {{#content 'grid-row-content'}}
+                                    {{ render '@text-image-section'}}
+                                {{/content}}
+                            {{/embed}}
+                        {{/content}}
+                    {{/embed}}
+                {{/content}}
+            {{/embed}}
+            {{/content}}
+        {{/embed}}
+    {{/content}}
+{{/embed}}
+
+{{ render '@footer' }}

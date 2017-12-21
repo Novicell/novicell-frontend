@@ -1,0 +1,19 @@
+{
+    "title": "Main menu",
+    "status": "prototype",
+    "context": {
+        "list": [
+            {
+                "url": "#",
+                "text": "Link text 1",
+                "title": "Link title 1"
+            },
+            {
+                "url": "#",
+                "text": "Link text 2",
+                "title": "Link title 2",
+                "active": true
+            }
+        ]
+    }
+}

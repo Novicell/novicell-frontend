@@ -3,14 +3,10 @@
 */
 
 /*Setting document variables*/
-:root{
-	--hero-text-color: var(--color-black);
-}
 
 .paragraph {
 
     &--hero {
-        color: var(--hero-text-color);
         margin-bottom: 30px;
 
         @media (--viewport-sm-min) {

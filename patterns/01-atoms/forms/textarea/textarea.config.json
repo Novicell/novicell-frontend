@@ -1,0 +1,9 @@
+{
+	"title": "Textarea",
+	"status": "prototype",
+	"context": {
+		"name": "textarea",
+		"id": "textareaId",
+		"placeholder": "This is a textarea"
+	}
+} 

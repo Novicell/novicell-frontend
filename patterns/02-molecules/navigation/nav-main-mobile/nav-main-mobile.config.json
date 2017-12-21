@@ -1,0 +1,31 @@
+{
+	"title": "Navigation mobile",
+	"status": "prototype",
+	"context": {
+		"list": [
+			{
+				"url": "#",
+				"text": "Link text 1",
+				"title": "Link title 1"
+			},
+			{
+				"url": "#",
+				"text": "Link text 2",
+				"title": "Link title 2",
+				"active": true
+			},
+			{
+				"url": "#",
+				"text": "Link text 3",
+				"title": "Link title 3",
+				"active": false
+			},
+			{
+				"url": "#",
+				"text": "Link text 4",
+				"title": "Link title 4",
+				"active": false
+			}
+		]
+	}
+}

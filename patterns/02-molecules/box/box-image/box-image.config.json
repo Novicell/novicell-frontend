@@ -5,9 +5,9 @@
 		"heading": {
 			"text": "Box Image header"
 		},
-		"box-image": {
-            "url": "/dist/images/placeholder-images/greg-rakozy-129733.jpg",
-            "content": "Box Image content."
+		"boxImage": {
+			"url": "/dist/images/placeholder-images/greg-rakozy-129733.jpg",
+			"content": "Box Image content."
 		}
 	}
 }
