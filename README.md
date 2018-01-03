@@ -93,7 +93,7 @@ Learn more here: https://fractal.build/
 
 ## How to use Fractal
 
-Heres a short intro to using Fractal. For more information take a look at [Fractal guide](http://fractal.build/guide)
+Heres a short intro to using Fractal. For more information take a look at [Fractal guide](http://fractal.build/guide).
 
 #### Local server
 For starting a local server with watch and sync run:
