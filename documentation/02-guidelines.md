@@ -190,4 +190,21 @@ This embeds a pattern. By using the \#block functionality you have the possibili
 ```
 
 ### `\{{ #extend @pattern-name }}`
-Dont use it, no idea when to use it
+You can use this if you want to create a variant of a more complex pattern. Lets say the grid. 
+
+```html
+<!-- The pattern -->
+<div class="grid-container \{{ containerClass }}">
+    \{{#block "grid-container-content"}}
+    \{{/block}}
+</div>
+
+<!-- Extend of the pattern -->
+\{{#extend "@grid-container" containerClass="grid-container--site-width"}}
+	\{{#content "grid-container-content"}}
+		\{{#block "content"}}
+		\{{/block}}
+	\{{/content}}
+\{{/extend}}
+
+```
