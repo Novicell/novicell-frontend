@@ -19,7 +19,8 @@ When setup, it also helps you optimize images, combine SVGs to a sprite, minifyi
 
 ## Quick start
 
-Browse to your project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git/.`. Then run `npm install` for getting dependencies and start the build proccess. Run `gulp watch` to start watching file changes and continuous copilation.
+Browse to 
+r project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git/.`. Then run `npm install` for getting dependencies and start the build proccess. Run `gulp watch` to start watching file changes and continuous copilation.
 
 
 ##  Installation
@@ -29,7 +30,7 @@ Browse to your project folder and clone the repo `git clone https://github.com/n
   Remember to check "Git bash here" in context menu options.
 
   To check if node is working, go to Gitbash / Terminal and type `node -v`
-  If you get a version number, you'r good to go :+1:
+  If you get a version number, you're good to go :+1:
   
   If you NEVER before ran novicell-frontend setup, you need to install Gulp globally on your machine.
 
@@ -92,7 +93,7 @@ Learn more here: https://fractal.build/
 
 ## How to use Fractal
 
-Heres a short intro to using Fractal. For more information take a look at [Fractal guide](http://fractal.build/guide)
+Heres a short intro to using Fractal. For more information take a look at [Fractal guide](http://fractal.build/guide).
 
 #### Local server
 For starting a local server with watch and sync run:
