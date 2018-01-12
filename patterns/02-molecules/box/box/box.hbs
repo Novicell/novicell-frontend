@@ -2,17 +2,19 @@
 	<div class="box__inner">
     {{#if image }}
       <div class="box__image">
-      {{> @image }}
+        {{ render '@image' image }}
       </div>
     {{/if}}
-		<div class="box__content">
-			{{> @heading--column }}
-			{{#block "content"}}
-				<p>{{ box.content }}</p>
-			{{/block}}
-      {{#if link }}
-        {{> @link }}
-      {{/if}}
-		</div>
+	<div class="box__content">
+        {{ render '@heading--column' }}
+    
+        {{#block "content"}}
+            <p>{{ box.content }}</p>
+        {{/block}}
+
+        {{#if link }}
+            {{ render '@link' link }}
+        {{/if}}
+	</div>
 	</div>
 </article>

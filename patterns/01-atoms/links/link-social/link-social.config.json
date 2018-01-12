@@ -2,42 +2,34 @@
     "title": "Link Social",
     "status": "prototype",
     "context": {
-        "link-social": {
             "url": "#",
             "title": "Social link",
             "target": "_blank",
             "icon": "facebook-icon"
-        }
     },
     "variants": [
         {
             "name": "Facebook",
             "context": {
-                "link-social": {
-                    "url": "#",
-                    "title": "Facebook link",
-                    "icon": "facebook-icon"
-                }
+                "url": "#",
+                "title": "Facebook link",
+                "icon": "facebook-icon"
             }
         },
         {
             "name": "Twitter",
             "context": {
-                "link-social": {
-                    "url": "#",
-                    "title": "Twitter link",
-                    "icon": "twitter-icon"
-                }
+                "url": "#",
+                "title": "Twitter link",
+                "icon": "twitter-icon"
             }
         },
         {
             "name": "Google Plus",
             "context": {
-                "link-social": {
-                    "url": "#",
-                    "title": "Google Plus link",
-                    "icon": "google-plus-icon"
-                }
+                "url": "#",
+                "title": "Google Plus link",
+                "icon": "google-plus-icon"
             }
         }
     ]

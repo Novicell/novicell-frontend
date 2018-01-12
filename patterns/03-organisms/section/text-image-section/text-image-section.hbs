@@ -1,17 +1,17 @@
 <section class="text-image-section">
-    {{#extend "@grid-row--two-columns"}}
-    {{#content "content"}}
-        {{#extend "@grid-column"}}
-        {{#content "grid-column-content"}}
-            {{> @text-box text-box2 }}
-            {{> @link-button button}}
+    {{#embed "@grid-row--two-columns"}}
+        {{#content "content"}}
+            {{#embed "@grid-column"}}
+                {{#content "grid-column-content"}}
+                    {{ render '@text-box' textbox2}}
+                    {{ render '@link-button' button}}
+                {{/content}}
+            {{/embed}}
+            {{#embed "@grid-column"}}
+                {{#content "grid-column-content"}}
+                    {{ render '@image' image}}
+                {{/content}}
+            {{/embed}}
         {{/content}}
-        {{/extend}}
-        {{#extend "@grid-column"}}
-        {{#content "grid-column-content"}}
-            {{> @image image}}
-        {{/content}}
-        {{/extend}}
-    {{/content}}
-    {{/extend}}
+    {{/embed}}
 </section>

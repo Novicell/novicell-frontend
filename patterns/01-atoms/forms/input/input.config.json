@@ -2,45 +2,46 @@
 	"title": "Input",
 	"status": "prototype",
 	"context": {
-		"input": {
-			"type": "text",
-			"name": "defaul-input",
-			"id": "default-id",
-			"placeholder": "Default"
-		}
+		"type": "text",
+		"name": "default-input",
+		"id": "default-id",
+		"placeholder": "Default"
 	},
 	"variants": [
 		{
 			"name": "text",
 			"context": {
-				"input": {
-					"type": "text",
-					"name": "text-input",
-					"id": "text-id",
-					"placeholder": "Inset text"
-				}
+				"type": "text",
+				"name": "text-input",
+				"id": "text-id",
+				"placeholder": "Insert text"
 			}
 		},
 		{
 			"name": "email",
 			"context": {
-				"input": {
-					"type": "email",
-					"name": "email-input",
-					"id": "email-id",
-					"placeholder": "Inset e-mail"
-				}
+				"type": "email",
+				"name": "email-input",
+				"id": "email-id",
+				"placeholder": "Insert e-mail"
 			}
 		},
 		{
 			"name": "password",
 			"context": {
-				"input": {
-					"type": "password",
-					"name": "password-input",
-					"id": "password-id",
-					"placeholder": "Inset password"
-				}
+				"type": "password",
+				"name": "password-input",
+				"id": "password-id",
+				"placeholder": "Insert password"
+			}
+        },
+        {
+			"name": "search",
+			"context": {
+				"type": "search",
+				"name": "search-input",
+				"id": "search-id",
+				"placeholder": "Insert search"
 			}
 		}
 	]

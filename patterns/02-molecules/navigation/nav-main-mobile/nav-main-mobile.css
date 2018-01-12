@@ -1,6 +1,6 @@
 :root{
     --nav-main-mobile-project-ease:      var(--project-ease, ease-in);
-    --nav-main-mobile-background-color:  var(--color-white, #fff);
+    --nav-main-mobile-background-color:  var(--color-black, #fff);
     --nav-main-mobile-close:             var(--color-gray-dark, #4b4b4b);
     --nav-main-mobile-margin:            20px;
     --nav-main-mobile-padding-left:      20px;

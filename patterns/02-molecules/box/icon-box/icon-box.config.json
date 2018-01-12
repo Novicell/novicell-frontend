@@ -5,9 +5,7 @@
         "heading": {
             "text": "Icon Box header"
         },
-        "icon-box": {
-            "content": "Icon Box content."
-        },
+        "iconBoxContent": "Dette er teksten til et icon",
         "link": {
             "url": "url",
             "text": "Link text",

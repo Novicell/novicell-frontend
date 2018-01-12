@@ -10,15 +10,14 @@
 	--text-box-paragraph-spacing-top: 15px;
 }
 
-.text-box,
-.text-box--centered {
+.text-box {
     p + p {
         margin-top: var(--text-box-paragraph-spacing-top);
     }
-}
 
-.text-box--centered {
-    text-align: center;
+    &--centered {
+        text-align: center;
+    }
 
     &__inner {
         padding: var(--text-box-padding);

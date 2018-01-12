@@ -3,16 +3,16 @@
 		<div class="icon-box__content">
             <div class="icon-box__icon">
                 {{#block "icon-box-icon"}}
-                    {{> @svg-icon--checkbox }}
+                    {{ render '@svg-icon' }}
                 {{/block}}
             </div>
-			{{> @heading--column }}
-			{{#block "icon-box-content"}}
-				<p>{{ icon-box.content }}</p>
+			{{ render '@heading--column' }}
+			{{#block "iconBoxContent"}}
+				<p>{{ iconBoxContent }}</p>
 			{{/block}}
 		</div>
-    {{#if link }}
-      {{> @link }}
-    {{/if}}
+        {{#if link }}
+            {{ render '@link' }}
+        {{/if}}
 	</div>
 </article>

@@ -1,10 +1,8 @@
 {
-  "title": "Label",
-  "status": "prototype",
-  "context": {
-    "label": {
-      "text": "Label",
-      "input-id": "default-id"
-    } 
-  }
+    "title": "Label",
+    "status": "prototype",
+    "context": {
+        "text": "Label",
+        "inputId": "default-id"
+    }
 } 

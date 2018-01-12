@@ -2,7 +2,7 @@
  * Module: Nav Main List
  */
 :root{
-    --nav-main-link-color: var(--color-white);
+    --nav-main-link-color: var(--color-black);
     --nav-main-link-color-active: var(--color-primary);
 }
 
@@ -24,9 +24,10 @@
 .nav-main-list__item {
     display: inline-block;
     margin-right: 50px;
+    color: var(--nav-main-link-color);
 
     a {
-        color: var(--nav-main-link-color);
+        color: currentColor;
         text-decoration: none;
     }
 
@@ -34,7 +35,7 @@
         color: var(--nav-main-link-color);
 
         a {
-            color: var(--nav-main-link-color);
+            color: currentColor;
             text-decoration: underline;
         }
     }
@@ -44,7 +45,7 @@
     }
 }
 
-a.nav-main-list__item--active {
+.nav-main-list__item--active {
     color: var(--nav-main-link-color-active);
     text-decoration: underline;
 }

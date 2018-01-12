@@ -15,7 +15,7 @@
 		},
 		"link": {
 			"url": "url",
-			"text": "Link text",
+			"text": "A link specified on the molecule",
 			"target":"",
 			"title": "Link title"
 		}

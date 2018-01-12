@@ -40,7 +40,7 @@ fractal.web.set('server.syncOptions', {
     // open: true, // open the server on 'gulp fractal'
     // browser: ['chrome'],
     // notify: true,
-    files: [path.join(__dirname, '../' + config.webPath + 'dist'), path.join(__dirname, '../patterns/*[.hbs, .json]')]
+    files: [path.join(__dirname, '../' + config.webPath + 'dist'), path.join(__dirname, '../patterns/**/*[.hbs, .json]')]
 });
 
 // Export config

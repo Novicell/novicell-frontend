@@ -1,40 +1,6 @@
 {
-  "title": "Page",
-  "status": "prototype",
-  "context": {
-    "page-heading": {
-      "heading-page": {
-        "text": "Page Title"
-      }
-    },
-    "text-box": {
-      "heading": {
-          "text": "Proin eget tortor risus. Donec sollicitudin molestie malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula."
-      },
-      "text-box": {
-          "content": "Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat."
-      }
-    },
-    "paragraph1": {
-      "paragraph": {
-          "text": "Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi."
-      }
-    },
-    "paragraph2": {
-      "paragraph": {
-          "text": "Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit."
-      }
-    },
-    "button": {
-      "button": {
-          "text": "Button text"
-      }
-    },
-    "image": {
-      "image": {
-          "url": "/dist/images/placeholder-images/jonathan-simcoe-88013.jpg",
-          "alt": "Image"
-      }
-    }
-  }
+    "title": "Page",
+    "status": "prototype",
+    "context": {}
 }
+

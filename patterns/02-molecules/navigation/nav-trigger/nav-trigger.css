@@ -2,7 +2,7 @@
 	--nav-trigger-burger-width: 		30px;
 	--nav-trigger-burger-height: 		20px;
 	--nav-trigger-burger-stroke-width: 	3px;
-	--nav-trigger-color:				var(--color-white, #fff);
+	--nav-trigger-color:				var(--color-black, #fff);
 }
 
 .nav-trigger {

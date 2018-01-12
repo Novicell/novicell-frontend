@@ -8,6 +8,8 @@
     }
 
     &--horizontal {
-        
+        .link-list__item {
+            display: inline-block;
+        }
     }
 }

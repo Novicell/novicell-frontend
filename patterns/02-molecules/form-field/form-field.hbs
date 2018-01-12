@@ -1,6 +1,6 @@
 <div class="form-field {{ class }}">
-    {{> @label class="form-field__label" }}
+    {{ render '@label' label }}
     {{#block "content"}}
-        {{> @input--text }}
+        {{ render '@input--text' input }}
     {{/block}}
 </div>

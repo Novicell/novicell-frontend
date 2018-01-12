@@ -3,42 +3,34 @@
 	"status": "prototype",
 	"context": {
         "githubLink": {
-            "link": {
-                "url": "https://github.com/Novicell/novicell-pattern-library",
-                "text": "github.com/Novicell/novicell-pattern-library",
-                "target":"",
-                "title": "github.com/Novicell/novicell-pattern-library"
-            }
+            "url": "https://github.com/Novicell/novicell-pattern-library",
+            "text": "github.com/Novicell/novicell-pattern-library",
+            "target":"",
+            "title": "github.com/Novicell/novicell-pattern-library"
         },
-        "nav-main-list": {
-            "link-list": [
+        "navMainList": {
+            "list": [
                 {
-                    "link": {
-                        "active": "nav-main-list__item--active",
-                        "url": "#",
-                        "text": "Home",
-                        "title": "Home"
-                    }
+                    "url": "#",
+                    "text": "Home",
+                    "title": "Home"
                 },
                 {
-                    "link": {
-                        "url": "#",
-                        "text": "Get started",
-                        "title": "Get started"
-                    }
+                    "active": true,
+                    "url": "#",
+                    "text": "Get started",
+                    "title": "Get started"
                 },
                 {
-                    "link": {
-                        "url": "#",
-                        "text": "About",
-                        "title": "About"
-                    }
+                    "url": "#",
+                    "text": "About",
+                    "title": "About"
                 }
             ]
         },
-		"search": {
+        "search": {
             "label": {
-                "text": "Search Label",
+                "text": "Søg",
                 "input-id": "search-id"
             },
             "input": {

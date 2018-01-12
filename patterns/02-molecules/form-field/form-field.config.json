@@ -10,7 +10,7 @@
 			"type": "text",
 			"name": "defaul-input",
 			"id": "default-id",
-			"placeholder": "Default"
+			"placeholder": "Default form-field"
 		}	
 	},
 	"variants": [

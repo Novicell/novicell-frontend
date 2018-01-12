@@ -1,30 +1,24 @@
 {
-  "title": "About columns",
-  "status": "prototype",
-  "context": {
-    "text-box1": {
-      "heading": {
-        "text": "Atomic design"
-      },
-      "text-box": {
-        "content": "The Pattern Library is based on the Atomic Design method by Brad Frost."
-      }
-    },
-    "text-box2": {
-      "heading": {
-        "text": "Frontend Package"
-      },
-      "text-box": {
-        "content": "Build using our own tools and best practices for building websites."
-      }
-    },
-    "text-box3": {
-      "heading": {
-        "text": "Pattern Library tool"
-      },
-      "text-box": {
-        "content": "The Pattern Library is build using Clearlefts tool Fractal."
-      }
+    "title": "About columns",
+    "status": "prototype",
+    "context": {
+        "textbox1": {
+            "heading": {
+                "text": "Atomic design"
+            },
+            "textBoxContent": "The Pattern Library is based on the Atomic Design method by Brad Frost."
+        },
+        "textbox2": {
+            "heading": {
+                "text": "Frontend Package"
+            },
+            "textBoxContent": "Build using our own tools and best practices for building websites."
+        },
+        "textbox3": {
+            "heading": {
+                "text": "Pattern Library tool"
+            },
+            "textBoxContent": "The Pattern Library is build using Clearlefts tool Fractal."
+        }
     }
-  }
 }
