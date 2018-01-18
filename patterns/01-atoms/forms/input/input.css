@@ -35,7 +35,7 @@
     &[type="password"],
     &[type="url"],
     &[type="tel"],
-    &[type="number"]
+    &[type="number"] {
         -webkit-border-radius: 0;
         -webkit-appearance: none;
         appearance: none;
