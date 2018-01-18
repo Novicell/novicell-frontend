@@ -26,6 +26,7 @@
     border: 1px solid var(--input-border-color);
     border-radius: 4px;
     vertical-align: bottom;
+    -webkit-appearance: none;
 
     &:focus {outline: 0;}
 }
