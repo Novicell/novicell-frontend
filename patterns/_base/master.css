@@ -12,7 +12,10 @@
 @import '../01-atoms/headings/heading/heading.css';
 @import '../01-atoms/headings/heading-page/heading-page.css';
 @import '../01-atoms/forms/input/input.css';
+@import '../01-atoms/forms/checkbox/checkbox.css';
+@import '../01-atoms/forms/radio/radio.css';
 @import '../01-atoms/forms/label/label.css';
+@import '../01-atoms/forms/select/select.css';
 @import '../01-atoms/forms/textarea/textarea.css';
 @import '../01-atoms/image/image.css';
 @import '../01-atoms/links/link/link.css';

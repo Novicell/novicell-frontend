@@ -1,0 +1,9 @@
+{
+	"title": "Checkbox",
+	"status": "prototype",
+	"context": {
+        "name": "checkbox",
+        "id": "checkboxId",
+        "label": "This is a checkbox"
+	}
+}

@@ -1,0 +1,54 @@
+
+
+{{#embed '@main' }}
+    {{#content 'main-content' }}
+        {{#embed '@grid-container--site-width'}}
+            {{#content 'grid-container-content'}}
+                <h1>Forms overview:</h1>
+                <form data-validate>
+                    <div class="input__wrapper">
+                        {{ render '@select' }}
+                    </div>
+
+                    <div class="input__wrapper">{{ render '@checkbox' }}</div>
+
+                    <div class="input__wrapper">
+                        {{> @radio id = "1" name="radio" label="Radio 1"}}
+                    </div>
+                    <div class="input__wrapper">
+                        {{> @radio id = "2" name="radio" label="Radio 2"}}
+                    </div>
+
+                    <div class="input__wrapper">
+                        {{> @input type = "text" name = "Required input" placeholder="Placeholder" }}
+                    </div>
+
+    
+                    
+                    <div class="input__wrapper">{{ render '@input--email' }}</div>
+                    <div class="input__wrapper">{{ render '@input--password' }}</div>
+                    <div class="input__wrapper">{{ render '@input--search' }}</div>
+                    <div class="input__wrapper">{{ render '@input--text' }}</div>
+                    <div class="input__wrapper">{{ render '@textarea' }}</div>
+                    
+
+                    {{> @button buttonType = "submit" text = "Submit"}}
+                    
+
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    
+                </form>
+                
+
+            {{/content}}
+        {{/embed}}
+    {{/content}} 
+{{/embed}}
+

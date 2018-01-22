@@ -39,6 +39,8 @@
 --site-width: 1560px;
 --site-padding: 30px;
 
+--border-radius: 4px;
+
 /* Easing functions
 ********************/
 --easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715); /*http://easings.net/#easeInSine*/
