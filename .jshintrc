@@ -5,6 +5,8 @@
         "svg4everybody": false,
         "google": false,
         "vue": false,
+        "validate": false,
+        "vanillaTextMask": false,
         "angular": false
     },
     "globalstrict": true,

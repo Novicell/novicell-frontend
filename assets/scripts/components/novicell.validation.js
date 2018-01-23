@@ -28,7 +28,7 @@ novicell.validate = novicell.validate || new function () {
             messageTypeMismatchURL: 'Indtast en gyldig URL',
             messageTooShort: 'Indtast venligst {minLength} karakterer eller mere. Du har indtastet {length} karakterer.',
             messageTooLong: 'Indtast venligst {maxLength} eller færre karakterer. Du har indtastet {length} karakterer.',
-            messagePatternMismatch: 'Du har indtastet date i et forkert format',
+            messagePatternMismatch: 'Du har indtastet data i et forkert format',
             messageBadInput: 'Indtast venligst et tal',
             messageStepMismatch: 'Vælg venligst en gyldig værdi',
             messageRangeOverflow: 'Du må ikke angive mere end {max}.',

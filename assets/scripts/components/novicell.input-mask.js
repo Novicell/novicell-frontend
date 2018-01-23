@@ -15,42 +15,50 @@ novicell.inputMasking = novicell.inputMasking || new function () {
 
     this.init = function () {
 
-        var masks = [
+        const masks = [
             {
-                "selector": ".mask--phone",
-                "mask": [/\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/]
+                "selector": ".js-mask--phone",
+                "mask": [/\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/],
+                "pattern": ""
             },
             {
-                "selector": ".mask--cpr",
-                "mask": [/\d/, /\d/, ' ',/\d/, /\d/, ' ', /\d/, /\d/,' ', '-', ' ', /\d/, /\d/, /\d/, /\d/,]
+                "selector": ".js-mask--cpr",
+                "mask": [/\d/, /\d/, ' ',/\d/, /\d/, ' ', /\d/, /\d/,' ', '-', ' ', /\d/, /\d/, /\d/, /\d/],
+                "pattern": ""
+            },
+            {
+                "selector": ".js-mask--bank",
+                "mask": [/\d/, /\d/, /\d/, /\d/, ' ','-',' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/],
+                "pattern": ""
+            },
+            {
+                "selector": ".js-mask--date1",
+                "mask": [/[0-3]/, /\d/, '/', /[0-1]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+                "pattern": ""
             }
         ];
 
-        //['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+        for (let i = 0; i < masks.length; i++) {
 
-        for (var i = 0; i < masks.length; i++) {
+            let input = document.querySelector(masks[i].selector);
+            let mask = masks[i].mask;
+            let pattern = masks[i].pattern;
 
-            var input = document.querySelector(masks[i].selector);
-            var mask = masks[i].mask;
-
+            
             if(input && mask){
 
-                console.log(input, mask);
+                //Patterns is work in progress
+                if(pattern){
+                    input.setAttribute("pattern", pattern);
+                }
 
                 masks[i].masking = vanillaTextMask.maskInput({
                     inputElement: input,
-                    mask: mask
+                    mask: mask,
+                    guide: false
                 });
             }
         }
-
-        /*
-        var maskedInputController = vanillaTextMask.maskInput({
-            inputElement: phoneInput,
-            mask: phoneMask
-        });
-        */
-        
         
         // Calling `vanillaTextMask.maskInput` adds event listeners to the input element. 
         // If you need to remove those event listeners, you can call: maskedInputController.destroy()

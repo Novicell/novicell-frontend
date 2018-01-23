@@ -17,7 +17,7 @@
 /* .validated is set by the validation script, on submit 
 ********************/
  
-input, textarea {
+.input, .textarea {
     &.validated {
         background-repeat: no-repeat;
         background-position: right 1rem center;
