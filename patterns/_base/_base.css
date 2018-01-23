@@ -36,12 +36,12 @@ body {
 
 /* Links */
 a {
-    color: var(--color-link);
-    text-decoration: underline;
+    color: var(--color-link, blue);
+                        text-decoration: underline;
     text-decoration-skip: ink;
 
     &:hover,
-    &:focus { color: shade(var(--color-link), 10%); }
+    &:focus { color: shade(var(--color-link, blue), 10%); }
 }
 
 

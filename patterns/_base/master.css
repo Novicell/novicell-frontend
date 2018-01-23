@@ -1,13 +1,9 @@
-/* Settings
-********************/
+/* Settings*/
 @import '_normalize.css';
 @import '_variables.css';
-
 @import '_base.css';
 
-
-/* Elements
-********************/
+/* Elements*/
 @import '../01-atoms/buttons/button/button.css';
 @import '../01-atoms/headings/heading/heading.css';
 @import '../01-atoms/headings/heading-page/heading-page.css';
@@ -20,7 +16,6 @@
 @import '../01-atoms/links/link-social/link-social.css';
 @import '../01-atoms/logo/logo.css';
 @import '../01-atoms/paragraph/paragraph.css';
-
 
 /* Modules
 ********************/
@@ -36,14 +31,12 @@
 @import '../02-molecules/social-media-collection/social-media-collection.css';
 @import '../02-molecules/topbar/topbar/topbar.css';
 
-
 /* Components
 ********************/
 @import '../03-organisms/footer/footer.css';
 @import '../03-organisms/hero/hero.css';
 @import '../03-organisms/section/image-text-section/image-text-section.css';
 @import '../03-organisms/section/text-image-section/text-image-section.css';
-
 
 /* Helpers
 ********************/

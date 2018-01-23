@@ -31,7 +31,8 @@ module.exports = (function () {
                     vendorPath + "validate/dist/js/validate.js",
                     vendorPath + "novicell-lazyload/js/novicell.dynamic-image.js",
                     vendorPath + "novicell-lazyload/js/lazy-images.js",
-                    vendorPath + "lazysizes/lazysizes.min.js"
+                    vendorPath + "lazysizes/lazysizes.min.js",
+                    vendorPath + "postcss-reporter/lib/reporter.js"                
                 ]
             },
             {

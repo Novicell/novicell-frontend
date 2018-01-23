@@ -2,18 +2,15 @@
   "rules": {
     "block-no-empty": null,
     "color-no-invalid-hex": true,
-    "comment-empty-line-before": [ "always", {
-      "ignore": ["stylelint-commands", "after-comment"]
-    } ],
-    "declaration-colon-space-after": "always",
-    "indentation": ["tab", {
-      "except": ["value"]
-    }],
-    "max-empty-lines": 2,
-    "rule-empty-line-before": [ "always", {
-      "except": ["first-nested"],
-      "ignore": ["after-comment"]
-    } ],
-    "unit-whitelist": ["em", "rem", "%", "s"]
-  }
-}
+    "selector-max-class": 3,
+    "declaration-no-important": true,
+    "property-no-unknown": true,
+    "unit-no-unknown": true,
+    "unit-whitelist": ["em", "rem", "%", "s", "px", "deg", "vh", "ms", "vw"],
+    "indentation": 4,
+    "max-empty-lines": [ 2, {
+      "ignore": ["comments"]
+    } ]
+  },
+  "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+ }
