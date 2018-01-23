@@ -6,9 +6,12 @@
 
 /* Colors
 ********************/
---color-primary:                 #58a9e0;
+
+/* Theme */
+--color-primary:                 #f42d40;
 --color-secondary:               #121b20;
 
+/* Grayscale */
 --color-gray-dark:               #4b4b4b;
 --color-gray:                    #acacac;
 --color-gray-light:              #d7d7d7;
@@ -16,11 +19,18 @@
 --color-white:                   #ffffff;
 --color-black:                   #000000;
 
+/* Text */
 --color-text:                    #363636;
 
+/* Social */
 --color-facebook:                #3b5998;
 --color-twitter:                 #00aced;
 --color-google-plus:             #d34836;
+
+/* States */
+--color-success:                 #2ecc71;
+--color-warning:                 #f1c40f;
+--color-danger:                  #e74c3c;
 
 
 
@@ -39,7 +49,7 @@
 --site-width: 1560px;
 --site-padding: 30px;
 
---border-radius: 4px;
+--border-radius: 0;
 
 /* Easing functions
 ********************/

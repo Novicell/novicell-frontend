@@ -17,6 +17,7 @@
 @import '../01-atoms/forms/label/label.css';
 @import '../01-atoms/forms/select/select.css';
 @import '../01-atoms/forms/textarea/textarea.css';
+@import '../01-atoms/forms/validation/validation.css';
 @import '../01-atoms/image/image.css';
 @import '../01-atoms/links/link/link.css';
 @import '../01-atoms/links/link-button/link-button.css';

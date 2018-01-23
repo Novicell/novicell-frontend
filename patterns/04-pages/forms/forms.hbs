@@ -5,46 +5,90 @@
         {{#embed '@grid-container--site-width'}}
             {{#content 'grid-container-content'}}
                 <h1>Forms overview:</h1>
+                
+
+                <h2>Input types</h2>
+                <div class="input__wrapper">
+                    {{> @label inputId="selectId" text="Select" }}
+                    {{ render '@select' }}
+                </div>
+
+                <div class="input__wrapper">
+                    {{ render '@checkbox' }}
+                </div>
+
+                <div class="input__wrapper">
+                    {{> @radio id="1" value="val1" name="radio" label="Radio 1"}}
+                </div>
+                <div class="input__wrapper">
+                    {{> @radio id="2" value="val2" name="radio" label="Radio 2"}}
+                </div>
+
+
+                <h2>Standard fields with validation</h2>
+
                 <form data-validate>
                     <div class="input__wrapper">
-                        {{ render '@select' }}
+                        {{> @label inputId="email-id" text="Email" sub="Påkrævet"}}
+                        {{ render '@input--email' }}
+                        <div class="input__description">Dette en note med hjælp, der skaber tryghed hos brugeren</div>
                     </div>
-
-                    <div class="input__wrapper">{{ render '@checkbox' }}</div>
-
-                    <div class="input__wrapper">
-                        {{> @radio id = "1" name="radio" label="Radio 1"}}
-                    </div>
-                    <div class="input__wrapper">
-                        {{> @radio id = "2" name="radio" label="Radio 2"}}
-                    </div>
-
-                    <div class="input__wrapper">
-                        {{> @input type = "text" name = "Required input" placeholder="Placeholder" }}
-                    </div>
-
-    
                     
-                    <div class="input__wrapper">{{ render '@input--email' }}</div>
-                    <div class="input__wrapper">{{ render '@input--password' }}</div>
-                    <div class="input__wrapper">{{ render '@input--search' }}</div>
-                    <div class="input__wrapper">{{ render '@input--text' }}</div>
-                    <div class="input__wrapper">{{ render '@textarea' }}</div>
+                    <div class="input__wrapper">
+                        {{> @label inputId="password-id" text="Password" sub="Påkrævet"}}
+                        {{ render '@input--password' }}
+                    </div>
                     
+                    <div class="input__wrapper">
+                        {{> @label inputId="search-id" text="Søgning" sub="Påkrævet"}}
+                        {{ render '@input--search' }}
+                    </div>
+                    
+                    <div class="input__wrapper">
+                        {{> @label inputId="text-id" text="Tekst" sub="Valgfri"}}
+                        {{> @input--text }}
+                    </div>
+                    
+                    <div class="input__wrapper">
+                        {{> @label inputId="textareaId" sub="Valgfrit" text="Beskrivelse" }}
+                        {{ render '@textarea' }}
+                    </div>
 
                     {{> @button buttonType = "submit" text = "Submit"}}
                     
-
-                    
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
                 </form>
+
+                <hr>
+
+                <form>
+
+                    <h2>Input masking</h2>
+                    <p>
+                        Using: <a href="https://github.com/text-mask/text-mask/tree/master/vanilla">https://github.com/text-mask/text-mask/tree/master/vanilla</a>
+
+                    </p>
+
+                    <div class="input__wrapper">
+                        {{> @label inputId="phoneId" sub="phone" text="Telefon" }}
+                        {{> @input class="mask--phone" type = "text" name = "phone" id="phoneId" placeholder="Indtast dit telefonnummer" required="required"}}
+                    </div>
+
+                    <div class="input__wrapper">
+                        {{> @label inputId="cpr" sub="cpr" text="CPR" }}
+                        {{> @input class="mask--cpr" type="text" name="cpr" id="cpr" placeholder="Indtast dit CPR nummer" required="required"}}
+                    </div>
+
+                   
+
+                </form>
+
+
+                <h2>Add-ons:</h2>
+                <ul>
+                    <li>
+                        <a href="https://codepen.io/bfred-it/pen/zNNxOz">Persistent fields</a>
+                    </li>
+                </ul>
                 
 
             {{/content}}

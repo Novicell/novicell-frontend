@@ -3,6 +3,7 @@
     "status": "prototype",
     "context": {
         "text": "Label",
-        "inputId": "default-id"
+        "inputId": "default-id",
+        "sub": "Valgfrit"
     }
 } 
