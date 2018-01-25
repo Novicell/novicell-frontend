@@ -24,27 +24,8 @@
     &__content {
         padding: var(--box-padding);
     }
-
+    
     p + p {
         margin-top: var(--box-paragraph-spacing-top);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    }  
 }

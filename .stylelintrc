@@ -1,11 +1,12 @@
 {
   "rules": {
-    "block-no-empty": null,
+    "block-no-empty": true,
     "color-no-invalid-hex": true,
     "selector-max-class": 3,
     "declaration-no-important": true,
     "property-no-unknown": true,
     "unit-no-unknown": true,
+    "selector-max-id": 0,
     "unit-whitelist": ["em", "rem", "%", "s", "px", "deg", "vh", "ms", "vw"],
     "indentation": 4,
     "max-empty-lines": [ 2, {
