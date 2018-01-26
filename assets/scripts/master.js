@@ -10,6 +10,7 @@ var projectName = projectName || {};
 // Document ready
 document.addEventListener('DOMContentLoaded', function(){
     svg4everybody(); // Fix SVG spritemap in IE/Edge
+    novicell.cookieInfo.init(); 
 
     console.log('it works!');
 });

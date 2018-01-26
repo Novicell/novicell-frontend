@@ -1,0 +1,11 @@
+{
+  "title": "Cookie info",
+  "status": "ready",
+  "context": {
+    "cookieInfoOpenText": "Cookies?",
+    "cookieInfoText": "We're using cookies on this website, is that OK with you?",
+    "cookieInfoMore": "read more",
+    "cookieInfoColseText": "Fine with me :)"
+  }
+}
+  
