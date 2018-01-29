@@ -83,20 +83,26 @@
 --container-max-width-lg:		1140px;
 --container-max-width-xl:		1352px;
 } /*Root end*/
+
 /*Extra small screen / phone*/
 @custom-media --viewport-xs-min (min-width: 0);
+@custom-media --viewport-xs-max (max-width: 575px);
 
 /* Small medium screen / phablet, large phones*/
 @custom-media --viewport-ms-min (min-width: 576px);
+@custom-media --viewport-ms-max (max-width: 767px);
 
 /* Small screen / tablet*/
 @custom-media --viewport-sm-min (min-width: 768px);
+@custom-media --viewport-sm-max (max-width: 991px);
 
 /* Medium screen / desktop*/
 @custom-media --viewport-md-min (min-width: 992px);
+@custom-media --viewport-md-max (max-width: 1199px);
 
 /* Large screen / wide desktop*/
 @custom-media --viewport-lg-min (min-width: 1200px);
+@custom-media --viewport-lg-max (max-width: 1399px);
 
 /* X Large screen / X wide desktop*/
 @custom-media --viewport-xl-min (min-width: 1400px);
