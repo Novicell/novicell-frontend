@@ -2,7 +2,6 @@
 title: Novicell Pattern Library
 ---
 
-# Novicell Pattern Library
 You can edit this file at `documentation/01-index.hbs`
 
 ## Project: [Project Name]
