@@ -85,7 +85,7 @@
     "postcss-nested": "2.1.2",
     "postcss-partial-import": "4.1.0",
     "postcss-reporter": "5.0.0",
-    "stylelint": "8.2.0",
+    "stylelint": "8.4.0",
     "vinyl-ftp": "^0.6.0",
     "yargs": "~9.0.1"
   },
