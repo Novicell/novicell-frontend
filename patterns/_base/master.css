@@ -2,6 +2,7 @@
 @import '_normalize.css';
 @import '_variables.css';
 @import '_base.css';
+@import '_fonts.css';
 
 /* Elements*/
 @import '../01-atoms/buttons/button/button.css';
