@@ -32,7 +32,8 @@ module.exports = (function () {
                     vendorPath + "novicell-lazyload/js/novicell.dynamic-image.js",
                     vendorPath + "novicell-lazyload/js/lazy-images.js",
                     vendorPath + "lazysizes/lazysizes.min.js",                    
-                    vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js"   
+                    vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js",
+                    vendorPath + "postcss-reporter/lib/reporter.js"
                 ]
             },
             {

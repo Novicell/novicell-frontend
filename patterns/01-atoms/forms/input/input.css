@@ -26,6 +26,18 @@
     border: 1px solid var(--input-border-color);
     border-radius: 4px;
     vertical-align: bottom;
-
+    
     &:focus {outline: 0;}
+    
+    &[type="text"],
+    &[type="search"],
+    &[type="email"],
+    &[type="password"],
+    &[type="url"],
+    &[type="tel"],
+    &[type="number"] {
+        -webkit-border-radius: 0;
+        -webkit-appearance: none;
+        appearance: none;
+    }
 }

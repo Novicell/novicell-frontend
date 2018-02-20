@@ -2,7 +2,6 @@
 title: Novicell Pattern Library
 ---
 
-# Novicell Pattern Library
 You can edit this file at `documentation/01-index.hbs`
 
 ## Project: [Project Name]
@@ -54,10 +53,19 @@ It is not possible to use a CSS custom property (variable) in media queries. Med
 .some-class {
     color: blue;
     
-    @media(--viewport-sm-min){
+    @media (--viewport-sm-min){
         & {
             color:red;
         }
     }
 }
 ```
+
+**Using media queries - remember the space**
+
+In the  media query example: please notice there's a space between @media and (--viewport....  Use a space every time, or your css might end up looking like this (of course @mediascreen will not work):
+
+```css
+@mediascreen and (min-width: 768px){.some-class{color:red;}}
+```
+
