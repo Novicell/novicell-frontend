@@ -1,7 +1,6 @@
 :root {
-        --color-checkbox: var(--color-primary);
-        --color-border: var(--color-gray-light);
-        --color-text: var(--color-text);
+    --color-checkbox: var(--color-primary);
+    --color-checkbox-border: var(--color-gray-light);
 }
 
 .checkbox {
@@ -27,7 +26,7 @@
         top: 0;
         width: 20px;
         height: 20px;
-        border: 1px solid var(--color-border);
+        border: 1px solid var(--color-checkbox-border);
         border-radius: 0;
         transition: all 0.2s ease;
     }

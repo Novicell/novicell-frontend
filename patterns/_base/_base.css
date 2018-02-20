@@ -37,7 +37,7 @@ body {
 /* Links */
 a {
     color: var(--color-link, blue);
-                        text-decoration: underline;
+    text-decoration: underline;
     text-decoration-skip: ink;
 
     &:hover,
