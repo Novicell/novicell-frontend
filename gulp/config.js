@@ -32,7 +32,8 @@ module.exports = (function () {
                     vendorPath + "novicell-debounce/js/novicell.debounce.js",
                     vendorPath + "novicell-lazyload/js/novicell.dynamic-image.js",
                     vendorPath + "novicell-lazyload/js/lazy-images.js",
-                    vendorPath + "lazysizes/lazysizes.js"
+                    vendorPath + "lazysizes/lazysizes.js",
+		    vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js"
                 ]
             },
             {
