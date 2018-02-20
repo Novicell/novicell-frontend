@@ -1,54 +1,17 @@
 {{ render '@header' }}
-
-{{#embed '@main' }}
-    {{#content 'main-content' }}
-        {{#embed '@grid-container--site-width'}}
-            {{#content 'grid-container-content'}}
-            {{#embed '@grid-row'}}
-                {{#content 'grid-row-content'}}
-                    {{#embed '@grid-column'}}
-                        {{#content 'grid-column-content'}}
-                            {{ render '@heading-page' }}
-                            {{ render '@text-box'  }}
-                        {{/content}}
-                    {{/embed}}
-                {{/content}}
-            {{/embed}}
-            {{#embed '@grid-row--two-columns'}}
-                {{#content 'grid-row-content'}}
-                    {{#embed '@grid-column'}}
-                        {{#content 'grid-column-content'}}
-                            {{ render '@image-text-section'}}
-                        {{/content}}
-                    {{/embed}}
-                    {{#embed '@grid-column'}}
-                        {{#content 'grid-column-content'}}
-                            {{ render '@image-text-section'}}
-                        {{/content}}
-                    {{/embed}}
-                {{/content}}
-            {{/embed}}
-            {{#embed '@grid-row'}}
-                {{#content 'grid-row-content'}}
-                    {{#embed '@grid-column'}}
-                        {{#content 'grid-column-content'}}
-                            {{#embed '@grid-row'}}
-                                {{#content 'grid-row-content'}}
-                                    {{ render '@image-text-section'}}
-                                {{/content}}
-                            {{/embed}}
-                            {{#embed '@grid-row'}}
-                                {{#content 'grid-row-content'}}
-                                    {{ render '@text-image-section'}}
-                                {{/content}}
-                            {{/embed}}
-                        {{/content}}
-                    {{/embed}}
-                {{/content}}
-            {{/embed}}
-            {{/content}}
-        {{/embed}}
-    {{/content}}
-{{/embed}}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            {{ render '@heading-page' }}
+            {{ render '@text-box'  }}
+        </div>
+        <div class="col-xs-12 col-sm-12" style="margin:20px 0;">
+            {{ render '@image-text-section'}}
+        </div>
+        <div class="col-xs-12 col-sm-12">
+            {{ render '@text-image-section'}} 
+        </div>
+    </div>
+</div>
 
 {{ render '@footer' }}

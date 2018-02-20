@@ -1,19 +1,13 @@
-{{#embed "@grid-row--three-columns"}}
-    {{#content "content"}}
-        {{#embed "@grid-column"}}
-            {{#content "grid-column-content"}}
-                {{ render '@box' }}
-            {{/content}}
-        {{/embed}}
-        {{#embed "@grid-column"}}
-            {{#content "grid-column-content"}}
-                {{ render '@box' }}
-            {{/content}}
-        {{/embed}}
-        {{#embed "@grid-column"}}
-            {{#content "grid-column-content"}}
-                {{ render '@box' }}
-            {{/content}}
-        {{/embed}}
-    {{/content}}
-{{/embed}}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            {{ render '@box' }}
+        </div>
+        <div class="col-xs-12 col-sm-12">
+            {{ render '@box' }}
+        </div>
+        <div class="col-xs-12 col-sm-12">
+            {{ render '@box' }}
+        </div>
+    </div>
+</div>
