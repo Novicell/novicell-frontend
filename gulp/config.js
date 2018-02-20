@@ -7,6 +7,7 @@ var path = require('path');
 module.exports = (function () {
     var projectPath = "./"; // path for the source files
     var assetPath = projectPath + "assets/"; // path for fractal assets such as images, icons and more
+    var patternPath = projectPath + "patterns/"; // path for fractal assets such as images, icons and more
     var webPath = projectPath + ""; // path for the website - usually path to livereload views, and used for distPath
     var vendorPath = projectPath + "node_modules/"; // path for vendor scripts
     var distPath = webPath + "dist/"; // path for production files
@@ -39,7 +40,9 @@ module.exports = (function () {
             {
                 name: 'master',
                 scripts: [
+                    assetPath + "scripts/helpers/**/*.js",
                     assetPath + "scripts/components/**/*.js",
+                    patternPath + "**/*.js",
                     assetPath + "scripts/master.js"
                 ],
                 styles: [
@@ -83,7 +86,8 @@ module.exports = (function () {
         watchIcons: [ assetPath + 'icons/*' ],
         watchFonts: [ assetPath + 'fonts/*' ],
         watchScripts: [
-            assetPath + 'scripts/**/*.js'
+            assetPath + 'scripts/**/*.js',
+            patternPath + "**/*.js",
         ],
         watchStyles: [
             projectPath + "/patterns/**/*.css"

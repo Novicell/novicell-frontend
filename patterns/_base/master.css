@@ -34,12 +34,13 @@
 @import '../02-molecules/topbar/topbar/topbar.css';
 @import '../02-molecules/cookie-info/cookie-info.css';
 
-/* Components
+/* Organisms
 ********************/
 @import '../03-organisms/footer/footer.css';
 @import '../03-organisms/hero/hero.css';
 @import '../03-organisms/section/image-text-section/image-text-section.css';
 @import '../03-organisms/section/text-image-section/text-image-section.css';
+@import '../03-organisms/navigations/site-navigation/site-navigation.css';
 
 /* Helpers
 ********************/

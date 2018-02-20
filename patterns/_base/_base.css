@@ -63,3 +63,7 @@ figure {
 
     &.contain-width img { width: auto; }
 }
+
+img {
+    max-width: 100%;
+}
