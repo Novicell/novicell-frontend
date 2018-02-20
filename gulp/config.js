@@ -29,11 +29,11 @@ module.exports = (function () {
                 scripts: [
                     vendorPath + "svg4everybody/dist/svg4everybody.js",
                     vendorPath + "validate/dist/js/validate.js",
+                    vendorPath + "novicell-debounce/js/novicell.debounce.js",
                     vendorPath + "novicell-lazyload/js/novicell.dynamic-image.js",
                     vendorPath + "novicell-lazyload/js/lazy-images.js",
-                    vendorPath + "lazysizes/lazysizes.min.js",                    
-                    vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js",
-                    vendorPath + "postcss-reporter/lib/reporter.js"
+                    vendorPath + "lazysizes/lazysizes.js",
+		    vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js"
                 ]
             },
             {
