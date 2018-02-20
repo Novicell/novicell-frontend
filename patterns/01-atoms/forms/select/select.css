@@ -1,7 +1,5 @@
 :root {
         --color-checkbox: var(--color-primary);
-        --color-border: var(--color-gray-light);
-        --color-text: var(--color-text);
 }
 
 .select {

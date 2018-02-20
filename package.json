@@ -92,10 +92,10 @@
   "dependencies": {
     "flexboxgrid": "6.3.1",
     "gulp-favicons": "2.2.7",
+    "novicell-cookie-info": "1.1.0",
+    "novicell-lazyload": "1.2.0",
     "svg4everybody": "2.1.9",
     "validate": "github:cferdinandi/validate",
     "vanilla-text-mask": "5.0.1"
-    "novicell-lazyload": "1.2.0",
-    "novicell-cookie-info": "1.1.0"
   }
 }

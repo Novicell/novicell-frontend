@@ -3,14 +3,14 @@
 */
 
 /*Setting document variables*/
-:root{
+
+:root {
     --input-text-color: var(--color-text);
     --input-background-color: var(--color-white);
     --input-background-color-disabled: var(--color-gray);
     --input-border-color: var(--color-gray-light);
     --input-font-family: var(--base-font-family);
 }
-
 
 .input {
     display: block;
@@ -22,16 +22,15 @@
     font-family: var(--input-font-family);
     color: var(--input-text-color);
     background-color: var(--input-background-color);
-    background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
+    background-image: none;
+    /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
     border: 1px solid var(--input-border-color);
     border-radius: var(--border-radius);
     vertical-align: bottom;
-
     &:focus {
         outline: 0;
         border-color: var(--input-text-color);
     }
-
     &__wrapper {
         margin-bottom: 15px;
     }
@@ -40,16 +39,16 @@
         color: var(--color-gray);
         font-style: italic;
         margin-top: 5px;
-    
-    &[type="text"],
-    &[type="search"],
-    &[type="email"],
-    &[type="password"],
-    &[type="url"],
-    &[type="tel"],
-    &[type="number"] {
-        -webkit-border-radius: 0;
-        -webkit-appearance: none;
-        appearance: none;
+        &[type="text"],
+        &[type="search"],
+        &[type="email"],
+        &[type="password"],
+        &[type="url"],
+        &[type="tel"],
+        &[type="number"] {
+            -webkit-border-radius: 0;
+            -webkit-appearance: none;
+            appearance: none;
+        }
     }
 }
