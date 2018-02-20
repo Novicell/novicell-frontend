@@ -85,7 +85,7 @@
     "postcss-nested": "2.1.2",
     "postcss-partial-import": "4.1.0",
     "postcss-reporter": "5.0.0",
-    "stylelint": "8.2.0",
+    "stylelint": "8.4.0",
     "vinyl-ftp": "^0.6.0",
     "yargs": "~9.0.1"
   },
@@ -94,6 +94,7 @@
     "gulp-favicons": "2.2.7",
     "svg4everybody": "2.1.9",
     "validate": "github:cferdinandi/validate",
-    "novicell-lazyload": "1.0.2"
+    "novicell-lazyload": "1.2.0",
+    "novicell-cookie-info": "1.1.0"
   }
 }
