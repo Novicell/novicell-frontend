@@ -3,12 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{!-- <link rel="preload" href="{{ path '/dist/fonts/myfont.woff2' }}" as="font" type="font/woff2" crossorigin="anonymous"> --}}
+
+        {{!-- Fonts --}}
+        <link rel="preload" as="font" href="{{ path '/dist/fonts/lato-bold.woff2' }}" type="font/woff2" crossorigin>
+
+        {{!-- Styles --}}
         <link media="all" rel="stylesheet" href="{{ path '/dist/css/master.min.css' }}">
+        
         <title>{{ _target.title }}</title>
     </head>
     <body>
         {{{ yield }}}
+        {{ render '@cookie-info' }}
+        
         <script defer src="{{ path '/dist/scripts/vendor.min.js' }}"></script>
         <script defer src="{{ path '/dist/scripts/master.min.js' }}"></script>
     </body>

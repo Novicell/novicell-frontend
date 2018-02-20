@@ -13,5 +13,6 @@ document.addEventListener('DOMContentLoaded', function(){
     novicell.validate.init(); // Init Validation
     novicell.inputMasking.init(); //Init input masking
     novicell.persistentField.init(); //Init persistentField
+    novicell.cookieInfo.init(); 
     console.log('it works!');
 });

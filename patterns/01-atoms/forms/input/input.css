@@ -40,5 +40,16 @@
         color: var(--color-gray);
         font-style: italic;
         margin-top: 5px;
+    
+    &[type="text"],
+    &[type="search"],
+    &[type="email"],
+    &[type="password"],
+    &[type="url"],
+    &[type="tel"],
+    &[type="number"] {
+        -webkit-border-radius: 0;
+        -webkit-appearance: none;
+        appearance: none;
     }
 }

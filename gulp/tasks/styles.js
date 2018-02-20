@@ -13,9 +13,8 @@ const stylelint = require("stylelint");
 const reporter = require("postcss-reporter");
 
 const postCssPlugins = [
-    stylelint(),
-    postcssImport(),
     cssvariables(),
+    postcssImport(),
     nested(),
     cssnext({ browsers: [">= 5% in DK", "ie 11"] }),
     cssnano({
@@ -26,7 +25,11 @@ const postCssPlugins = [
         zindex: false,
         discardUnused: {fontFace: false}
     }),
-    reporter()
+    stylelint(),
+    reporter({
+        clearMessages: true,
+        throwError: true
+      })
 ];
 
 gulp.task('styles', function () {
@@ -34,7 +37,6 @@ gulp.task('styles', function () {
         return b.styles != null;
     }).map(function (b) {
         console.log(b.name + ' post-CSS styles are compiling');
-
         return gulp.src(b.styles)
             .pipe(plugins.plumber(config.errorHandler('styles')))
             .pipe(plugins.sourcemaps.init())

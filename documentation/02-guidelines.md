@@ -9,7 +9,9 @@ Foreach pattern we need to declare three files.
 * yxz.hbs
 
 ### yxz.config.json
-The config file is where we declare information and content about the pattern. We __dont__ use the config for modifiers. If a modifier is neeaded a new variant should be created for the specific pattern
+The config file is where we declare information and content about the pattern. 
+
+We __don't__ use the config for creating modifiers. If a modifier is needed a new variant handlebars file should always be created. This way we can keep track of modifiers both by looking in fractal but also in our file tree.
 
 ```javascript
 {
@@ -112,13 +114,18 @@ The handlebars file is where the templating is happening. You can print out cont
 
 ## Folder structure
 * _base
+* _partials
 * 01-atoms
 * 02-molecules
 * 03-organisms
 * 04-pages
+* helpers
 
 ### _base
 Here all the global style should be places. E.g base and variables. _dont place component styling in here_
+
+### _partials
+In this folder is the file _preview.hbs, this is the equivalent of a master file.
 
 ### 01-atoms
 Atoms are the most basic form of a pattern. E.g a Title. Each atom can have multiple variants, that modifies the layout.
@@ -139,6 +146,38 @@ __The context inside .config.json should layout specific values. It could be be 
 Page can be a combination of multiple atoms, molecules and organisms. Pages doesnt not contain styling. Only use this to layout pages, not style them.
 
 __The context inside .config.json should not contain any values. Try to keep the context inside the orgasnisms.__
+
+### helpers
+(Do not confuse this with handlebars helpers: http://handlebarsjs.com/#helpers)
+
+The helper folder contains stuff that is not really a block (BEM), but is a helper for creating the layout. Stuff you need to reuse, but the content can't come from a property in json - like grids and main.
+
+**Example: grid container**
+
+The handlebars file could look like this:
+
+```html
+<div class="grid-container">
+    {{#block "grid-container-content"}}
+    {{/block}}
+</div>
+```
+
+The #block means "content goes here"
+
+When you want to use the grid-container helper, use it like this:
+
+```html
+<div class="hero">
+    {{#embed "@grid-container"}}
+        {{#content "grid-container-content"}}
+            content goes here...
+        {{/content}}
+    {{/embed}}
+</div>
+```
+
+The #embed means you want to use the grid-container helper and the #content means that stuff inside is the content that is going to be rendered inside the #block in the first example
 
 ## Render functions
 
