@@ -94,6 +94,6 @@
     "gulp-favicons": "2.2.7",
     "svg4everybody": "2.1.9",
     "validate": "github:cferdinandi/validate",
-    "novicell-lazyload": "1.0.2"
+    "novicell-lazyload": "1.2.0"
   }
 }
