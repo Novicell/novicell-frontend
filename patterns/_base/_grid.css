@@ -8,8 +8,8 @@
 .container {
     width: 100%;
     max-width: var(--site-width);
-    padding-right: var(--half-gutter-width);
-    padding-left: var(--half-gutter-width);
+    padding-right: var(--gutter-width);
+    padding-left: var(--gutter-width);
 
     &--fluid {
         max-width: none;
@@ -29,8 +29,8 @@
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: var(--half-gutter-compensation);
-  margin-left: var(--half-gutter-compensation);
+  margin-right: var(--gutter-compensation);
+  margin-left: var(--gutter-compensation);
 }
 
 .row.reverse {
