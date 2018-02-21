@@ -5,7 +5,8 @@
 		"type": "text",
 		"name": "default-input",
 		"id": "default-id",
-		"placeholder": "Default"
+		"placeholder": "Default",
+		"required": "required"
 	},
 	"variants": [
 		{

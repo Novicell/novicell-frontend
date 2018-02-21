@@ -1,0 +1,95 @@
+<div class="container">
+    <h1>Forms overview:</h1>
+
+    <hr>
+
+    <h2>Persistent inputs</h2>
+    <p>We are using persistent inputs, so when you enter data it will be stored in your sessionStorage. Try entering data and refreshing the page.</p>
+    <p>Using: <a href="https://codepen.io/bfred-it/pen/zNNxOz">https://codepen.io/bfred-it/pen/zNNxOz</a></p>
+    <hr>
+    <h2>Input types</h2>
+    <div class="input__wrapper">
+        {{> @label inputId="selectId" text="Select" }}
+        {{ render '@select' }}
+    </div>
+
+    <div class="input__wrapper">
+        {{ render '@checkbox' }}
+    </div>
+
+    <div class="input__wrapper">
+        {{> @radio id="1" value="val1" name="radio" label="Radio 1"}}
+    </div>
+    <div class="input__wrapper">
+        {{> @radio id="2" value="val2" name="radio" label="Radio 2"}}
+    </div>
+
+    <hr>
+    <h2>Standard fields with validation</h2>
+    <p>
+        Using: <a href="https://github.com/cferdinandi/validate">https://github.com/cferdinandi/validate</a>
+    </p>
+
+    <form data-validate>
+        <div class="input__wrapper">
+            {{> @label inputId="email-id" text="Email" sub="Påkrævet"}}
+            {{ render '@input--email' }}
+            <div class="input__description">Dette en note med hjælp, der skaber tryghed hos brugeren</div>
+        </div>
+        
+        <div class="input__wrapper">
+            {{> @label inputId="password-id" text="Password" sub="Påkrævet"}}
+            {{ render '@input--password' }}
+        </div>
+        
+        <div class="input__wrapper">
+            {{> @label inputId="search-id" text="Søgning" sub="Påkrævet"}}
+            {{ render '@input--search' }}
+        </div>
+        
+        <div class="input__wrapper">
+            {{> @label inputId="text-id" text="Tekst" sub="Valgfri"}}
+            {{> @input--text }}
+        </div>
+        
+        <div class="input__wrapper">
+            {{> @label inputId="textareaId" sub="Valgfrit" text="Beskrivelse" }}
+            {{ render '@textarea' }}
+        </div>
+
+        {{> @button buttonType = "submit" text = "Submit"}}
+        
+    </form>
+
+    <hr>
+
+    <form data-validate>
+
+        <h2>Input masking</h2>
+        <p>
+            Using: <a href="https://github.com/text-mask/text-mask/tree/master/vanilla">https://github.com/text-mask/text-mask/tree/master/vanilla</a>
+        </p>
+
+        <div class="input__wrapper">
+            {{> @label inputId="phoneId" sub="phone" text="Telefon" }}
+            {{> @input class="js-mask--phone" type = "text" name = "phone" id="phoneId" placeholder="Indtast dit telefonnummer" required="required"}}
+        </div>
+
+        <div class="input__wrapper">
+            {{> @label inputId="cpr" sub="cpr" text="CPR" }}
+            {{> @input class="js-mask--cpr" type="text" name="cpr" id="cpr" placeholder="Indtast dit CPR nummer" required="required"}}
+        </div>
+
+        <div class="input__wrapper">
+            {{> @label inputId="bank" sub="bank" text="Reg. og Kontonummer" }}
+            {{> @input class="js-mask--bank" type="text" name="bank" id="bank" placeholder="Indtast dit registrerings og kontonummer" required="required"}}
+        </div>
+
+        <div class="input__wrapper">
+            {{> @label inputId="date1" sub="date1" text="Dato (dd/mm/åååå)" }}
+            {{> @input class="js-mask--date1" type="text" name="date1" id="date1" placeholder="Indtast dit registrerings og kontonummer" required="required"}}
+        </div>
+
+            {{> @button buttonType = "submit" text = "Submit"}}
+    </form>
+</div>

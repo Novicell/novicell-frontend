@@ -1,0 +1,64 @@
+:root {
+    --color-radio: var(--color-primary);
+    --color-radio-border: var(--color-gray-light);
+}
+
+.radio {
+    &:checked, &:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+
+    &:checked + label, &:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        display: inline-block;
+        color: var(--color-text);
+    }
+
+    &:checked + label:before, &:not(:checked) + label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--color-radio-border);
+        border-radius: 100%;
+        background: #fff;
+    }
+
+    &:checked + label:after, &:not(:checked) + label:after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: var(--color-radio);
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        border-radius: 100%;
+        transition: all 0.2s ease;
+    }
+
+    &:not(:checked) + label:after {
+        opacity: 0;
+        transform: scale(0);
+    }
+    &:checked + label:after {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Apply same disabled cursor tweak as for inputs
+    Some special care is needed because <label>s don't inherit their parent's `cursor`.
+
+    Note: Neither radios nor checkboxes can be readonly. */
+
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] & {
+        cursor: disabled;
+    }
+}
