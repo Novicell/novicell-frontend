@@ -1,0 +1,4 @@
+.list-page {
+    display: flex;
+    flex-wrap: wrap;
+}

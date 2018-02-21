@@ -1,0 +1,15 @@
+<div class="list-item {{ modifier }}">
+    <a href="{{ list-item.url }}" class="list-item__image-holder">
+        <img class="list-item__image lazyload lazyload-measure lazyload-bg" alt="Alt text" data-src="{{ list-item.img }}" data-query-obj='{"mode":"crop", "quality":"70", "center": "0.8,0.3"}'>
+    </a>
+    <div class="list-item__content">
+        <h2 class="list-item__headline">
+            {{ list-item.headline }}
+        </h2>
+        {{ list-item.text }}
+
+        <a class="list-item__link" href="{{ list-item.url }}">
+            {{ list-item.url }}
+        </a>
+    </div>
+</div>

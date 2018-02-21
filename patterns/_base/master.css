@@ -45,6 +45,7 @@
 @import '../03-organisms/hero/hero.css';
 @import '../03-organisms/section/image-text-section/image-text-section.css';
 @import '../03-organisms/section/text-image-section/text-image-section.css';
+@import '../03-organisms/list-page/list-page.css';
 
 /* Helpers
 ********************/
