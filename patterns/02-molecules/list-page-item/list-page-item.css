@@ -1,9 +1,9 @@
 :root {
-    --list-item-color: #333;
+    --list-page-item-color: #333;
 }
 
-.list-item {
-    color: var(--list-item-color);
+.list-page-item {
+    color: var(--list-page-item-color);
     display: flex;
     min-height: 200px;
     margin: 20px;
@@ -45,7 +45,7 @@
         margin-left: auto;
         margin-top: auto;
         margin-bottom: 0;
-        color: var(--list-item-color);
+        color: var(--list-page-item-color);
     }
 
     &--card {
@@ -69,7 +69,7 @@
             width: calc(33.33% - 40px);
         }
 
-        .list-item__image-holder {
+        .list-page-item__image-holder {
             min-height: 250px;
             width: 100%;
         }

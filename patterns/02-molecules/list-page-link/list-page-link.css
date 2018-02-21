@@ -1,0 +1,9 @@
+:root {
+    --list-page-link-color: #333;
+}
+
+.list-page-link {
+    display: flex;
+    margin: 0 0 20px;
+}
+

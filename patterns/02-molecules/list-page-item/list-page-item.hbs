@@ -1,0 +1,15 @@
+<div class="list-page-item {{ modifier }}">
+    <a href="{{ list-page-item.url }}" class="list-page-item__image-holder">
+        <img class="list-page-item__image lazyload lazyload-measure lazyload-bg" alt="Alt text" data-src="{{ list-page-item.img }}" data-query-obj='{"mode":"crop", "quality":"70", "center": "0.8,0.3"}'>
+    </a>
+    <div class="list-page-item__content">
+        <h2 class="list-page-item__headline">
+            {{ list-page-item.headline }}
+        </h2>
+        {{ list-page-item.text }}
+
+        <a class="list-page-item__link" href="{{ list-page-item.url }}">
+            {{ list-page-item.url }}
+        </a>
+    </div>
+</div>
