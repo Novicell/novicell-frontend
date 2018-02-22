@@ -1,16 +1,20 @@
 {{ render '@header' }}
 
-{{#embed '@main' }}
-    {{#content 'main-content' }}
-        {{#embed '@grid-container--site-width'}}
-            {{#content 'grid-container-content'}}
-                {{ render '@about-boxes' }}
-                {{ render '@primary-boxes' }}
-                {{ render '@feedback-box' }}
-                {{ render '@secondary-boxes' }}
-            {{/content}}
-        {{/embed}}
-    {{/content}} 
-{{/embed}}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            {{ render '@about-boxes' }}
+        </div>
+        <div class="col-xs-12">                    
+            {{ render '@primary-boxes' }}
+        </div>                    
+        <div class="col-xs-12">                    
+            {{ render '@feedback-box' }}
+        </div>                    
+        <div class="col-xs-12">                    
+            {{ render '@secondary-boxes' }}
+        </div>
+    </div>
+</div>
 
 {{ render '@footer' }}

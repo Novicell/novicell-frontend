@@ -43,6 +43,7 @@
 
 [class^="col-"] {
     display: flex;
+    flex-direction: column;
 }
 
 .col-xs,
