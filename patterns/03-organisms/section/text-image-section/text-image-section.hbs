@@ -1,17 +1,13 @@
 <section class="text-image-section">
-    {{#embed "@grid-row--two-columns"}}
-        {{#content "content"}}
-            {{#embed "@grid-column"}}
-                {{#content "grid-column-content"}}
-                    {{ render '@text-box' textbox2}}
-                    {{ render '@link-button' button}}
-                {{/content}}
-            {{/embed}}
-            {{#embed "@grid-column"}}
-                {{#content "grid-column-content"}}
-                    {{ render '@image' image}}
-                {{/content}}
-            {{/embed}}
-        {{/content}}
-    {{/embed}}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                {{ render '@text-box' textbox2}}
+                {{ render '@link-button' button}}
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                {{ render '@image' image}}
+            </div>
+        </div>
+    </div>
 </section>

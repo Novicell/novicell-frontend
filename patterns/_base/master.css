@@ -5,7 +5,7 @@
 @import '_fonts.css';
 @import '_grid.css';
 
-/* Elements*/
+/* Atoms */
 @import '../01-atoms/buttons/button/button.css';
 @import '../01-atoms/headings/heading/heading.css';
 @import '../01-atoms/headings/heading-page/heading-page.css';
@@ -23,8 +23,7 @@
 @import '../01-atoms/logo/logo.css';
 @import '../01-atoms/paragraph/paragraph.css';
 
-/* Modules
-********************/
+/* Molecules */
 @import '../02-molecules/box/box/box.css';
 @import '../02-molecules/box/box-image/box-image.css';
 @import '../02-molecules/box/icon-box/icon-box.css';
@@ -38,16 +37,8 @@
 @import '../02-molecules/topbar/topbar/topbar.css';
 @import '../02-molecules/cookie-info/cookie-info.css';
 
-/* Components
-********************/
+/* Organisms */
 @import '../03-organisms/footer/footer.css';
 @import '../03-organisms/hero/hero.css';
 @import '../03-organisms/section/image-text-section/image-text-section.css';
 @import '../03-organisms/section/text-image-section/text-image-section.css';
-
-/* Helpers
-********************/
-@import '../helpers/main/main.css';
-@import '../helpers/grid/grid-column/grid-column.css';
-@import '../helpers/grid/grid-container/grid-container.css';
-@import '../helpers/grid/grid-row/grid-row.css';
