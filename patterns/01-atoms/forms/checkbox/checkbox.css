@@ -1,0 +1,71 @@
+:root {
+    --color-checkbox: var(--color-primary);
+    --color-checkbox-border: var(--color-gray-light);
+}
+
+.checkbox {
+
+    &:checked, &:not(:checked){
+        position: absolute;
+        left: -9999px;
+    }
+
+    &:checked + label, &:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        display: inline-block;
+        color: var(--color-text);
+    }
+
+    &:checked + label:before, &:not(:checked) + label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--color-checkbox-border);
+        border-radius: 0;
+        transition: all 0.2s ease;
+    }
+    &:checked + label:before {
+        background: var(--color-checkbox);
+        border: 1px solid var(--color-checkbox);
+    }
+
+    &:checked + label:after, &:not(:checked) + label:after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        background: transparent;
+        position: absolute;
+        border-radius: 0;
+        left: 2px;
+        top: 2px;
+        transition: all 0.2s ease;
+        background-size: 80%;
+        background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDc4LjM2OSA3OC4zNjkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDc4LjM2OSA3OC4zNjk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNNzguMDQ5LDE5LjAxNUwyOS40NTgsNjcuNjA2Yy0wLjQyOCwwLjQyOC0xLjEyMSwwLjQyOC0xLjU0OCwwTDAuMzIsNDAuMDE1Yy0wLjQyNy0wLjQyNi0wLjQyNy0xLjExOSwwLTEuNTQ3bDYuNzA0LTYuNzA0ICAgYzAuNDI4LTAuNDI3LDEuMTIxLTAuNDI3LDEuNTQ4LDBsMjAuMTEzLDIwLjExMmw0MS4xMTMtNDEuMTEzYzAuNDI5LTAuNDI3LDEuMTItMC40MjcsMS41NDgsMGw2LjcwMyw2LjcwNCAgIEM3OC40NzcsMTcuODk0LDc4LjQ3NywxOC41ODYsNzguMDQ5LDE5LjAxNXoiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);     
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &:not(:checked) + label:after {
+        opacity: 0;
+        transform: scale(0);
+    }
+    &:checked + label:after {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Apply same disabled cursor tweak as for inputs
+    Some special care is needed because <label>s don't inherit their parent's `cursor`.
+
+    Note: Neither radios nor checkboxes can be readonly. */
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] & {
+        cursor: disabled;
+    }
+}

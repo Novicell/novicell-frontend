@@ -23,7 +23,7 @@
     background-color: var(--input-background-color);
     background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
     border: 1px solid var(--input-border-color);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     resize: none;
 
     &:focus {

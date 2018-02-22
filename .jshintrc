@@ -5,10 +5,13 @@
         "svg4everybody": false,
         "google": false,
         "vue": false,
+        "validate": false,
+        "vanillaTextMask": false,
         "angular": false
     },
     "globalstrict": true,
     "browser": true,
     "devel": true,
+    "esversion": 6,
     "supernew": true
 }

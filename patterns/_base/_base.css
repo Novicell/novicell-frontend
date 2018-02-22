@@ -37,11 +37,18 @@ body {
 /* Links */
 a {
     color: var(--color-link, blue);
-                        text-decoration: underline;
+    text-decoration: underline;
     text-decoration-skip: ink;
 
     &:hover,
     &:focus { color: shade(var(--color-link, blue), 10%); }
+}
+
+/* Horizontal ruler */
+hr {
+    border: none;
+    border-bottom: 1px solid var(--color-gray);
+    margin: 30px 0;
 }
 
 
