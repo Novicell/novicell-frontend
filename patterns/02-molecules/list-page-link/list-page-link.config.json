@@ -3,7 +3,7 @@
     "status": "prototype",
     "context": {
         "list-page-link": {
-            "url": "google.dk",
+            "url": "https://google.dk",
             "link-text": "læs mere"
         }
     }

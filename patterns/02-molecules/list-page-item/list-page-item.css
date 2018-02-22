@@ -29,7 +29,7 @@
 
     &__image-holder {
         background-repeat: no-repeat;
-        flex-basis:20%;
+        flex-basis: 20%;
         flex-grow: 1;
 
         @media (--viewport-xs-max) {
@@ -66,7 +66,7 @@
         }
 
         @media (--viewport-md-min) {
-            width: calc(33.33% - 40px);
+            width: calc((100% / 3) - 40px);
         }
 
         .list-page-item__image-holder {
