@@ -35,7 +35,7 @@ fractal.docs.set('path', config.projectPath + 'documentation');
 
 // Web UI config
 fractal.web.theme(novicellTheme);
-fractal.web.set('builder.dest', config.projectPath + 'docs');
+fractal.web.set('builder.dest', config.projectPath + 'build');
 fractal.web.set('server.syncOptions', {
     // open: true, // open the server on 'gulp fractal'
     // browser: ['chrome'],

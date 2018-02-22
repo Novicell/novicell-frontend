@@ -21,8 +21,8 @@ gulp.task('fractal', ['watch'], function(){
     });
     server.on('error', err => logger.error(err.message));
     return server.start().then(() => {
-        logger.success(`🏡 Local Fractal server is now running at ${server.url}`);
-        logger.success(`🤖 Network URL (for testing): ${server.urls.sync.external}`)
+        logger.success(`🏡  Local Fractal server is now running at ${server.url}`);
+        logger.success(`🤖  Network URL (for testing): ${server.urls.sync.external}`)
     });
 });
 
