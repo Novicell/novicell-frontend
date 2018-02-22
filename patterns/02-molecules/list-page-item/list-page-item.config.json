@@ -1,0 +1,20 @@
+{
+    "title": "List page item",
+    "status": "prototype",
+    "context": {
+        "list-page-item": {
+            "img": "https://www.novicell.dk/media/59092/dla.jpg",
+            "headline": "Headline",
+            "text": "usu graeci debitis ea, impetus accusamus eam ad. Cu inimicus molestiae quo, at per iusto tritani eruditi. Omnium habemus at nam, erant latine laoreet ex qui, ius sumo splendide inciderint e",
+            "url": "https://google.dk"
+        }
+    },
+    "variants": [
+        {
+            "name": "card",
+            "context": {
+                "text": "list-page-item--card"
+            }
+        }
+    ]
+}

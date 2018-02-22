@@ -1,0 +1,10 @@
+{
+    "title": "List page link",
+    "status": "prototype",
+    "context": {
+        "list-page-link": {
+            "url": "https://google.dk",
+            "link-text": "læs mere"
+        }
+    }
+}

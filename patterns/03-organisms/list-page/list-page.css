@@ -1,0 +1,11 @@
+.list-page {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px;
+
+    &--link {
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0;
+    }
+}
