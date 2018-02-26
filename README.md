@@ -128,10 +128,10 @@ By running `gulp favicons`, favicons will be generated automatically for all dev
 
 
 ## Post-CSS components
-As a grid we recommend to use [Flexboxgrid](http://flexboxgrid.com/) as it is almost a plug-n-play replacement for the Bootstrap grid.
+As a grid we have been inspired by [Flexboxgrid](http://flexboxgrid.com/), to make our own grid. It is almost a plug-n-play replacement for the Bootstrap 3+ grid. You can look at the Flexboxgrid.com example page, for further documentation.
 
 There's a few basic setups that you will always need for all your projects. Buttons, Grid, Form elements, Tables. (Well, maybe you won't use tables).
-There's also an example of a component and a view, just to show how the naming convention should be, as well as how you should both write and organize your CSS files.
+For futher documentation on how to use PostCSS, have a look in the [Novicell Frontend Wiki](https://github.com/Novicell/novicell-frontend/wiki)
 
 ## BEM syntax
 Quick example of [BEM class notation](https://css-tricks.com/bem-101/). For further info take a look at the [Novicell frontend guidelines](https://novicell.github.io/frontenddocs/)
