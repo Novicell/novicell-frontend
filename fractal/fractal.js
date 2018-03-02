@@ -22,6 +22,24 @@ const novicellTheme = require('@frctl/mandelbrot')({
 novicellTheme.addStatic(__dirname, 'fractal'); 
 novicellTheme.addStatic(path.join(__dirname, '../' + config.webPath + 'dist'), 'dist'); 
 
+//Helpers
+//If equals
+instance.handlebars.registerHelper("if", function(conditional, options) {
+    if (conditional === options.hash.equals) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
+//Times helper
+instance.handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i)
+        accum += block.fn(i);
+    return accum;
+});
+
 // Project config
 fractal.set('project.title', config.appName);
 layouts.register(instance.handlebars);
