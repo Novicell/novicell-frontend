@@ -120,7 +120,7 @@ Equal helper is comparing with 2 variables with the === operator
 {{/if}}
 ```
 
-Times helper is an equivelant of a for loop, this example will give 10x span. ´´{{this}}´´ refers to the index of the loop.
+Times helper is an equivelant of a for loop, this example will give 10x span. `{{this}}` refers to the index of the loop.
 ```html
 {{#times 10}}
     <span>{{this}}</span>
