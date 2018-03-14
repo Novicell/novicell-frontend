@@ -27,13 +27,17 @@
     border: 1px solid var(--input-border-color);
     border-radius: var(--border-radius);
     vertical-align: bottom;
+    appearance: none;
+
     &:focus {
         outline: 0;
         border-color: var(--input-text-color);
     }
+
     &__wrapper {
         margin-bottom: 15px;
     }
+    
     &__description {
         font-size: 14px;
         color: var(--color-gray);

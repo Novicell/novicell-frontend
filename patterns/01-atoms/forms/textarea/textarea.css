@@ -25,6 +25,7 @@
     border: 1px solid var(--input-border-color);
     border-radius: var(--border-radius);
     resize: none;
+    appearance: none;
 
     &:focus {
         outline: none;
