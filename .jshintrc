@@ -13,5 +13,6 @@
     "browser": true,
     "devel": true,
     "esversion": 6,
-    "supernew": true
+    "supernew": true,
+    "loopfunc": true
 }
