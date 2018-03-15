@@ -2,5 +2,7 @@
     "title": "Logo",
     "status": "prototype",
     "context": {
+        "text": "random text",
+        "icon": "icon-checkbox"
     }
 }
