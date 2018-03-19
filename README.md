@@ -111,9 +111,10 @@ gulp fractal:build
 #### Helpers
 We have some helpers in fractal, that you can use:
 
-Equal helper is comparing with 2 variables with the === operator
+Equal helper is comparing with 2 variables from your config.json, with the === operator.
+Fx. in your context, create a property called: `foo`, and in your template you can now check, if foo === bar, like this:
 ```html
-{{#if this equals="foo"}}
+{{#if foo equals="bar"}}
   true
 {{else}}
   false
