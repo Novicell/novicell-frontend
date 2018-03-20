@@ -1,0 +1,19 @@
+<div class="slider js-slider">
+    {{#each slides}}
+        <div class="slider__item">
+            <div class="slider__item-inner" style="background-image: url('{{image}}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                            <div class="slider__item-content">
+                                <h1 class="slider__item-title">{{ title }}</h1>
+                                <p class="slider__item-description">{{ description }}</p>
+                                {{ render '@button--large' }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
