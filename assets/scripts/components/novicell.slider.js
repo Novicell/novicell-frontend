@@ -13,8 +13,8 @@ var novicell = novicell || {};
 novicell.slider = novicell.slider || new function () {
 
     this.init = function () {
-        var elem = document.querySelector('.js-slider');
-        var flkty = new Flickity(elem, {
+        const elem = document.querySelector('.js-slider');
+        let flkty = new Flickity(elem, {
             // options
             cellAlign: 'left',
             contain: true,

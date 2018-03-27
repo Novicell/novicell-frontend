@@ -5,6 +5,9 @@
 @import '_fonts.css';
 @import '_grid.css';
 
+/* Node modules */
+@import '../../node_modules/flickity/dist/flickity.css';
+
 /* Atoms */
 @import '../01-atoms/buttons/button/button.css';
 @import '../01-atoms/headings/heading/heading.css';
@@ -39,7 +42,6 @@
 @import '../02-molecules/list-page-item/list-page-item.css';
 @import '../02-molecules/list-page-link/list-page-link.css';
 
-
 /* Organisms */
 @import '../03-organisms/footer/footer.css';
 @import '../03-organisms/hero/hero.css';
@@ -47,4 +49,3 @@
 @import '../03-organisms/section/text-image-section/text-image-section.css';
 @import '../03-organisms/list-page/list-page.css';
 @import '../03-organisms/slider/slider.css';
-@import '../03-organisms/slider/flickity.css';
