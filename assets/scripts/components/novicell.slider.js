@@ -13,11 +13,13 @@ var novicell = novicell || {};
 novicell.slider = novicell.slider || new function () {
 
     this.init = function () {
-        const elem = document.querySelector('.js-slider');
-        let flkty = new Flickity(elem, {
-            // options
-            cellAlign: 'left',
-            contain: true,
-        });
+        const elem = document.querySelector('.js-slider');        
+        if (elem && elem != null) {
+            let flkty = new Flickity(elem, {
+                // options
+                cellAlign: 'left',
+                contain: true,
+            });
+        }
     };
 }();
