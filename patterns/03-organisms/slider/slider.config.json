@@ -1,0 +1,22 @@
+{
+	"title": "Slider",
+	"status": "prototype",
+	"context": {
+		"slides": [{
+				"image": "/dist/images/placeholder-images/hero--mona-eendra-313518.jpg",
+				"title": "Heading 1",
+				"description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat."
+			},
+			{
+				"image": "/dist/images/placeholder-images/hero--mona-eendra-313518.jpg",
+				"title": "Heading 2",
+				"description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat."
+			},
+			{
+				"image": "/dist/images/placeholder-images/hero--mona-eendra-313518.jpg",
+				"title": "Heading 3",
+				"description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat."
+			}
+		]
+	}
+}

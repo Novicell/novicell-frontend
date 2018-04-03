@@ -2,7 +2,7 @@
   "rules": {
     "block-no-empty": true,
     "color-no-invalid-hex": true,
-    "selector-max-class": 3,
+    "selector-max-class": 4,
     "declaration-no-important": true,
     "property-no-unknown": true,
     "unit-no-unknown": true,

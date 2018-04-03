@@ -7,7 +7,8 @@
         "vue": false,
         "validate": false,
         "vanillaTextMask": false,
-        "angular": false
+        "angular": false,
+        "Flickity": false
     },
     "globalstrict": true,
     "browser": true,

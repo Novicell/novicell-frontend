@@ -91,6 +91,7 @@
   },
   "dependencies": {
     "flexboxgrid": "6.3.1",
+    "flickity": "2.1.0",
     "gulp-favicons": "2.2.7",
     "novicell-cookie-info": "1.1.0",
     "novicell-lazyload": "1.2.0",
