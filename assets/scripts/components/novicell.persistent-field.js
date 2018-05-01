@@ -44,10 +44,12 @@ novicell.persistentField = novicell.persistentField || new function () {
 
         document.body.addEventListener('input', save);
         document.body.addEventListener('change', save);
-        document.body.addEventListener('submit', () => {
-            for (var key in sessionStorage) {
-                if (/^form-(.+)/.test(key)) {
-                    sessionStorage.removeItem(key);
+        document.body.addEventListener('submit', (e) => {
+            if(e.target.checkValidity()){
+                for (var key in sessionStorage) {
+                    if (/^form-(.+)/.test(key)) {
+                        sessionStorage.removeItem(key);
+                    }
                 }
             }
         });
