@@ -1,0 +1,32 @@
+<ol class="breadcrumb">
+    {{#each breadcrumbLinks}}
+      <li class="breadcrumb__item">
+          {{#compare ../breadcrumbLinks.length (math @index "+" 1) operator="!="}}
+            <a class="breadcrumb__link" href="{{url}}" title="{{title}}">{{text}}</a>
+          {{else}}
+            <span class="breadcrumb__link--active">{{text}}</span>
+          {{/compare}}
+      </li>
+    {{/each}}
+</ol>
+
+<script type="application/ld+json">
+{
+ "@context": "http://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement":
+ [
+  {{#each breadcrumbLinks}}
+    {
+    "@type": "ListItem",
+    "position": {{math @index "+" 1}},
+    "item":
+      {
+        "@id": {{url}},
+        "name": {{text}}
+      }
+    }{{#compare ../breadcrumbLinks.length (math @index "+" 1) operator="!="}},{{/compare}}
+  {{/each}}
+ ]
+}
+</script>

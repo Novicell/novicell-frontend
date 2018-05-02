@@ -41,6 +41,7 @@
 @import '../02-molecules/cookie-info/cookie-info.css';
 @import '../02-molecules/list-page-item/list-page-item.css';
 @import '../02-molecules/list-page-link/list-page-link.css';
+@import '../02-molecules/breadcrumb/breadcrumb.css';
 
 /* Organisms */
 @import '../03-organisms/footer/footer.css';
