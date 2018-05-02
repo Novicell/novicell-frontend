@@ -108,12 +108,16 @@ For building the static site run:
 gulp fractal:build
 ```
 
-#### Helpers
-We have some helpers in fractal, that you can use:
+## Handlebars
+We've added som extra functionallity to the handlbars parser. Here's the helpers we've added:
 
+
+### Helpers
+
+#### Equals
 Equal helper is comparing with 2 variables from your config.json, with the === operator.
 Fx. in your context, create a property called: `foo`, and in your template you can now check, if foo === bar, like this:
-```html
+```handlebars
 {{#if foo equals="bar"}}
   true
 {{else}}
@@ -121,12 +125,30 @@ Fx. in your context, create a property called: `foo`, and in your template you c
 {{/if}}
 ```
 
+#### Times
 Times helper is an equivelant of a for loop, this example will give 10x span. `{{this}}` refers to the index of the loop.
-```html
+```handlebars
 {{#times 10}}
     <span>{{this}}</span>
 {{/times}}
 ```
+
+#### Compare
+Compare helper is for comparing values with different operators. Available operators: `"==", "===", "!=", "<", ">", "<=", ">=", "typeof"`
+```handlebars
+{#compare @index 5 operator="<="}}
+  <span>lower than/equals 5</span>
+{{else}}
+  <span>higher than 5</span>
+{{/compare}}
+```
+
+#### Math
+Math helper provides operators for addition, subtraction, dividing, multiplying and modulus with two values.
+```handlebars
+{{math @index "+" 1}}
+```
+
 
 ## SVG sprite sheet
 
