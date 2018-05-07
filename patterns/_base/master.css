@@ -25,6 +25,7 @@
 @import '../01-atoms/links/link-social/link-social.css';
 @import '../01-atoms/logo/logo.css';
 @import '../01-atoms/paragraph/paragraph.css';
+@import '../01-atoms/svg-text/svg-text.css';
 
 /* Molecules */
 @import '../02-molecules/box/box/box.css';

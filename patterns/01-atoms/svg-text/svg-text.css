@@ -1,0 +1,15 @@
+/*
+ * Element: Svg-text
+ */
+
+.svg-text {
+    display: inline-flex;
+    align-self: center;
+    
+    &__icon {
+        height: 1em;
+        width: 1em;
+        top: .125em;
+        position: relative;
+    }
+}
