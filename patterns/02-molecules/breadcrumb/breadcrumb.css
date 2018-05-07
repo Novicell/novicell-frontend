@@ -1,0 +1,22 @@
+.breadcrumb {
+    padding: 10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+
+    &__item {
+        display: inline-block;
+
+        & + &:before {
+            content: "/";
+            padding-top: 5px;
+            padding: 5px 0;
+            color: #666;
+        }
+        
+        /* Active state */
+        &--active {color: #000;}
+    }
+    &__link {
+        color: #666;
+    }
+}
