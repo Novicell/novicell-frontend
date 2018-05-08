@@ -24,7 +24,7 @@ novicellTheme.addStatic(path.join(__dirname, '../' + config.webPath + 'dist'), '
 
 //Helpers
 //If equals
-instance.handlebars.registerHelper("if", function(conditional, options) {
+instance.handlebars.registerHelper("ifequals", function(conditional, options) {
     if (conditional === options.hash.equals) {
         return options.fn(this);
     } else {
