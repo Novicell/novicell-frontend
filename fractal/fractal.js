@@ -23,15 +23,6 @@ novicellTheme.addStatic(__dirname, 'fractal');
 novicellTheme.addStatic(path.join(__dirname, '../' + config.webPath + 'dist'), 'dist'); 
 
 //Helpers
-//If equals
-instance.handlebars.registerHelper("ifequals", function(conditional, options) {
-    if (conditional === options.hash.equals) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-});
-
 instance.handlebars.registerHelper("math", function(lvalue, operator, rvalue){
     lvalue = parseFloat(lvalue);
     rvalue = parseFloat(rvalue);

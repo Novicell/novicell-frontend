@@ -114,16 +114,6 @@ We've added som extra functionallity to the handlbars parser. Here's the helpers
 
 ### Helpers
 
-#### Equals
-Equal helper is comparing with 2 variables from your config.json, with the === operator.
-Fx. in your context, create a property called: `foo`, and in your template you can now check, if foo === bar, like this:
-```handlebars
-{{#if foo equals="bar"}}
-  true
-{{else}}
-  false
-{{/if}}
-```
 
 #### Times
 Times helper is an equivelant of a for loop, this example will give 10x span. `{{this}}` refers to the index of the loop.
@@ -136,7 +126,7 @@ Times helper is an equivelant of a for loop, this example will give 10x span. `{
 #### Compare
 Compare helper is for comparing values with different operators. Available operators: `"==", "===", "!=", "<", ">", "<=", ">=", "typeof"`
 ```handlebars
-{#compare @index 5 operator="<="}}
+{{#compare @index 5 operator="<="}}
   <span>lower than/equals 5</span>
 {{else}}
   <span>higher than 5</span>
