@@ -29,13 +29,10 @@
             ]
         },
         "search": {
-            "label": {
-                "text": "Søg",
-                "input-id": "search-id"
-            },
-            "input": {
-                "placeholder": "Search ..."
-            }
+            "type": "search",
+            "name": "search-input",
+            "id": "search-id",
+            "placeholder": "Search"
         }
 	}
 }

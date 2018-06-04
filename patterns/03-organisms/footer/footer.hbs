@@ -3,27 +3,24 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4">
                 <div class="row">
-                    {{ render '@heading--footer'}}
+                    {{ render '@heading--footer' }}
                 
-                    <p>Novicell Aarhus<br>
-                    Søren Nymarks Vej 6<br>
-                    8270 Højbjerg,<br>
-                    Denmark</p>
+                    {{> @paragraph contactInfo }}
                     {{ render '@social-media-collection' }}
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-4">
-                {{ render '@heading--footer'}}
+                {{ render '@heading--footer' }}
                 {{ render '@link-list'}}
             </div>
 
             <div class="col-xs-12 col-sm-4">
-                {{ render '@heading--footer' customColumnHeader}}
+                {{ render '@heading--footer' customColumnHeader }}
                 {{ render '@form-field' }}
                 {{ render '@form-field--email' }}
                 {{ render '@form-field--textarea'  }}
-                {{ render '@form-field--button' }}
+                {{ render '@button' }}
             </div>
         </div>
     </div>

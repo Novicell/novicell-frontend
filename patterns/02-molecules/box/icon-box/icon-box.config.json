@@ -5,7 +5,8 @@
         "heading": {
             "text": "Icon Box header"
         },
-        "iconBoxContent": "Dette er teksten til et icon",
+        "iconBoxContent": "Lorem ipsum dolor sit amet",
+        "svgIconName": "icon-checkbox",
         "link": {
             "url": "url",
             "text": "Link text",

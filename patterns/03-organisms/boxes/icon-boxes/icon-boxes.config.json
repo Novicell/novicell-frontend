@@ -1,0 +1,47 @@
+{
+    "title": "Icon Boxes",
+    "status": "prototype",
+    "context": {
+        "iconBoxes": [
+            {
+                "heading": {
+                    "text": "Shop online"
+                },
+                "iconBoxContent": "Lorem ipsum dolor sit amet",
+                "svgIconName": "icon-shop",
+                "link": {
+                    "url": "#shop",
+                    "text": "Go to shop",
+                    "target":"",
+                    "title": "Go to shop"
+                }
+            },
+            {
+                "heading": {
+                    "text": "Secure payment"
+                },
+                "iconBoxContent": "Lorem ipsum dolor sit amet",
+                "svgIconName": "icon-credit-card",
+                "link": {
+                    "url": "#payment",
+                    "text": "More about payment",
+                    "target":"",
+                    "title": "More about payment"
+                }
+            },
+            {
+                "heading": {
+                    "text": "Free delivery"
+                },
+                "iconBoxContent": "Lorem ipsum dolor sit amet",
+                "svgIconName": "icon-box",
+                "link": {
+                    "url": "#delivery",
+                    "text": "Buy now",
+                    "target":"",
+                    "title": "Buy now"
+                }
+            }
+        ]
+    }
+}

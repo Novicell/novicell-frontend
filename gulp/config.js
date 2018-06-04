@@ -42,6 +42,7 @@ module.exports = (function () {
                 name: 'master',
                 scripts: [
                     assetPath + "scripts/components/**/*.js",
+                    projectPath + "patterns/**/*.js",
                     assetPath + "scripts/master.js"
                 ],
                 styles: [

@@ -3,6 +3,11 @@
     --gutter-compensation: calc(var(--gutter-width) * -1);
     --half-gutter-width: calc(var(--gutter-width) * 0.5);
     --half-gutter-compensation: calc(var(--half-gutter-width) * -1);
+    --grid-section-margin: 50px;
+}
+
+section {
+    margin-bottom: var(--grid-section-margin);
 }
 
 .container {

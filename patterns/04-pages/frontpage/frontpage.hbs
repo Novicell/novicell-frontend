@@ -1,20 +1,28 @@
 {{ render '@header' }}
+<section>
+    {{ render '@slider' }}
+</section>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            {{ render '@about-boxes' }}
-        </div>
-        <div class="col-xs-12">                    
-            {{ render '@primary-boxes' }}
-        </div>                    
-        <div class="col-xs-12">                    
-            {{ render '@feedback-box' }}
-        </div>                    
-        <div class="col-xs-12">                    
-            {{ render '@secondary-boxes' }}
+{{ render '@icon-boxes' }}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                {{ render '@primary-boxes' }}
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                {{ render '@about-boxes' }}
+            </div>
+        </div>
+    </div>
+</section>
 
 {{ render '@footer' }}

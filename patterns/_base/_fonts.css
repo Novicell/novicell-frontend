@@ -2,12 +2,15 @@
  * Fonts
  */
 
-/* lato-900 - latin_latin-ext */
+/* Don't do like this!!! */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/* Do like this: */
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 900;
   src: local('Lato Black'), local('Lato-Black'),
-      url('/dist/fonts/lato-bold.woff2') format('woff2'), /* Super Modern Browsers */
-      url('/dist/fonts/lato-bold.woff') format('woff') /* Modern Browsers */
+      url('/dist/fonts/lato-bold.woff2') format('woff2'),
+      url('/dist/fonts/lato-bold.woff') format('woff')
 }
