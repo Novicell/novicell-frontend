@@ -3,14 +3,14 @@
 	"status": "prototype",
 	"context": {
 		"label": {
-			"text": "Label",
-			"input-id": "default-id"
+			"text": "Text label",
+			"input-id": "text-id"
 		},
 		"input": {
 			"type": "text",
-			"name": "defaul-input",
-			"id": "default-id",
-			"placeholder": "Default form-field"
+			"name": "text-input",
+			"id": "text-id",
+			"placeholder": "Insert text"
 		}	
 	},
 	"variants": [
@@ -18,7 +18,7 @@
 			"name": "email",
 			"context": {
 				"label": {
-					"text": "Email Label",
+					"text": "Email label",
 					"input-id": "email-id"
 				},	
 				"input": {
@@ -33,7 +33,7 @@
 			"name": "password",
 			"context": {
 				"label": {
-					"text": "Password Label",
+					"text": "Password label",
 					"input-id": "password-id"
 				},
 				"input": {
@@ -48,7 +48,7 @@
 			"name": "search",
 			"context": {
 				"label": {
-					"text": "Search Label",
+					"text": "Search label",
 					"input-id": "search-id"
 				},
 				"input": {
@@ -63,7 +63,7 @@
 			"name": "textarea",
 			"context": {
 				"label": {
-					"text": "Textarea Label",
+					"text": "Textarea label",
 					"input-id": "textarea-id"
 				},
 				"textarea": {

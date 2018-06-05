@@ -8,8 +8,8 @@
 ********************/
 
 /* Theme */
---color-primary:                 #f42d40;
---color-secondary:               #121b20;
+--color-primary:                 #C80046;
+--color-secondary:               #363636;
 
 /* Grayscale */
 --color-gray-dark:               #4b4b4b;
@@ -35,11 +35,11 @@
 
   /* Typography
   ********************/
-  --base-font-family:              'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+  --base-font-family:              'Lato', 'Helvetica', 'Arial', 'sans-serif';
   --base-font-size:                16px;
   --base-font-weight:              400;
 
-  --heading-font-family:           'lato', 'Helvetica', 'Arial', 'sans-serif';
+  --heading-font-family:           'Lato', 'Helvetica', 'Arial', 'sans-serif';
 
 
   /* Layout

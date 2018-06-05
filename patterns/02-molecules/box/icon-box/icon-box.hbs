@@ -3,16 +3,16 @@
 		<div class="icon-box__content">
             <div class="icon-box__icon">
                 {{#block "icon-box-icon"}}
-                    {{ render '@svg-icon' }}
+                    {{> '@svg-icon' }}
                 {{/block}}
             </div>
-			{{ render '@heading--column' }}
+			{{> '@heading--column' heading }}
 			{{#block "iconBoxContent"}}
 				<p>{{ iconBoxContent }}</p>
 			{{/block}}
 		</div>
         {{#if link }}
-            {{ render '@link' }}
+            {{> '@link' link }}
         {{/if}}
 	</div>
 </article>

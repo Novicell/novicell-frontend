@@ -5,6 +5,8 @@
 /*Setting document variables*/
 
 .paragraph {
+    margin-top: 0;
+    margin-bottom: 15px;
 
     &--hero {
         margin-bottom: 30px;

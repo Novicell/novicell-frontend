@@ -18,8 +18,9 @@
     font-size: 22px;
     font-weight: 600;
     font-family: var(--heading-font-family);
-    margin-bottom: 0;
+    margin-bottom: 20px;
     margin-top: 0;
+    width: 100%;
 
     &__column {
         color: var(--heading-color-black);
