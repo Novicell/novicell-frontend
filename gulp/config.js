@@ -86,7 +86,8 @@ module.exports = (function () {
         watchIcons: [ assetPath + 'icons/*' ],
         watchFonts: [ assetPath + 'fonts/*' ],
         watchScripts: [
-            assetPath + 'scripts/**/*.js'
+            assetPath + 'scripts/**/*.js',
+            projectPath + "/patterns/**/*.js"
         ],
         watchStyles: [
             projectPath + "/patterns/**/*.css"
