@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
     novicell.inputMasking.init(); //Init input masking
     novicell.persistentField.init(); //Init persistentField
     novicell.slider.init(); 
+    novicell.topbarRelated.init(); 
     novicell.cookieInfo.init(); 
     //SetTimeout to fix latency with loaded elements in e.g. Vue components
     setTimeout(() => {
