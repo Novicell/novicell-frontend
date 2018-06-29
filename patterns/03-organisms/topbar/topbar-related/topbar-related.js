@@ -23,7 +23,8 @@ novicell.topbarRelated = novicell.topbarRelated || new function () {
             var element = document.getElementById(elementID),
                 classNames = document.getElementById(elementID).className;
             if (classNames.indexOf(className) == -1) {
-                return element.className = element.className + ' ' + className;
+                var el = element.className = element.className + ' ' + className;
+                return el;
             }
         }
 
@@ -33,7 +34,8 @@ novicell.topbarRelated = novicell.topbarRelated || new function () {
                 classNames = document.getElementById(elementID).className;
             if (classNames.indexOf(className) !== -1) {
                 className = " " + className;
-                return element.className = element.className.replace(className, '');
+                var el = element.className = element.className.replace(className, '');
+                return el;
             }
         }
 
