@@ -4,7 +4,7 @@ var novicell = novicell || {};
 
 novicell.topbarRelated = novicell.topbarRelated || new function () {
     this.init = function () {
-      
+
         function fixedTopbar(elementID, className, headerClass) {
             // Get the current scroll position
             var scroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
@@ -21,25 +21,24 @@ novicell.topbarRelated = novicell.topbarRelated || new function () {
         // Adds a class to the element
         function addClass(elementID, className) {
             var element = document.getElementById(elementID),
-                classNames = document.getElementById(elementID).className;
+                classNames = element.className;
             if (classNames.indexOf(className) == -1) {
-                var el = element.className = element.className + ' ' + className;
-                return el;
+                classNames += (' ' + className);
+                element.className = classNames;
             }
         }
 
         // Removes the class and the preceding whitespace from the element
         function removeClass(elementID, className) {
             var element = document.getElementById(elementID),
-                classNames = document.getElementById(elementID).className;
+                classNames = element.className;
             if (classNames.indexOf(className) !== -1) {
-                className = " " + className;
-                var el = element.className = element.className.replace(className, '');
-                return el;
+                className = ' ' + className;
+                element.className = element.className.replace(className, '');
             }
         }
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             fixedTopbar('js-topbar-related', 'sticky', '.js-header');
         }, false);
     };
