@@ -23,6 +23,8 @@
 @import '../01-atoms/links/link/link.css';
 @import '../01-atoms/links/link-button/link-button.css';
 @import '../01-atoms/links/link-social/link-social.css';
+@import '../01-atoms/loaders/loader-bar/loader-bar.css';
+@import '../01-atoms/loaders/loader-spinner/loader-spinner.css';
 @import '../01-atoms/logo/logo.css';
 @import '../01-atoms/paragraph/paragraph.css';
 @import '../01-atoms/svg-text/svg-text.css';
