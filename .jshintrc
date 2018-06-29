@@ -8,7 +8,8 @@
         "validate": false,
         "vanillaTextMask": false,
         "angular": false,
-        "Flickity": false
+        "Flickity": false,
+        "priorityNav": false
     },
     "globalstrict": true,
     "browser": true,

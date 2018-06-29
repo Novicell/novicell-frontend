@@ -30,6 +30,7 @@ module.exports = (function () {
                     vendorPath + "svg4everybody/dist/svg4everybody.js",
                     vendorPath + "validate/dist/js/validate.js",
                     vendorPath + "vanilla-text-mask/dist/vanillaTextMask.js",
+                    vendorPath + "priority-nav/dist/priority-nav.js",
                     vendorPath + "novicell-debounce/js/novicell.debounce.js",
                     vendorPath + "novicell-lazyload/js/novicell.dynamic-image.js",
                     vendorPath + "novicell-lazyload/js/lazy-images.js",
@@ -41,8 +42,9 @@ module.exports = (function () {
             {
                 name: 'master',
                 scripts: [
-                    assetPath + "scripts/components/**/*.js",
-                    assetPath + "scripts/master.js"
+                    projectPath + "patterns/**/*.js",
+                    assetPath   + "scripts/components/**/*.js",
+                    assetPath   + "scripts/master.js"
                 ],
                 styles: [
                     projectPath + "patterns/_base/master.css"

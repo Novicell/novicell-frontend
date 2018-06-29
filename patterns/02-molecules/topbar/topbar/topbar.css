@@ -9,6 +9,13 @@
     --topbar-site-width: var(--site-width);
 }
 
+.topbar > .container{
+    padding: 0;
+    @media (--viewport-sm-min) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 
 .topbar {
     background-color: var(--topbar-background-color);
@@ -24,9 +31,9 @@
     }
 
     &__logo {
-        height: 85px;
-        margin-left: auto;
-        margin-right: auto;
+        height: 80px;
+        margin: auto;
+        margin-left: 0;
         padding-top: 20px;
         padding-bottom: 20px;
 

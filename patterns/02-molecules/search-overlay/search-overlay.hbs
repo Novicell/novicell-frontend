@@ -1,0 +1,29 @@
+<div class="search-overlay" id="js-search-overlay">
+    <div class="search-overlay-close-button" id="js-search-overlay-close-button">
+        <svg class="search-overlay-close-icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-close"></use>
+        </svg>
+    </div>
+
+    <div class="container search-logo-container">
+
+        <a class="logo__link" href="/" title="Logo" style="">
+            <figure class="logo__figure">
+                {{ render '@logo' }}
+            </figure>
+        </a>
+        <div class="row center-xs">
+            <div class="col-xs-11 center-xs">
+    
+                <div class="search-overlay-input-container">
+                    
+                    <svg class="search-overlay-input-container__icon">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-search"></use>
+                    </svg>
+                    <input class="search-overlay-input-container__input" type="text" placeholder="Søgeord" autocomplete="off">
+                    <button class="search-overlay-input-container__button button" id="btnSearch">Søg</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

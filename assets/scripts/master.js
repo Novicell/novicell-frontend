@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function(){
     novicell.inputMasking.init(); //Init input masking
     novicell.persistentField.init(); //Init persistentField
     novicell.slider.init(); 
-    novicell.cookieInfo.init(); 
+    novicell.cookieInfo.init();
+    novicell.navigation.init();
+    novicell.searchOverlay.init();
     console.log('it works!');
 });
