@@ -28,7 +28,7 @@ module.exports = (function () {
                 ignorePlugins: ['jscs', 'jshint', 'watch', 'babel'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
                     vendorPath + "svg4everybody/dist/svg4everybody.js",
-                    vendorPath + "validate/dist/js/validate.js",
+                    vendorPath + "validate/dist/validate.js",
                     vendorPath + "vanilla-text-mask/dist/vanillaTextMask.js",
                     vendorPath + "priority-nav/dist/priority-nav.js",
                     vendorPath + "novicell-debounce/js/novicell.debounce.js",
@@ -42,9 +42,9 @@ module.exports = (function () {
             {
                 name: 'master',
                 scripts: [
+                    assetPath + "scripts/components/**/*.js",
                     projectPath + "patterns/**/*.js",
-                    assetPath   + "scripts/components/**/*.js",
-                    assetPath   + "scripts/master.js"
+                    assetPath + "scripts/master.js"
                 ],
                 styles: [
                     projectPath + "patterns/_base/master.css"
@@ -87,7 +87,8 @@ module.exports = (function () {
         watchIcons: [ assetPath + 'icons/*' ],
         watchFonts: [ assetPath + 'fonts/*' ],
         watchScripts: [
-            assetPath + 'scripts/**/*.js'
+            assetPath + 'scripts/**/*.js',
+            projectPath + "/patterns/**/*.js"
         ],
         watchStyles: [
             projectPath + "/patterns/**/*.css"

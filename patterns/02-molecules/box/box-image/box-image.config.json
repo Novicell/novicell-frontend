@@ -6,7 +6,7 @@
 			"text": "Box Image header"
 		},
 		"boxImage": {
-			"url": "/dist/images/placeholder-images/greg-rakozy-129733.jpg",
+			"url": "https://images.unsplash.com/photo-1492970471430-bc6bd7eb2b13?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9893bc89e46e2b77a5d8c091fbba04e9&auto=format&fit=crop&w=1955&q=80",
 			"content": "Box Image content."
 		}
 	}

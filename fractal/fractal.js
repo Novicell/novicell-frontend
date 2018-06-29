@@ -12,7 +12,7 @@ const layouts = require('handlebars-layouts');
 
 // Novicell theme
 const novicellTheme = require('@frctl/mandelbrot')({
-    favicon: config.webPath +'favicon.ico',
+    //favicon: config.webPath +'favicon.ico',
     styles: [
         'default',
         "/fractal/novicell-fractal-styles.css"
@@ -23,15 +23,12 @@ novicellTheme.addStatic(__dirname, 'fractal');
 novicellTheme.addStatic(path.join(__dirname, '../' + config.webPath + 'dist'), 'dist'); 
 
 //Helpers
-//If equals
-instance.handlebars.registerHelper("if", function(conditional, options) {
-    if (conditional === options.hash.equals) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
+instance.handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i)
+        accum += block.fn(i);
+    return accum;
 });
-
 instance.handlebars.registerHelper("math", function(lvalue, operator, rvalue){
     lvalue = parseFloat(lvalue);
     rvalue = parseFloat(rvalue);
@@ -45,7 +42,6 @@ instance.handlebars.registerHelper("math", function(lvalue, operator, rvalue){
 });
 
 instance.handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
-    
     if (arguments.length < 3)
         throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
 

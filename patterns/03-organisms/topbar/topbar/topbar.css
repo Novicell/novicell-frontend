@@ -3,8 +3,8 @@
  */
 
 :root{
-    --topbar-background-color: var(--color-secondary);
-    --topbar-border-color: var(--color-white);
+    --topbar-background-color: var(--color-white);
+    --topbar-border-color: var(--color-secondary);
     --topbar-border-opacity: 25%;
     --topbar-site-width: var(--site-width);
 }

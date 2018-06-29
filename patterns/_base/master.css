@@ -24,8 +24,11 @@
 @import '../01-atoms/links/link/link.css';
 @import '../01-atoms/links/link-button/link-button.css';
 @import '../01-atoms/links/link-social/link-social.css';
+@import '../01-atoms/loaders/loader-bar/loader-bar.css';
+@import '../01-atoms/loaders/loader-spinner/loader-spinner.css';
 @import '../01-atoms/logo/logo.css';
 @import '../01-atoms/paragraph/paragraph.css';
+@import '../01-atoms/svg-text/svg-text.css';
 
 /* Molecules */
 @import '../02-molecules/box/box/box.css';
@@ -37,7 +40,6 @@
 @import '../02-molecules/search-overlay/search-overlay.css';
 @import '../02-molecules/navigation/nav-priority/nav-priority.css';
 @import '../02-molecules/social-media-collection/social-media-collection.css';
-@import '../02-molecules/topbar/topbar/topbar.css';
 @import '../02-molecules/cookie-info/cookie-info.css';
 @import '../02-molecules/list-page-item/list-page-item.css';
 @import '../02-molecules/list-page-link/list-page-link.css';
@@ -50,3 +52,5 @@
 @import '../03-organisms/section/text-image-section/text-image-section.css';
 @import '../03-organisms/list-page/list-page.css';
 @import '../03-organisms/slider/slider.css';
+@import '../03-organisms/topbar/topbar/topbar.css';
+

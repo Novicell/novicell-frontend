@@ -1,0 +1,36 @@
+:root {
+    --loader-bar-primary-color: var(--color-primary, hotpink);
+    --loader-bar-secondary-color: lightgrey;
+    --loader-bar-border-radius: 2px;
+    --loader-bar-width: 100%;
+    --loader-bar-height: 20px;
+    --loader-bar-easing: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.loader-bar {
+    display: block;
+    background: var(--loader-bar-secondary-color);
+    border-radius: var(--loader-bar-border-radius);
+}
+
+.loader-bar::before {
+    content: '';
+    display: block;
+    width: var(--loader-bar-width);
+    height: var(--loader-bar-height);
+    background: var(--loader-bar-primary-color);
+    border-radius: var(--loader-bar-border-radius);
+    animation-name: loader-bar;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-timing-function: var(--loader-bar-easing);
+}
+
+@keyframes loader-bar {
+    0% { transform-origin: left center; transform: scaleX(0); }
+    49.9% { transform-origin: left center; transform: scaleX(1); }
+    50.1% { transform-origin: right center; transform: scaleX(1); }
+    100% { transform-origin: right center; transform: scaleX(0); }
+}

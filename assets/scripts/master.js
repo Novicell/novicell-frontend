@@ -9,13 +9,16 @@ var projectName = projectName || {};
 
 // Document ready
 document.addEventListener('DOMContentLoaded', function(){
-    svg4everybody(); // Fix SVG spritemap in IE/Edge
     novicell.validate.init(); // Init Validation
     novicell.inputMasking.init(); //Init input masking
     novicell.persistentField.init(); //Init persistentField
     novicell.slider.init(); 
-    novicell.cookieInfo.init();
+    novicell.cookieInfo.init(); 
     novicell.navigation.init();
     novicell.searchOverlay.init();
+    //SetTimeout to fix latency with loaded elements in e.g. Vue components
+    setTimeout(() => {
+        svg4everybody(); // Fix SVG spritemap in IE/Edge
+    });
     console.log('it works!');
 });
