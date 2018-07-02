@@ -34,6 +34,10 @@
     {
       "name": "Bjørn Nyborg",
       "email": "bny@novicell.dk"
+    },
+    {
+      "name": "Emil Skytte Ankersen",
+      "email": "ean@novicell.dk"
     }
   ],
   "license": "MIT",
@@ -95,6 +99,7 @@
     "gulp-favicons": "2.2.7",
     "novicell-cookie-info": "1.1.0",
     "novicell-lazyload": "1.2.0",
+    "scrollprogress": "3.0.2",
     "svg4everybody": "2.1.9",
     "validate": "github:cferdinandi/validate",
     "vanilla-text-mask": "5.0.1"

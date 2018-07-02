@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
     novicell.persistentField.init(); //Init persistentField
     novicell.slider.init(); 
     novicell.cookieInfo.init(); 
+    novicell.scrollProgressBar.init();
     //SetTimeout to fix latency with loaded elements in e.g. Vue components
     setTimeout(() => {
         svg4everybody(); // Fix SVG spritemap in IE/Edge
