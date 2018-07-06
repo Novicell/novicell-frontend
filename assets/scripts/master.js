@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function(){
     novicell.slider.init(); 
     novicell.cookieInfo.init(); 
     novicell.navigation.init();
+    novicell.navTrigger.init();
     novicell.searchOverlay.init();
     //SetTimeout to fix latency with loaded elements in e.g. Vue components
     setTimeout(() => {

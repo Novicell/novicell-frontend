@@ -11,12 +11,6 @@
 }
 
 .nav-main-mobile {
-    flex-basis: 1px;
-    flex: 1;
-    left: var(--nav-main-mobile-left);
-    top: var(--nav-main-mobile-top);
-    position: absolute;
-
     @media(--viewport-md-min) {
         display: none;
     }
@@ -81,5 +75,14 @@
         &:after {
             transform: rotate(-45deg);
         }
+    }
+}
+.mobile-menu {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+
+    @media (--viewport-md-min) {
+        display: none;
     }
 }

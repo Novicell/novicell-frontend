@@ -1,72 +1,9 @@
-<div class="mini-nav">
-    <div class="mini-nav__info">
-        <a class="mini-nav__link" href="tel:12341234">
-            Call here 12 34 12 34
-        </a>
-        <span class="mini-nav__open-hours">
-            My special text
-        </span>
-    </div>
-</div>
-    <div class="navigation-holder">
-        <div class="row">
-            <div class="col-xs-12 col-sm-10">
-                <nav class="site-navigation" role="navigation" vocab="http://schema.org/" typeof="SiteNavigationElement">
-                    <ul class="site-navigation__list">
-                        {{#each mainNavList}}
-                        <li class="site-navigation__item">
-                            <a class="site-navigation__link" href="{{url}}">
-                                <span class="site-navigation__link-name" property="name">{{text}}</span>
-                            </a>
-                        </li>
-                        {{/each}}
-                    </ul>
-                    <form action="" method="GET">
-                        <div class="nav-search-holder__input">
-                            <input class="site-navigation__search" type="search" name="search" autocomplete="off" placeholder="" />
-                            <button class="site-navigation__search-btn" type="submit">
-                                <svg class="site-navigation__search-icon">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-search"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
-                </nav>
-            </div>
-            <div class="col-sm-2">
-                <div class="nav-search-holder">
-                    <svg class="nav-search-icon" id="js-search-overlay-trigger">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-search"></use>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-<div class="mobile-menu">
-    <button class="mobile-cta-popup-button" id="js-mobile-cta-popup-button" type="button">
-        <svg class="mobile-cta-popup-button__icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-phone"></use>
-        </svg>
-        <span class="mobile-cta-popup-button__text">
-            Ring
-        </span>
-    </button>
-    <button class="mobile-navigation-button" id="js-mobile-navigation-button" type="button">
-        <svg class="mobile-navigation-button__icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-menu"></use>
-        </svg>
-        <span class="mobile-navigation-button__text">
-            Menu og sog
-        </span>
-    </button>
-    <button class="mobile-close-button" id="js-mobile-close-button" type="button">
-        <svg class="mobile-close-button__icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-close"></use>
-        </svg>
-        <span class="mobile-close-button__text">
-            Luk Menu
-        </span>
-    </button>
-</div>
+<nav class="site-navigation" role="navigation" vocab="http://schema.org/" typeof="SiteNavigationElement">
+    <ul class="site-navigation__list">
+        {{#each list}}
+        <li class="site-navigation__item">
+            {{ render '@link' this }}
+        </li>
+        {{/each}}
+    </ul>
+</nav>
