@@ -5,41 +5,22 @@ var novicell = novicell || {};
 novicell.topbarRelated = novicell.topbarRelated || new function () {
     this.init = function () {
 
-        function fixedTopbar(elementID, className, headerClass) {
+        function fixedRelatedTopbar(elementID, className, headerClass, offset) {
             // Get the current scroll position
-            var scroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-            var headerHeight = document.querySelector(headerClass).offsetHeight;
+            let scroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+            const headerHeight = document.querySelector(headerClass).offsetHeight;
+            const el = document.getElementById(elementID);
 
-            if (scroll >= headerHeight + 25) {
-                addClass(elementID, className);
+            if (scroll >= headerHeight + offset) {
+                el.classList.add(className);
             }
-            if (scroll < headerHeight + 25) {
-                removeClass(elementID, className);
-            }
-        }
-
-        // Adds a class to the element
-        function addClass(elementID, className) {
-            var element = document.getElementById(elementID),
-                classNames = element.className;
-            if (classNames.indexOf(className) == -1) {
-                classNames += (' ' + className);
-                element.className = classNames;
-            }
-        }
-
-        // Removes the class and the preceding whitespace from the element
-        function removeClass(elementID, className) {
-            var element = document.getElementById(elementID),
-                classNames = element.className;
-            if (classNames.indexOf(className) !== -1) {
-                className = ' ' + className;
-                element.className = element.className.replace(className, '');
+            if (scroll < headerHeight + offset) {
+                el.classList.remove(className);
             }
         }
 
         window.addEventListener('scroll', function () {
-            fixedTopbar('js-topbar-related', 'sticky', '.js-header');
+            fixedRelatedTopbar('js-topbar-related', 'sticky', '.js-header', 25);
         }, false);
     };
 }();
