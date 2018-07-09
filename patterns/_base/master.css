@@ -6,6 +6,7 @@
 @import '_grid.css';
 
 /* Node modules */
+@import '../../node_modules/priority-nav/dist/priority-nav-core.css';
 @import '../../node_modules/flickity/dist/flickity.css';
 
 /* Atoms */
@@ -37,8 +38,8 @@
 @import '../02-molecules/form-field/form-field.css';
 @import '../02-molecules/link-list/link-list.css';
 @import '../02-molecules/navigation/nav-main-list/nav-main-list.css';
-@import '../02-molecules/navigation/nav-main-mobile/nav-main-mobile.css';
 @import '../02-molecules/navigation/nav-trigger/nav-trigger.css';
+@import '../02-molecules/navigation/nav-main-list-priority/nav-main-list-priority.css';
 @import '../02-molecules/social-media-collection/social-media-collection.css';
 @import '../02-molecules/cookie-info/cookie-info.css';
 @import '../02-molecules/list-page-item/list-page-item.css';

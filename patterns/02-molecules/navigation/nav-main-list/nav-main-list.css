@@ -8,10 +8,10 @@
 
 
 .nav-main {
-    display: none;
-
-    @media (--viewport-md-min) {
+    @media (--viewport-sm-min) {
         display: block;
+        font-size: 18px;
+        width: calc(100% - 400px);
     }
 }
 
@@ -22,10 +22,13 @@
 }
 
 .nav-main-list__item {
-    display: inline-block;
-    margin-right: 50px;
+    display: block;
     color: var(--nav-main-link-color);
-
+    @media (--viewport-sm-min) {
+        margin-right: 50px;
+        display: inline-block;
+        margin-bottom: 0;
+    }
     a {
         color: currentColor;
         text-decoration: none;
@@ -49,3 +52,4 @@
     color: var(--nav-main-link-color-active);
     text-decoration: underline;
 }
+

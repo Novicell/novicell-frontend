@@ -1,0 +1,23 @@
+body.show-overlay {
+    .overlay {
+        opacity: 0.5;
+        pointer-events: all;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-color: #000000;
+    opacity: 0;
+    transition: opacity 0.3s var(--easeInOutQuart);
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 3;
+}
