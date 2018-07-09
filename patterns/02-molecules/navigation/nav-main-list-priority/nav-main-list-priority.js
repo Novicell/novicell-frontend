@@ -9,10 +9,10 @@ novicell.navigation = novicell.navigation || new function () {
         }
     };
     this.initPriorityNav = function(){
-        var wrapper = document.querySelector(".site-navigation");
+        var wrapper = document.querySelector(".nav");
         var nav = priorityNav.init({
-            mainNavWrapper: '.site-navigation',
-            mainNav: '.site-navigation__list',
+            mainNavWrapper: '.nav-main',
+            mainNav: '.nav-main-list',
             breakPoint: 0,
             throttleDelay: 0,
             navDropdownLabel: 'More'

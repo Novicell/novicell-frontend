@@ -5,17 +5,19 @@
                 {{ render '@logo' }}
             </div>
             <div class="topbar__navigation">
-                <div class="topbar__navigation-secondary">
-                    More at {{ render '@link' githubLink }}
-                </div>
-                <div class="topbar__navigation-primary">
-                    {{ render '@nav-priority' navMainList }}
-                    <div class="topbar__navigation-search">
-                        {{ render '@input--search' search }}
+                <div class="topbar__navigation-flex">
+                    <div class="topbar__navigation-secondary">
+                        More at {{ render '@link' githubLink }}
+                    </div>
+                    <div class="topbar__navigation-primary">
+                        {{ render '@nav-main-list-priority' navMainList }}
+                        <div class="topbar__navigation-search">
+                            {{ render '@input--search' search }}
+                        </div>
                     </div>
                 </div>
             </div>
-            {{ render '@nav-main-mobile' }}
+            {{ render '@nav-trigger' }}
         </div>
     </div>
 </div>
