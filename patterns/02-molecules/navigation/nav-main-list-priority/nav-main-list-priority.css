@@ -14,7 +14,7 @@
 .nav-main {
     max-width: 100%;
     width: 100%;
-    padding-bottom: 30px;
+
     @media (--viewport-sm-min) {
         padding-bottom: 0;
         display: block;
@@ -33,18 +33,21 @@
     display: block;
     color: var(--nav-main-link-color);
     border-top: 1px solid #dadada;
-    &:last-of-type{
+
+    &:last-of-type {
         border-bottom: 1px solid #dadada;
     }
+
     @media (--viewport-sm-min) {
         margin-right: 50px;
         display: inline-block;
         margin-bottom: 0;
         border-top: none;
-        &:last-of-type{
+        &:last-of-type {
             border-bottom: none;
         }
     }
+
     a {
         color: currentColor;
         text-decoration: none;
@@ -92,6 +95,7 @@
         margin-left: 40px;
     }
 }
+
 /*Setting document variables*/
 .nav__dropdown-toggle {
     color: currentColor;
@@ -103,7 +107,6 @@
     line-height: 1.5;
     padding-right: 0;
     padding-left: 0;
-
     cursor: pointer;
 
     @media (--viewport-md-min) {
@@ -149,6 +152,7 @@
     z-index: 4;
     border: 1px solid #dadada;
     box-shadow: 0 1px 10px -2px rgba(0,0,0,.2);
+
     @media (--viewport-md-min) {
         left: -20px;
     }
@@ -164,4 +168,3 @@
         padding-right: 30px;
     }
 }
-
