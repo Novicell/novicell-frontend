@@ -4,13 +4,23 @@ var novicell = novicell || {};
 
 novicell.navTrigger = novicell.navTrigger || new function () {
     this.init = function () {
-        var navButton = document.querySelector('#js-mobile-navigation-button');
-        var body = document.querySelector('#site');
+        const navButton = document.querySelector('#js-mobile-navigation-button');
+        const body = document.querySelector('#site');
+        const hamburgerLabel = document.querySelector('.js-hamburger-label');
+        const menuText = hamburgerLabel.getAttribute('data-menu-text');
+        const closeText = hamburgerLabel.getAttribute('data-close-text');
+
         if (navButton) {
             // Open mobile navigation
             navButton.addEventListener('click', function () {
                 body.classList.toggle('mobile-navigation-open');
                 this.classList.toggle('is-active');
+
+                if (hamburgerLabel.parentElement.classList.contains('is-active')) {
+                    hamburgerLabel.innerHTML = closeText;
+                } else {
+                    hamburgerLabel.innerHTML = menuText;
+                }
             }, true);
         }
     };

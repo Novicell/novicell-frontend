@@ -78,6 +78,13 @@
     user-select: none;
 }
 
+.hamburger-label {
+    font-size: 14px;
+    margin-top: 3px;
+    transition: all .3s var(--easeInOutQuart);
+    font-weight: bold;
+}
+
 .hamburger-box {
     width: 30px;
     height: 24px;
@@ -110,9 +117,9 @@
 }
 
 .hamburger-inner::before {
-    top: -10px;
+    top: -9px;
 }
 
 .hamburger-inner::after {
-    bottom: -10px;
+    bottom: -9px;
 }
