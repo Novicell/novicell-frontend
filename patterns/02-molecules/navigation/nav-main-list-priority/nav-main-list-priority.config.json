@@ -1,8 +1,8 @@
 {
-	"title": "Navigation mobile",
+	"title": "Navigation priority",
 	"status": "prototype",
 	"context": {
-		"list": [
+		"mainNavList": [
 			{
 				"url": "#",
 				"text": "Link text 1",

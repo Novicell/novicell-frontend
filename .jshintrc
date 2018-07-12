@@ -9,7 +9,8 @@
         "vanillaTextMask": false,
         "angular": false,
         "Flickity": false,
-        "ScrollProgress": false
+        "ScrollProgress": false,
+        "priorityNav": false
     },
     "globalstrict": true,
     "browser": true,

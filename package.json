@@ -101,6 +101,7 @@
     "novicell-lazyload": "1.2.0",
     "scrollprogress": "3.0.2",
     "svg4everybody": "2.1.9",
+    "priority-nav": "1.0.12",
     "validate": "github:cferdinandi/validate",
     "vanilla-text-mask": "5.0.1"
   }
