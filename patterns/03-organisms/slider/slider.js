@@ -13,7 +13,6 @@ var novicell = novicell || {};
 novicell.slider = novicell.slider || new function () {
 
     this.init = function () {
-        console.log('slider');
         const elem = document.querySelector('.js-slider');        
         if (elem && elem != null) {
             let flkty = new Flickity(elem, {
