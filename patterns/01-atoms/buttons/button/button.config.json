@@ -24,6 +24,18 @@
             }
         },
         {
+            "name": "leftright",
+            "context": {
+                "text": "Left to Right"
+            }
+        },
+        {
+            "name": "topbottom",
+            "context": {
+                "text": "top to bottom"
+            }
+        },
+        {
             "name": "link",
             "context": {
                 "text": "Link Button",
