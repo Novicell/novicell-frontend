@@ -1,0 +1,11 @@
+:root {
+    --progress-bar-bg: var(--color-primary, blue);
+    --progress-bar-height: 5px;
+}
+
+.progress-bar {
+  background-color: var(--progress-bar-bg);
+  height: var(--progress-bar-height);
+  position: fixed;
+  bottom: 0;
+}
