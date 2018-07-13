@@ -35,6 +35,7 @@
     display: inline-block;
     white-space: nowrap;
     text-align: center;
+    z-index: 100;
 
     &:hover,
     &:focus {
@@ -66,6 +67,30 @@
         &:focus {
             color: var(--button-color-text);
             background-color: var(--button-color-primary);
+        }
+    }
+
+    &--scale {
+        background-color: transparent;
+        border: 1px solid var(--button-color-primary);
+        will-change: transform;
+        
+        &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--button-color-primary);        
+        transition: .4s;
+        z-index: -1;
+        
+        }
+
+        &:hover {
+            &:before {
+                transform: scale(0);
+            }
         }
     }
 

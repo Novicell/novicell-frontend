@@ -18,6 +18,12 @@
             }
         },
         {
+            "name": "scale",
+            "context": {
+                "text": "Scale Button"
+            }
+        },
+        {
             "name": "link",
             "context": {
                 "text": "Link Button",
