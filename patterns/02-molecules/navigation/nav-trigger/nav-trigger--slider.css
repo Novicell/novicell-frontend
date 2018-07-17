@@ -1,0 +1,39 @@
+/*!
+* Hamburgers
+* @description Tasty CSS-animated hamburgers
+* @author Jonathan Suh @jonsuh
+* @site https://jonsuh.com/hamburgers
+* @link https://github.com/jonsuh/hamburgers
+*/
+
+/***
+ *** Slider Reverse
+***/
+
+.hamburger--slider .hamburger-inner {
+    top: 2px;
+}
+
+.hamburger--slider .hamburger-inner::before {
+    top: 10px;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+}
+
+.hamburger--slider .hamburger-inner::after {
+    top: 20px;
+}
+
+.hamburger--slider.mobile-navigation-button--active .hamburger-inner {
+    transform: translate3d(0, 10px, 0) rotate(-45deg);
+}
+
+.hamburger--slider.mobile-navigation-button--active .hamburger-inner::before {
+    transform: rotate(45deg) translate3d(5.71429px, -6px, 0);
+    opacity: 0;
+}
+
+.hamburger--slider.mobile-navigation-button--active .hamburger-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(90deg);
+}
