@@ -16,7 +16,7 @@ novicell.navTrigger = novicell.navTrigger || new function () {
                 body.classList.toggle('mobile-navigation-open');
                 this.classList.toggle('mobile-navigation-button--active');
 
-                if (hamburgerLabel.parentElement.classList.contains('mobile-navigation-button--active')) {
+                if (hamburgerLabel.parentNode.classList.contains('mobile-navigation-button--active')) {
                     hamburgerLabel.innerHTML = closeText;
                 } else {
                     hamburgerLabel.innerHTML = menuText;
