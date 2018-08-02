@@ -1,0 +1,15 @@
+<div class="pageheader-slider js-pageheader-slider">
+    {{#each slides}}
+        <div class="pageheader-slider__item">
+            <div class="pageheader-slider__item-inner" style="background-image: url('{{image}}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                            {{ render '@pageheader-content' content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
