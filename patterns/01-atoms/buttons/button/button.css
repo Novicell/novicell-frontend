@@ -6,7 +6,8 @@
 /* Setting document variables*/
 
 :root {
-    --button-color-primary: var(--color-primary);
+    --button-color-primary: var(--color-primary);    
+    --button-color-gradient-second-color: #dc4e81;    
     --button-color-text: var(--color-white);
     --button-font-family: var(--base-font-family);
     --button-font-size: var(--base-font-size);
@@ -77,15 +78,15 @@
         overflow: hidden;     
         
         &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: var(--button-color-primary);        
-        opacity: 1;
-        transition: .4s;
-        z-index: -1;
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--button-color-primary);        
+            opacity: 1;
+            transition: .4s;
+            z-index: -1;
         }
 
         &:hover {
@@ -103,14 +104,14 @@
         overflow: hidden;    
         
         &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: var(--button-color-primary);
-        transition: .4s;
-        z-index: -1;
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--button-color-primary);
+            transition: .4s;
+            z-index: -1;
         }
 
         &:hover {
@@ -127,14 +128,14 @@
         overflow: hidden;    
         
         &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: var(--button-color-primary);
-        transition: .2s;
-        z-index: -1;
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--button-color-primary);
+            transition: .2s;
+            z-index: -1;
         }
 
         &:hover {
@@ -144,4 +145,28 @@
         }
     }
 
+    &--gradient {
+        background-color: transparent;
+        border: 1px solid transparent;        
+        will-change: transform;
+        overflow: hidden;   
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(89deg, var(--button-color-primary) 0, var(--button-color-gradient-second-color) 52%, var(--button-color-primary));
+            background-size: 200% auto;
+            transition: .6s;
+            z-index: -1;
+        }
+
+        &:hover {
+            &:before {
+                background-position: right center; 
+            }
+        } 
+    }
 }

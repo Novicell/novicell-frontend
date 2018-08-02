@@ -36,6 +36,12 @@
             }
         },
         {
+            "name": "gradient",
+            "context": {
+                "text": "gradient"
+            }
+        },
+        {
             "name": "link",
             "context": {
                 "text": "Link Button",
