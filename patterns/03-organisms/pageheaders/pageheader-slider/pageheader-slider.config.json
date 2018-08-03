@@ -1,0 +1,49 @@
+{
+	"title": "Pageheader - Slider",
+	"status": "prototype",
+	"context": {
+		"slides": [{
+				"image": "https://images.unsplash.com/photo-1526382074123-5685fa8a6af4?ixlib=rb-0.3.5&s=94863bc0e123d3dc707563f87864eb52&auto=format&fit=crop&w=2032&q=80",
+				"content": {
+					"header": {
+						"text": "Slider 1"
+					},
+					"description": {
+						"text": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim."
+					},
+					"button": {
+						"text": "See more"
+					}
+				}
+			},
+			{
+				"image": "https://images.unsplash.com/photo-1498206005704-36d87df55231?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f85ad7268a727c31aae1ac78ef399677&auto=format&fit=crop&w=1986&q=80",
+				"content": {
+					"header": {
+						"text": "Slider 2"
+					},
+					"description": {
+						"text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh."
+					},
+					"button": {
+						"text": "See more"
+					}
+				}
+			},
+			{
+				"image": "https://images.unsplash.com/photo-1483125078247-1a358ff363d3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63dd38e6be26093f5a96e80e4ceabf24&auto=format&fit=crop&w=1950&q=80",
+				"content": {
+					"header": {
+						"text": "Slider 2"
+					},
+					"description": {
+						"text": "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Sed porttitor lectus nibh."
+					},
+					"button": {
+						"text": "See more"
+					}
+				}
+			}
+		]
+	}
+}

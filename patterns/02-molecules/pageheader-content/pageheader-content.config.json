@@ -1,0 +1,15 @@
+{
+    "title": "Pageheader content",
+    "status": "prototype",
+    "context": {
+        "header": {
+            "text": "Pageheader header"
+        },
+        "description": {
+            "text": "Pageheader description"
+        },
+        "button": {
+            "text": "Pageheader button"
+        }
+    }
+}

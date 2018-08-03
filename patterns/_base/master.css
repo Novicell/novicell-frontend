@@ -49,14 +49,14 @@
 @import '../02-molecules/list-page-item/list-page-item.css';
 @import '../02-molecules/list-page-link/list-page-link.css';
 @import '../02-molecules/breadcrumb/breadcrumb.css';
+@import '../02-molecules/pageheader-content/pageheader-content.css';
 
 /* Organisms */
 @import '../03-organisms/footer/footer.css';
-@import '../03-organisms/hero/hero.css';
 @import '../03-organisms/section/image-text-section/image-text-section.css';
 @import '../03-organisms/section/text-image-section/text-image-section.css';
 @import '../03-organisms/list-page/list-page.css';
-@import '../03-organisms/slider/slider.css';
 @import '../03-organisms/topbar/topbar/topbar.css';
+@import '../03-organisms/pageheaders/pageheader-image/pageheader-image.css';
+@import '../03-organisms/pageheaders/pageheader-slider/pageheader-slider.css';
 @import '../03-organisms/pageheader-video/pageheader-video.css';
-

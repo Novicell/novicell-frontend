@@ -3,17 +3,18 @@
 */
 
 /*Setting document variables*/
+:root{
+    --pageheader-color: var(--color-white);
+}
 
 .paragraph {
     margin-top: 0;
     margin-bottom: 15px;
 
-    &--hero {
-        margin-bottom: 30px;
-
-        @media (--viewport-sm-min) {
-            font-size: 21px;
-        }
+    &--pageheader {
+        color: var(--pageheader-color);
+        margin-top: 0;
+        text-shadow: 1px 1px 1px #333;
     }
 }
 
