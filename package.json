@@ -102,7 +102,7 @@
     "scrollprogress": "3.0.2",
     "svg4everybody": "2.1.9",
     "priority-nav": "1.0.12",
-    "validate": "github:cferdinandi/validate",
+    "validate": "github:cferdinandi/validate#v2.2.0",
     "vanilla-text-mask": "5.0.1"
   }
 }
