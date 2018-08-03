@@ -6,9 +6,9 @@
     },
     "variants": [
         {
-            "name": "hero",
+            "name": "pageheader",
             "context": {
-                "text": "Hero text"
+                "text": "Pageheader text"
             }
         }
     ]
