@@ -9,7 +9,7 @@
       "ignoreProperties": ["/tap-highlight-color/", "string"]
     }],
     "selector-max-id": 0,
-    "unit-whitelist": ["em", "rem", "%", "s", "px", "deg", "vh", "ms", "vw"],
+    "unit-whitelist": ["em", "rem", "%", "s", "px", "deg", "vh", "ms", "vw", "turn"],
     "indentation": 4,
     "selector-pseudo-class-no-unknown": true,
     "max-empty-lines": [ 2, {

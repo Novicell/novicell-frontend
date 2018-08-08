@@ -18,6 +18,30 @@
             }
         },
         {
+            "name": "scale",
+            "context": {
+                "text": "Scale Button"
+            }
+        },
+        {
+            "name": "leftright",
+            "context": {
+                "text": "Left to Right"
+            }
+        },
+        {
+            "name": "topbottom",
+            "context": {
+                "text": "top to bottom"
+            }
+        },
+        {
+            "name": "gradient",
+            "context": {
+                "text": "gradient"
+            }
+        },
+        {
             "name": "link",
             "context": {
                 "text": "Link Button",

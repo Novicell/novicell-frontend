@@ -30,11 +30,13 @@ module.exports = (function () {
                     vendorPath + "svg4everybody/dist/svg4everybody.js",
                     vendorPath + "validate/dist/validate.js",
                     vendorPath + "vanilla-text-mask/dist/vanillaTextMask.js",
+                    vendorPath + "priority-nav/dist/priority-nav.js",
                     vendorPath + "novicell-debounce/js/novicell.debounce.js",
                     vendorPath + "novicell-lazyload/js/novicell.dynamic-image.js",
                     vendorPath + "novicell-lazyload/js/lazy-images.js",
                     vendorPath + "lazysizes/lazysizes.js",
                     vendorPath + "flickity/dist/flickity.pkgd.js",
+                    vendorPath + "scrollprogress/dist/scrollProgress.js",
 		            vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js"
                 ]
             },
@@ -86,7 +88,8 @@ module.exports = (function () {
         watchIcons: [ assetPath + 'icons/*' ],
         watchFonts: [ assetPath + 'fonts/*' ],
         watchScripts: [
-            assetPath + 'scripts/**/*.js'
+            assetPath + 'scripts/**/*.js',
+            projectPath + "/patterns/**/*.js"
         ],
         watchStyles: [
             projectPath + "/patterns/**/*.css"

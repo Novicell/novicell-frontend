@@ -1,0 +1,17 @@
+{
+	"title": "Pageheader - image",
+	"status": "prototype",
+	"context": {
+		"content": {
+			"header": {
+				"text": "Pageheader image"
+			},
+			"description": {
+				"text": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim."
+			},
+			"button": {
+				"text": "See more"
+			}
+		}
+	}
+}
