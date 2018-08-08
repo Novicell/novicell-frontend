@@ -1,0 +1,32 @@
+{
+    "title": "Ropbar related",
+    "status": "prototype",
+    "context": {
+        "navList": {
+            "list": [
+                {
+                    "url": "#",
+                    "text": "Home",
+                    "title": "Home"
+                },
+                {
+                    "active": true,
+                    "url": "#",
+                    "text": "Get started",
+                    "title": "Get started"
+                },
+                {
+                    "url": "#",
+                    "text": "About",
+                    "title": "About"
+                },
+                {
+                    "url": "#",
+                    "text": "Contact",
+                    "title": "Contact"
+                }
+
+            ]
+        }
+    }
+}

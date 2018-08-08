@@ -1,0 +1,38 @@
+/*
+ * Module: Topbar related
+ */
+
+ :root {
+    --customEasing: var(--easeInOutCubic);
+ }
+
+.topbar-related {
+    display: none;
+
+    @media (--viewport-md-min) {
+        display: block;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        transform: translateY(-150%);
+        will-change: transform;
+        z-index: 11;
+        transition: transform 0.5s var(--customEasing);
+        box-shadow: 0 2px 5px rgba(0,0,0,.2);
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    &__title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    &.sticky {
+        transform: translateY(0);
+    }
+   
+}
