@@ -8,7 +8,7 @@
      --slider-height: 600px;
  }
 
-.slider {
+.pageheader-slider {
 
     &__item {
         width: 100%;
@@ -23,29 +23,12 @@
         background-size: cover;
         background-position: center;
         height: calc( var(--slider-height) / 1.5);
+        display: flex;
+        align-items: center;
 
         @media (--viewport-sm-min) {
             height: var(--slider-height);
         }
-    }
-
-    &__item-content {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    &__item-title {
-        margin-top: 0;
-        color: var(--slider-text-color);
-        margin-bottom: 15px;
-        text-shadow: var(--slider-text-shadow);
-    }
-
-    &__item-description {
-        color: var(--slider-text-color);
-        margin-top: 0;
-        text-shadow: var(--slider-text-shadow);
     }
 
     .flickity-button {
