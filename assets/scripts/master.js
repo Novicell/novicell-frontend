@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function(){
     novicell.validate.init(); // Init Validation
     novicell.inputMasking.init(); //Init input masking
     novicell.persistentField.init(); //Init persistentField
-    novicell.slider.init(); 
     novicell.topbarRelated.init(); 
     novicell.pageheaderSlider.init();
     novicell.cookieInfo.init(); 
