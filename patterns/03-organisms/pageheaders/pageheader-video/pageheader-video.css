@@ -1,0 +1,130 @@
+/**
+ * Component: pageheader-video
+ */
+:root{
+    --hero-text-color: var(--color-white);
+    --video-background-color: var(--color-black);
+    --video-content-opacity: 70%;
+    --video-height: 600px;
+}
+
+.pageheader-video {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: calc( var(--video-height) / 1.5);
+    overflow: hidden;
+    background-size: cover;
+
+    @media (--viewport-sm-min) {
+        height: var(--video-height);
+    }
+
+    &__video {
+        display: none;
+
+        @media (--viewport-sm-min) {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: contain;
+        }
+
+        &--iframe-video {
+
+            &::before {
+                display: block;
+                content: "";
+                width: 100%;
+                padding-top: calc((9 / 16) * 100%);
+            }
+
+            iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            }
+        }
+    }
+}
+
+
+//vimeo
+.vimeo-wrapper {
+    display: none;
+
+    @media (--viewport-sm-min) {
+        display: block;
+        width: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        position: absolute;
+        height: 100%;
+    }
+     
+}
+.vimeo-wrapper iframe {
+   width: 100vw;
+   height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+   min-height: 100vh;
+   min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+
+//youtube
+.video-wrapper {
+    display: none;
+
+    @media (--viewport-sm-min) {
+        display: block;
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        height:100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+}
+
+.tv {
+    display: none;
+
+    @media (--viewport-sm-min) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+	.screen {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		margin: auto;
+		opacity: 0;
+		transition: opacity .5s;
+		&.active {
+			opacity: 1;
+		}
+	}
+}
