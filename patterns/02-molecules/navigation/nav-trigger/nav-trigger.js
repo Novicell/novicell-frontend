@@ -7,10 +7,11 @@ novicell.navTrigger = novicell.navTrigger || new function () {
         const navButton = document.querySelector('#js-mobile-navigation-button');
         const body = document.querySelector('#site');
         const hamburgerLabel = document.querySelector('.js-hamburger-label');
-        const menuText = hamburgerLabel.getAttribute('data-menu-text');
-        const closeText = hamburgerLabel.getAttribute('data-close-text');
 
         if (navButton) {
+            const menuText = hamburgerLabel.getAttribute('data-menu-text');
+            const closeText = hamburgerLabel.getAttribute('data-close-text');
+
             // Open mobile navigation
             navButton.addEventListener('click', function () {
                 body.classList.toggle('mobile-navigation-open');

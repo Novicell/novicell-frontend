@@ -10,7 +10,8 @@
         "angular": false,
         "Flickity": false,
         "ScrollProgress": false,
-        "priorityNav": false
+        "priorityNav": false,
+        "YT": false
     },
     "globalstrict": true,
     "browser": true,

@@ -1,4 +1,4 @@
-<div class="pageheader-video">
+<div class="pageheader-video" style="background-image: url({{ path '{{backgroundImagePath}}' }} )">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1">
@@ -6,6 +6,25 @@
             </div>
         </div>
     </div>
-    <video class="pageheader-video__video" src="https://staging.coverr.co/s3/mp4/Coverr-lamp.mp4" type="video/mp4" autoplay muted loop playsinline>
-    <video class="pageheader-video__video" src="https://staging.coverr.co/s3/webm/Coverr-lamp.webm" type="video/webm" autoplay muted loop playsinline>
-</div>  
+    {{#if selfHostVideoMp4Path}}
+        <video class="pageheader-video__video" src="{{ selfHostVideoMp4Path }}" type="video/mp4" autoplay muted loop playsinline>
+    {{/if}}
+    {{#if selfHostVideoWebmPath}}
+        <video class="pageheader-video__video" src="{{ selfHostVideoWebmPath }}" type="video/webm" autoplay muted loop playsinline>
+    {{/if}}
+
+    {{#if youtubeId}}
+        <div class="video-wrapper" data-youtube-id="{{ youtubeId }}">
+            <div class="tv">
+                <div id="player" class="screen"></div>
+            </div>
+        </div>
+    {{/if}}
+
+    {{#if vimeoId}}
+        <div class="vimeo-wrapper">
+            <iframe src="https://player.vimeo.com/video/{{ vimeoId }}?autoplay=1&loop=1&color=000000&title=0&byline=0&portrait=0&muted=1&controls=0" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+    {{/if}}
+</div>
+
