@@ -103,10 +103,16 @@ module.exports = (function () {
         deployGlobs: [ distPath + '**' ],
 
         // ------------- Copy on build --------
-        buildCopy: [{
-            from: assetPath + "fonts/**/*",
-            to: distPath  + "fonts"
-        }],
+        buildCopy: [
+            {
+                from: assetPath + "fonts/**/*",
+                to: distPath  + "fonts"
+            },
+            {
+                from: faviconsPath + "/favicon.ico",
+                to: projectPath
+            }
+        ],
 
 
         // ------------- Tasks -------------
