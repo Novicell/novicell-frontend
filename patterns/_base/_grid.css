@@ -31,7 +31,6 @@ section {
   display: flex;
   flex-grow: 0;
   flex-shrink: 1;
-  width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   margin-right: var(--half-gutter-compensation);
