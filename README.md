@@ -156,7 +156,8 @@ By running `gulp favicons`, favicons will be generated automatically for all dev
 
 1. Replace: `assets/favicons/favicons-master.png` with the favicon in 512x512 pixels `png`-format
 2. Run `gulp favicons`
-3. Insert html from `dist/favicons/index.html` in your sites `<head>` section
+3. Insert html from `/favicons/index.html` in your sites `<head>` section
+4. Run `gulp` to move the `favicon.ico` to project path
 
 
 ## Post-CSS components
