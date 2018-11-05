@@ -11,7 +11,7 @@ module.exports = (function () {
     var vendorPath = projectPath + "node_modules/"; // path for vendor scripts
     var distPath = webPath + "dist/"; // path for production files
     var cleanPaths = [distPath]; // files/folders to be removed with "clean"-task
-
+    var faviconsPath = projectPath + "/favicons";
 
     /*
      * App manifest and favicon variables
@@ -103,10 +103,16 @@ module.exports = (function () {
         deployGlobs: [ distPath + '**' ],
 
         // ------------- Copy on build --------
-        buildCopy: [{
-            from: assetPath + "fonts/**/*",
-            to: distPath  + "fonts"
-        }],
+        buildCopy: [
+            {
+                from: assetPath + "fonts/**/*",
+                to: distPath  + "fonts"
+            },
+            {
+                from: faviconsPath + "/favicon.ico",
+                to: projectPath
+            }
+        ],
 
 
         // ------------- Tasks -------------
@@ -124,6 +130,7 @@ module.exports = (function () {
         distPath: distPath,
         assetPath: assetPath,
         webPath: webPath,
+        faviconsPath: faviconsPath,
         
         // ------------- Return Variables -------------
         appName: appName,

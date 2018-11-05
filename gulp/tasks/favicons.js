@@ -26,5 +26,5 @@ gulp.task("favicons", function () {
         pipeHTML: true,
         replace: true
     }))
-    .pipe(gulp.dest(config.webPath));
+    .pipe(gulp.dest(config.faviconsPath));
 });
