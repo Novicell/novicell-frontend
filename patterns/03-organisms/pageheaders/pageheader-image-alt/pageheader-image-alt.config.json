@@ -1,0 +1,12 @@
+{
+	"title": "Pageheader - image",
+	"status": "prototype",
+	"context": {
+		"header": {
+			"text": "Novicell Design System"
+		},
+		"button": {
+			"text": "See more"
+		}
+	}
+}

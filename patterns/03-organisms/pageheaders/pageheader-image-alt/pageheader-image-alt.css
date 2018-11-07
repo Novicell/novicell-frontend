@@ -1,0 +1,47 @@
+/**
+ * Component: Pageheader-image
+ */
+:root{
+    --hero-text-color: var(--color-white);
+    --hero-background-color: var(--color-black);
+    --hero-content-opacity: 90%;
+}
+
+.pageheader-image-alt {
+    color: var(--hero-text-color);
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    position: relative;
+    background-size: cover;
+
+    @media (--viewport-md-min) {
+        height: 300px;
+    }
+
+    @media (--viewport-lg-min) {
+        height: 500px
+    }
+    
+    &:before {
+        background-color: color(var(--color-primary) alpha(var(--hero-content-opacity)));
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    &__inner {
+        text-align: center;
+        position: relative;
+    }
+
+    &__heading {
+        color: var(--color-white);
+        font-size: 3vw;
+    }
+}

@@ -82,6 +82,8 @@ fractal.components.set('path', config.projectPath + 'patterns');
 
 // Docs config
 fractal.docs.set('path', config.projectPath + 'documentation');
+fractal.docs.set('default.preview', '@preview');
+fractal.docs.set('ext', '.hbs');
 
 // Web UI config
 fractal.web.theme(novicellTheme);

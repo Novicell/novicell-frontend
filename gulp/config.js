@@ -94,6 +94,9 @@ module.exports = (function () {
         watchStyles: [
             projectPath + "/patterns/**/*.css"
         ],
+        watchDocs: [
+            projectPath + "/documentation/*.css"
+        ],
 
         // ------------- Deploy task --------
         deployHost: "",
@@ -117,7 +120,7 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy", "fractal"
+            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy", "fractal", "documentation"
         ],
         buildTasks: [
             "styles", "scripts", "images", "icons", "copy"
