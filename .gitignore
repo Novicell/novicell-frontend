@@ -1,6 +1,5 @@
 # ignore folders
 node_modules
-dist
 build
 
 # ignore files
