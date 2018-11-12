@@ -95,7 +95,8 @@
     "postcss-reporter": "5.0.0",
     "stylelint": "8.4.0",
     "vinyl-ftp": "^0.6.0",
-    "yargs": "~9.0.1"
+    "yargs": "~9.0.1",
+    "natives": "1.1.6"
   },
   "dependencies": {
     "flexboxgrid": "6.3.1",
