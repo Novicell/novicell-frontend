@@ -1,0 +1,9 @@
+{
+    "title": "GridPage",
+    "status": "prototype",
+    "context": {
+        "url": "/dist/images/placeholder-images/Teli-page-not-found.jpg",
+        "alt": "Image",
+        "text": "Ooops.... wrong channel - 404"
+    }
+}
