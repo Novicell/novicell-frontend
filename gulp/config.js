@@ -37,7 +37,8 @@ module.exports = (function () {
                     vendorPath + "lazysizes/lazysizes.js",
                     vendorPath + "flickity/dist/flickity.pkgd.js",
                     vendorPath + "scrollprogress/dist/scrollProgress.js",
-		            vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js"
+                    vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js",
+                    vendorPath + "parallax-js/dist/parallax.min.js"
                 ]
             },
             {
