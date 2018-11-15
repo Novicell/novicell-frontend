@@ -100,7 +100,6 @@
     "natives": "1.1.6"
   },
   "dependencies": {
-    "flexboxgrid": "6.3.1",
     "flickity": "2.1.2",
     "novicell-cookie-info": "2.0.4",
     "novicell-lazyload": "1.2.1",
