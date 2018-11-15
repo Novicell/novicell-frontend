@@ -1,10 +1,10 @@
-.dot-box {
+.pageheader-dot-box {
     position: absolute;
     top: 0;
     z-index: 1;
     width: 100%;
     height: 200px;
-    background: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), transparent;
+    background: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px), transparent;
     background-size: 40px 40px;
 
     @media (--viewport-md-min) {
@@ -16,8 +16,7 @@
     }
 }
 
-
-.color-box {
+.pageheader-color-box {
     background-color: color(var(--color-blackberry: ) alpha(var(--hero-content-opacity)));
     width: 100%;
     height: 200px;
@@ -31,57 +30,35 @@
     }
 }
 
-
-/* .dots {
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(rgba(81, 0, 53, 0.4) 1px, transparent 1px), transparent;
-    background-size: 40px 40px;
-
-    &--white {
-        background: radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px), transparent; 
-        background-size: 40px 40px;
-    }
+.pageheader-text-container {
+    /* background-color: orange; */
+    color: color(var(--color-white: ));
 }
 
-.pageheader-dots-colorbox {
-    color: var(--hero-text-color);
-    padding-bottom: 60px;
+.pageheader-text-container h1 {
+    margin: 0px;
+    color: color(var(--color-white: ));
+    text-shadow: 35px -8px rgba(000, 000, 000, 0.2);
+}
+
+.pageheader-text-container h4 {
+    color: color(var(--color-white: ));
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.pageheader-text-container p {
+    font-size: 0.8rem;
+    max-width: 170px;
+    margin-left: 5rem;
+    margin-top: 10px;
+}
+
+.pageheader-main-wrapper {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-top: 60px;
-    position: relative;
-    background-size: cover;
+    padding-left: 10%;
+}
 
-    @media (--viewport-md-min) {
-        height: 300px;
-    }
-
-    @media (--viewport-lg-min) {
-        height: 500px
-    }
-
-    &:before {
-        background-color: color(var(--color-primary) alpha(var(--hero-content-opacity)));
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-    }
-
-    &__inner {
-        text-align: center;
-        position: relative;
-    }
-
-    &__heading {
-        color: var(--color-white);
-        font-size: 3vw;
-    }
-} */

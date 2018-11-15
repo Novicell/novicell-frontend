@@ -10,12 +10,12 @@
 /* Theme */
 --color-primary:                 #C80046;
 --color-secondary:               #363636;
---color-blackberry:              #510035;
---color-red:                     #B3153E;
---color-berry:                   #A0113B;
---color-plum:                    #510035;
---color-spearmint:               #75bc7f;
---color-longfarm-blue:           #c0e3de;
+--color-blackberry:              #510035;  /* Novicell color */
+--color-red:                     #B3153E;  /* Novicell color */
+--color-berry:                   #A0113B;  /* Novicell color */
+--color-plum:                    #510035;  /* Novicell color */
+--color-spearmint:               #75bc7f;  /* Novicell color */
+--color-longfarm-blue:           #c0e3de;  /* Novicell color */
 
 /* Grayscale */
 --color-gray-dark:               #4b4b4b;
