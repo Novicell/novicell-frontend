@@ -7,13 +7,13 @@
     background: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px), transparent;
     background-size: 40px 40px;
 
-    @media (--viewport-md-min) {
-        height: 300px;
+    @media (--viewport-xs-min) {
+        height: 600px;
     }
 
-    @media (--viewport-lg-min) {
-        height: 500px
-    }
+    /* @media (--viewport-lg-min) {
+        height: 600px
+    } */
 }
 
 .pageheader-color-box {
@@ -21,37 +21,13 @@
     width: 100%;
     height: 200px;
 
-    @media (--viewport-md-min) {
-        height: 300px;
+    @media (--viewport-xs-min) {
+        height: 600px;
     }
 
-    @media (--viewport-lg-min) {
-        height: 500px
-    }
-}
-
-.pageheader-text-container {
-    /* background-color: orange; */
-    color: color(var(--color-white: ));
-}
-
-.pageheader-text-container h1 {
-    margin: 0px;
-    color: color(var(--color-white: ));
-    text-shadow: 35px -8px rgba(000, 000, 000, 0.2);
-}
-
-.pageheader-text-container h4 {
-    color: color(var(--color-white: ));
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-}
-
-.pageheader-text-container p {
-    font-size: 0.8rem;
-    max-width: 170px;
-    margin-left: 5rem;
-    margin-top: 10px;
+    /* @media (--viewport-lg-min) {
+        height: 600px
+    } */
 }
 
 .pageheader-main-wrapper {
@@ -60,5 +36,43 @@
     display: flex;
     align-items: center;
     padding-left: 10%;
+
+    @media (--viewport-xs-max) {
+        padding-left: 0;
+        justify-content: center;
+    }
 }
 
+.pageheader-text-container {
+    /* background-color: orange; */
+    color: color(var(--color-white: ));
+    font-family: Averta;
+    .pageheader-text-container {
+        &__top-heading {
+            font-size: 22px;
+            margin: 0px;
+            margin-bottom: 8px;
+            
+        }
+        &__main-heading {
+            font-weight: 800;
+            font-size: 65px;
+            line-height: 62px;
+            margin: 0px;
+            text-shadow: 35px -8px rgba(000, 000, 000, 0.2);
+        }
+        &__sub-heading {
+            font-size: 18px;
+            font-weight: 300;
+            max-width: 250px;
+            margin-left: 100px;
+            margin-top: 30px;
+
+            @media (--viewport-xs-max) {
+                margin-left: 50px;
+            }
+        }
+    }
+
+    
+}

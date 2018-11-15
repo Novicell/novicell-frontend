@@ -2,15 +2,168 @@
  * Fonts
  */
 
-/* Don't do like this!!! */
-@import url('https://fonts.googleapis.com/css?family=Lato');
 
-/* Do like this: */
 @font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 900;
-  src: local('Lato Black'), local('Lato-Black'),
-      url('/dist/fonts/lato-bold.woff2') format('woff2'),
-      url('/dist/fonts/lato-bold.woff') format('woff')
+	font-family: 'Averta';
+	font-style: italic;
+  font-display: swap;
+	font-weight: 700;
+	src: 
+     url('/dist/fonts/3212B2_0_0.woff2') format('woff2'),
+	 	 url('/dist/fonts/3212B2_0_0.woff') format('woff')
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-style: italic;
+  font-display: swap;
+	font-weight: 900;
+	src: 
+		 url('/dist/fonts/3212B2_1_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_1_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 700;
+  font-display: swap;
+	src: 
+		 url('/dist/fonts/3212B2_2_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_2_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 900;
+  font-display: swap;
+	src: 
+		 url('/dist/fonts/3212B2_3_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_3_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 800;
+  font-display: swap;
+	src: 
+		 url('/dist/fonts/3212B2_4_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_4_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 800;
+  font-display: swap;
+	font-style: italic;
+	src: 
+		 url('/dist/fonts/3212B2_5_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_5_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 100;
+  font-display: swap;
+	src: 
+		 url('/dist/fonts/3212B2_6_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_6_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 100;
+  font-display: swap;
+	font-style: italic;
+	src: 
+		 url('/dist/fonts/3212B2_7_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_7_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 300;
+  font-display: swap;
+	src: 
+		 url('/dist/fonts/3212B2_8_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_8_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 300;
+  font-display: swap;
+	font-style: italic;
+	src: 
+		 url('/dist/fonts/3212B2_9_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_9_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+  font-display: swap;
+	src: 
+		 url('/dist/fonts/3212B2_A_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_A_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-style: italic;
+  font-display: swap;
+	src: 
+		 url('/dist/fonts/3212B2_B_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_B_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 600;
+  font-display: swap;
+	src:
+		 url('/dist/fonts/3212B2_C_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_C_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 600;
+  font-display: swap;
+	font-style: italic;
+	src: 
+		 url('/dist/fonts/3212B2_D_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_D_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 200;
+  font-display: swap;
+	src: 
+		 url('/dist/fonts/3212B2_E_0.woff2') format('woff2'),
+		 url('/dist/fonts/3212B2_E_0.woff') format('woff'),
+	}
+ 
+  
+@font-face {
+	font-family: 'Averta';
+	font-weight: 200;
+  font-display: swap;
+	font-style: italic;
+	src: 
+		url('/dist/fonts/3212B2_F_0.woff2') format('woff2'),
+		url('/dist/fonts/3212B2_F_0.woff') format('woff'),
 }
