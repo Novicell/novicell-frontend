@@ -30,6 +30,7 @@
 @import '../01-atoms/paragraph/paragraph.css';
 @import '../01-atoms/svg-text/svg-text.css';
 @import '../01-atoms/scroll-progress-bar/scroll-progress-bar.css';
+@import '../01-atoms/backgrounds/dots/dots.css';
 
 /* Molecules */
 @import '../02-molecules/box/box/box.css';
@@ -62,3 +63,4 @@
 @import '../03-organisms/pageheaders/pageheader-image-alt/pageheader-image-alt.css';
 @import '../03-organisms/pageheaders/pageheader-slider/pageheader-slider.css';
 @import '../03-organisms/pageheaders/pageheader-video/pageheader-video.css';
+@import '../03-organisms/pageheaders/pageheader-dots/pageheader-dots.css';
