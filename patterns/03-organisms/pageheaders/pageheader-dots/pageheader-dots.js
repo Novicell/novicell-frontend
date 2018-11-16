@@ -2,9 +2,10 @@
 
 /**
  * @name Novicell pageheader-dots
- * @desc Slider, for custom arrow use https://flickity.metafizzy.co/options.html#arrowshape
+ * @desc Paralax.js, parallax.js reacts to the orientation of your smart device, or position of cursor
+ *       http://matthew.wagerfield.com/parallax/
  * @author Mark Hansen MGH
- * @requires https://github.com/wagerfield/parallax#3-methods
+ * @requires https://github.com/wagerfield/parallax
  */
 
 

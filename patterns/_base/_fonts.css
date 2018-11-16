@@ -2,8 +2,8 @@
  * Fonts
  */
 
-
-@font-face {
+/* smadre */
+/* @font-face {
 	font-family: 'Averta';
 	font-style: italic;
   font-display: swap;
@@ -11,7 +11,17 @@
 	src: 
      url('/dist/fonts/3212B2_0_0.woff2') format('woff2'),
 	 	 url('/dist/fonts/3212B2_0_0.woff') format('woff')
-	}
+	} */
+
+@font-face {
+  font-family: 'Averta';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: 
+    url('/dist/fonts/3212B2_3_0.woff2') format('woff2'),
+    url('/dist/fonts/3212B2_3_0.woff') format('woff'),
+}
  
   
 @font-face {
@@ -27,6 +37,7 @@
   
 @font-face {
 	font-family: 'Averta';
+  font-style: normal;
 	font-weight: 700;
   font-display: swap;
 	src: 
@@ -34,19 +45,11 @@
 		 url('/dist/fonts/3212B2_2_0.woff') format('woff'),
 	}
  
-  
-@font-face {
-	font-family: 'Averta';
-	font-weight: 900;
-  font-display: swap;
-	src: 
-		 url('/dist/fonts/3212B2_3_0.woff2') format('woff2'),
-		 url('/dist/fonts/3212B2_3_0.woff') format('woff'),
-	}
  
   
 @font-face {
 	font-family: 'Averta';
+  font-style: normal;
 	font-weight: 800;
   font-display: swap;
 	src: 
@@ -68,6 +71,7 @@
   
 @font-face {
 	font-family: 'Averta';
+  font-style: normal;
 	font-weight: 100;
   font-display: swap;
 	src: 
@@ -89,6 +93,7 @@
   
 @font-face {
 	font-family: 'Averta';
+  font-style: normal;
 	font-weight: 300;
   font-display: swap;
 	src: 
@@ -110,6 +115,7 @@
   
 @font-face {
 	font-family: 'Averta';
+  font-style: normal;
   font-display: swap;
 	src: 
 		 url('/dist/fonts/3212B2_A_0.woff2') format('woff2'),
@@ -129,6 +135,7 @@
   
 @font-face {
 	font-family: 'Averta';
+  font-style: normal;
 	font-weight: 600;
   font-display: swap;
 	src:
@@ -150,6 +157,7 @@
   
 @font-face {
 	font-family: 'Averta';
+  font-style: normal;
 	font-weight: 200;
   font-display: swap;
 	src: 
