@@ -5,7 +5,7 @@ const config = require('../config.js');
 const mergeStream = require('merge-stream');
 const plugins = require('gulp-load-plugins')();
 const cssnano = require('cssnano');
-const postcssPresetEnv = require('postcss-preset-env');
+const cssnext  = require('postcss-cssnext');
 const nested  = require('postcss-nested');
 const postcssImport = require('postcss-partial-import');
 const cssvariables = require('postcss-css-variables');
@@ -16,7 +16,7 @@ const postCssPlugins = [
     cssvariables(),
     postcssImport(),
     nested(),
-    postcssPresetEnv({
+    cssnext({
         autoprefixer: { grid: true },
         browsers: [">= 5% in DK", "ie 11"]
     }),

@@ -2,22 +2,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{!-- <link rel="preload" as="font" href="{{ path '/dist/fonts/lato-bold.woff2' }}" type="font/woff2" crossorigin> --}}
         <link media="all" rel="stylesheet" href="{{ path '/dist/css/master.min.css' }}">
-        {{!-- <link media="all" rel="stylesheet" href="{{ path '/dist/css/documentation.min.css' }}"> --}}
+        <link media="all" rel="stylesheet" href="{{ path '/dist/css/documentation.min.css' }}">
     </head>
     <body id="site">
         {{ render '@pageheader-dots' }}
-
-        <div class="container">
-            <hr>
-            <h2>Welcome to Novicell's design system, explore our component library in the lefthand menu</h2>
-
-            <a target="blank" href="https://novicell.dk" class="button button--primary">Need help for your next webproject?</a>
-            <a target="blank" href="https://github.com/Novicell/novicell-frontend" class="button button--ghost">View on github</a>
-
-        </div>
-        
         <script defer src="{{ path '/dist/scripts/vendor.min.js' }}"></script>
         <script defer src="{{ path '/dist/scripts/master.min.js' }}"></script>
     </body>

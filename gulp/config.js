@@ -101,9 +101,6 @@ module.exports = (function () {
         watchStyles: [
             projectPath + "/patterns/**/*.css"
         ],
-        watchDocs: [
-            projectPath + "/documentation/*.css"
-        ],
 
         // ------------- Deploy task --------
         deployHost: "",

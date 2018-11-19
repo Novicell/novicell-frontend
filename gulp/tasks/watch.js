@@ -13,7 +13,6 @@ gulp.task('livereload', function () {
 gulp.task('watch', function () {
     gulp.watch(config.watchScripts, ["scripts:watch"]);
     gulp.watch(config.watchStyles, ["styles"]);
-    gulp.watch(config.watchDocs, ["documentation"]);
     gulp.watch(config.watchImages, ["images"]);
     gulp.watch(config.watchIcons, ["icons"]);
     gulp.watch(config.watchFonts, ["copy"]);
