@@ -54,6 +54,12 @@ module.exports = (function () {
                 images: [ assetPath + "images/**/*.{jpg,png,svg,gif}"]
             },
             {
+                name: 'documentation',
+                styles: [
+                    projectPath + "documentation/documentation.css"
+                ],
+                
+            },            {
                 name: "icons",
                 icons: [ assetPath + "icons/**/*.svg" ]
             }
@@ -121,7 +127,7 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy", "fractal", "documentation"
+            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy", "fractal"
         ],
         buildTasks: [
             "styles", "scripts", "images", "icons", "copy"
