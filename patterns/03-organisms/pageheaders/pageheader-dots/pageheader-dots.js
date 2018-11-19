@@ -14,6 +14,9 @@ var novicell = novicell || {};
 novicell.pageheaderDots = novicell.pageheaderDots || new function () {
     this.init = function () {
         var scene = document.getElementById('pageheader-scene');
+        if (!scene){
+            return;
+        }
         var parallaxInstance = new Parallax(scene);
     };
 }();

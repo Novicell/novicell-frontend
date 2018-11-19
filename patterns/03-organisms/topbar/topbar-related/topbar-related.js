@@ -22,5 +22,5 @@ novicell.topbarRelated = novicell.topbarRelated || new function () {
         if (scroll < headerHeight + offset) {
             el.classList.remove(className);
         }
-    };
+    }
 }();
