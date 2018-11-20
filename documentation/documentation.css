@@ -11,3 +11,12 @@
     font-size: 3vw;
   }
 }
+
+.Header {
+  position: fixed;
+  width: 100%;
+}
+
+.Prose > *:not(:last-child) {
+  margin-bottom: 0;
+}
