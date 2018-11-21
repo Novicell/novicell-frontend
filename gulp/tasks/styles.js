@@ -16,7 +16,7 @@ const postCssPlugins = [
     cssvariables(),
     postcssImport({
         plugins: [
-            require("stylelint")
+            stylelint()
         ]
     }),
     nested(),
