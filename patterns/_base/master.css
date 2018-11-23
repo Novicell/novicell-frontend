@@ -9,6 +9,10 @@
 @import '../../node_modules/priority-nav/dist/priority-nav-core.css';
 @import '../../node_modules/flickity/dist/flickity.css';
 
+/* Examples */
+@import '../00-examples/atom-example/atom-example.css';
+@import '../00-examples/molecule-example/molecule-example.css';
+
 /* Atoms */
 @import '../01-atoms/buttons/button/button.css';
 @import '../01-atoms/headings/heading/heading.css';
