@@ -12,14 +12,13 @@
     @media (--viewport-xs-max) {
         flex-direction: column;
     }
-    
 
     &__headline {
         margin-top: 0;
         margin-bottom: 10px;
     }
 
-    &__content {   
+    &__content {
         display: flex;
         flex-direction: column;
         padding: 20px;
@@ -50,15 +49,15 @@
 
     &--card {
         flex-direction: column;
-        box-shadow: 0 10px 20px rgba(0,0,0,.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
         background-color: white;
-        transition: .2s transform var(--easeInSine);
+        transition: 0.2s transform var(--easeInSine);
         will-change: transform;
         backface-visibility: visible;
 
         &:hover {
-             transform: translateY(-5px);
+            transform: translateY(-5px);
         }
 
         @media (--viewport-ms-min) {
@@ -75,4 +74,3 @@
         }
     }
 }
-

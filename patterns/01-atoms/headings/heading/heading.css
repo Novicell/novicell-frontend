@@ -3,7 +3,7 @@
 */
 
 /*Setting document variables*/
-:root{
+:root {
     --heading-color-primary: var(--color-primary);
     --heading-color-secondary: var(--color-secondary);
     --heading-color-black: var(--color-black);
@@ -30,7 +30,9 @@
         color: var(--footer-text-color);
         line-height: 40px;
         margin-bottom: 20px;
-        border-bottom: 1px solid color(var(--footer-border-color) alpha(var(--footer-border-opacity)));
+        border-bottom: 1px solid
+            color(
+                var(--footer-border-color) alpha(var(--footer-border-opacity))
+            );
     }
 }
-

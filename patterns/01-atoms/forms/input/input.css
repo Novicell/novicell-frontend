@@ -37,19 +37,19 @@
     &__wrapper {
         margin-bottom: 15px;
     }
-    
+
     &__description {
         font-size: 14px;
         color: var(--color-gray);
         font-style: italic;
         margin-top: 5px;
-        &[type="text"],
-        &[type="search"],
-        &[type="email"],
-        &[type="password"],
-        &[type="url"],
-        &[type="tel"],
-        &[type="number"] {
+        &[type='text'],
+        &[type='search'],
+        &[type='email'],
+        &[type='password'],
+        &[type='url'],
+        &[type='tel'],
+        &[type='number'] {
             -webkit-border-radius: 0;
             -webkit-appearance: none;
             appearance: none;
@@ -58,11 +58,21 @@
 }
 
 /* clears the 'X' from Internet Explorer */
-input::-ms-clear {  display: none; width : 0; height: 0; }
-input::-ms-reveal {  display: none; width : 0; height: 0; }
+input::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+input::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
 
 /* clears the 'X' from Chrome */
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
-input::-webkit-search-results-decoration { display: none; }
+input::-webkit-search-results-decoration {
+    display: none;
+}

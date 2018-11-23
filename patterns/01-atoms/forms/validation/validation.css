@@ -11,18 +11,19 @@
 ********************/
 .error-message {
     color: var(--color-danger);
-    font-size: .8em;
+    font-size: 0.8em;
 }
 
 /* .validated is set by the validation script, on submit 
 ********************/
- 
-.input, .textarea {
+
+.input,
+.textarea {
     &.validated {
         background-repeat: no-repeat;
         background-position: right 1rem center;
         background-size: 0.75rem;
-        
+
         &:valid {
             border-color: var(--color-success);
             background-image: url("data:image/svg+xml,%3Csvg width='45px' height='34px' viewBox='0 0 45 34' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate%28-56.000000, -59.000000%29' fill='%232EEC96'%3E%3Cpolygon points='70.1468531 85.8671329 97.013986 59 100.58042 62.5664336 70.1468531 93 56 78.8531469 59.5664336 75.2867133'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");

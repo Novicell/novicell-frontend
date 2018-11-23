@@ -2,12 +2,12 @@
  * Module: Text Box
  */
 
-:root{
-	--icon-box-background-color: var(--color-white);
-	--icon-box-border-style: 1px solid var(--color-gray-light);
-	--icon-box-border-radius: 4px;
-	--icon-box-padding: 20px;
-	--icon-box-paragraph-spacing-top: 15px;
+:root {
+    --icon-box-background-color: var(--color-white);
+    --icon-box-border-style: 1px solid var(--color-gray-light);
+    --icon-box-border-radius: 4px;
+    --icon-box-padding: 20px;
+    --icon-box-paragraph-spacing-top: 15px;
 }
 
 .icon-box {

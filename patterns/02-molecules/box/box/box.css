@@ -2,12 +2,12 @@
  * Module: Box
  */
 
-:root{
+:root {
     --box-background-color: var(--color-white);
     --box-border-radius: 4px;
     --box-padding: 20px;
     --box-paragraph-spacing-top: 15px;
-    --box-shadow: 2px 5px 10px 0 rgba(0,0,0, .2);
+    --box-shadow: 2px 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .box {
@@ -25,8 +25,8 @@
     &__content {
         padding: var(--box-padding);
     }
-    
+
     p + p {
         margin-top: var(--box-paragraph-spacing-top);
-    }  
+    }
 }

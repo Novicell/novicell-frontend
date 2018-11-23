@@ -2,13 +2,12 @@
  * Module: Topbar
  */
 
-:root{
+:root {
     --topbar-background-color: var(--color-white);
     --topbar-border-color: var(--color-secondary);
     --topbar-border-opacity: 25%;
     --topbar-site-width: var(--site-width);
 }
-
 
 .topbar {
     background-color: var(--topbar-background-color);
@@ -52,7 +51,8 @@
             padding-top: 20px;
         }
     }
-    &__navigation-flex{
+
+    &__navigation-flex {
         justify-content: flex-end;
         display: flex;
         flex-direction: column-reverse;
@@ -80,6 +80,7 @@
         padding-top: 20px;
         padding-bottom: 20px;
         text-align: right;
+
         @media (--viewport-sm-min) {
             border-top: none;
             border-bottom: 1px solid color(var(--topbar-border-color) alpha(var(--topbar-border-opacity)));
@@ -100,7 +101,7 @@
 }
 
 @media (--viewport-ms-max) {
-     .topbar__navigation {
+    .topbar__navigation {
         background-color: var(--color-white);
         position: fixed;
         width: 100%;
@@ -112,8 +113,8 @@
         height: 100vh;
         transform: translateX(100%);
         opacity: 0;
-        transition: all .3s var(--easeInOutQuart);
+        transition: all 0.3s var(--easeInOutQuart);
         overflow-y: auto;
         padding-bottom: 30px;
-     }
- }
+    }
+}

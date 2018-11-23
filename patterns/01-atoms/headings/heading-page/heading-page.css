@@ -3,7 +3,7 @@
 */
 
 /*Setting document variables*/
-:root{
+:root {
     --heading-page-color-primary: var(--color-text);
     --heading-page-color-secondary: var(--color-secondary);
     --pageheader-header-color: var(--color-white);
