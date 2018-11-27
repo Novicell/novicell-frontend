@@ -14,7 +14,9 @@
 
 
 .duotone-filters{
-    display: none;
+    visibility: hidden;
+    height: 0;
+    display: block;
 }
 
 .box-image-duotone{
