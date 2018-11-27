@@ -1,20 +1,24 @@
 /**
  * Settings: Variables
  */
+div {
+    color: blue;
+}
 
 :root {
     /* Colors
 ********************/
-
     /* Theme */
+    /* Novicell color */
     --color-primary: #c80046;
     --color-secondary: #363636;
-    --color-blackberry: #510035; /* Novicell color */
-    --color-red: #b3153e; /* Novicell color */
-    --color-berry: #a0113b; /* Novicell color */
-    --color-plum: #510035; /* Novicell color */
-    --color-spearmint: #75bc7f; /* Novicell color */
-    --color-longfarm-blue: #c0e3de; /* Novicell color */
+    /* Novicell color */
+    --color-blackberry: #510035;
+    --color-red: #b3153e;
+    --color-berry: #a0113b;
+    --color-plum: #510035;
+    --color-spearmint: #75bc7f;
+    --color-longfarm-blue: #c0e3de;
 
     /* Grayscale */
     --color-gray-dark: #4b4b4b;
@@ -54,157 +58,61 @@
 
     /* Easing functions
   ********************/
-    --easeInQuad: cubic-bezier(
-        0.55,
-        0.085,
-        0.68,
-        0.53
-    ); /*http://easings.net/#easeInQuad*/
-    --easeOutQuad: cubic-bezier(
-        0.25,
-        0.46,
-        0.45,
-        0.94
-    ); /*http://easings.net/#easeOutQuad*/
-    --easeInOutQuad: cubic-bezier(
-        0.455,
-        0.03,
-        0.515,
-        0.955
-    ); /*http://easings.net/#easeInOutQuad*/
+    --easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    /*http://easings.net/#easeInQuad*/
+    --easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /*http://easings.net/#easeOutQuad*/
+    --easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    /*http://easings.net/#easeInOutQuad*/
 
-    --easeInSine: cubic-bezier(
-        0.47,
-        0,
-        0.745,
-        0.715
-    ); /*http://easings.net/#easeInSine*/
-    --easeOutSine: cubic-bezier(
-        0.39,
-        0.575,
-        0.565,
-        1
-    ); /*http://easings.net/#easeOutSine*/
-    --easeInOutSine: cubic-bezier(
-        0.445,
-        0.05,
-        0.55,
-        0.95
-    ); /*http://easings.net/#easeInOutSine*/
+    --easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715);
+    /*http://easings.net/#easeInSine*/
+    --easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+    /*http://easings.net/#easeOutSine*/
+    --easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    /*http://easings.net/#easeInOutSine*/
 
-    --easeInCubic: cubic-bezier(
-        0.55,
-        0.055,
-        0.675,
-        0.19
-    ); /*http://easings.net/#easeInCubic*/
-    --easeOutCubic: cubic-bezier(
-        0.215,
-        0.61,
-        0.355,
-        1
-    ); /*http://easings.net/#easeOutCubic*/
-    --easeInOutCubic: cubic-bezier(
-        0.645,
-        0.045,
-        0.355,
-        1
-    ); /*http://easings.net/#easeInOutCubic*/
+    --easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    /*http://easings.net/#easeInCubic*/
+    --easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    /*http://easings.net/#easeOutCubic*/
+    --easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+    /*http://easings.net/#easeInOutCubic*/
 
-    --easeInQuart: cubic-bezier(
-        0.895,
-        0.03,
-        0.685,
-        0.22
-    ); /*http://easings.net/#easeInQuart*/
-    --easeOutQuart: cubic-bezier(
-        0.165,
-        0.84,
-        0.44,
-        1
-    ); /*http://easings.net/#easeOutQuart*/
-    --easeInOutQuart: cubic-bezier(
-        0.77,
-        0,
-        0.175,
-        1
-    ); /*http://easings.net/#easeInOutQuart*/
+    --easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    /*http://easings.net/#easeInQuart*/
+    --easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    /*http://easings.net/#easeOutQuart*/
+    --easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
+    /*http://easings.net/#easeInOutQuart*/
 
-    --easeInQuint: cubic-bezier(
-        0.755,
-        0.05,
-        0.855,
-        0.06
-    ); /*http://easings.net/#easeInQuint*/
-    --easeOutQuint: cubic-bezier(
-        0.23,
-        1,
-        0.32,
-        1
-    ); /*http://easings.net/#easeOutQuint*/
-    --easeInOutQuint: cubic-bezier(
-        0.86,
-        0,
-        0.07,
-        1
-    ); /*http://easings.net/#easeInOutQuint*/
+    --easeInQuint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    /*http://easings.net/#easeInQuint*/
+    --easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+    /*http://easings.net/#easeOutQuint*/
+    --easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+    /*http://easings.net/#easeInOutQuint*/
 
-    --easeInExpo: cubic-bezier(
-        0.95,
-        0.05,
-        0.795,
-        0.035
-    ); /*http://easings.net/#easeInExpo*/
-    --easeOutExpo: cubic-bezier(
-        0.19,
-        1,
-        0.22,
-        1
-    ); /*http://easings.net/#easeOutExpo*/
-    --easeInOutExpo: cubic-bezier(
-        1,
-        0,
-        0,
-        1
-    ); /*http://easings.net/#easeInOutExpo*/
+    --easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    /*http://easings.net/#easeInExpo*/
+    --easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
+    /*http://easings.net/#easeOutExpo*/
+    --easeInOutExpo: cubic-bezier(1, 0, 0, 1);
+    /*http://easings.net/#easeInOutExpo*/
 
-    --easeInCirc: cubic-bezier(
-        0.6,
-        0.04,
-        0.98,
-        0.335
-    ); /*http://easings.net/#easeInCirc*/
-    --easeOutCirc: cubic-bezier(
-        0.075,
-        0.82,
-        0.165,
-        1
-    ); /*http://easings.net/#easeOutCirc*/
-    --easeInOutCirc: cubic-bezier(
-        0.785,
-        0.135,
-        0.15,
-        0.86
-    ); /*http://easings.net/#easeInOutCirc*/
+    --easeInCirc: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    /*http://easings.net/#easeInCirc*/
+    --easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
+    /*http://easings.net/#easeOutCirc*/
+    --easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    /*http://easings.net/#easeInOutCirc*/
 
-    --easeInBack: cubic-bezier(
-        0.6,
-        -0.28,
-        0.735,
-        0.045
-    ); /*http://easings.net/#easeInBack*/
-    --easeOutBack: cubic-bezier(
-        0.175,
-        0.885,
-        0.32,
-        1.275
-    ); /*http://easings.net/#easeOutBack*/
-    --easeInOutBack: cubic-bezier(
-        0.68,
-        -0.55,
-        0.265,
-        1.55
-    ); /*http://easings.net/#easeInOutBack*/
+    --easeInBack: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    /*http://easings.net/#easeInBack*/
+    --easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /*http://easings.net/#easeOutBack*/
+    --easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /*http://easings.net/#easeInOutBack*/
 
     /* Media query breakpoints, inspiration from bootstrap v.4
   ********************/
@@ -213,7 +121,9 @@
     --container-max-width-md: 960px;
     --container-max-width-lg: 1140px;
     --container-max-width-xl: 1352px;
-} /*Root end*/
+}
+
+/*Root end*/
 
 /*Extra small screen / phone*/
 @custom-media --viewport-xs-min (min-width: 0);
