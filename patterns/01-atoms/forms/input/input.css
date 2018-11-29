@@ -43,6 +43,7 @@
         color: var(--color-gray);
         font-style: italic;
         margin-top: 5px;
+
         &[type='text'],
         &[type='search'],
         &[type='email'],
@@ -63,6 +64,7 @@ input::-ms-clear {
     width: 0;
     height: 0;
 }
+
 input::-ms-reveal {
     display: none;
     width: 0;

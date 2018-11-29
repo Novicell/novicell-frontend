@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var novicell = novicell || {};
 
@@ -7,31 +7,31 @@ novicell.navTrigger =
     new function() {
         this.init = function() {
             const navButton = document.querySelector(
-                '#js-mobile-navigation-button'
+                "#js-mobile-navigation-button"
             );
-            const body = document.querySelector('#site');
+            const body = document.querySelector("#site");
             const hamburgerLabel = document.querySelector(
-                '.js-hamburger-label'
+                ".js-hamburger-label"
             );
 
             if (navButton) {
-                const menuText = hamburgerLabel.getAttribute('data-menu-text');
+                const menuText = hamburgerLabel.getAttribute("data-menu-text");
                 const closeText = hamburgerLabel.getAttribute(
-                    'data-close-text'
+                    "data-close-text"
                 );
 
                 // Open mobile navigation
                 navButton.addEventListener(
-                    'click',
+                    "click",
                     function() {
-                        body.classList.toggle('mobile-navigation-open');
+                        body.classList.toggle("mobile-navigation-open");
                         this.classList.toggle(
-                            'mobile-navigation-button--active'
+                            "mobile-navigation-button--active"
                         );
 
                         if (
                             hamburgerLabel.parentNode.classList.contains(
-                                'mobile-navigation-button--active'
+                                "mobile-navigation-button--active"
                             )
                         ) {
                             hamburgerLabel.innerHTML = closeText;

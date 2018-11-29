@@ -1,11 +1,11 @@
 {
-	"title": "Pageheader - dots",
-	"status": "prototype",
-	"context": {
-		"header": {
-			"top": "Welcome to",
-			"main": "Novicell<br>Design<br>System",
-			"sub": "Explore our component library in the lefthand menu"
-		}
-	}
+    "title": "Pageheader - dots",
+    "status": "prototype",
+    "context": {
+        "header": {
+            "top": "Welcome to",
+            "main": "Novicell<br>Design<br>System",
+            "sub": "Explore our component library in the lefthand menu"
+        }
+    }
 }

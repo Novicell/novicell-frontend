@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @name Novicell Slider
@@ -13,11 +13,11 @@ novicell.pageheaderSlider =
     novicell.pageheaderSlider ||
     new function() {
         this.init = function() {
-            const elem = document.querySelector('.js-pageheader-slider');
+            const elem = document.querySelector(".js-pageheader-slider");
             if (elem && elem != null) {
                 let flkty = new Flickity(elem, {
                     // options
-                    cellAlign: 'left',
+                    cellAlign: "left",
                     contain: true
                 });
             }

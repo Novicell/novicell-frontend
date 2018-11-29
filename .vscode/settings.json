@@ -3,8 +3,16 @@
     "prettier.tabWidth": 4,
     "prettier.singleQuote": true,
     "prettier.useTabs": false,
+    "prettier.semi": true,
     "prettier.parser": "babylon",
+    "prettier.bracketSpacing": false,
     "prettier.disableLanguages": [
         "vue", "hbs", "handlebars"
-    ]
+    ],
+    "[json]": {
+        "editor.formatOnSave": false
+    },
+    "[handlebars]": {
+        "editor.formatOnSave": false
+    }
 }

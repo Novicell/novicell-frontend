@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @name Novicell Input Mask
@@ -16,81 +16,81 @@ novicell.inputMasking =
         this.init = function() {
             const masks = [
                 {
-                    selector: '.js-mask--phone',
+                    selector: ".js-mask--phone",
                     mask: [
                         /\d/,
                         /\d/,
-                        ' ',
+                        " ",
                         /\d/,
                         /\d/,
-                        ' ',
+                        " ",
                         /\d/,
                         /\d/,
-                        ' ',
+                        " ",
                         /\d/,
                         /\d/
                     ],
-                    pattern: ''
+                    pattern: ""
                 },
                 {
-                    selector: '.js-mask--cpr',
+                    selector: ".js-mask--cpr",
                     mask: [
                         /\d/,
                         /\d/,
-                        ' ',
+                        " ",
                         /\d/,
                         /\d/,
-                        ' ',
+                        " ",
                         /\d/,
                         /\d/,
-                        ' ',
-                        '-',
-                        ' ',
-                        /\d/,
-                        /\d/,
-                        /\d/,
-                        /\d/
-                    ],
-                    pattern: ''
-                },
-                {
-                    selector: '.js-mask--bank',
-                    mask: [
-                        /\d/,
-                        /\d/,
-                        /\d/,
-                        /\d/,
-                        ' ',
-                        '-',
-                        ' ',
-                        /\d/,
-                        /\d/,
-                        /\d/,
-                        /\d/,
-                        /\d/,
-                        /\d/,
+                        " ",
+                        "-",
+                        " ",
                         /\d/,
                         /\d/,
                         /\d/,
                         /\d/
                     ],
-                    pattern: ''
+                    pattern: ""
                 },
                 {
-                    selector: '.js-mask--date1',
+                    selector: ".js-mask--bank",
+                    mask: [
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        " ",
+                        "-",
+                        " ",
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/
+                    ],
+                    pattern: ""
+                },
+                {
+                    selector: ".js-mask--date1",
                     mask: [
                         /[0-3]/,
                         /\d/,
-                        '/',
+                        "/",
                         /[0-1]/,
                         /\d/,
-                        '/',
+                        "/",
                         /\d/,
                         /\d/,
                         /\d/,
                         /\d/
                     ],
-                    pattern: ''
+                    pattern: ""
                 }
             ];
 
@@ -102,7 +102,7 @@ novicell.inputMasking =
                 if (input && mask) {
                     //Patterns is work in progress
                     if (pattern) {
-                        input.setAttribute('pattern', pattern);
+                        input.setAttribute("pattern", pattern);
                     }
 
                     masks[i].masking = vanillaTextMask.maskInput({

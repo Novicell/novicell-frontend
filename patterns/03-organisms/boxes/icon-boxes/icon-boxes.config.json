@@ -12,7 +12,7 @@
                 "link": {
                     "url": "#shop",
                     "text": "Go to shop",
-                    "target":"",
+                    "target": "",
                     "title": "Go to shop"
                 }
             },
@@ -25,7 +25,7 @@
                 "link": {
                     "url": "#payment",
                     "text": "More about payment",
-                    "target":"",
+                    "target": "",
                     "title": "More about payment"
                 }
             },
@@ -38,7 +38,7 @@
                 "link": {
                     "url": "#delivery",
                     "text": "Buy now",
-                    "target":"",
+                    "target": "",
                     "title": "Buy now"
                 }
             }

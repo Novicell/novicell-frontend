@@ -5,7 +5,8 @@
         "url": "https://www.novicell.dk/media/61609/img_3881.jpg",
         "alt": "Image"
     },
-    "variants": [{
+    "variants": [
+        {
             "name": "bg",
             "context": {
                 "url": "https://www.novicell.dk/media/61607/img_3876.jpg?mode=crop",

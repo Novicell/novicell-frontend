@@ -45,16 +45,16 @@
             "name": "link",
             "context": {
                 "text": "Link Button",
-                "linkUrl":"http://www.novicell.dk",
-                "linkTitle":"Novicell"
+                "linkUrl": "http://www.novicell.dk",
+                "linkTitle": "Novicell"
             }
         },
         {
             "name": "mailto-link",
             "context": {
                 "text": "Mailto Link Button",
-                "linkUrl":"test@novicell.dk",
-                "linkTitle":"Novicell"
+                "linkUrl": "test@novicell.dk",
+                "linkTitle": "Novicell"
             }
         },
         {

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @name Novicell Persistent Field
@@ -32,7 +32,7 @@ novicell.persistentField =
                     const input = document.querySelector(`[name="${name}"]`);
                     if (input) {
                         // text-based, checkbox
-                        if (input.type === 'checkbox') {
+                        if (input.type === "checkbox") {
                             input.checked = Number(value);
                         } else {
                             input.value = value;
@@ -43,14 +43,14 @@ novicell.persistentField =
 
             function save({ target: i }) {
                 sessionStorage.setItem(
-                    'form-' + i.name,
-                    i.type === 'checkbox' ? Number(i.checked) : i.value
+                    "form-" + i.name,
+                    i.type === "checkbox" ? Number(i.checked) : i.value
                 );
             }
 
-            document.body.addEventListener('input', save);
-            document.body.addEventListener('change', save);
-            document.body.addEventListener('submit', e => {
+            document.body.addEventListener("input", save);
+            document.body.addEventListener("change", save);
+            document.body.addEventListener("submit", e => {
                 if (e.target.checkValidity()) {
                     for (var key in sessionStorage) {
                         if (/^form-(.+)/.test(key)) {

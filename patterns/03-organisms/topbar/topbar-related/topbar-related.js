@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var novicell = novicell || {};
 
@@ -7,12 +7,12 @@ novicell.topbarRelated =
     new function() {
         this.init = function() {
             window.addEventListener(
-                'scroll',
+                "scroll",
                 function() {
                     fixedRelatedTopbar(
-                        'js-topbar-related',
-                        'sticky',
-                        '.js-header',
+                        "js-topbar-related",
+                        "sticky",
+                        ".js-header",
                         25
                     );
                 },
