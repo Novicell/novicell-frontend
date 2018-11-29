@@ -1,2 +1,10 @@
 {
+    "editor.formatOnSave": true,
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true,
+    "prettier.useTabs": false,
+    "prettier.parser": "babylon",
+    "prettier.disableLanguages": [
+        "vue", "hbs", "handlebars"
+    ]
 }
