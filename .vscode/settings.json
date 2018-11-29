@@ -6,9 +6,7 @@
     "prettier.semi": true,
     "prettier.parser": "babylon",
     "prettier.bracketSpacing": false,
-    "prettier.disableLanguages": [
-        "vue", "hbs", "handlebars"
-    ],
+    "prettier.disableLanguages": ["vue", "hbs", "handlebars"],
     "[json]": {
         "editor.formatOnSave": false
     },
