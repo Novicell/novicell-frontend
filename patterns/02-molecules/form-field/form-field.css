@@ -10,6 +10,6 @@
 
     & + .button {
         margin-top: 20px;
-        align-self:flex-start
+        align-self: flex-start;
     }
 }

@@ -2,17 +2,16 @@
  * Component: Slider
  */
 
- :root{
-     --slider-text-color: var(--color-white);
-     --slider-text-shadow: 1px 1px 1px #333;
-     --slider-height: 600px;
- }
+:root {
+    --slider-text-color: var(--color-white);
+    --slider-text-shadow: 1px 1px 1px #333;
+    --slider-height: 600px;
+}
 
 .pageheader-slider {
-
     &__item {
         width: 100%;
-        height: calc( var(--slider-height) / 1.5);
+        height: calc(var(--slider-height) / 1.5);
 
         @media (--viewport-sm-min) {
             height: var(--slider-height);
@@ -22,7 +21,7 @@
     &__item-inner {
         background-size: cover;
         background-position: center;
-        height: calc( var(--slider-height) / 1.5);
+        height: calc(var(--slider-height) / 1.5);
         display: flex;
         align-items: center;
 
@@ -32,8 +31,8 @@
     }
 
     .flickity-button {
-        opacity: 0;   
-        transition: .3s var(--easeInOutCubic);
+        opacity: 0;
+        transition: 0.3s var(--easeInOutCubic);
 
         @media (--viewport-sm-min) {
             opacity: 1;

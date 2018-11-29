@@ -6,7 +6,6 @@ dist
 # ignore files
 *.log
 .idea
-.vscode
 web.config
 npm-debug.log.*
 *.orig

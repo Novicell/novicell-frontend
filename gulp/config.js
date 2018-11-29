@@ -22,8 +22,7 @@ module.exports = (function () {
 
     return {
         // ------------- Bundles -------------
-        bundles: [
-            {
+        bundles: [{
                 name: 'vendor',
                 ignorePlugins: ['jscs', 'jshint', 'watch', 'babel'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
@@ -51,17 +50,17 @@ module.exports = (function () {
                 styles: [
                     projectPath + "patterns/_base/master.css"
                 ],
-                images: [ assetPath + "images/**/*.{jpg,png,svg,gif}"]
+                images: [assetPath + "images/**/*.{jpg,png,svg,gif}"]
             },
             {
                 name: 'documentation',
                 styles: [
                     projectPath + "documentation/documentation.css"
                 ],
-                
-            },            {
+
+            }, {
                 name: "icons",
-                icons: [ assetPath + "icons/**/*.svg" ]
+                icons: [assetPath + "icons/**/*.svg"]
             }
         ],
 
@@ -91,9 +90,9 @@ module.exports = (function () {
         ],
 
         // ------------- Watch -------------
-        watchImages: [ assetPath + 'images/**/*' ],
-        watchIcons: [ assetPath + 'icons/*' ],
-        watchFonts: [ assetPath + 'fonts/*' ],
+        watchImages: [assetPath + 'images/**/*'],
+        watchIcons: [assetPath + 'icons/*'],
+        watchFonts: [assetPath + 'fonts/*'],
         watchScripts: [
             assetPath + 'scripts/**/*.js',
             projectPath + "/patterns/**/*.js"
@@ -107,13 +106,12 @@ module.exports = (function () {
         deployUser: "",
         deployPass: "",
         deployDest: "/public_html/",
-        deployGlobs: [ distPath + '**' ],
+        deployGlobs: [distPath + '**'],
 
         // ------------- Copy on build --------
-        buildCopy: [
-            {
+        buildCopy: [{
                 from: assetPath + "fonts/**/*",
-                to: distPath  + "fonts"
+                to: distPath + "fonts"
             },
             {
                 from: faviconsPath + "/favicon.ico",
@@ -138,16 +136,15 @@ module.exports = (function () {
         assetPath: assetPath,
         webPath: webPath,
         faviconsPath: faviconsPath,
-        
+
         // ------------- Return Variables -------------
         appName: appName,
         appColor: appColor,
         appDescription: appDescription,
-        
+
 
         // ---------- Errorhandler ------
-        errorHandler: function(taskName)
-        {
+        errorHandler: function (taskName) {
             return function (e) {
                 notifier.notify({
                     'title': taskName,

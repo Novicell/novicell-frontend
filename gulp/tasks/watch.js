@@ -3,20 +3,21 @@ const config = require('../config.js');
 const plugins = require('gulp-load-plugins')();
 const spawn = require('child_process').spawn;
 
-gulp.task('livereload', function () {
+gulp.task('livereload', function() {
     plugins.livereload.listen(config.livereloadPort);
 
-    return gulp.watch(config.livereloadPaths)
+    return gulp
+        .watch(config.livereloadPaths)
         .on('change', plugins.livereload.changed);
 });
 
-gulp.task('watch', function () {
-    gulp.watch(config.watchScripts, ["scripts:watch"]);
-    gulp.watch(config.watchStyles, ["styles"]);
-    gulp.watch(config.watchImages, ["images"]);
-    gulp.watch(config.watchIcons, ["icons"]);
-    gulp.watch(config.watchFonts, ["copy"]);
-    gulp.watch(config.watchHtml, ["html"]);
+gulp.task('watch', function() {
+    gulp.watch(config.watchScripts, ['scripts:watch']);
+    gulp.watch(config.watchStyles, ['styles']);
+    gulp.watch(config.watchImages, ['images']);
+    gulp.watch(config.watchIcons, ['icons']);
+    gulp.watch(config.watchFonts, ['copy']);
+    gulp.watch(config.watchHtml, ['html']);
 
     return;
 });
@@ -44,6 +45,6 @@ gulp.task('watch', function () {
 // });
 
 // Setup 'gulp w' shorthand
-gulp.task('w', ['default'], function () {
+gulp.task('w', ['default'], function() {
     return gulp.start('watch');
 });

@@ -3,14 +3,13 @@
  */
 
 /*Setting document variables*/
-:root{
+:root {
     --social-background-color: var(--color-gray);
     --icon-color: var(--color-white);
     --facebook-background-color: var(--color-facebook);
     --twitter-background-color: var(--color-twitter);
     --google-plus-background-color: var(--color-google-plus);
 }
-
 
 .social-link {
     position: relative;

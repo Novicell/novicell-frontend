@@ -2,7 +2,7 @@
 * Module: image text section
 */
 
-:root{
+:root {
     --image-text-section-padding: 40px;
     --image-text-background-color: var(--color-gray-light);
 }

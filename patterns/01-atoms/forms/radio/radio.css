@@ -4,12 +4,14 @@
 }
 
 .radio {
-    &:checked, &:not(:checked) {
+    &:checked,
+    &:not(:checked) {
         position: absolute;
         left: -9999px;
     }
 
-    &:checked + label, &:not(:checked) + label {
+    &:checked + label,
+    &:not(:checked) + label {
         position: relative;
         padding-left: 28px;
         cursor: pointer;
@@ -18,7 +20,8 @@
         color: var(--color-text);
     }
 
-    &:checked + label:before, &:not(:checked) + label:before {
+    &:checked + label:before,
+    &:not(:checked) + label:before {
         content: '';
         position: absolute;
         left: 0;
@@ -30,7 +33,8 @@
         background: #fff;
     }
 
-    &:checked + label:after, &:not(:checked) + label:after {
+    &:checked + label:after,
+    &:not(:checked) + label:after {
         content: '';
         width: 10px;
         height: 10px;

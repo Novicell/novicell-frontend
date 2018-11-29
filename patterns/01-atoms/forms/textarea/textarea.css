@@ -3,13 +3,12 @@
 */
 
 /*Setting document variables*/
-:root{
+:root {
     --input-text-color: var(--color-text);
     --input-background-color: var(--color-white);
     --input-border-color: var(--color-gray-light);
     --input-font-family: var(--base-font-family);
 }
-
 
 .textarea {
     display: block;

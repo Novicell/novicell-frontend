@@ -7,8 +7,7 @@ const plugins = require('gulp-load-plugins')();
 
 gulp.task('copy', function () {
     var streams = config.buildCopy.map(function (x) {
-        return gulp.src(x.from)
-            .pipe(gulp.dest(x.to));
+        return gulp.src(x.from).pipe(gulp.dest(x.to));
     });
 
     return mergeStream(streams);

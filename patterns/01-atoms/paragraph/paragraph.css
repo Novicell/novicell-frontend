@@ -3,7 +3,7 @@
 */
 
 /*Setting document variables*/
-:root{
+:root {
     --pageheader-color: var(--color-white);
 }
 
@@ -17,4 +17,3 @@
         text-shadow: 1px 1px 1px #333;
     }
 }
-

@@ -1,6 +1,5 @@
 {
-	"title": "Rich Text Editor",
-	"status": "prototype",
-	"context": {
-	} 
+    "title": "Rich Text Editor",
+    "status": "prototype",
+    "context": {}
 }
