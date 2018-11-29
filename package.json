@@ -1,114 +1,35 @@
 {
-  "name": "novicell-frontend",
-  "description": "Novicells Default Frontend Package - used in all Novicell related projects as a base framework.",
-  "version": "4.0.0",
-  "homepage": "http://www.novicell.dk",
-  "author": {
-    "name": "Novicell"
+  "name": "parcel-fractal",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "fractal": "npm run fracal --prefix fractal",
+    "webpack": "webpack --config configurations/webpack.config.js",
+    "postcss": "postcss src/_base/master.css --dir dist/css --config configurations/postcss.config.js",
+    "stylelint": "stylelint --help"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Novicell/novicell-frontend.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Novicell/novicell-frontend/issues"
-  },
-  "main": "index.js",
-  "contributors": [
-    {
-      "name": "Danni Larsen",
-      "email": "dla@novicell.dk"
-    },
-    {
-      "name": "Signe Helbo Poulsen",
-      "email": "shp@novicell.dk"
-    },
-    {
-      "name": "Jonas Havmøller",
-      "email": "jha@novicell.dk"
-    },
-    {
-      "name": "Henrik Reinbach Madsen",
-      "email": "hrm@novicell.dk"
-    },
-    {
-      "name": "Bjørn Nyborg",
-      "email": "bny@novicell.dk"
-    },
-    {
-      "name": "Emil Skytte Ankersen",
-      "email": "ean@novicell.dk"
-    },
-    {
-      "name": "Mette Krogsgaard Andersen",
-      "email": "mka@novicell.dk"
-    }
-  ],
-  "license": "MIT",
-  "engines": {
-    "node": ">6.9.1"
-  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@frctl/fractal": "1.1.7",
-    "@frctl/handlebars": "1.1.5",
-    "@frctl/mandelbrot": "1.2.0",
-    "babel-core": "6.26.3",
-    "babel-preset-env": "1.7.0",
-    "check-files-exist": "^1.0.1",
-    "cssnano": "4.1.7",
-    "del": "^3.0.0",
-    "es6-promise": "^4.0.5",
-    "glob": "^7.1.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "7.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-favicons": "2.2.7",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-jscs": "^4.0.0",
-    "gulp-jscs-stylish": "^1.4.0",
-    "gulp-jshint": "^2.0.4",
-    "gulp-livereload": "^4.0.0",
-    "gulp-load-plugins": "~1.5.0",
-    "gulp-notify": "^3.0.0",
-    "gulp-plumber": "~1.2.0",
-    "gulp-postcss": "8.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "1.0.0",
-    "gulp-resolve-dependencies": "^2.2.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-svg-sprite": "~1.5.0",
-    "gulp-uglify": "^3.0.0",
-    "handlebars-helpers": "0.10.0",
-    "handlebars-layouts": "3.1.4",
-    "jshint": "^2.9.5",
-    "jshint-stylish": "^2.2.1",
-    "merge-stream": "~1.0.1",
-    "mkdirp": "^0.5.1",
-    "natives": "1.1.6",
-    "node-notifier": "^5.1.2",
-    "path": "^0.12.7",
-    "postcss": "7.0.5",
-    "postcss-css-variables": "0.11.0",
-    "postcss-cssnext": "3.1.0",
-    "postcss-nested": "4.1.0",
-    "postcss-partial-import": "4.1.0",
-    "postcss-preset-env": "6.4.0",
-    "postcss-reporter": "6.0.0",
-    "stylelint": "9.8.0",
-    "vinyl-ftp": "^0.6.0",
-    "yargs": "~12.0.2"
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@frctl/fractal": "^1.1.7",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.1",
+    "cssnano": "^4.1.7",
+    "postcss-cli": "^6.0.1",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.1.0",
+    "postcss-preset-env": "^6.4.0",
+    "postcss-reporter": "^6.0.0",
+    "stylelint": "^9.8.0",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "flickity": "2.1.2",
-    "novicell-cookie-info": "2.0.4",
-    "novicell-lazyload": "1.2.1",
-    "scrollprogress": "3.0.2",
-    "svg4everybody": "2.1.9",
-    "priority-nav": "1.0.13",
-    "validate": "github:cferdinandi/validate#v2.2.0",
-    "vanilla-text-mask": "5.1.1",
-    "parallax-js": "3.1.0"
+    "flickity": "^2.1.2",
+    "priority-nav": "^1.0.13"
   }
 }

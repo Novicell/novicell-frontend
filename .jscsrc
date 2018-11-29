@@ -1,6 +1,0 @@
-{
-    "requireCurlyBraces": ["if", "else", "for", "while", "do", "try", "catch", "case", "default"],
-    "disallowMultipleSpaces": {"allowEOLComments": true},
-    "requireAlignedMultilineParams": true,
-    "validateIndentation": { "value": 4, "allExcept": ["comments", "emptyLines"] }
-}
