@@ -2,7 +2,7 @@
     "title": "GridPage",
     "status": "prototype",
     "context": {
-        "url": "/dist/images/placeholder-images/Teli-server-error.jpg",
+        "url": "/dist/images/Teli-server-error.jpg",
         "alt": "Image",
         "text": "Internel Server error - 500"
     }

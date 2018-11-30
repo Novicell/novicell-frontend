@@ -1,13 +1,15 @@
 {
-  "name": "parcel-fractal",
-  "version": "1.0.0",
-  "description": "",
+  "name": "novicell-front-end",
+  "version": "5.0.0",
+  "description": "Webpack and NPM scripts",
   "private": true,
   "scripts": {
     "fractal": "npm run fracal --prefix fractal",
-    "webpack": "webpack --config configurations/webpack.config.js",
-    "postcss": "postcss src/_base/master.css --dir dist/css --config configurations/postcss.config.js",
-    "stylelint": "stylelint --help"
+    "images": "node configurations/imagemin.js",
+    "help": "imagemin --help",
+    "postcss": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js",
+    "stylelint": "stylelint --help",
+    "webpack": "webpack --config configurations/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,8 @@
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
     "cssnano": "^4.1.7",
+    "handlebars-layouts": "3.1.4",
+    "imagemin": "6.0.0",
     "postcss-cli": "^6.0.1",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.0",
@@ -30,6 +34,7 @@
   },
   "dependencies": {
     "flickity": "^2.1.2",
-    "priority-nav": "^1.0.13"
+    "priority-nav": "^1.0.13",
+    "vanilla-lazyload": "8.17.0"
   }
 }
