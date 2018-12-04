@@ -5,7 +5,7 @@ var novicell = novicell || {};
 novicell.duotone = novicell.duotone || new function () {
 
     this.init = function () {
-        let filterElements = document.getElementsByClassName('js-duotone-filter');
+        let filterElements = document.getElementsByClassName('duotone-filter');
         for (let index = 0; index < filterElements.length; index++) {
             const filter = filterElements[index];
             let rgbValueLight = hexToRgb(filter.dataset.lightColor);
