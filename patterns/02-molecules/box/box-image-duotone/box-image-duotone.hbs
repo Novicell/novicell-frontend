@@ -11,7 +11,7 @@ SVG DUOTONE FILTERS
 -->
 <article class="box-image-duotone">
     <svg class="duotone-filters" xmlns="http://www.w3.org/2000/svg">	
-        <filter id="duotone_{{ boxImage.filter.id }}" class="duotone-filter" data-light-color="{{ boxImage.filter.colorLight }}" data-dark-color="{{ boxImage.filter.colorDark }}">
+        <filter id="duotone_{{ boxImage.filter.id }}" class="js-duotone-filter duotone-filter" data-light-color="{{ boxImage.filter.colorLight }}" data-dark-color="{{ boxImage.filter.colorDark }}">
             <feColorMatrix type="matrix" values="
                 0.2126 0.7152 0.0722 0 0
                 0.2126 0.7152 0.0722 0 0
@@ -29,6 +29,32 @@ SVG DUOTONE FILTERS
     </svg>
     <div class="box-image-duotone__image">
         <div class="box-image-duotone__image" style="background-image: url({{ boxImage.url }}); filter: url(#duotone_{{boxImage.filter.id}});"></div>
+        <div class="box-image__content">
+			{{ render '@heading--column' header }}
+			{{#block "content"}}
+				<p>{{ boxImage.content }}</p>
+			{{/block}}
+		</div>
+    </div>
+        <svg class="duotone-filters" xmlns="http://www.w3.org/2000/svg">	
+        <filter id="duotone_tester" class="duotone-filter">
+            <feColorMatrix type="matrix" values="
+                0.2126 0.7152 0.0722 0 0
+                0.2126 0.7152 0.0722 0 0
+                0.2126 0.7152 0.0722 0 0
+                0 0 0 1 0" result="Gray">
+            </feColorMatrix>
+
+            <feComponentTransfer class="duotone-color-change" in="Gray" color-interpolation-filters="sRGB" result="Duotone">
+                <feFuncR class="duotone-red" type="table" tableValues="0.003921568627 0.007843137255"></feFuncR>
+                <feFuncG class="duotone-green" type="table" tableValues="0.1568627451 0.3803921569"></feFuncG>
+                <feFuncB class="duotone-blue" type="table" tableValues="0.2352941176 0.5725490196"></feFuncB>
+                <feFuncA type="table" tableValues="0 1"></feFuncA>
+            </feComponentTransfer>
+        </filter>
+    </svg>
+    <div class="box-image-duotone__image">
+        <div class="box-image-duotone__image" style="background-image: url({{ boxImage.url }}); filter: url(#duotone_tester);"></div>
         <div class="box-image__content">
 			{{ render '@heading--column' header }}
 			{{#block "content"}}
