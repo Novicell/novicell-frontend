@@ -12,11 +12,11 @@ SVG DUOTONE FILTERS
 <article class="box-image-duotone">
     <svg class="duotone-filters" xmlns="http://www.w3.org/2000/svg">	
         <filter id="duotone_{{ boxImage.filter.id }}" class="duotone-filter" data-light-color="{{ boxImage.filter.colorLight }}" data-dark-color="{{ boxImage.filter.colorDark }}">
-            <feColorMatrix type="matrix" values="
-                0.2126 0.7152 0.0722 0 0
-                0.2126 0.7152 0.0722 0 0
-                0.2126 0.7152 0.0722 0 0
-                0 0 0 1 0" result="gray">
+            <feColorMatrix type="matrix"  result="gray" values="
+                    1 0 0 0 0
+                    1 0 0 0 0
+                    1 0 0 0 0
+                    0 0 0 1 0">
             </feColorMatrix>
 
             <feComponentTransfer class="duotone-color-change" color-interpolation-filters="sRGB" result="duotone">
