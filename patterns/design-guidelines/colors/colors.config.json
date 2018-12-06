@@ -17,6 +17,24 @@
                 "rgb": "124 4 53",
                 "hex": "#7C0435",
                 "cmyk": "40 100 55 35"
+            },
+            "plum": {
+                "name": "plum",
+                "rgb": "81 0 53",
+                "hex": "#510035",
+                "cmyk": "60 100 40 50"
+            },
+            "spearmint": {
+                "name": "spearmint",
+                "rgb": "117 188 127",
+                "hex": "#75bc7f",
+                "cmyk": "60 0 60 0"
+            },
+            "longfarm-blue": {
+                "name": "longfarm-blue",
+                "rgb": "192 227 222",
+                "hex": "#c0e3de",
+                "cmyk": "25 0 10 0"
             }
         }
     }
