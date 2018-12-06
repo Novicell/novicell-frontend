@@ -1,0 +1,23 @@
+{
+    "title": "Colors",
+    "status": "prototype",
+    "context": {
+        "heading": {
+            "text": "Brand colors"
+        },
+        "colors": {
+            "red": {
+                "name": "red",
+                "rgb": "200 0 7",
+                "hex": "#c80046",
+                "cmyk": "20 100 65 0"
+            },
+            "berry": {
+                "name": "berry",
+                "rgb": "124 4 53",
+                "hex": "#7C0435",
+                "cmyk": "40 100 55 35"
+            }
+        }
+    }
+}

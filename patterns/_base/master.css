@@ -5,6 +5,9 @@
 @import '_fonts.css';
 @import '_grid.css';
 
+/* Design Guidelines */
+@import '../design-guidelines/colors/colors.css';
+
 /* Node modules */
 @import '../../node_modules/priority-nav/dist/priority-nav-core.css';
 @import '../../node_modules/flickity/dist/flickity.css';
