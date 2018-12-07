@@ -27,7 +27,7 @@ SVG DUOTONE FILTERS
             </feComponentTransfer>
         </filter>
     </svg>
-    <div class="box-image-duotone__image">
+    <div class="box-image-duotone__image-container">
         <div class="box-image-duotone__image" style="background-image: url({{ boxImage.url }}); filter: url(#duotone_{{boxImage.filter.id}});"></div>
         <div class="box-image__content">
 			{{ render '@heading--column' header }}
