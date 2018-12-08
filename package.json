@@ -6,9 +6,9 @@
   "scripts": {
     "fractal": "npm run fracal --prefix fractal",
     "images": "node configurations/imagemin.js",
-    "help": "imagemin --help",
-    "postcss": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js",
+    "postcss": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js -w",
     "stylelint": "stylelint --help",
+    "fonts": "node configurations/copyFiles -i assets/fonts/* -o dist/fonts",
     "webpack": "webpack --config configurations/webpack.config.js"
   },
   "author": "",
@@ -28,7 +28,8 @@
     "postcss-nested": "^4.1.0",
     "postcss-preset-env": "^6.4.0",
     "postcss-reporter": "^6.0.0",
-    "stylelint": "^9.8.0",
+    "stylelint": "9.9.0",
+    "svg-sprite": "1.5.0",
     "uglifyjs-webpack-plugin": "2.0.1",
     "webpack": "^4.26.0",
     "webpack-bundle-analyzer": "3.0.3",

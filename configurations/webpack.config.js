@@ -17,7 +17,7 @@ module.exports = {
   },
   output: {
     path: rootFolder + "/dist/scripts/",
-    filename: "[name].[chunkhash].bundle.js"
+    filename: "[name].bundle.js"
   },
   optimization: {
     splitChunks: {

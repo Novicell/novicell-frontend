@@ -1,17 +1,23 @@
-const stylelint = require("stylelint");
-const stylelintConfig = require("./.stylelintrc.json");
-const settings = require("../config");
+const stylelint = require('stylelint');
+const stylelintConfig = require('./.stylelintrc.json');
+const settings = require('../config');
 const rootFolder = settings.root_folder;
 
 module.exports = {
-    map: true,
+    env: settings.env,
+    map: {
+        inline: false
+    },
     plugins: [
         require('postcss-import')({
             plugins: [
                 stylelint({
                     config: stylelintConfig,
-                    ignoreFiles: [rootFolder + 'node_modules/**/*.css', rootFolder + 'dist']
-                }),
+                    ignoreFiles: [
+                        rootFolder + 'node_modules/**/*.css',
+                        rootFolder + 'dist'
+                    ]
+                })
             ]
         }),
         require('postcss-preset-env')({
@@ -22,9 +28,9 @@ module.exports = {
             },
             features: {
                 'color-mod-function': {},
-                'custom-media-queries': {},
+                'custom-media-queries': {}
             },
-            browsers: [">= 5% in DK", "ie 11"]
+            browsers: ['>= 5% in DK', 'ie 11']
         }),
         require('postcss-nested'),
         require('cssnano')({
@@ -39,6 +45,9 @@ module.exports = {
                 fontFace: false
             }
         }),
-        require('postcss-reporter')
+        require('postcss-reporter')({
+            clearMessages: true,
+            throwError: true
+        })
     ]
-}
+};
