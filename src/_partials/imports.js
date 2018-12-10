@@ -1,7 +1,5 @@
 import LazyLoad from 'vanilla-lazyload';
 
-const lazy = new LazyLoad({
+let myLazyLoad = new LazyLoad({
     elements_selector: '.lazyload'
 });
-
-lazy();

@@ -6,11 +6,12 @@
     "scripts": {
         "fractal": "fractal start --sync",
         "images": "node configurations/imagemin.js",
-        "postcss": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js",
+        "styles": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js",
+        "watch:styles": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
         "stylelint": "stylelint --help",
         "fonts": "node configurations/copyFiles -i assets/fonts/* -o dist/fonts",
         "webpack": "webpack --config configurations/webpack.config.js",
-        "dev": "npm-run-all postcss -p -r webpack fractal"
+        "dev": "npm-run-all -p -r webpack watch:styles fractal"
     },
     "fractal": {
         "main": "fractalfile.js"
