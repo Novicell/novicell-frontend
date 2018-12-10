@@ -25,6 +25,8 @@ fractal.components.set('path', rootFolder + '/src');
 fractal.components.set('default.preview', '@preview');
 /* Tell Fractal where the documentation pages will live */
 fractal.docs.set('path', rootFolder + '/src/docs');
+fractal.components.set('default.preview', '@preview');
+fractal.docs.set('ext', 'hbs');
 // Project config
 fractal.set('project.title', config.appName);
 layouts.register(instance.handlebars);
@@ -51,13 +53,8 @@ instance.handlebars.registerHelper('math', function(lvalue, operator, rvalue) {
     }[operator];
 });
 
-instance.handlebars.registerHelper('compare', function(
-    lvalue,
-    rvalue,
-    options
-) {
-    if (arguments.length < 3)
-        throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
+instance.handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
+    if (arguments.length < 3) throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
 
     var operator = options.hash.operator || '==';
 
@@ -88,10 +85,7 @@ instance.handlebars.registerHelper('compare', function(
         }
     };
 
-    if (!operators[operator])
-        throw new Error(
-            "Handlerbars Helper 'compare' doesn't know the operator " + operator
-        );
+    if (!operators[operator]) throw new Error("Handlerbars Helper 'compare' doesn't know the operator " + operator);
 
     var result = operators[operator](lvalue, rvalue);
 
@@ -108,10 +102,7 @@ fractal.web.set('server.syncOptions', {
     // open: true, // open the server on 'gulp fractal'
     // browser: ['chrome'],
     // notify: true,
-    files: [
-        path.join(__dirname, '../' + config.webPath + 'dist'),
-        path.join(__dirname, '../src/**/*[.hbs, .json]')
-    ]
+    files: [path.join(__dirname, '../' + config.webPath + 'dist'), path.join(__dirname, '../src/**/*[.hbs, .json]')]
 });
 
 // Export config

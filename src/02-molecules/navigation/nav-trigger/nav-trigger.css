@@ -10,7 +10,7 @@
 .nav-main-mobile {
     display: flex;
     margin-right: -15px;
-    border-left: 1px solid color(var(--nav-trigger-border-color, white) alpha(var(--nav-trigger-border-opacity, 25%)));
+    border-left: 1px solid color-mod(var(--nav-trigger-border-color, white) alpha(var(--nav-trigger-border-opacity, 25%)));
 
     @media (--viewport-sm-min) {
         display: none;

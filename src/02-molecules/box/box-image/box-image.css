@@ -26,7 +26,7 @@
     }
 
     &__content {
-        background-color: color(
+        background-color: color-mod(
             var(--box-background-color) alpha(var(--box-content-opacity))
         );
         bottom: 0;

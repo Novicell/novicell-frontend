@@ -27,7 +27,7 @@ module.exports = {
                 grid: true
             },
             features: {
-                'color-mod-function': {},
+                'color-mod-function': {unresolved: 'warn'},
                 'custom-media-queries': {}
             },
             browsers: ['>= 5% in DK', 'ie 11']

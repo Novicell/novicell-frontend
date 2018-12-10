@@ -1,4 +1,5 @@
-"use strict";
+'use strict';
+import validate from 'validate';
 
 /**
  * @name Novicell Validate
@@ -8,47 +9,36 @@
  * @requires https://github.com/cferdinandi/validate
  */
 
-var novicell = novicell || {};
+validate.init({
+    // Classes and Selectors
+    selector: '[data-validate]',
+    fieldClass: 'error',
+    errorClass: 'error-message',
 
-novicell.validate =
-    novicell.validate ||
-    new function() {
-        this.init = function() {
-            validate.init({
-                // Classes and Selectors
-                selector: "[data-validate]",
-                fieldClass: "error",
-                errorClass: "error-message",
+    // Messages
+    messageValueMissing: 'Dette felt er påkrævet',
+    messageValueMissingSelect: 'Vælg venligst en værdi',
+    messageValueMissingSelectMulti: 'Vælg venligst mindst én værdi',
+    messageTypeMismatchEmail: 'Indtast en gyldig email-adresse.',
+    messageTypeMismatchURL: 'Indtast en gyldig URL',
+    messageTooShort: 'Indtast venligst {minLength} karakterer eller mere. Du har indtastet {length} karakterer.',
+    messageTooLong: 'Indtast venligst {maxLength} eller færre karakterer. Du har indtastet {length} karakterer.',
+    messagePatternMismatch: 'Du har indtastet data i et forkert format',
+    messageBadInput: 'Indtast venligst et tal',
+    messageStepMismatch: 'Vælg venligst en gyldig værdi',
+    messageRangeOverflow: 'Du må ikke angive mere end {max}.',
+    messageRangeUnderflow: 'Du må ikke angive mindre end {min}.',
+    messageGeneric: 'Den indtastede værdi er ugyldig',
 
-                // Messages
-                messageValueMissing: "Dette felt er påkrævet",
-                messageValueMissingSelect: "Vælg venligst en værdi",
-                messageValueMissingSelectMulti: "Vælg venligst mindst én værdi",
-                messageTypeMismatchEmail: "Indtast en gyldig email-adresse.",
-                messageTypeMismatchURL: "Indtast en gyldig URL",
-                messageTooShort:
-                    "Indtast venligst {minLength} karakterer eller mere. Du har indtastet {length} karakterer.",
-                messageTooLong:
-                    "Indtast venligst {maxLength} eller færre karakterer. Du har indtastet {length} karakterer.",
-                messagePatternMismatch:
-                    "Du har indtastet data i et forkert format",
-                messageBadInput: "Indtast venligst et tal",
-                messageStepMismatch: "Vælg venligst en gyldig værdi",
-                messageRangeOverflow: "Du må ikke angive mere end {max}.",
-                messageRangeUnderflow: "Du må ikke angive mindre end {min}.",
-                messageGeneric: "Den indtastede værdi er ugyldig",
+    // Form Submission
+    disableSubmit: false,
+    onSubmit: function() {},
 
-                // Form Submission
-                disableSubmit: false,
-                onSubmit: function() {},
-
-                // Callbacks
-                beforeShowError: function(e) {
-                    e.classList.add("validated");
-                },
-                afterShowError: function() {},
-                beforeRemoveError: function() {},
-                afterRemoveError: function() {}
-            });
-        };
-    }();
+    // Callbacks
+    beforeShowError: function(e) {
+        e.classList.add('validated');
+    },
+    afterShowError: function() {},
+    beforeRemoveError: function() {},
+    afterRemoveError: function() {}
+});

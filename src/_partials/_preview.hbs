@@ -17,8 +17,10 @@
 </head>
 
 <body id="site">
-    {{{ yield }}} {{ render '@cookie-info' }}
-    {{!-- <script defer src="{{ path '/dist/scripts/vendor.min.js' }}"></script> --}}
+    {{{ yield }}} 
+
+    <script defer src="{{ path '/dist/scripts/manifest.bundle.js' }}"></script>
+    <script defer src="{{ path '/dist/scripts/vendor.bundle.js' }}"></script>
     <script defer src="{{ path '/dist/scripts/master.bundle.js' }}"></script>
 </body>
 

@@ -1,15 +1,19 @@
 {
-  "name": "novicell-front-end",
+  "name": "novicell-frontend",
   "version": "5.0.0",
   "description": "Webpack and NPM scripts",
   "private": true,
   "scripts": {
-    "fractal": "npm run fracal --prefix fractal",
+    "fractal": "fractal start --sync",
     "images": "node configurations/imagemin.js",
-    "postcss": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js -w",
+    "postcss": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js",
     "stylelint": "stylelint --help",
     "fonts": "node configurations/copyFiles -i assets/fonts/* -o dist/fonts",
-    "webpack": "webpack --config configurations/webpack.config.js"
+    "webpack": "webpack --config configurations/webpack.config.js",
+    "dev": "npm-run-all -l postcss -p -r webpack fractal"
+  },
+  "fractal": {
+    "main": "fractalfile.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,8 +25,10 @@
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
     "cssnano": "^4.1.7",
+    "eslint": "5.10.0",
     "handlebars-layouts": "3.1.4",
     "imagemin": "6.0.0",
+    "npm-run-all": "4.1.5",
     "postcss-cli": "^6.0.1",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.0",
@@ -37,7 +43,10 @@
   },
   "dependencies": {
     "flickity": "^2.1.2",
-    "priority-nav": "^1.0.13",
-    "vanilla-lazyload": "8.17.0"
+    "parallax-js": "3.1.0",
+    "priority-nav": "1.0.13",
+    "validate": "github:cferdinandi/validate#v2.2.0",
+    "vanilla-lazyload": "8.17.0",
+    "vanilla-text-mask": "5.1.1"
   }
 }

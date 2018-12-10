@@ -42,7 +42,7 @@
         padding-right: 15px;
 
         @media (--viewport-sm-min) {
-            border-right: 1px solid color(var(--topbar-border-color, white) alpha(var(--topbar-border-opacity, 25%)));
+            border-right: 1px solid color-mod(var(--topbar-border-color, white) alpha(var(--topbar-border-opacity, 25%)));
 
             flex-basis: 70%;
             max-width: 70%;
@@ -75,7 +75,7 @@
     }
 
     &__navigation-secondary {
-        border-top: 1px solid color(var(--topbar-border-color) alpha(var(--topbar-border-opacity)));
+        border-top: 1px solid color-mod(var(--topbar-border-color) alpha(var(--topbar-border-opacity)));
         color: currentColor;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -83,7 +83,7 @@
 
         @media (--viewport-sm-min) {
             border-top: none;
-            border-bottom: 1px solid color(var(--topbar-border-color) alpha(var(--topbar-border-opacity)));
+            border-bottom: 1px solid color-mod(var(--topbar-border-color) alpha(var(--topbar-border-opacity)));
             padding-right: 20px;
         }
     }
