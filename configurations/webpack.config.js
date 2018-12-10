@@ -54,6 +54,7 @@ module.exports = {
     module: {
         rules: [
             {
+                // enfore ensures that eslint-loader runs before babel or any other loaders
                 enforce: 'pre',
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -68,6 +69,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        cwd: path.join(rootFolder, 'configurations/'),
                         presets: ['@babel/preset-env']
                     }
                 }
