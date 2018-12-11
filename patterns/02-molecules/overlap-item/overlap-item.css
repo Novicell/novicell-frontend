@@ -3,18 +3,18 @@
         z-index: 1;
     }
     &--below {
-        z-index: -1;
+        z-index: 0;
     }
     &--top {
-        margin-top: -10em;
+        margin-top: -8vw;
     }
     &--right {
-        margin-right: -10em;
+        margin-right: -8vw;
     }
     &--bottom {
-        margin-bottom: -10em;
+        margin-bottom: -8vw;
     }
     &--left {
-        margin-left: -10em;
+        margin-left: -8vw;
     }
 }

@@ -4,9 +4,9 @@
     "context": {
         "textbox1": {
             "heading": {
-                "text": "Overlapping element --right"
+                "text": "Using overlap-item"
             },
-            "textBoxContent": "This element will overlap whatever is to the right of it //Nulla quis lorem ut libero malesuada feugiat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus."
+            "textBoxContent": "The idea behind overlap-item is that you can apply it as a class (see overlap-item.css for directions) and have it overlap either top, right, bottom or left. For example, a <div class='overlap-item--right> will overlap whatever is to the right of the element'"
         },
         "button": {
             "text": "Overlap section to the right"
