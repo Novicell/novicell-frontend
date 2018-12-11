@@ -1,25 +1,27 @@
 {{ render '@header' }}
+
 <section class="text-image-section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                {{> @text-box textbox1 modifier="overlap-item--above overlap-item--right"}}
+                {{> @text-box textbox1 modifier="overlap-item--above overlap-item--right" }}
             </div>
             <div class="col-xs-12 col-sm-6">
-                {{> @image image1 modifier="overlap-item overlap-item--bottom"}}
+                {{> @image image1 modifier="overlap-item overlap-item--bottom" }}
             </div>
         </div>
     </div>
 </section>
+
 <section class="image-text-section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                {{> @image image2 modifier="overlap-item overlap-item--top"}}
+                {{> @image image2 modifier="overlap-item overlap-item--top" }}
             </div>
             <div class="col-xs-12 col-sm-6" style="margin-top:2em">
                 {{> @text-box textbox2 }} 
-                {{> @text-box textbox3 modifier="text-box overlap-item overlap-item--left"}}    
+                {{> @text-box textbox3 modifier="text-box overlap-item overlap-item--left" }}    
             </div>
         </div>
     </div>
