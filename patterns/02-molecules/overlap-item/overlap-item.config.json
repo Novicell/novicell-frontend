@@ -1,0 +1,18 @@
+{
+    "title": "Sections that can overlap",
+    "status": "prototype",
+    "context": {
+        "textbox1": {
+            "heading": {
+                "text": "Overlapping element --right"
+            },
+            "textBoxContent": "This element will overlap whatever is to the right of it //Nulla quis lorem ut libero malesuada feugiat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus."
+        },
+        "button": {
+            "text": "Overlap section to the right"
+        },
+        "image1":{
+            "url": "https://images.unsplash.com/photo-1521193652645-2c7f9df43c5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" 
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.overlap-item {
+    font-weight: bold;
+    font-size: 1.2em;
+    &--top {
+        margin-top: -10em;
+        z-index: 1;
+    }
+    &--right {
+        margin-right: -10em;
+        z-index: 1;
+    }
+    &--bottom {
+        margin-bottom: -10em;
+        z-index: 1;
+    }
+    &--left {
+        margin-left: -10em;
+        z-index: 1;
+    }
+}
