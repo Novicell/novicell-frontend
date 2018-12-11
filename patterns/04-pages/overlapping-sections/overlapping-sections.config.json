@@ -19,6 +19,12 @@
                 "text": "Overlapping 2"
             },
             "textBoxContent": "Note the margin added to this text-box in overlapping-sections.hbs. If you remove this, this text will overlap the above image."
+        },
+        "textbox3": {
+            "heading": {
+                "text": "Overlapping 3"
+            },
+            "textBoxContent": "And this text will overlap the image to the left"
         }
     }
 }
