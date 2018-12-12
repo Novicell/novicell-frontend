@@ -5,13 +5,16 @@
     "private": true,
     "scripts": {
         "fractal": "fractal start --sync",
+        "fonts": "node configurations/copyFiles -i assets/fonts/* -o dist/fonts",
         "images": "node configurations/imagemin.js",
         "styles": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js",
-        "watch:styles": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
+        "sprites": "node configurations/sprite.js",
         "stylelint": "stylelint --help",
-        "fonts": "node configurations/copyFiles -i assets/fonts/* -o dist/fonts",
         "webpack": "webpack --config configurations/webpack.config.js",
-        "dev": "npm-run-all -p -r webpack watch:styles fractal"
+        "watch:styles": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
+        "watch:webpack": "webpack --config configurations/webpack.config.js --watch",
+        "build": "npm-run-all -l sprites images styles fonts webpack",
+        "dev": "npm-run-all -p -r watch:webpack watch:styles fractal"
     },
     "fractal": {
         "main": "fractalfile.js"

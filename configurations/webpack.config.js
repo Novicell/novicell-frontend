@@ -9,7 +9,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
     mode: 'development', //add 'production' when deploy
-    watch: true,
+    watch: false,
     entry: {
         master: glob.sync('./src/**/*.js'),
         // To bundle specific directory/file use additional entry
@@ -46,20 +46,22 @@ module.exports = {
     },
     plugins: [
         new BundleAnalyzerPlugin({
+            analyzerMode: 'disabled',
             logLevel: 'silent',
             analyzerMode: 'static',
             openAnalyzer: false
         })
     ],
     module: {
-        rules: [
-            {
+        rules: [{
                 // enfore ensures that eslint-loader runs before babel or any other loaders
                 enforce: 'pre',
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader',
                 options: {
+                    emitWarning: true,
+                    failonError: false,
                     configFile: path.resolve(rootFolder, 'configurations/.eslintrc')
                 }
             },
