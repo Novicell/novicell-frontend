@@ -1,4 +1,5 @@
-"use strict";
+'use strict';
+import Flickity from 'flickity';
 
 /**
  * @name Novicell Slider
@@ -7,19 +8,12 @@
  * @requires https://flickity.metafizzy.co/
  */
 
-var novicell = novicell || {};
+const elem = document.querySelector('.js-pageheader-slider');
 
-novicell.pageheaderSlider =
-    novicell.pageheaderSlider ||
-    new function() {
-        this.init = function() {
-            const elem = document.querySelector(".js-pageheader-slider");
-            if (elem && elem != null) {
-                let flkty = new Flickity(elem, {
-                    // options
-                    cellAlign: "left",
-                    contain: true
-                });
-            }
-        };
-    }();
+if (elem && elem != null) {
+    let flkty = new Flickity(elem, {
+        // options
+        cellAlign: 'left',
+        contain: true
+    });
+}

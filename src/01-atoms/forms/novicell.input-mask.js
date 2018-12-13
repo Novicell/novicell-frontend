@@ -38,7 +38,7 @@ for (let i = 0; i < masks.length; i++) {
     let pattern = masks[i].pattern;
 
     if (input && mask) {
-        //Patterns is work in progress
+        // Patterns is work in progress
         if (pattern) {
             input.setAttribute('pattern', pattern);
         }

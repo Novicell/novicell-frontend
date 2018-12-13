@@ -4,13 +4,15 @@ const path = require('path');
 const mkdirp = require('mkdirp');
 const glob = require('glob');
 const File = require('vinyl');
+let args = require('minimist')(process.argv.slice(2));
 const settings = require('../config');
 const rootFolder = settings.root_folder;
 const cwd = path.resolve('assets/icons');
 
 // Create spriter instance (see below for `config` examples)
-
-const dist = path.join(rootFolder, 'dist/icons/icons.svg');
+const dist = args.o;
+const input = path.join(rootFolder, args.i);
+console.log(cwd);
 const spriteConfig = {
     shape: {
         // Set maximum dimensions
@@ -25,16 +27,19 @@ const spriteConfig = {
             }
         },
         // Convert style to attributes
-        transform: [
-            {
-                svgo: {
-                    plugins: [
-                        {removeAttrs: {attrs: '(fill.*|stroke.*|transform.*)'}},
-                        {inlineStyles: true}
-                    ]
-                }
+        transform: [{
+            svgo: {
+                plugins: [{
+                        removeAttrs: {
+                            attrs: '(fill.*|stroke.*|transform.*)'
+                        }
+                    },
+                    {
+                        inlineStyles: true
+                    }
+                ]
             }
-        ]
+        }]
     },
     mode: {
         symbol: true
@@ -45,20 +50,22 @@ const spriter = new SVGSpriter(spriteConfig);
 
 // Compile the sprite
 /* eslint-disable */
-glob.glob('**/*.svg', {cwd: cwd}, function(err, files) {
-    files.forEach(function(file) {
+glob.glob(`${input}`, {
+    cwd: cwd
+}, function (err, files) {
+    files.forEach(function (file) {
         // Create and add a vinyl file instance for each SVG
         spriter.add(
             new File({
-                path: path.join(cwd, file), // Absolute path to the SVG file
+                path: input, // Absolute path to the SVG file
                 base: cwd, // Base path (see `name` argument
-                contents: fs.readFileSync(path.join(cwd, file)) // SVG file contents
+                contents: fs.readFileSync(file) // SVG file contents
             })
         );
     });
 
     // Compile the sprite
-    spriter.compile(function(error, result) {
+    spriter.compile(function (error, result) {
         /* Write `result` files to disk (or do whatever with them ...) */
         for (var mode in result) {
             for (var resource in result[mode]) {

@@ -9,7 +9,7 @@ let args = require('minimist')(process.argv.slice(2));
 let sourcePath = path.join(rootFolder, args.i);
 let destPath = path.join(rootFolder, args.o);
 
-glob(`${sourcePath}`, function(error, files) {
+glob(`${sourcePath}`, function (error, files) {
     if (!error) {
         fs.access(destPath, err => {
             if (err) fs.mkdirSync(destPath);
@@ -27,7 +27,7 @@ function copyFile(sourcePath, dest) {
     let readStream = fs.createReadStream(sourcePath);
 
     readStream.once('error', err => {
-        console.log(err);
+        console.error(err);
     });
 
     readStream.once('end', () => {

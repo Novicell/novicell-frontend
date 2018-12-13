@@ -33,7 +33,7 @@ for (const key in sessionStorage) {
     }
 }
 
-function save({target: i}) {
+function save({ target: i }) {
     sessionStorage.setItem('form-' + i.name, i.type === 'checkbox' ? Number(i.checked) : i.value);
 }
 
@@ -41,7 +41,7 @@ document.body.addEventListener('input', save);
 document.body.addEventListener('change', save);
 document.body.addEventListener('submit', e => {
     if (e.target.checkValidity()) {
-        for (var key in sessionStorage) {
+        for (let key in sessionStorage) {
             if (/^form-(.+)/.test(key)) {
                 sessionStorage.removeItem(key);
             }

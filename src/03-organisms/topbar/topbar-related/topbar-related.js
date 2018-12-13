@@ -4,11 +4,11 @@ let novicell = novicell || {};
 
 novicell.topbarRelated =
     novicell.topbarRelated ||
-    new function () {
-        this.init = function () {
+    new function() {
+        this.init = function() {
             window.addEventListener(
                 'scroll',
-                function () {
+                function() {
                     fixedRelatedTopbar('js-topbar-related', 'sticky', '.js-header', 25);
                 },
                 false

@@ -6,8 +6,8 @@ if (window.innerWidth > 767) {
 }
 
 function initPriorityNav() {
-    var wrapper = document.querySelector('.nav');
-    var nav = priorityNav.init({
+    let wrapper = document.querySelector('.nav');
+    let nav = priorityNav.init({
         mainNavWrapper: '.nav-main',
         mainNav: '.nav-main-list',
         breakPoint: 0,

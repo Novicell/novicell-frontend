@@ -9,11 +9,11 @@ import Parallax from 'parallax-js';
  */
 
 let prlx = function() {
-    var scene = document.getElementById('pageheader-scene');
+    let scene = document.getElementById('pageheader-scene');
     if (!scene) {
         return;
     }
-    var parallaxInstance = new Parallax(scene);
+    let parallaxInstance = new Parallax(scene);
 };
 
 prlx();
