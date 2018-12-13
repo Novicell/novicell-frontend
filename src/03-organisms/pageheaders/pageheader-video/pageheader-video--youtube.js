@@ -76,7 +76,7 @@ function onYouTubeIframeAPIReady() {
 
 window.addEventListener(
     'load',
-    function() {
+    () => {
         if (document.querySelector('#player')) {
             onYouTubeIframeAPIReady();
             PhV.vidRescale();
@@ -87,7 +87,7 @@ window.addEventListener(
 
 window.addEventListener(
     'resize',
-    function() {
+    () => {
         PhV.vidRescale();
     },
     true

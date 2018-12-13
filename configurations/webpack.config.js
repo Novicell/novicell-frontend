@@ -62,7 +62,8 @@ module.exports = {
                 options: {
                     emitWarning: true,
                     failonError: false,
-                    configFile: path.resolve(rootFolder, 'configurations/.eslintrc')
+                    fix: true,
+                    configFile: path.resolve(rootFolder, 'configurations/.eslintrc'),
                 }
             },
             {
