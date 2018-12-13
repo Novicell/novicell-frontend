@@ -1,20 +1,22 @@
 .overlap-item {
-    &--above {
-        z-index: 1;
-    }
-    &--below {
-        z-index: 0;
-    }
-    &--top {
-        margin-top: -8vw;
-    }
-    &--right {
-        margin-right: -8vw;
-    }
-    &--bottom {
-        margin-bottom: -8vw;
-    }
-    &--left {
-        margin-left: -8vw;
+    @media (--viewport-sm-min) {
+        &--above {
+            z-index: 1;
+        }
+        &--below {
+            z-index: 0;
+        }
+        &--top {
+            margin-top: -8vw;
+        }
+        &--right {
+            margin-right: -8vw;
+        }
+        &--bottom {
+            margin-bottom: -8vw;
+        }
+        &--left {
+            margin-left: -8vw;
+        }
     }
 }
