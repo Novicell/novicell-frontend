@@ -1,11 +1,6 @@
 'use strict';
 let novicell = novicell || {};
 
-let s = function(e) {
-    console.log(e);
-};
-s('hello');
-
 novicell.topbarRelated =
     novicell.topbarRelated ||
     new function() {
