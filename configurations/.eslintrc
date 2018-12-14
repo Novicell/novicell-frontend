@@ -55,6 +55,7 @@
         ],
         "key-spacing": ["error", {"beforeColon": false, "afterColon": true}],
         "keyword-spacing": ["error", {"before": true, "after": true}],
+        "max-len": ["warn", {"code": 120}],
         "new-cap": ["error", {"newIsCap": true, "capIsNew": false}],
         "new-parens": "error",
         "no-array-constructor": "error",

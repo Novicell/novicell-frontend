@@ -7,14 +7,21 @@ const rootFolder = options.root_folder;
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+
+let arr = glob.sync('./src/_base/JsBundles/*.js');
+
+allEntries = () => {
+    manyEntries = {};
+    for (var index in arr) {
+        manyEntries[path.basename(arr[index], '.js')] = arr[index]
+    }
+    return manyEntries;
+}
+
 module.exports = {
     mode: 'development', //add 'production' when deploy
     watch: false,
-    entry: {
-        master: glob.sync('./src/**/*.js'),
-        // To bundle specific directory/file use additional entry
-        partial_atoms: glob.sync('./src/01-atoms/**/*.js')
-    },
+    entry: allEntries(),
     output: {
         path: path.resolve(rootFolder, 'dist/scripts/'),
         filename: '[name].bundle.js'
@@ -65,6 +72,21 @@ module.exports = {
                     fix: true,
                     configFile: path.resolve(rootFolder, 'configurations/.eslintrc'),
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "postcss-loader", // compiles Sass to CSS
+                    options: {
+                        config: {
+                            path: path.resolve(rootFolder, 'configurations/')
+                        }
+                    }
+                }]
             },
             {
                 test: /\.m?js$/,
