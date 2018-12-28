@@ -1,29 +1,38 @@
 const glob = require('glob');
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const options = require('../config');
 const rootFolder = options.root_folder;
+const moduleDir = options.modulesDir;
+
 // plugins
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+let arr = glob.sync(options.modulesDir);
 
-let arr = glob.sync('./src/_base/JsBundles/*.js');
-
-allEntries = () => {
+const allEntries = () => {
     manyEntries = {};
     for (var index in arr) {
         manyEntries[path.basename(arr[index], '.js')] = arr[index]
     }
-    return manyEntries;
+    if (arr.length > 0) {
+        return manyEntries;
+    } else {
+        console.error('No files to bundle!!!');
+        return '';
+    }
 }
+
+console.log(allEntries());
 
 module.exports = {
     mode: 'development', //add 'production' when deploy
     watch: false,
     entry: allEntries(),
     output: {
-        path: path.resolve(rootFolder, 'dist/scripts/'),
+        path: options.output.scripts,
         filename: '[name].bundle.js'
     },
     optimization: {
@@ -57,6 +66,12 @@ module.exports = {
             logLevel: 'silent',
             analyzerMode: 'static',
             openAnalyzer: false
+        }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: '[name].css',
+            chunkFilename: '[id].css',
         })
     ],
     module: {
@@ -70,20 +85,23 @@ module.exports = {
                     emitWarning: true,
                     failonError: false,
                     fix: true,
-                    configFile: path.resolve(rootFolder, 'configurations/.eslintrc'),
+                    configFile: path.resolve(options.fullConfigsPath, '.eslintrc'),
                 }
             },
             {
                 test: /\.css$/,
                 use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
+                    loader: MiniCssExtractPlugin.loader, // creates style nodes from JS strings
+                    options: {
+                        publicPah: options.output.css
+                    }
                 }, {
                     loader: "css-loader" // translates CSS into CommonJS
                 }, {
                     loader: "postcss-loader", // compiles Sass to CSS
                     options: {
                         config: {
-                            path: path.resolve(rootFolder, 'configurations/')
+                            path: path.resolve(rootFolder, options.configPath)
                         }
                     }
                 }]
@@ -94,7 +112,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        cwd: path.join(rootFolder, 'configurations/'),
+                        cwd: path.join(rootFolder, options.configPath),
                         presets: ['@babel/preset-env']
                     }
                 }
