@@ -36,12 +36,13 @@ novicellTheme.addStatic(path.join(config.root_folder + '/dist'), 'dist');
 fractal.web.theme(novicellTheme);
 
 //Helpers
-instance.handlebars.registerHelper('times', function(n, block) {
+instance.handlebars.registerHelper('times', function (n, block) {
     var accum = '';
     for (var i = 0; i < n; ++i) accum += block.fn(i);
     return accum;
 });
-instance.handlebars.registerHelper('math', function(lvalue, operator, rvalue) {
+
+instance.handlebars.registerHelper('math', function (lvalue, operator, rvalue) {
     lvalue = parseFloat(lvalue);
     rvalue = parseFloat(rvalue);
     return {
@@ -50,37 +51,43 @@ instance.handlebars.registerHelper('math', function(lvalue, operator, rvalue) {
         '*': lvalue * rvalue,
         '/': lvalue / rvalue,
         '%': lvalue % rvalue
-    }[operator];
+    } [operator];
 });
 
-instance.handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
+instance.handlebars.registerHelper('section', function (name, options) {
+    if (!this._sections) this._sections = {};
+    this._sections[name] = options.fn(this);
+    return null;
+});
+
+instance.handlebars.registerHelper('compare', function (lvalue, rvalue, options) {
     if (arguments.length < 3) throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
 
     var operator = options.hash.operator || '==';
 
     var operators = {
-        '==': function(l, r) {
+        '==': function (l, r) {
             return l == r;
         },
-        '===': function(l, r) {
+        '===': function (l, r) {
             return l === r;
         },
-        '!=': function(l, r) {
+        '!=': function (l, r) {
             return l != r;
         },
-        '<': function(l, r) {
+        '<': function (l, r) {
             return l < r;
         },
-        '>': function(l, r) {
+        '>': function (l, r) {
             return l > r;
         },
-        '<=': function(l, r) {
+        '<=': function (l, r) {
             return l <= r;
         },
-        '>=': function(l, r) {
+        '>=': function (l, r) {
             return l >= r;
         },
-        typeof: function(l, r) {
+        typeof: function (l, r) {
             return typeof l == r;
         }
     };

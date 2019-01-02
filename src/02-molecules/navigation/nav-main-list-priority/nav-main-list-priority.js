@@ -6,12 +6,11 @@ if (window.innerWidth > 767) {
 }
 
 function initPriorityNav() {
-    let wrapper = document.querySelector('.nav');
-    let nav = priorityNav.init({
-        mainNavWrapper: '.nav-main',
-        mainNav: '.nav-main-list',
-        breakPoint: 0,
-        throttleDelay: 0,
-        navDropdownLabel: 'More'
+    priorityNav.init({
+        'mainNavWrapper': '.nav-main',
+        'mainNav': '.nav-main-list',
+        'breakPoint': 0,
+        'throttleDelay': 0,
+        'navDropdownLabel': 'More'
     });
 }

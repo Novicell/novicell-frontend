@@ -11,9 +11,10 @@ import Flickity from 'flickity';
 const elem = document.querySelector('.js-pageheader-slider');
 
 if (elem && elem != null) {
-    let flkty = new Flickity(elem, {
+    /* eslint-disable no-new */
+    new Flickity(elem, {
         // options
-        cellAlign: 'left',
-        contain: true
+        'cellAlign': 'left',
+        'contain': true
     });
 }

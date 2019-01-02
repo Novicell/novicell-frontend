@@ -10,7 +10,15 @@ module.exports = {
   appName: 'Novicell Frontend', // name for webapp
   appColor: '#ffffff', // color for webapp icons
   appDescription: 'Novicell Progressive WebApp',
-  modulesDir: root_folder + '/src/_base/modules/*.js',
+  modulesDir: root_folder + '/src/_base/modules/**/*.js',
+  componentsDir: {
+    main: root_folder + '/src/',
+    atoms: '01-atoms',
+    molecules: '02-molecules',
+    organisms: '03-organisms',
+    pages: '04-pages',
+  },
+  appGlobalFile: root_folder + '/src/_base/app.js',
   output: {
     scripts: path.resolve(root_folder, 'dist/scripts/'),
     css: path.resolve(root_folder, 'dist/css/')

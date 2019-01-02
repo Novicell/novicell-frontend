@@ -57,5 +57,8 @@
         "parallax-js": "3.1.0",
         "priority-nav": "1.0.13",
         "vanilla-text-mask": "5.1.1"
+    },
+    "bin": {
+        "createComponent": "./configurations/createComponent.js"
     }
 }

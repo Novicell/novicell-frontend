@@ -13,7 +13,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 let arr = glob.sync(options.modulesDir);
 
 const allEntries = () => {
-    manyEntries = {};
+    manyEntries = {
+        app: options.appGlobalFile,
+    };
     for (var index in arr) {
         manyEntries[path.basename(arr[index], '.js')] = arr[index]
     }
@@ -24,8 +26,6 @@ const allEntries = () => {
         return '';
     }
 }
-
-console.log(allEntries());
 
 module.exports = {
     mode: 'development', //add 'production' when deploy

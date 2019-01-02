@@ -3,7 +3,6 @@
  */
 
 /* Setting document variables*/
-
 :root {
     --button-color-primary: var(--color-primary);
     --button-color-gradient-second-color: #dc4e81;
@@ -155,12 +154,7 @@
             left: 0;
             height: 100%;
             width: 100%;
-            background-image: linear-gradient(
-                89deg,
-                var(--button-color-primary) 0,
-                var(--button-color-gradient-second-color) 52%,
-                var(--button-color-primary)
-            );
+            background-image: linear-gradient(89deg, var(--button-color-primary) 0, var(--button-color-gradient-second-color) 52%, var(--button-color-primary));
             background-size: 200% auto;
             transition: 0.6s;
             z-index: -1;

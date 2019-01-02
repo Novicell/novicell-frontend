@@ -10,18 +10,18 @@
 
     <link rel="preload" as="font" href="{{ path '/dist/fonts/3212B2_0_0.woff2' }}" type="font/woff2" crossorigin />
 
-    {{!-- Styles --}}
-    {{!-- <link media="all" rel="stylesheet" href="{{ path '/dist/css/master.min.css' }}" /> --}}
+    <link media="all" rel="stylesheet" href="{{ _target.css }}" />
 
+    {{!-- Styles --}}
+    <link media="all" rel="stylesheet" href="{{ path '/dist/css/master.min.css' }}" />  
     <title>{{ _target.title }}</title>
 </head>
 
 <body id="site">
-    {{{ yield }}} 
-
+    {{{ yield }}}
     <script defer src="{{ path '/dist/scripts/manifest.bundle.js' }}"></script>
     <script defer src="{{ path '/dist/scripts/vendor.bundle.js' }}"></script>
-    {{!-- <script defer src="{{ path '/dist/scripts/master.bundle.js' }}"></script> --}}
+    <script defer src="{{ path '/dist/scripts/app.bundle.js' }}"></script>
 </body>
 
 </html>
