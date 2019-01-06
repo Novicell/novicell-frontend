@@ -1,0 +1,12 @@
+
+<h3 class="title">{{ greeting }}</h3>
+<div class="{{ class }}">{{ introduction }}</div>
+
+<div id="app">
+    <p>${text}</p>
+    <!-- this will no longer update `foo`! -->
+    <test-component></test-component>
+    <button v-on:click="count++">Change it ${count}</button>
+</div>
+
+<script src="{{ path '/dist/scripts/vue.bundle.js' }}"></script>

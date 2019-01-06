@@ -13,8 +13,10 @@
         "watch:styles": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
         "watch:webpack": "webpack --config configurations/webpack.config.js --watch",
         "build": "npm-run-all -l sprites images styles fonts webpack",
-        "dev": "npm-run-all -p -r watch:webpack watch:styles fractal",
-        "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc"
+        "dev": "cross-env NODE_ENV=development npm-run-all -p -r watch:webpack watch:styles fractal",
+        "prod": "cross-env NODE_ENV=production npm-run-all -p -r watch:webpack --mode=production watch:styles fractal",
+        "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc",
+        "test": "webpack --config configurations/webpack.config.js --mode=production"
     },
     "fractal": {
         "main": "fractalfile.js"
@@ -27,6 +29,7 @@
         "@babel/preset-env": "^7.1.6",
         "@frctl/fractal": "^1.1.7",
         "babel-loader": "^8.0.4",
+        "cross-env": "5.2.0",
         "css-loader": "2.0.1",
         "cssnano": "^4.1.7",
         "eslint": "5.10.0",
@@ -46,6 +49,8 @@
         "stylelint": "9.9.0",
         "svg-sprite": "1.5.0",
         "uglifyjs-webpack-plugin": "2.0.1",
+        "vue-loader": "15.5.0",
+        "vue-template-compiler": "2.5.21",
         "webpack": "^4.26.0",
         "webpack-bundle-analyzer": "3.0.3",
         "webpack-cli": "^3.1.2"
@@ -56,7 +61,8 @@
         "novicell-lazyload": "2.0.1",
         "parallax-js": "3.1.0",
         "priority-nav": "1.0.13",
-        "vanilla-text-mask": "5.1.1"
+        "vanilla-text-mask": "5.1.1",
+        "vue": "2.5.21"
     },
     "bin": {
         "createComponent": "./configurations/createComponent.js"

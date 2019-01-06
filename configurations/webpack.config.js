@@ -1,17 +1,21 @@
+// Node packages
 const glob = require('glob');
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const options = require('../config');
-const rootFolder = options.root_folder;
-const moduleDir = options.modulesDir;
 
 // plugins
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-let arr = glob.sync(options.modulesDir);
+// Project options
+const options = require('../config');
+const rootFolder = options.root_folder;
+const moduleDir = options.modulesDir;
+const env = process.env.NODE_ENV;
 
+// Find all files from modules directory
+let arr = glob.sync(options.modulesDir);
 const allEntries = () => {
     manyEntries = {
         app: options.appGlobalFile,
@@ -28,7 +32,7 @@ const allEntries = () => {
 }
 
 module.exports = {
-    mode: 'development', //add 'production' when deploy
+    mode: env,
     watch: false,
     entry: allEntries(),
     output: {
@@ -72,8 +76,14 @@ module.exports = {
             // both options are optional
             filename: '[name].css',
             chunkFilename: '[id].css',
-        })
+        }),
+        new VueLoaderPlugin()
     ],
+    resolve: {
+        alias: {
+          vue: 'vue/dist/vue.js',
+        }
+    },
     module: {
         rules: [{
                 // enfore ensures that eslint-loader runs before babel or any other loaders
@@ -116,6 +126,10 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             }
         ]
     }

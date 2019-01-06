@@ -1,12 +1,13 @@
 'use strict';
-
-window.addEventListener(
-    'scroll',
-    () => {
-        fixedRelatedTopbar('js-topbar-related', 'sticky', '.js-header', 25);
-    },
-    false
-);
+if (document.querySelector('#js-topbar-related')) {
+    window.addEventListener(
+        'scroll',
+        () => {
+            fixedRelatedTopbar('js-topbar-related', 'sticky', '.js-header', 25);
+        },
+        false
+    );
+}
 
 function fixedRelatedTopbar(elementID, className, headerClass, offset) {
     // Get the current scroll position
