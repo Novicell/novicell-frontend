@@ -1,5 +1,5 @@
 :root {
-        --color-checkbox: var(--color-primary);
+    --color-checkbox: var(--color-primary);
 }
 
 .select {
@@ -16,14 +16,16 @@
     border: 1px solid var(--input-border-color);
     border-radius: var(--border-radius);
     vertical-align: bottom;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     appearance: none;
 
     &::-ms-expand {
         display: none;
     }
 
-    &:focus {outline: 0;}
+    &:focus {
+        outline: 0;
+    }
 
     &__wrapper {
         position: relative;

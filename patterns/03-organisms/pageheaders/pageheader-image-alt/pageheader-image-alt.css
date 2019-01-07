@@ -1,7 +1,7 @@
 /**
  * Component: Pageheader-image
  */
-:root{
+:root {
     --hero-text-color: var(--color-white);
     --hero-background-color: var(--color-black);
     --hero-content-opacity: 90%;
@@ -22,12 +22,14 @@
     }
 
     @media (--viewport-lg-min) {
-        height: 500px
+        height: 500px;
     }
-    
+
     &:before {
-        background-color: color(var(--color-primary) alpha(var(--hero-content-opacity)));
-        content: "";
+        background-color: color(
+            var(--color-primary) alpha(var(--hero-content-opacity))
+        );
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;

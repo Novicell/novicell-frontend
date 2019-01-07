@@ -1,21 +1,21 @@
 {
-	"title": "Header",
-	"status": "prototype",
-	"context": {
-		"text": "Header"
-	},
-	"variants": [
-		{
-			"name": "column",
-			"context": {
-				"text": "Column header"
-			}
-		},
-		{
-			"name": "footer",
-			"context": {
-				"text": "Footer header"
-			}
-		}
-	]
+    "title": "Header",
+    "status": "prototype",
+    "context": {
+        "text": "Header"
+    },
+    "variants": [
+        {
+            "name": "column",
+            "context": {
+                "text": "Column header"
+            }
+        },
+        {
+            "name": "footer",
+            "context": {
+                "text": "Footer header"
+            }
+        }
+    ]
 }

@@ -1,13 +1,12 @@
 {
-	"title": "footer",
-	"status": "prototype",
-	"context": {
-		"customColumnHeader": {
-			"text": "Send us your inquiry"
-		},
-		"contactInfo": 
-		{
-			"text": "Novicell Aarhus<br>Søren Nymarks Vej 6<br>8270 Højbjerg,<br>Denmark"
-		}
-	}
+    "title": "footer",
+    "status": "prototype",
+    "context": {
+        "customColumnHeader": {
+            "text": "Send us your inquiry"
+        },
+        "contactInfo": {
+            "text": "Novicell Aarhus<br>Søren Nymarks Vej 6<br>8270 Højbjerg,<br>Denmark"
+        }
+    }
 }

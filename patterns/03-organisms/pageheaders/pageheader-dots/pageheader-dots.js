@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @name Novicell pageheader-dots
@@ -8,15 +8,16 @@
  * @requires https://github.com/wagerfield/parallax
  */
 
-
 var novicell = novicell || {};
 
-novicell.pageheaderDots = novicell.pageheaderDots || new function () {
-    this.init = function () {
-        var scene = document.getElementById('pageheader-scene');
-        if (!scene){
-            return;
-        }
-        var parallaxInstance = new Parallax(scene);
-    };
-}();
+novicell.pageheaderDots =
+    novicell.pageheaderDots ||
+    new function() {
+        this.init = function() {
+            var scene = document.getElementById("pageheader-scene");
+            if (!scene) {
+                return;
+            }
+            var parallaxInstance = new Parallax(scene);
+        };
+    }();

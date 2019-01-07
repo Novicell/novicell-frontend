@@ -1,0 +1,11 @@
+{
+    "title": "Molecule Example",
+    "status": "wip",
+    "context": {
+        "heading": "Molecule example heading",
+        "text": "Solid: We need a similar pattern, but want to make changes to it. Useful e.g. when wanting to add :hover effects to parent.",
+        "atomExample": {
+            "text": "Dry: We can reuse @atom-example and don't need to make changes to it."
+        }
+    }
+}

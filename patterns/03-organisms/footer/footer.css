@@ -1,8 +1,8 @@
 /*
  * Component: Footer
  */
-:root{
-	--footer-background-color: var(--color-secondary);
+:root {
+    --footer-background-color: var(--color-secondary);
 }
 
 .footer {

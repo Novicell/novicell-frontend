@@ -20,8 +20,8 @@
     width: 100%;
     background: var(--cookie-info-bg-color, gray);
     padding: 15px;
-    transition: .3s ease-in-out;
-    transform: translate3d(0,100%,0); /* Hide by default */
+    transition: 0.3s ease-in-out;
+    transform: translate3d(0, 100%, 0); /* Hide by default */
     opacity: 0;
     z-index: 999;
 
@@ -34,9 +34,9 @@
         font-size: 12px;
         line-height: 20px;
         border-radius: 2px 2px 0 0;
-        transition: all .3s;
+        transition: all 0.3s;
         position: fixed;
-        opacity: .6;
+        opacity: 0.6;
         cursor: pointer;
         will-change: transform;
         z-index: 79;
@@ -45,7 +45,7 @@
             opacity: 1;
         }
     }
-    
+
     &__more {
         margin-left: auto;
         align-items: center;
@@ -59,7 +59,7 @@
     }
 
     &__close {
-        margin-left: auto;      
+        margin-left: auto;
         border: 1px solid var(--cookie-info-border-color);
 
         &:hover {
@@ -72,9 +72,8 @@
         display: flex;
         max-width: 1000px;
         margin: 0 auto;
-
     }
-    
+
     &__text {
         margin: 6px 0 0;
         color: var(--cookie-info-text-color, white);
@@ -87,10 +86,12 @@
 body.cookie-info-show {
     /* Show the cookie info */
     .cookie-info {
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
     }
 
     /* Hide the button */
-    .cookie-info-open { opacity: 0; }
+    .cookie-info-open {
+        opacity: 0;
+    }
 }

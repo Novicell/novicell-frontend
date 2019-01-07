@@ -1,0 +1,20 @@
+{
+    "title": "Organism Example",
+    "status": "wip",
+    "context": {
+        "moleculeData1": {
+            "heading": "Molecule 1 heading",
+            "text": "The text in the @molecule-example.",
+            "atomExample": {
+                "text": "The text in the @atom-example."
+            }
+        },
+        "moleculeData2": {
+            "heading": "Molecule 2 heading",
+            "text": "The text in the @molecule-example.",
+            "atomExample": {
+                "text": "The text in the @atom-example."
+            }
+        }        
+    }
+}

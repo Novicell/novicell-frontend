@@ -7,14 +7,16 @@
         display: inline-block;
 
         & + &:before {
-            content: "/";
+            content: '/';
             padding-top: 5px;
             padding: 5px 0;
             color: #666;
         }
-        
+
         /* Active state */
-        &--active {color: #000;}
+        &--active {
+            color: #000;
+        }
     }
     &__link {
         color: #666;
