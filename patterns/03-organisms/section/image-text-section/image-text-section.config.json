@@ -7,14 +7,13 @@
             "alt": "Image"
         },
         "textbox2": {
-        "heading": {
-            "text": "Header"
-        },
-        "textBoxContent": "Nulla quis lorem ut libero malesuada feugiat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus."
+            "heading": {
+                "text": "Header"
+            },
+            "textBoxContent": "Nulla quis lorem ut libero malesuada feugiat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus."
         },
         "button": {
             "text": "button text"
         }
+    }
 }
-}
-

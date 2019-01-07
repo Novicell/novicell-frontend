@@ -18,7 +18,7 @@
                 "link": {
                     "url": "url",
                     "text": "Link text",
-                    "target":"",
+                    "target": "",
                     "title": "Link title"
                 }
             }

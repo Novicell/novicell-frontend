@@ -3,7 +3,7 @@
  */
 
 /*Setting document variables*/
-:root{
+:root {
     --link-button-color-primary: var(--color-primary);
     --link-button-color-white: var(--color-white);
     --link-button-color-text: var(--color-text);
@@ -16,7 +16,8 @@
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-    background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
+    background-image: none;
+    /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214*/
     background-color: var(--link-button-color-primary);
     font-weight: 600;
     font-family: var(--link-button-base-font-family);
@@ -39,7 +40,9 @@
 
 
     &[disabled],
-    [disabled] & { cursor: not-allowed; }
+    [disabled] & {
+        cursor: not-allowed;
+    }
 
     /* Ghost button*/
     &--ghost {
@@ -54,4 +57,3 @@
         }
     }
 }
-

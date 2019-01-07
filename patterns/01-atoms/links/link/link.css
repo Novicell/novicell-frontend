@@ -3,9 +3,9 @@
  */
 
 /*Setting document variables*/
-:root{
-	--link-color: var(--color-primary);
-	--link-font-family: var(--base-font-family);
+:root {
+    --link-color: var(--color-primary);
+    --link-font-family: var(--base-font-family);
 }
 
 /*Link style*/

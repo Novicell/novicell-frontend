@@ -2,7 +2,6 @@
  * Modul: Social Media Collection
  */
 
-
 .social-media-list {
     list-style: none;
     margin: 0;
@@ -13,8 +12,8 @@
     &__item {
         float: left;
     }
-  
+
     &__item + &__item {
         margin-left: 10px;
     }
-}  
+}

@@ -1,0 +1,33 @@
+/*
+ * Module: Box Image
+ */
+
+:root{
+    --box-background-color: var(--color-white);
+    --box-border-radius: 4px;
+    --box-content-opacity: 25%;
+    --box-min-height: 300px;
+    --box-padding: 20px;
+    --box-paragraph-spacing-top: 15px;
+    --box-shadow: 2px 5px 15px 0 rgba(0,0,0, .15);
+}
+
+
+.duotone-filters{
+    visibility: hidden;
+    height: 0;
+    display: block;
+}
+
+.box-image-duotone{
+    position: relative;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    &__image{
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: var(--box-min-height);
+        border-radius: var(--box-border-radius);
+    }
+}

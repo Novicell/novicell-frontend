@@ -1,11 +1,10 @@
 /*
  * Module: Nav Main List
  */
-:root{
+:root {
     --nav-main-link-color: var(--color-black);
     --nav-main-link-color-active: var(--color-primary);
 }
-
 
 .nav-main {
     @media (--viewport-sm-min) {
@@ -52,4 +51,3 @@
     color: var(--nav-main-link-color-active);
     text-decoration: underline;
 }
-

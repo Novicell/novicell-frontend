@@ -2,10 +2,10 @@
     "title": "Link Social",
     "status": "prototype",
     "context": {
-            "url": "#",
-            "title": "Social link",
-            "target": "_blank",
-            "icon": "facebook-icon"
+        "url": "#",
+        "title": "Social link",
+        "target": "_blank",
+        "icon": "facebook-icon"
     },
     "variants": [
         {

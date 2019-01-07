@@ -2,17 +2,15 @@
  * Element: Buttons
  */
 
-
 /* Setting document variables*/
 
 :root {
-    --button-color-primary: var(--color-primary);    
-    --button-color-gradient-second-color: #dc4e81;    
+    --button-color-primary: var(--color-primary);
+    --button-color-gradient-second-color: #dc4e81;
     --button-color-text: var(--color-white);
     --button-font-family: var(--base-font-family);
     --button-font-size: var(--base-font-size);
 }
-
 
 /* Default button*/
 
@@ -25,7 +23,7 @@
     font-weight: 600;
     font-family: var(--button-font-family);
     font-size: 16px;
-    transition: background .3s, color .3s, border-color .3s;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
     color: var(--button-color-text);
     border: 1px solid transparent;
     text-decoration: none;
@@ -49,7 +47,7 @@
     [disabled] & {
         cursor: not-allowed;
     }
-    
+
     /* Large button */
     &--large {
         height: 50px;
@@ -73,24 +71,24 @@
 
     &--scale {
         background-color: transparent;
-        border: 1px solid var(--button-color-primary);        
+        border: 1px solid var(--button-color-primary);
         will-change: transform;
-        overflow: hidden;     
-        
+        overflow: hidden;
+
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             height: 100%;
             width: 100%;
-            background-color: var(--button-color-primary);        
+            background-color: var(--button-color-primary);
             opacity: 1;
-            transition: .4s;
+            transition: 0.4s;
             z-index: -1;
         }
 
         &:hover {
-            &:before {                
+            &:before {
                 transform: scale(0);
                 opacity: 0;
             }
@@ -99,18 +97,18 @@
 
     &--leftright {
         background-color: transparent;
-        border: 1px solid var(--button-color-primary);        
+        border: 1px solid var(--button-color-primary);
         will-change: transform;
-        overflow: hidden;    
-        
+        overflow: hidden;
+
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             height: 100%;
             width: 100%;
             background-color: var(--button-color-primary);
-            transition: .4s;
+            transition: 0.4s;
             z-index: -1;
         }
 
@@ -123,18 +121,18 @@
 
     &--topbottom {
         background-color: transparent;
-        border: 1px solid var(--button-color-primary);        
+        border: 1px solid var(--button-color-primary);
         will-change: transform;
-        overflow: hidden;    
-        
+        overflow: hidden;
+
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             height: 100%;
             width: 100%;
             background-color: var(--button-color-primary);
-            transition: .2s;
+            transition: 0.2s;
             z-index: -1;
         }
 
@@ -147,26 +145,31 @@
 
     &--gradient {
         background-color: transparent;
-        border: 1px solid transparent;        
+        border: 1px solid transparent;
         will-change: transform;
-        overflow: hidden;   
+        overflow: hidden;
 
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             height: 100%;
             width: 100%;
-            background-image: linear-gradient(89deg, var(--button-color-primary) 0, var(--button-color-gradient-second-color) 52%, var(--button-color-primary));
+            background-image: linear-gradient(
+                89deg,
+                var(--button-color-primary) 0,
+                var(--button-color-gradient-second-color) 52%,
+                var(--button-color-primary)
+            );
             background-size: 200% auto;
-            transition: .6s;
+            transition: 0.6s;
             z-index: -1;
         }
 
         &:hover {
             &:before {
-                background-position: right center; 
+                background-position: right center;
             }
-        } 
+        }
     }
 }
