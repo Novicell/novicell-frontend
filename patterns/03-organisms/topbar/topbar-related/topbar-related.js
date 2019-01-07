@@ -24,5 +24,5 @@ novicell.topbarRelated = novicell.topbarRelated || new function () {
                 el.classList.remove(className);
             }
         }
-    };
+    }
 }();

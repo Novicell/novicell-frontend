@@ -37,7 +37,8 @@ module.exports = (function () {
                     vendorPath + "lazysizes/lazysizes.js",
                     vendorPath + "flickity/dist/flickity.pkgd.js",
                     vendorPath + "scrollprogress/dist/scrollProgress.js",
-		            vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js"
+                    vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js",
+                    vendorPath + "parallax-js/dist/parallax.min.js"
                 ]
             },
             {
@@ -53,6 +54,12 @@ module.exports = (function () {
                 images: [ assetPath + "images/**/*.{jpg,png,svg,gif}"]
             },
             {
+                name: 'documentation',
+                styles: [
+                    projectPath + "documentation/documentation.css"
+                ],
+                
+            },            {
                 name: "icons",
                 icons: [ assetPath + "icons/**/*.svg" ]
             }
@@ -94,9 +101,6 @@ module.exports = (function () {
         watchStyles: [
             projectPath + "/patterns/**/*.css"
         ],
-        watchDocs: [
-            projectPath + "/documentation/*.css"
-        ],
 
         // ------------- Deploy task --------
         deployHost: "",
@@ -120,7 +124,7 @@ module.exports = (function () {
 
         // ------------- Tasks -------------
         loadTasks: [
-            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy", "fractal", "documentation"
+            "styles", "scripts", "images", "icons", "copy", "build", "favicons", "watch", "deploy", "fractal"
         ],
         buildTasks: [
             "styles", "scripts", "images", "icons", "copy"

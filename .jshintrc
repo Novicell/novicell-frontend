@@ -11,7 +11,8 @@
         "Flickity": false,
         "ScrollProgress": false,
         "priorityNav": false,
-        "YT": false
+        "YT": false,
+        "Parallax": false
     },
     "globalstrict": true,
     "browser": true,

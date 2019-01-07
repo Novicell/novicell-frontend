@@ -16,7 +16,10 @@ const postCssPlugins = [
     cssvariables(),
     postcssImport(),
     nested(),
-    cssnext({ browsers: [">= 5% in DK", "ie 11"] }),
+    cssnext({
+        autoprefixer: { grid: true },
+        browsers: [">= 5% in DK", "ie 11"]
+    }),
     cssnano({
         autoprefixer: false,
         discardComments: {removeAll: true},

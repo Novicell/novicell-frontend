@@ -1,1 +1,0 @@
-{"version":3,"sources":["documentation.css"],"names":[],"mappings":"AAAA,UACE,SAAW,CACZ,AACD,iBACE,YAAc,CACf,AACD,OACE,cAAgB,CAKjB,AAHC,UACE,aAAe,CAChB","file":"documentation.min.css","sourcesContent":[".Document {\r\n  padding: 0;\r\n}\r\n.Document-header {\r\n  display: none;\r\n}\r\n.Prose {\r\n  max-width: 100%;\r\n  \r\n  h1 {\r\n    font-size: 3vw;\r\n  }\r\n}\r\n"]}
