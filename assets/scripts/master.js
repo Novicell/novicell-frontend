@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
     novicell.pageheaderVideoYoutube.init();
     novicell.pageheaderDots.init();
     novicell.animateOnScroll.init();
-
+    novicell.duotone.init();
+  
     //SetTimeout to fix latency with loaded elements in e.g. Vue components
     setTimeout(() => {
         svg4everybody(); // Fix SVG spritemap in IE/Edge

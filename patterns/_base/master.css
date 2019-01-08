@@ -38,6 +38,7 @@
 
 /* Molecules */
 @import '../02-molecules/box/box/box.css';
+@import '../02-molecules/box/box-image-duotone/box-image-duotone.css';
 @import '../02-molecules/box/box-image/box-image.css';
 @import '../02-molecules/box/icon-box/icon-box.css';
 @import '../02-molecules/box/text-box/text-box.css';
