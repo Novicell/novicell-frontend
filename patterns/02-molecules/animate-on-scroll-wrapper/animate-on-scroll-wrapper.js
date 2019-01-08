@@ -11,7 +11,7 @@ novicell.animateOnScroll =
                 return;
             }
             for (let i = 0; i < animateWrapper.length; i++) {
-                animateElement(animateWrapper[i], {
+                animateElementOnScroll(animateWrapper[i], {
                     'data-aos': 'fade-right',
                     'data-aos-delay': '1500'
                 });
@@ -19,7 +19,7 @@ novicell.animateOnScroll =
             AOS.init({});
         };
     }();
-let animateElement = (element, args = {}) => {
+let animateElementOnScroll = (element, args = {}) => {
     for (let key in args) {
         element.setAttribute(key, `${args[key]}`)
     }
