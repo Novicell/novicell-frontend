@@ -11,11 +11,16 @@ novicell.animateOnScroll =
                 return;
             }
             for (let i = 0; i < animateWrapper.length; i++) {
-                animateElement(animateWrapper[i], 'fade-up-right');
+                animateElement(animateWrapper[i], {
+                    'data-aos': 'fade-right',
+                    'data-aos-delay': '1500'
+                });
             }
             AOS.init({});
         };
     }();
-let animateElement = (element, animation) => {
-    element.dataset.aos = animation;
+let animateElement = (element, args = {}) => {
+    for (let key in args) {
+        element.setAttribute(key, `${args[key]}`)
+    }
 };
