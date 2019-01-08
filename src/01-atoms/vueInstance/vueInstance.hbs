@@ -3,10 +3,10 @@
 <div class="{{ class }}">{{ introduction }}</div>
 
 <div id="app">
-    <p>${text}</p>
+    <p>${text} <h1>${count}</h1></p>
     <!-- this will no longer update `foo`! -->
     <test-component></test-component>
-    <button v-on:click="count++">Change it ${count}</button>
+    <button v-on:click="count++">Change it</button>
 </div>
 
 <script src="{{ path '/dist/scripts/vue.bundle.js' }}"></script>
