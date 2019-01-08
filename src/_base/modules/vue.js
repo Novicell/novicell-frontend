@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import './components/vue.css';
+import Test from './components/Test.vue';
 
-Vue.component('test-component', require('./components/Test.vue').default);
+Vue.component('test-component', Test);
 
 const data = {
     count: 1,
