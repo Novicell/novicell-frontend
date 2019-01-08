@@ -12,11 +12,11 @@
         "webpack": "webpack --config configurations/webpack.config.js",
         "watch:styles": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
         "watch:webpack": "webpack --config configurations/webpack.config.js --watch",
-        "build": "npm-run-all -l sprites images styles fonts webpack",
+        "build:dev": "cross-env NODE_ENV=development npm-run-all -l sprites images styles fonts webpack ",
+        "build:prod": "cross-env NODE_ENV=production npm-run-all -l sprites images styles fonts webpack ",
         "dev": "cross-env NODE_ENV=development npm-run-all -p -r watch:webpack watch:styles fractal",
         "prod": "cross-env NODE_ENV=production npm-run-all -p -r watch:webpack --mode=production watch:styles fractal",
         "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc",
-        "test": "webpack --config configurations/webpack.config.js --mode=production"
     },
     "fractal": {
         "main": "fractalfile.js"

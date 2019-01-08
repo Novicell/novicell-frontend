@@ -1,4 +1,6 @@
 import Vue from 'vue';
+import './components/vue.css';
+
 Vue.component('test-component', require('./components/Test.vue').default);
 
 const data = {

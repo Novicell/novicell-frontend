@@ -1,6 +1,6 @@
 'use strict';
 
-const PageheaderVideoYoutube = function() {
+function PageheaderVideoYoutube() {
     this.videoStart = 0;
     this.player;
     this.youtubeId;
@@ -8,10 +8,11 @@ const PageheaderVideoYoutube = function() {
     const youtubeVideoWrapper = document.querySelector('.tv');
     if (youtubeVideoWrapper != null) {
         this.youtubeId = document.querySelector('.video-wrapper').getAttribute('data-youtube-id');
-        let tag = document.createElement('script');
+        const tag = document.createElement('script');
         tag.src = 'https://www.youtube.com/player_api';
 
-        let lastScriptTag = document.getElementsByTagName('script')[document.getElementsByTagName('script').length - 1];
+        const lastScriptTag = document.getElementsByTagName('script')[
+            document.getElementsByTagName('script').length - 1 ];
         lastScriptTag.parentNode.insertBefore(tag, lastScriptTag);
     }
 
@@ -21,31 +22,32 @@ const PageheaderVideoYoutube = function() {
         event.target.seekTo(this.videoStart);
     };
 
-    this.onPlayerStateChange = e => {
-        let tv2 = document.getElementById('player');
-        if (e.data === 1) {
+    this.onPlayerStateChange = el => {
+        const tv2 = document.getElementById('player');
+        if (el.data === 1) {
             tv2.classList.add('active');
-        } else if (e.data === 0) {
+        } else if (el.data === 0) {
             this.player.seekTo(this.videoStart);
         }
     };
 
     this.vidRescale = function() {
-        let tvScreen = document.querySelector('.tv .screen');
+        const tvScreen = document.querySelector('.tv .screen');
         if (tvScreen != null) {
-            let w = window.innerWidth + 200;
-            let h = window.innerHeight + 200;
-            if (w / h > 16 / 9) {
-                this.player.setSize(w, (w / 16) * 9);
+            const width = window.innerWidth + 200;
+            const height = window.innerHeight + 200;
+            if (width / height > 16 / 9) {
+                this.player.setSize(width, (width / 16) * 9);
                 tvScreen.style.left = '0px';
             } else {
-                this.player.setSize((h / 9) * 16, h);
-                tvScreen.style.left = -(tvScreen.offsetWidth - w) / 2;
+                this.player.setSize((height / 9) * 16, height);
+                tvScreen.style.left = -(tvScreen.offsetWidth - width) / 2;
             }
         }
     };
 
     this.onYouTubeIframeAPIReady = function() {
+        /*eslint-disable */
         this.player = new YT.Player('player', {
             videoId: this.youtubeId,
             playerVars: {
@@ -66,7 +68,7 @@ const PageheaderVideoYoutube = function() {
             }
         });
     };
-};
+}
 
 const PhV = new PageheaderVideoYoutube();
 
