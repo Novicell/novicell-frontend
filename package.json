@@ -16,7 +16,7 @@
         "build:prod": "cross-env NODE_ENV=production npm-run-all -l sprites images styles fonts webpack ",
         "dev": "cross-env NODE_ENV=development npm-run-all -p -r watch:webpack watch:styles fractal",
         "prod": "cross-env NODE_ENV=production npm-run-all -p -r watch:webpack --mode=production watch:styles fractal",
-        "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc",
+        "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc"
     },
     "fractal": {
         "main": "fractalfile.js"
