@@ -4,11 +4,11 @@ var novicell = novicell || {};
 
 novicell.topbarRelated =
     novicell.topbarRelated ||
-    new function() {
-        this.init = function() {
+    new function () {
+        this.init = function () {
             window.addEventListener(
                 "scroll",
-                function() {
+                function () {
                     fixedRelatedTopbar(
                         "js-topbar-related",
                         "sticky",
@@ -22,23 +22,16 @@ novicell.topbarRelated =
 
         function fixedRelatedTopbar(elementID, className, headerClass, offset) {
             // Get the current scroll position
-            let scroll =
-        const header = document.querySelector(headerClass)
-        if (header) {
-            const headerHeight = header.offsetHeight;
-                          document.documentElement ||
-                          document.body.parentNode ||
-                          document.body
-                      ).scrollTop;
-            const headerHeight = document.querySelector(headerClass)
-                .offsetHeight;
-            const el = document.getElementById(elementID);
-            if (scroll >= headerHeight + offset) {
-                el.classList.add(className);
-            }
-            if (scroll < headerHeight + offset) {
-                el.classList.remove(className);
-            }
+            let scroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+            const header = document.querySelector(headerClass)
+            if (header) {
+                const el = document.getElementById(elementID);
+                if (scroll >= headerHeight + offset) {
+                    el.classList.add(className);
+                }
+                if (scroll < headerHeight + offset) {
+                    el.classList.remove(className);
+                }
             }
         }
     }();
