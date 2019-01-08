@@ -1,3 +1,5 @@
-<div class="animate-wrapper">
-    {{render '@list-page' }}
+<div class="aos-wrapper" {{#if animation}} data-aos="{{ animation }}" {{else}} data-aos="zoom-out"{{/if}} data-aos-offset="{{ offset }}" data-aos-delay="{{ delay }}" data-aos-duration="{{ duration }}" data-aos-easing="{{ easing }}" data-aos-mirror="{{ mirror }}" data-aos-once="{{ once }}" data-aos-anchor-placement="{{ placement }}">
+   {{#block "aos-wrapper-content"}}
+      {{ render '@paragraph'}}
+   {{/block}}
 </div>
