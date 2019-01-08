@@ -55,8 +55,9 @@
 @import '../02-molecules/list-page-link/list-page-link.css';
 @import '../02-molecules/breadcrumb/breadcrumb.css';
 @import '../02-molecules/pageheader-content/pageheader-content.css';
-@import '../02-molecules/animate-on-scroll-wrapper/animate-on-scroll-wrapper.css'
-    /* Organisms */ @import '../03-organisms/footer/footer.css';
+/* @import '../02-molecules/animate-on-scroll-wrapper/animate-on-scroll-wrapper.css' */
+/* Organisms */
+@import '../03-organisms/footer/footer.css';
 @import '../03-organisms/section/image-text-section/image-text-section.css';
 @import '../03-organisms/section/text-image-section/text-image-section.css';
 @import '../03-organisms/list-page/list-page.css';

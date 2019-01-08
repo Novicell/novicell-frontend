@@ -1,0 +1,21 @@
+{
+    "title": "AOS page",
+    "status": "prototype",
+    "context": {
+        "textbox1": {
+            "heading": {
+                "text": "Using overlap-item"
+            },
+            "textBoxContent": "Sroll down to see the effects of AOS"
+        },
+        "button": {
+            "text": "Overlap section to the right"
+        },
+        "image1":{
+            "url": "https://images.unsplash.com/photo-1546486610-e9fe4f1e6751?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=961&q=80" 
+        },
+        "image2":{
+            "url": "https://images.unsplash.com/photo-1546513622-bb01b3cc29d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" 
+        }
+    }
+}

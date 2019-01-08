@@ -1,18 +1,19 @@
 'use strict';
 var novicell = novicell || {};
-
 novicell.animateOnScroll =
     novicell.animateOnScroll ||
-    new function() {
-        this.init = function() {
+    new function () {
+        this.init = () => {
             let animateWrapper = document.getElementsByClassName(
-                'animate-wrapper'
-            )[0];
-            AOS.init({});
-            if (!animateWrapper) {
+                'list-page-item'
+            );
+            if (animateWrapper.length === 0) {
                 return;
             }
-            animateElement(animateWrapper, 'fade-in');
+            for (let i = 0; i < animateWrapper.length; i++) {
+                animateElement(animateWrapper[i], 'fade-up-right');
+            }
+            AOS.init({});
         };
     }();
 let animateElement = (element, animation) => {
