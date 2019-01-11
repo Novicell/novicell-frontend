@@ -1,6 +1,7 @@
 {
     "title": "Button",
     "status": "prototype",
+    "tags": "btn",
     "context": {
         "text": "Button"
     },
