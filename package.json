@@ -14,7 +14,7 @@
         "watch:styles": "postcss src/_base/master.css --dir dist/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
         "watch:webpack": "webpack --config configurations/webpack.config.js --watch",
         "build:dev": "cross-env NODE_ENV=development npm-run-all -l sprites images styles fonts test webpack",
-        "build:prod": "cross-env NODE_ENV=production npm-run-all -n sprites images styles fonts -s webpack ",
+        "build:prod": "cross-env NODE_ENV=production npm-run-all -l sprites images styles fonts test webpack",
         "dev": "cross-env NODE_ENV=development npm-run-all -p -r watch:webpack watch:styles fractal",
         "prod": "cross-env NODE_ENV=production npm-run-all -p -r watch:webpack --mode=production watch:styles fractal",
         "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc"

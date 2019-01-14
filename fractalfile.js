@@ -25,7 +25,7 @@ fractal.components.set('path', rootFolder + '/src');
 fractal.components.set('default.preview', '@preview');
 /* Tell Fractal where the documentation pages will live */
 fractal.docs.set('path', rootFolder + '/src/docs');
-fractal.components.set('default.preview', '@preview');
+fractal.docs.set('default.preview', '@preview');
 fractal.docs.set('ext', 'hbs');
 // Project config
 fractal.set('project.title', config.appName);
