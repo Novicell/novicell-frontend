@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     novicell.pageheaderVideoYoutube.init();
     novicell.pageheaderDots.init();
     novicell.duotone.init();
-    novicell.typeaheadSearch.init();
+    novicell.searchFilter.init();
 
     //SetTimeout to fix latency with loaded elements in e.g. Vue components
     setTimeout(() => {

@@ -6,7 +6,19 @@
 const config = require('../gulp/config.js');
 const path = require('path');
 const fractal = require('@frctl/fractal').create();
-const hbs = require('@frctl/handlebars');
+const hbs = require('@frctl/handlebars')({
+    helpers: {
+        componentList: function() {
+            let ret = '';
+            const options = Array.from(arguments).pop();
+            for (let component of fractal.components.flatten()) {
+                ret += options.fn(component.toJSON());
+            }
+            return ret;
+        }
+    }
+});
+
 const instance = fractal.components.engine(hbs);
 
 const layouts = require('handlebars-layouts');
@@ -102,19 +114,6 @@ fractal.components.set('path', config.projectPath + 'patterns');
 fractal.docs.set('path', config.projectPath + 'documentation');
 fractal.docs.set('default.preview', '@preview');
 fractal.docs.set('ext', '.hbs');
-const docsHbs = require('@frctl/handlebars')({
-    helpers: {
-        componentList: function() {
-            let ret = '<ul>';
-            const options = Array.from(arguments).pop();
-            for (let component of fractal.components.flatten()) {
-                ret = ret + '<li>' + options.fn(component.toJSON()) + '</li>';
-            }
-            return ret + '</ul>';
-        }
-    }
-});
-fractal.docs.engine(docsHbs);
 
 // Web UI config
 fractal.web.theme(novicellTheme);
