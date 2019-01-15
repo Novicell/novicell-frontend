@@ -12,19 +12,19 @@
             "heading": {
                 "text": "Overlapping"
             },
-            "textBoxContent": "This element will overlap whatever is to the right of it. By using the same modifiers on sections, you can overlap whole sections over other sections, and then overlap blocks and elements within that same section. this text-block appears above the picture to the right as it also has the modifier overlap-item--above as well. Below you can see an example of a text-block that has the modifier of overlap-item--below"
+            "textBoxContent": "This element will overlap whatever is to the right of it. By using the same modifiers on sections, you can overlap whole sections over other sections, and then overlap blocks and elements within that same section. this text-block appears above the picture to the right as it also has the modifier overlap-item--above as well. If the screen is sufficiently small, it will not overlap anything"
         },
         "textbox2": {
             "heading": {
                 "text": "Overlapping 1"
             },
-            "textBoxContent": "This text will go below the image to the right. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vero hic quidem quaerat quia ea obcaecati ad quisquam rem, tempora veniam voluptatum officiis eius doloribus at magni cumque dolore nemo?"
+            "textBoxContent": "This text will go below the image to the right or below it if the screen is small. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vero hic quidem quaerat quia ea obcaecati ad quisquam rem, tempora veniam voluptatum officiis eius doloribus at magni cumque dolore nemo?"
         },
         "textbox3": {
             "heading": {
                 "text": "Overlapping 2"
             },
-            "textBoxContent": "This text-box is above the image overlapping from above because the image from above has the modifier overlap-item--below, and the text-box has overlap-item--above"
+            "textBoxContent": "This text-box will always show above, as it's part of the overlapping div"
         },
         "textbox4": {
             "heading": {

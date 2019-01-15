@@ -1,31 +1,92 @@
 .overlap-item {
     position: relative;
 
+    &--above {
+        z-index: 1;
+    }
+
+    &--below {
+        z-index: 0;
+    }
+
+    @media (--viewport-xs-min) {
+        &-xs {
+            &--top {
+                top: -15vw;
+            }
+
+            &--right {
+                right: -15vw;
+            }
+
+            &--bottom {
+                bottom: -15vw;
+            }
+
+            &--left {
+                left: -15vw;
+            }
+        }
+
+    }
+
     @media (--viewport-sm-min) {
+        &-sm {
+            &--top {
+                top: -12vw;
+            }
 
+            &--right {
+                right: -12vw;
+            }
 
-        &--above {
-            z-index: 1;
+            &--bottom {
+                bottom: -12vw;
+            }
+
+            &--left {
+                left: -12vw;
+            }
         }
+    }
 
-        &--below {
-            z-index: 0;
+    @media (--viewport-md-min) {
+        &-md {
+            &--top {
+                top: -10vw;
+            }
+
+            &--right {
+                right: -10vw;
+            }
+
+            &--bottom {
+                bottom: -10vw;
+            }
+
+            &--left {
+                left: -10vw;
+            }
         }
+    }
 
-        &--top {
-            top: -8vw;
-        }
+    @media (--viewport-lg-min) {
+        &-lg {
+            &--top {
+                top: -8vw;
+            }
 
-        &--right {
-            right: -8vw;
-        }
+            &--right {
+                right: -8vw;
+            }
 
-        &--bottom {
-            bottom: -8vw;
-        }
+            &--bottom {
+                bottom: -8vw;
+            }
 
-        &--left {
-            left: -8vw;
+            &--left {
+                left: -8vw;
+            }
         }
     }
 }
