@@ -1,22 +1,31 @@
 .overlap-item {
+    position: relative;
+
     @media (--viewport-sm-min) {
+
+
         &--above {
             z-index: 1;
         }
+
         &--below {
             z-index: 0;
         }
+
         &--top {
-            margin-top: -8vw;
+            top: -8vw;
         }
+
         &--right {
-            margin-right: -8vw;
+            right: -8vw;
         }
+
         &--bottom {
-            margin-bottom: -8vw;
+            bottom: -8vw;
         }
+
         &--left {
-            margin-left: -8vw;
+            left: -8vw;
         }
     }
 }

@@ -1,35 +1,35 @@
 {{ render '@header' }}
 
-<section class="text-image-section" style="margin:0; background-color:whitesmoke">
+<section class="text-image-section" style="background-color:whitesmoke">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                {{> @text-box textbox1 modifier="overlap-item--above overlap-item--right" }}
+                {{> @text-box textbox1 modifier="overlap-item overlap-item--above overlap-item--right" }}
 
                 {{> @text-box textbox2 modifier="overlap-item overlap-item--right" }}
             </div>
             <div class="col-xs-12 col-sm-6">
-                {{> @image image1 modifier="overlap-item--below overlap-item--bottom" }}
+                {{> @image image1 modifier="overlap-item overlap-item--below overlap-item--bottom" }}
             </div>
         </div>
     </div>
 </section>
 
-<section>
-    <div style="width:96vw; background-color:ghostwhite; top:-6vw; position:relative;">
+<div style="width:96vw; background-color:ghostwhite; top:-6vw; position:relative;">
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
                     {{> @image image2 modifier="overlap-item overlap-item--top" }}
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    {{> @text-box textbox3 modifier="overlap-item--above"}} 
-                    {{> @text-box textbox4 modifier="overlap-item--left" }}    
+                    {{> @text-box textbox3 modifier="overlap-item overlap-item--above"}} 
+                    {{> @text-box textbox4 modifier="overlap-item overlap-item--left" }}    
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
 
 {{ render '@footer' }}
