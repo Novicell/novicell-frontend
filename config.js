@@ -4,7 +4,14 @@ let configPath = 'configurations/';
 
 module.exports = {
   drupal: {
-    postcss: path.resolve(root_folder, 'configurations/drupal/**/*.css'),
+    postcss: {
+      compile: false,
+      path: path.resolve(root_folder, 'configurations/drupal/**/*.css')
+    },
+    javascript: {
+      compile: true,
+      path: path.resolve(root_folder, 'configurations/drupal/**/*.js')
+    }
   },
   root_folder: root_folder,
   configPath: configPath,
