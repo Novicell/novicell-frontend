@@ -9,6 +9,8 @@ const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
 
+console.log(options.drupal.postcss.path)
+
 if (options.drupal.postcss.compile) {
     glob(options.drupal.postcss.path, function (er, files) {
         for (let file = 0; file < files.length; file++) {
@@ -16,7 +18,7 @@ if (options.drupal.postcss.compile) {
                 postcss(postcssPlugins)
                 .process(css, { from: path.basename(files[file]) })
                 .then(result => {
-                    fs.writeFile(`${__dirname}/${path.basename(files[file], '.css')}.min.css`, result.css, () => true)
+                    fs.writeFile(`${path.dirname(files[file])}/${path.basename(files[file], '.css')}.min.css`, result.css, () => true)
                 })
             })
         }
@@ -34,8 +36,7 @@ if (options.drupal.javascript.compile) {
                         "@babel/preset-env"
                     ],
                 }, function(err, result) {
-                    console.log(result.code);
-                    fs.writeFile(`${__dirname}/${path.basename(files[file], '.js')}.min.js`, result.code, () => true)
+                    fs.writeFile(`${path.dirname(files[file])}/${path.basename(files[file], '.js')}.min.js`, result.code, () => true)
                 })
             })
         }
