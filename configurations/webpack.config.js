@@ -12,7 +12,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const options = require('../config');
 const rootFolder = options.root_folder;
 const moduleDir = options.modulesDir;
-const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV || 'development';
 
 // Find all files from modules directory
 let arr = glob.sync(options.modulesDir);
@@ -26,8 +26,8 @@ const allEntries = () => {
     if (arr.length > 0) {
         return manyEntries;
     } else {
-        console.error('No files to bundle!!!');
-        return '';
+        console.log('- - - - - No files to bundle!!!');
+        return;
     }
 }
 

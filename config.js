@@ -3,6 +3,9 @@ const root_folder = __dirname;
 let configPath = 'configurations/';
 
 module.exports = {
+  drupal: {
+    postcss: path.resolve(root_folder, 'configurations/drupal/**/*.css'),
+  },
   root_folder: root_folder,
   configPath: configPath,
   fullConfigsPath: path.resolve(root_folder, configPath),
@@ -20,6 +23,7 @@ module.exports = {
   },
   appGlobalFile: root_folder + '/src/_base/app.js',
   output: {
+    images: path.resolve(root_folder, 'dist/images/'),
     scripts: path.resolve(root_folder, 'dist/scripts/'),
     css: path.resolve(root_folder, 'dist/css/')
   }
