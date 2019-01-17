@@ -1,2 +1,2 @@
-const x = 'hello'
+const x = 'i am minified'
 console.log(x);

@@ -1,18 +1,18 @@
 const path = require('path');
 const root_folder = __dirname;
 let configPath = 'configurations/';
+const drupal = {
+  postcss: {
+    compile: true,
+    path: path.resolve(root_folder, 'src/testdir/**/*.css')
+  },
+  javascript: {
+    compile: true,
+    path: path.resolve(root_folder, 'src/testdir/**/*.js')
+  }
+}
 
 module.exports = {
-  drupal: {
-    postcss: {
-      compile: false,
-      path: path.resolve(root_folder, 'src/testdir/**/*.css')
-    },
-    javascript: {
-      compile: true,
-      path: path.resolve(root_folder, 'src/testdir/**/*.js')
-    }
-  },
   root_folder: root_folder,
   configPath: configPath,
   fullConfigsPath: path.resolve(root_folder, configPath),
@@ -33,6 +33,7 @@ module.exports = {
     images: path.resolve(root_folder, 'dist/images/'),
     scripts: path.resolve(root_folder, 'dist/scripts/'),
     css: path.resolve(root_folder, 'dist/css/')
-  }
+  },
+  drupal
 };
 
