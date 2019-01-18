@@ -4,12 +4,12 @@ var novicell = novicell || {};
 
 novicell.pageheaderVideoYoutube =
     novicell.pageheaderVideoYoutube ||
-    new function() {
+    new function () {
         var videoStart = 0;
         var player;
         var youtubeId;
 
-        this.init = function() {
+        this.init = function () {
             const youtubeVideoWrapper = document.querySelector(".tv");
             if (youtubeVideoWrapper != null) {
                 youtubeId = document
@@ -25,13 +25,13 @@ novicell.pageheaderVideoYoutube =
             }
         };
 
-        this.onPlayerReady = function(event) {
+        this.onPlayerReady = function (event) {
             novicell.pageheaderVideoYoutube.vidRescale();
             event.target.mute();
             event.target.seekTo(videoStart);
         };
 
-        this.onPlayerStateChange = function(e) {
+        this.onPlayerStateChange = function (e) {
             var tv2 = document.getElementById("player");
             if (e.data === 1) {
                 tv2.classList.add("active");
@@ -40,22 +40,24 @@ novicell.pageheaderVideoYoutube =
             }
         };
 
-        this.vidRescale = function() {
+        this.vidRescale = function () {
             var tvScreen = document.querySelector(".tv .screen");
             if (tvScreen != null) {
-                var w = window.innerWidth + 200,
-                    h = window.innerHeight + 200;
+                var w = window.innerWidth,
+                    h = window.innerHeight;
                 if (w / h > 16 / 9) {
+                    console.log("first if")
                     player.setSize(w, (w / 16) * 9);
                     tvScreen.style.left = "0px";
                 } else {
+                    console.log("first else")
                     player.setSize((h / 9) * 16, h);
                     tvScreen.style.left = -(tvScreen.offsetWidth - w) / 2;
                 }
             }
         };
 
-        this.onYouTubeIframeAPIReady = function() {
+        this.onYouTubeIframeAPIReady = function () {
             player = new YT.Player("player", {
                 videoId: youtubeId,
                 playerVars: {
@@ -64,7 +66,7 @@ novicell.pageheaderVideoYoutube =
                     loop: 1,
                     modestbranding: 1,
                     rel: 0,
-                    showinfo: 0,
+                    showinfo: 0, //This is deprecated apprently
                     controls: 0,
                     disablekb: 1,
                     enablejsapi: 0,
@@ -72,8 +74,7 @@ novicell.pageheaderVideoYoutube =
                 },
                 events: {
                     onReady: novicell.pageheaderVideoYoutube.onPlayerReady,
-                    onStateChange:
-                        novicell.pageheaderVideoYoutube.onPlayerStateChange
+                    onStateChange: novicell.pageheaderVideoYoutube.onPlayerStateChange
                 }
             });
         };
@@ -85,7 +86,7 @@ function onYouTubeIframeAPIReady() {
 
 window.addEventListener(
     "load",
-    function() {
+    function () {
         novicell.pageheaderVideoYoutube.vidRescale();
     },
     true
@@ -93,7 +94,7 @@ window.addEventListener(
 
 window.addEventListener(
     "resize",
-    function() {
+    function () {
         novicell.pageheaderVideoYoutube.vidRescale();
     },
     true
