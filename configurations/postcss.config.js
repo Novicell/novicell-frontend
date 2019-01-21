@@ -15,7 +15,7 @@ module.exports = {
                     config: stylelintConfig,
                     ignoreFiles: [
                         rootFolder + 'node_modules/**/*.css',
-                        rootFolder + 'dist'
+                        rootFolder + settings.mainSettings.dist
                     ]
                 })
             ]

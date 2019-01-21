@@ -11,19 +11,19 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 // Project options
 const options = require('../config');
 const rootFolder = options.root_folder;
-const moduleDir = options.modulesDir;
+const moduleDir = options.mainSettings.modulesDir;
 const env = process.env.NODE_ENV || 'development';
 
 // Find all files from modules directory
-let arr = glob.sync(options.modulesDir);
+let filesInModulesDir = glob.sync(moduleDir);
 const allEntries = () => {
     manyEntries = {
-        app: options.appGlobalFile,
+        app: options.mainSettings.appGlobalFile,
     };
-    for (var index in arr) {
-        manyEntries[path.basename(arr[index], '.js')] = arr[index]
+    for (var index in filesInModulesDir) {
+        manyEntries[path.basename(filesInModulesDir[index], '.js')] = filesInModulesDir[index]
     }
-    if (arr.length > 0) {
+    if (filesInModulesDir.length > 0) {
         return manyEntries;
     } else {
         console.log('- - - - - No files to bundle!!!');
@@ -36,7 +36,7 @@ module.exports = {
     watch: false,
     entry: allEntries(),
     output: {
-        path: options.output.scripts,
+        path: options.mainSettings.output.scripts,
         filename: '[name].bundle.js'
     },
     optimization: {
@@ -103,7 +103,7 @@ module.exports = {
                 use: [{
                     loader: MiniCssExtractPlugin.loader, // creates style nodes from JS strings
                     options: {
-                        publicPah: options.output.css
+                        publicPah: options.mainSettings.output.css
                     }
                 }, {
                     loader: "css-loader" // translates CSS into CommonJS

@@ -1,6 +1,21 @@
 const path = require('path');
 const root_folder = __dirname;
-let configPath = 'configurations/';
+// vars
+const configPath = 'configurations/'
+const fullConfigsPath = path.resolve(root_folder, configPath);
+
+const mainSettings = {
+  env: 'development',
+  modulesDir: root_folder + '/src/_base/modules/**/*.js',
+  assetsDir: root_folder + '/assets/',
+  appGlobalFile: root_folder + '/src/_base/app.js',
+  dist: root_folder + '/dist/',
+  output: {
+    images: path.resolve(root_folder, 'dist/images/'),
+    scripts: path.resolve(root_folder, 'dist/scripts/'),
+    css: path.resolve(root_folder, 'dist/css/')
+  }
+}
 
 const drupal = {
   postcss: {
@@ -13,16 +28,17 @@ const drupal = {
   }
 }
 
-module.exports = {
-  root_folder: root_folder,
-  configPath: configPath,
-  fullConfigsPath: path.resolve(root_folder, configPath),
-  env: 'development',
+const novicell = {
   appName: 'Novicell Frontend', // name for webapp
   appColor: '#ffffff', // color for webapp icons
-  appDescription: 'Novicell Progressive WebApp',
-  modulesDir: root_folder + '/src/_base/modules/**/*.js',
-  appGlobalFile: root_folder + '/src/_base/app.js',
+  appDescription: 'Novicell Progressive WebApp'
+}
+
+module.exports = {
+  root_folder: root_folder,
+  mainSettings,
+  configPath: configPath,
+  fullConfigsPath: fullConfigsPath,
   componentsDir: {
     main: root_folder + '/src/',
     atoms: '01-atoms',
@@ -30,10 +46,6 @@ module.exports = {
     organisms: '03-organisms',
     pages: '04-pages',
   },
-  output: {
-    images: path.resolve(root_folder, 'dist/images/'),
-    scripts: path.resolve(root_folder, 'dist/scripts/'),
-    css: path.resolve(root_folder, 'dist/css/')
-  },
-  drupal
+  drupal,
+  novicell
 };

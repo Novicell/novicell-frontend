@@ -13,6 +13,7 @@ const path = require('path');
 
 if (options.drupal.postcss.compile) {
     glob(options.drupal.postcss.path, function (er, files) {
+        if (err) throw err;
         for (let file = 0; file < files.length; file++) {
             const fileName = path.basename(files[file]);
             const fileExtention = fileName.split(".").length;
