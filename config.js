@@ -1,6 +1,7 @@
 const path = require('path');
 const root_folder = __dirname;
 let configPath = 'configurations/';
+
 const drupal = {
   postcss: {
     compile: true,
@@ -36,4 +37,3 @@ module.exports = {
   },
   drupal
 };
-
