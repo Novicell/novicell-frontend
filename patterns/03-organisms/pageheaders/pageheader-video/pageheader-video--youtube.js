@@ -45,10 +45,6 @@ novicell.pageheaderVideoYoutube =
             if (tvScreen != null) {
                 var w = window.innerWidth,
                     h = window.innerHeight;
-                console.log({
-                    "width": w,
-                    "height": h
-                })
                 if (w / h > 16 / 9) {
                     player.setSize(w, (w / 16) * 9);
                     tvScreen.style.left = "0px";
@@ -56,9 +52,6 @@ novicell.pageheaderVideoYoutube =
                     player.setSize(w, (w / 16) * 9);
                     if (w < 1070) {
                         player.setSize((h / 9) * 16, h);
-                        if (h < 520) {
-                            player.setSize((h / 9) * 16, h);
-                        }
                     }
                     tvScreen.style.left = -(tvScreen.offsetWidth - w) / 2;
                 }
