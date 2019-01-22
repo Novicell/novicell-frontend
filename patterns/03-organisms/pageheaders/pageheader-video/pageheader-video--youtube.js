@@ -45,13 +45,21 @@ novicell.pageheaderVideoYoutube =
             if (tvScreen != null) {
                 var w = window.innerWidth,
                     h = window.innerHeight;
+                console.log({
+                    "width": w,
+                    "height": h
+                })
                 if (w / h > 16 / 9) {
-                    console.log("first if")
                     player.setSize(w, (w / 16) * 9);
                     tvScreen.style.left = "0px";
                 } else {
-                    console.log("first else")
-                    player.setSize((h / 9) * 16, h);
+                    player.setSize(w, (w / 16) * 9);
+                    if (w < 1070) {
+                        player.setSize((h / 9) * 16, h);
+                        if (h < 520) {
+                            player.setSize((h / 9) * 16, h);
+                        }
+                    }
                     tvScreen.style.left = -(tvScreen.offsetWidth - w) / 2;
                 }
             }
