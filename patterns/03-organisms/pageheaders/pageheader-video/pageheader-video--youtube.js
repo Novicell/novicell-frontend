@@ -46,14 +46,25 @@ novicell.pageheaderVideoYoutube =
                 var w = window.innerWidth,
                     h = window.innerHeight;
                 if (w / h > 16 / 9) {
+                    // setSize is part of youtube's Player API, it's parameters are (width, height)
+                    // Values used to calculate these translate to the formula of-
+                    // new width / new height should === original width/original height
+                    // therefore, new width === (original width/original height) * new height
+                    // and new height === (new width/original width) * original height
                     player.setSize(w, (w / 16) * 9);
-                    tvScreen.style.left = "0px";
                 } else {
                     player.setSize(w, (w / 16) * 9);
-                    if (w < 1070) {
+                    if (w < 1024) {
+                        // If we don't resize according to height, the video will have large letterboxing on Ipad Pro width (1024px)
+                        // Unfortunately, this will zoom the video, but it's a compromise
                         player.setSize((h / 9) * 16, h);
+                        // Since the video is zoomed, we should offset to at least center the video - 
+                        // - so viewsers see |_x_| the center of the video instead of |x__| the left only 
+                        tvScreen.style.left = `${-(tvScreen.offsetWidth - w) / 2}px`;
+                    } else {
+                        tvScreen.style.left = 0;
                     }
-                    tvScreen.style.left = -(tvScreen.offsetWidth - w) / 2;
+
                 }
             }
         };
@@ -67,7 +78,7 @@ novicell.pageheaderVideoYoutube =
                     loop: 1,
                     modestbranding: 1,
                     rel: 0,
-                    showinfo: 0, //This is deprecated apprently
+                    showinfo: 0, //This is deprecated apparently
                     controls: 0,
                     disablekb: 1,
                     enablejsapi: 0,
