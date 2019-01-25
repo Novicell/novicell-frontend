@@ -47,10 +47,9 @@ novicell.pageheaderVideoYoutube =
                     h = window.innerHeight;
                 if (w / h > 16 / 9) {
                     // setSize is part of youtube's Player API, it's parameters are (width, height)
-                    // Values used to calculate these translate to the formula of-
-                    // new width / new height should === original width/original height
-                    // therefore, new width === (original width/original height) * new height
-                    // and new height === (new width/original width) * original height
+                    // Values used to calculate these translate to the formula of:
+                    // new height === (new width/original width) * original height
+                    // And new width === (new height / original height) * original width
                     player.setSize(w, (w / 16) * 9);
                 } else {
                     player.setSize(w, (w / 16) * 9);
