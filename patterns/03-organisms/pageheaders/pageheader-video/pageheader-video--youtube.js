@@ -14,7 +14,7 @@ novicell.pageheaderVideoYoutube =
             if (youtubeVideoWrapper != null) {
                 youtubeId = document
                     .querySelector(".video-wrapper")
-                    .getAttribute("data-youtube-id");
+                    .getAttribute("youtube-id");
                 var tag = document.createElement("script");
                 tag.src = "https://www.youtube.com/player_api";
 

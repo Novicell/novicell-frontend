@@ -8,7 +8,7 @@ var novicell = novicell || {};
 var projectName = projectName || {};
 
 // Document ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     novicell.validate.init(); // Init Validation
     novicell.inputMasking.init(); //Init input masking
     novicell.persistentField.init(); //Init persistentField
@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     novicell.scrollProgressBar.init();
     novicell.navigation.init();
     novicell.navTrigger.init();
+    novicell.pageheaderVideo.init();
     novicell.pageheaderVideoYoutube.init();
     novicell.pageheaderDots.init();
     novicell.animateOnScroll.init();
     novicell.duotone.init();
-  
     //SetTimeout to fix latency with loaded elements in e.g. Vue components
     setTimeout(() => {
         svg4everybody(); // Fix SVG spritemap in IE/Edge
