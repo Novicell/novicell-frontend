@@ -1,1 +1,1 @@
-import 'novicell-lazyload/js/lazy-images';
+import 'novicell-lazyload';

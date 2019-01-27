@@ -55,14 +55,14 @@
         "uglifyjs-webpack-plugin": "2.0.1",
         "vue-loader": "15.5.0",
         "vue-template-compiler": "2.5.21",
-        "webpack": "^4.26.0",
+        "webpack": "4.29.0",
         "webpack-bundle-analyzer": "3.0.3",
         "webpack-cli": "^3.1.2"
     },
     "dependencies": {
         "flickity": "^2.1.2",
         "lazysizes": "4.1.5",
-        "novicell-lazyload": "2.0.1",
+        "novicell-lazyload": "2.0.8",
         "parallax-js": "3.1.0",
         "priority-nav": "1.0.13",
         "vanilla-text-mask": "5.1.1",

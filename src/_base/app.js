@@ -1,4 +1,4 @@
-import 'novicell-lazyload/js/lazy-images';
+import 'novicell-lazyload';
 import '../03-organisms/pageheaders/pageheader-slider/pageheader-slider';
 import '../03-organisms/pageheaders/pageheader-dots/pageheader-dots';
 import '../02-molecules/navigation/nav-main-list-priority/nav-main-list-priority';
