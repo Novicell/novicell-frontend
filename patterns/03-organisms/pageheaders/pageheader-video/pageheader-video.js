@@ -6,15 +6,16 @@ novicell.pageheaderVideo =
     novicell.pageheaderVideo ||
     new function () {
         this.init = function () {
-            const vimeoIframeList = document.querySelectorAll("iframe[data-src]");
+            const vimeoIframeList = document.querySelectorAll(".vimeo__iframe") || false;
             const youtubeList = document.querySelectorAll(".video-wrapper[data-youtube-id]") || false;
             if (screenWidth()) {
-                if (vimeoIframeList.length > 0) {
+                if (vimeoIframeList) {
                     for (let i = 0; i < vimeoIframeList.length; i++) {
                         // Simply change dataset src to the src attribute. 
                         vimeoIframeList[i].src = vimeoIframeList[i].dataset.src;
                     }
-                } else if (youtubeList) {
+                }
+                if (youtubeList) {
                     for (let i = 0; i < youtubeList.length; i++) {
                         // Grab the data-youtube-id from the elements in the list and add the value as "youtube-id"
                         // With youtube-id, the specific YT javascript will fire
