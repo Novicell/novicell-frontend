@@ -16,8 +16,12 @@
     overflow: hidden;
     background-size: cover;
 
-    @media (--viewport-sm-min) {
+    @media (--viewport-lg-min) {
         height: var(--video-height);
+    }
+
+    &@media (--viewport-md-max) {
+        height: calc(var(--video-height) / 1.3);
     }
 
     &__video {

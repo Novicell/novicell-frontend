@@ -43,28 +43,8 @@ novicell.pageheaderVideoYoutube =
         this.vidRescale = function () {
             var tvScreen = document.querySelector(".tv .screen");
             if (tvScreen != null) {
-                var w = window.innerWidth,
-                    h = window.innerHeight;
-                if (w / h > 16 / 9) {
-                    // setSize is part of youtube's Player API, it's parameters are (width, height)
-                    // Values used to calculate these translate to the formula of:
-                    // new height === (new width/original width) * original height
-                    // And new width === (new height / original height) * original width
-                    player.setSize(w, (w / 16) * 9);
-                } else {
-                    player.setSize(w, (w / 16) * 9);
-                    if (w < 1060) {
-                        // If we don't resize according to height, the video will have large letterboxing on Ipad Pro width (1024px)
-                        // Unfortunately, this will zoom the video, but it's a compromise
-                        player.setSize((h / 9) * 16, h);
-                        // Since the video is zoomed, we should offset to at least center the video - 
-                        // - so viewsers see |_x_| the center of the video instead of |x__| the left only 
-                        tvScreen.style.left = `${-(tvScreen.offsetWidth - w) / 2}px`;
-                    } else {
-                        tvScreen.style.left = 0;
-                    }
-
-                }
+                var w = window.innerWidth;
+                player.setSize(w, (w / 16) * 9);
             }
         };
 
