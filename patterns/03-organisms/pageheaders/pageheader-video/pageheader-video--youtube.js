@@ -53,7 +53,7 @@ novicell.pageheaderVideoYoutube =
                     player.setSize(w, (w / 16) * 9);
                 } else {
                     player.setSize(w, (w / 16) * 9);
-                    if (w < 1024) {
+                    if (w < 1060) {
                         // If we don't resize according to height, the video will have large letterboxing on Ipad Pro width (1024px)
                         // Unfortunately, this will zoom the video, but it's a compromise
                         player.setSize((h / 9) * 16, h);
