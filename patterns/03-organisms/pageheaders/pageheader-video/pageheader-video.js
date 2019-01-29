@@ -12,7 +12,8 @@ novicell.pageheaderVideo =
                 if (vimeoIframeList) {
                     for (let i = 0; i < vimeoIframeList.length; i++) {
                         // Simply change dataset src to the src attribute. 
-                        vimeoIframeList[i].src = vimeoIframeList[i].dataset.src;
+                        let vimeoId = vimeoIframeList[i].dataset.vimeoid;
+                        vimeoIframeList[i].src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&loop=1&color=000000&title=0&byline=0&portrait=0&muted=1&controls=0&background=1`;
                     }
                 }
                 if (youtubeList) {
