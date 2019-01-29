@@ -28,5 +28,5 @@ novicell.pageheaderVideo =
     }();
 
 function screenWidth() {
-    return window.screen.width >= 768;
+    return window.screen.width > 768;
 }
