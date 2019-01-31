@@ -20,11 +20,11 @@ fractal.set('project.title', 'Novicell Component Library');
 fractal.web.set('static.path', rootFolder + '/dist');
 
 /* Tell Fractal where the components will live */
-fractal.components.set('path', rootFolder + '/src');
+fractal.components.set('path', config.componentsDir.main);
 // set Layout for all components:
 fractal.components.set('default.preview', '@preview');
 /* Tell Fractal where the documentation pages will live */
-fractal.docs.set('path', rootFolder + '/src/docs');
+fractal.docs.set('path', config.componentsDir.main + 'docs');
 fractal.docs.set('default.preview', '@preview');
 fractal.docs.set('ext', 'hbs');
 // Project config
@@ -109,7 +109,7 @@ fractal.web.set('server.syncOptions', {
     // open: true, // open the server on 'gulp fractal'
     // browser: ['chrome'],
     // notify: true,
-    files: [path.join(__dirname, '../' + config.webPath + 'dist'), path.join(__dirname, '../src/**/*[.hbs, .json]')]
+    files: [path.join(__dirname, '../' + config.webPath + 'dist'), path.join(config.componentsDir.main, '**/*[.hbs, .json]')]
 });
 
 // Export config
