@@ -1,0 +1,39 @@
+<!--  
+SVG DUOTONE FILTERS
+1. feColorMatrix to grayscale the image 
+2. feComponentTransfer to calculate the RGB values of the two colors in the gradient map
+   ex: #01283c == R(1) G(40) B(60). Divide each RGB value by 255 to get the matrix value
+
+   <feFuncR type="table" tableValues="(1/255 = 0.003921568627) 0.007843137255"></feFuncR>
+   <feFuncG type="table" tableValues="(40/255 = 0.1568627451) 0.3803921569"></feFuncG>
+   <feFuncB type="table" tableValues="(60/255 = 0.2352941176) 0.5725490196"></feFuncB>
+   <feFuncA type="table" tableValues="0 1"></feFuncA>
+-->
+<article class="box-image-duotone">
+    <svg class="duotone-filters" xmlns="http://www.w3.org/2000/svg">	
+        <filter id="duotone_{{ boxImage.filter.id }}" class="duotone-filter" data-light-color="{{ boxImage.filter.colorLight }}" data-dark-color="{{ boxImage.filter.colorDark }}">
+            <feColorMatrix type="matrix"  result="gray" values="
+                    1 0 0 0 0
+                    1 0 0 0 0
+                    1 0 0 0 0
+                    0 0 0 1 0">
+            </feColorMatrix>
+
+            <feComponentTransfer class="duotone-color-change" color-interpolation-filters="sRGB" result="duotone">
+                <feFuncR class="duotone-red" type="table" tableValues=""></feFuncR>
+                <feFuncG class="duotone-green" type="table" tableValues=""></feFuncG>
+                <feFuncB class="duotone-blue" type="table" tableValues=""></feFuncB>
+                <feFuncA type="table" tableValues="0 1"></feFuncA>
+            </feComponentTransfer>
+        </filter>
+    </svg>
+    <div class="box-image-duotone__image-container">
+        <div class="box-image-duotone__image" style="background-image: url({{ boxImage.url }}); filter: url(#duotone_{{boxImage.filter.id}});"></div>
+        <div class="box-image__content">
+			{{ render '@heading--column' header }}
+			{{#block "content"}}
+				<p>{{ boxImage.content }}</p>
+			{{/block}}
+		</div>
+    </div>
+</article>
