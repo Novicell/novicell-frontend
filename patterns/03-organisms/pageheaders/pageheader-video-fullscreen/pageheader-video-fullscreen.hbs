@@ -1,39 +1,27 @@
 <div class="pagheeader-video background-fullscreen">
-  {{#block "background-fullscreen"}}
-    {{#if youtubeId}}
-        <iframe src="https://www.youtube.com/embed/{{youtubeId}}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist={{youtubeId}}"
-        allow ="autoplay"
-        webkitallowfullscreen 
-        mozallowfullscreen 
-        allowfullscreen
-        >
-        </iframe>
-    {{#if vimeoId}}
-         <iframe src="https://player.vimeo.com/video/{{vimeoId}}?background=1&autoplay=1&loop=1&byline=0&title=0"
-           frameborder="0" 
-           webkitallowfullscreen 
-           mozallowfullscreen 
-           allowfullscreen
-           >
-           </iframe>
-    {{/if}} 
-    {{else}}
-         <iframe src="https://player.vimeo.com/video/190043829?background=1&autoplay=1&loop=1&byline=0&title=0"
-           frameborder="0" 
-           webkitallowfullscreen 
-           mozallowfullscreen 
-           allowfullscreen
-           >
-           </iframe>
-    {{/if}}
-  {{/block}}
+  {{#if youtubeId}}
+    <iframe src="https://www.youtube.com/embed/{{youtubeId}}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist={{youtubeId}}"
+    allow ="autoplay"
+    webkitallowfullscreen 
+    mozallowfullscreen 
+    allowfullscreen
+    >
+    </iframe>
+  {{/if}}    
+  {{#if vimeoId}}
+    <iframe src="https://player.vimeo.com/video/{{vimeoId}}?background=1&autoplay=1&loop=1&byline=0&title=0"
+    frameborder="0" 
+    webkitallowfullscreen 
+    mozallowfullscreen 
+    allowfullscreen
+    >
+    </iframe>
+  {{/if}}
 </div>
 
 <div class="background-fullscreen__foreground">
   <h1>Fullscreen BG video in Iframe</h1>
 </div>
-
-
 
 
 
