@@ -1,0 +1,22 @@
+{{ render '@header' }}
+{{#embed "@animate-on-scroll-wrapper" animation="zoom-out" duration="1500" delay="1000"}}
+    {{#content "aos-wrapper-content"}}
+        {{ render '@pageheader-image-alt'}}
+    {{/content}}
+{{/embed}}
+{{#embed "@animate-on-scroll-wrapper" animation="fade-right" delay="200"}}
+    {{#content "aos-wrapper-content"}}
+        {{ render '@about-boxes'}}
+    {{/content}}
+{{/embed}}
+{{#embed "@animate-on-scroll-wrapper" animation="fade-left" duration="1000" delay="200" once="true"}}
+    {{#content "aos-wrapper-content"}}
+        {{ render '@pageheader-image'}}
+    {{/content}}
+{{/embed}}
+{{#embed "@animate-on-scroll-wrapper" animation="flip-up"}}
+    {{#content "aos-wrapper-content"}}
+        {{ render '@icon-boxes'}}
+    {{/content}}
+{{/embed}}
+{{ render '@footer' }}

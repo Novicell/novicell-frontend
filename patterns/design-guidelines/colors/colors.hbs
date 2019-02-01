@@ -1,0 +1,16 @@
+<section class="colors">
+    <div class="container">
+        {{> '@heading-page' heading }}    
+        <div class="row">
+            {{#each colors}}
+            <div class="col-xs-12 col-sm-2">
+                <div class="colors--palette colors--palette__{{ name }}"></div>
+                <h3 class="colors--name">{{ name }}</h3>
+                <span>RGB {{ rgb }}</span>
+                <span>HEX {{ hex }}</span>
+                <span>CMYK {{ cmyk }}</span>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

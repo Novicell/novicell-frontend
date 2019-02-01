@@ -1,0 +1,68 @@
+/*
+ * Color
+ */
+
+:root {
+    /* Novicell color */
+    --color-red: #c80046;
+    --color-berry: #7c0435;
+    --color-plum: #510035;
+    --color-spearmint: #75bc7f;
+    --color-longfarm-blue: #c0e3de;
+
+    /* Semantic names */
+    --color-primary: var(--color-red);
+    --color-secondary: #363636;
+
+    /* Grayscale */
+    --color-gray-dark: #4b4b4b;
+    --color-gray: #acacac;
+    --color-gray-light: #d7d7d7;
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* Text */
+    --color-text: #363636;
+
+    /* Social */
+    --color-facebook: #3b5998;
+    --color-twitter: #00aced;
+    --color-google-plus: #d34836;
+
+    /* States */
+    --color-success: #2ecc71;
+    --color-warning: #f1c40f;
+    --color-danger: #e74c3c;
+}
+
+.colors {
+    &--palette {
+        height: 250px;
+        width: 100%;
+    }
+
+    &--palette__red {
+        background-color: var(--color-red);
+    }
+
+    &--palette__berry {
+        background-color: var(--color-berry);
+    }
+
+    &--palette__plum {
+        background-color: var(--color-plum);
+    }
+
+    &--palette__spearmint {
+        background-color: var(--color-spearmint);
+    }
+
+    &--palette__longfarm-blue {
+        background-color: var(--color-longfarm-blue);
+    }
+
+    &--name {
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+}
