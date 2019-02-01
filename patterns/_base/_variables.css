@@ -3,42 +3,6 @@
  */
 
 :root {
-    /* Colors
-********************/
-    /* Theme */
-    /* Novicell color */
-    --color-primary: #c80046;
-    --color-secondary: #363636;
-    /* Novicell color */
-    --color-blackberry: #510035;
-    --color-red: #b3153e;
-    --color-berry: #a0113b;
-    --color-plum: #510035;
-    --color-spearmint: #75bc7f;
-    --color-longfarm-blue: #c0e3de;
-
-    /* Grayscale */
-    --color-gray-dark: #4b4b4b;
-    --color-gray: #acacac;
-    --color-gray-light: #d7d7d7;
-    --color-gray-lighter: #f4f4f4;
-
-    --color-white: #ffffff;
-    --color-black: #000000;
-
-    /* Text */
-    --color-text: #363636;
-
-    /* Social */
-    --color-facebook: #3b5998;
-    --color-twitter: #00aced;
-    --color-google-plus: #d34836;
-
-    /* States */
-    --color-success: #2ecc71;
-    --color-warning: #f1c40f;
-    --color-danger: #e74c3c;
-
     /* Typography
   ********************/
     --base-font-family: 'Averta', 'Helvetica', 'Arial', 'sans-serif';
