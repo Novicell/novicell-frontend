@@ -58,6 +58,7 @@
 @import '../02-molecules/list-page-item/list-page-item.css';
 @import '../02-molecules/list-page-link/list-page-link.css';
 @import '../02-molecules/breadcrumb/breadcrumb.css';
+@import '../02-molecules/search-filter/search-filter.css';
 @import '../02-molecules/pageheader-content/pageheader-content.css';
 /* @import '../02-molecules/animate-on-scroll-wrapper/animate-on-scroll-wrapper.css' */
 /* Organisms */
