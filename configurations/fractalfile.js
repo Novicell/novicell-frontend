@@ -1,5 +1,5 @@
 'use strict';
-const config = require('./config');
+const config = require('../config');
 const path = require('path');
 const rootFolder = config.root_folder;
 /* Create a new Fractal instance and export it for use elsewhere if required */

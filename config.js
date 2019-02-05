@@ -4,7 +4,6 @@ const root_folder = __dirname;
 const configPath = 'configurations/'
 const fullConfigsPath = path.resolve(root_folder, configPath);
 const dist = path.resolve(root_folder + '/dist/');
-console.log(dist);
 
 const mainSettings = {
   env: 'development',
@@ -14,16 +13,6 @@ const mainSettings = {
   dist,
 }
 
-const drupal = {
-  postcss: {
-    compile: true,
-    path: path.resolve(root_folder, 'src/testdir/**/*.css')
-  },
-  javascript: {
-    compile: true,
-    path: path.resolve(root_folder, 'src/testdir/**/*.js')
-  }
-}
 
 const novicell = {
   appName: 'Novicell Frontend', // name for webapp
@@ -43,6 +32,5 @@ module.exports = {
     organisms: '03-organisms',
     pages: '04-pages',
   },
-  drupal,
   novicell
 };

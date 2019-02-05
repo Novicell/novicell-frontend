@@ -12,7 +12,6 @@ const cwd = path.resolve('assets/icons');
 // Create spriter instance (see below for `config` examples)
 const dist = args.o;
 const input = path.join(rootFolder, args.i);
-console.log(cwd);
 const spriteConfig = {
     shape: {
         // Set maximum dimensions

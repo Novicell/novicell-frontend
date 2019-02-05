@@ -5,6 +5,7 @@
     "private": true,
     "scripts": {
         "fractal": "fractal start --sync",
+        "generateFavicon": "real-favicon generate configurations/faviconDescription.json dist/favicons/faviconData.json dist/favicons",
         "fonts": "copyfiles -f \"assets/fonts/*\" dist/fonts -V -E",
         "images": "node configurations/imagemin.js",
         "test": "node configurations/notAnError.js",
@@ -17,10 +18,11 @@
         "build:prod": "cross-env NODE_ENV=production npm-run-all -l sprites images styles fonts test webpack",
         "dev": "cross-env NODE_ENV=development npm-run-all -p -r watch:webpack watch:styles fractal",
         "prod": "cross-env NODE_ENV=production npm-run-all -p -r watch:webpack --mode=production watch:styles fractal",
-        "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc"
+        "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc",
+        "buildDrupal": "node configurations/drupal/babel-minify.js"
     },
     "fractal": {
-        "main": "fractalfile.js"
+        "main": "configurations/fractalfile.js"
     },
     "author": "Novicell",
     "license": "ISC",
@@ -30,6 +32,7 @@
         "@babel/preset-env": "^7.1.6",
         "@frctl/fractal": "^1.1.7",
         "babel-loader": "^8.0.4",
+        "cli-real-favicon": "0.0.7",
         "copyfiles": "2.1.0",
         "cross-env": "5.2.0",
         "css-loader": "2.0.1",
