@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "fractal": "fractal start --sync",
-        "fonts": "copyfiles -f \"./assets/fonts/*\" dist/fonts -V -E",
+        "fonts": "copyfiles -f \"assets/fonts/*\" dist/fonts -V -E",
         "images": "node configurations/imagemin.js",
         "test": "node configurations/notAnError.js",
         "sprites": "node configurations/sprite.js -i assets/icons/*.svg -o dist/icons/icons.svg",
@@ -22,7 +22,7 @@
     "fractal": {
         "main": "fractalfile.js"
     },
-    "author": "",
+    "author": "Novicell",
     "license": "ISC",
     "devDependencies": {
         "@babel/cli": "^7.1.5",

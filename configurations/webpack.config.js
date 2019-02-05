@@ -13,8 +13,10 @@ const options = require('../config');
 const rootFolder = options.root_folder;
 const moduleDir = options.mainSettings.modulesDir;
 const env = process.env.NODE_ENV || 'development';
+const scriptsDistFolderName = '/scripts';
+const cssDistFolderName = '/css';
 
-// Find all files from modules directory
+// Find all files JS from modules directory
 let filesInModulesDir = glob.sync(moduleDir);
 const allEntries = () => {
     manyEntries = {
@@ -36,7 +38,7 @@ module.exports = {
     watch: false,
     entry: allEntries(),
     output: {
-        path: options.mainSettings.output.scripts,
+        path: options.mainSettings.dist + scriptsDistFolderName,
         filename: '[name].bundle.js'
     },
     optimization: {
@@ -103,7 +105,7 @@ module.exports = {
                 use: [{
                     loader: MiniCssExtractPlugin.loader, // creates style nodes from JS strings
                     options: {
-                        publicPah: options.mainSettings.output.css
+                        publicPah: options.mainSettings.dist + cssDistFolderName
                     }
                 }, {
                     loader: "css-loader" // translates CSS into CommonJS

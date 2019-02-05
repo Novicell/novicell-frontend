@@ -3,18 +3,15 @@ const root_folder = __dirname;
 // vars
 const configPath = 'configurations/'
 const fullConfigsPath = path.resolve(root_folder, configPath);
+const dist = path.resolve(root_folder + '/dist/');
+console.log(dist);
 
 const mainSettings = {
   env: 'development',
   modulesDir: root_folder + '/src/_base/modules/**/*.js',
   assetsDir: root_folder + '/assets/',
   appGlobalFile: root_folder + '/src/_base/app.js',
-  dist: root_folder + '/dist/',
-  output: {
-    images: path.resolve(root_folder, 'dist/images/'),
-    scripts: path.resolve(root_folder, 'dist/scripts/'),
-    css: path.resolve(root_folder, 'dist/css/')
-  }
+  dist,
 }
 
 const drupal = {

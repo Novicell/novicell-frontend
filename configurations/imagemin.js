@@ -1,8 +1,9 @@
 const imagemin = require('imagemin');
 const settings = require('../config');
+const imagesDistFolderName = '/images';
 
 (async () => {
-    const files = await imagemin([`${settings.mainSettings.assetsDir}**/*.{jpg,png,svg,gif}`], settings.mainSettings.output.images, {
+    const files = await imagemin([`${settings.mainSettings.assetsDir}**/*.{jpg,png,svg,gif}`], settings.mainSettings.dist + imagesDistFolderName, {
         "optimizationLevel": 5,
         "progressive": true,
         "interlaced": true,
