@@ -8,7 +8,7 @@ console.log(dist);
 
 const mainSettings = {
   env: 'development',
-  modulesDir: root_folder + '/src/_base/modules/**/*.js',
+  modulesDir: root_folder + '/src/Modules/**/*.js',
   assetsDir: root_folder + '/assets/',
   appGlobalFile: root_folder + '/src/_base/app.js',
   dist,

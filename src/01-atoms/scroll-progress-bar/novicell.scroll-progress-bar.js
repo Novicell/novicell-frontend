@@ -15,7 +15,7 @@ novicell.scrollProgressBar =
             const progressElement = document.querySelector('.progress-bar');
             if (progressElement) {
                 const progressObserver = new ScrollProgress((x, y) => {
-                    progressElement.style.width = y * 100 + '%';
+                    progressElement.style.width = `${y * 100}%`;
                 });
             }
         };

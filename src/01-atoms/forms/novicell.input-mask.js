@@ -12,30 +12,30 @@ import maskInput from 'vanilla-text-mask';
 const masks = [
     {
         selector: '.js-mask--phone',
-        mask: [/\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/],
+        mask: [ /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/ ],
         pattern: ''
     },
     {
         selector: '.js-mask--cpr',
-        mask: [/\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/],
+        mask: [ /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/ ],
         pattern: ''
     },
     {
         selector: '.js-mask--bank',
-        mask: [/\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/],
+        mask: [ /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/ ],
         pattern: ''
     },
     {
         selector: '.js-mask--date1',
-        mask: [/[0-3]/, /\d/, '/', /[0-1]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+        mask: [ /[0-3]/, /\d/, '/', /[0-1]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/ ],
         pattern: ''
     }
 ];
 
 for (let i = 0; i < masks.length; i++) {
-    let input = document.querySelector(masks[i].selector);
-    let mask = masks[i].mask;
-    let pattern = masks[i].pattern;
+    const input = document.querySelector(masks[ i ].selector);
+    const mask = masks[ i ].mask;
+    const pattern = masks[ i ].pattern;
 
     if (input && mask) {
         // Patterns is work in progress
@@ -43,9 +43,9 @@ for (let i = 0; i < masks.length; i++) {
             input.setAttribute('pattern', pattern);
         }
 
-        masks[i].masking = maskInput({
+        masks[ i ].masking = maskInput({
             inputElement: input,
-            mask: mask,
+            mask,
             guide: false
         });
     }

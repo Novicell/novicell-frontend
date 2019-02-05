@@ -10,8 +10,8 @@
  */
 
 for (const key in sessionStorage) {
-    const value = sessionStorage[key];
-    const [, name] = key.match(/^form-(.+)/) || [];
+    const value = sessionStorage[ key ];
+    const [ , name ] = key.match(/^form-(.+)/) || [];
     if (name) {
         try {
             const opt = document.querySelector(`[name="${name}"][value="${value}"],[name="${name}"] [value="${value}"]`);
@@ -34,14 +34,14 @@ for (const key in sessionStorage) {
 }
 
 function save({ target: i }) {
-    sessionStorage.setItem('form-' + i.name, i.type === 'checkbox' ? Number(i.checked) : i.value);
+    sessionStorage.setItem(`form-${i.name}`, i.type === 'checkbox' ? Number(i.checked) : i.value);
 }
 
 document.body.addEventListener('input', save);
 document.body.addEventListener('change', save);
 document.body.addEventListener('submit', e => {
     if (e.target.checkValidity()) {
-        for (let key in sessionStorage) {
+        for (const key in sessionStorage) {
             if (/^form-(.+)/.test(key)) {
                 sessionStorage.removeItem(key);
             }
