@@ -4,6 +4,7 @@ const root_folder = __dirname;
 const configPath = 'configurations/'
 const fullConfigsPath = path.resolve(root_folder, configPath);
 const dist = path.resolve(root_folder + '/dist/');
+const sourceRootFolder = path.resolve(root_folder + '/src/');
 
 const mainSettings = {
   env: 'development',
@@ -12,7 +13,6 @@ const mainSettings = {
   appGlobalFile: root_folder + '/src/_base/app.js',
   dist,
 }
-
 
 const novicell = {
   appName: 'Novicell Frontend', // name for webapp
@@ -23,7 +23,8 @@ const novicell = {
 module.exports = {
   root_folder: root_folder,
   mainSettings,
-  configPath: configPath,
+  sourceRootFolder,
+  configPath,
   fullConfigsPath: fullConfigsPath,
   componentsDir: {
     main: root_folder + '/src/',
