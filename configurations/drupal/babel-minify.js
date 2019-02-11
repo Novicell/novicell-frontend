@@ -11,15 +11,9 @@ const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
 
-var Spinner = require('cli-spinner').Spinner;
- 
-var spinner = new Spinner('processing.. %s');
-spinner.setSpinnerDelay(0);
-spinner.setSpinnerString('|/-\\');
-spinner.start();
-
 if (drupalOptions) {
     if (drupalOptions.postcss.compile) {
+        console.log('\x1b[33m%s\x1b[0m', 'Processing CSS files');
         const specifiedPaths = drupalOptions.postcss.paths;
         for (let filePath = 0; filePath < specifiedPaths.length; filePath++) {
             glob(specifiedPaths[filePath], function (err, files) {
@@ -43,6 +37,7 @@ if (drupalOptions) {
         console.log('Postcss is not being compiled, because it is turned off in the config file')
     }
     if (drupalOptions.javascript.compile) {
+        console.log('\x1b[33m%s\x1b[0m', 'Processing JS files');
         // loop through all the specified files/dir's
         const specifiedPaths = drupalOptions.javascript.paths;
         for (let filePath = 0; filePath < specifiedPaths.length; filePath++) {
@@ -78,5 +73,3 @@ if (drupalOptions) {
 } else {
     console.log("\x1b[41m", 'Drupal object not found in drupal.config.js file');
 }
-
-spinner.stop(false);

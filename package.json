@@ -33,7 +33,6 @@
         "@frctl/fractal": "^1.1.7",
         "babel-loader": "^8.0.4",
         "cli-real-favicon": "0.0.7",
-        "cli-spinner": "0.2.8",
         "copyfiles": "2.1.0",
         "cross-env": "5.2.0",
         "css-loader": "2.0.1",
