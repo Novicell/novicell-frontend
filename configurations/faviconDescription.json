@@ -1,6 +1,6 @@
 {
 	"masterPicture": "assets/favicons/favicons-master.png",
-	"iconsPath": "/",
+	"iconsPath": "/dist/favicons/",
 	"design": {
 		"ios": {
 			"pictureAspect": "noChange",
