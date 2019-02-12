@@ -1,11 +1,7 @@
 <div class="pagheeader-video background-fullscreen" style="background-image: url({{ path '{{backgroundImagePath}}' }} )">
   {{#if youtubeid}}
-    <iframe class="iframe youtube__iframe" data-youtubeid="{{youtubeid}}"
-    frameborder="0" 
-    allowfullscreen="1" 
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    >
-    </iframe>
+  <div class="youtube__iframe-wrapper" data-youtubeid="{{youtubeid}}">
+  </div>
   {{/if}}    
   {{#if vimeoid}}
     <iframe class="iframe vimeo__iframe" data-vimeoid="{{vimeoid}}"
@@ -17,7 +13,6 @@
     </iframe>
   {{/if}}
 </div>
-
 <div class="background-fullscreen__foreground">
   <h1>Fullscreen BG video in Iframe</h1>
 </div>

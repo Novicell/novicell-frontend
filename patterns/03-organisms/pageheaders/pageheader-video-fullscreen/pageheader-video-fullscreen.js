@@ -8,7 +8,7 @@ novicell.pageheaderVideoFullscreen =
         this.init = function () {
             if (screenWidth()) {
                 const vimeoIframeList = document.querySelectorAll(".vimeo__iframe") || false;
-                const youtubeIframeList = document.querySelectorAll(".youtube__iframe") || false;
+                const youtubeIframeList = document.querySelector(".youtube__iframe-wrapper") || false;
                 if (vimeoIframeList) {
                     for (let i = 0; i < vimeoIframeList.length; i++) {
                         // Simply change dataset src to the src attribute. 
@@ -17,15 +17,50 @@ novicell.pageheaderVideoFullscreen =
                     }
                 }
                 if (youtubeIframeList) {
-                    for (let i = 0; i < youtubeIframeList.length; i++) {
-                        // Grab the data-youtube-id from the elements in the list and add the value to the src
-                        let youtubeid = youtubeIframeList[i].dataset.youtubeid;
-                        youtubeIframeList[i].src = `https://www.youtube.com/embed/${youtubeid}?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&mute=1&playlist=${youtubeid}&modestbranding=1&autohide=1`;
-                    }
+                    let player;
+                    let videoStart = 0;
+                    let youtubeid = youtubeIframeList.dataset.youtubeid;
+                    let tag = document.createElement("script");
+                    tag.src = "https://www.youtube.com/player_api";
+                    let lastScriptTag = document.getElementsByTagName("script")[
+                        document.getElementsByTagName("script").length - 1
+                    ];
+                    lastScriptTag.parentNode.insertBefore(tag, lastScriptTag);
+                    this.onPlayerReady = function (event) {
+                        event.target.mute();
+                        event.target.seekTo(videoStart);
+                    };
+                    this.onYouTubeFullscreenIframeAPIReady = function () {
+                        player = new YT.Player(youtubeIframeList, {
+                            videoId: youtubeid,
+                            playerVars: {
+                                autoplay: 0,
+                                autohide: 1,
+                                loop: 1,
+                                modestbranding: 1,
+                                rel: 0,
+                                controls: 0,
+                                disablekb: 1,
+                                enablejsapi: 0,
+                                iv_load_policy: 3
+                            },
+                            events: {
+                                onReady: novicell.pageheaderVideoFullscreen.onPlayerReady
+                            }
+                        });
+                    };
+                    window.addEventListener(
+                        "load",
+                        function () {
+                            novicell.pageheaderVideoFullscreen.onYouTubeFullscreenIframeAPIReady();
+                        },
+                        true
+                    );
                 }
             }
         };
     }();
+
 
 function screenWidth() {
     return window.screen.width > 768;
