@@ -1,15 +1,14 @@
-<div class="pagheeader-video background-fullscreen">
-  {{#if youtubeId}}
-    <iframe src="https://www.youtube.com/embed/{{youtubeId}}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist={{youtubeId}}"
-    allow ="autoplay"
-    webkitallowfullscreen 
-    mozallowfullscreen 
-    allowfullscreen
+<div class="pagheeader-video background-fullscreen" style="background-image: url({{ path '{{backgroundImagePath}}' }} )">
+  {{#if youtubeid}}
+    <iframe class="iframe youtube__iframe" data-youtubeid="{{youtubeid}}"
+    frameborder="0" 
+    allowfullscreen="1" 
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     >
     </iframe>
   {{/if}}    
-  {{#if vimeoId}}
-    <iframe src="https://player.vimeo.com/video/{{vimeoId}}?background=1&autoplay=1&loop=1&byline=0&title=0"
+  {{#if vimeoid}}
+    <iframe class="iframe vimeo__iframe" data-vimeoid="{{vimeoid}}"
     frameborder="0" 
     webkitallowfullscreen 
     mozallowfullscreen 

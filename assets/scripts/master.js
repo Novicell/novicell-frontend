@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     novicell.navTrigger.init();
     novicell.pageheaderVideo.init();
     novicell.pageheaderVideoYoutube.init();
+    novicell.pageheaderVideoFullscreen.init();
     novicell.pageheaderDots.init();
     novicell.animateOnScroll.init();
     novicell.duotone.init();

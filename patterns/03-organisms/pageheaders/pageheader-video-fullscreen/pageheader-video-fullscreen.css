@@ -1,4 +1,8 @@
+/**
+ * Component: pageheader-video-fullscreen
+ */
 .background-fullscreen {
+    /* Position it relative if you want to be able to scroll below the video */
     position: absolute;
     top: 0;
     left: 0;
@@ -7,6 +11,20 @@
     z-index: -1;
     pointer-events: none;
     overflow: hidden;
+    background-size: cover;
+
+    & iframe {
+        width: 100vw;
+        height: 56.25vw;
+        /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+        min-height: 100vh;
+        min-width: 190vh;
+        /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
     &__foreground {
         display: flex;
@@ -18,17 +36,4 @@
         color: whitesmoke;
         text-decoration: overline underline;
     }
-}
-
-.background-fullscreen iframe {
-    width: 100vw;
-    height: 56.25vw;
-    /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-    min-height: 100vh;
-    min-width: 190vh;
-    /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
