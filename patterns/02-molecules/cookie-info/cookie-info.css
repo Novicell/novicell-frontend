@@ -24,6 +24,7 @@
     transform: translate3d(0, 100%, 0); /* Hide by default */
     opacity: 0;
     z-index: 999;
+    margin-bottom: 0;
 
     &-open {
         left: 20px;
@@ -39,7 +40,7 @@
         opacity: 0.6;
         cursor: pointer;
         will-change: transform;
-        z-index: 79;
+        z-index: 1000;
 
         &:hover {
             opacity: 1;
