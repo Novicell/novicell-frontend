@@ -15,13 +15,18 @@ if (drupalOptions) {
     if (drupalOptions.postcss.compile) {
         console.log('\x1b[33m%s\x1b[0m', 'Processing CSS files');
         const specifiedPaths = drupalOptions.postcss.paths;
+
+        // loop through all the specified files/dir's
         for (let filePath = 0; filePath < specifiedPaths.length; filePath++) {
+            // Use glob to identify **/* paths
             glob(specifiedPaths[filePath], function (err, files) {
+                if (files.length == 0) console.log('Zero CSS files found in ' + specifiedPaths[filePath])
                 if (err) throw err;
                 for (let file = 0; file < files.length; file++) {
                     const fileName = path.basename(files[file]);
                     const fileExtention = fileName.split(".").length;
                     if (fileExtention < 3) {
+                        // read each file extract it's css and add to new file
                         fs.readFile(files[file], (err, css) => {
                         postcss(postcssPlugins)
                         .process(css, { from: fileName })
@@ -42,6 +47,7 @@ if (drupalOptions) {
         const specifiedPaths = drupalOptions.javascript.paths;
         for (let filePath = 0; filePath < specifiedPaths.length; filePath++) {
             glob(specifiedPaths[filePath], function (err, files) {
+                if (files.length == 0) console.log('Zero JS files found in ' + specifiedPaths[filePath])
                 if (err) throw err;
                 for (let file = 0; file < files.length; file++) {
                     const fileName = path.basename(files[file]);
