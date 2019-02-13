@@ -40,7 +40,7 @@ body {
 a {
     color: var(--color-link, blue);
     text-decoration: underline;
-    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
 
     &:hover,
     &:focus {
