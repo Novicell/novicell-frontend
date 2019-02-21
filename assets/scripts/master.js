@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     novicell.animateOnScroll.init();
     novicell.duotone.init();
     novicell.searchFilter.init();
-  
+    novicell.imageZoom.init();
+
     //SetTimeout to fix latency with loaded elements in e.g. Vue components
     setTimeout(() => {
         svg4everybody(); // Fix SVG spritemap in IE/Edge

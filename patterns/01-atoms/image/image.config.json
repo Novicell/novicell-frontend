@@ -19,6 +19,13 @@
                 "url": "https://www.novicell.dk/media/61608/img_3880.jpg?mode=crop",
                 "alt": "Image"
             }
+        },
+        {
+            "name": "zoom",
+            "context": {
+                "url": "https://cdn-images-1.medium.com/max/2600/0*HICLyAdNSIyT0ODU.jpg",
+                "alt": "Zoom Image"
+            }
         }
     ]
 }

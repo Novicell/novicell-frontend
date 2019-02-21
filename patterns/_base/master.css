@@ -12,6 +12,7 @@
 @import '../../node_modules/priority-nav/dist/priority-nav-core.css';
 @import '../../node_modules/flickity/dist/flickity.css';
 @import '../../node_modules/aos/dist/aos.css';
+@import '../../node_modules/image-zoom/index.css';
 
 /* Examples */
 @import '../00-examples/atom-example/atom-example.css';
@@ -29,6 +30,7 @@
 @import '../01-atoms/forms/textarea/textarea.css';
 @import '../01-atoms/forms/validation/validation.css';
 @import '../01-atoms/image/image.css';
+@import '../01-atoms/image/image-zoom.css';
 @import '../01-atoms/links/link/link.css';
 @import '../01-atoms/links/link-button/link-button.css';
 @import '../01-atoms/links/link-social/link-social.css';
@@ -61,6 +63,7 @@
 @import '../02-molecules/search-filter/search-filter.css';
 @import '../02-molecules/pageheader-content/pageheader-content.css';
 /* @import '../02-molecules/animate-on-scroll-wrapper/animate-on-scroll-wrapper.css' */
+
 /* Organisms */
 @import '../03-organisms/footer/footer.css';
 @import '../03-organisms/section/image-text-section/image-text-section.css';

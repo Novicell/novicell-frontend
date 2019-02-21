@@ -1,0 +1,26 @@
+/*
+ * Element: Image Zoom
+ */
+
+.image-zoom {
+    width: 100%;
+    max-height: 100%;
+}
+
+.image-zoom-overlay {
+    z-index: 233;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: 'alpha(opacity=0)';
+    opacity: 0;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+}
+.image-zoom-overlay.show {
+    opacity: 0.97;
+}

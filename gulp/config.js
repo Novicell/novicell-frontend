@@ -4,7 +4,7 @@ var notifier = require('node-notifier');
 var argv = require('yargs').argv;
 var path = require('path');
 
-module.exports = (function() {
+module.exports = (function () {
     var projectPath = './'; // path for the source files
     var assetPath = projectPath + 'assets/'; // path for fractal assets such as images, icons and more
     var webPath = projectPath + ''; // path for the website - usually path to livereload views, and used for distPath
@@ -22,8 +22,7 @@ module.exports = (function() {
 
     return {
         // ------------- Bundles -------------
-        bundles: [
-            {
+        bundles: [{
                 name: 'vendor',
                 ignorePlugins: ['jscs', 'jshint', 'watch', 'babel'], // add 'minify', to ignore minifaction on a bundle
                 scripts: [
@@ -39,7 +38,8 @@ module.exports = (function() {
                     vendorPath + "scrollprogress/dist/scrollProgress.js",
                     vendorPath + "novicell-cookie-info/js/novicell.cookieinfo.js",
                     vendorPath + "parallax-js/dist/parallax.min.js",
-		                vendorPath + "aos/dist/aos.js"
+                    vendorPath + "aos/dist/aos.js",
+                    vendorPath + "image-zoom/image-zoom.js"
                 ]
             },
             {
@@ -104,8 +104,7 @@ module.exports = (function() {
         deployGlobs: [distPath + '**'],
 
         // ------------- Copy on build --------
-        buildCopy: [
-            {
+        buildCopy: [{
                 from: assetPath + 'fonts/**/*',
                 to: distPath + 'fonts'
             },
@@ -145,8 +144,8 @@ module.exports = (function() {
         appDescription: appDescription,
 
         // ---------- Errorhandler ------
-        errorHandler: function(taskName) {
-            return function(e) {
+        errorHandler: function (taskName) {
+            return function (e) {
                 notifier.notify({
                     title: taskName,
                     message: 'An error occured in the ' + e.plugin + ' plugin.'
