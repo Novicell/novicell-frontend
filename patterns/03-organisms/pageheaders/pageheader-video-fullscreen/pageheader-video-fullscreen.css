@@ -12,6 +12,14 @@
     pointer-events: none;
     overflow: hidden;
     background-size: cover;
+    background-image: none;
+
+    &--inactive {
+        background-image: url('/dist/images/outro_2-loader.gif');
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
     & iframe {
         width: 100vw;
