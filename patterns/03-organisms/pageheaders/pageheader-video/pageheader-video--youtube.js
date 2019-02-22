@@ -8,6 +8,7 @@ novicell.pageheaderVideoYoutube =
         var videoStart = 0;
         var player;
         var youtubeId;
+        const pageheaderBackground = document.querySelector(".pageheader-video");
 
         this.init = function () {
             const youtubeVideoWrapper = document.querySelector(".tv");
@@ -47,7 +48,13 @@ novicell.pageheaderVideoYoutube =
                 player.setSize(w, (w / 16) * 9);
             }
         };
-
+        this.onErrorResponse = function (event) {
+            // In case of bad response, kill the player and add the background image.
+            // Currently, the url for the BG image is stored on the pageheader-video wrapper itself.
+            // An alternative would be having a css class added that holds a background image attribute and the path value already, and simply append the classname to the element
+            pageheaderBackground.style.backgroundImage = `url(${pageheaderBackground.dataset.backgroundImage})`;
+            event.target.destroy();
+        };
         this.onYouTubeIframeAPIReady = function () {
             player = new YT.Player("player", {
                 videoId: youtubeId,
@@ -65,7 +72,8 @@ novicell.pageheaderVideoYoutube =
                 },
                 events: {
                     onReady: novicell.pageheaderVideoYoutube.onPlayerReady,
-                    onStateChange: novicell.pageheaderVideoYoutube.onPlayerStateChange
+                    onStateChange: novicell.pageheaderVideoYoutube.onPlayerStateChange,
+                    onError: novicell.pageheaderVideoYoutube.onErrorResponse
                 }
             });
         };

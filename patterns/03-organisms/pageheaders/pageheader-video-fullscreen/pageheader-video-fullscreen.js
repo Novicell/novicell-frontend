@@ -7,6 +7,7 @@ novicell.pageheaderVideoFullscreen =
     new function () {
         this.init = function () {
             if (screenWidth()) {
+                const fullscreenBackground = document.querySelector(".background-fullscreen");
                 const vimeoIframeList = document.querySelectorAll(".vimeo__iframe") || false;
                 const youtubeIframeList = document.querySelector(".youtube__iframe-wrapper") || false;
                 if (vimeoIframeList) {
@@ -30,13 +31,22 @@ novicell.pageheaderVideoFullscreen =
                         event.target.mute();
                         event.target.seekTo(videoStart);
                     };
+                    this.onErrorResponse = function (event) {
+                        // In case of bad response, kill the player and add the background image.
+                        // Currently, the url for the BG image is stored on the background-fullscreen wrapper itself.
+                        // An alternative would be having a css class added that holds a background image attribute and the path value already, and simply append the classname to the element
+                        fullscreenBackground.style.backgroundImage = `url(${fullscreenBackground.dataset.backgroundImage})`;
+                        event.target.destroy();
+                    };
                     this.onYouTubeFullscreenIframeAPIReady = function () {
                         player = new YT.Player(youtubeIframeList, {
                             videoId: youtubeid,
                             playerVars: {
-                                autoplay: 0,
+                                autoplay: 1,
                                 autohide: 1,
                                 loop: 1,
+                                // Playlist is required, otherwise the video refuses to loop for some reason
+                                playlist: youtubeid,
                                 modestbranding: 1,
                                 rel: 0,
                                 controls: 0,
@@ -45,7 +55,8 @@ novicell.pageheaderVideoFullscreen =
                                 iv_load_policy: 3
                             },
                             events: {
-                                onReady: novicell.pageheaderVideoFullscreen.onPlayerReady
+                                onReady: novicell.pageheaderVideoFullscreen.onPlayerReady,
+                                onError: novicell.pageheaderVideoFullscreen.onErrorResponse
                             }
                         });
                     };

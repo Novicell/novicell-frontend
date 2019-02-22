@@ -1,7 +1,7 @@
-<div class="pagheeader-video background-fullscreen" style="background-image: url({{ path '{{backgroundImagePath}}' }} )">
+<div class="pagheeader-video background-fullscreen" data-background-image="{{ path '{{backgroundImagePath}}' }}">
   {{#if youtubeid}}
-  <div class="youtube__iframe-wrapper" data-youtubeid="{{youtubeid}}">
-  </div>
+    <div class="youtube__iframe-wrapper" data-youtubeid="{{youtubeid}}">
+    </div>
   {{/if}}    
   {{#if vimeoid}}
     <iframe class="iframe vimeo__iframe" data-vimeoid="{{vimeoid}}"
