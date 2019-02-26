@@ -13,8 +13,8 @@ const options = require('../config');
 const rootFolder = options.root_folder;
 const moduleDir = options.mainSettings.modulesDir;
 const env = process.env.NODE_ENV || 'development';
-const scriptsDistFolderName = '/scripts';
-const cssDistFolderName = '/css';
+const scriptsDistFolderName = '/scripts'; // This folder will be inside dist
+const cssDistFolderName = '/css'; // This folder will be inside dist
 
 // Find all files JS from modules directory
 let filesInModulesDir = glob.sync(moduleDir);
@@ -76,8 +76,8 @@ module.exports = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: '[name].css',
-            chunkFilename: '[id].css',
+            filename: '../' + cssDistFolderName + '/[name].css',
+            // chunkFilename: '[id].css',
         }),
         new VueLoaderPlugin()
     ],
@@ -106,7 +106,7 @@ module.exports = {
                 use: [{
                     loader: MiniCssExtractPlugin.loader, // creates style nodes from JS strings
                     options: {
-                        publicPah: options.mainSettings.dist + cssDistFolderName
+                        publicPath: options.mainSettings.dist + cssDistFolderName
                     }
                 }, {
                     loader: "css-loader" // translates CSS into CommonJS
