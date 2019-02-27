@@ -16,12 +16,12 @@
     overflow: hidden;
     background-size: cover;
 
-    &--idle {
-        background-image: url("/dist/images/placeholder-images/hero--mona-eendra-313518.jpg");
-    }
-
     @media (--viewport-lg-min) {
         height: var(--video-height);
+    }
+
+    @media (--viewport-sm-max) {
+        background-image: url("/dist/images/placeholder-images/hero--mona-eendra-313518.jpg");
     }
 
     &__video {
