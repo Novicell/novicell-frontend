@@ -49,7 +49,7 @@ novicell.pageheaderVideoFullscreen =
                         // Already written as switch case as there are more possibilities that might be implemented in the future.
                         // In this case, we remove the background gif when the video starts playing.
                         // See list of available cases on official YT embed docs
-                        switch (e.info) {
+                        switch (e.data) {
                             case 1:
                                 {
                                     novicell.pageheaderVideoFullscreen.removeAjaxLoader(fullscreenBackground);
