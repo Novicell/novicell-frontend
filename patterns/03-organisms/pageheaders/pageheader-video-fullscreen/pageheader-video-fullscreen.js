@@ -7,12 +7,18 @@ novicell.pageheaderVideoFullscreen =
     new function () {
         this.init = function () {
             if (screenWidth()) {
-                const fullscreenBackground = document.querySelector(".background-fullscreen");
+                const fullscreenBackground = document.querySelector(".background-fullscreen") || false;
+                if (fullscreenBackground) {
+                    // Remove class associated with background image
+                    fullscreenBackground.classList.remove("background-fullscreen--idle");
+                    // Add class associated with ajax gif loader
+                    fullscreenBackground.classList.add("background-fullscreen--loading");
+                }
                 const vimeoIframeList = document.querySelector(".vimeo__iframe") || false;
                 const youtubeIframeList = document.querySelector(".youtube__iframe-wrapper") || false;
                 this.removeAjaxLoader = function (element) {
                     // Function for removing the class associated with the ajax loading gif.
-                    element.classList.remove("background-fullscreen--inactive");
+                    element.classList.remove("background-fullscreen--loading");
                 };
                 if (vimeoIframeList) {
                     const vimeoId = vimeoIframeList.dataset.vimeoid;

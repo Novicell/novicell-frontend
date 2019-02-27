@@ -7,6 +7,10 @@ novicell.pageheaderVideo =
     new function () {
         this.init = function () {
             if (screenWidth()) {
+                const wrapper = document.querySelector(".pageheader-video") || false;
+                if (wrapper) {
+                    wrapper.classList.remove("pageheader-video--idle");
+                }
                 const vimeoIframeList = document.querySelectorAll(".vimeo__iframe") || false;
                 const youtubeList = document.querySelectorAll(".video-wrapper[data-youtube-id]") || false;
                 if (vimeoIframeList) {

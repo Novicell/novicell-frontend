@@ -14,8 +14,12 @@
     background-size: cover;
     background-image: none;
 
-    &--inactive {
-        background-image: url('/dist/images/outro_2-loader.gif');
+    &--idle {
+        background-image: url("/dist/images/placeholder-images/hero--mona-eendra-313518.jpg");
+    }
+
+    &--loading {
+        background-image: url("/dist/images/outro_2-loader.gif");
         background-size: auto;
         background-repeat: no-repeat;
         background-position: center;
