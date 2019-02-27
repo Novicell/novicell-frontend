@@ -38,10 +38,22 @@ novicell.pageheaderVideoFullscreen =
                         document.getElementsByTagName("script").length - 1
                     ];
                     lastScriptTag.parentNode.insertBefore(tag, lastScriptTag);
+                    // Function for removing the loader that runs during iframe fetches
+                    this.changeCaseState = function (e) {
+                        // Already written as switch case as there are more possibilities that might be implemented in the future.
+                        // In this case, we remove the background gif when the video starts playing.
+                        // See list of available cases on official YT embed docs
+                        switch (e.info) {
+                            case 1:
+                                {
+                                    removeAjaxLoader(fullscreenBackground);
+                                    break;
+                                }
+                        }
+                    };
                     this.onPlayerReady = function (event) {
                         event.target.mute();
                         event.target.seekTo(videoStart);
-                        removeAjaxLoader(fullscreenBackground);
                     };
                     this.onErrorResponse = function (event) {
                         // In case of bad response, kill the player and add the background image.
@@ -49,7 +61,6 @@ novicell.pageheaderVideoFullscreen =
                         // An alternative would be having a css class added that holds a background image attribute and the path value already, and simply append the classname to the element
                         fullscreenBackground.style.backgroundImage = `url(${fullscreenBackground.dataset.backgroundImage})`;
                         event.target.destroy();
-                        removeAjaxLoader(fullscreenBackground);
                     };
                     this.onYouTubeFullscreenIframeAPIReady = function () {
                         player = new YT.Player(youtubeIframeList, {
@@ -69,7 +80,8 @@ novicell.pageheaderVideoFullscreen =
                             },
                             events: {
                                 onReady: novicell.pageheaderVideoFullscreen.onPlayerReady,
-                                onError: novicell.pageheaderVideoFullscreen.onErrorResponse
+                                onError: novicell.pageheaderVideoFullscreen.onErrorResponse,
+                                onStateChange: novicell.pageheaderVideoFullscreen.changeCaseState
                             }
                         });
                     };
@@ -89,15 +101,12 @@ novicell.pageheaderVideoFullscreen =
 function screenWidth() {
     return window.screen.width > 768;
 }
-// Function for removing the loader that runs during iframe fetches
-function removeAjaxLoader(element) {
-    element.classList.remove("background-fullscreen--inactive");
-}
 // Function for checking vimeo validity
 function validateVimeoId(url) {
     let options = {
         method: 'GET'
     };
+    // Anything but status 200 will throw an error
     return fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(url)}`, options)
         .then((response) => {
             if (response.status === 200) {
@@ -107,4 +116,10 @@ function validateVimeoId(url) {
             }
         })
         .catch(err => console.log(err));
+}
+
+function removeAjaxLoader() {
+    // Function for removing the class associated with the ajax loading gif.
+    let elm = document.querySelector(".background-fullscreen--inactive");
+    elm.classlist.remove("background-fullscreen--inactive");
 }
