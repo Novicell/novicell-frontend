@@ -10,14 +10,16 @@ novicell.pageheaderVideoFullscreen =
                 const fullscreenBackground = document.querySelector(".background-fullscreen");
                 const vimeoIframeList = document.querySelector(".vimeo__iframe") || false;
                 const youtubeIframeList = document.querySelector(".youtube__iframe-wrapper") || false;
+                this.removeAjaxLoader = function (element) {
+                    // Function for removing the class associated with the ajax loading gif.
+                    element.classList.remove("background-fullscreen--inactive");
+                };
                 if (vimeoIframeList) {
                     const vimeoId = vimeoIframeList.dataset.vimeoid;
                     const fullUrl = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&loop=1&color=000000&title=0&byline=0&portrait=0&muted=1&controls=0&background=1`;
                     const shortUrl = `https://vimeo.com/${vimeoId}`;
                     validateVimeoId(shortUrl)
                         .then(response => {
-                            // Regardless of outcome, remove the ajax loader
-                            removeAjaxLoader(fullscreenBackground);
                             if (response === 200) {
                                 // Load video if the vimeo id exists
                                 vimeoIframeList.src = fullUrl;
@@ -26,6 +28,10 @@ novicell.pageheaderVideoFullscreen =
                                 fullscreenBackground.style.backgroundImage = `url(${fullscreenBackground.dataset.backgroundImage})`;
                                 vimeoIframeList.remove();
                             }
+                        }).then(() => {
+                            // As we are not using the vimeo API, we can't listen for events on the Iframe. So we have to stop the-
+                            // - loader here, even though the video is likely still not loaded.
+                            novicell.pageheaderVideoFullscreen.removeAjaxLoader(fullscreenBackground);
                         }).catch(err => console.log(err));
                 }
                 if (youtubeIframeList) {
@@ -46,7 +52,7 @@ novicell.pageheaderVideoFullscreen =
                         switch (e.info) {
                             case 1:
                                 {
-                                    removeAjaxLoader(fullscreenBackground);
+                                    novicell.pageheaderVideoFullscreen.removeAjaxLoader(fullscreenBackground);
                                     break;
                                 }
                         }
@@ -61,6 +67,7 @@ novicell.pageheaderVideoFullscreen =
                         // An alternative would be having a css class added that holds a background image attribute and the path value already, and simply append the classname to the element
                         fullscreenBackground.style.backgroundImage = `url(${fullscreenBackground.dataset.backgroundImage})`;
                         event.target.destroy();
+                        novicell.pageheaderVideoFullscreen.removeAjaxLoader(fullscreenBackground);
                     };
                     this.onYouTubeFullscreenIframeAPIReady = function () {
                         player = new YT.Player(youtubeIframeList, {
@@ -116,10 +123,4 @@ function validateVimeoId(url) {
             }
         })
         .catch(err => console.log(err));
-}
-
-function removeAjaxLoader() {
-    // Function for removing the class associated with the ajax loading gif.
-    let elm = document.querySelector(".background-fullscreen--inactive");
-    elm.classlist.remove("background-fullscreen--inactive");
 }
