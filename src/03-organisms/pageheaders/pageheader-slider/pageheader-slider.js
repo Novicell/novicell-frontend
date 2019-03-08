@@ -1,4 +1,4 @@
-'use strict';
+
 import Flickity from 'flickity';
 
 /**
@@ -11,10 +11,10 @@ import Flickity from 'flickity';
 const elem = document.querySelector('.js-pageheader-slider');
 
 if (elem && elem != null) {
-    /* eslint-disable no-new */
-    new Flickity(elem, {
-        // options
-        'cellAlign': 'left',
-        'contain': true
-    });
+  /* eslint-disable no-new */
+  new Flickity(elem, {
+    // options
+    cellAlign: 'left',
+    contain: true,
+  });
 }

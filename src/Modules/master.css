@@ -79,4 +79,26 @@
     box-shadow: 0px 1px 2px #ccc, inset 0 1px 0 #ffffff;
 }
 
+.sticky-wrapper {
+    height: 4000px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin: 50px auto 0;
+}
+
+.sprite {
+    position: relative;
+    background: url("https://tinyurl.com/y68x9uzq") no-repeat 0% 0%;
+}
+
+/* This pseudoelement makes the square responsive */
+.sprite:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
 /* Documentation */

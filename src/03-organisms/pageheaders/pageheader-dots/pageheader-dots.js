@@ -1,4 +1,4 @@
-'use strict';
+
 import Parallax from 'parallax-js';
 /**
  * @name Novicell pageheader-dots
@@ -9,12 +9,12 @@ import Parallax from 'parallax-js';
  */
 
 function prlx() {
-    const scene = document.getElementById('pageheader-scene');
-    if (!scene) {
-        return;
-    }
-    /* eslint-disable no-new */
-    new Parallax(scene);
+  const scene = document.getElementById('pageheader-scene');
+  if (!scene) {
+    return;
+  }
+  /* eslint-disable no-new */
+  new Parallax(scene);
 }
 
 prlx();

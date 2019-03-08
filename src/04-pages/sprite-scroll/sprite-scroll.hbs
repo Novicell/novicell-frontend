@@ -1,0 +1,16 @@
+
+{{ render '@header' }}
+
+<div class="">
+    <h1 class="{{ modifier }} {{ class }}">{{ text }}</h1>
+</div>
+
+<h1>Novicell Sprite Scroller Demo</h1>
+    <div class="sticky-wrapper">
+        <h3>Scroll down the page to watch the sprite move</h3>
+        <div class="sprite"></div>
+    </div> 
+
+<script defer src="{{ path '/dist/scripts/sprite-scroll.bundle.js' }}"></script>
+
+{{ render '@footer' }}
