@@ -1,6 +1,6 @@
-import spriteScroller from 'novicell-sprite-scroller';
+import { SpriteScroller } from 'novicell-sprite-scroller/dist/spriteScroller.esm';
 
-new spriteScroller({
+new SpriteScroller({
   element: 'sprite',
   rows: 46,
   columns: 1,
