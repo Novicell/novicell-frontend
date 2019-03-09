@@ -19,10 +19,8 @@ const cssDistFolderName = '/css'; // This folder will be inside dist
 // Find all files JS from modules directory
 let filesInModulesDir = glob.sync(moduleDir);
 const allEntries = () => {
-    manyEntries = {
-        app: options.mainSettings.appGlobalFile,
-    };
-    for (var index in filesInModulesDir) {
+    manyEntries = {};
+    for (const index in filesInModulesDir) {
         manyEntries[path.basename(filesInModulesDir[index], '.js')] = filesInModulesDir[index]
     }
     if (filesInModulesDir.length > 0) {

@@ -4,10 +4,10 @@
     "description": "Webpack and NPM scripts",
     "private": true,
     "scripts": {
+        "test": "echo 'Not an err'",
         "fractal": "fractal start --sync",
         "fonts": "copyfiles -f \"assets/fonts/*\" dist/fonts -V -E",
         "images": "node configurations/imagemin.js",
-        "test": "node configurations/notAnError.js",
         "sprites": "node configurations/sprite.js -i assets/icons/*.svg -o dist/icons/icons.svg",
         "styles": "postcss src/Modules/*.css --dir dist/css --ext min.css --config configurations/postcss.config.js",
         "webpack": "webpack --config configurations/webpack.config.js",

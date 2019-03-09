@@ -10,14 +10,7 @@ const mainSettings = {
   env: 'development',
   modulesDir: root_folder + '/src/Modules/**/*.js',
   assetsDir: root_folder + '/assets/',
-  appGlobalFile: root_folder + '/src/_base/app.js',
   dist,
-}
-
-const novicell = {
-  appName: 'Novicell Frontend', // name for webapp
-  appColor: '#ffffff', // color for webapp icons
-  appDescription: 'Novicell Progressive WebApp'
 }
 
 module.exports = {
@@ -32,6 +25,5 @@ module.exports = {
     molecules: '02-molecules',
     organisms: '03-organisms',
     pages: '04-pages',
-  },
-  novicell
+  }
 };
