@@ -3,15 +3,19 @@
     "version": "5.0.0",
     "description": "Webpack and NPM scripts",
     "private": true,
+    "config": {
+        "DIST": "dist",
+        "CSS_MODULES": "src/Modules/*.css"
+    },
     "scripts": {
-        "test": "echo 'Not an err'",
+        "test": "echo Working...",
         "fractal": "fractal start --sync",
-        "fonts": "copyfiles -f \"assets/fonts/*\" dist/fonts -V -E",
+        "fonts": "cross-env-shell copyfiles -f \"assets/fonts/*\" $npm_package_config_DIST/fonts -V",
         "images": "node configurations/imagemin.js",
-        "sprites": "node configurations/sprite.js -i assets/icons/*.svg -o dist/icons/icons.svg",
-        "styles": "postcss src/Modules/*.css --dir dist/css --ext min.css --config configurations/postcss.config.js",
+        "sprites": "cross-env-shell node configurations/sprite.js -i assets/icons/*.svg -o $npm_package_config_DIST/icons/icons.svg",
+        "styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config configurations/postcss.config.js",
         "webpack": "webpack --config configurations/webpack.config.js",
-        "watch:styles": "postcss src/Modules/*.css --dir dist/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
+        "watch:styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
         "watch:webpack": "webpack --config configurations/webpack.config.js --watch",
         "build:dev": "cross-env NODE_ENV=development npm-run-all -l sprites images styles fonts test webpack",
         "build:prod": "cross-env NODE_ENV=production npm-run-all -l sprites images styles fonts test webpack",
@@ -20,7 +24,7 @@
         "prod": "cross-env NODE_ENV=production npm-run-all -p -r watch:webpack --mode=production watch:styles fractal",
         "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc",
         "buildDrupal": "node configurations/drupal/babel-minify.js",
-        "generateFavicon": "real-favicon generate configurations/faviconDescription.json dist/favicons/faviconData.json dist/favicons"
+        "generateFavicon": "cross-env-shell real-favicon generate configurations/faviconDescription.json $npm_package_config_DIST/favicons/faviconData.json $npm_package_config_DIST/favicons"
     },
     "fractal": {
         "main": "configurations/fractalfile.js"
