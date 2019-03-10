@@ -2,9 +2,10 @@ const stylelint = require('stylelint');
 const stylelintConfig = require('./.stylelintrc.json');
 const settings = require('../config');
 const rootFolder = settings.root_folder;
+const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
-    env: settings.env,
+    env,
     map: {
         inline: false
     },

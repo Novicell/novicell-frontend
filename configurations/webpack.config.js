@@ -96,7 +96,7 @@ module.exports = {
                     emitWarning: true,
                     failonError: false,
                     fix: true,
-                    configFile: path.resolve(options.fullConfigsPath, '.eslintrc'),
+                    configFile: options.fullConfigsPath + '.eslintrc',
                 }
             },
             {
@@ -112,7 +112,7 @@ module.exports = {
                     loader: "postcss-loader", // compiles Sass to CSS
                     options: {
                         config: {
-                            path: path.resolve(rootFolder, options.configPath)
+                            path: options.fullConfigsPath
                         }
                     }
                 }]
@@ -123,7 +123,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        cwd: path.join(rootFolder, options.configPath),
+                        cwd: options.fullConfigsPath,
                         presets: ['@babel/preset-env']
                     }
                 }

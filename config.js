@@ -1,24 +1,27 @@
 const path = require('path');
 const root_folder = __dirname;
-// vars
-const configPath = 'configurations/'
-const fullConfigsPath = path.resolve(root_folder, configPath);
-const dist = path.resolve(root_folder + '/dist/');
-const sourceRootFolder = path.resolve(root_folder + '/src/');
+
+// ------------------------------------------------------------
+// Fill in values for these variables
+const configPath = '/configurations/'
+const dist =  '/dist/';
+const sourceRootFolder =  '/src/';
+const modulesDir = '/src/Modules/**/*.js';
+const assetsDir = '/assets/';
+// ------------------------------------------------------------
+// ------------------------------------------------------------
 
 const mainSettings = {
-  env: 'development',
-  modulesDir: root_folder + '/src/Modules/**/*.js',
-  assetsDir: root_folder + '/assets/',
-  dist,
+  modulesDir: path.join(root_folder, modulesDir),
+  assetsDir: path.join(root_folder, assetsDir),
+  dist: path.join(root_folder, dist),
 }
 
 module.exports = {
-  root_folder: root_folder,
+  root_folder,
   mainSettings,
-  sourceRootFolder,
-  configPath,
-  fullConfigsPath: fullConfigsPath,
+  sourceRootFolder: path.join(root_folder, sourceRootFolder),
+  fullConfigsPath: path.join(root_folder, configPath),
   componentsDir: {
     main: root_folder + '/src/',
     atoms: '01-atoms',
