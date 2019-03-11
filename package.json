@@ -110,6 +110,8 @@
     "scrollprogress": "3.0.2",
     "svg4everybody": "2.1.9",
     "validate": "github:cferdinandi/validate#v2.2.0",
-    "vanilla-text-mask": "5.1.1"
+    "vanilla-text-mask": "5.1.1",
+    "parallax-js": "3.1.0",
+    "aos": "2.3.4"
   }
 }

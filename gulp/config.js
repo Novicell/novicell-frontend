@@ -33,15 +33,14 @@ module.exports = (function() {
                     vendorPath + 'vanilla-text-mask/dist/vanillaTextMask.js',
                     vendorPath + 'priority-nav/dist/priority-nav.js',
                     vendorPath + 'novicell-debounce/js/novicell.debounce.js',
-                    vendorPath +
-                        'novicell-lazyload/js/novicell.dynamic-image.js',
+                    vendorPath + 'novicell-lazyload/js/novicell.dynamic-image.js',
                     vendorPath + 'novicell-lazyload/js/lazy-images.js',
                     vendorPath + 'lazysizes/lazysizes.js',
                     vendorPath + 'flickity/dist/flickity.pkgd.js',
                     vendorPath + 'scrollprogress/dist/scrollProgress.js',
-                    vendorPath +
-                        'novicell-cookie-info/js/novicell.cookieinfo.js',
-                    vendorPath + 'parallax-js/dist/parallax.min.js'
+                    vendorPath + 'novicell-cookie-info/js/novicell.cookieinfo.js',
+                    vendorPath + 'parallax-js/dist/parallax.min.js',
+		                vendorPath + 'aos/dist/aos.js'
                 ]
             },
             {

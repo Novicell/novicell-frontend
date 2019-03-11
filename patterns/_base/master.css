@@ -5,10 +5,14 @@
 @import '_fonts.css';
 @import '_grid.css';
 
+/* Design Guidelines */
+@import '../design-guidelines/colors/colors.css';
+
 /* Node modules */
 @import '../../node_modules/priority-nav/dist/priority-nav-core.css';
 @import '../../node_modules/flickity/dist/flickity.css';
 @import '../../node_modules/flatpickr/dist/flatpickr.css';
+@import '../../node_modules/aos/dist/aos.css';
 
 /* Examples */
 @import '../00-examples/atom-example/atom-example.css';
@@ -56,8 +60,9 @@
 @import '../02-molecules/list-page-item/list-page-item.css';
 @import '../02-molecules/list-page-link/list-page-link.css';
 @import '../02-molecules/breadcrumb/breadcrumb.css';
+@import '../02-molecules/search-filter/search-filter.css';
 @import '../02-molecules/pageheader-content/pageheader-content.css';
-
+/* @import '../02-molecules/animate-on-scroll-wrapper/animate-on-scroll-wrapper.css' */
 /* Organisms */
 @import '../03-organisms/footer/footer.css';
 @import '../03-organisms/section/image-text-section/image-text-section.css';
@@ -70,7 +75,7 @@
 @import '../03-organisms/pageheaders/pageheader-slider/pageheader-slider.css';
 @import '../03-organisms/pageheaders/pageheader-video/pageheader-video.css';
 @import '../03-organisms/pageheaders/pageheader-dots/pageheader-dots.css';
-
+@import '../02-molecules/overlap-item/overlap-item.css';
 .selector,
 .selector-secondary,
 .selector[type='text'] {
