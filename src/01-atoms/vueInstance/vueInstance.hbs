@@ -5,7 +5,9 @@
 <div id="app">
     <p>${text} <h1>${count}</h1></p>
     <!-- this will no longer update `foo`! -->
-    <Test></Test>
+    <Test
+    :child_count="count"
+    ></Test>
     <button v-on:click="count++">Change it</button>
 </div>
 
