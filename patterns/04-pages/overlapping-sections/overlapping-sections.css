@@ -1,0 +1,202 @@
+.overlapping-section-wrapper {
+    width: 100vw;
+    font-size: 0.8em;
+
+    @media(--viewport-sm-max) {
+        font-size: 0.5em;
+    }
+}
+
+.overlap-section {
+    margin: 4vw;
+
+    &--first {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    &--second {
+        /* Position relative, otherwise the :before element with the BG-color will be relative to the root wrapper */
+        position: relative;
+        margin: 0;
+
+        &__row {
+            margin: 0 auto;
+            max-width: 1600px;
+        }
+
+        /* This pseudoelement adds bg-color to the second section */
+        &:before {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            content: "";
+            height: 85%;
+            width: 200%;
+            top: 0;
+            left: 0;
+            background-color: #F9F5F1;
+
+        }
+    }
+
+    &--third {
+
+        margin: 0 auto;
+        margin-top: 1vw;
+        margin-bottom: 10vw;
+
+        &__row {
+            max-width: 1600px;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        &__image-wrapper {
+            width: auto;
+            overflow: hidden;
+            height: 40.61111vw;
+        }
+
+        &__right-section {
+            background-color: #FBF6F2;
+            width: 50%;
+            height: 39vw;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            font-size: 1.7em;
+            text-align: center;
+            line-height: 2;
+            letter-spacing: 5px;
+        }
+
+    }
+}
+
+/* Maybe unnecesary? */
+.container-fluid {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel {
+    width: calc(100% / 2 - 0vw - 1px/2);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+    &__header {
+        width: 60%;
+        font-size: 2.5em;
+    }
+
+    &__image {
+        &--wrapper {
+            height: 550px;
+            background-color: #F4F4F4;
+            width: 65%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            @media (--viewport-xs-max) {
+                width: 80%;
+                height: 400px;
+            }
+        }
+    }
+
+    &--wide {
+        height: auto;
+        width: 100%;
+
+        &__image {
+            max-height: 900px;
+            width: 100%;
+
+            @media(--viewport-md-min) {
+                width: 90%
+            }
+        }
+
+
+    }
+}
+
+.collection-list {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+
+    @media(--viewport-sm-min) {
+        padding: 50px;
+    }
+
+    &__item {
+        margin-top: 9vw;
+        margin-bottom: 7vw;
+        width: calc(100% / 3);
+        height: 32.34722vw;
+        font-size: 1.9em;
+        padding: 1.5vw;
+
+        &--header {
+            margin-top: 0;
+        }
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+.section-third__left-image {
+    width: 100vw;
+    height: auto;
+
+    @media(--viewport-sm-min) {
+        position: relative;
+        width: auto;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+}
+
+.section-third__right-image {
+    position: absolute;
+    opacity: 0.4;
+    width: 25vw;
+    height: 25vw;
+}
