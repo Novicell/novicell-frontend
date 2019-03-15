@@ -1,13 +1,6 @@
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                {{> @text-box textbox1 modifier="overlap-item overlap-item--above overlap-item-xs--bottom overlap-item-sm--right overlap-item-md--right" }}
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                {{ render "@image" image1 }}
-            </div>
-        </div>
-    </div>
-</section>
+<div class="{{class}} overlap-item overlap-item--{{z-index}} overlap-item-sm--{{direction}} overlap-item-md--{{direction}} overlap-item-lg--{{direction}} overlap-item-xl--{{direction}}">
+    {{#block "overlap-item__content" }}
+        {{> @paragraph text="Overlapping content here. You can pass a direction, z-index and additional classes to this molecule. See overlapping-sections page for inspiration"}}
+    {{/block}}
+</div>
 

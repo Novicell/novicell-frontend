@@ -5,7 +5,11 @@
         <section class="overlap-section overlap-section--first">
             <div class="row">
                 <div class="carousel col-xs-12 col-md-5" >
-                    <h2 class="carousel__header overlap-item overlap-item--above overlap-item-md--bottom overlap-item-lg--bottom overlap-item-xl--bottom">Explore our large catalogue</h2>
+                    {{#embed "@overlap-item" class="carousel__header-container" z-index="above" direction="bottom"}}
+                        {{#content "overlap-item__content"}}                            
+                            <h2 class="carousel__header">Explore our large catalogue</h2>
+                        {{/content}}
+                    {{/embed}}                    
                     <div class="carousel__image--wrapper">
                         <div class="carousel__image">
                             {{> @image image1 }}
@@ -13,9 +17,11 @@
                     </div>
                 </div>
                 <div class="carousel__image--wide carousel col-xs-12 col-md-7">
-                    <div class="carousel--wide overlap-item overlap-item--above overlap-item-md--bottom">
-                        {{> @image image2 modifier="carousel--wide__image"}}
-                    </div>
+                    {{#embed "@overlap-item" class="carousel--wide" z-index="above" direction="bottom"}}
+                        {{#content "overlap-item__content"}}
+                            {{> @image image2 modifier="carousel--wide__image"}}
+                        {{/content}}
+                    {{/embed}}
                 </div>
             </div>
         </section>
@@ -26,10 +32,12 @@
                         {{> @image image3 modifier="collection-list__image"}}
                         <h3 class="collection-list__item--header">Handbag</h3>
                     </div>
-                    <div class="collection-list__item overlap-item overlap-item--above overlap-item-sm--bottom overlap-item-md--bottom overlap-item-lg--bottom col-xs-6 col-sm-4">
-                        {{> @image image4 modifier="collection-list__image"}}
-                        <h3 class="collection-list__item--header">Hat</h3>                        
-                    </div>
+                    {{#embed "@overlap-item" class="collection-list__item col-xs-6 col-sm-4" z-index="above" direction="bottom"}}
+                        {{#content "overlap-item__content"}}                        
+                            {{> @image image4 modifier="collection-list__image"}}
+                            <h3 class="collection-list__item--header">Hat</h3>
+                        {{/content}}
+                    {{/embed}}            
                     <div class="collection-list__item col-xs-6 col-sm-4">
                         {{> @image image5 modifier="collection-list__image"}}
                         <h3 class="collection-list__item--header">Bag</h3>                        
@@ -38,10 +46,12 @@
                         {{> @image image6 modifier="collection-list__image"}}
                         <h3 class="collection-list__item--header">Handbag</h3>
                     </div>
-                    <div class="collection-list__item overlap-item overlap-item--above overlap-item-sm--bottom overlap-item-md--bottom overlap-item-lg--bottom col-xs-6 col-sm-4">
-                        {{> @image image7 modifier="collection-list__image"}}
-                        <h3 class="collection-list__item--header">Hat</h3>                        
-                    </div>
+                    {{#embed "@overlap-item" class="collection-list__item col-xs-6 col-sm-4" z-index="above" direction="bottom"}}
+                        {{#content "overlap-item__content"}}                        
+                            {{> @image image7 modifier="collection-list__image"}}
+                            <h3 class="collection-list__item--header">Hat</h3>
+                        {{/content}}
+                    {{/embed}}
                     <div class="collection-list__item col-xs-6 col-sm-4">
                         {{> @image image3 modifier="collection-list__image"}}
                         <h3 class="collection-list__item--header">Bag</h3>                        
@@ -51,13 +61,17 @@
         </section>
         <section class="overlap-section overlap-section--third">
             <div class="row overlap-section--third__row">
-                <div class="overlap-section--third__image-wrapper overlap-item overlap-item--above overlap-item-sm--right overlap-item-md--right overlap-item-lg--right col-xs-12 col-sm-6 ">
-                    <img src="https://maradji.com/wp-content/uploads/2019/01/low-l2a2710-copie-1280x853.jpg" class="section-third__left-image" alt="">
-                </div>
-                <div class="overlap-section--third__right-section overlap-item overlap-item--below overlap-item-sm--bottom overlap-item-md--bottom overlap-item-lg--bottom col-xs-12 col-sm-6">
-                    <h1 class="carousel__header">Sous le soleil exactement</h1>
-                    <img src="http://tinyurl.com/yydhtttr" alt="" class="section-third__right-image">
-                </div>                
+                {{#embed "@overlap-item" class="overlap-section--third__image-wrapper col-xs-12 col-sm-6" z-index="above" direction="right"}}
+                    {{#content "overlap-item__content"}}                        
+                        <img src="https://maradji.com/wp-content/uploads/2019/01/low-l2a2710-copie-1280x853.jpg" class="section-third__left-image" alt="">
+                    {{/content}}
+                {{/embed}}
+                {{#embed "@overlap-item" class="overlap-section--third__right-section col-xs-12 col-sm-6" z-index="below" direction="bottom"}}
+                    {{#content "overlap-item__content"}}                        
+                        <h1 class="carousel__header">Sous le soleil exactement</h1>
+                        <img src="http://tinyurl.com/yydhtttr" alt="" class="section-third__right-image">
+                    {{/content}}
+                {{/embed}}                            
             </div>
         </section>
         <section class="overlap-section overlap-section--fourth">
@@ -74,9 +88,11 @@
                     </div>
                 </div>
                 <div class="col-xs-6">
-                    <div class="fourth-section--image-wrapper overlap-item overlap-item--below overlap-item-sm--bottom overlap-item-md--bottom overlap-item-lg--bottom">                        
-                        {{> @image image9 modifier="fourth-section--image-wrapper__image fourth-section--image-wrapper__image--right"}}
-                    </div>
+                    {{#embed "@overlap-item" class="fourth-section--image-wrapper" direction="bottom"}}
+                        {{#content "overlap-item__content"}}                        
+                            {{> @image image9 modifier="fourth-section--image-wrapper__image fourth-section--image-wrapper__image--right"}}
+                        {{/content}}
+                    {{/embed}} 
                 </div>
             </div>
         </section>
@@ -92,9 +108,11 @@
         <section class="overlap-section overlap-section--fourth">
             <div class="row overlap-section--fourth_row">
                 <div class="col-xs-6">
-                    <div class="fourth-section--image-wrapper  overlap-item overlap-item--below overlap-item-sm--bottom overlap-item-md--bottom overlap-item-lg--bottom">
-                        {{> @image image11 modifier="fourth-section--image-wrapper__image fourth-section--image-wrapper__image--left"}}                        
-                    </div>
+                    {{#embed "@overlap-item" class="fourth-section--image-wrapper" direction="bottom"}}
+                        {{#content "overlap-item__content"}}                        
+                            {{> @image image11 modifier="fourth-section--image-wrapper__image fourth-section--image-wrapper__image--left"}}
+                        {{/content}}
+                    {{/embed}}
                 </div>
                 <div class="col-xs-6">
                     <div class="fourth-section--image-wrapper">                        
@@ -105,5 +123,6 @@
         </section>
     </div>
 </div>
+
 {{ render '@footer' }}
 
