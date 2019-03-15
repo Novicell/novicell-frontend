@@ -1,4 +1,5 @@
 {{ render '@header' }}
+
 <div class="overlapping-section-wrapper">
     <div class="container-fluid">
         <section class="overlap-section overlap-section--first">
@@ -57,6 +58,49 @@
                     <h1 class="carousel__header">Sous le soleil exactement</h1>
                     <img src="http://tinyurl.com/yydhtttr" alt="" class="section-third__right-image">
                 </div>                
+            </div>
+        </section>
+        <section class="overlap-section overlap-section--fourth">
+            <div class="row overlap-section--fourth_row">
+                <div class="col-xs-12 overlap-section--fourth__wrapper">
+                    <div class="overlap-section--fourth__paragraph">
+                        {{> @heading--column class="overlap-section--fourth__heading" text="Lorem ipsum dolor sit amet consectetur adipisicing elit."}}
+                        {{> @paragraph text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi tempore, porro doloribus ea consequatur itaque natus sunt eos autem."}}                                    
+                    </div>                     
+                </div>
+                <div class="col-xs-6">
+                    <div class="fourth-section--image-wrapper">
+                        {{> @image image8 modifier="fourth-section--image-wrapper__image fourth-section--image-wrapper__image--left"}}                        
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="fourth-section--image-wrapper overlap-item overlap-item--below overlap-item-sm--bottom overlap-item-md--bottom overlap-item-lg--bottom">                        
+                        {{> @image image9 modifier="fourth-section--image-wrapper__image fourth-section--image-wrapper__image--right"}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="overlap-section overlap-section--fifth">
+            <div class="row overlap-section--fifth_row">
+                <div class="col-xs-12 overlap-section--fifth__wrapper">
+                    <div class="fifth-section__image-wrapper">
+                        {{> @image image10 modifier="fifth-section__image-wrapper__image"}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="overlap-section overlap-section--fourth">
+            <div class="row overlap-section--fourth_row">
+                <div class="col-xs-6">
+                    <div class="fourth-section--image-wrapper  overlap-item overlap-item--below overlap-item-sm--bottom overlap-item-md--bottom overlap-item-lg--bottom">
+                        {{> @image image11 modifier="fourth-section--image-wrapper__image fourth-section--image-wrapper__image--left"}}                        
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="fourth-section--image-wrapper">                        
+                        {{> @image image12 modifier="fourth-section--image-wrapper__image fourth-section--image-wrapper__image--right"}}
+                    </div>
+                </div>
             </div>
         </section>
     </div>
