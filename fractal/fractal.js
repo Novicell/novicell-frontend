@@ -24,9 +24,8 @@ const instance = fractal.components.engine(hbs);
 const layouts = require('handlebars-layouts');
 
 // Novicell theme
-const novicellTheme = require('@frctl/mandelbrot')({
-    //favicon: config.webPath +'favicon.ico',
-    styles: ['default', '/fractal/novicell-fractal-styles.css']
+const novicellTheme = require('@novicell/novibrot')({
+    "panels": ["html", "view", "context", "resources", "info"]
 });
 
 novicellTheme.addStatic(__dirname, 'fractal');

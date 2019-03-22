@@ -51,7 +51,7 @@
   "devDependencies": {
     "@frctl/fractal": "1.1.7",
     "@frctl/handlebars": "1.1.5",
-    "@frctl/mandelbrot": "1.2.0",
+    "@novicell/novibrot": "1.0.0",
     "babel-core": "6.26.3",
     "babel-preset-env": "1.7.0",
     "check-files-exist": "^1.0.1",

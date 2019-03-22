@@ -5,75 +5,74 @@
 @import '_fonts.css';
 @import '_grid.css';
 
-/* Design Guidelines */
-@import '../design-guidelines/colors/colors.css';
-
 /* Node modules */
 @import '../../node_modules/priority-nav/dist/priority-nav-core.css';
 @import '../../node_modules/flickity/dist/flickity.css';
 @import '../../node_modules/aos/dist/aos.css';
 
 /* Examples */
-@import '../00-examples/atom-example/atom-example.css';
-@import '../00-examples/molecule-example/molecule-example.css';
+@import '../components/00-examples/atom-example/atom-example.css';
+@import '../components/00-examples/molecule-example/molecule-example.css';
 
 /* Atoms */
-@import '../01-atoms/buttons/button/button.css';
-@import '../01-atoms/headings/heading/heading.css';
-@import '../01-atoms/headings/heading-page/heading-page.css';
-@import '../01-atoms/forms/input/input.css';
-@import '../01-atoms/forms/checkbox/checkbox.css';
-@import '../01-atoms/forms/radio/radio.css';
-@import '../01-atoms/forms/label/label.css';
-@import '../01-atoms/forms/select/select.css';
-@import '../01-atoms/forms/textarea/textarea.css';
-@import '../01-atoms/forms/validation/validation.css';
-@import '../01-atoms/image/image.css';
-@import '../01-atoms/links/link/link.css';
-@import '../01-atoms/links/link-button/link-button.css';
-@import '../01-atoms/links/link-social/link-social.css';
-@import '../01-atoms/loaders/loader-bar/loader-bar.css';
-@import '../01-atoms/loaders/loader-spinner/loader-spinner.css';
-@import '../01-atoms/logo/logo.css';
-@import '../01-atoms/paragraph/paragraph.css';
-@import '../01-atoms/svg-text/svg-text.css';
-@import '../01-atoms/scroll-progress-bar/scroll-progress-bar.css';
+@import '../components/01-atoms/buttons/button/button.css';
+@import '../components/01-atoms/headings/heading/heading.css';
+@import '../components/01-atoms/headings/heading-page/heading-page.css';
+@import '../components/01-atoms/forms/input/input.css';
+@import '../components/01-atoms/forms/checkbox/checkbox.css';
+@import '../components/01-atoms/forms/radio/radio.css';
+@import '../components/01-atoms/forms/label/label.css';
+@import '../components/01-atoms/forms/select/select.css';
+@import '../components/01-atoms/forms/textarea/textarea.css';
+@import '../components/01-atoms/forms/validation/validation.css';
+@import '../components/01-atoms/image/image.css';
+@import '../components/01-atoms/links/link/link.css';
+@import '../components/01-atoms/links/link-button/link-button.css';
+@import '../components/01-atoms/links/link-social/link-social.css';
+@import '../components/01-atoms/loaders/loader-bar/loader-bar.css';
+@import '../components/01-atoms/loaders/loader-spinner/loader-spinner.css';
+@import '../components/01-atoms/logo/logo.css';
+@import '../components/01-atoms/paragraph/paragraph.css';
+@import '../components/01-atoms/svg-text/svg-text.css';
+@import '../components/01-atoms/scroll-progress-bar/scroll-progress-bar.css';
 
 /* Molecules */
-@import '../02-molecules/box/box/box.css';
-@import '../02-molecules/box/box-image-duotone/box-image-duotone.css';
-@import '../02-molecules/box/box-image/box-image.css';
-@import '../02-molecules/box/icon-box/icon-box.css';
-@import '../02-molecules/box/text-box/text-box.css';
-@import '../02-molecules/form-field/form-field.css';
-@import '../02-molecules/link-list/link-list.css';
-@import '../02-molecules/navigation/nav-main-list/nav-main-list.css';
-@import '../02-molecules/navigation/nav-trigger/nav-trigger.css';
-@import '../02-molecules/navigation/nav-trigger/nav-trigger--slider.css';
-@import '../02-molecules/navigation/nav-trigger/nav-trigger--spin.css';
-@import '../02-molecules/navigation/nav-trigger/nav-trigger--squeeze.css';
-@import '../02-molecules/navigation/nav-main-list-priority/nav-main-list-priority.css';
-@import '../02-molecules/social-media-collection/social-media-collection.css';
-@import '../02-molecules/cookie-info/cookie-info.css';
-@import '../02-molecules/list-page-item/list-page-item.css';
-@import '../02-molecules/list-page-link/list-page-link.css';
-@import '../02-molecules/breadcrumb/breadcrumb.css';
-@import '../02-molecules/search-filter/search-filter.css';
-@import '../02-molecules/pageheader-content/pageheader-content.css';
-/* @import '../02-molecules/animate-on-scroll-wrapper/animate-on-scroll-wrapper.css' */
+@import '../components/02-molecules/box/box/box.css';
+@import '../components/02-molecules/box/box-image-duotone/box-image-duotone.css';
+@import '../components/02-molecules/box/box-image/box-image.css';
+@import '../components/02-molecules/box/icon-box/icon-box.css';
+@import '../components/02-molecules/box/text-box/text-box.css';
+@import '../components/02-molecules/form-field/form-field.css';
+@import '../components/02-molecules/link-list/link-list.css';
+@import '../components/02-molecules/navigation/nav-main-list/nav-main-list.css';
+@import '../components/02-molecules/navigation/nav-trigger/nav-trigger.css';
+@import '../components/02-molecules/navigation/nav-trigger/nav-trigger--slider.css';
+@import '../components/02-molecules/navigation/nav-trigger/nav-trigger--spin.css';
+@import '../components/02-molecules/navigation/nav-trigger/nav-trigger--squeeze.css';
+@import '../components/02-molecules/navigation/nav-main-list-priority/nav-main-list-priority.css';
+@import '../components/02-molecules/social-media-collection/social-media-collection.css';
+@import '../components/02-molecules/cookie-info/cookie-info.css';
+@import '../components/02-molecules/list-page-item/list-page-item.css';
+@import '../components/02-molecules/list-page-link/list-page-link.css';
+@import '../components/02-molecules/breadcrumb/breadcrumb.css';
+@import '../components/02-molecules/search-filter/search-filter.css';
+@import '../components/02-molecules/pageheader-content/pageheader-content.css';
+/* @import '../components/02-molecules/animate-on-scroll-wrapper/animate-on-scroll-wrapper.css' */
+
 /* Organisms */
-@import '../03-organisms/footer/footer.css';
-@import '../03-organisms/section/image-text-section/image-text-section.css';
-@import '../03-organisms/section/text-image-section/text-image-section.css';
-@import '../03-organisms/list-page/list-page.css';
-@import '../03-organisms/topbar/topbar/topbar.css';
-@import '../03-organisms/topbar/topbar-related/topbar-related.css';
-@import '../03-organisms/pageheaders/pageheader-image/pageheader-image.css';
-@import '../03-organisms/pageheaders/pageheader-image-alt/pageheader-image-alt.css';
-@import '../03-organisms/pageheaders/pageheader-slider/pageheader-slider.css';
-@import '../03-organisms/pageheaders/pageheader-video/pageheader-video.css';
-@import '../03-organisms/pageheaders/pageheader-dots/pageheader-dots.css';
-@import '../02-molecules/overlap-item/overlap-item.css';
+@import '../components/03-organisms/colors/colors.css';
+@import '../components/03-organisms/footer/footer.css';
+@import '../components/03-organisms/section/image-text-section/image-text-section.css';
+@import '../components/03-organisms/section/text-image-section/text-image-section.css';
+@import '../components/03-organisms/list-page/list-page.css';
+@import '../components/03-organisms/topbar/topbar/topbar.css';
+@import '../components/03-organisms/topbar/topbar-related/topbar-related.css';
+@import '../components/03-organisms/pageheaders/pageheader-image/pageheader-image.css';
+@import '../components/03-organisms/pageheaders/pageheader-image-alt/pageheader-image-alt.css';
+@import '../components/03-organisms/pageheaders/pageheader-slider/pageheader-slider.css';
+@import '../components/03-organisms/pageheaders/pageheader-video/pageheader-video.css';
+@import '../components/03-organisms/pageheaders/pageheader-dots/pageheader-dots.css';
+@import '../components/02-molecules/overlap-item/overlap-item.css';
 .selector,
 .selector-secondary,
 .selector[type='text'] {

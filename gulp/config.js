@@ -53,8 +53,7 @@ module.exports = (function() {
                 images: [assetPath + 'images/**/*.{jpg,png,svg,gif}']
             },
             {
-                name: 'documentation',
-                styles: [projectPath + 'documentation/documentation.css']
+                name: 'documentation'
             },
             {
                 name: 'icons',

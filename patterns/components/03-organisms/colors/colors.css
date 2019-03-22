@@ -9,6 +9,11 @@
     --color-plum: #510035;
     --color-spearmint: #75bc7f;
     --color-longfarm-blue: #c0e3de;
+    --color-pepper: #232323;
+    --color-white-trufle: #f2f2f2;
+    --color-platinum: #eaeaea;
+    --color-gray: #bbbbbb;
+    --color-taupe-gray: #909090;
 
     /* Semantic names */
     --color-primary: var(--color-red);
@@ -36,6 +41,18 @@
 }
 
 .colors {
+    &--wrapper {
+        background-color: var(--color-white);
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+        margin-top: 3rem;
+        overflow: hidden;
+    }
+
+    &--content {
+        padding: 1rem;
+    }
+
     &--palette {
         height: 250px;
         width: 100%;
@@ -61,8 +78,34 @@
         background-color: var(--color-longfarm-blue);
     }
 
+    &--palette__pepper {
+        background-color: var(--color-pepper);
+    }    
+
+    &--palette__white-trufle {
+        background-color: var(--color-white-trufle);
+    }    
+
+    &--palette__platinum {
+        background-color: var(--color-platinum);
+    }    
+
+    &--palette__gray {
+        background-color: var(--color-gray);
+    }    
+
+    &--palette__taupe-gray {
+        background-color: var(--color-taupe-gray);
+    }    
+
+    span {
+        display: block;
+        font-size: 14px;
+        font-style: italic;
+    }
+
     &--name {
-        font-size: 30px;
+        font-size: 20px;
         text-transform: capitalize;
     }
 }

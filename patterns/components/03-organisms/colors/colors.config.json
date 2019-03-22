@@ -1,0 +1,61 @@
+{
+    "title": "Colors",
+    "status": "prototype",
+    "context": {
+        "heading": {
+            "text": "Brand colors"
+        },
+        "colors": {
+            "red": {
+                "name": "red",
+                "rgb": "200 0 7",
+                "hex": "#c80046"
+            },
+            "berry": {
+                "name": "berry",
+                "rgb": "124 4 53",
+                "hex": "#7c0435"
+            },
+            "plum": {
+                "name": "plum",
+                "rgb": "81 0 53",
+                "hex": "#510035"
+            },
+            "spearmint": {
+                "name": "spearmint",
+                "rgb": "117 188 127",
+                "hex": "#75bc7f"
+            },
+            "longfarm-blue": {
+                "name": "longfarm-blue",
+                "rgb": "192 227 222",
+                "hex": "#c0e3de"
+            },
+            "pepper": {
+                "name": "pepper",
+                "rgb": "35 35 35",
+                "hex": "232323"
+            },
+            "white-trufle": {
+                "name": "white-trufle",
+                "rgb": "242 242 242",
+                "hex": "#f2f2f2"
+            },
+            "platinum": {
+                "name": "platinum",
+                "rgb": "234 234 234",
+                "hex": "#eaeaea"
+            },
+            "gray": {
+                "name": "gray",
+                "rgb": "187 187 187",
+                "hex": "#bbbbbb"
+            },
+            "taupe-gray": {
+                "name": "taupe-gray",
+                "rgb": "144 144 144",
+                "hex": "#909090"
+            }
+        }
+    }
+}

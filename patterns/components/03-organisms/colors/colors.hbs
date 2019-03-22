@@ -1,0 +1,17 @@
+<section class="colors">
+    <div class="row">
+        {{#each colors}}
+        <div class="col-xs-12 col-sm-2">
+            <div class="colors--wrapper">
+                <div class="colors--palette colors--palette__{{ name }}"></div>
+                <div class="colors--content">
+                    <h3 class="colors--name">{{ name }}</h3>
+                    <span>RGB {{ rgb }}</span>
+                    <span>HEX {{ hex }}</span>
+                    <span>CMYK {{ cmyk }}</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
