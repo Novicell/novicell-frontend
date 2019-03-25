@@ -3,7 +3,6 @@ const root_folder = __dirname;
 
 // ------------------------------------------------------------
 // Fill in values for these variables
-const configPath = '/configurations/'
 const dist =  '/dist/';
 const sourceRootFolder =  '/src/';
 const modulesDir = '/src/Modules/**/*.js';
@@ -21,7 +20,7 @@ module.exports = {
   root_folder,
   mainSettings,
   sourceRootFolder: path.join(root_folder, sourceRootFolder),
-  fullConfigsPath: path.join(root_folder, configPath),
+  fullConfigsPath: path.join(root_folder, '/configurations/'),
   componentsDir: {
     main: root_folder + '/src/',
     atoms: '01-atoms',
