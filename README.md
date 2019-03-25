@@ -41,11 +41,11 @@ const modulesDir = '/src/Modules/**/*.js'; // Where JavaScript files should be p
 const assetsDir = '/assets/'; // Wheer you keep images, fonts, icons...
 ```
 
-Look for "config" field in package.json:
+Look for "config" field in package.json and fill in:
 ```json
     "config": {
-        "DIST": "dist", // Dist folder (same as in config.js)
-        "CSS_MODULES": "src/Modules/*.css" // Where the system will look for CSS files
+        "DIST": "dist",
+        "CSS_MODULES": "src/Modules/*.css" 
     },
 ```
 
