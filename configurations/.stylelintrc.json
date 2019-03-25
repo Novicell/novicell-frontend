@@ -6,6 +6,8 @@
     "selector-max-class": 4,
     "declaration-no-important": true,
     "unit-no-unknown": true,
+    "selector-nested-pattern": "^([.]|&)",
+    "selector-class-pattern": "^([a-z][a-z0-9]*|[.])(-[a-z0-9]+)*$",
     "property-no-unknown": [true, {
       "ignoreProperties": ["/tap-highlight-color/", "string"]
     }],
@@ -16,6 +18,5 @@
     "max-empty-lines": [2, {
       "ignore": ["comments"]
     }]
-  },
-  "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+  }
 }
