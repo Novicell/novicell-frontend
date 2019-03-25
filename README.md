@@ -78,7 +78,8 @@ But there are more available in this package (add `npm run` before script name):
 ## Generate component
 
 1. To allow generating components write: `npm link` in the root dir. (only have to do it once)
-2. Run `createComponent -t a -n testName`
+2. Run 
+```createComponent -t a -n testName```
 
 a - atom, m - molecule, o - organism, p - page;
 ```bash
