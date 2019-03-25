@@ -53,7 +53,6 @@ Look for "config" field in package.json and fill in:
 
 These are most often used scripts:
 * for development: `npm run dev` and `npm run build:dev`
-** 
 * for production: `npm run prod` and `npm run build:prod`
 
 But there are more available in this package (add `npm run` before script name):
