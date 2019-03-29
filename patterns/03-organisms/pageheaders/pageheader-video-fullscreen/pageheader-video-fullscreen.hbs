@@ -1,4 +1,8 @@
 <div class="background-fullscreen--idle background-fullscreen" data-background-image="{{ path '{{backgroundImagePath}}' }}">
+  {{#if selfHostVideoPath}}
+    <video class="background-fullscreen__video" data-videopath={{ selfHostVideoPath }} type="video/mp4" autoplay muted loop playsinline>
+    </video>
+  {{/if}}
   {{#if youtubeid}}
     <div class="youtube__iframe-wrapper" data-youtubeid="{{youtubeid}}">
     </div>

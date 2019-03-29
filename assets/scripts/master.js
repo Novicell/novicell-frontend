@@ -20,13 +20,15 @@ document.addEventListener('DOMContentLoaded', function () {
     novicell.navTrigger.init();
     novicell.pageheaderVideo.init();
     novicell.pageheaderVideoYoutube.init();
-    novicell.pageheaderVideoFullscreen.init();
+    novicell.pageheaderVideoFullscreenSelfHost.init();
+    novicell.pageheaderVideoFullscreenYT.init();
+    novicell.pageheaderVideoFullscreenVimeo.init();
     novicell.pageheaderDots.init();
     novicell.parallaxWrapper.init();
     novicell.animateOnScroll.init();
     novicell.duotone.init();
     novicell.searchFilter.init();
-  
+
 
     //SetTimeout to fix latency with loaded elements in e.g. Vue components
     setTimeout(() => {
