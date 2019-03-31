@@ -173,7 +173,7 @@ function createAtom(name) {
     createDir(dir);
   // Create the hbs.file
   writeFile('hbs', dir, getAtomTemplate(name), name);
-  writeFile('json', dir, getAtomJSON(name), name);
+  writeFile('config.json', dir, getAtomJSON(name), name);
   writeFile('css', dir, dataCss, name);
 }
 
@@ -182,7 +182,7 @@ function createMolecule(name) {
   createDir(dir);
 
   writeFile('hbs', dir, getMoleculeTemplate(name), name);
-  writeFile('json', dir, getMoleculeJSON(name), name);
+  writeFile('config.json', dir, getMoleculeJSON(name), name);
   writeFile('css', dir, dataCss, name);
 }
 
@@ -191,7 +191,7 @@ function createOrganism(name) {
   createDir(dir);
 
   writeFile('hbs', dir, getOrganismTemplate(name), name);
-  writeFile('json', dir, getOrganismJSON(name), name);
+  writeFile('config.json', dir, getOrganismJSON(name), name);
   writeFile('css', dir, dataCss, name);
 }
 
@@ -200,7 +200,7 @@ function createPage(name) {
   createDir(dir);
 
   writeFile('hbs', dir, getPageTemplate(name), name);
-  writeFile('json', dir, getPageJSON(name), name);
+  writeFile('config.json', dir, getPageJSON(name), name);
   writeFile('css', dir, dataCss, name);
 }
 
