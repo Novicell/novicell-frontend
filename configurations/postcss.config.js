@@ -1,5 +1,5 @@
 const stylelint = require('stylelint');
-const stylelintConfig = require('./.stylelintrc.json');
+const stylelintConfig = require('./stylelint.config');
 const settings = require('../config');
 const rootFolder = settings.root_folder;
 const env = process.env.NODE_ENV || 'development';
@@ -14,6 +14,7 @@ module.exports = {
             plugins: [
                 stylelint({
                     config: stylelintConfig,
+                    fix: true,
                     ignoreFiles: [
                         rootFolder + 'node_modules/**/*.css',
                         rootFolder + settings.mainSettings.dist
@@ -48,7 +49,7 @@ module.exports = {
         }),
         require('postcss-reporter')({
             clearMessages: true,
-            throwError: true
+            throwError: false
         })
     ]
 };
