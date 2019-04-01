@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import './components/vue.css';
 import Test from './components/Test.vue';
 
 const data = {
