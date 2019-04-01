@@ -20,7 +20,7 @@ module.exports = {
   root_folder,
   mainSettings,
   sourceRootFolder: path.join(root_folder, sourceRootFolder),
-  fullConfigsPath: path.join(root_folder, '/configurations/'),
+  fullConfigsPath: path.join(root_folder, '/config/'),
   componentsDir: {
     main: root_folder + '/src/',
     atoms: '01-atoms',

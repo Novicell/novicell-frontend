@@ -12,23 +12,23 @@
         "fractal": "fractal start --sync",
         "fractal:build": "fractal build",
         "fonts": "cross-env-shell copyfiles -f \"assets/fonts/*\" $npm_package_config_DIST/fonts -V",
-        "images": "node configurations/imagemin.js",
-        "sprites": "cross-env-shell node configurations/sprite.js -i assets/icons/*.svg -o $npm_package_config_DIST/icons/icons.svg",
-        "styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config configurations/postcss.config.js",
-        "webpack": "webpack --config configurations/webpack.config.js",
-        "watch:styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config configurations/postcss.config.js --watch --verbose",
-        "watch:webpack": "webpack --config configurations/webpack.config.js --watch",
+        "images": "node config/imagemin.js",
+        "sprites": "cross-env-shell node config/sprite.js -i assets/icons/*.svg -o $npm_package_config_DIST/icons/icons.svg",
+        "styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config config/postcss.config.js",
+        "webpack": "webpack --config config/webpack.config.js",
+        "watch:styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config config/postcss.config.js --watch --verbose",
+        "watch:webpack": "webpack --config config/webpack.config.js --watch",
         "build:dev": "cross-env NODE_ENV=development npm-run-all -l sprites images styles fonts test webpack",
         "build:prod": "cross-env NODE_ENV=production npm-run-all -l sprites images styles fonts test webpack",
         "dev": "cross-env NODE_ENV=development npm-run-all -p -r watch:webpack watch:styles fractal",
         "start": "npm run dev",
         "prod": "cross-env NODE_ENV=production npm-run-all -p -r watch:webpack --mode=production watch:styles fractal",
-        "fix": "eslint --fix src/**/*.js --config configurations/.eslintrc",
-        "buildDrupal": "node configurations/drupal/babel-minify.js",
-        "generateFavicon": "cross-env-shell real-favicon generate configurations/faviconDescription.json $npm_package_config_DIST/favicons/faviconData.json $npm_package_config_DIST/favicons"
+        "fix": "eslint --fix src/**/*.js --config config/.eslintrc",
+        "buildDrupal": "node config/drupal/babel-minify.js",
+        "generateFavicon": "cross-env-shell real-favicon generate config/faviconDescription.json $npm_package_config_DIST/favicons/faviconData.json $npm_package_config_DIST/favicons"
     },
     "fractal": {
-        "main": "configurations/fractalfile.js"
+        "main": "config/fractalfile.js"
     },
     "author": "Novicell",
     "license": "ISC",
@@ -86,6 +86,6 @@
         "vue": "2.5.21"
     },
     "bin": {
-        "createComponent": "./configurations/createComponent.js"
+        "createComponent": "./config/createComponent.js"
     }
 }

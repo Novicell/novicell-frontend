@@ -30,7 +30,7 @@ fractal.docs.set('ext', 'hbs');
 // Project config
 fractal.set('project.title', config.appName);
 layouts.register(instance.handlebars);
-novicellTheme.addStatic(path.join(config.root_folder + '/configurations/'), 'fractal');
+novicellTheme.addStatic(config.fullConfigsPath, 'fractal');
 novicellTheme.addStatic(path.join(config.root_folder + '/dist'), 'dist');
 
 fractal.web.theme(novicellTheme);

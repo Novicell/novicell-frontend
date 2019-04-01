@@ -72,7 +72,7 @@ But there are more available in this package (add `npm run` before script name):
 -   `prod` - Same as dev but in production (extra optimization) but slower build,
 -   `fix` - Fixes all possible linting for JavaScript
 -   `buildDrupal` - (For drupal projects) Bundles JavaScript and CSS into same location
--   `generateFavicon` - generates a favicon based on configurations/faviconDescription.json settings
+-   `generateFavicon` - generates a favicon based on config/faviconDescription.json settings
 
 ## Generate component
 
