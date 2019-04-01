@@ -12,7 +12,7 @@ const instance = fractal.components.engine(hbs);
 // Novicell theme
 const novicellTheme = require('@frctl/mandelbrot')({
     //favicon: config.webPath +'favicon.ico',
-    styles: ['default', '/fractal/novicell-fractal-styles.css']
+    styles: ['default', '/fractal/styles/novicell-fractal-styles.css']
 });
 
 /* Set the title of the project */
