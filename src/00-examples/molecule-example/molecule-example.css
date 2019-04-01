@@ -10,7 +10,7 @@
     &:hover {
         .molecule-example__text {
             text-decoration: underline;
-        }    
+        }
     }
 
     &__text {

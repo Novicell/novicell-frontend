@@ -7,7 +7,14 @@ const fractal = require('@frctl/fractal').create();
 const hbs = require('@frctl/handlebars');
 const layouts = require('handlebars-layouts');
 
+/* Diable Bluebird warnings */
+const bluebird = require('bluebird');
+bluebird.config({
+    warnings: false,
+});
+
 const instance = fractal.components.engine(hbs);
+
 
 // Novicell theme
 const novicellTheme = require('@frctl/mandelbrot')({
