@@ -1,6 +1,6 @@
 const stylelint = require('stylelint');
 const stylelintConfig = require('./stylelint.config');
-const settings = require('../config');
+const settings = require('../../config');
 const rootFolder = settings.root_folder;
 const env = process.env.NODE_ENV || 'development';
 

@@ -4,7 +4,7 @@ const babel = require("@babel/core");
 const uglify = require("uglify-js").minify;
 
 // opt
-const postcssPlugins = require('../postcss.config').plugins;
+const postcssPlugins = require('../styles/postcss.config').plugins;
 const drupalOptions = require('./drupal.config.js').drupal || null;
 
 const fs = require('fs');

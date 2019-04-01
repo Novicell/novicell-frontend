@@ -2,7 +2,7 @@
 const fs = require('fs');
 const args = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
-const options = require('../config');
+const options = require('../../config');
 
 const log = console.log;
 

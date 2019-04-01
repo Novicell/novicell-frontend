@@ -9,7 +9,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Project options
-const options = require('../config');
+const options = require('../../config');
 const rootFolder = options.root_folder;
 const moduleDir = options.mainSettings.modulesDir;
 const env = process.env.NODE_ENV || 'development';
@@ -96,7 +96,7 @@ module.exports = {
                     emitWarning: true,
                     failonError: false,
                     fix: true,
-                    configFile: options.fullConfigsPath + '.eslintrc',
+                    configFile: options.fullConfigsPath + '/scripts/.eslintrc',
                 }
             },
             {
@@ -112,7 +112,7 @@ module.exports = {
                     loader: "postcss-loader", // compiles Sass to CSS
                     options: {
                         config: {
-                            path: options.fullConfigsPath
+                            path: options.fullConfigsPath + '/styles/'
                         }
                     }
                 }]

@@ -1,5 +1,5 @@
 const imagemin = require('imagemin');
-const settings = require('../config');
+const settings = require('../../config');
 const imagesDistFolderName = '/images';
 
 (async () => {

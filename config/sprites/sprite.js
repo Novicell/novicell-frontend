@@ -5,7 +5,7 @@ const mkdirp = require('mkdirp');
 const glob = require('glob');
 const File = require('vinyl');
 let args = require('minimist')(process.argv.slice(2));
-const settings = require('../config');
+const settings = require('../../config');
 const rootFolder = settings.root_folder;
 const cwd = path.resolve('assets/icons');
 

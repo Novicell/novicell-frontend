@@ -1,6 +1,6 @@
 const stylelint = require('stylelint');
 const stylelintConfig = require('./stylelint.config.js');
-const settings = require('../config');
+const settings = require('../../config');
 const rootFolder = settings.root_folder;
 const watch = require('glob-watcher');
 
