@@ -44,25 +44,24 @@ const spriteConfig = {
         symbol: true
     }
 };
-
 const spriter = new SVGSpriter(spriteConfig);
-
 // Compile the sprite
 /* eslint-disable */
 glob.glob(`${input}`, {
     cwd: cwd
 }, function (err, files) {
+    
     files.forEach(function (file) {
         // Create and add a vinyl file instance for each SVG
         spriter.add(
             new File({
-                path: input, // Absolute path to the SVG file
+                path: file, // Absolute path to the SVG file
                 base: cwd, // Base path (see `name` argument
                 contents: fs.readFileSync(file) // SVG file contents
             })
         );
     });
-
+    
     // Compile the sprite
     spriter.compile(function (error, result) {
         /* Write `result` files to disk (or do whatever with them ...) */
