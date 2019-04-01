@@ -9,7 +9,6 @@
     },
     "scripts": {
         "test": "echo Working...",
-        "postinstall" : "npm link",
         "fractal": "fractal start --sync",
         "fractal:build": "fractal build",
         "fonts": "cross-env-shell copyfiles -f \"assets/fonts/*\" $npm_package_config_DIST/fonts -V",
