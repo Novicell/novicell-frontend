@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+
 const fs = require('fs');
 const args = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
@@ -10,14 +11,14 @@ const componentsDir = options.componentsDir.main;
 
 // Templates
 function getAtomTemplate(name) {
-return `
+  return `
 <h3 class="title">{{ greeting }}</h3>
 <div class="{{ class }}">{{ introduction }}</div>
 `;
 }
 
 function getAtomJSON(name) {
-return `
+  return `
 {
     "title": "Component",
     "status": "prototype",
@@ -30,7 +31,7 @@ return `
 }
 
 function getMoleculeTemplate(name) {
-return `
+  return `
 <div class="">
     <h3>{{ greeting }}</h3>
     {{#if condition }}
@@ -48,7 +49,7 @@ return `
 }
 
 function getMoleculeJSON(name) {
-return `
+  return `
 {
     "title": "Molecule",
     "status": "prototype",
@@ -68,8 +69,9 @@ return `
 }
 `;
 }
+
 function getOrganismTemplate(name) {
-return `
+  return `
 <div class="container">
     <div class="row">
         <div class="">
@@ -84,7 +86,7 @@ return `
 }
 
 function getOrganismJSON(name) {
-return `
+  return `
 {
     "title": "Organism",
     "status": "prototype",
@@ -107,7 +109,7 @@ return `
 }
 
 function getPageTemplate(name) {
-return `
+  return `
 {{ render '@header' }}
 
 <div class="">
@@ -121,7 +123,7 @@ return `
 }
 
 function getPageJSON(name) {
-return `
+  return `
 {
     "title": "Page",
     "status": "prototype",
@@ -136,41 +138,40 @@ return `
 // Helpers
 function createDir(dir) {
   // Check if the folder exits, if not - create one
+  console.log(dir);
+
   if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
+    checkAndCreateDestinationPath(dir);
     log(chalk.bgGreen(`Created folder in ${dir}`));
   }
 }
 
-// function appendTemplateToMaster(name) {
-//   const filePath = './pages/master.vue';
-//   const newString = `
-// const components = {
-//   ${name}: () => import('@/components/templates/${name}/${name}'),
-// `;
-//   // Start by reading the file content
-//   let content = fs.readFileSync(filePath, 'utf8');
-//   content = content.replace('const components = {', newString);
+function checkAndCreateDestinationPath(fileDestination) {
+  const dirPath = fileDestination.split('/');
+  dirPath.forEach((element, index) => {
+    const joined = dirPath.slice(0, index + 1).join('/');
+    if (!fs.existsSync(joined)) {
+      fs.mkdirSync(joined);
+    }
+  });
+}
 
-//   fs.writeFile(filePath, content, (err) => {
-//     if (err) throw err;
-//     console.log('Saved!');
-//   });
-// }
-const writeFile = function(filetype, dir, data, name) {
-    fs.writeFile(`${dir}/${name}.${filetype}`, data, { flag: 'wx' }, (err) => {
-        if (err) {
-          log(chalk.bgRed(`Atom already exits for ${name}`));
-          return;
-        }
-        log(chalk.bgGreen(`${name}.${filetype} was created`));
-      });
+const writeFile = function (filetype, dir, data, name) {
+  fs.writeFile(`${dir}/${name}.${filetype}`, data, {
+    flag: 'wx'
+  }, (err) => {
+    if (err) {
+      log(chalk.bgRed(`File already exits for ${name}`));
+      return;
+    }
+    log(chalk.bgGreen(`${name}.${filetype} was created`));
+  });
 }
 const dataCss = '/* Insert css here */';
 
 function createAtom(name) {
-    const dir = `${componentsDir}/${options.componentsDir.atoms}/${name}`;
-    createDir(dir);
+  const dir = `${componentsDir}/${options.componentsDir.atoms}/${name}`;
+  createDir(dir);
   // Create the hbs.file
   writeFile('hbs', dir, getAtomTemplate(name), name);
   writeFile('config.json', dir, getAtomJSON(name), name);
