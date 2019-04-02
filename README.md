@@ -94,7 +94,7 @@ a - atom, m - molecule, o - organism, p - page;
 ## Additional
 If you need more information, we have a Wiki that contains in-depth explanations:
 -   [Home](https://github.com/Novicell/novicell-frontend/wiki)
--   [Adding new files](https://github.com/Novicell/novicell-frontend/wiki/Adding-a-new-files)
+-   [Adding new files](https://github.com/Novicell/novicell-frontend/wiki/Adding-new-files)
 -   [Atomic guidelines](https://github.com/Novicell/novicell-frontend/wiki/Atomic-guidelines)
 -   [BEM](https://github.com/Novicell/novicell-frontend/wiki/BEM)
 -   [CSS (PostCSS)](https://github.com/Novicell/novicell-frontend/wiki/CSS-(PostCSS))
