@@ -101,7 +101,7 @@ hr {
    */
 
 pre {
-    font-family: monospace, monospace;
+    font-family: monospace;
 
     /* 1 */
     font-size: 1em;
@@ -150,16 +150,12 @@ abbr[title] {
 b,
 strong {
     font-weight: inherit;
+    font-weight: bolder;
 }
 
 /**
    * Add the correct font weight in Chrome, Edge, and Safari.
    */
-
-b,
-strong {
-    font-weight: bolder;
-}
 
 /**
    * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -169,13 +165,13 @@ strong {
 code,
 kbd,
 samp {
-    font-family: monospace, monospace;
-
-    /* 1 */
+    font-family: monospace;
     font-size: 1em;
-
-    /* 2 */
 }
+
+/* 1 */
+
+/* 2 */
 
 /**
    * Add the correct font style in Android 4.3-.
@@ -315,11 +311,10 @@ select {
    * 2. Correct the inability to style clickable types in iOS and Safari.
    */
 
-button,
-html [type="button"],
-
 /* 1 */
 
+button,
+html [type="button"],
 [type="reset"],
 [type="submit"] {
     -webkit-appearance: button;
@@ -477,10 +472,9 @@ textarea {
    * 1. Add the correct display in Edge, IE, and Firefox.
    */
 
-details,
-
 /* 1 */
 
+details,
 menu {
     display: block;
 }
