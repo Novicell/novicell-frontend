@@ -2,9 +2,11 @@ module.exports = {
     "extends": "stylelint-config-standard",
     "ignoreFiles": ["./node_modules/**/*.css"],
     "rules": {
+        "no-descending-specificity": null,
         "block-no-empty": true,
         "color-no-invalid-hex": true,
         "selector-max-class": 4,
+        "selector-max-empty-lines": 0,
         "declaration-no-important": true,
         "unit-no-unknown": true,
         "property-no-unknown": [
