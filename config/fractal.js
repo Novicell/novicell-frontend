@@ -31,7 +31,7 @@ fractal.components.set('path', config.componentsDir.main);
 // set Layout for all components:
 fractal.components.set('default.preview', '@preview');
 /* Tell Fractal where the documentation pages will live */
-fractal.docs.set('path', config.componentsDir.main + 'docs');
+fractal.docs.set('path', config.componentsDir.main + '/docs');
 fractal.docs.set('default.preview', '@preview');
 fractal.docs.set('ext', 'hbs');
 // Project config
