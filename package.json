@@ -101,9 +101,12 @@
     "yargs": "~12.0.2"
   },
   "dependencies": {
+    "flatpickr": "4.5.2",
     "flickity": "2.1.2",
     "novicell-cookie-info": "2.0.4",
     "novicell-lazyload": "1.2.1",
+    "parallax-js": "3.1.0",
+    "priority-nav": "1.0.13",
     "scrollprogress": "3.0.2",
     "svg4everybody": "2.1.9",
     "priority-nav": "1.0.13",

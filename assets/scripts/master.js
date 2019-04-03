@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     novicell.parallaxWrapper.init();
     novicell.animateOnScroll.init();
     novicell.duotone.init();
+    novicell.datepicker.init();
     novicell.searchFilter.init();
 
     //SetTimeout to fix latency with loaded elements in e.g. Vue components

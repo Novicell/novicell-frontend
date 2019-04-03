@@ -1,0 +1,43 @@
+.datepicker {
+    display: flex;
+    flex-direction: column;
+
+    @media (--viewport-ms-min) {
+        flex-direction: row;
+    }
+
+    &__input {
+        margin-bottom: 15px;
+
+        @media (--viewport-ms-min) {
+            margin-bottom: 0;
+            margin-right: 15px;
+        }
+    }
+}
+
+.flatpickr-calendar {
+    .flatpickr-day.endRange,
+    .flatpickr-day.endRange.inRange,
+    .flatpickr-day.endRange.nextMonthDay,
+    .flatpickr-day.endRange.prevMonthDay,
+    .flatpickr-day.endRange:focus,
+    .flatpickr-day.endRange:hover,
+    .flatpickr-day.selected,
+    .flatpickr-day.selected.inRange,
+    .flatpickr-day.selected.nextMonthDay,
+    .flatpickr-day.selected.prevMonthDay,
+    .flatpickr-day.selected:focus,
+    .flatpickr-day.selected:hover,
+    .flatpickr-day.startRange,
+    .flatpickr-day.startRange.inRange,
+    .flatpickr-day.startRange.nextMonthDay,
+    .flatpickr-day.startRange.prevMonthDay,
+    .flatpickr-day.startRange:focus,
+    .flatpickr-day.startRange:hover {
+        background: var(--color-primary);
+        color: var(--color-white);
+        border-color: var(--color-primary);
+        box-shadow: none;
+    }
+}
