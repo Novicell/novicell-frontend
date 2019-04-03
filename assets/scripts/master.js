@@ -18,7 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     novicell.scrollProgressBar.init();
     novicell.navigation.init();
     novicell.navTrigger.init();
+    novicell.pageheaderVideo.init();
     novicell.pageheaderVideoYoutube.init();
+    novicell.pageheaderVideoFullscreenSelfHost.init();
+    novicell.pageheaderVideoFullscreenYT.init();
+    novicell.pageheaderVideoFullscreenVimeo.init();
     novicell.pageheaderDots.init();
     novicell.parallaxWrapper.init();
     novicell.animateOnScroll.init();

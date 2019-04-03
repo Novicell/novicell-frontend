@@ -4,17 +4,18 @@ var novicell = novicell || {};
 
 novicell.pageheaderVideoYoutube =
     novicell.pageheaderVideoYoutube ||
-    new function() {
+    new function () {
         var videoStart = 0;
         var player;
         var youtubeId;
+        const pageheaderBackground = document.querySelector(".pageheader-video");
 
-        this.init = function() {
+        this.init = function () {
             const youtubeVideoWrapper = document.querySelector(".tv");
             if (youtubeVideoWrapper != null) {
                 youtubeId = document
                     .querySelector(".video-wrapper")
-                    .getAttribute("data-youtube-id");
+                    .getAttribute("youtube-id");
                 var tag = document.createElement("script");
                 tag.src = "https://www.youtube.com/player_api";
 
@@ -25,13 +26,13 @@ novicell.pageheaderVideoYoutube =
             }
         };
 
-        this.onPlayerReady = function(event) {
+        this.onPlayerReady = function (event) {
             novicell.pageheaderVideoYoutube.vidRescale();
             event.target.mute();
             event.target.seekTo(videoStart);
         };
 
-        this.onPlayerStateChange = function(e) {
+        this.onPlayerStateChange = function (e) {
             var tv2 = document.getElementById("player");
             if (e.data === 1) {
                 tv2.classList.add("active");
@@ -40,22 +41,21 @@ novicell.pageheaderVideoYoutube =
             }
         };
 
-        this.vidRescale = function() {
+        this.vidRescale = function () {
             var tvScreen = document.querySelector(".tv .screen");
             if (tvScreen != null) {
-                var w = window.innerWidth + 200,
-                    h = window.innerHeight + 200;
-                if (w / h > 16 / 9) {
-                    player.setSize(w, (w / 16) * 9);
-                    tvScreen.style.left = "0px";
-                } else {
-                    player.setSize((h / 9) * 16, h);
-                    tvScreen.style.left = -(tvScreen.offsetWidth - w) / 2;
-                }
+                var w = window.innerWidth;
+                player.setSize(w, (w / 16) * 9);
             }
         };
-
-        this.onYouTubeIframeAPIReady = function() {
+        this.onErrorResponse = function (event) {
+            // In case of bad response, kill the player and add the background image.
+            // Currently, the url for the BG image is stored on the pageheader-video wrapper itself.
+            // An alternative would be having a css class added that holds a background image attribute and the path value already, and simply append the classname to the element
+            pageheaderBackground.style.backgroundImage = `url(${pageheaderBackground.dataset.backgroundImage})`;
+            event.target.destroy();
+        };
+        this.onYouTubeIframeAPIReady = function () {
             player = new YT.Player("player", {
                 videoId: youtubeId,
                 playerVars: {
@@ -64,7 +64,7 @@ novicell.pageheaderVideoYoutube =
                     loop: 1,
                     modestbranding: 1,
                     rel: 0,
-                    showinfo: 0,
+                    showinfo: 0, //This is deprecated apparently
                     controls: 0,
                     disablekb: 1,
                     enablejsapi: 0,
@@ -72,8 +72,8 @@ novicell.pageheaderVideoYoutube =
                 },
                 events: {
                     onReady: novicell.pageheaderVideoYoutube.onPlayerReady,
-                    onStateChange:
-                        novicell.pageheaderVideoYoutube.onPlayerStateChange
+                    onStateChange: novicell.pageheaderVideoYoutube.onPlayerStateChange,
+                    onError: novicell.pageheaderVideoYoutube.onErrorResponse
                 }
             });
         };
@@ -85,7 +85,7 @@ function onYouTubeIframeAPIReady() {
 
 window.addEventListener(
     "load",
-    function() {
+    function () {
         novicell.pageheaderVideoYoutube.vidRescale();
     },
     true
@@ -93,7 +93,7 @@ window.addEventListener(
 
 window.addEventListener(
     "resize",
-    function() {
+    function () {
         novicell.pageheaderVideoYoutube.vidRescale();
     },
     true

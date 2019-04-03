@@ -1,0 +1,58 @@
+/**
+ * Component: pageheader-video-fullscreen
+ */
+.background-fullscreen {
+    /* Position it relative if you want to be able to scroll below the video */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    background-size: cover;
+    background-image: none;
+
+    &--idle {
+        background-image: url("/dist/images/placeholder-images/hero--mona-eendra-313518.jpg");
+    }
+
+    &--loading {
+        background-image: url("/dist/images/outro_2-loader.gif");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    & iframe {
+        width: 100vw;
+        height: 56.25vw;
+        /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+        min-height: 100vh;
+        min-width: 190vh;
+        /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    &__foreground {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-size: 1.7em;
+        text-decoration: overline underline;
+    }
+}

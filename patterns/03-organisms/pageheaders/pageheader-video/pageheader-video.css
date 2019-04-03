@@ -16,14 +16,16 @@
     overflow: hidden;
     background-size: cover;
 
-    @media (--viewport-sm-min) {
+    @media (--viewport-lg-min) {
         height: var(--video-height);
     }
 
-    &__video {
-        display: none;
+    @media (--viewport-sm-max) {
+        background-image: url("/dist/images/placeholder-images/hero--mona-eendra-313518.jpg");
+    }
 
-        @media (--viewport-sm-min) {
+    &__video {
+        @media (--viewport-xs-min) {
             display: block;
             position: absolute;
             top: 50%;
@@ -71,23 +73,26 @@
 }
 
 .vimeo-wrapper iframe {
-    width: 100vw;
-    height: 56.25vw;
-    /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-    min-height: 100vh;
-    min-width: 177.77vh;
-    /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: none;
+
+    @media (--viewport-sm-min) {
+        display: block;
+        width: 100vw;
+        height: 56.25vw;
+        /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
 }
 
 //youtube
 .video-wrapper {
     display: none;
 
-    @media (--viewport-sm-min) {
+    @media (--viewport-xs-min) {
         display: block;
         position: absolute;
         width: 100%;
@@ -100,6 +105,7 @@
 
 .tv {
     display: none;
+    pointer-events: none;
 
     @media (--viewport-sm-min) {
         display: block;
