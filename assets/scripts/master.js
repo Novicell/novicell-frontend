@@ -8,8 +8,8 @@ var novicell = novicell || {};
 var projectName = projectName || {};
 
 // Document ready
-document.addEventListener('DOMContentLoaded', function () {
-    novicell.validate.init(); // Init Validation
+document.addEventListener('DOMContentLoaded', function() {
+    novicell.validation.init(); // Init Validation
     novicell.inputMasking.init(); //Init input masking
     novicell.persistentField.init(); //Init persistentField
     novicell.topbarRelated.init();
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     novicell.parallaxWrapper.init();
     novicell.animateOnScroll.init();
     novicell.duotone.init();
+    novicell.datepicker.init();
     novicell.searchFilter.init();
     novicell.imageZoom.init();
 

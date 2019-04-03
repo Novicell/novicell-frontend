@@ -11,6 +11,7 @@
 /* Node modules */
 @import '../../node_modules/priority-nav/dist/priority-nav-core.css';
 @import '../../node_modules/flickity/dist/flickity.css';
+@import '../../node_modules/flatpickr/dist/flatpickr.css';
 @import '../../node_modules/aos/dist/aos.css';
 @import '../../node_modules/image-zoom/index.css';
 
@@ -24,6 +25,7 @@
 @import '../01-atoms/headings/heading-page/heading-page.css';
 @import '../01-atoms/forms/input/input.css';
 @import '../01-atoms/forms/checkbox/checkbox.css';
+@import '../01-atoms/forms/datepicker/datepicker.css';
 @import '../01-atoms/forms/radio/radio.css';
 @import '../01-atoms/forms/label/label.css';
 @import '../01-atoms/forms/select/select.css';
@@ -63,6 +65,7 @@
 @import '../02-molecules/search-filter/search-filter.css';
 @import '../02-molecules/pageheader-content/pageheader-content.css';
 /* @import '../02-molecules/animate-on-scroll-wrapper/animate-on-scroll-wrapper.css' */
+@import '../02-molecules/overlap-item/overlap-item.css';
 
 /* Organisms */
 @import '../03-organisms/footer/footer.css';
@@ -76,7 +79,10 @@
 @import '../03-organisms/pageheaders/pageheader-slider/pageheader-slider.css';
 @import '../03-organisms/pageheaders/pageheader-video/pageheader-video.css';
 @import '../03-organisms/pageheaders/pageheader-dots/pageheader-dots.css';
-@import '../02-molecules/overlap-item/overlap-item.css';
+
+/* Pages */
+@import '../04-pages/overlapping-sections/overlapping-sections.css';
+
 .selector,
 .selector-secondary,
 .selector[type='text'] {
