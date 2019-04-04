@@ -71,6 +71,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "tbb2",
+      "name": "tbb2",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5879301?v=4",
+      "profile": "https://github.com/tbb2",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
