@@ -134,6 +134,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "emilras",
+      "name": "Emil Rasmussen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1532192?v=4",
+      "profile": "http://noget.net",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
