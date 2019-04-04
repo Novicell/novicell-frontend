@@ -1,5 +1,5 @@
 # Novicell Frontend
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cd7530b5-4978-44cf-8719-be271a0b157a/deploy-status)](https://app.netlify.com/sites/novicell-frontend/deploys)
 
@@ -120,7 +120,7 @@ The Novicell Frontend is licensed under the MIT license. (http://opensource.org/
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://github.com/ankeris"><img src="https://avatars2.githubusercontent.com/u/31132643?v=4" width="100px;" alt="Juozas Rastenis"/><br /><sub><b>Juozas Rastenis</b></sub></a><br /><a href="https://github.com/Novicell/Novicell/commits?author=ankeris" title="Code">💻</a></td><td align="center"><a href="http://www.novicell.dk"><img src="https://avatars1.githubusercontent.com/u/1523780?v=4" width="100px;" alt="Danni Larsen"/><br /><sub><b>Danni Larsen</b></sub></a><br /><a href="https://github.com/Novicell/Novicell/commits?author=Dan9boi" title="Code">💻</a></td><td align="center"><a href="https://github.com/Henrikschytze"><img src="https://avatars3.githubusercontent.com/u/33839074?v=4" width="100px;" alt="Henrik Schütze"/><br /><sub><b>Henrik Schütze</b></sub></a><br /><a href="https://github.com/Novicell/Novicell/commits?author=Henrikschytze" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/ankeris"><img src="https://avatars2.githubusercontent.com/u/31132643?v=4" width="100px;" alt="Juozas Rastenis"/><br /><sub><b>Juozas Rastenis</b></sub></a><br /><a href="https://github.com/Novicell/Novicell/commits?author=ankeris" title="Code">💻</a></td><td align="center"><a href="http://www.novicell.dk"><img src="https://avatars1.githubusercontent.com/u/1523780?v=4" width="100px;" alt="Danni Larsen"/><br /><sub><b>Danni Larsen</b></sub></a><br /><a href="https://github.com/Novicell/Novicell/commits?author=Dan9boi" title="Code">💻</a></td><td align="center"><a href="https://github.com/Henrikschytze"><img src="https://avatars3.githubusercontent.com/u/33839074?v=4" width="100px;" alt="Henrik Schütze"/><br /><sub><b>Henrik Schütze</b></sub></a><br /><a href="https://github.com/Novicell/Novicell/commits?author=Henrikschytze" title="Code">💻</a></td><td align="center"><a href="https://github.com/heense"><img src="https://avatars1.githubusercontent.com/u/8288150?v=4" width="100px;" alt="Henrik Madsen"/><br /><sub><b>Henrik Madsen</b></sub></a><br /><a href="https://github.com/Novicell/Novicell/commits?author=heense" title="Code">💻</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
