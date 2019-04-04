@@ -10,21 +10,23 @@
   "commit": true,
   "contributors": [
     {
-      "login": "ankeris",
-      "name": "Juozas Rastenis",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/31132643?v=4",
-      "profile": "https://github.com/ankeris",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
       "login": "Dan9boi",
       "name": "Danni Larsen",
       "avatar_url": "https://avatars1.githubusercontent.com/u/1523780?v=4",
       "profile": "http://www.novicell.dk",
       "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "ankeris",
+      "name": "Juozas Rastenis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/31132643?v=4",
+      "profile": "https://github.com/ankeris",
+      "contributions": [
+        "code",
+        "ideas",
+        "infra"
       ]
     },
     {
