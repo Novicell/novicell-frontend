@@ -1,0 +1,109 @@
+{
+  "projectName": "Novicell",
+  "projectOwner": "Novicell",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "kentcdodds",
+      "name": "Kent C. Dodds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1500684?v=3",
+      "profile": "https://kentcdodds.com",
+      "contributions": [
+        "question",
+        "doc",
+        "review",
+        "talk"
+      ]
+    },
+    {
+      "login": "jfmengels",
+      "name": "Jeroen Engels",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3869412?v=3",
+      "profile": "https://github.com/jfmengels",
+      "contributions": [
+        "doc",
+        "review",
+        "tool"
+      ]
+    },
+    {
+      "login": "jakebolam",
+      "name": "Jake Bolam",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3534236?v=4",
+      "profile": "https://jakebolam.com",
+      "contributions": [
+        "doc",
+        "tool",
+        "infra",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "tbenning",
+      "name": "tbenning",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7265547?v=4",
+      "profile": "https://github.com/tbenning",
+      "contributions": [
+        "design",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "sinchang",
+      "name": "Jeff Wen",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3297859?v=4",
+      "profile": "https://sinchang.me",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "Berkmann18",
+      "name": "Maximilian Berkmann",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8260834?v=4",
+      "profile": "http://maxcubing.wordpress.com",
+      "contributions": [
+        "translation",
+        "doc",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "MatheusRV",
+      "name": "Matheus Rocha Vieira",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/23284276?v=4",
+      "profile": "http://matheu.srv.br",
+      "contributions": [
+        "translation",
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "robertlluberes",
+      "name": "Robert Lluberes",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13991439?v=4",
+      "profile": "https://robertlluberes.com",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Jongjineee",
+      "name": "이종진",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/26620470?v=4",
+      "profile": "https://jongjineee.github.io",
+      "contributions": [
+        "doc",
+        "translation"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

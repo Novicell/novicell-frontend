@@ -1,8 +1,13 @@
 {
     "name": "novicell-frontend",
+    "description": "Novicells Default Frontend Package - used in all Novicell related projects as a base front-end framework.",
     "version": "5.0.0",
-    "description": "Webpack and NPM scripts",
-    "private": true,
+    "homepage": "http://www.novicell.dk",
+    "author": "Novicell",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Novicell/novicell-frontend.git"
+    },
     "config": {
         "DIST": "dist",
         "CSS_MODULES": "src/Modules/*.css"
@@ -31,7 +36,6 @@
     "fractal": {
         "main": "config/fractal.js"
     },
-    "author": "Novicell",
     "license": "MIT",
     "devDependencies": {
         "@babel/cli": "7.2.3",
