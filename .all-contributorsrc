@@ -1,0 +1,86 @@
+{
+  "projectName": "Novicell-Frontend",
+  "projectOwner": "Novicell",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 70,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "ankeris",
+      "name": "Juozas Rastenis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/31132643?v=4",
+      "profile": "https://github.com/ankeris",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jhavmoeller",
+      "name": "Jonas Havmøller",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16593791?v=4",
+      "profile": "https://github.com/jhavmoeller",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Dan9boi",
+      "name": "Danni Larsen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1523780?v=4",
+      "profile": "http://www.novicell.dk",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "shp-novicell",
+      "name": "shp-novicell",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/19607667?v=4",
+      "profile": "https://github.com/shp-novicell",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "heense",
+      "name": "Henrik Madsen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8288150?v=4",
+      "profile": "https://github.com/heense",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Bjornnyborg",
+      "name": "Bjornnyborg",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5557038?v=4",
+      "profile": "https://github.com/Bjornnyborg",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "emilankersen",
+      "name": "emilankersen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6448879?v=4",
+      "profile": "https://github.com/emilankersen",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "MKAndersen",
+      "name": "MKAndersen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/19702371?v=4",
+      "profile": "https://github.com/MKAndersen",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 8
+}

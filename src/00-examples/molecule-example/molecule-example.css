@@ -1,0 +1,19 @@
+/*
+ * Molecule Example
+ */
+
+:root {
+    --molecule-example__text-color: var(--color-berry);
+}
+
+.molecule-example {
+    &:hover {
+        .molecule-example__text {
+            text-decoration: underline;
+        }
+    }
+
+    &__text {
+        color: var(--molecule-example__text-color);
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    {{!-- Fonts --}}
+    {{!-- <link rel="preload" as="font" href="{{ path '/dist/fonts/3212B2_0_0.woff2' }}" type="font/woff2" crossorigin />
+
+    <link rel="preload" as="font" href="{{ path '/dist/fonts/3212B2_0_0.woff2' }}" type="font/woff2" crossorigin /> --}}
+
+    <link media="all" rel="stylesheet" href="{{ _target.css }}" />
+
+    {{!-- Styles --}}
+    <link media="all" rel="stylesheet" href="{{ path '/dist/css/master.min.css' }}" />  
+    <title>{{ _target.title }}</title>
+</head>
+
+<body id="site">
+    {{{ yield }}}
+    <script defer src="{{ path '/dist/scripts/manifest.bundle.js' }}"></script>
+    <script defer src="{{ path '/dist/scripts/vendor.bundle.js' }}"></script>
+    <script defer src="{{ path '/dist/scripts/app.bundle.js' }}"></script>
+</body>
+
+</html>

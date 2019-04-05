@@ -1,0 +1,11 @@
+/*
+ * Atom Example
+ */
+
+:root {
+    --atom-example__text-color: var(--color-plum);
+}
+
+.atom-example {
+    color: var(--atom-example__text-color);
+}
