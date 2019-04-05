@@ -114,7 +114,7 @@ Please take a moment to review our [contribution guidelines](https://github.com/
 
 The Novicell Frontend is licensed under the MIT license. (http://opensource.org/licenses/MIT)
 
-## Contributors
+## Collaborators
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
