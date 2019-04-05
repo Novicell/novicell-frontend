@@ -1,12 +1,12 @@
 {
-  "projectName": "Novicell",
+  "projectName": "Novicell-Frontend",
   "projectOwner": "Novicell",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
     "README.md"
   ],
-  "imageSize": 100,
+  "imageSize": 70,
   "commit": true,
   "contributors": [
     {
@@ -82,5 +82,5 @@
       ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 8
 }
