@@ -100,8 +100,7 @@ If you need more information, we have a Wiki that contains in-depth explanations
 -   [Fractal guidelines](https://github.com/Novicell/novicell-frontend/wiki/Fractal-guidelines)
 -   [FAQ](https://github.com/Novicell/novicell-frontend/wiki/Frequently-asked-questions)
 -   [HTML + Handlebars](https://github.com/Novicell/novicell-frontend/wiki/HTML-and-Handlebars)
--   [Webpack](#)
--   [VueJS Usage](#)
+-   [VueJS Usage](https://github.com/Novicell/novicell-frontend/wiki/VueJS-in-the-setup)
 -   [Prettier extension](https://github.com/Novicell/novicell-frontend/wiki/Prettier-extension-on-VSCode)
 -   [Netlify](https://github.com/Novicell/novicell-frontend/wiki/Setting-up-Netlify-CI)
 
