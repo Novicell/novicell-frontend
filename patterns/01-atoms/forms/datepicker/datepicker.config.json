@@ -1,9 +1,0 @@
-{
-    "title": "Datepicker",
-    "status": "prototype",
-    "context": {
-        "name": "datepicker",
-        "id": "datepickerId",
-        "label": "This is a datepicker"
-    }
-}
