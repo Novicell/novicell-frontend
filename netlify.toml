@@ -9,4 +9,4 @@
 [build]
   base    = ""
   publish = "build/"
-  command = "npm run fractal:build && npm run build:prod"
+  command = "npm run build:prod && npm run fractal:build"
