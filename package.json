@@ -10,7 +10,7 @@
     },
     "config": {
         "DIST": "dist",
-        "CSS_MODULES": "src/Modules/*.css"
+        "CSS_MODULES": "src/modules/*.css"
     },
     "scripts": {
         "test": "echo Working...",
