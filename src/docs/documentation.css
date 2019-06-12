@@ -1,0 +1,24 @@
+.Document {
+    padding: 0;
+}
+
+.Document-header {
+    display: none;
+}
+
+.Prose {
+    max-width: 100%;
+
+    h1 {
+        font-size: 3vw;
+    }
+}
+
+.Header {
+    position: fixed;
+    width: 100%;
+}
+
+.Prose > *:not(:last-child) {
+    margin-bottom: 0;
+}

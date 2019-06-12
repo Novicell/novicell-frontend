@@ -1,304 +1,124 @@
 # Novicell Frontend
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cd7530b5-4978-44cf-8719-be271a0b157a/deploy-status)](https://app.netlify.com/sites/novicell-frontend/deploys)
 
-Novicell Default Frontend package is a framework for your frontend setup, and a Gulp based boilerplate for optimizing your frontend flow. It includes a BEM'ified version of Bootstrap's bare necessities (LESS), for starting your new website's development.
-When setup, it also helps you optimize images, combine SVGs to a sprite, compiling LESS to CSS and minifying Javascript.
+Novicell Default Frontend package is a framework for your frontend setup. This setup helps developer by automizing frontend workflow using certain technologies like NPM Scripts and Webpack. 
+It includes PostCSS, Stylelint, Webpack, ESLint, Babel, Fractal.
+When setup, it also helps you optimize images, combine SVGs to a sprite, generate favicons, minifying/optimizing CSS and Javascript.
 
-### Table of content
-* [Quick start](#quick-start)
-* [Installation](#installation)
-* [Setup](#setup)
-* [Contribution](#contribution)
-* [What is GULP](#what-is-gulp)
-* [How to use GULP](#how-to-use-gulp)
-* [Tasks in this package](#tasks-in-this-package)
-* [How to use SVG sprite sheet](#how-to-use-svg-sprite-sheet)
-* [LESS components](#less-components)
-  * [The grid](#the-grid)
-  * [Buttons](#buttons)
-  * [Forms](#forms)
-  * [Tables](#tables)
-* [JS components](#js-components)
-  * [To be done](#to-be-done)
-  * [Lazyload images](#lazyload-images)
-  * [Lazyload fonts](#lazyload-fonts)
-  * [Third party plugins](#third-party-plugins)
-* [Notes](#notes)
-* [Requirements](#requirements)
-* [License](#license)
+## Table of content
 
-## Quick start
+-   [Quick start](#setup)
+-   [Configuration and paths](#configuration-and-paths)
+-   [NPM Scripts](#npm-scripts)
+-   [Generate component](#generate-component)
+-   [Additional](#additional)
+-   [Contribution](#contribution)
+-   [License](#license)
 
-Browse to your project folder and clone the repo `git clone https://github.com/novicell/novicell-frontend.git`. Then run `npm install` and then run `gulp` for the build proccess to start. Run `gulp watch` to start watching filechanges and continuous copilation.
+## Setup
 
+-   Download and install Node.js min. v. 8.9.2 (https://nodejs.org/en/download/)
 
-##  Installation
+1. Clone the repo `git clone https://github.com/Novicell/novicell-frontend.git`. 
+2. Run `npm install` to install all dependencies.
+3. Insert paths/variables to config.js and package.json. [Configuration and paths](#configuration-and-paths)
+4. Run `npm run build:dev` to build the dist folder with all the minified/optimized files. 
+5. Run `npm run dev` to start watching file changes and continuous copilation.
 
-- Download and install Node.js v. 4.x.x (https://nodejs.org/download/)
-- Download and install Git (http://git-scm.com/downloads)
-  Remember to check "Git bash here" in context menu options
+## Configuration and paths
 
-  To check if node is working, go to Gitbash / Terminal and type `node -v`
-  If you get a version number, you'r good to go :+1:
+The whole automized build system looks for paths and variables in order to work dynamically with different projects.
+Therefore, when starting new project edit options in 2 files (they are both in root directory):
+* `config.js`
+* `package.json`
 
-##  Setup
+config.js:
+```js
+const dist = '/dist/'; // /dist by default. Folder where all the built files will go to (minified/optimized/compiled)
+const sourceRootFolder = '/src/'; // /src by default. Folder where ATOM modules belong
+const modulesDir = '/src/Modules/**/*.js'; // Where JavaScript files should be placed. Add CSS files here if you want them as separate bundle
+const assetsDir = '/assets/'; // Wheer you keep images, fonts, icons...
+```
 
-First navigate to your website and install novicell frontend package:
+Look for "config" field in package.json and fill in:
+```json
+    "config": {
+        "DIST": "dist",
+        "CSS_MODULES": "src/Modules/*.css" 
+    },
+```
 
-    cd "c:\Visual studio projects\project-name\Project.Website"
-    git clone https://github.com/Novicell/novicell-frontend.git
-    npm install
+## NPM Scripts
+
+These are most often used scripts:
+* for development: `npm run dev` and `npm run build:dev`
+* for production: `npm run prod` and `npm run build:prod`
+
+But there are more available in this package (add `npm run` before script name):
+-   `fractal` - Runs fractal
+-   `fractal:build` - Builds static site
+-   `clean` - Deletes the files/directories defined in: `gulp/config.js > pathsToClean`
+-   `fonts` - Copies the fonts defined in: `config.js` to `dist`
+-   `images` - Minifies images defined in: `config.js` to `dist/images`
+-   `sprites` - Minifies all sprites from `assets/icons` to `dist/icons`.
+-   `styles` - Minifies/lints and bundles CSS files defined in: `src/Modules` to `dist/styles`
+-   `webpack` - Minifies/optimizes/lints and bundles JS files defined in: `src/Modules` to `dist/scripts`
+-   `watch:styles` - Automatically bundles CSS changes while developing
+-   `watch:webpack` - Automatically bundles JS changes while developing
+-   `deploy` - Uploads file via FTP, configuration can be found in `gulp/config.js`
+-   `dev` - webpack:watch + styles:watch + fractal
+-   `start` - Equal to `dev`
+-   `prod` - Same as dev but in production (extra optimization) but slower build,
+-   `fix` - Fixes all possible linting for JavaScript
+-   `buildDrupal` - (For drupal projects) Bundles JavaScript and CSS into same location
+-   `generateFavicon` - generates a favicon based on config/favicon/faviconDescription.json settings
+
+## Generate component
+
+1. To allow generating components write: `npm link` in the root dir. (only have to do it once)
+2. Run 
+```
+createComponent -t a -n testName
+```
+
+a - atom, m - molecule, o - organism, p - page;
+```bash
+-t a/m/o/p # choose one from these
+```
+
+```bash
+-n # name of component
+```
+
+## Additional
+If you need more information, we have a Wiki that contains in-depth explanations:
+-   [Home](https://github.com/Novicell/novicell-frontend/wiki)
+-   [Adding new files](https://github.com/Novicell/novicell-frontend/wiki/Adding-new-files)
+-   [Atomic guidelines](https://github.com/Novicell/novicell-frontend/wiki/Atomic-guidelines)
+-   [BEM](https://github.com/Novicell/novicell-frontend/wiki/BEM)
+-   [CSS (PostCSS)](https://github.com/Novicell/novicell-frontend/wiki/CSS-(PostCSS))
+-   [Fractal guidelines](https://github.com/Novicell/novicell-frontend/wiki/Fractal-guidelines)
+-   [FAQ](https://github.com/Novicell/novicell-frontend/wiki/Frequently-asked-questions)
+-   [HTML + Handlebars](https://github.com/Novicell/novicell-frontend/wiki/HTML-and-Handlebars)
+-   [VueJS Usage](https://github.com/Novicell/novicell-frontend/wiki/VueJS-in-the-setup)
+-   [Prettier extension](https://github.com/Novicell/novicell-frontend/wiki/Prettier-extension-on-VSCode)
+-   [Netlify](https://github.com/Novicell/novicell-frontend/wiki/Setting-up-Netlify-CI)
 
 ## Contribution
 
 Looking to contribute something? **Here's how you can help.**
 Please take a moment to review our [contribution guidelines](https://github.com/Novicell/novicell-frontend/wiki/Contribution-guidelines) in order to make the contribution process easy and effective for everyone involved.
 
-## What is GULP
-
-GULP is a streaming build system - or short for:
-
-"I'll take care of minifiyng the images, scripts, styles and icons.
-Now you just focus on doing what you do best: CODE!"
-
-## How to use GULP
-
-First navigate to your website
-
-    cd c:\"Visual studio projects"\project-name\Project.Website
-
-* To build whats already in there (runs the build task): `gulp`
-* To never touch the cmd window again (runs the watch task): `gulp watch`
-* To Stop/Restart GULP: `CTRL + c`
-
-All tasks can be run like: `gulp <task name>`.
-
-## Tasks in this package
-
-The following tasks are available:
-
-* `build` - Runs all the tasks defined in: gulp-config.json > tasksToBuild
-* `clean` - Deletes the files/directories defined in: gulp-config.json > pathsToClean
-* `rebuild` - Runs the clean task, and then the build task.
-* `styles` -  Minifies and bundles CSS files defined in: gulp-config.json > bundles > {bundleName} > styles
-* `themes` -  Minifies and bundles CSS files defined in: less/themes
-* `scripts` - Minifies and bundles JS files defined in: gulp-config.json > bundles > {bundleName} > scripts
-* `images` -  Minifies images defined in: gulp-config.json > bundles > {bundleName} > images
-* `icons` - Minifies and generates a svg sprite, from the icons defined in: gulp-config.json > bundles > {bundleName} > icons
-* `copy` -  Copies the fonts defined in: gulp-config.json > bundles > {bundleName} > fonts
-* `html` - Will run through the html folder (not subfolders by default), looking for the `@@include`, to then partially replace them with the path. To learn more, go to the [HTML task in details](#HTML-task-in-details)
-* `watch`
-
-  * Runs the scripts, styles, images, icons and fonts task whenever a file has changed. The paths it listens on, is defined in the file gulp/config.json > watch.
-  * Also it automatically refreshes your browser window, using livereload (port can be changed in gulp/config.json > livereload > port).
-
-  Google Chrome Plugin: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
-
-  * Generates sourcemaps for CSS and JS.
-
-NOTE: The distribution path for each task, can be defined in gulp/config.json - so can the basePath.
-
-
-### HTML task in details
-The HTML task enables us to develop html with a component type of mind such as storing a site header in a single file. `@@include('components/breadcrumb.html')`.
-What this means is that we only have to maintain pieces of reusable html in 1 place. This is especially useful when working with navigational elements.
-
-You can also pass data to the included files, by adding a object to the end of the `@@include`, like this:
-
-```html
-@@include('components/breadcrumb.html', {
-  "parentPaths": [
-    {
-      "name": "Frontpage",
-      "link": "/"
-    },
-    {
-      "name": "Page",
-      "link": "page.html",
-    }
-  ],
-  "path": "Subpage"
-})
-```
-
-In your included file, you can check for the data like this:
-```html
-<div class="breadcrumb">
-    <div class="container">
-        @@for (var i = 0; i < parentPaths.length; i++) {
-            <span class="breadcrumb__link"><a href="`+parentPaths[i].link+`">`+parentPaths[i].name+`</a></span>
-        }
-        <span class="breadcrumb__link breadcrumb__link--active">@@path</span>
-    </div>
-</div>
-```
-
-The for loop traverses through our array of parentPaths, while the path is put inside the active link.
-
-There are some limits of what you can do, but the developer of the gulp-file-include is constantly adding more functionality.
-For an updated list of possibilities, check here: https://github.com/coderhaoxin/gulp-file-include
-
-
-## How to use SVG sprite sheet
-
-Use SVG's from the SVG sprite generated by GULP like the following. The `#icon-lock` is the ID of the current SVG in the sprite. This is based on the name of the original SVG in the `/images/icons/`-directory.
-So ´/images/icons/lock.svg` are referenced like this:
-
-```html
-<svg class="icon icon-lock">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/icons/icons.svg#icon-lock"></use>
-</svg>
-```
-
-## LESS components
-A basic variant of Bootstrap LESS, converted to BEM architecture and syntax for Novicell's projects.
-There's a few basic setups that you will always need for all your projects. Buttons, Grid, Form elements, Tables. (Well, maybe you'll use tables).
-There's also an example of a component and a view, just to show how the naming convention should be, as well as how you should both write and organize your LESS files.
-
-### The grid
-There's a grid based on the ideas behind Bootstrap.
-You can use it as you normally would, but write it a bit differently.
-```html
-<div class="container">
-    <div class="row">
-        <div class="col--xs-12 col--ms-6 col--sm-5 col--md-4 col--lg-12"></div>
-    </div>
-</div>
-```
-Notice the double dash? `xs` or any other breakpoint is regarded as a modifier of the column.
-
-### Buttons
-There's some default styling for buttons as well, including two modifiers.
-```html
-<button class="button">Primary button</button>
-<button class="button button--secondary">Secondary button</button>
-<button class="button button--ghost">Ghost button</button>
-```
-
-### Forms
-Default styling for form inputs. In regards to checkboxes and radiobuttons, refer to the `base.forms.less` file.
-```html
-<input type="text" class="input" placeholder="Default input">
-```
-
-### Tables
-```html
-<table class="table">
-    etc...
-</table>
-```
-
-## JS components
-
-### To be done
-- [ ] novicell.js
-- [ ] novicell.visible.js
-- [ ] novicell.debounce.js
-- [ ] novicell.overlay.js
-- [ ] novicell.embed.js
-- [ ] novicell.cookieinfo.js
-
-### Lazyload images
-Include the `novicell.lazyloadResponsive.js` for lazyloading images.
-You need to call images like this, and then the javascript will add querystrings for the [imageprocessor.web](http://imageprocessor.org/imageprocessor-web/) component. More `filters` and other settings can be found on the [imageprocessor documentation](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/filter/).
-
-
-```html
-<figure vocab="http://schema.org/" typeof="ImageObject"
-  data-src="https://www.novicell.dk/media/3746/novicell_kopny.png"
-  data-height-ratio="0.3"
-  data-focalpoint="0.5,0.5"
-  data-mode="crop"
-  data-quality="75"
-  data-is-background="true"
-  data-parent="#parent"
-  data-original-width="1337"
-  data-filter="greyscale">
-  <noscript class="responsiveLazyload">
-      <img src="https://www.novicell.dk/media/3746/novicell_kopny.png"
-      alt="Lazyload image demo"
-      title="Lazyload image demo"
-      property="contentUrl" />
-  </noscript>
-  <figcaption property="description">Lazyload image demo</figcaption>
-</figure>
-```
-#### Description and rules
-The original purpose of using the lazyloadResponsive.js is to always serve an optimal resized image depending on the user's viewport. Through time it has become a powerful script to manipulate images. There are several options you can set on your `<figure>`:
-* data-src - the clean source of the image, without any parameters
-* data-focalpoint - the value of the focalpoint.
-* data-mode - how to crop your image.
-* data-quality - the quality of the image. (default: 80)
-* data-is-background - if this is set no `<img>` will be added, but the image will be added as a background on the data-parent **NOTE: data-parent is required**.
-* data-parent - per default the size of the image will be determinated by the width of the `<figure>`. If a parent is specified it will use the size of this instead. **NOTE: If a focalpoint is set, it only used the width of the parent**
-* data-original-width - is used to set a max-width on the image return from the server to prevent a ugly upscaling of small images.
-* data-filter - filters used by imageprocessor
-
-
-#### When using Umbraco Default Package
-When you are using the Novicell Umbraco Default Package, you can grab a lot of these values from the FocalPointItemModel itself. Listed below are the generated values:
-* @Model.Image.GetFocalPoints() - returns the focalpoint set in the backend
-* @Model.Image.GetOriginalHeightRatio() - returns the original height-ratio of the uploaded image. If you set a forced width and height in the backend, the ratio of these will overrule.
-* @Model.Image.GetWidth() - returns the original width of the uploaded image. If a forced width is set, this will be the returned value.
-
-![alt text](http://i.imgur.com/nDhWBFc.png "Umbraco Focalpoint")
-
-
-Additional you can grab values as url, title and alt-text.
-
-### Lazyload fonts
-Include the `novicell.font.js` for lazyloading fonts. You can use Google Fonts, Typekit and local. When you are using local font you declare your font-face inside /less/base/base.fonts.less (or scss). This file will be generated into the webfont.min.css-file by Gulp.
-
-```javascript
-novicell.font.webfont({
-  google: { families: ['Roboto:400,700italic:latin'] },
-  typekit: { id: ['rzx0prp'] },
-  custom: { families: ['SkipLegDay'], urls: ['/dist/css/webfont.min.css'] }
-});
-```
-
-## Third party plugins
-Third party javascript plugins like `jquery` or `owl-carousel` is handled by Bower, by running `bower install <plugin>` or adding the plugin and version to the `bower.json`. **Always remember to specify a specific version number without `^` or `~`.**
-
-**Here's an example of a `bower.js`**
-```javascript
-{
-  "name": "novicell-frontend",
-  "version": "2.x.x",
-  "author": "novicell",
-  "dependencies": {
-    "svg4everybody": "2.0.3",
-    "jquery": "2.2.3"
-    ...
-  }
-}
-```
-
-Remember to add your plugins in the `gulp/config.js`, in the vendor bundle min minfication an concatination Remember to [restart your Gulp](#how-to-use-gulp), every time you edit your `gulp/config.js`.
-
-**Here's an example of a vendor bundle in the `gulp/config.js`**
-```javascript
-bundles: [
-{
-  name: "vendor",
-  ignorePlugins: ["jscs", "jshint", "watch"], // add "minify", to ignore minifaction on a bundle
-  scripts: [
-    bowerPath + "/svg4everybody/dist/svg4everybody.js",
-    bowerPath + "/jquery/dist/jquery.js",
-    bowerPath + "/owl.carousel/dist/owl.carousel.min.js"
-    ...
-  ]
-}
-```
-
-
-
-## Notes
-* Added an additional breakpoint, medium-small, based on https://github.com/hesselberg/Bootstrap3-ms-breakpoint/
-
-
-## Requirements
-* None!
-
-
 ## License
+
 The Novicell Frontend is licensed under the MIT license. (http://opensource.org/licenses/MIT)
+
+## Collaborators
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="http://www.novicell.dk"><img src="https://avatars1.githubusercontent.com/u/1523780?v=4" width="70px;" alt="Danni Larsen"/><br /><sub><b>Danni Larsen</b></sub></a><br /><a href="https://github.com/Novicell/Novicell-Frontend/commits?author=Dan9boi" title="Code"></a></td><td align="center"><a href="https://github.com/ankeris"><img src="https://avatars2.githubusercontent.com/u/31132643?v=4" width="70px;" alt="Juozas Rastenis"/><br /><sub><b>Juozas Rastenis</b></sub></a><br /><a href="https://github.com/Novicell/Novicell-Frontend/commits?author=ankeris" title="Code"></a></td><td align="center"><a href="https://github.com/jhavmoeller"><img src="https://avatars2.githubusercontent.com/u/16593791?v=4" width="70px;" alt="Jonas Havmøller"/><br /><sub><b>Jonas Havmøller</b></sub></a><br /><a href="https://github.com/Novicell/Novicell-Frontend/commits?author=jhavmoeller" title="Code"></a></td><td align="center"><a href="https://github.com/shp-novicell"><img src="https://avatars3.githubusercontent.com/u/19607667?v=4" width="70px;" alt="shp-novicell"/><br /><sub><b>shp-novicell</b></sub></a><br /><a href="https://github.com/Novicell/Novicell-Frontend/commits?author=shp-novicell" title="Code"></a></td><td align="center"><a href="https://github.com/heense"><img src="https://avatars1.githubusercontent.com/u/8288150?v=4" width="70px;" alt="Henrik Madsen"/><br /><sub><b>Henrik Madsen</b></sub></a><br /><a href="https://github.com/Novicell/Novicell-Frontend/commits?author=heense" title="Code"></a></td><td align="center"><a href="https://github.com/Bjornnyborg"><img src="https://avatars0.githubusercontent.com/u/5557038?v=4" width="70px;" alt="Bjornnyborg"/><br /><sub><b>Bjornnyborg</b></sub></a><br /><a href="https://github.com/Novicell/Novicell-Frontend/commits?author=Bjornnyborg" title="Code"></a></td><td align="center"><a href="https://github.com/emilankersen"><img src="https://avatars1.githubusercontent.com/u/6448879?v=4" width="70px;" alt="emilankersen"/><br /><sub><b>emilankersen</b></sub></a><br /><a href="https://github.com/Novicell/Novicell-Frontend/commits?author=emilankersen" title="Code"></a></td><td align="center"><a href="https://github.com/MKAndersen"><img src="https://avatars3.githubusercontent.com/u/19702371?v=4" width="70px;" alt="MKAndersen"/><br /><sub><b>MKAndersen</b></sub></a><br /><a href="https://github.com/Novicell/Novicell-Frontend/commits?author=MKAndersen" title="Code"></a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

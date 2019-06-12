@@ -1,0 +1,77 @@
+/**
+ * Base
+ */
+:root {
+    --site-background-color: var(--site-background-color, #fff);
+}
+
+/* Box sizing */
+* {
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+/* Body */
+body {
+    background-color: var(--site-background-color);
+    font-family: var(--base-font-family);
+    font-weight: var(--base-font-weight);
+    font-size: var(--base-font-size);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @media (--viewport-lg-min) {
+        font-size: 18px;
+    }
+}
+
+/* Links */
+a {
+    color: var(--color-link, blue);
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+
+    &:hover,
+    &:focus {
+        color: shade(var(--color-link, blue), 10%);
+    }
+}
+
+/* Horizontal ruler */
+hr {
+    border: none;
+    border-bottom: 1px solid var(--color-gray);
+    margin: 30px 0;
+}
+
+/* Image handling */
+figure {
+    margin: 0;
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transition: opacity 0.2s;
+    }
+
+    &.contain-width img {
+        width: auto;
+    }
+}
