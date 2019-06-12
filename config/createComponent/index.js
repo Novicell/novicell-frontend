@@ -102,7 +102,7 @@ function getOrganismJSON(name) {
                 "text": "${name} Organism"
             },
             "textBoxContent": "Build using our own tools and best practices for building websites."
-        },
+        }
     }
 }
 `
