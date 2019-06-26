@@ -3,6 +3,7 @@
 const fs = require('fs');
 const args = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
+const path = require('path');
 const options = require('../../config');
 
 const log = console.log;
@@ -150,8 +151,9 @@ function checkAndCreateDestinationPath(fileDestination) {
   const dirPath = fileDestination.split('/');
   dirPath.forEach((element, index) => {
     const joined = dirPath.slice(0, index + 1).join('/');
-    if (!fs.existsSync(joined)) {
-      fs.mkdirSync(joined);
+    const joinedNormalized = path.normalize(joined);
+    if (!fs.existsSync(joinedNormalized)) {
+      fs.mkdirSync(joinedNormalized);
     }
   });
 }
