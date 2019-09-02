@@ -1,0 +1,18 @@
+
+{
+    "title": "Molecule",
+    "status": "prototype",
+    "context": {
+        "greeting": {
+            "text": "Hello from testName molecule"
+        },
+        "image": {
+            "url": "...",
+            "alt": "Image"
+        },
+        "box": {
+            "content": "Box content from testName",
+            "url": "..."
+        }
+    }
+}
