@@ -96,7 +96,7 @@ module.exports = {
                     emitWarning: true,
                     failonError: false,
                     fix: true,
-                    configFile: options.fullConfigsPath + '/scripts/.eslintrc',
+                    configFile: options.fullConfigsPath + '/scripts/.eslintrc.js',
                 }
             },
             {

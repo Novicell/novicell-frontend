@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES6",
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      "rootDirs": [
+        "src"
+      ]
+    },
+    "path-intellisense.mappings": {
+      "@/*": "${workspaceRoot}/src/*"
+    },
+    "exclude": ["node_modules", "dist", "**/node_modules/*"]
+  }
