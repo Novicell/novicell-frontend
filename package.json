@@ -18,7 +18,7 @@
         "fractal:build": "fractal build",
         "fonts": "cross-env-shell copyfiles -f \"assets/fonts/*\" $npm_package_config_DIST/fonts -V",
         "images": "node config/images/imagemin.js",
-        "sprites": "cross-env-shell node config/sprites/sprite.js -i assets/icons/*.svg -o $npm_package_config_DIST/icons/icons.svg",
+        "sprites": "cross-env-shell node config/sprites/sprite.js -i 'assets/icons/**/**/*.svg' -o $npm_package_config_DIST/icons/icons.svg",
         "styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config config/styles/postcss.config.js",
         "webpack": "webpack --config config/scripts/webpack.config.js",
         "watch:styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config config/styles/postcss.config.js --watch --verbose",
