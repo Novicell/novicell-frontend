@@ -35,7 +35,7 @@ function createDir(dir) {
   // Check if the folder exits, if not - create one
   if (!fs.existsSync(dir)) {
     checkAndCreateDestinationPath(dir);
-    log(chalk.bgGreen(`Created folder in ${dir}`));
+    log(chalk.green(`Created folder in ${dir}`));
   }
 }
 
@@ -51,14 +51,17 @@ function checkAndCreateDestinationPath(fileDestination) {
 }
 
 const writeFile = function (filetype, dir, data, name) {
-  fs.writeFile(`${dir}/${name}.${filetype}`, data, {
+
+  const file = `${dir}/${name}.${filetype}`;
+
+  fs.writeFile(file, data, {
     flag: 'wx'
   }, (err) => {
     if (err) {
-      log(chalk.bgRed(`File already exits for ${name}`));
+      log(chalk.red(`File: ${file} already exits`));
       return;
     }
-    log(chalk.bgGreen(`${name}.${filetype} was created`));
+    log(chalk.green(`${file} was created`));
   });
 }
 
@@ -78,10 +81,10 @@ function createComponent(name, type) {
 }
 
 const types = {
-  a: "atom",
-  m: "molecule",
-  o: "organism",
-  p: "page"
+  a: "atoms",
+  m: "molecules",
+  o: "organisms",
+  p: "pages"
 }
 
 const type = types[args.t];

@@ -23,9 +23,9 @@ module.exports = {
     fullConfigsPath: path.join(root_folder, '/config/'),
     componentsDir: {
         main: root_folder + '/src',
-        atom: '01-atoms',
-        molecule: '02-molecules',
-        organism: '03-organisms',
-        page: '04-pages',
+        atoms: '01-atoms',
+        molecules: '02-molecules',
+        organisms: '03-organisms',
+        pages: '04-pages',
     },
 };
