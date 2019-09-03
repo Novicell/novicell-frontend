@@ -85,14 +85,14 @@ But there are more available in this package (add `npm run` before script name):
 2. Run
 
 ```
-createComponent -t a -n "My Component"
+createComponent -t a -n my-component
 ```
 This example will create files in /src/01-atoms/my-component
 
 | Argument | Name | Type | Description |
 | --- | --- | --- | --- |
 | -t | Type | `a/m/o/p` | Defines the type of your component, this decides where the component is created. a = atom, m = molecule, o = organism, p = page;
-| -n | Name |`string` | Sets the title of the component, and a lowercase version will be used as filenames
+| -n | Name |`string` | Sets the filename of the component files, and a capitalized version will be used as title in the config file
 
 
 ## Additional

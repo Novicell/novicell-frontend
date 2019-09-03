@@ -67,17 +67,18 @@ const writeFile = function (filetype, dir, data, name) {
 
 function createComponent(name, type) {
 
-  // Escape name for classes, folders and filenames
-  const escapedName = name.toLowerCase().replace(/ /g, '-');
+  // Capitalize name for title
+  let title = name.replace(/-/g, ' ');
+  title = title.charAt(0).toUpperCase() + title.slice(1);
 
   // Generate directory path, and create it
-  const dir = `${componentsDir}/${options.componentsDir[type]}/${escapedName}`;
+  const dir = `${componentsDir}/${options.componentsDir[type]}/${name}`;
   createDir(dir);
 
   // Create the files
-  writeFile('hbs', dir, getComponentTemplate(escapedName), escapedName);
-  writeFile('config.json', dir, getComponentJSON(name), escapedName);
-  writeFile('css', dir, getComponentCss(escapedName), escapedName);
+  writeFile('hbs', dir, getComponentTemplate(name), name);
+  writeFile('config.json', dir, getComponentJSON(title), name);
+  writeFile('css', dir, getComponentCss(name), name);
 }
 
 const types = {
