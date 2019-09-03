@@ -85,18 +85,14 @@ But there are more available in this package (add `npm run` before script name):
 2. Run
 
 ```
-createComponent -t a -n testName
+createComponent -t a -n "My Component"
 ```
 
-a - atom, m - molecule, o - organism, p - page;
+| Argument | Name | Type | Description |
+| --- | --- | --- | --- |
+| -t | Type | `a|m|o|p` | Defines the type of your component, this decides where the component is created. a = atom, m = molecule, o = organism, p = page;
+| -n | Name |`string` | Sets the title of the component, and a lowercase version will be used as filenames
 
-```bash
--t a/m/o/p # choose one from these
-```
-
-```bash
--n # name of component
-```
 
 ## Additional
 
