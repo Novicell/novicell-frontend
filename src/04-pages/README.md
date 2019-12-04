@@ -40,5 +40,5 @@
 1. To allow generating components write: `npm link` in the root dir. (only have to do it once after 'npm install')
 2. Run 
 ```
-createComponent -t p -n myPage
+createComponent -t p -n my-page
 ```

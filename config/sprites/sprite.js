@@ -28,11 +28,7 @@ const spriteConfig = {
         // Convert style to attributes
         transform: [{
             svgo: {
-                plugins: [{
-                        removeAttrs: {
-                            attrs: '(fill.*|stroke.*|transform.*)'
-                        }
-                    },
+                plugins: [
                     {
                         inlineStyles: true
                     }

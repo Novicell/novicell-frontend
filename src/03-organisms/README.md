@@ -23,5 +23,5 @@
 1. To allow generating components write: `npm link` in the root dir. (only have to do it once after 'npm install')
 2. Run 
 ```
-createComponent -t o -n myOrganism
+createComponent -t o -n my-organism
 ```
