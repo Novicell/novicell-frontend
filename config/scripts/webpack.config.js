@@ -81,7 +81,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
-          vue: 'vue/dist/vue.js',
+          vue: env === 'development' ? 'vue/dist/vue.js' : 'vue/dist/vue.min.js',
           '@': options.sourceRootFolder
         }
     },
