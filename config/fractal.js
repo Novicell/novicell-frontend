@@ -1,7 +1,6 @@
 'use strict';
 const config = require('../config');
 const path = require('path');
-const rootFolder = config.root_folder;
 /* Create a new Fractal instance and export it for use elsewhere if required */
 const fractal = require('@frctl/fractal').create();
 const hbs = require('@frctl/handlebars');
@@ -23,7 +22,7 @@ const novicellTheme = require('@frctl/mandelbrot')({
 
 /* Set the title of the project */
 fractal.set('project.title', 'Novicell Component Library');
-fractal.web.set('static.path', rootFolder + '/dist');
+fractal.web.set('static.path', config.root_folder, config.dist_name_only);
 
 /* Tell Fractal where the components will live */
 fractal.components.set('path', config.componentsDir.main);
@@ -37,7 +36,7 @@ fractal.docs.set('ext', 'hbs');
 fractal.set('project.title', config.appName);
 layouts.register(instance.handlebars);
 novicellTheme.addStatic(config.fullConfigsPath, 'fractal');
-novicellTheme.addStatic(path.join(config.root_folder + '/dist'), 'dist');
+novicellTheme.addStatic(config.root_folder + config.dist_name_only, 'dist');
 
 fractal.web.theme(novicellTheme);
 

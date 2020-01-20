@@ -19,6 +19,7 @@ const mainSettings = {
 module.exports = {
     root_folder,
     mainSettings,
+    dist_name_only: dist,
     sourceRootFolder: path.join(root_folder, sourceRootFolder),
     fullConfigsPath: path.join(root_folder, '/config/'),
     componentsDir: {
