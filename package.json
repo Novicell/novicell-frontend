@@ -41,7 +41,7 @@
         "@babel/cli": "7.2.3",
         "@babel/core": "7.4.0",
         "@babel/preset-env": "7.4.2",
-        "@frctl/fractal": "^1.1.7",
+        "@frctl/fractal": "^1.2.1",
         "babel-loader": "8.0.5",
         "cli-real-favicon": "0.0.8",
         "copyfiles": "2.1.0",
