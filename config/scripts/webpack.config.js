@@ -5,7 +5,7 @@ const path = require('path');
 // plugins
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Project options
@@ -53,9 +53,9 @@ module.exports = {
             name: 'manifest'
         },
         minimizer: [
-            new UglifyJsPlugin({
+            new TerserPlugin({
                 sourceMap: true,
-                uglifyOptions: {
+                terserOptions: {
                     ecma: 8,
                     mangle: false,
                     keep_classnames: true,
