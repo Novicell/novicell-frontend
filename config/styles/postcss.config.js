@@ -3,9 +3,11 @@ const stylelintConfig = require('./stylelint.config');
 const settings = require('../../config');
 const rootFolder = settings.root_folder;
 const env = process.env.NODE_ENV || 'development';
+const path = require('path');
 
 module.exports = {
     env,
+    dir: path.join(settings.mainSettings.dist, '/css'),
     map: {
         inline: false
     },

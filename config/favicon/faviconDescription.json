@@ -11,7 +11,7 @@
 				"declareOnlyDefaultIcon": true
 			}
 		},
-		"desktopBrowser": {},
+		"desktopBrowser": { "design": "raw"},
 		"windows": {
 			"pictureAspect": "noChange",
 			"backgroundColor": "#da532c",
@@ -30,7 +30,6 @@
 			"pictureAspect": "noChange",
 			"themeColor": "#ffffff",
 			"manifest": {
-				"name": "Novicell",
 				"display": "standalone",
 				"orientation": "notSet",
 				"onConflict": "override",

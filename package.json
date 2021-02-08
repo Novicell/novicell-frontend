@@ -17,28 +17,21 @@
     },
     "scripts": {
         "test": "echo Working...",
-        "fractal": "fractal start --sync",
-        "fractal:build": "fractal build",
-        "fonts": "cross-env-shell copyfiles -u 2 \"assets/fonts/**/*\" $npm_package_config_DIST/fonts/ -V",
-        "images": "node config/images/imagemin.js",
-        "sprites": "cross-env-shell node config/sprites/sprite.js -i 'assets/icons/**/**/*.svg' -o $npm_package_config_DIST/icons/icons.svg",
-        "styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config config/styles/postcss.config.js",
+        "fonts": "node config/fonts/fonts.js",
+        "images": "node config/images/images.js",
+        "sprites": "node config/sprites/sprites.js",
+        "styles": "node config/styles/styles.js",
         "webpack": "webpack --config config/scripts/webpack.config.js",
-        "watch:styles": "cross-env-shell postcss $npm_package_config_CSS_MODULES --dir $npm_package_config_DIST/css --ext min.css --config config/styles/postcss.config.js --watch --verbose",
-        "watch:webpack": "webpack --config config/scripts/webpack.config.js --watch",
-        "build:dev": "cross-env NODE_ENV=development npm-run-all -l sprites images styles fonts test webpack",
-        "build:prod": "cross-env NODE_ENV=production npm-run-all -l sprites images styles fonts test webpack",
-        "dev": "cross-env NODE_ENV=development npm-run-all -p -r watch:webpack watch:styles fractal",
+        "build:dev": "cross-env env=development npm-run-all -l sprites images styles fonts test webpack",
+        "build:prod": "cross-env env=production npm-run-all -l sprites images styles fonts test webpack",
+        "dev": "cross-env env=development watch=true npm-run-all -p -r webpack styles",
         "start": "npm run dev",
-        "prod": "cross-env NODE_ENV=production npm-run-all -p -r watch:webpack --mode=production watch:styles fractal",
+        "prod": "cross-env env=production watch=true npm-run-all -p -r webpack --mode=production styles",
         "fix": "eslint --fix src/**/*.js --config config/scripts/.eslintrc.js",
         "fix:styles": "stylelint src/**/*.css --fix --config config/styles/stylelint.config.js",
-        "buildDrupal": "node config/drupal/babel-minify.js",
         "generateFavicon": "cross-env-shell real-favicon generate config/favicon/faviconDescription.json $npm_package_config_DIST/favicons/faviconData.json $npm_package_config_DIST/favicons"
     },
-    "fractal": {
-        "main": "config/fractal.js"
-    },
+
     "license": "MIT",
     "devDependencies": {
         "@babel/cli": "7.2.3",
@@ -78,7 +71,8 @@
         "vue-template-compiler": "2.6.10",
         "webpack": "4.29.6",
         "webpack-bundle-analyzer": "3.3.2",
-        "webpack-cli": "^3.3.12"
+        "webpack-cli": "^3.3.12",
+        "lodash": "4.17.20"
     },
     "dependencies": {},
     "bin": {

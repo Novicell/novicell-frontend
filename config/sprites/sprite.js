@@ -4,14 +4,15 @@ const path = require('path');
 const mkdirp = require('mkdirp');
 const glob = require('glob');
 const File = require('vinyl');
-let args = require('minimist')(process.argv.slice(2));
 const settings = require('../../config');
 const rootFolder = settings.root_folder;
 const cwd = path.resolve('assets/icons');
+const iconDistFolderName = 'icons';
+const iconDistFileName = 'icons.svg';
 
 // Create spriter instance (see below for `config` examples)
-const dist = args.o;
-const input = path.join(rootFolder, args.i);
+const dist = path.join(settings.mainSettings.dist, iconDistFolderName);
+const input = path.join(rootFolder, 'assets/icons/**/**/*.svg');
 const spriteConfig = {
     shape: {
         // Set maximum dimensions
@@ -64,9 +65,9 @@ glob.glob(`${input}`, {
         for (var mode in result) {
             for (var resource in result[mode]) {
                 if (!fs.existsSync(dist)) {
-                    mkdirp.sync(path.dirname(dist));
+                    mkdirp.sync(dist);
                 }
-                fs.writeFileSync(dist, result[mode][resource].contents);
+                fs.writeFileSync(path.join(dist, iconDistFileName), result[mode][resource].contents);
             }
         }
     });

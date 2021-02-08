@@ -61,8 +61,6 @@ These are most often used scripts:
 
 But there are more available in this package (add `npm run` before script name):
 
--   `fractal` - Runs fractal
--   `fractal:build` - Builds static site
 -   `clean` - Deletes the files/directories defined in: `gulp/config.js > pathsToClean`
 -   `fonts` - Copies the fonts defined in: `config.js` to `dist`
 -   `images` - Minifies images defined in: `config.js` to `dist/images`
@@ -72,11 +70,10 @@ But there are more available in this package (add `npm run` before script name):
 -   `watch:styles` - Automatically bundles CSS changes while developing
 -   `watch:webpack` - Automatically bundles JS changes while developing
 -   `deploy` - Uploads file via FTP, configuration can be found in `gulp/config.js`
--   `dev` - webpack:watch + styles:watch + fractal
+-   `dev` - webpack:watch + styles:watch
 -   `start` - Equal to `dev`
 -   `prod` - Same as dev but in production (extra optimization) but slower build,
 -   `fix` - Fixes all possible linting for JavaScript
--   `buildDrupal` - (For drupal projects) Bundles JavaScript and CSS into same location
 -   `generateFavicon` - generates a favicon based on config/favicon/faviconDescription.json settings
 
 ## Generate component
@@ -104,7 +101,6 @@ If you need more information, we have a Wiki that contains in-depth explanations
 -   [Atomic guidelines](https://github.com/Novicell/novicell-frontend/wiki/Atomic-guidelines)
 -   [BEM](https://github.com/Novicell/novicell-frontend/wiki/BEM)
 -   [CSS (PostCSS)](<https://github.com/Novicell/novicell-frontend/wiki/CSS-(PostCSS)>)
--   [Fractal guidelines](https://github.com/Novicell/novicell-frontend/wiki/Fractal-guidelines)
 -   [FAQ](https://github.com/Novicell/novicell-frontend/wiki/Frequently-asked-questions)
 -   [HTML + Handlebars](https://github.com/Novicell/novicell-frontend/wiki/HTML-and-Handlebars)
 -   [VueJS Usage](https://github.com/Novicell/novicell-frontend/wiki/VueJS-in-the-setup)
